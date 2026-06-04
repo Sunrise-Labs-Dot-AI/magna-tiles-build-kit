@@ -1,0 +1,25 @@
+.env
+.env.*
+!.env.example
+
+.next/
+node_modules/
+.venv/
+
+.DS_Store
+
+# Local test scratch dir
+.tmp-visual-judge-test/
+
+# Large input media (third-party source videos; not redistributed, regenerate locally)
+sample-videos/
+
+# Third-party extracted video frames (research only; not redistributed)
+public/reference-frames/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+*.tsbuildinfo

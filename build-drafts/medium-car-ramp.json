@@ -1,0 +1,563 @@
+{
+  "id": "medium-car-ramp",
+  "title": "Medium Car Ramp",
+  "prompt": "Medium Car Ramp",
+  "family": "ramp",
+  "inventoryPreset": "classic-100",
+  "status": "engine-valid",
+  "createdAt": "2026-05-15T18:06:12.367Z",
+  "updatedAt": "2026-06-02T21:30:00.000Z",
+  "notes": "Re-authored as a larger clean bare wedge: the continuous two-square sloped driving deck now feeds a two-square raised landing, with the vertical end support moved to the far landing edge and mirrored right-triangle side supports under the extension. No rails, switchback, or stray protruding panels; headless gateBuild passes pre-filters, stands, and rollTest.",
+  "expectedInventory": {
+    "small-square": 5,
+    "large-square": 0,
+    "xl-square": 0,
+    "equilateral-triangle": 0,
+    "right-triangle": 4,
+    "isosceles-triangle": 2
+  },
+  "referenceFrameSrcs": [
+    "/reference-frames/medium-car-ramp/final-a.jpg",
+    "/reference-frames/medium-car-ramp/final-b.jpg",
+    "/reference-frames/medium-car-ramp/slope-face.jpg",
+    "/reference-frames/medium-car-ramp/rear-support.jpg",
+    "/reference-frames/medium-car-ramp/bom.jpg"
+  ],
+  "visualSignoff": false,
+  "tiles": [
+    {
+      "id": "medium-left-long-wedge-side",
+      "shape": "isosceles-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": 2.8125,
+        "y": 0.726184377413891,
+        "z": -1.59
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -0.25,
+          "y": 0.9682458365518543,
+          "z": 0
+        },
+        "yAxis": {
+          "x": -0.9682458365518543,
+          "y": -0.25,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 1,
+      "role": "medium left yellow isosceles wedge side with ground edge",
+      "subassemblyId": "medium-wedge",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "root": true
+    },
+    {
+      "id": "medium-right-long-wedge-side",
+      "shape": "isosceles-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": 2.8125,
+        "y": 0.726184377413891,
+        "z": 1.59
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -0.25,
+          "y": 0.9682458365518543,
+          "z": 0
+        },
+        "yAxis": {
+          "x": -0.9682458365518543,
+          "y": -0.25,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 1,
+      "role": "medium right yellow isosceles wedge side with ground edge",
+      "subassemblyId": "medium-wedge",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "medium-left-long-wedge-side",
+      "parentEdge": 1,
+      "childEdge": 1,
+      "foldAngle": 0
+    },
+    {
+      "id": "medium-lower-sloped-driving-square",
+      "shape": "small-square",
+      "color": "#ff8a00",
+      "position": {
+        "x": 1.3125,
+        "y": 0.7261843774138906,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0.875,
+          "y": 0.4841229182759271,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0.4841229182759271,
+          "y": -0.875,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "medium lower orange sloped driving square",
+      "subassemblyId": "ramp-plane",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "medium-left-long-wedge-side",
+      "parentEdge": 1,
+      "childEdge": 0,
+      "foldAngle": -1.5707963267948966
+    },
+    {
+      "id": "medium-upper-sloped-driving-square",
+      "shape": "small-square",
+      "color": "#ff8a00",
+      "position": {
+        "x": 3.9375,
+        "y": 2.178553132241672,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0.875,
+          "y": 0.4841229182759271,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0.4841229182759271,
+          "y": -0.875,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "medium upper orange sloped driving square",
+      "subassemblyId": "ramp-plane",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "medium-lower-sloped-driving-square",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0
+    },
+    {
+      "id": "medium-top-landing-square",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": 6.75,
+        "y": 3.06,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "medium red supported flat top landing square",
+      "subassemblyId": "landing",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "medium-upper-sloped-driving-square",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0.2526802551420787
+    },
+    {
+      "id": "medium-left-green-right-triangle-support",
+      "shape": "right-triangle",
+      "color": "#06d6a0",
+      "position": {
+        "x": 6.75,
+        "y": 1.56,
+        "z": -1.77
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        },
+        "yAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 4,
+      "role": "medium left green flipped right-triangle side support",
+      "subassemblyId": "landing-support",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "medium-top-landing-square",
+      "parentEdge": 0,
+      "childEdge": 2,
+      "foldAngle": 1.5707963267948966
+    },
+    {
+      "id": "medium-right-green-right-triangle-support",
+      "shape": "right-triangle",
+      "color": "#06d6a0",
+      "position": {
+        "x": 6.75,
+        "y": 1.56,
+        "z": 1.77
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        },
+        "yAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 4,
+      "role": "medium right green flipped right-triangle side support",
+      "subassemblyId": "landing-support",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "medium-top-landing-square",
+      "parentEdge": 2,
+      "childEdge": 2,
+      "foldAngle": 1.5707963267948966
+    },
+    {
+      "id": "medium-extended-top-landing-square",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": 9.75,
+        "y": 3.06,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 4,
+      "role": "medium red extended flat top landing square",
+      "subassemblyId": "landing",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "medium-top-landing-square",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0
+    },
+    {
+      "id": "medium-extended-red-vertical-leg-support-square",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": 11.34,
+        "y": 1.5,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 5,
+      "role": "medium red vertical support square on extended landing edge",
+      "subassemblyId": "landing-support",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "medium-extended-top-landing-square",
+      "parentEdge": 1,
+      "childEdge": 2,
+      "foldAngle": 1.5707963267948966
+    },
+    {
+      "id": "medium-extended-left-green-right-triangle-support",
+      "shape": "right-triangle",
+      "color": "#06d6a0",
+      "position": {
+        "x": 9.75,
+        "y": 1.56,
+        "z": -1.77
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        },
+        "yAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 5,
+      "role": "medium extended left green right-triangle side support",
+      "subassemblyId": "landing-support",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "medium-extended-top-landing-square",
+      "parentEdge": 0,
+      "childEdge": 2,
+      "foldAngle": 1.5707963267948966
+    },
+    {
+      "id": "medium-extended-right-green-right-triangle-support",
+      "shape": "right-triangle",
+      "color": "#06d6a0",
+      "position": {
+        "x": 9.75,
+        "y": 1.56,
+        "z": 1.77
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        },
+        "yAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 5,
+      "role": "medium extended right green right-triangle side support",
+      "subassemblyId": "landing-support",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "medium-extended-top-landing-square",
+      "parentEdge": 2,
+      "childEdge": 2,
+      "foldAngle": 1.5707963267948966
+    }
+  ],
+  "connections": [
+    {
+      "fromTileId": "medium-left-long-wedge-side",
+      "fromEdge": 1,
+      "toTileId": "medium-lower-sloped-driving-square",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-right-long-wedge-side",
+      "fromEdge": 1,
+      "toTileId": "medium-lower-sloped-driving-square",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-left-long-wedge-side",
+      "fromEdge": 1,
+      "toTileId": "medium-upper-sloped-driving-square",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-right-long-wedge-side",
+      "fromEdge": 1,
+      "toTileId": "medium-upper-sloped-driving-square",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-lower-sloped-driving-square",
+      "fromEdge": 1,
+      "toTileId": "medium-upper-sloped-driving-square",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-upper-sloped-driving-square",
+      "fromEdge": 1,
+      "toTileId": "medium-top-landing-square",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-top-landing-square",
+      "fromEdge": 0,
+      "toTileId": "medium-left-green-right-triangle-support",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-top-landing-square",
+      "fromEdge": 2,
+      "toTileId": "medium-right-green-right-triangle-support",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-top-landing-square",
+      "fromEdge": 1,
+      "toTileId": "medium-extended-top-landing-square",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-extended-top-landing-square",
+      "fromEdge": 1,
+      "toTileId": "medium-extended-red-vertical-leg-support-square",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-extended-top-landing-square",
+      "fromEdge": 0,
+      "toTileId": "medium-extended-left-green-right-triangle-support",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-extended-top-landing-square",
+      "fromEdge": 2,
+      "toTileId": "medium-extended-right-green-right-triangle-support",
+      "toEdge": 2,
+      "kind": "edge"
+    }
+  ]
+}

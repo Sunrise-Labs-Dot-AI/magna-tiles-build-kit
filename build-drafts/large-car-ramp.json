@@ -1,0 +1,249 @@
+{
+  "id": "large-car-ramp",
+  "title": "Large Car Ramp",
+  "prompt": "Large Car Ramp",
+  "family": "ramp",
+  "inventoryPreset": "classic-100",
+  "status": "engine-valid",
+  "createdAt": "2026-05-15T18:06:12.375Z",
+  "updatedAt": "2026-06-02T23:10:00.000Z",
+  "notes": "Re-authored so the rigid large-square sloped driving panel descends from the high platform toward open ground, with no wall at the ramp/platform transition. The rear support wall is now behind the high end on the far platform edge, bracing the top while the downhill exit stays clear. Headless gateBuild passes stands plus the stricter clear-descent rollTest.",
+  "expectedInventory": {
+    "small-square": 6,
+    "large-square": 2,
+    "xl-square": 0,
+    "equilateral-triangle": 0,
+    "right-triangle": 0,
+    "isosceles-triangle": 2
+  },
+  "referenceFrameSrcs": [
+    "/reference-frames/large-car-ramp/final.jpg",
+    "/reference-frames/large-car-ramp/wall.jpg",
+    "/reference-frames/large-car-ramp/platform.jpg",
+    "/reference-frames/large-car-ramp/ramp-plane.jpg",
+    "/reference-frames/large-car-ramp/bom.jpg"
+  ],
+  "visualSignoff": false,
+  "tiles": [
+    {
+      "id": "large-left-long-wedge-side",
+      "shape": "isosceles-triangle",
+      "color": "#ffb703",
+      "position": { "x": 2.8125, "y": 0.726184377413891, "z": -3.09 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "basis": {
+        "xAxis": { "x": -0.25, "y": 0.9682458365518543, "z": 0 },
+        "yAxis": { "x": -0.9682458365518543, "y": -0.25, "z": 0 },
+        "zAxis": { "x": 0, "y": 0, "z": 1 }
+      },
+      "step": 1,
+      "role": "large left isosceles side support for rigid ramp panel",
+      "subassemblyId": "large-ramp-side-supports",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "root": true
+    },
+    {
+      "id": "large-right-long-wedge-side",
+      "shape": "isosceles-triangle",
+      "color": "#ffb703",
+      "position": { "x": 2.8125, "y": 0.726184377413891, "z": 3.09 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "basis": {
+        "xAxis": { "x": -0.25, "y": 0.9682458365518543, "z": 0 },
+        "yAxis": { "x": -0.9682458365518543, "y": -0.25, "z": 0 },
+        "zAxis": { "x": 0, "y": 0, "z": -1 }
+      },
+      "step": 1,
+      "role": "large right isosceles side support for rigid ramp panel",
+      "subassemblyId": "large-ramp-side-supports",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "large-left-long-wedge-side",
+      "parentEdge": 1,
+      "childEdge": 1,
+      "foldAngle": 0
+    },
+    {
+      "id": "large-rigid-sloped-driving-panel",
+      "shape": "large-square",
+      "color": "#45c3e6",
+      "position": { "x": 2.625, "y": 1.4523687548277813, "z": 0 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "basis": {
+        "xAxis": { "x": 0.875, "y": 0.4841229182759271, "z": 0 },
+        "yAxis": { "x": 0, "y": 0, "z": 1 },
+        "zAxis": { "x": 0.4841229182759271, "y": -0.875, "z": 0 }
+      },
+      "step": 2,
+      "role": "large rigid large-square sloped driving ramp panel",
+      "subassemblyId": "large-ramp-plane",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "large-left-long-wedge-side",
+      "parentEdge": 1,
+      "childEdge": 0,
+      "foldAngle": -1.5707963267948966
+    },
+    {
+      "id": "large-left-upper-rear-wall-square",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": { "x": 11.07, "y": 4.62, "z": -1.5 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "basis": {
+        "xAxis": { "x": 0, "y": 0, "z": 1 },
+        "yAxis": { "x": 0, "y": 1, "z": 0 },
+        "zAxis": { "x": -1, "y": 0, "z": 0 }
+      },
+      "step": 5,
+      "role": "large upper rear wall brace behind high end",
+      "subassemblyId": "large-rear-support-wall",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "large-left-front-box-support-square",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0
+    },
+    {
+      "id": "large-right-upper-rear-wall-square",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": { "x": 11.07, "y": 4.62, "z": 1.5 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "basis": {
+        "xAxis": { "x": 0, "y": 0, "z": 1 },
+        "yAxis": { "x": 0, "y": 1, "z": 0 },
+        "zAxis": { "x": -1, "y": 0, "z": 0 }
+      },
+      "step": 5,
+      "role": "large upper rear wall brace behind high end",
+      "subassemblyId": "large-rear-support-wall",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "large-right-front-box-support-square",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0
+    },
+    {
+      "id": "large-left-rear-side-brace-square",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": { "x": 8.25, "y": 1.5, "z": -3 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "basis": {
+        "xAxis": { "x": 1, "y": 0, "z": 0 },
+        "yAxis": { "x": 0, "y": 1, "z": 0 },
+        "zAxis": { "x": 0, "y": 0, "z": 1 }
+      },
+      "step": 5,
+      "role": "large left rear side brace behind high end",
+      "subassemblyId": "large-rear-support-wall",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "large-top-platform-panel",
+      "parentEdge": 0,
+      "childEdge": 2,
+      "foldAngle": 1.5707963267948966
+    },
+    {
+      "id": "large-right-rear-side-brace-square",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": { "x": 8.25, "y": 1.5, "z": 3 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "basis": {
+        "xAxis": { "x": 1, "y": 0, "z": 0 },
+        "yAxis": { "x": 0, "y": 1, "z": 0 },
+        "zAxis": { "x": 0, "y": 0, "z": 1 }
+      },
+      "step": 5,
+      "role": "large right rear side brace behind high end",
+      "subassemblyId": "large-rear-support-wall",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "large-top-platform-panel",
+      "parentEdge": 2,
+      "childEdge": 2,
+      "foldAngle": -1.5707963267948966
+    },
+    {
+      "id": "large-top-platform-panel",
+      "shape": "large-square",
+      "color": "#ef476f",
+      "position": { "x": 8.25, "y": 3.06, "z": 0 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "basis": {
+        "xAxis": { "x": 1, "y": 0, "z": 0 },
+        "yAxis": { "x": 0, "y": 0, "z": 1 },
+        "zAxis": { "x": 0, "y": -1, "z": 0 }
+      },
+      "step": 4,
+      "role": "large rigid large-square supported top landing platform",
+      "subassemblyId": "large-top-platform",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "large-rigid-sloped-driving-panel",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0.2526802551420787
+    },
+    {
+      "id": "large-left-front-box-support-square",
+      "shape": "small-square",
+      "color": "#ff8a00",
+      "position": { "x": 11.07, "y": 1.5, "z": -1.5 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "basis": {
+        "xAxis": { "x": 0, "y": 0, "z": 1 },
+        "yAxis": { "x": 0, "y": 1, "z": 0 },
+        "zAxis": { "x": -1, "y": 0, "z": 0 }
+      },
+      "step": 3,
+      "role": "large lower rear wall support behind high end",
+      "subassemblyId": "large-support-box",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "large-top-platform-panel",
+      "parentEdge": 1,
+      "childEdge": 2,
+      "foldAngle": 1.5707963267948966
+    },
+    {
+      "id": "large-right-front-box-support-square",
+      "shape": "small-square",
+      "color": "#ff8a00",
+      "position": { "x": 11.07, "y": 1.5, "z": 1.5 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "basis": {
+        "xAxis": { "x": 0, "y": 0, "z": 1 },
+        "yAxis": { "x": 0, "y": 1, "z": 0 },
+        "zAxis": { "x": -1, "y": 0, "z": 0 }
+      },
+      "step": 3,
+      "role": "large lower rear wall support behind high end",
+      "subassemblyId": "large-support-box",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "large-left-front-box-support-square",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0
+    }
+  ],
+  "connections": [
+    { "fromTileId": "large-left-long-wedge-side", "fromEdge": 1, "toTileId": "large-rigid-sloped-driving-panel", "toEdge": 0, "kind": "edge" },
+    { "fromTileId": "large-right-long-wedge-side", "fromEdge": 1, "toTileId": "large-rigid-sloped-driving-panel", "toEdge": 2, "kind": "edge" },
+    { "fromTileId": "large-rigid-sloped-driving-panel", "fromEdge": 1, "toTileId": "large-top-platform-panel", "toEdge": 3, "kind": "edge" },
+    { "fromTileId": "large-left-front-box-support-square", "fromEdge": 2, "toTileId": "large-top-platform-panel", "toEdge": 1, "kind": "edge" },
+    { "fromTileId": "large-right-front-box-support-square", "fromEdge": 2, "toTileId": "large-top-platform-panel", "toEdge": 1, "kind": "edge" },
+    { "fromTileId": "large-left-front-box-support-square", "fromEdge": 1, "toTileId": "large-right-front-box-support-square", "toEdge": 3, "kind": "edge" },
+    { "fromTileId": "large-left-front-box-support-square", "fromEdge": 2, "toTileId": "large-left-upper-rear-wall-square", "toEdge": 0, "kind": "edge" },
+    { "fromTileId": "large-right-front-box-support-square", "fromEdge": 2, "toTileId": "large-right-upper-rear-wall-square", "toEdge": 0, "kind": "edge" },
+    { "fromTileId": "large-left-upper-rear-wall-square", "fromEdge": 1, "toTileId": "large-right-upper-rear-wall-square", "toEdge": 3, "kind": "edge" },
+    { "fromTileId": "large-top-platform-panel", "fromEdge": 0, "toTileId": "large-left-rear-side-brace-square", "toEdge": 2, "kind": "edge" },
+    { "fromTileId": "large-top-platform-panel", "fromEdge": 2, "toTileId": "large-right-rear-side-brace-square", "toEdge": 2, "kind": "edge" }
+  ]
+}
