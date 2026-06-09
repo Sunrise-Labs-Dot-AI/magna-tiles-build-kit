@@ -1,0 +1,417 @@
+{
+  "id": "small-car-ramp",
+  "title": "Small Car Ramp",
+  "prompt": "Small Car Ramp",
+  "family": "ramp",
+  "inventoryPreset": "classic-100",
+  "status": "engine-valid",
+  "createdAt": "2026-05-15T21:07:46.320Z",
+  "updatedAt": "2026-06-02T19:17:54.377Z",
+  "notes": "Tile geometry regeneration: right-triangle local geometry now comes from the corrected 45-45-90 catalog constants. Rechecked the macro-derived wedge plus smallLanding support structure; absolute support centers remain unchanged because the corrected geometry changes the local right-triangle vertices, not the accepted landing/support anchor centers. Headless gateBuild passes stands plus rollTest.",
+  "expectedInventory": {
+    "small-square": 5,
+    "large-square": 0,
+    "equilateral-triangle": 0,
+    "right-triangle": 2,
+    "isosceles-triangle": 2
+  },
+  "referenceFrameSrcs": [
+    "/reference-frames/small-car-ramp/bom.jpg",
+    "/reference-frames/small-car-ramp/wedge.jpg",
+    "/reference-frames/small-car-ramp/support.jpg",
+    "/reference-frames/small-car-ramp/test.jpg"
+  ],
+  "visualSignoff": false,
+  "tiles": [
+    {
+      "id": "left-long-wedge-side",
+      "shape": "isosceles-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": 2.8125,
+        "y": 0.726184377413891,
+        "z": -1.59
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -0.25,
+          "y": 0.9682458365518543,
+          "z": 0
+        },
+        "yAxis": {
+          "x": -0.9682458365518543,
+          "y": -0.25,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 1,
+      "role": "left yellow isosceles wedge side with ground edge",
+      "subassemblyId": "wedge",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "root": true
+    },
+    {
+      "id": "right-long-wedge-side",
+      "shape": "isosceles-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": 2.8125,
+        "y": 0.726184377413891,
+        "z": 1.59
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -0.25,
+          "y": 0.9682458365518543,
+          "z": 0
+        },
+        "yAxis": {
+          "x": -0.9682458365518543,
+          "y": -0.25,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 1,
+      "role": "right yellow isosceles wedge side with ground edge",
+      "subassemblyId": "wedge",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "left-long-wedge-side",
+      "parentEdge": 1,
+      "childEdge": 1,
+      "foldAngle": 0
+    },
+    {
+      "id": "lower-sloped-driving-square",
+      "shape": "small-square",
+      "color": "#ff8a00",
+      "position": {
+        "x": 1.3125,
+        "y": 0.7261843774138906,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0.875,
+          "y": 0.4841229182759271,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0.4841229182759271,
+          "y": -0.875,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "lower orange sloped driving square",
+      "subassemblyId": "ramp-plane",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "left-long-wedge-side",
+      "parentEdge": 1,
+      "childEdge": 0,
+      "foldAngle": -1.5707963267948966
+    },
+    {
+      "id": "upper-sloped-driving-square",
+      "shape": "small-square",
+      "color": "#ff8a00",
+      "position": {
+        "x": 3.9375,
+        "y": 2.178553132241672,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0.875,
+          "y": 0.4841229182759271,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0.4841229182759271,
+          "y": -0.875,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "upper orange sloped driving square",
+      "subassemblyId": "ramp-plane",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "lower-sloped-driving-square",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0
+    },
+    {
+      "id": "red-top-landing-square",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": 6.75,
+        "y": 3.06,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "red supported flat top landing square",
+      "subassemblyId": "landing",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "upper-sloped-driving-square",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0.2526802551420787
+    },
+    {
+      "id": "red-vertical-leg-support-square",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": 8.34,
+        "y": 1.5,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "red vertical support square on right-triangle leg",
+      "subassemblyId": "landing-support",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "red-top-landing-square",
+      "parentEdge": 1,
+      "childEdge": 2,
+      "foldAngle": 1.5707963267948966
+    },
+    {
+      "id": "left-green-right-triangle-support",
+      "shape": "right-triangle",
+      "color": "#06d6a0",
+      "position": {
+        "x": 6.75,
+        "y": 1.56,
+        "z": -1.77
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        },
+        "yAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 4,
+      "role": "left green flipped right-triangle side support",
+      "subassemblyId": "landing-support",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "red-top-landing-square",
+      "parentEdge": 0,
+      "childEdge": 2,
+      "foldAngle": 1.5707963267948966
+    },
+    {
+      "id": "right-green-right-triangle-support",
+      "shape": "right-triangle",
+      "color": "#06d6a0",
+      "position": {
+        "x": 6.75,
+        "y": 1.56,
+        "z": 1.77
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        },
+        "yAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 4,
+      "role": "right green flipped right-triangle side support",
+      "subassemblyId": "landing-support",
+      "authoredMode": "edge-snap",
+      "confirmed": true,
+      "parentTileId": "red-top-landing-square",
+      "parentEdge": 2,
+      "childEdge": 2,
+      "foldAngle": 1.5707963267948966
+    }
+  ],
+  "connections": [
+    {
+      "fromTileId": "left-long-wedge-side",
+      "fromEdge": 1,
+      "toTileId": "lower-sloped-driving-square",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "right-long-wedge-side",
+      "fromEdge": 1,
+      "toTileId": "lower-sloped-driving-square",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "left-long-wedge-side",
+      "fromEdge": 1,
+      "toTileId": "upper-sloped-driving-square",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "right-long-wedge-side",
+      "fromEdge": 1,
+      "toTileId": "upper-sloped-driving-square",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "lower-sloped-driving-square",
+      "fromEdge": 1,
+      "toTileId": "upper-sloped-driving-square",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "upper-sloped-driving-square",
+      "fromEdge": 1,
+      "toTileId": "red-top-landing-square",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "red-top-landing-square",
+      "fromEdge": 1,
+      "toTileId": "red-vertical-leg-support-square",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "red-top-landing-square",
+      "fromEdge": 0,
+      "toTileId": "left-green-right-triangle-support",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "red-top-landing-square",
+      "fromEdge": 2,
+      "toTileId": "right-green-right-triangle-support",
+      "toEdge": 2,
+      "kind": "edge"
+    }
+  ]
+}

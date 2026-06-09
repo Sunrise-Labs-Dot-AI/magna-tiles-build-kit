@@ -1,0 +1,2265 @@
+{
+  "id": "snail",
+  "title": "Snail",
+  "prompt": "Snail",
+  "family": "animal",
+  "inventoryPreset": "classic-100",
+  "status": "engine-valid",
+  "createdAt": "2026-06-03T02:25:21.955Z",
+  "updatedAt": "2026-06-03T02:25:21.955Z",
+  "notes": "Macro-authored snail: 7x3 horizontal foot slab, 11 isosceles-triangle radialFan vertical shell, folded shell stabilizers, grounded cube head, one antenna, and an angled right-triangle neck panel.",
+  "expectedInventory": {
+    "small-square": 29,
+    "large-square": 0,
+    "xl-square": 0,
+    "equilateral-triangle": 1,
+    "right-triangle": 1,
+    "isosceles-triangle": 11
+  },
+  "referenceFrameSrcs": [
+    "/reference-frames/snail/f-00-00-05.jpg",
+    "/reference-frames/snail/f-00-00-20.jpg",
+    "/reference-frames/snail/f-00-00-40.jpg",
+    "/reference-frames/snail/f-00-01-00.jpg",
+    "/reference-frames/snail/f-00-01-20.jpg",
+    "/reference-frames/snail/f-00-01-40.jpg",
+    "/reference-frames/snail/f-00-03-00.jpg",
+    "/reference-frames/snail/f-00-05-00.jpg",
+    "/reference-frames/snail/f-00-06-30.jpg",
+    "/reference-frames/snail/f-00-07-20.jpg",
+    "/reference-frames/snail/f-00-07-40.jpg"
+  ],
+  "visualSignoff": false,
+  "tiles": [
+    {
+      "id": "foot-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": -9,
+        "y": 0.09,
+        "z": -3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-2-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": -6,
+        "y": 0.09,
+        "z": -3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-3-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": -3,
+        "y": 0.09,
+        "z": -3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-2-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-4-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 0,
+        "y": 0.09,
+        "z": -3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-3-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-5-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 3,
+        "y": 0.09,
+        "z": -3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-4-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-6-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 6,
+        "y": 0.09,
+        "z": -3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-5-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-7-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 9,
+        "y": 0.09,
+        "z": -3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-6-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-1-2",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": -9,
+        "y": 0.09,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-2-2",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": -6,
+        "y": 0.09,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-2-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-3-2",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": -3,
+        "y": 0.09,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-3-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-4-2",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 0,
+        "y": 0.09,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-4-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-5-2",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 3,
+        "y": 0.09,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-5-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-6-2",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 6,
+        "y": 0.09,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-6-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-7-2",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 9,
+        "y": 0.09,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-7-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-1-3",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": -9,
+        "y": 0.09,
+        "z": 3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-1-2",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-2-3",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": -6,
+        "y": 0.09,
+        "z": 3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-2-2",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-3-3",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": -3,
+        "y": 0.09,
+        "z": 3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-3-2",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-4-3",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 0,
+        "y": 0.09,
+        "z": 3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-4-2",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-5-3",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 3,
+        "y": 0.09,
+        "z": 3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-5-2",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-6-3",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 6,
+        "y": 0.09,
+        "z": 3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-6-2",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "foot-7-3",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 9,
+        "y": 0.09,
+        "z": 3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "snail horizontal foot slab square",
+      "subassemblyId": "snail-foot",
+      "root": false,
+      "parentTileId": "foot-7-2",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "shell-segment-1",
+      "shape": "isosceles-triangle",
+      "color": "#7b2cbf",
+      "position": {
+        "x": -2.220446049250313e-16,
+        "y": 2.8932090498166,
+        "z": 1.4100000000000001
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": -6.137877717348406e-17,
+          "y": 1,
+          "z": 6.123233995736766e-17
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -6.123233995736766e-17,
+          "z": 1
+        }
+      },
+      "step": 2,
+      "role": "shell radial shell triangle segment",
+      "subassemblyId": "snail-shell",
+      "root": false,
+      "parentTileId": "foot-4-2",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": -1.5707963267948966,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "shell-segment-2",
+      "shape": "isosceles-triangle",
+      "color": "#7b2cbf",
+      "position": {
+        "x": 1.3935197320162356,
+        "y": 3.2784133521105288,
+        "z": 1.4100000000000001
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0.8580263093549805,
+          "y": 0.5136057363919053,
+          "z": 3.1449281054803307e-17
+        },
+        "yAxis": {
+          "x": -0.5136057363919051,
+          "y": 0.8580263093549807,
+          "z": 5.253895866678969e-17
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -6.123233995736766e-17,
+          "z": 1
+        }
+      },
+      "step": 3,
+      "role": "shell radial shell triangle segment",
+      "subassemblyId": "snail-shell",
+      "root": false,
+      "parentTileId": "shell-segment-1",
+      "parentEdge": 1,
+      "childEdge": 2,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "shell-segment-3",
+      "shape": "isosceles-triangle",
+      "color": "#7b2cbf",
+      "position": {
+        "x": 2.3913531853504644,
+        "y": 4.324648506094298,
+        "z": 1.4100000000000001
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0.472418295090658,
+          "y": 0.8813744689197867,
+          "z": 5.396862111064075e-17
+        },
+        "yAxis": {
+          "x": -0.8813744689197867,
+          "y": 0.472418295090658,
+          "z": 2.892727764707121e-17
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -6.123233995736766e-17,
+          "z": 1
+        }
+      },
+      "step": 4,
+      "role": "shell radial shell triangle segment",
+      "subassemblyId": "snail-shell",
+      "root": false,
+      "parentTileId": "shell-segment-2",
+      "parentEdge": 1,
+      "childEdge": 2,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "shell-segment-4",
+      "shape": "isosceles-triangle",
+      "color": "#7b2cbf",
+      "position": {
+        "x": 2.710168163964836,
+        "y": 5.734838779580635,
+        "z": 1.4100000000000004
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -0.04733165693816172,
+          "y": 0.9988792290619963,
+          "z": 6.116371253027748e-17
+        },
+        "yAxis": {
+          "x": -0.9988792290619964,
+          "y": -0.04733165693816169,
+          "z": -2.898228108383016e-18
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -6.123233995736766e-17,
+          "z": 1
+        }
+      },
+      "step": 5,
+      "role": "shell radial shell triangle segment",
+      "subassemblyId": "snail-shell",
+      "root": false,
+      "parentTileId": "shell-segment-3",
+      "parentEdge": 1,
+      "childEdge": 2,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "shell-segment-5",
+      "shape": "isosceles-triangle",
+      "color": "#7b2cbf",
+      "position": {
+        "x": 2.2594379895657615,
+        "y": 7.108564337292412,
+        "z": 1.4100000000000004
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -0.5536419089272719,
+          "y": 0.8327548478870397,
+          "z": 5.0991527946965205e-17
+        },
+        "yAxis": {
+          "x": -0.8327548478870396,
+          "y": -0.553641908927272,
+          "z": -3.390078958208071e-17
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -6.123233995736766e-17,
+          "z": 1
+        }
+      },
+      "step": 6,
+      "role": "shell radial shell triangle segment",
+      "subassemblyId": "snail-shell",
+      "root": false,
+      "parentTileId": "shell-segment-4",
+      "parentEdge": 1,
+      "childEdge": 2,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "shell-segment-6",
+      "shape": "isosceles-triangle",
+      "color": "#7b2cbf",
+      "position": {
+        "x": 1.1671463148422578,
+        "y": 8.055759404506173,
+        "z": 1.4100000000000004
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -0.9027469907040653,
+          "y": 0.4301719083979732,
+          "z": 2.6340432535134317e-17
+        },
+        "yAxis": {
+          "x": -0.43017190839797326,
+          "y": -0.9027469907040654,
+          "z": -5.527731063028195e-17
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -6.123233995736766e-17,
+          "z": 1
+        }
+      },
+      "step": 7,
+      "role": "shell radial shell triangle segment",
+      "subassemblyId": "snail-shell",
+      "root": false,
+      "parentTileId": "shell-segment-5",
+      "parentEdge": 1,
+      "childEdge": 2,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "shell-segment-7",
+      "shape": "isosceles-triangle",
+      "color": "#7b2cbf",
+      "position": {
+        "x": -0.25655349956302254,
+        "y": 8.307470422315724,
+        "z": 1.4100000000000004
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -0.9955194285029764,
+          "y": -0.09455721798523548,
+          "z": -5.789959717094858e-18
+        },
+        "yAxis": {
+          "x": 0.09455721798523557,
+          "y": -0.9955194285029765,
+          "z": -6.095798408025863e-17
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -6.123233995736766e-17,
+          "z": 1
+        }
+      },
+      "step": 8,
+      "role": "shell radial shell triangle segment",
+      "subassemblyId": "snail-shell",
+      "root": false,
+      "parentTileId": "shell-segment-6",
+      "parentEdge": 1,
+      "childEdge": 2,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "shell-segment-8",
+      "shape": "isosceles-triangle",
+      "color": "#7b2cbf",
+      "position": {
+        "x": -1.6074056196065887,
+        "y": 7.792224706372199,
+        "z": 1.4100000000000004
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -0.8056167315551116,
+          "y": -0.5924370699394655,
+          "z": -3.6276308069880156e-17
+        },
+        "yAxis": {
+          "x": 0.5924370699394657,
+          "y": -0.8056167315551117,
+          "z": -4.9329797581926e-17
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -6.123233995736766e-17,
+          "z": 1
+        }
+      },
+      "step": 9,
+      "role": "shell radial shell triangle segment",
+      "subassemblyId": "snail-shell",
+      "root": false,
+      "parentTileId": "shell-segment-7",
+      "parentEdge": 1,
+      "childEdge": 2,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "shell-segment-9",
+      "shape": "isosceles-triangle",
+      "color": "#7b2cbf",
+      "position": {
+        "x": -2.5018391232919717,
+        "y": 6.656324928438668,
+        "z": 1.4100000000000004
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -0.38696127335873287,
+          "y": -0.922095967305241,
+          "z": -5.64620937433523e-17
+        },
+        "yAxis": {
+          "x": 0.9220959673052411,
+          "y": -0.38696127335873265,
+          "z": -2.3694544240637794e-17
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -6.123233995736766e-17,
+          "z": 1
+        }
+      },
+      "step": 10,
+      "role": "shell radial shell triangle segment",
+      "subassemblyId": "snail-shell",
+      "root": false,
+      "parentTileId": "shell-segment-8",
+      "parentEdge": 1,
+      "childEdge": 2,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "shell-segment-10",
+      "shape": "isosceles-triangle",
+      "color": "#7b2cbf",
+      "position": {
+        "x": -2.685881959509634,
+        "y": 5.222306855867298,
+        "z": 1.4100000000000001
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0.14157082506851676,
+          "y": -0.9899281294565883,
+          "z": -6.061561575624688e-17
+        },
+        "yAxis": {
+          "x": 0.9899281294565881,
+          "y": 0.14157082506851684,
+          "z": 8.668712888640451e-18
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -6.123233995736766e-17,
+          "z": 1
+        }
+      },
+      "step": 11,
+      "role": "shell radial shell triangle segment",
+      "subassemblyId": "snail-shell",
+      "root": false,
+      "parentTileId": "shell-segment-9",
+      "parentEdge": 1,
+      "childEdge": 2,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "shell-segment-11",
+      "shape": "isosceles-triangle",
+      "color": "#7b2cbf",
+      "position": {
+        "x": -2.107275646870377,
+        "y": 3.897356165087312,
+        "z": 1.4100000000000001
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0.6299042584504915,
+          "y": -0.7766727915833904,
+          "z": -4.7557492409871925e-17
+        },
+        "yAxis": {
+          "x": 0.7766727915833904,
+          "y": 0.6299042584504916,
+          "z": 3.857051169403408e-17
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -6.123233995736766e-17,
+          "z": 1
+        }
+      },
+      "step": 12,
+      "role": "shell radial shell triangle segment",
+      "subassemblyId": "snail-shell",
+      "root": false,
+      "parentTileId": "shell-segment-1",
+      "parentEdge": 2,
+      "childEdge": 1,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "brace-left",
+      "shape": "small-square",
+      "color": "#ffb703",
+      "position": {
+        "x": 2.7408149477571997,
+        "y": 1.0276309724298054,
+        "z": 3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -0.8580263093549806,
+          "y": -0.5136057363919053,
+          "z": -7.401486830834378e-17
+        },
+        "yAxis": {
+          "x": -5.0731126818794326e-18,
+          "y": -1.3563322841046587e-16,
+          "z": 1
+        },
+        "zAxis": {
+          "x": -0.5136057363919053,
+          "y": 0.8580263093549806,
+          "z": 1.1377129862415734e-16
+        }
+      },
+      "step": 13,
+      "role": "snail shell left stabilizing square",
+      "subassemblyId": "snail-shell-braces",
+      "root": false,
+      "parentTileId": "shell-segment-2",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": 1.5707963267948966,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "brace-right",
+      "shape": "small-square",
+      "color": "#ffb703",
+      "position": {
+        "x": -4.28445184498326,
+        "y": 2.1316028472808797,
+        "z": -8.326672684688674e-17
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -0.6299042584504913,
+          "y": 0.7766727915833904,
+          "z": 7.401486830834377e-17
+        },
+        "yAxis": {
+          "x": -6.422310615574472e-17,
+          "y": 4.3210552260370825e-17,
+          "z": -1
+        },
+        "zAxis": {
+          "x": -0.7766727915833904,
+          "y": -0.6299042584504913,
+          "z": 2.2661828263333602e-17
+        }
+      },
+      "step": 13,
+      "role": "snail shell right stabilizing square",
+      "subassemblyId": "snail-shell-braces",
+      "root": false,
+      "parentTileId": "shell-segment-11",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": -1.5707963267948966,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "head-front-1-1",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": -12.18,
+        "y": 1.5,
+        "z": -1.59
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 14,
+      "role": "head front box face",
+      "subassemblyId": "snail-head",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "head-back-1-1",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": -12.18,
+        "y": 1.5,
+        "z": 1.5899999999999999
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 14,
+      "role": "head back box face",
+      "subassemblyId": "snail-head",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "head-left-1-1",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": -13.77,
+        "y": 1.5,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 14,
+      "role": "head left box face",
+      "subassemblyId": "snail-head",
+      "root": false,
+      "parentTileId": "head-front-1-1",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "head-right-1-1",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": -10.59,
+        "y": 1.5,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 14,
+      "role": "head right box face",
+      "subassemblyId": "snail-head",
+      "root": false,
+      "parentTileId": "head-front-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "head-bottom-1-1",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": -12.18,
+        "y": 0.09,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 14,
+      "role": "head bottom box face",
+      "subassemblyId": "snail-head",
+      "root": false,
+      "parentTileId": "head-front-1-1",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "head-top-1-1",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": -12.18,
+        "y": 3.09,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 14,
+      "role": "head top box face",
+      "subassemblyId": "snail-head",
+      "root": false,
+      "parentTileId": "head-front-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "antenna",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": -12.18,
+        "y": 4.299038105676658,
+        "z": -1.59
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": -6.123233995736766e-17
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -6.123233995736766e-17,
+          "z": -1
+        }
+      },
+      "step": 15,
+      "role": "snail triangular antenna point",
+      "subassemblyId": "snail-head",
+      "root": false,
+      "parentTileId": "head-top-1-1",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": -1.5707963267948966,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "neck",
+      "shape": "right-triangle",
+      "color": "#8ecae6",
+      "position": {
+        "x": -3,
+        "y": 1.6800000000000002,
+        "z": 1.59
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 6.123233995736766e-17
+        },
+        "yAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -6.123233995736766e-17,
+          "z": 1
+        }
+      },
+      "step": 14,
+      "role": "snail angled right-triangle neck support",
+      "subassemblyId": "snail-head",
+      "root": false,
+      "parentTileId": "foot-3-2",
+      "parentEdge": 2,
+      "childEdge": 2,
+      "foldAngle": -1.5707963267948966,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    }
+  ],
+  "connections": [
+    {
+      "fromTileId": "foot-1-1",
+      "fromEdge": 1,
+      "toTileId": "foot-2-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-2-1",
+      "fromEdge": 1,
+      "toTileId": "foot-3-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-3-1",
+      "fromEdge": 1,
+      "toTileId": "foot-4-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-4-1",
+      "fromEdge": 1,
+      "toTileId": "foot-5-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-5-1",
+      "fromEdge": 1,
+      "toTileId": "foot-6-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-6-1",
+      "fromEdge": 1,
+      "toTileId": "foot-7-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-1-1",
+      "fromEdge": 2,
+      "toTileId": "foot-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-1-2",
+      "fromEdge": 1,
+      "toTileId": "foot-2-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-2-1",
+      "fromEdge": 2,
+      "toTileId": "foot-2-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-2-2",
+      "fromEdge": 1,
+      "toTileId": "foot-3-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-3-1",
+      "fromEdge": 2,
+      "toTileId": "foot-3-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-3-2",
+      "fromEdge": 1,
+      "toTileId": "foot-4-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-4-1",
+      "fromEdge": 2,
+      "toTileId": "foot-4-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-4-2",
+      "fromEdge": 1,
+      "toTileId": "foot-5-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-5-1",
+      "fromEdge": 2,
+      "toTileId": "foot-5-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-5-2",
+      "fromEdge": 1,
+      "toTileId": "foot-6-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-6-1",
+      "fromEdge": 2,
+      "toTileId": "foot-6-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-6-2",
+      "fromEdge": 1,
+      "toTileId": "foot-7-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-7-1",
+      "fromEdge": 2,
+      "toTileId": "foot-7-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-1-2",
+      "fromEdge": 2,
+      "toTileId": "foot-1-3",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-1-3",
+      "fromEdge": 1,
+      "toTileId": "foot-2-3",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-2-2",
+      "fromEdge": 2,
+      "toTileId": "foot-2-3",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-2-3",
+      "fromEdge": 1,
+      "toTileId": "foot-3-3",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-3-2",
+      "fromEdge": 2,
+      "toTileId": "foot-3-3",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-3-3",
+      "fromEdge": 1,
+      "toTileId": "foot-4-3",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-4-2",
+      "fromEdge": 2,
+      "toTileId": "foot-4-3",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-4-3",
+      "fromEdge": 1,
+      "toTileId": "foot-5-3",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-5-2",
+      "fromEdge": 2,
+      "toTileId": "foot-5-3",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-5-3",
+      "fromEdge": 1,
+      "toTileId": "foot-6-3",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-6-2",
+      "fromEdge": 2,
+      "toTileId": "foot-6-3",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-6-3",
+      "fromEdge": 1,
+      "toTileId": "foot-7-3",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-7-2",
+      "fromEdge": 2,
+      "toTileId": "foot-7-3",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "shell-segment-1",
+      "fromEdge": 1,
+      "toTileId": "shell-segment-2",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "shell-segment-2",
+      "fromEdge": 1,
+      "toTileId": "shell-segment-3",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "shell-segment-3",
+      "fromEdge": 1,
+      "toTileId": "shell-segment-4",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "shell-segment-4",
+      "fromEdge": 1,
+      "toTileId": "shell-segment-5",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "shell-segment-5",
+      "fromEdge": 1,
+      "toTileId": "shell-segment-6",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "shell-segment-6",
+      "fromEdge": 1,
+      "toTileId": "shell-segment-7",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "shell-segment-7",
+      "fromEdge": 1,
+      "toTileId": "shell-segment-8",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "shell-segment-8",
+      "fromEdge": 1,
+      "toTileId": "shell-segment-9",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "shell-segment-9",
+      "fromEdge": 1,
+      "toTileId": "shell-segment-10",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "shell-segment-10",
+      "fromEdge": 1,
+      "toTileId": "shell-segment-11",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "shell-segment-1",
+      "fromEdge": 2,
+      "toTileId": "shell-segment-11",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-4-2",
+      "fromEdge": 2,
+      "toTileId": "shell-segment-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "shell-segment-2",
+      "fromEdge": 0,
+      "toTileId": "brace-left",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "shell-segment-11",
+      "fromEdge": 0,
+      "toTileId": "brace-right",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "head-left-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "head-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-back-1-1",
+      "fromEdge": 1,
+      "toTileId": "head-right-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-front-1-1",
+      "fromEdge": 1,
+      "toTileId": "head-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-right-1-1",
+      "fromEdge": 0,
+      "toTileId": "head-bottom-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-left-1-1",
+      "fromEdge": 0,
+      "toTileId": "head-bottom-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-back-1-1",
+      "fromEdge": 0,
+      "toTileId": "head-bottom-1-1",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-front-1-1",
+      "fromEdge": 0,
+      "toTileId": "head-bottom-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-right-1-1",
+      "fromEdge": 2,
+      "toTileId": "head-top-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-left-1-1",
+      "fromEdge": 2,
+      "toTileId": "head-top-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-back-1-1",
+      "fromEdge": 2,
+      "toTileId": "head-top-1-1",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-front-1-1",
+      "fromEdge": 2,
+      "toTileId": "head-top-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-4-3",
+      "fromEdge": 0,
+      "toTileId": "shell-segment-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-5-3",
+      "fromEdge": 3,
+      "toTileId": "brace-left",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-4-3",
+      "fromEdge": 1,
+      "toTileId": "brace-left",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-1-2",
+      "fromEdge": 3,
+      "toTileId": "head-right-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-1-2",
+      "fromEdge": 3,
+      "toTileId": "head-bottom-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-top-1-1",
+      "fromEdge": 0,
+      "toTileId": "antenna",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-3-2",
+      "fromEdge": 2,
+      "toTileId": "neck",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-front-1-1",
+      "fromEdge": 2,
+      "toTileId": "antenna",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "shell-segment-1",
+      "fromEdge": 2,
+      "toTileId": "neck",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "foot-3-3",
+      "fromEdge": 0,
+      "toTileId": "neck",
+      "toEdge": 2,
+      "kind": "edge"
+    }
+  ]
+}

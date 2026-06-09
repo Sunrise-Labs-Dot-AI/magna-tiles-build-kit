@@ -1,0 +1,3473 @@
+{
+  "id": "castle",
+  "title": "Castle",
+  "prompt": "Castle",
+  "family": "castle",
+  "inventoryPreset": "classic-100",
+  "status": "engine-valid",
+  "createdAt": "2026-06-02T23:00:00.000Z",
+  "updatedAt": "2026-06-02T23:00:00.000Z",
+  "expectedInventory": {
+    "small-square": 44,
+    "large-square": 0,
+    "xl-square": 0,
+    "equilateral-triangle": 16,
+    "right-triangle": 0,
+    "isosceles-triangle": 0
+  },
+  "referenceFrameSrcs": [],
+  "visualSignoff": false,
+  "tiles": [
+    {
+      "id": "keep-front-1-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 1.5,
+        "y": 1.5,
+        "z": -0.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 1,
+      "role": "keep front box face",
+      "subassemblyId": "keep",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "keep-back-1-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 1.5,
+        "y": 1.5,
+        "z": 6.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 1,
+      "role": "keep back box face",
+      "subassemblyId": "keep",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "keep-front-2-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 4.5,
+        "y": 1.5,
+        "z": -0.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 1,
+      "role": "keep front box face",
+      "subassemblyId": "keep",
+      "root": false,
+      "parentTileId": "keep-front-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "keep-back-2-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 4.5,
+        "y": 1.5,
+        "z": 6.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 1,
+      "role": "keep back box face",
+      "subassemblyId": "keep",
+      "root": false,
+      "parentTileId": "keep-back-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "keep-left-1-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": -0.09,
+        "y": 1.5,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "keep left box face",
+      "subassemblyId": "keep",
+      "root": false,
+      "parentTileId": "keep-front-1-1",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "keep-right-1-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 6.09,
+        "y": 1.5,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "keep right box face",
+      "subassemblyId": "keep",
+      "root": false,
+      "parentTileId": "keep-front-2-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "keep-left-2-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": -0.09,
+        "y": 1.5,
+        "z": 4.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "keep left box face",
+      "subassemblyId": "keep",
+      "root": false,
+      "parentTileId": "keep-back-1-1",
+      "parentEdge": 3,
+      "childEdge": 1,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "keep-right-2-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 6.09,
+        "y": 1.5,
+        "z": 4.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "keep right box face",
+      "subassemblyId": "keep",
+      "root": false,
+      "parentTileId": "keep-back-2-1",
+      "parentEdge": 1,
+      "childEdge": 1,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-nw-front-1-1",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 1.5,
+        "z": -3.27
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 2,
+      "role": "tower-nw front box face",
+      "subassemblyId": "tower-nw",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-nw-back-1-1",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 1.5,
+        "z": -0.0900000000000003
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 2,
+      "role": "tower-nw back box face",
+      "subassemblyId": "tower-nw",
+      "root": false,
+      "parentTileId": "keep-front-1-1",
+      "parentEdge": 3,
+      "childEdge": 1,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-nw-front-1-2",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 4.5,
+        "z": -3.27
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 3,
+      "role": "tower-nw front box face",
+      "subassemblyId": "tower-nw",
+      "root": false,
+      "parentTileId": "tower-nw-front-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-nw-back-1-2",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 4.5,
+        "z": -0.0900000000000003
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 3,
+      "role": "tower-nw back box face",
+      "subassemblyId": "tower-nw",
+      "root": false,
+      "parentTileId": "tower-nw-back-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-nw-left-1-1",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": -3.27,
+        "y": 1.5,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "tower-nw left box face",
+      "subassemblyId": "tower-nw",
+      "root": false,
+      "parentTileId": "tower-nw-front-1-1",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-nw-right-1-1",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": -0.0900000000000003,
+        "y": 1.5,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "tower-nw right box face",
+      "subassemblyId": "tower-nw",
+      "root": false,
+      "parentTileId": "tower-nw-front-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-nw-left-1-2",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": -3.27,
+        "y": 4.5,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "tower-nw left box face",
+      "subassemblyId": "tower-nw",
+      "root": false,
+      "parentTileId": "tower-nw-front-1-2",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-nw-right-1-2",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": -0.0900000000000003,
+        "y": 4.5,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "tower-nw right box face",
+      "subassemblyId": "tower-nw",
+      "root": false,
+      "parentTileId": "tower-nw-front-1-2",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-ne-front-1-1",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 7.68,
+        "y": 1.5,
+        "z": -3.27
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 2,
+      "role": "tower-ne front box face",
+      "subassemblyId": "tower-ne",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-ne-back-1-1",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 7.68,
+        "y": 1.5,
+        "z": -0.0900000000000003
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 2,
+      "role": "tower-ne back box face",
+      "subassemblyId": "tower-ne",
+      "root": false,
+      "parentTileId": "keep-front-2-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-ne-front-1-2",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 7.68,
+        "y": 4.5,
+        "z": -3.27
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 3,
+      "role": "tower-ne front box face",
+      "subassemblyId": "tower-ne",
+      "root": false,
+      "parentTileId": "tower-ne-front-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-ne-back-1-2",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 7.68,
+        "y": 4.5,
+        "z": -0.0900000000000003
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 3,
+      "role": "tower-ne back box face",
+      "subassemblyId": "tower-ne",
+      "root": false,
+      "parentTileId": "tower-ne-back-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-ne-left-1-1",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 6.09,
+        "y": 1.5,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "tower-ne left box face",
+      "subassemblyId": "tower-ne",
+      "root": false,
+      "parentTileId": "tower-ne-front-1-1",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-ne-right-1-1",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 9.27,
+        "y": 1.5,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "tower-ne right box face",
+      "subassemblyId": "tower-ne",
+      "root": false,
+      "parentTileId": "tower-ne-front-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-ne-left-1-2",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 6.09,
+        "y": 4.5,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "tower-ne left box face",
+      "subassemblyId": "tower-ne",
+      "root": false,
+      "parentTileId": "tower-ne-front-1-2",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-ne-right-1-2",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 9.27,
+        "y": 4.5,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "tower-ne right box face",
+      "subassemblyId": "tower-ne",
+      "root": false,
+      "parentTileId": "tower-ne-front-1-2",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-sw-front-1-1",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 1.5,
+        "z": 6.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 2,
+      "role": "tower-sw front box face",
+      "subassemblyId": "tower-sw",
+      "root": false,
+      "parentTileId": "keep-back-1-1",
+      "parentEdge": 3,
+      "childEdge": 1,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-sw-back-1-1",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 1.5,
+        "z": 9.27
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 2,
+      "role": "tower-sw back box face",
+      "subassemblyId": "tower-sw",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-sw-front-1-2",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 4.5,
+        "z": 6.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 3,
+      "role": "tower-sw front box face",
+      "subassemblyId": "tower-sw",
+      "root": false,
+      "parentTileId": "tower-sw-front-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-sw-back-1-2",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 4.5,
+        "z": 9.27
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 3,
+      "role": "tower-sw back box face",
+      "subassemblyId": "tower-sw",
+      "root": false,
+      "parentTileId": "tower-sw-back-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-sw-left-1-1",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": -3.27,
+        "y": 1.5,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "tower-sw left box face",
+      "subassemblyId": "tower-sw",
+      "root": false,
+      "parentTileId": "tower-sw-front-1-1",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-sw-right-1-1",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": -0.0900000000000003,
+        "y": 1.5,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "tower-sw right box face",
+      "subassemblyId": "tower-sw",
+      "root": false,
+      "parentTileId": "tower-sw-front-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-sw-left-1-2",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": -3.27,
+        "y": 4.5,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "tower-sw left box face",
+      "subassemblyId": "tower-sw",
+      "root": false,
+      "parentTileId": "tower-sw-front-1-2",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-sw-right-1-2",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": -0.0900000000000003,
+        "y": 4.5,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "tower-sw right box face",
+      "subassemblyId": "tower-sw",
+      "root": false,
+      "parentTileId": "tower-sw-front-1-2",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-se-front-1-1",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 7.68,
+        "y": 1.5,
+        "z": 6.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 2,
+      "role": "tower-se front box face",
+      "subassemblyId": "tower-se",
+      "root": false,
+      "parentTileId": "keep-back-2-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-se-back-1-1",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 7.68,
+        "y": 1.5,
+        "z": 9.27
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 2,
+      "role": "tower-se back box face",
+      "subassemblyId": "tower-se",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-se-front-1-2",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 7.68,
+        "y": 4.5,
+        "z": 6.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 3,
+      "role": "tower-se front box face",
+      "subassemblyId": "tower-se",
+      "root": false,
+      "parentTileId": "tower-se-front-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-se-back-1-2",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 7.68,
+        "y": 4.5,
+        "z": 9.27
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 3,
+      "role": "tower-se back box face",
+      "subassemblyId": "tower-se",
+      "root": false,
+      "parentTileId": "tower-se-back-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-se-left-1-1",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 6.09,
+        "y": 1.5,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "tower-se left box face",
+      "subassemblyId": "tower-se",
+      "root": false,
+      "parentTileId": "tower-se-front-1-1",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-se-right-1-1",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 9.27,
+        "y": 1.5,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "tower-se right box face",
+      "subassemblyId": "tower-se",
+      "root": false,
+      "parentTileId": "tower-se-front-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-se-left-1-2",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 6.09,
+        "y": 4.5,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "tower-se left box face",
+      "subassemblyId": "tower-se",
+      "root": false,
+      "parentTileId": "tower-se-front-1-2",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tower-se-right-1-2",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 9.27,
+        "y": 4.5,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "tower-se right box face",
+      "subassemblyId": "tower-se",
+      "root": false,
+      "parentTileId": "tower-se-front-1-2",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-nw-base-cap",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 6.09,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 4,
+      "role": "cap-nw hidden square nose cone cap",
+      "subassemblyId": "cap-nw",
+      "root": false,
+      "parentTileId": "tower-nw-front-1-2",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-nw-front-face",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 7.3194524524050015,
+        "z": -2.7235499290444496
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0.880832939135831,
+          "z": 0.47342722073549315
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -0.47342722073549315,
+          "z": 0.880832939135831
+        }
+      },
+      "step": 5,
+      "role": "cap-nw front triangular nose cone face",
+      "subassemblyId": "cap-nw",
+      "root": false,
+      "parentTileId": "cap-nw-base-cap",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-nw-right-face",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": -0.6364500709555507,
+        "y": 7.3194524524050015,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": -0.47342722073549315,
+          "y": 0.880832939135831,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -0.880832939135831,
+          "y": -0.47342722073549315,
+          "z": 0
+        }
+      },
+      "step": 6,
+      "role": "cap-nw right triangular nose cone face",
+      "subassemblyId": "cap-nw",
+      "root": false,
+      "parentTileId": "cap-nw-base-cap",
+      "parentEdge": 1,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-nw-back-face",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 7.3194524524050015,
+        "z": -0.6364500709555507
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0.880832939135831,
+          "z": -0.47342722073549315
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -0.47342722073549315,
+          "z": -0.880832939135831
+        }
+      },
+      "step": 7,
+      "role": "cap-nw back triangular nose cone face",
+      "subassemblyId": "cap-nw",
+      "root": false,
+      "parentTileId": "cap-nw-base-cap",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-nw-left-face",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": -2.7235499290444496,
+        "y": 7.3194524524050015,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        },
+        "yAxis": {
+          "x": 0.47342722073549315,
+          "y": 0.880832939135831,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0.880832939135831,
+          "y": -0.47342722073549315,
+          "z": 0
+        }
+      },
+      "step": 8,
+      "role": "cap-nw left triangular nose cone face",
+      "subassemblyId": "cap-nw",
+      "root": false,
+      "parentTileId": "cap-nw-base-cap",
+      "parentEdge": 3,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-ne-base-cap",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 7.68,
+        "y": 6.09,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 4,
+      "role": "cap-ne hidden square nose cone cap",
+      "subassemblyId": "cap-ne",
+      "root": false,
+      "parentTileId": "tower-ne-front-1-2",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-ne-front-face",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": 7.68,
+        "y": 7.3194524524050015,
+        "z": -2.7235499290444496
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0.880832939135831,
+          "z": 0.47342722073549315
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -0.47342722073549315,
+          "z": 0.880832939135831
+        }
+      },
+      "step": 5,
+      "role": "cap-ne front triangular nose cone face",
+      "subassemblyId": "cap-ne",
+      "root": false,
+      "parentTileId": "cap-ne-base-cap",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-ne-right-face",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": 8.723549929044449,
+        "y": 7.3194524524050015,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": -0.47342722073549315,
+          "y": 0.880832939135831,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -0.880832939135831,
+          "y": -0.47342722073549315,
+          "z": 0
+        }
+      },
+      "step": 6,
+      "role": "cap-ne right triangular nose cone face",
+      "subassemblyId": "cap-ne",
+      "root": false,
+      "parentTileId": "cap-ne-base-cap",
+      "parentEdge": 1,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-ne-back-face",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": 7.68,
+        "y": 7.3194524524050015,
+        "z": -0.6364500709555507
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0.880832939135831,
+          "z": -0.47342722073549315
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -0.47342722073549315,
+          "z": -0.880832939135831
+        }
+      },
+      "step": 7,
+      "role": "cap-ne back triangular nose cone face",
+      "subassemblyId": "cap-ne",
+      "root": false,
+      "parentTileId": "cap-ne-base-cap",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-ne-left-face",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": 6.63645007095555,
+        "y": 7.3194524524050015,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        },
+        "yAxis": {
+          "x": 0.47342722073549315,
+          "y": 0.880832939135831,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0.880832939135831,
+          "y": -0.47342722073549315,
+          "z": 0
+        }
+      },
+      "step": 8,
+      "role": "cap-ne left triangular nose cone face",
+      "subassemblyId": "cap-ne",
+      "root": false,
+      "parentTileId": "cap-ne-base-cap",
+      "parentEdge": 3,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-sw-base-cap",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 6.09,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 4,
+      "role": "cap-sw hidden square nose cone cap",
+      "subassemblyId": "cap-sw",
+      "root": false,
+      "parentTileId": "tower-sw-front-1-2",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-sw-front-face",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 7.3194524524050015,
+        "z": 6.63645007095555
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0.880832939135831,
+          "z": 0.47342722073549315
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -0.47342722073549315,
+          "z": 0.880832939135831
+        }
+      },
+      "step": 5,
+      "role": "cap-sw front triangular nose cone face",
+      "subassemblyId": "cap-sw",
+      "root": false,
+      "parentTileId": "cap-sw-base-cap",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-sw-right-face",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": -0.6364500709555507,
+        "y": 7.3194524524050015,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": -0.47342722073549315,
+          "y": 0.880832939135831,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -0.880832939135831,
+          "y": -0.47342722073549315,
+          "z": 0
+        }
+      },
+      "step": 6,
+      "role": "cap-sw right triangular nose cone face",
+      "subassemblyId": "cap-sw",
+      "root": false,
+      "parentTileId": "cap-sw-base-cap",
+      "parentEdge": 1,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-sw-back-face",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 7.3194524524050015,
+        "z": 8.723549929044449
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0.880832939135831,
+          "z": -0.47342722073549315
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -0.47342722073549315,
+          "z": -0.880832939135831
+        }
+      },
+      "step": 7,
+      "role": "cap-sw back triangular nose cone face",
+      "subassemblyId": "cap-sw",
+      "root": false,
+      "parentTileId": "cap-sw-base-cap",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-sw-left-face",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": -2.7235499290444496,
+        "y": 7.3194524524050015,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        },
+        "yAxis": {
+          "x": 0.47342722073549315,
+          "y": 0.880832939135831,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0.880832939135831,
+          "y": -0.47342722073549315,
+          "z": 0
+        }
+      },
+      "step": 8,
+      "role": "cap-sw left triangular nose cone face",
+      "subassemblyId": "cap-sw",
+      "root": false,
+      "parentTileId": "cap-sw-base-cap",
+      "parentEdge": 3,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-se-base-cap",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 7.68,
+        "y": 6.09,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 4,
+      "role": "cap-se hidden square nose cone cap",
+      "subassemblyId": "cap-se",
+      "root": false,
+      "parentTileId": "tower-se-front-1-2",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-se-front-face",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": 7.68,
+        "y": 7.3194524524050015,
+        "z": 6.63645007095555
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0.880832939135831,
+          "z": 0.47342722073549315
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -0.47342722073549315,
+          "z": 0.880832939135831
+        }
+      },
+      "step": 5,
+      "role": "cap-se front triangular nose cone face",
+      "subassemblyId": "cap-se",
+      "root": false,
+      "parentTileId": "cap-se-base-cap",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-se-right-face",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": 8.723549929044449,
+        "y": 7.3194524524050015,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": -0.47342722073549315,
+          "y": 0.880832939135831,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -0.880832939135831,
+          "y": -0.47342722073549315,
+          "z": 0
+        }
+      },
+      "step": 6,
+      "role": "cap-se right triangular nose cone face",
+      "subassemblyId": "cap-se",
+      "root": false,
+      "parentTileId": "cap-se-base-cap",
+      "parentEdge": 1,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-se-back-face",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": 7.68,
+        "y": 7.3194524524050015,
+        "z": 8.723549929044449
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0.880832939135831,
+          "z": -0.47342722073549315
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -0.47342722073549315,
+          "z": -0.880832939135831
+        }
+      },
+      "step": 7,
+      "role": "cap-se back triangular nose cone face",
+      "subassemblyId": "cap-se",
+      "root": false,
+      "parentTileId": "cap-se-base-cap",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "cap-se-left-face",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": 6.63645007095555,
+        "y": 7.3194524524050015,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        },
+        "yAxis": {
+          "x": 0.47342722073549315,
+          "y": 0.880832939135831,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0.880832939135831,
+          "y": -0.47342722073549315,
+          "z": 0
+        }
+      },
+      "step": 8,
+      "role": "cap-se left triangular nose cone face",
+      "subassemblyId": "cap-se",
+      "root": false,
+      "parentTileId": "cap-se-base-cap",
+      "parentEdge": 3,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    }
+  ],
+  "connections": [
+    {
+      "fromTileId": "keep-front-1-1",
+      "fromEdge": 1,
+      "toTileId": "keep-front-2-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-back-1-1",
+      "fromEdge": 1,
+      "toTileId": "keep-back-2-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "keep-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-front-2-1",
+      "fromEdge": 1,
+      "toTileId": "keep-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-left-1-1",
+      "fromEdge": 1,
+      "toTileId": "keep-left-2-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "keep-left-2-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-right-1-1",
+      "fromEdge": 1,
+      "toTileId": "keep-right-2-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-back-2-1",
+      "fromEdge": 1,
+      "toTileId": "keep-right-2-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-front-1-1",
+      "fromEdge": 2,
+      "toTileId": "tower-nw-front-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-back-1-1",
+      "fromEdge": 2,
+      "toTileId": "tower-nw-back-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "tower-nw-left-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "tower-nw-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-back-1-1",
+      "fromEdge": 1,
+      "toTileId": "tower-nw-right-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-front-1-1",
+      "fromEdge": 1,
+      "toTileId": "tower-nw-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-left-1-1",
+      "fromEdge": 2,
+      "toTileId": "tower-nw-left-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-back-1-2",
+      "fromEdge": 3,
+      "toTileId": "tower-nw-left-1-2",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-front-1-2",
+      "fromEdge": 3,
+      "toTileId": "tower-nw-left-1-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-right-1-1",
+      "fromEdge": 2,
+      "toTileId": "tower-nw-right-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-back-1-2",
+      "fromEdge": 1,
+      "toTileId": "tower-nw-right-1-2",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-front-1-2",
+      "fromEdge": 1,
+      "toTileId": "tower-nw-right-1-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-front-1-1",
+      "fromEdge": 2,
+      "toTileId": "tower-ne-front-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-back-1-1",
+      "fromEdge": 2,
+      "toTileId": "tower-ne-back-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "tower-ne-left-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "tower-ne-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-back-1-1",
+      "fromEdge": 1,
+      "toTileId": "tower-ne-right-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-front-1-1",
+      "fromEdge": 1,
+      "toTileId": "tower-ne-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-left-1-1",
+      "fromEdge": 2,
+      "toTileId": "tower-ne-left-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-back-1-2",
+      "fromEdge": 3,
+      "toTileId": "tower-ne-left-1-2",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-front-1-2",
+      "fromEdge": 3,
+      "toTileId": "tower-ne-left-1-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-right-1-1",
+      "fromEdge": 2,
+      "toTileId": "tower-ne-right-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-back-1-2",
+      "fromEdge": 1,
+      "toTileId": "tower-ne-right-1-2",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-front-1-2",
+      "fromEdge": 1,
+      "toTileId": "tower-ne-right-1-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-front-1-1",
+      "fromEdge": 2,
+      "toTileId": "tower-sw-front-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-back-1-1",
+      "fromEdge": 2,
+      "toTileId": "tower-sw-back-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "tower-sw-left-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "tower-sw-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-back-1-1",
+      "fromEdge": 1,
+      "toTileId": "tower-sw-right-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-front-1-1",
+      "fromEdge": 1,
+      "toTileId": "tower-sw-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-left-1-1",
+      "fromEdge": 2,
+      "toTileId": "tower-sw-left-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-back-1-2",
+      "fromEdge": 3,
+      "toTileId": "tower-sw-left-1-2",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-front-1-2",
+      "fromEdge": 3,
+      "toTileId": "tower-sw-left-1-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-right-1-1",
+      "fromEdge": 2,
+      "toTileId": "tower-sw-right-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-back-1-2",
+      "fromEdge": 1,
+      "toTileId": "tower-sw-right-1-2",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-front-1-2",
+      "fromEdge": 1,
+      "toTileId": "tower-sw-right-1-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-front-1-1",
+      "fromEdge": 2,
+      "toTileId": "tower-se-front-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-back-1-1",
+      "fromEdge": 2,
+      "toTileId": "tower-se-back-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "tower-se-left-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "tower-se-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-back-1-1",
+      "fromEdge": 1,
+      "toTileId": "tower-se-right-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-front-1-1",
+      "fromEdge": 1,
+      "toTileId": "tower-se-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-left-1-1",
+      "fromEdge": 2,
+      "toTileId": "tower-se-left-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-back-1-2",
+      "fromEdge": 3,
+      "toTileId": "tower-se-left-1-2",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-front-1-2",
+      "fromEdge": 3,
+      "toTileId": "tower-se-left-1-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-right-1-1",
+      "fromEdge": 2,
+      "toTileId": "tower-se-right-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-back-1-2",
+      "fromEdge": 1,
+      "toTileId": "tower-se-right-1-2",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-front-1-2",
+      "fromEdge": 1,
+      "toTileId": "tower-se-right-1-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-nw-base-cap",
+      "fromEdge": 0,
+      "toTileId": "cap-nw-front-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-nw-front-face",
+      "fromEdge": 1,
+      "toTileId": "cap-nw-right-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-nw-base-cap",
+      "fromEdge": 1,
+      "toTileId": "cap-nw-right-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-nw-right-face",
+      "fromEdge": 1,
+      "toTileId": "cap-nw-back-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-nw-base-cap",
+      "fromEdge": 2,
+      "toTileId": "cap-nw-back-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-nw-back-face",
+      "fromEdge": 1,
+      "toTileId": "cap-nw-left-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-nw-front-face",
+      "fromEdge": 2,
+      "toTileId": "cap-nw-left-face",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-nw-base-cap",
+      "fromEdge": 3,
+      "toTileId": "cap-nw-left-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-ne-base-cap",
+      "fromEdge": 0,
+      "toTileId": "cap-ne-front-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-ne-front-face",
+      "fromEdge": 1,
+      "toTileId": "cap-ne-right-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-ne-base-cap",
+      "fromEdge": 1,
+      "toTileId": "cap-ne-right-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-ne-right-face",
+      "fromEdge": 1,
+      "toTileId": "cap-ne-back-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-ne-base-cap",
+      "fromEdge": 2,
+      "toTileId": "cap-ne-back-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-ne-back-face",
+      "fromEdge": 1,
+      "toTileId": "cap-ne-left-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-ne-front-face",
+      "fromEdge": 2,
+      "toTileId": "cap-ne-left-face",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-ne-base-cap",
+      "fromEdge": 3,
+      "toTileId": "cap-ne-left-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-sw-base-cap",
+      "fromEdge": 0,
+      "toTileId": "cap-sw-front-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-sw-front-face",
+      "fromEdge": 1,
+      "toTileId": "cap-sw-right-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-sw-base-cap",
+      "fromEdge": 1,
+      "toTileId": "cap-sw-right-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-sw-right-face",
+      "fromEdge": 1,
+      "toTileId": "cap-sw-back-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-sw-base-cap",
+      "fromEdge": 2,
+      "toTileId": "cap-sw-back-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-sw-back-face",
+      "fromEdge": 1,
+      "toTileId": "cap-sw-left-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-sw-front-face",
+      "fromEdge": 2,
+      "toTileId": "cap-sw-left-face",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-sw-base-cap",
+      "fromEdge": 3,
+      "toTileId": "cap-sw-left-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-se-base-cap",
+      "fromEdge": 0,
+      "toTileId": "cap-se-front-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-se-front-face",
+      "fromEdge": 1,
+      "toTileId": "cap-se-right-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-se-base-cap",
+      "fromEdge": 1,
+      "toTileId": "cap-se-right-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-se-right-face",
+      "fromEdge": 1,
+      "toTileId": "cap-se-back-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-se-base-cap",
+      "fromEdge": 2,
+      "toTileId": "cap-se-back-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-se-back-face",
+      "fromEdge": 1,
+      "toTileId": "cap-se-left-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-se-front-face",
+      "fromEdge": 2,
+      "toTileId": "cap-se-left-face",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "cap-se-base-cap",
+      "fromEdge": 3,
+      "toTileId": "cap-se-left-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-left-1-1",
+      "fromEdge": 3,
+      "toTileId": "tower-nw-back-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "tower-nw-back-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-left-1-1",
+      "fromEdge": 3,
+      "toTileId": "tower-nw-right-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "tower-nw-right-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-right-1-1",
+      "fromEdge": 3,
+      "toTileId": "tower-ne-back-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-front-2-1",
+      "fromEdge": 1,
+      "toTileId": "tower-ne-back-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-right-1-1",
+      "fromEdge": 3,
+      "toTileId": "tower-ne-left-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-front-2-1",
+      "fromEdge": 1,
+      "toTileId": "tower-ne-left-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-left-2-1",
+      "fromEdge": 1,
+      "toTileId": "tower-sw-front-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "tower-sw-front-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-left-2-1",
+      "fromEdge": 1,
+      "toTileId": "tower-sw-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "tower-sw-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-right-2-1",
+      "fromEdge": 1,
+      "toTileId": "tower-se-front-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-back-2-1",
+      "fromEdge": 1,
+      "toTileId": "tower-se-front-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-right-2-1",
+      "fromEdge": 1,
+      "toTileId": "tower-se-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "keep-back-2-1",
+      "fromEdge": 1,
+      "toTileId": "tower-se-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-right-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-nw-base-cap",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-left-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-nw-base-cap",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-back-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-nw-base-cap",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-front-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-nw-base-cap",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-front-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-nw-front-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-right-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-nw-right-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-back-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-nw-back-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-nw-left-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-nw-left-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-right-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-ne-base-cap",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-left-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-ne-base-cap",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-back-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-ne-base-cap",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-front-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-ne-base-cap",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-front-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-ne-front-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-right-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-ne-right-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-back-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-ne-back-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-ne-left-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-ne-left-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-right-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-sw-base-cap",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-left-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-sw-base-cap",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-back-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-sw-base-cap",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-front-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-sw-base-cap",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-front-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-sw-front-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-right-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-sw-right-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-back-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-sw-back-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-sw-left-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-sw-left-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-right-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-se-base-cap",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-left-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-se-base-cap",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-back-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-se-base-cap",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-front-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-se-base-cap",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-front-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-se-front-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-right-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-se-right-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-back-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-se-back-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "tower-se-left-1-2",
+      "fromEdge": 2,
+      "toTileId": "cap-se-left-face",
+      "toEdge": 0,
+      "kind": "edge"
+    }
+  ],
+  "notes": "Macro-authored castle: a one-story square keep wall shell, four connected two-story corner tower shells, and four triangular pyramid caps. Towers are offset by exactly one panel thickness at the keep corners so panels touch cleanly without raw overlap."
+}

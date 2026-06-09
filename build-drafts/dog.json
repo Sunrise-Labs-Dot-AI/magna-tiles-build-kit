@@ -1,0 +1,2738 @@
+{
+  "id": "dog",
+  "title": "Dog",
+  "prompt": "Dog",
+  "family": "animal",
+  "inventoryPreset": "classic-100",
+  "status": "engine-valid",
+  "createdAt": "2026-06-02T23:30:00.000Z",
+  "updatedAt": "2026-06-02T23:30:00.000Z",
+  "notes": "Macro-authored four-legged dog: a raised rectangular torso on four open-box square legs, a raised front head box, mirrored triangular ears, and a rear triangular tail. Triangle details use small clearance offsets while retaining valid magnetic edge joins.",
+  "expectedInventory": {
+    "small-square": 46,
+    "large-square": 0,
+    "xl-square": 0,
+    "equilateral-triangle": 3,
+    "right-triangle": 0,
+    "isosceles-triangle": 0
+  },
+  "referenceFrameSrcs": [],
+  "visualSignoff": false,
+  "tiles": [
+    {
+      "id": "rear-left-leg-front-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 1.5,
+        "y": 1.5,
+        "z": -0.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 1,
+      "role": "rear-left-leg front box face",
+      "subassemblyId": "legs",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "rear-left-leg-back-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 1.5,
+        "y": 1.5,
+        "z": 3.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 1,
+      "role": "rear-left-leg back box face",
+      "subassemblyId": "legs",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "rear-left-leg-left-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": -0.09,
+        "y": 1.5,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "rear-left-leg left box face",
+      "subassemblyId": "legs",
+      "root": false,
+      "parentTileId": "rear-left-leg-front-1-1",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "rear-left-leg-right-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 3.09,
+        "y": 1.5,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "rear-left-leg right box face",
+      "subassemblyId": "legs",
+      "root": false,
+      "parentTileId": "rear-left-leg-front-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "rear-left-leg-bottom-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 1.5,
+        "y": 0.09,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "rear-left-leg bottom box face",
+      "subassemblyId": "legs",
+      "root": false,
+      "parentTileId": "rear-left-leg-front-1-1",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "rear-right-leg-front-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 1.5,
+        "y": 1.5,
+        "z": 5.91
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 1,
+      "role": "rear-right-leg front box face",
+      "subassemblyId": "legs",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "rear-right-leg-back-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 1.5,
+        "y": 1.5,
+        "z": 9.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 1,
+      "role": "rear-right-leg back box face",
+      "subassemblyId": "legs",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "rear-right-leg-left-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": -0.09,
+        "y": 1.5,
+        "z": 7.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "rear-right-leg left box face",
+      "subassemblyId": "legs",
+      "root": false,
+      "parentTileId": "rear-right-leg-front-1-1",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "rear-right-leg-right-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 3.09,
+        "y": 1.5,
+        "z": 7.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "rear-right-leg right box face",
+      "subassemblyId": "legs",
+      "root": false,
+      "parentTileId": "rear-right-leg-front-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "rear-right-leg-bottom-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 1.5,
+        "y": 0.09,
+        "z": 7.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "rear-right-leg bottom box face",
+      "subassemblyId": "legs",
+      "root": false,
+      "parentTileId": "rear-right-leg-front-1-1",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "front-left-leg-front-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 7.5,
+        "y": 1.5,
+        "z": -0.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 1,
+      "role": "front-left-leg front box face",
+      "subassemblyId": "legs",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "front-left-leg-back-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 7.5,
+        "y": 1.5,
+        "z": 3.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 1,
+      "role": "front-left-leg back box face",
+      "subassemblyId": "legs",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "front-left-leg-left-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 5.91,
+        "y": 1.5,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "front-left-leg left box face",
+      "subassemblyId": "legs",
+      "root": false,
+      "parentTileId": "front-left-leg-front-1-1",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "front-left-leg-right-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 9.09,
+        "y": 1.5,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "front-left-leg right box face",
+      "subassemblyId": "legs",
+      "root": false,
+      "parentTileId": "front-left-leg-front-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "front-left-leg-bottom-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 7.5,
+        "y": 0.09,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "front-left-leg bottom box face",
+      "subassemblyId": "legs",
+      "root": false,
+      "parentTileId": "front-left-leg-front-1-1",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "front-right-leg-front-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 7.5,
+        "y": 1.5,
+        "z": 5.91
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 1,
+      "role": "front-right-leg front box face",
+      "subassemblyId": "legs",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "front-right-leg-back-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 7.5,
+        "y": 1.5,
+        "z": 9.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 1,
+      "role": "front-right-leg back box face",
+      "subassemblyId": "legs",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "front-right-leg-left-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 5.91,
+        "y": 1.5,
+        "z": 7.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "front-right-leg left box face",
+      "subassemblyId": "legs",
+      "root": false,
+      "parentTileId": "front-right-leg-front-1-1",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "front-right-leg-right-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 9.09,
+        "y": 1.5,
+        "z": 7.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "front-right-leg right box face",
+      "subassemblyId": "legs",
+      "root": false,
+      "parentTileId": "front-right-leg-front-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "front-right-leg-bottom-1-1",
+      "shape": "small-square",
+      "color": "#06d6a0",
+      "position": {
+        "x": 7.5,
+        "y": 0.09,
+        "z": 7.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "front-right-leg bottom box face",
+      "subassemblyId": "legs",
+      "root": false,
+      "parentTileId": "front-right-leg-front-1-1",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-front-1-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 1.5,
+        "y": 4.5,
+        "z": -0.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 2,
+      "role": "body front box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "rear-left-leg-front-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-back-1-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 1.5,
+        "y": 4.5,
+        "z": 9.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 2,
+      "role": "body back box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "rear-right-leg-back-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-front-2-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 4.5,
+        "y": 4.5,
+        "z": -0.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 2,
+      "role": "body front box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-front-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-back-2-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 4.5,
+        "y": 4.5,
+        "z": 9.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 2,
+      "role": "body back box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-back-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-front-3-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 7.5,
+        "y": 4.5,
+        "z": -0.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 2,
+      "role": "body front box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-front-2-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-back-3-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 7.5,
+        "y": 4.5,
+        "z": 9.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 2,
+      "role": "body back box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-back-2-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-left-1-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": -0.09,
+        "y": 4.5,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "body left box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-front-1-1",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-right-1-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 9.09,
+        "y": 4.5,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "body right box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-front-3-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-left-2-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": -0.09,
+        "y": 4.5,
+        "z": 4.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "body left box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-left-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-right-2-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 9.09,
+        "y": 4.5,
+        "z": 4.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "body right box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-right-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-left-3-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": -0.09,
+        "y": 4.5,
+        "z": 7.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "body left box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-back-1-1",
+      "parentEdge": 3,
+      "childEdge": 1,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-right-3-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 9.09,
+        "y": 4.5,
+        "z": 7.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "body right box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-back-3-1",
+      "parentEdge": 1,
+      "childEdge": 1,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-top-1-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 1.5,
+        "y": 6.09,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "body top box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-front-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-top-2-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 4.5,
+        "y": 6.09,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "body top box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-front-2-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-top-3-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 7.5,
+        "y": 6.09,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "body top box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-front-3-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-top-1-2",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 1.5,
+        "y": 6.09,
+        "z": 4.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "body top box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-left-2-1",
+      "parentEdge": 2,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-top-2-2",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 4.5,
+        "y": 6.09,
+        "z": 4.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "body top box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-top-2-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-top-3-2",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 7.5,
+        "y": 6.09,
+        "z": 4.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "body top box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-right-2-1",
+      "parentEdge": 2,
+      "childEdge": 1,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-top-1-3",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 1.5,
+        "y": 6.09,
+        "z": 7.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 4,
+      "role": "body top box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-back-1-1",
+      "parentEdge": 2,
+      "childEdge": 2,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-top-2-3",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 4.5,
+        "y": 6.09,
+        "z": 7.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 4,
+      "role": "body top box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-back-2-1",
+      "parentEdge": 2,
+      "childEdge": 2,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-top-3-3",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 7.5,
+        "y": 6.09,
+        "z": 7.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 4,
+      "role": "body top box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-back-3-1",
+      "parentEdge": 2,
+      "childEdge": 2,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "head-front-1-1",
+      "shape": "small-square",
+      "color": "#ffb703",
+      "position": {
+        "x": 7.5,
+        "y": 7.68,
+        "z": 2.91
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 3,
+      "role": "head front box face",
+      "subassemblyId": "head",
+      "root": false,
+      "parentTileId": "body-top-3-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "head-back-1-1",
+      "shape": "small-square",
+      "color": "#ffb703",
+      "position": {
+        "x": 7.5,
+        "y": 7.68,
+        "z": 6.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 3,
+      "role": "head back box face",
+      "subassemblyId": "head",
+      "root": false,
+      "parentTileId": "body-top-3-2",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "head-left-1-1",
+      "shape": "small-square",
+      "color": "#ffb703",
+      "position": {
+        "x": 5.91,
+        "y": 7.68,
+        "z": 4.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "head left box face",
+      "subassemblyId": "head",
+      "root": false,
+      "parentTileId": "head-front-1-1",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "head-right-1-1",
+      "shape": "small-square",
+      "color": "#ffb703",
+      "position": {
+        "x": 9.09,
+        "y": 7.68,
+        "z": 4.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "head right box face",
+      "subassemblyId": "head",
+      "root": false,
+      "parentTileId": "head-front-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "head-top-1-1",
+      "shape": "small-square",
+      "color": "#ffb703",
+      "position": {
+        "x": 7.5,
+        "y": 9.27,
+        "z": 4.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "head top box face",
+      "subassemblyId": "head",
+      "root": false,
+      "parentTileId": "head-front-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "left-ear",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": 7.5,
+        "y": 10.749038105676657,
+        "z": 3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": -6.123233995736766e-17
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -6.123233995736766e-17,
+          "z": -1
+        }
+      },
+      "step": 4,
+      "role": "left triangular dog ear",
+      "subassemblyId": "ears",
+      "root": false,
+      "parentTileId": "head-front-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "left-ear-mirror",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": 7.5,
+        "y": 10.749038105676657,
+        "z": 6
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 6.123233995736766e-17
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -6.123233995736766e-17,
+          "z": 1
+        }
+      },
+      "step": 4,
+      "role": "right triangular dog ear",
+      "subassemblyId": "ears",
+      "root": false,
+      "parentTileId": "head-back-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "mirrored": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "tail",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": -1.299038105676658,
+        "y": 6.09,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 4,
+      "role": "raised triangular dog tail",
+      "subassemblyId": "tail",
+      "root": false,
+      "parentTileId": "body-top-1-1",
+      "parentEdge": 3,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    }
+  ],
+  "connections": [
+    {
+      "fromTileId": "rear-left-leg-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "rear-left-leg-left-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "rear-left-leg-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "rear-left-leg-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "rear-left-leg-back-1-1",
+      "fromEdge": 1,
+      "toTileId": "rear-left-leg-right-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "rear-left-leg-front-1-1",
+      "fromEdge": 1,
+      "toTileId": "rear-left-leg-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "rear-left-leg-right-1-1",
+      "fromEdge": 0,
+      "toTileId": "rear-left-leg-bottom-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "rear-left-leg-left-1-1",
+      "fromEdge": 0,
+      "toTileId": "rear-left-leg-bottom-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "rear-left-leg-back-1-1",
+      "fromEdge": 0,
+      "toTileId": "rear-left-leg-bottom-1-1",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "rear-left-leg-front-1-1",
+      "fromEdge": 0,
+      "toTileId": "rear-left-leg-bottom-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "rear-right-leg-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "rear-right-leg-left-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "rear-right-leg-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "rear-right-leg-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "rear-right-leg-back-1-1",
+      "fromEdge": 1,
+      "toTileId": "rear-right-leg-right-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "rear-right-leg-front-1-1",
+      "fromEdge": 1,
+      "toTileId": "rear-right-leg-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "rear-right-leg-right-1-1",
+      "fromEdge": 0,
+      "toTileId": "rear-right-leg-bottom-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "rear-right-leg-left-1-1",
+      "fromEdge": 0,
+      "toTileId": "rear-right-leg-bottom-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "rear-right-leg-back-1-1",
+      "fromEdge": 0,
+      "toTileId": "rear-right-leg-bottom-1-1",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "rear-right-leg-front-1-1",
+      "fromEdge": 0,
+      "toTileId": "rear-right-leg-bottom-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-left-leg-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "front-left-leg-left-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-left-leg-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "front-left-leg-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-left-leg-back-1-1",
+      "fromEdge": 1,
+      "toTileId": "front-left-leg-right-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-left-leg-front-1-1",
+      "fromEdge": 1,
+      "toTileId": "front-left-leg-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-left-leg-right-1-1",
+      "fromEdge": 0,
+      "toTileId": "front-left-leg-bottom-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-left-leg-left-1-1",
+      "fromEdge": 0,
+      "toTileId": "front-left-leg-bottom-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-left-leg-back-1-1",
+      "fromEdge": 0,
+      "toTileId": "front-left-leg-bottom-1-1",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-left-leg-front-1-1",
+      "fromEdge": 0,
+      "toTileId": "front-left-leg-bottom-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-right-leg-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "front-right-leg-left-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-right-leg-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "front-right-leg-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-right-leg-back-1-1",
+      "fromEdge": 1,
+      "toTileId": "front-right-leg-right-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-right-leg-front-1-1",
+      "fromEdge": 1,
+      "toTileId": "front-right-leg-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-right-leg-right-1-1",
+      "fromEdge": 0,
+      "toTileId": "front-right-leg-bottom-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-right-leg-left-1-1",
+      "fromEdge": 0,
+      "toTileId": "front-right-leg-bottom-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-right-leg-back-1-1",
+      "fromEdge": 0,
+      "toTileId": "front-right-leg-bottom-1-1",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-right-leg-front-1-1",
+      "fromEdge": 0,
+      "toTileId": "front-right-leg-bottom-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-front-1-1",
+      "fromEdge": 1,
+      "toTileId": "body-front-2-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-back-1-1",
+      "fromEdge": 1,
+      "toTileId": "body-back-2-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-front-2-1",
+      "fromEdge": 1,
+      "toTileId": "body-front-3-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-back-2-1",
+      "fromEdge": 1,
+      "toTileId": "body-back-3-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "body-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-front-3-1",
+      "fromEdge": 1,
+      "toTileId": "body-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-left-1-1",
+      "fromEdge": 1,
+      "toTileId": "body-left-2-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-right-1-1",
+      "fromEdge": 1,
+      "toTileId": "body-right-2-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-left-2-1",
+      "fromEdge": 1,
+      "toTileId": "body-left-3-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "body-left-3-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-right-2-1",
+      "fromEdge": 1,
+      "toTileId": "body-right-3-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-back-3-1",
+      "fromEdge": 1,
+      "toTileId": "body-right-3-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-left-1-1",
+      "fromEdge": 2,
+      "toTileId": "body-top-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-front-1-1",
+      "fromEdge": 2,
+      "toTileId": "body-top-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-1-1",
+      "fromEdge": 1,
+      "toTileId": "body-top-2-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-front-2-1",
+      "fromEdge": 2,
+      "toTileId": "body-top-2-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-2-1",
+      "fromEdge": 1,
+      "toTileId": "body-top-3-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-right-1-1",
+      "fromEdge": 2,
+      "toTileId": "body-top-3-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-front-3-1",
+      "fromEdge": 2,
+      "toTileId": "body-top-3-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-1-1",
+      "fromEdge": 2,
+      "toTileId": "body-top-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-left-2-1",
+      "fromEdge": 2,
+      "toTileId": "body-top-1-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-1-2",
+      "fromEdge": 1,
+      "toTileId": "body-top-2-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-2-1",
+      "fromEdge": 2,
+      "toTileId": "body-top-2-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-2-2",
+      "fromEdge": 1,
+      "toTileId": "body-top-3-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-3-1",
+      "fromEdge": 2,
+      "toTileId": "body-top-3-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-right-2-1",
+      "fromEdge": 2,
+      "toTileId": "body-top-3-2",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-1-2",
+      "fromEdge": 2,
+      "toTileId": "body-top-1-3",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-left-3-1",
+      "fromEdge": 2,
+      "toTileId": "body-top-1-3",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-back-1-1",
+      "fromEdge": 2,
+      "toTileId": "body-top-1-3",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-1-3",
+      "fromEdge": 1,
+      "toTileId": "body-top-2-3",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-2-2",
+      "fromEdge": 2,
+      "toTileId": "body-top-2-3",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-back-2-1",
+      "fromEdge": 2,
+      "toTileId": "body-top-2-3",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-2-3",
+      "fromEdge": 1,
+      "toTileId": "body-top-3-3",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-3-2",
+      "fromEdge": 2,
+      "toTileId": "body-top-3-3",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-right-3-1",
+      "fromEdge": 2,
+      "toTileId": "body-top-3-3",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-back-3-1",
+      "fromEdge": 2,
+      "toTileId": "body-top-3-3",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "head-left-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "head-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-back-1-1",
+      "fromEdge": 1,
+      "toTileId": "head-right-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-front-1-1",
+      "fromEdge": 1,
+      "toTileId": "head-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-right-1-1",
+      "fromEdge": 2,
+      "toTileId": "head-top-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-left-1-1",
+      "fromEdge": 2,
+      "toTileId": "head-top-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-back-1-1",
+      "fromEdge": 2,
+      "toTileId": "head-top-1-1",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-front-1-1",
+      "fromEdge": 2,
+      "toTileId": "head-top-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "rear-left-leg-front-1-1",
+      "fromEdge": 2,
+      "toTileId": "body-front-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "rear-right-leg-back-1-1",
+      "fromEdge": 2,
+      "toTileId": "body-back-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-left-leg-front-1-1",
+      "fromEdge": 2,
+      "toTileId": "body-front-3-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-right-leg-back-1-1",
+      "fromEdge": 2,
+      "toTileId": "body-back-3-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "rear-left-leg-left-1-1",
+      "fromEdge": 2,
+      "toTileId": "body-left-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-left-leg-right-1-1",
+      "fromEdge": 2,
+      "toTileId": "body-right-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "rear-right-leg-left-1-1",
+      "fromEdge": 2,
+      "toTileId": "body-left-3-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "front-right-leg-right-1-1",
+      "fromEdge": 2,
+      "toTileId": "body-right-3-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-3-2",
+      "fromEdge": 0,
+      "toTileId": "head-front-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-3-1",
+      "fromEdge": 2,
+      "toTileId": "head-front-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-3-3",
+      "fromEdge": 0,
+      "toTileId": "head-back-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-3-2",
+      "fromEdge": 2,
+      "toTileId": "head-back-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-3-2",
+      "fromEdge": 3,
+      "toTileId": "head-left-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-2-2",
+      "fromEdge": 1,
+      "toTileId": "head-left-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-3-2",
+      "fromEdge": 1,
+      "toTileId": "head-right-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-right-2-1",
+      "fromEdge": 2,
+      "toTileId": "head-right-1-1",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-top-1-1",
+      "fromEdge": 0,
+      "toTileId": "left-ear",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-front-1-1",
+      "fromEdge": 2,
+      "toTileId": "left-ear",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-top-1-1",
+      "fromEdge": 2,
+      "toTileId": "left-ear-mirror",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "head-back-1-1",
+      "fromEdge": 2,
+      "toTileId": "left-ear-mirror",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-top-1-1",
+      "fromEdge": 3,
+      "toTileId": "tail",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-left-1-1",
+      "fromEdge": 2,
+      "toTileId": "tail",
+      "toEdge": 0,
+      "kind": "edge"
+    }
+  ]
+}

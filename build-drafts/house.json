@@ -1,0 +1,444 @@
+{
+  "id": "house",
+  "title": "House",
+  "prompt": "House",
+  "family": "house",
+  "inventoryPreset": "classic-100",
+  "status": "engine-valid",
+  "createdAt": "2026-06-02T22:13:10.804Z",
+  "updatedAt": "2026-06-02T22:13:10.804Z",
+  "notes": "Macro-authored one-cell open box body with a pitched gable roof. The open front reads as a door opening while the left, right, back, and bottom square walls keep the body box-like.",
+  "expectedInventory": {
+    "small-square": 6,
+    "large-square": 0,
+    "xl-square": 0,
+    "equilateral-triangle": 2,
+    "right-triangle": 0,
+    "isosceles-triangle": 0
+  },
+  "referenceFrameSrcs": [],
+  "visualSignoff": false,
+  "tiles": [
+    {
+      "id": "body-back-1-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 1.5,
+        "y": 1.5,
+        "z": 3.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 1,
+      "role": "body back box face",
+      "subassemblyId": "body",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-left-1-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": -0.09,
+        "y": 1.5,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "body left box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-back-1-1",
+      "parentEdge": 3,
+      "childEdge": 1,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-right-1-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 3.09,
+        "y": 1.5,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "body right box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-back-1-1",
+      "parentEdge": 1,
+      "childEdge": 1,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "body-bottom-1-1",
+      "shape": "small-square",
+      "color": "#8ecae6",
+      "position": {
+        "x": 1.5,
+        "y": 0.09,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "body bottom box face",
+      "subassemblyId": "body",
+      "root": false,
+      "parentTileId": "body-back-1-1",
+      "parentEdge": 0,
+      "childEdge": 2,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "roof-front-gable",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": 1.5,
+        "y": 4.299038105676658,
+        "z": -0.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 2,
+      "role": "roof front triangle gable end",
+      "subassemblyId": "roof",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "roof-left-roof",
+      "shape": "small-square",
+      "color": "#d62828",
+      "position": {
+        "x": 0.6720577136594005,
+        "y": 4.344038105676658,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0.5000000000000001,
+          "y": 0.8660254037844388,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0.8660254037844386,
+          "y": -0.5,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "roof left pitched roof panel",
+      "subassemblyId": "roof",
+      "root": false,
+      "parentTileId": "roof-front-gable",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "roof-right-roof",
+      "shape": "small-square",
+      "color": "#d62828",
+      "position": {
+        "x": 2.3279422863405994,
+        "y": 4.344038105676658,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0.5000000000000001,
+          "y": -0.8660254037844388,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": -0.8660254037844386,
+          "y": -0.5,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "roof right pitched roof panel",
+      "subassemblyId": "roof",
+      "root": false,
+      "parentTileId": "roof-front-gable",
+      "parentEdge": 1,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "roof-back-gable",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": 1.5,
+        "y": 4.299038105676658,
+        "z": 3.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 2,
+      "role": "roof back triangle gable end",
+      "subassemblyId": "roof",
+      "root": false,
+      "parentTileId": "roof-left-roof",
+      "parentEdge": 2,
+      "childEdge": 2,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    }
+  ],
+  "connections": [
+    {
+      "fromTileId": "body-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "body-left-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-back-1-1",
+      "fromEdge": 1,
+      "toTileId": "body-right-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-right-1-1",
+      "fromEdge": 0,
+      "toTileId": "body-bottom-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-left-1-1",
+      "fromEdge": 0,
+      "toTileId": "body-bottom-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-back-1-1",
+      "fromEdge": 0,
+      "toTileId": "body-bottom-1-1",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "roof-front-gable",
+      "fromEdge": 2,
+      "toTileId": "roof-left-roof",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "roof-left-roof",
+      "fromEdge": 1,
+      "toTileId": "roof-right-roof",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "roof-front-gable",
+      "fromEdge": 1,
+      "toTileId": "roof-right-roof",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "roof-right-roof",
+      "fromEdge": 2,
+      "toTileId": "roof-back-gable",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "roof-left-roof",
+      "fromEdge": 2,
+      "toTileId": "roof-back-gable",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-left-1-1",
+      "fromEdge": 2,
+      "toTileId": "roof-left-roof",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-right-1-1",
+      "fromEdge": 2,
+      "toTileId": "roof-right-roof",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "body-back-1-1",
+      "fromEdge": 2,
+      "toTileId": "roof-back-gable",
+      "toEdge": 0,
+      "kind": "edge"
+    }
+  ]
+}
