@@ -5,16 +5,9 @@ export const ENGINE_VALID_LIBRARY_BUILD_IDS = ["jet-aircraft", "house", "castle"
 // human signoff gate, not by the engine tests.
 export const ENGINE_EXPECTED_FAIL_LIBRARY_BUILD_IDS = [] as const;
 
-export const ENGINE_EXPECTED_FAIL_PROMPT_IDS = [
-  "jet-aircraft-prompt",
-  "build-me-a-jet-aircraft",
-  "fast-airplane-with-wings",
-  "small-car-ramp-prompt",
-  "medium-car-ramp-prompt",
-  "large-car-ramp-prompt",
-  "toy-car-ramp",
-  "ramp-for-toy-cars"
-] as const;
+// The prompt pipeline now replays authored, engine-valid drafts for these prompts,
+// so there are no expected engine failures left on the prompt path.
+export const ENGINE_EXPECTED_FAIL_PROMPT_IDS = [] as const;
 
 export function isExpectedEngineFailure(kind: "library" | "prompt", id: string): boolean {
   if (kind === "library") return (ENGINE_EXPECTED_FAIL_LIBRARY_BUILD_IDS as readonly string[]).includes(id);

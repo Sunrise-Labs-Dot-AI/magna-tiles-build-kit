@@ -1524,4 +1524,191 @@ select {
 .gate-verdict.gate-fail {
   background: rgba(196, 84, 32, 0.08);
   border: 1px solid rgba(196, 84, 32, 0.45);
+/* ---------------------------------------------------------------------------
+   /plan page: prompt -> gate-verified plan with printable instructions
+   --------------------------------------------------------------------------- */
+
+.plan-page {
+  gap: 14px;
+}
+
+.plan-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.plan-controls {
+  display: grid;
+  gap: 12px;
+}
+
+.plan-workspace {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.plan-print-area {
+  display: grid;
+  gap: 14px;
+}
+
+.plan-print-header {
+  display: none;
+}
+
+.plan-failure {
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+}
+
+.plan-failure-message {
+  color: var(--ink-strong, #1d3041);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.plan-repair-note {
+  background: rgba(247, 183, 51, 0.14);
+  border: 1px solid rgba(247, 183, 51, 0.45);
+  border-radius: 10px;
+  color: #7a5b16;
+  font-size: 0.82rem;
+  margin: 0 0 10px;
+  padding: 8px 10px;
+}
+
+.plan-active-step {
+  border-top: 1px solid rgba(29, 48, 65, 0.12);
+  display: grid;
+  gap: 4px;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.plan-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.plan-instruction-list {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.plan-step-button {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(29, 48, 65, 0.12);
+  border-radius: 12px;
+  cursor: pointer;
+  display: grid;
+  gap: 6px;
+  padding: 10px 12px;
+  text-align: left;
+  width: 100%;
+}
+
+.plan-step-button:hover {
+  border-color: rgba(29, 48, 65, 0.3);
+}
+
+.plan-step-tiles {
+  font-size: 0.74rem;
+}
+
+.plan-print-verdict {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+  font-size: 0.85rem;
+  margin: 6px 0 0;
+}
+
+@media (max-width: 1100px) {
+  .plan-workspace {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Print stylesheet: only the plan's shopping list + instructions print, as a clean
+   black-on-white sheet. Scoped to .plan-page so other routes print untouched. */
+@media print {
+  body:has(.plan-page) {
+    background: #ffffff;
+  }
+
+  .plan-page .plan-no-print,
+  .plan-page .topbar,
+  .plan-page .plan-controls {
+    display: none !important;
+  }
+
+  .plan-page {
+    display: block;
+    padding: 0;
+  }
+
+  .plan-workspace {
+    display: block;
+  }
+
+  .plan-print-area {
+    display: block;
+  }
+
+  .plan-print-area .panel {
+    background: #ffffff;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0 0 18px;
+  }
+
+  .plan-print-header {
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .plan-print-header h2 {
+    font-size: 1.5rem;
+    margin: 0 0 4px;
+  }
+
+  .plan-page,
+  .plan-page * {
+    color: #000000 !important;
+  }
+
+  .plan-step-button {
+    background: #ffffff;
+    border: 1px solid #bbbbbb;
+    border-radius: 6px;
+    break-inside: avoid;
+  }
+
+  .plan-instruction {
+    break-inside: avoid;
+  }
+
+  .tile-row,
+  .plan-shopping,
+  .plan-instructions {
+    break-inside: avoid;
+  }
+
+  .swatch {
+    border: 1px solid #000000;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .mini-pill {
+    border: 1px solid #000000;
+  }
 }

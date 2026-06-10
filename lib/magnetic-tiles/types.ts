@@ -135,6 +135,24 @@ export interface BuildLibraryItem {
   tags: string[];
 }
 
+export type BuildPart =
+  | "roof"
+  | "wall"
+  | "tower"
+  | "door"
+  | "deck"
+  | "body"
+  | "nose"
+  | "wing"
+  | "fin"
+  | "base";
+
+export interface PartColorRequest {
+  part: BuildPart;
+  color: string;
+  colorName: string;
+}
+
 export interface PromptProfile {
   family: BuildFamily;
   size: "small" | "medium" | "tall" | "wide";
@@ -142,4 +160,10 @@ export interface PromptProfile {
   accents: string[];
   title: string;
   seed: number;
+  /** Requested number of repeated structures (e.g. "two towers"); only honored where templates support it. */
+  count: number;
+  /** Explicit per-part color requests parsed from the prompt (e.g. "red roof"). */
+  partColors: PartColorRequest[];
+  /** A standalone color request (e.g. "a blue castle") used as the dominant palette color. */
+  dominantColor?: string;
 }
