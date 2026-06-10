@@ -116,7 +116,14 @@ export default function BuilderPage() {
   }, [childEdge, color, draft, edgeFit, foldAngle, reverse, selectedEdge, selectedTile?.step, selectedTile?.subassemblyId, shape]);
 
   useEffect(() => {
-    void loadLibraryDraft(BUILD_LIBRARY[0]?.prompt ?? "Jet Aircraft");
+    // /plan hands a generated build off via the draft store and links here with
+    // ?draft=<id>; honor that before falling back to the default library build.
+    const requestedDraftId = new URLSearchParams(window.location.search).get("draft");
+    if (requestedDraftId) {
+      void loadSavedDraft(requestedDraftId);
+    } else {
+      void loadLibraryDraft(BUILD_LIBRARY[0]?.prompt ?? "Jet Aircraft");
+    }
     void refreshDrafts();
   }, []);
 
