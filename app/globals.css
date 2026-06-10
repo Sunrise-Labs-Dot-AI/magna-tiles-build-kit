@@ -843,14 +843,15 @@ select {
   margin: 0;
 }
 
+/* The embedded viewers share the builder's sky: one visual language everywhere. */
 .canvas-wrap {
   background:
-    linear-gradient(rgba(24, 32, 37, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(24, 32, 37, 0.04) 1px, transparent 1px),
-    #eef5f4;
-  background-size: 24px 24px;
+    radial-gradient(120% 90% at 50% 108%, rgba(247, 183, 51, 0.18), transparent 55%),
+    linear-gradient(180deg, #7ecbee 0%, #a8ddf5 30%, #d7f0fb 55%, #f6e9c9 86%, #f2dfb6 100%);
+  border-radius: 12px;
   flex: 1;
   min-height: 420px;
+  overflow: hidden;
 }
 
 .step-control {

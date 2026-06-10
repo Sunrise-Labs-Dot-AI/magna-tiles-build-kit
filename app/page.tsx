@@ -15,12 +15,13 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import type { GateBuildResult } from "@/lib/engine";
 import { CLASSIC_100_INVENTORY, inventoryTotal, SHAPE_ORDER, TILE_SPECS } from "@/lib/magnetic-tiles/catalog";
 import { BUILD_LIBRARY } from "@/lib/magnetic-tiles/library";
-import type { BuildLibraryItem, GeneratedBuildResponse, Severity } from "@/lib/magnetic-tiles/types";
+import type { BuildLibraryItem, GeneratedBuildResponse } from "@/lib/magnetic-tiles/types";
 import { JET_AIRCRAFT_CONTACT_SHEET, JET_AIRCRAFT_REFERENCE_FRAMES } from "@/lib/reference-encoder/examples/jet-aircraft-frames";
+import { BuildScene } from "./components/BuildScene";
 import { ReferenceEncoder } from "./components/ReferenceEncoder";
-import { TileViewer } from "./components/TileViewer";
 
 const EXAMPLES = [
   "a tall rainbow castle",
@@ -30,6 +31,17 @@ const EXAMPLES = [
   "a garage",
   "a dinosaur"
 ];
+
+/**
+ * Buildability verdict for the displayed build. One physics representation: this is the
+ * REAL engine gate (/api/gate-build) — the same API the builder workbench reports from —
+ * not a viewer-side re-simulation.
+ */
+type HomeGateState =
+  | { status: "idle" }
+  | { status: "checking" }
+  | { status: "ready"; gate: GateBuildResult }
+  | { status: "error"; detail: string };
 
 export default function Home() {
   const [prompt, setPrompt] = useState("a spaceship");
@@ -46,6 +58,7 @@ export default function Home() {
   const [reportActual, setReportActual] = useState("");
   const [reportStatus, setReportStatus] = useState<string | null>(null);
   const [isReporting, setIsReporting] = useState(false);
+  const [gateState, setGateState] = useState<HomeGateState>({ status: "idle" });
 
   const maxStep = useMemo(
     () => Math.max(1, ...(result?.instructions.map((step) => step.step) ?? [1])),
@@ -59,6 +72,41 @@ export default function Home() {
       void loadLibraryBuild(BUILD_LIBRARY[0]);
     }
   }, []);
+
+  // The "buildable" badge routes through the engine gate — the same API the builder
+  // uses — instead of a second viewer-side magnet/physics check.
+  useEffect(() => {
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => {
+      if (!result) {
+        setGateState({ status: "idle" });
+        return;
+      }
+      setGateState({ status: "checking" });
+      void fetch("/api/gate-build", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ build: result.build }),
+        signal: controller.signal
+      })
+        .then(async (response) => {
+          const body = (await response.json()) as { gate?: GateBuildResult; detail?: string };
+          if (!response.ok || !body.gate) throw new Error(body.detail ?? "Could not run engine gate.");
+          setGateState({ status: "ready", gate: body.gate });
+        })
+        .catch((caught) => {
+          if (controller.signal.aborted) return;
+          setGateState({
+            status: "error",
+            detail: caught instanceof Error ? caught.message : "Could not run engine gate."
+          });
+        });
+    }, 50);
+    return () => {
+      controller.abort();
+      window.clearTimeout(timer);
+    };
+  }, [result]);
 
   async function generate(nextPrompt = prompt, source: "library" | "beta" = "beta") {
     setIsLoading(true);
@@ -147,8 +195,6 @@ export default function Home() {
 
   const usedTotal = result ? inventoryTotal(result.validation.usedInventory) : 0;
   const remainingTotal = result ? inventoryTotal(result.validation.remainingInventory) : inventoryTotal(CLASSIC_100_INVENTORY);
-  const isEngineVerifiedLibraryBuild =
-    !!result && BUILD_LIBRARY.some((item) => item.id === selectedLibraryId && item.status === "engine-valid");
 
   return (
     <main className="app-shell">
@@ -368,10 +414,10 @@ export default function Home() {
                   : "Orbit, zoom, and scrub through steps after generation"}
               </span>
             </div>
-            <StatusPill isReference={isEngineVerifiedLibraryBuild} status={result?.validation.status ?? "pass"} />
+            <GatePill state={gateState} />
           </div>
           <div className="canvas-wrap">
-            <TileViewer build={result?.build ?? null} visibleStep={currentStep} />
+            <BuildScene build={result?.build ?? null} mode="step" visibleStep={currentStep} />
           </div>
           <div className="viewer-footer">
             <button
@@ -546,15 +592,28 @@ export default function Home() {
   );
 }
 
-function StatusPill({ isReference = false, status }: { isReference?: boolean; status: "pass" | "warning" | "error" }) {
-  const severity: Severity = status === "error" ? "error" : status === "warning" ? "warning" : "info";
-  const label =
-    status === "pass"
-      ? isReference
-        ? "engine verified"
-        : "magnet checks pass"
-      : status === "warning"
-        ? "review magnet joins"
-        : "needs repair";
-  return <span className={`pill ${severity === "error" ? "error" : severity === "warning" ? "warn" : "pass"}`}>{label}</span>;
+/** Engine-gate verdict pill: the badge is the gate's word, never a viewer-side check. */
+function GatePill({ state }: { state: HomeGateState }) {
+  if (state.status === "idle") {
+    return <span className="pill pass">pick a build</span>;
+  }
+  if (state.status === "checking") {
+    return <span className="pill warn">checking physics…</span>;
+  }
+  if (state.status === "error") {
+    return (
+      <span className="pill warn" title={state.detail}>
+        gate offline
+      </span>
+    );
+  }
+  return state.gate.passed ? (
+    <span className="pill pass" title={state.gate.reasons.join("\n")}>
+      physics-verified
+    </span>
+  ) : (
+    <span className="pill error" title={state.gate.reasons.join("\n")}>
+      won&apos;t stand yet
+    </span>
+  );
 }
