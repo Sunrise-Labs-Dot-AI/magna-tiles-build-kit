@@ -109,8 +109,7 @@ export type BuildSceneProps =
 
 export function BuildScene(props: BuildSceneProps) {
   if (props.mode === "play") {
-    const { mode: _mode, ...playProps } = props;
-    return <PlayScene {...playProps} />;
+    return <PlayScene {...props} />;
   }
   if (!props.build) {
     return (
@@ -189,6 +188,22 @@ function bumpGhostStat(key: keyof GhostStats): void {
     handUnmounts: 0
   });
   stats[key] += 1;
+}
+
+// Module-level imperative bridge to the external render/screenshot harness (Playwright
+// reads window.__buildViewer). Kept out of the component body so the React Compiler
+// treats these side-effecting global writes as opaque calls rather than flagging
+// in-render mutation.
+function registerBuildViewer(handle: BuildViewerHandle, domElement: HTMLElement): void {
+  if (typeof window === "undefined") return;
+  window.__buildViewer = handle;
+  domElement.dataset.buildViewer = "ready";
+}
+
+function unregisterBuildViewer(handle: BuildViewerHandle, domElement: HTMLElement): void {
+  if (typeof window === "undefined") return;
+  if (window.__buildViewer === handle) window.__buildViewer = undefined;
+  delete domElement.dataset.buildViewer;
 }
 
 /* ================================================================== */
@@ -471,12 +486,8 @@ function CameraHandle() {
       fitAndOrbit: (azDeg, elDeg) => setCamera(azDeg, elDeg, 1.5)
     };
 
-    window.__buildViewer = handle;
-    gl.domElement.dataset.buildViewer = "ready";
-    return () => {
-      if (window.__buildViewer === handle) window.__buildViewer = undefined;
-      delete gl.domElement.dataset.buildViewer;
-    };
+    registerBuildViewer(handle, gl.domElement);
+    return () => unregisterBuildViewer(handle, gl.domElement);
   }, [camera, controls, gl, invalidate, scene]);
 
   return null;

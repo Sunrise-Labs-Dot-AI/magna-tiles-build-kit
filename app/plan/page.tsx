@@ -24,7 +24,7 @@ import type {
   GatedBuildResult,
   GatedBuildSuccess
 } from "@/lib/magnetic-tiles/generate";
-import { TileViewer } from "../components/TileViewer";
+import { BuildScene } from "../components/BuildScene";
 
 const EXAMPLES = [
   "a castle",
@@ -245,7 +245,7 @@ export default function PlanPage() {
               </p>
             ) : null}
             <div className="canvas-wrap">
-              <TileViewer build={result.build} visibleStep={currentStep} />
+              <BuildScene build={result.build} mode="step" visibleStep={currentStep} />
             </div>
             <div className="viewer-footer">
               <button
