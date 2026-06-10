@@ -42,10 +42,10 @@ describe("gateBuild engine source of truth", () => {
     expect(verdict.reasons.join(" ")).toContain("recognizable-object resemblance requires human signoff");
   });
 
-  it.each(VERIFICATION_PROMPTS)("$id prompt output is expected-fail until re-authored", async ({ prompt }) => {
+  it.each(VERIFICATION_PROMPTS)("$id prompt output replays a gate-valid authored template", async ({ prompt }) => {
     const verdict = await gateBuild(generateBuild(prompt).build);
 
-    expect(verdict.passed).toBe(false);
-    expect(verdict.reasons.length).toBeGreaterThan(0);
+    expect(verdict.passed).toBe(true);
+    expect(verdict.reasons.join(" ")).toContain("build stands");
   });
 });

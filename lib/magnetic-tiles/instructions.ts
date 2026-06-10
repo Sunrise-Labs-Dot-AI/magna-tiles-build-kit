@@ -68,28 +68,34 @@ function groupedTilesByStep(build: BuildGraph): Map<number, typeof build.tiles> 
   return groups;
 }
 
+/**
+ * Step copy keyed to the hand-authored, engine-valid ramp drafts that the prompt
+ * pipeline replays (build-drafts/{small,medium,large}-car-ramp.json). The text follows
+ * the drafts' actual per-step tiles and roles, so the instructions never describe
+ * geometry that is not in the build.
+ */
 function rampCopyFor(title: string): Record<number, { title: string; instruction: string }> {
   if (title === "Small Car Ramp") {
     return {
       1: {
-        title: "Make the wedge sides",
+        title: "Stand the wedge sides",
         instruction:
-          "Stand the two right triangles opposite each other to set the ramp angle. Keep their long edges aligned so the driving surface has a clean slope."
+          "Stand the two isosceles triangles opposite each other with their long edges on the table. They set the ramp angle for everything that follows."
       },
       2: {
         title: "Add the driving surface",
         instruction:
-          "Snap on the sloped driving panel, the short lower runout, and the top landing panel. The car should have a smooth path from table to landing."
+          "Snap the lower and upper sloped squares onto the wedge sides so the car has one continuous driving surface from the table to the top."
       },
       3: {
-        title: "Lock the supports",
+        title: "Add the landing and support",
         instruction:
-          "Add the front and rear support squares underneath the slope. Press along the full magnet edges so the wedge does not spread open."
+          "Attach the flat top landing square at the high end, then the vertical support square beneath it so the landing is fully held up."
       },
       4: {
-        title: "Add the side guards",
+        title: "Lock in the side supports",
         instruction:
-          "Attach the two isosceles triangles as side guards near the landing. They keep the top square from wobbling when a toy car rolls over it."
+          "Press the two flipped right triangles against the sides. They keep the wedge from spreading open when a toy car rolls down."
       }
     };
   }
@@ -97,34 +103,29 @@ function rampCopyFor(title: string): Record<number, { title: string; instruction
   if (title === "Medium Car Ramp") {
     return {
       1: {
-        title: "Start the rear wall",
+        title: "Stand the wedge sides",
         instruction:
-          "Build the first row of the rear support wall from five squares. Keep it straight; the slope will reference this row."
+          "Stand the two isosceles triangles opposite each other with their long edges on the table to set the medium ramp angle."
       },
       2: {
-        title: "Raise the wall",
+        title: "Add the driving surface",
         instruction:
-          "Add the second row of five squares directly above the first. Check that the panel stays flat and the side edges remain even."
+          "Snap the lower and upper sloped squares onto the wedge sides so the slope reads as one continuous driving path."
       },
       3: {
-        title: "Finish the support grid",
+        title: "Add the top landing",
         instruction:
-          "Add the third row of five squares to complete the tall rear support. This gives the medium ramp its higher landing."
+          "Attach the flat top landing square at the high end of the slope. Seat the full magnet edge so it sits level."
       },
       4: {
-        title: "Brace the lower slope",
+        title: "Extend the landing",
         instruction:
-          "Add the first triangle pattern along the lower slope and side guards. These pieces begin converting the wall into a ramp."
+          "Add the extended landing square and the two flipped right-triangle side supports so the longer landing stays rigid."
       },
       5: {
-        title: "Continue the triangle run",
+        title: "Lock the rear supports",
         instruction:
-          "Snap on the next set of equilateral triangles along the driving surface. Keep their edges seated so the incline reads as one continuous path."
-      },
-      6: {
-        title: "Finish and test the ramp",
-        instruction:
-          "Add the final equilateral triangles, then gently press the side braces and roll a small car over the path to check alignment."
+          "Finish with the extended side supports and the vertical support square under the landing. Press along every seam before rolling a car."
       }
     };
   }
@@ -132,44 +133,29 @@ function rampCopyFor(title: string): Record<number, { title: string; instruction
   if (title === "Large Car Ramp") {
     return {
       1: {
-        title: "Begin the tall wall",
+        title: "Stand the side supports",
         instruction:
-          "Lay out the first row of seven squares for the rear wall. This wide base keeps the large ramp from twisting."
+          "Stand the two large isosceles side supports opposite each other. They carry the big rigid ramp panel, so keep their ground edges flat."
       },
       2: {
-        title: "Add wall row two",
+        title: "Add the big ramp panel",
         instruction:
-          "Stack the second row of seven squares on top of the base row. Align every vertical seam before continuing."
+          "Lay the large square sloped panel across the side supports to form the wide driving surface. Check that it sits evenly on both sides."
       },
       3: {
-        title: "Add wall row three",
+        title: "Support the high end",
         instruction:
-          "Build the third row across the full width. Press from the center outward so the wall stays flat."
+          "Add the two lower rear wall squares behind the high end so the panel cannot tip backward."
       },
       4: {
-        title: "Add wall row four",
+        title: "Add the landing platform",
         instruction:
-          "Continue with the fourth row, keeping the panel upright and square."
+          "Place the large square top landing platform at the high end, supported by the rear wall below it."
       },
       5: {
-        title: "Add wall row five",
+        title: "Brace the rear",
         instruction:
-          "Add the fifth row of squares. The wall should now feel like a single rigid panel."
-      },
-      6: {
-        title: "Finish the rear wall",
-        instruction:
-          "Add the sixth row and check the full wall for straight edges before attaching the ramp planes."
-      },
-      7: {
-        title: "Attach the large ramp planes",
-        instruction:
-          "Connect the three large square panels across the lower edge of the wall. Center each panel on the square grid so the slope is broad and even."
-      },
-      8: {
-        title: "Add side markers",
-        instruction:
-          "Place the six equilateral triangles along the upper side edges as markers and braces. Check the car path from bottom to top."
+          "Finish with the rear side braces and the upper rear wall brace behind the high end, then roll a car from top to bottom to test the path."
       }
     };
   }
@@ -201,6 +187,7 @@ function jetTitleForStep(step: number, roles: string[]): string {
   if (roles.some((role) => /wing|brace/i.test(role))) return "Shape the wings";
   if (roles.some((role) => /tail|fin/i.test(role))) return "Build the tail";
   if (roles.some((role) => /nose/i.test(role))) return "Shape the nose";
+  if (roles.some((role) => /fuselage|body|deck/i.test(role))) return "Build the fuselage";
   return `Jet step ${step}`;
 }
 
@@ -231,6 +218,15 @@ function titleForStep(step: number, roles: string[]): string {
   }
   if (roles.some((role) => role.includes("roof") || role.includes("cap"))) {
     return "Add the top pieces";
+  }
+  if (roles.some((role) => /ear|head|antenna/.test(role))) {
+    return "Add the head details";
+  }
+  if (roles.some((role) => /leg|foot|paw/.test(role))) {
+    return "Build the legs";
+  }
+  if (roles.some((role) => /body|shell|span|pillar/.test(role))) {
+    return "Build the body";
   }
   if (roles.some((role) => role.includes("side") || role.includes("stabilizer"))) {
     return "Lock in the sides";

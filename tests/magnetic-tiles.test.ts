@@ -67,14 +67,16 @@ describe("prompt mapping", () => {
     const mediumRamp = generateBuild("Medium Car Ramp");
     const largeRamp = generateBuild("Large Car Ramp");
 
+    // These templates replay the hand-authored, engine-valid build drafts
+    // (build-drafts/*.json), so the BOMs below are the gate-valid draft BOMs.
     expect(jet.build.family).toBe("aircraft");
     expect(jet.build.title).toBe("Jet Aircraft");
     expect(jet.instructions.some((step) => /wing|aircraft/i.test(step.instruction))).toBe(true);
     expect(jet.validation.issues.some((issue) => issue.code === "floating-tiles")).toBe(false);
-    expect(jet.validation.usedInventory["small-square"]).toBe(16);
-    expect(jet.validation.usedInventory["equilateral-triangle"]).toBe(9);
-    expect(jet.validation.usedInventory["right-triangle"]).toBe(10);
-    expect(jet.validation.usedInventory["isosceles-triangle"]).toBe(5);
+    expect(jet.validation.usedInventory["small-square"]).toBe(12);
+    expect(jet.validation.usedInventory["equilateral-triangle"]).toBe(2);
+    expect(jet.validation.usedInventory["right-triangle"]).toBe(0);
+    expect(jet.validation.usedInventory["isosceles-triangle"]).toBe(9);
     expect(jet.validation.issues.some((issue) => issue.code === "tile-overlap")).toBe(false);
 
     expect(smallRamp.build.family).toBe("ramp");
@@ -87,9 +89,9 @@ describe("prompt mapping", () => {
     expect(largeRamp.build.family).toBe("ramp");
     expect(largeRamp.build.title).toBe("Large Car Ramp");
     expect(largeRamp.validation.usedInventory).toMatchObject({
-      "small-square": 42,
-      "large-square": 3,
-      "equilateral-triangle": 6
+      "small-square": 6,
+      "large-square": 2,
+      "isosceles-triangle": 2
     });
   });
 
@@ -102,39 +104,38 @@ describe("prompt mapping", () => {
     expect(joinedTiles.every((tile) => tile.parentTileId && tileIds.has(tile.parentTileId))).toBe(true);
   });
 
-  it("compiles Small Car Ramp from explicit magnetic joins", () => {
+  it("replays the authored Small Car Ramp draft with explicit magnetic joins", () => {
     const ramp = generateBuild("Small Car Ramp");
 
     expect(ramp.validation.usedInventory).toMatchObject({
-      "small-square": 5,
+      "small-square": 4,
       "large-square": 0,
       "equilateral-triangle": 0,
       "right-triangle": 2,
       "isosceles-triangle": 2
     });
     expect(ramp.build.tiles.every((tile) => tile.root || tile.parentTileId)).toBe(true);
-    expect(ramp.build.connections.length).toBe(ramp.build.tiles.length - 1);
+    expect(ramp.build.connections.length).toBeGreaterThanOrEqual(ramp.build.tiles.length - 1);
     expect(ramp.build.tiles.map((tile) => tile.id)).toEqual(
       expect.arrayContaining([
-        "left-wedge-side",
-        "right-wedge-side",
-        "sloped-driving-panel",
-        "top-landing-panel",
-        "lower-runout-panel",
-        "rear-support-panel",
-        "front-support-panel",
-        "left-side-guard",
-        "right-side-guard"
+        "left-long-wedge-side",
+        "right-long-wedge-side",
+        "lower-sloped-driving-square",
+        "upper-sloped-driving-square",
+        "red-top-landing-square",
+        "red-vertical-leg-support-square",
+        "left-green-right-triangle-support",
+        "right-green-right-triangle-support"
       ])
     );
   });
 
-  it("keeps every generated ramp template on the connection-first compiler path", () => {
+  it("keeps every generated ramp template on the connection-first path", () => {
     for (const prompt of ["Small Car Ramp", "Medium Car Ramp", "Large Car Ramp"]) {
       const ramp = generateBuild(prompt);
 
       expect(ramp.build.tiles.every((tile) => tile.root || tile.parentTileId)).toBe(true);
-      expect(ramp.build.connections.length).toBe(ramp.build.tiles.length - 1);
+      expect(ramp.build.connections.length).toBeGreaterThanOrEqual(ramp.build.tiles.length - 1);
     }
   });
 });

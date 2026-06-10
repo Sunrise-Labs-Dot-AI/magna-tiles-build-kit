@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
-import { generateBuild } from "@/lib/magnetic-tiles/generate";
+import { generateGatedBuild } from "@/lib/magnetic-tiles/generate";
 import type { InventoryPreset } from "@/lib/magnetic-tiles/types";
+
+export const runtime = "nodejs";
 
 export async function POST(request: Request) {
   try {
@@ -14,7 +16,15 @@ export async function POST(request: Request) {
         ? (body.inventoryPreset as InventoryPreset)
         : "classic-100";
 
-    return NextResponse.json(generateBuild(prompt, inventoryPreset));
+    // The full physics gate runs on every generated build; an honest structured
+    // failure (422) is returned when no deterministic template variant passes.
+    const result = await generateGatedBuild(prompt, inventoryPreset);
+
+    if (result.status === "failed") {
+      return NextResponse.json(result, { status: 422 });
+    }
+
+    return NextResponse.json(result);
   } catch (error) {
     return NextResponse.json(
       {
