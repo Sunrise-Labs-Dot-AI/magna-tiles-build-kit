@@ -5,11 +5,11 @@ export const BUILD_LIBRARY: BuildLibraryItem[] = [
     id: "jet-aircraft",
     title: "Jet Aircraft",
     prompt: "Jet Aircraft",
-    summary: "A folded-panel aircraft with angled wings, tail planes, and a pointed nose.",
+    summary: "A keeled delta-wing jet with wide coplanar-extended wings, a pointed nose, and upright tail fins.",
     difficulty: "medium",
     estimatedMinutes: 12,
-    status: "engine-fail-pending-reauthoring",
-    tags: ["folded panels", "angled wings", "symmetry", "aircraft", "pending E4"]
+    status: "engine-valid",
+    tags: ["delta wings", "keeled fuselage", "symmetry", "aircraft", "physics verified"]
   },
   {
     id: "house",
@@ -78,8 +78,8 @@ export const BUILD_LIBRARY: BuildLibraryItem[] = [
     summary: "A wide ramp structure with a tall rear grid and large sloped panels.",
     difficulty: "hard",
     estimatedMinutes: 18,
-    status: "engine-fail-pending-reauthoring",
-    tags: ["ramp", "large panels", "stability", "toy cars", "pending E4"]
+    status: "engine-valid",
+    tags: ["ramp", "large panels", "stability", "toy cars", "physics verified"]
   },
   {
     id: "rocket",
