@@ -13,6 +13,7 @@
  * before commit; a prefab that cannot fit places nothing.
  */
 import { TILE_THICKNESS } from "@/lib/magnetic-tiles/catalog";
+import { findMagneticEdgeMatch } from "@/lib/magnetic-tiles/magnet-geometry";
 import { tilePrismVertices, tilesIntersectAsPrisms } from "@/lib/magnetic-tiles/prism-geometry";
 import { box, wedgePrism } from "@/lib/magnetic-tiles/macros";
 import { RAW_OVERLAP_TOLERANCE } from "@/lib/engine/overlap";
@@ -291,6 +292,11 @@ function instantiateOnEdge(
   const anchor = built.tiles.find((tile) => tile.id === spec.anchorTileId);
   if (!anchor) return null;
 
+  // Both edge directions are geometrically legal; the better seat is the one that makes
+  // MORE magnetic contact with the existing structure (an aligned stacked module touches
+  // every rim edge of the module below; a mirrored one only shares the anchor hinge).
+  let best: { instance: PrefabInstance; contacts: number } | null = null;
+  let fallback: PrefabInstance | null = null;
   for (const reverse of [false, true]) {
     const placedAnchor = previewEdgeSnappedTile(draft, {
       parentTileId: hover.tileId,
@@ -325,10 +331,24 @@ function instantiateOnEdge(
       hover,
       placedAnchorId: spec.anchorTileId
     });
-    if (instanceBlockedReason(draft, instance) === null) return instance;
-    if (reverse) return instance; // return the last attempt so the ghost can show no-fit
+    fallback = instance;
+    if (instanceBlockedReason(draft, instance) !== null) continue;
+    const contacts = contactCount(draft, instance);
+    if (!best || contacts > best.contacts) best = { instance, contacts };
   }
-  return null;
+  // Return the best valid seat, or the last attempt so the ghost can show no-fit.
+  return best?.instance ?? fallback;
+}
+
+/** How many magnetic edge contacts the instance makes with the existing draft. */
+function contactCount(draft: AuthoredBuildDraft, instance: PrefabInstance): number {
+  let contacts = 0;
+  for (const tile of instance.tiles) {
+    for (const existing of draft.tiles) {
+      if (findMagneticEdgeMatch(tile, existing)) contacts += 1;
+    }
+  }
+  return contacts;
 }
 
 /** Remap ids to a fresh prefix, convert to BuilderTiles, synthesize parent lineage. */

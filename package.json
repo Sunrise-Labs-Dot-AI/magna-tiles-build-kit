@@ -11,6 +11,7 @@
     "render:draft": "tsx scripts/render-draft.ts",
     "verify:builds": "tsx scripts/verify-builds.ts",
     "verify:feel": "tsx scripts/verify-feel.ts",
+    "verify:builder-v2": "tsx scripts/verify-builder-v2.ts",
     "ingest:video": "tsx scripts/ingest-video.ts",
     "test": "vitest run",
     "test:watch": "vitest"

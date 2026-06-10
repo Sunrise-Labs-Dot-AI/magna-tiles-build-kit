@@ -452,6 +452,16 @@ describe("valid-angle filtering (Q/E never lands on a collision)", () => {
     }
   });
 
+  it("falls back to unfiltered cycling when the aimed spot has NO valid angle", () => {
+    // The aimed root cell is occupied: no angle can place there (the click is a no-op),
+    // so Q/E still cycles the fold rather than dead-locking.
+    const draft = draftWithFlatRoot();
+    const context = { kind: "root", point: { x: 0, z: 0 } } as const;
+    const settings = settingsWith({ foldAngle: Math.PI / 2 });
+    expect(validFoldAngles(draft, context, settings)).toHaveLength(0);
+    expect(cycleFold(draft, context, settings, -1, false)).toBeCloseTo(Math.PI / 4, 6);
+  });
+
   it("offers fine ±5° steps that are likewise collision-filtered", () => {
     const draft = draftWithFlatRoot();
     const root = draft.tiles[0];

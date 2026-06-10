@@ -178,6 +178,13 @@ declare global {
         root: boolean;
       }>;
       connections: () => Array<{ fromTileId: string; fromEdge: number; toTileId: string; toEdge: number }>;
+      ghost: () => {
+        valid: boolean;
+        noFit: boolean;
+        autoAngled: boolean;
+        effectiveFoldAngle: number;
+      } | null;
+      screenPoint: (world: Vec3) => { x: number; y: number };
       snapScreenPoints: () => Array<{
         tileId: string;
         edge: number;
@@ -335,7 +342,9 @@ function PlayScene({
         target={[0, 1.5, 0]}
       />
       <CameraRig bounds={build.bounds} nonce={frameNonce} />
-      {process.env.NODE_ENV !== "production" ? <DevProbe draft={draft} snapPoints={snapPoints} /> : null}
+      {process.env.NODE_ENV !== "production" ? (
+        <DevProbe draft={draft} ghost={ghost} snapPoints={snapPoints} />
+      ) : null}
     </Canvas>
   );
 }
@@ -627,10 +636,19 @@ function SpanAnchorEdge({ anchor, draft }: { anchor: SpanEdgeRef; draft: Authore
 }
 
 /**
- * Dev-only scene probe for scripted verification (scripts/verify-feel.ts): exposes
- * tile transforms and the screen-space coordinates of every snap point.
+ * Dev-only scene probe for scripted verification (scripts/verify-feel.ts and
+ * scripts/verify-builder-v2.ts): exposes tile transforms, the live ghost state, a
+ * world→screen projector, and the screen-space coordinates of every snap point.
  */
-function DevProbe({ draft, snapPoints }: { draft: AuthoredBuildDraft; snapPoints: SnapPoint[] }) {
+function DevProbe({
+  draft,
+  ghost,
+  snapPoints
+}: {
+  draft: AuthoredBuildDraft;
+  ghost: ReturnType<typeof deriveGhostPreview>;
+  snapPoints: SnapPoint[];
+}) {
   const camera = useThree((state) => state.camera);
   const gl = useThree((state) => state.gl);
 
@@ -655,6 +673,23 @@ function DevProbe({ draft, snapPoints }: { draft: AuthoredBuildDraft; snapPoints
           toTileId: connection.toTileId,
           toEdge: connection.toEdge
         })),
+      ghost: () =>
+        ghost
+          ? {
+              valid: ghost.valid,
+              noFit: ghost.noFit,
+              autoAngled: ghost.autoAngled,
+              effectiveFoldAngle: ghost.effectiveFoldAngle
+            }
+          : null,
+      screenPoint: (world: Vec3) => {
+        const rect = gl.domElement.getBoundingClientRect();
+        const projected = new THREE.Vector3(world.x, world.y, world.z).project(camera);
+        return {
+          x: rect.left + ((projected.x + 1) / 2) * rect.width,
+          y: rect.top + ((1 - projected.y) / 2) * rect.height
+        };
+      },
       snapScreenPoints: () => {
         const rect = gl.domElement.getBoundingClientRect();
         return snapPoints.map((point) => {
@@ -669,7 +704,7 @@ function DevProbe({ draft, snapPoints }: { draft: AuthoredBuildDraft; snapPoints
         });
       }
     };
-  }, [camera, draft, gl, snapPoints]);
+  }, [camera, draft, ghost, gl, snapPoints]);
 
   return null;
 }

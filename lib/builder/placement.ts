@@ -302,8 +302,9 @@ export function validFoldAngles(
 
 /**
  * Cycle the fold angle, SKIPPING angles that would collide in the current context.
- * Presets (Q/E) wrap; fine steps (Shift+Q/E) clamp at ±90°. When nothing else is valid
- * the current angle is returned unchanged.
+ * Presets (Q/E) wrap; fine steps (Shift+Q/E) clamp at ±90°. When the aimed context has
+ * NO valid angle at all (a no-fit spot — clicking does nothing there anyway), cycling
+ * falls back to unfiltered so the fold control never dead-locks.
  */
 export function cycleFold(
   draft: AuthoredBuildDraft,
@@ -312,6 +313,9 @@ export function cycleFold(
   direction: 1 | -1,
   fine = false
 ): number {
+  if (context.kind !== "free" && validFoldAngles(draft, context, settings).length === 0) {
+    return cycleFold(draft, { kind: "free" }, settings, direction, fine);
+  }
   if (!fine) {
     const count = PRESET_FOLDS.length;
     const nearest = PRESET_FOLDS.reduce(
