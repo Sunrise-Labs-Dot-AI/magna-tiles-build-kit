@@ -124,7 +124,9 @@ export default function Home() {
       }
       const data = (await response.json()) as GeneratedBuildResponse;
       setResult(data);
-      setCurrentStep(Math.max(1, data.instructions.length));
+      // Land on the final assembly view: the highest step NUMBER, not the count
+      // of instruction groups (several tiles can share one step).
+      setCurrentStep(Math.max(1, ...data.instructions.map((step) => step.step)));
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "Something went wrong.");
     } finally {
@@ -150,7 +152,9 @@ export default function Home() {
       }
       const data = (await response.json()) as GeneratedBuildResponse;
       setResult(data);
-      setCurrentStep(Math.max(1, data.instructions.length));
+      // Land on the final assembly view: the highest step NUMBER, not the count
+      // of instruction groups (several tiles can share one step).
+      setCurrentStep(Math.max(1, ...data.instructions.map((step) => step.step)));
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "Something went wrong.");
     } finally {
