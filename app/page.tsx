@@ -162,9 +162,17 @@ export default function Home() {
             <span>Build library with 3D instructions for Classic 100-compatible sets</span>
           </div>
         </div>
-        <Link className="builder-link" href="/builder">
-          Open workbench
-        </Link>
+        <nav className="topbar-nav">
+          <Link className="builder-link secondary" href="/plan">
+            Plan from prompt
+          </Link>
+          <Link className="builder-link secondary" href="#import">
+            Import video
+          </Link>
+          <Link className="builder-link" href="/builder">
+            Open builder
+          </Link>
+        </nav>
       </header>
 
       <section className="workspace">
@@ -531,7 +539,9 @@ export default function Home() {
         </aside>
       </section>
 
-      <ReferenceEncoder />
+      <div id="import">
+        <ReferenceEncoder />
+      </div>
     </main>
   );
 }

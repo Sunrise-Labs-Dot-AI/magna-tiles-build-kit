@@ -1,101 +1,100 @@
-# Magna-Tiles Build Kit
+# Magna-Tiles Build Kit v2
 
-A web app and toolchain that explores a hard question: given a reference (a YouTube build video or a build spec) of a magnetic-tile construction, can you programmatically produce a build that is both **physically valid** (it would actually stand and hold together as real Magna-Tiles) and **recognizable** (it reads as the thing it is supposed to be), and then guide a person through building it?
+A web app where magnetic tiles are a first-class creative medium. Three pillars, one
+physics engine, zero LLM geometry:
 
-Stack: Next.js 16, React 19, TypeScript, Three.js + react-three-fiber, and Rapier physics.
+1. **Plan from a prompt** (`/plan`) — type "a castle with two towers and a red roof" and
+   get a physically-verified build plan: a 3D step-through, a tile shopping list checked
+   against a Classic-100 set, and printable instructions. Every plan passes the real
+   engine gate (no overlaps, valid magnetic joins, a Rapier stand test, a roll test for
+   ramps). If no template variant passes, you get an honest failure instead of a wobbly
+   guess.
+2. **Import from YouTube** (home page → Import video) — paste a Magna-Tiles build video
+   URL. The pipeline downloads it locally (yt-dlp + ffmpeg), splits it into motion vs
+   stable spans by deterministic frame differencing, and turns each settled placement
+   into a timeline step with measured evidence: a representative frame, a
+   background-subtracted silhouette mask, and an explainable confidence score. Steps
+   below the confidence bar are flagged for human review — the system never silently
+   guesses. An accepted reconstruction must pass the engine gate before the app calls it
+   buildable.
+3. **Build virtually** (`/builder`) — a Minecraft-like building experience. Pick a tile
+   shape from the hotbar (keys 1–6), click the ground to lay the first tile, hover a
+   magnet dot to see a live ghost preview, cycle fold angles with Q/E, flip with R,
+   change attach edge with T, click to snap. Undo/redo, shake test, roll-a-ball physics
+   sandbox, save/load, and the build library as starting points. Construction is
+   edge-to-edge magnetic attachment only, so overlapping tiles are impossible by
+   construction.
 
-> **Status: archived research exploration.** This is a completed exploration being put down as a public archive, not a maintained product. It works as a build-and-verification kit, but it does **not** faithfully reproduce the source video build. The honest reasons are written up below and in [research/diagnosis.md](research/diagnosis.md). See [STATUS.md](STATUS.md) for the full what-works / what-doesn't / what's-next.
+Stack: Next.js 16, React 19, TypeScript, Three.js + react-three-fiber, Rapier physics,
+yt-dlp + ffmpeg for ingestion, pngjs for pixel work. No native-build dependencies.
 
-## What it does
+## Lineage and the v1 post-mortem
 
-- **Free build / library:** a Three.js viewer renders a library of authored builds (ramps, house, castle, dog, snail, rocket, jet) tile by tile, with step-by-step instructions and remaining-tile counts.
-- **Guided build:** a reference encoder turns a YouTube build video (or a local file) into a reviewable, timestamped sequence of assembly actions. An optional model pass drafts a first timeline from selected frames; without a key it falls back to a deterministic heuristic.
-- **The gate:** an un-gameable physics gate that decides whether a build is real. A build only passes if it clears every check (see below). Overlap is made impossible by construction in the tile-attach system, not merely flagged after the fact.
-- **The recognition layer:** a scorer that measures whether a build is recognizable, combining a structural score with a geometric, multi-view silhouette IoU against a target shape. A parametric generator plus a hill-climb optimizer searches the tile-placement space toward a higher score.
-- **Video to 3D:** a reconstruction pipeline (`scripts/reconstruct-jet.ts` + `lib/recognition/jet-reference-model.ts`) and an interactive viewer ([public/jet-model.html](public/jet-model.html)) that renders the reconstructed jet target from multiple angles.
-- **Vision critic:** a harness that renders a build and asks a vision model whether the render structurally matches a reference photo, returning actionable differences.
+This is the second attempt at the idea. The first
+([archived here](https://github.com/Sunrise-Labs-Dot-AI/magna-tiles-build-kit)) built a
+genuinely solid physics gate, tile-attachment system, and recognizability scorer, but
+failed at its headline goal — faithfully reproducing a build from a video — for reasons
+its own post-mortem ([research/diagnosis.md](research/diagnosis.md)) states bluntly: an
+LLM eyeballed the 3D target instead of measuring it, and no measured signal from the
+video ever entered the loop.
 
-### The gate (what "physically valid" means here)
+v2 keeps the engine and applies the post-mortem as law ([VISION.md](VISION.md)):
 
-A build passes `gateBuild` ([lib/engine/gate.ts](lib/engine/gate.ts)) only if it clears all of:
+- **The gate is law.** `gateBuild` ([lib/engine/gate.ts](lib/engine/gate.ts)) decides
+  what is real. Its tolerances are never widened to make a build pass.
+- **No LLM geometry.** Models never type coordinates, judge renders, or act as solvers.
+  Deterministic code does geometry. The only optional LLM use is mapping free text to
+  discrete template parameters (key-gated, with a deterministic fallback) — the test
+  suite passes with no key present.
+- **Measured signal or honest failure.** Video ingestion computes real silhouettes from
+  real frames; low-confidence steps are flagged, not guessed. Prompts that can't produce
+  a gate-valid build return a structured failure, listing per-attempt gate reasons.
 
-1. **No-overlap pre-filter** at a 0.03 hairline tolerance. The tolerance admits face-to-face contact and float noise, never real overlap, and is never widened to make a build pass.
-2. **Magnetic-join validity:** every connection is a real edge-to-edge magnetic joint with adequate support; no floating or illegally-attached tiles.
-3. **Rapier stand test:** the build is simulated and must stand (bounded displacement, no popped joints).
-4. **Roll test (ramps only):** a test object must roll to the bottom of a functional ramp without falling off.
-
-The gate validates physics and connectivity. It deliberately does **not** certify visual resemblance, which is left to the recognition layer and human signoff.
+What v2 deliberately does *not* claim: automatic 3D reconstruction of a build from
+video. Mapping measured timeline steps to attach actions is human-driven by design —
+automating it without SfM-grade measurement would recross the v1 line. The measured
+evidence (steps, frames, silhouettes, confidences) makes that human review fast and
+honest instead of blind.
 
 ## How to run
 
 ```bash
 npm install        # install dependencies
-npm run dev        # start the Next.js app at http://localhost:3000
-npm test           # run the Vitest suite
-npm run lint       # run ESLint
+npm run dev        # start the app at http://localhost:3000
+npm test           # run the Vitest suite (247 tests)
+npm run lint       # ESLint
 npm run build      # production build
 ```
 
-Scripts and generators (run with `tsx`):
+Video ingestion needs `yt-dlp` and `ffmpeg` on the PATH (`brew install yt-dlp ffmpeg`).
+Downloads land in the gitignored `.video-cache/` and are never committed.
 
 ```bash
-npm run verify:builds          # gate every authored build and report pass/fail
-npm run render:draft -- <id>   # render a build's step + final views to verification/<id>/
-npm run judge:all              # run the vision critic across builds (needs OPENAI_API_KEY)
-npm run judge:build -- <id>    # vision-judge a single build
-
-tsx scripts/reconstruct-jet.ts        # build the jet reconstruction target
-tsx scripts/generate-jet.ts           # parametric generator + hill-climb optimizer
-tsx scripts/vision-critic.ts          # render-and-critique loop
+npm run ingest:video -- <youtube-url>   # run the ingestion pipeline manually
+npm run verify:builds                   # gate every authored build and report pass/fail
 ```
-
-### Optional model drafting
-
-The reference encoder can draft a first-pass timeline with a model when `OPENAI_API_KEY` is set. Copy `.env.example` to `.env.local`, set the key, and restart `npm run dev`. Without a key, the app falls back to a deterministic heuristic draft. The vision critic and live visual judge also require the key; they fail closed (report "unavailable") when it is absent.
 
 ## Architecture
 
 | Area | Path | Role |
 |---|---|---|
-| Physics gate | [lib/engine/](lib/engine) | No-overlap pre-filter, magnetic-join validity, Rapier stand + roll tests (`gate.ts`, `overlap.ts`, `simulate.ts`, `rapier-world.ts`). |
-| Tiles + assembly | [lib/magnetic-tiles/](lib/magnetic-tiles) | Tile catalog/geometry, the macro + edge-attachment system that makes overlap impossible by construction, recipe compiler, instructions. |
-| Builder | [lib/builder/](lib/builder) | Build drafts, storage, library operations. |
-| Recognition | [lib/recognition/](lib/recognition) | Recognizability scorer (`score.ts`), multi-view silhouette IoU (`silhouette.ts`), the jet video reconstruction target (`jet-reference-model.ts`), pixel critic. |
-| Reference encoder | [lib/reference-encoder/](lib/reference-encoder) | Encodes a reference video/spec into reviewable assembly actions; frame sampling, model options, acceptance. |
-| Verification | [lib/verification/](lib/verification) | The vision-model visual judge. |
-| Scripts | [scripts/](scripts) | Generators, the video reconstruction, renderers, the vision critic, tile measurement. |
+| Physics gate | [lib/engine/](lib/engine) | No-overlap pre-filter, magnetic-join validity, Rapier stand + roll tests. |
+| Tiles + assembly | [lib/magnetic-tiles/](lib/magnetic-tiles) | Tile catalog/geometry, edge-attachment (overlap impossible by construction), templates, the gated generator (`generate.ts`), prompt understanding (`prompt.ts`), instructions. |
+| Interactive builder | [lib/builder/](lib/builder), [app/builder/](app/builder) | The pure placement engine (`placement.ts`: fold cycling, ghost derivation, confirm) and the play-mode UI. |
+| Plan page | [app/plan/](app/plan) | Prompt → gated plan, shopping list, print stylesheet, workbench handoff. |
+| Video ingestion | [lib/reference-encoder/](lib/reference-encoder) | yt-dlp/ffmpeg ingestion (`ingest.ts`), deterministic segmentation + silhouettes (`segmentation.ts`), timeline → build gating (`reconstruction.ts`), review UI (`app/components/ReferenceEncoder.tsx`). |
 | Authored builds | [build-drafts/](build-drafts) | The library of authored builds as JSON. |
-| App | [app/](app) | The Next.js UI, API routes, and the [jet-model.html](public/jet-model.html) viewer. |
-| Renders | [verification/](verification) | Our own generated step/final renders of each build (not third-party content). |
-
-## Status, in brief
-
-**Works:** the physics gate (un-gameable by construction), the tile macro/attach system, overlap impossible by construction, the recognizability scorer (structural + multi-view silhouette IoU), the parametric generator and hill-climb optimizer, the video-to-3D reconstruction and interactive viewer, the vision-critic harness, and a library of ~9 builds. The jet was taken from a box-with-fins to a gate-valid, recognizable wide-delta-wing jet via a "coplanar lateral extension" fold, which was the research report's key finding.
-
-**Doesn't work / key limitation:** the output does **not** faithfully match the source video build. Root cause: the reconstruction **target** was hand-authored by a model eyeballing video frames, not measured, so the whole pipeline optimizes toward an approximation. No measured video signal ever enters the loop. The post-mortem in [research/diagnosis.md](research/diagnosis.md) traces this stage by stage.
-
-**What's next:** replace the eyeballed target with a real reconstruction (COLMAP / DUSt3R-MASt3R) or human-encoded ground truth; add a real search/constraint solver (MCTS / CP-SAT) instead of transcribed guesses; add a learned/perceptual scorer (CLIP/VLM) measured against the real frames; consider a part-grammar prior. Details in [research/magna_tiles_system_design.md](research/magna_tiles_system_design.md) and [research/diagnosis.md](research/diagnosis.md).
-
-The full version is in [STATUS.md](STATUS.md).
-
-## Research and design documents
-
-This was a literature-grounded exploration. The thinking is preserved in:
-
-- [research/magna_tiles_system_design.md](research/magna_tiles_system_design.md) — the literature-grounded, from-scratch system design.
-- [research/review-and-implementation.md](research/review-and-implementation.md) — an adversarial review of that design with implementation notes.
-- [research/diagnosis.md](research/diagnosis.md) — an honest post-mortem on why the output stayed far from the video.
-- [docs/research/system-design/](docs/research/system-design) — five design memos (search assembler, hierarchical planner, voxel target fitting, parametric optimizer, multi-agent vision loop) plus a build plan.
-- [docs/jet-rebuild-target.md](docs/jet-rebuild-target.md) — the jet target derived from the source video.
-- [docs/build-loop.md](docs/build-loop.md) — the vision + debug + system-improvement build loop.
-- [docs/engine-design.md](docs/engine-design.md) and the other `docs/` memos — engine and reference-encoder design notes.
+| Tests | [tests/](tests) | 247 tests: engine calibration, the 27-prompt gate corpus, segmentation on synthetic frames, placement state machine, reconstruction gating. |
 
 ## Attribution
 
-The reference build videos belong to their creators. The primary jet reference is **"Magna-Tiles Idea: Jet Aircraft"** by **JD's Curious Company** on YouTube; the project also referenced that channel's car-ramps and snail build videos. Frames were extracted **only for research** (to study the build and as a comparison target) and are **not redistributed** in this repository. The extracted stills and the source videos have been removed from this public archive. Please support the original creators by watching their videos.
-
-What this repo **does** include is our own work: the generated renders under [verification/](verification), the interactive [jet-model.html](public/jet-model.html) viewer, and our own physical-tile measurement photos under [docs/research/](docs/research). Magna-Tiles and Magnatiles are trademarks of their respective owner; this project is an independent, non-commercial exploration and is not affiliated with or endorsed by them.
+Reference build videos belong to their creators. The development fixture is
+**"Magna-Tiles Idea: Jet Aircraft"** by **JD's Curious Company** on YouTube. Video
+downloads and extracted frames stay in the local gitignored cache and are not
+redistributed. Please support the original creators by watching their videos.
+Magna-Tiles and Magnatiles are trademarks of their respective owner; this project is an
+independent, non-commercial exploration and is not affiliated with or endorsed by them.
 
 ## License
 
-[MIT](LICENSE). See [CONTRIBUTING.md](CONTRIBUTING.md) for the "archived exploration" note.
+[MIT](LICENSE).

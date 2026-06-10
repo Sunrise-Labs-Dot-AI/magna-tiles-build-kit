@@ -112,6 +112,23 @@ button {
   opacity: 0.48;
 }
 
+.topbar-nav {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.builder-link.secondary {
+  background: transparent;
+  border-color: transparent;
+  color: var(--ink-soft, #5b6770);
+}
+
+.builder-link.secondary:hover {
+  background: white;
+  border-color: var(--line);
+}
+
 .workspace {
   display: grid;
   gap: 16px;
@@ -1524,6 +1541,8 @@ select {
 .gate-verdict.gate-fail {
   background: rgba(196, 84, 32, 0.08);
   border: 1px solid rgba(196, 84, 32, 0.45);
+}
+
 /* ---------------------------------------------------------------------------
    /plan page: prompt -> gate-verified plan with printable instructions
    --------------------------------------------------------------------------- */
@@ -1711,6 +1730,8 @@ select {
   .mini-pill {
     border: 1px solid #000000;
   }
+}
+
 /* ===================================================================
    Play mode: the Minecraft-like /builder experience
    =================================================================== */

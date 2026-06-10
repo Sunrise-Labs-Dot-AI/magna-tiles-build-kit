@@ -1,0 +1,3472 @@
+{
+  "id": "plan-castle",
+  "title": "Castle",
+  "prompt": "a castle with two towers and a red roof",
+  "family": "castle",
+  "inventoryPreset": "classic-100",
+  "status": "engine-valid",
+  "createdAt": "2026-06-10T00:44:54.227Z",
+  "updatedAt": "2026-06-10T00:44:54.772Z",
+  "expectedInventory": {
+    "small-square": 44,
+    "large-square": 0,
+    "xl-square": 0,
+    "equilateral-triangle": 16,
+    "right-triangle": 0,
+    "isosceles-triangle": 0
+  },
+  "referenceFrameSrcs": [],
+  "visualSignoff": false,
+  "tiles": [
+    {
+      "id": "castle-keep-front-1-1",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": 1.5,
+        "y": 1.5,
+        "z": -0.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 1,
+      "role": "castle-keep front box face",
+      "subassemblyId": "castle-keep",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-keep-back-1-1",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": 1.5,
+        "y": 1.5,
+        "z": 6.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 1,
+      "role": "castle-keep back box face",
+      "subassemblyId": "castle-keep",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-keep-front-2-1",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": 4.5,
+        "y": 1.5,
+        "z": -0.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 1,
+      "role": "castle-keep front box face",
+      "subassemblyId": "castle-keep",
+      "root": false,
+      "parentTileId": "castle-keep-front-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-keep-back-2-1",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": 4.5,
+        "y": 1.5,
+        "z": 6.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 1,
+      "role": "castle-keep back box face",
+      "subassemblyId": "castle-keep",
+      "root": false,
+      "parentTileId": "castle-keep-back-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-keep-left-1-1",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": -0.09,
+        "y": 1.5,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "castle-keep left box face",
+      "subassemblyId": "castle-keep",
+      "root": false,
+      "parentTileId": "castle-keep-front-1-1",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-keep-right-1-1",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": 6.09,
+        "y": 1.5,
+        "z": 1.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "castle-keep right box face",
+      "subassemblyId": "castle-keep",
+      "root": false,
+      "parentTileId": "castle-keep-front-2-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-keep-left-2-1",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": -0.09,
+        "y": 1.5,
+        "z": 4.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "castle-keep left box face",
+      "subassemblyId": "castle-keep",
+      "root": false,
+      "parentTileId": "castle-keep-back-1-1",
+      "parentEdge": 3,
+      "childEdge": 1,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-keep-right-2-1",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": 6.09,
+        "y": 1.5,
+        "z": 4.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 1,
+      "role": "castle-keep right box face",
+      "subassemblyId": "castle-keep",
+      "root": false,
+      "parentTileId": "castle-keep-back-2-1",
+      "parentEdge": 1,
+      "childEdge": 1,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-nw-front-1-1",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 1.5,
+        "z": -3.27
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 2,
+      "role": "castle-tower-nw front box face",
+      "subassemblyId": "castle-tower-nw",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-nw-back-1-1",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 1.5,
+        "z": -0.0900000000000003
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 2,
+      "role": "castle-tower-nw back box face",
+      "subassemblyId": "castle-tower-nw",
+      "root": false,
+      "parentTileId": "castle-keep-front-1-1",
+      "parentEdge": 3,
+      "childEdge": 1,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-nw-front-1-2",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 4.5,
+        "z": -3.27
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 3,
+      "role": "castle-tower-nw front box face",
+      "subassemblyId": "castle-tower-nw",
+      "root": false,
+      "parentTileId": "castle-tower-nw-front-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-nw-back-1-2",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 4.5,
+        "z": -0.0900000000000003
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 3,
+      "role": "castle-tower-nw back box face",
+      "subassemblyId": "castle-tower-nw",
+      "root": false,
+      "parentTileId": "castle-tower-nw-back-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-nw-left-1-1",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": -3.27,
+        "y": 1.5,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "castle-tower-nw left box face",
+      "subassemblyId": "castle-tower-nw",
+      "root": false,
+      "parentTileId": "castle-tower-nw-front-1-1",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-nw-right-1-1",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": -0.0900000000000003,
+        "y": 1.5,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "castle-tower-nw right box face",
+      "subassemblyId": "castle-tower-nw",
+      "root": false,
+      "parentTileId": "castle-tower-nw-front-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-nw-left-1-2",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": -3.27,
+        "y": 4.5,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "castle-tower-nw left box face",
+      "subassemblyId": "castle-tower-nw",
+      "root": false,
+      "parentTileId": "castle-tower-nw-front-1-2",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-nw-right-1-2",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": -0.0900000000000003,
+        "y": 4.5,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "castle-tower-nw right box face",
+      "subassemblyId": "castle-tower-nw",
+      "root": false,
+      "parentTileId": "castle-tower-nw-front-1-2",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-ne-front-1-1",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": 7.68,
+        "y": 1.5,
+        "z": -3.27
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 2,
+      "role": "castle-tower-ne front box face",
+      "subassemblyId": "castle-tower-ne",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-ne-back-1-1",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": 7.68,
+        "y": 1.5,
+        "z": -0.0900000000000003
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 2,
+      "role": "castle-tower-ne back box face",
+      "subassemblyId": "castle-tower-ne",
+      "root": false,
+      "parentTileId": "castle-keep-front-2-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-ne-front-1-2",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": 7.68,
+        "y": 4.5,
+        "z": -3.27
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 3,
+      "role": "castle-tower-ne front box face",
+      "subassemblyId": "castle-tower-ne",
+      "root": false,
+      "parentTileId": "castle-tower-ne-front-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-ne-back-1-2",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": 7.68,
+        "y": 4.5,
+        "z": -0.0900000000000003
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 3,
+      "role": "castle-tower-ne back box face",
+      "subassemblyId": "castle-tower-ne",
+      "root": false,
+      "parentTileId": "castle-tower-ne-back-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-ne-left-1-1",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": 6.09,
+        "y": 1.5,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "castle-tower-ne left box face",
+      "subassemblyId": "castle-tower-ne",
+      "root": false,
+      "parentTileId": "castle-tower-ne-front-1-1",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-ne-right-1-1",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": 9.27,
+        "y": 1.5,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "castle-tower-ne right box face",
+      "subassemblyId": "castle-tower-ne",
+      "root": false,
+      "parentTileId": "castle-tower-ne-front-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-ne-left-1-2",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": 6.09,
+        "y": 4.5,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "castle-tower-ne left box face",
+      "subassemblyId": "castle-tower-ne",
+      "root": false,
+      "parentTileId": "castle-tower-ne-front-1-2",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-ne-right-1-2",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": 9.27,
+        "y": 4.5,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "castle-tower-ne right box face",
+      "subassemblyId": "castle-tower-ne",
+      "root": false,
+      "parentTileId": "castle-tower-ne-front-1-2",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-sw-front-1-1",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 1.5,
+        "z": 6.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 2,
+      "role": "castle-tower-sw front box face",
+      "subassemblyId": "castle-tower-sw",
+      "root": false,
+      "parentTileId": "castle-keep-back-1-1",
+      "parentEdge": 3,
+      "childEdge": 1,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-sw-back-1-1",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 1.5,
+        "z": 9.27
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 2,
+      "role": "castle-tower-sw back box face",
+      "subassemblyId": "castle-tower-sw",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-sw-front-1-2",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 4.5,
+        "z": 6.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 3,
+      "role": "castle-tower-sw front box face",
+      "subassemblyId": "castle-tower-sw",
+      "root": false,
+      "parentTileId": "castle-tower-sw-front-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-sw-back-1-2",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 4.5,
+        "z": 9.27
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 3,
+      "role": "castle-tower-sw back box face",
+      "subassemblyId": "castle-tower-sw",
+      "root": false,
+      "parentTileId": "castle-tower-sw-back-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-sw-left-1-1",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": -3.27,
+        "y": 1.5,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "castle-tower-sw left box face",
+      "subassemblyId": "castle-tower-sw",
+      "root": false,
+      "parentTileId": "castle-tower-sw-front-1-1",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-sw-right-1-1",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": -0.0900000000000003,
+        "y": 1.5,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "castle-tower-sw right box face",
+      "subassemblyId": "castle-tower-sw",
+      "root": false,
+      "parentTileId": "castle-tower-sw-front-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-sw-left-1-2",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": -3.27,
+        "y": 4.5,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "castle-tower-sw left box face",
+      "subassemblyId": "castle-tower-sw",
+      "root": false,
+      "parentTileId": "castle-tower-sw-front-1-2",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-sw-right-1-2",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": -0.0900000000000003,
+        "y": 4.5,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "castle-tower-sw right box face",
+      "subassemblyId": "castle-tower-sw",
+      "root": false,
+      "parentTileId": "castle-tower-sw-front-1-2",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-se-front-1-1",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": 7.68,
+        "y": 1.5,
+        "z": 6.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 2,
+      "role": "castle-tower-se front box face",
+      "subassemblyId": "castle-tower-se",
+      "root": false,
+      "parentTileId": "castle-keep-back-2-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-se-back-1-1",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": 7.68,
+        "y": 1.5,
+        "z": 9.27
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 2,
+      "role": "castle-tower-se back box face",
+      "subassemblyId": "castle-tower-se",
+      "root": true,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-se-front-1-2",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": 7.68,
+        "y": 4.5,
+        "z": 6.09
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 3,
+      "role": "castle-tower-se front box face",
+      "subassemblyId": "castle-tower-se",
+      "root": false,
+      "parentTileId": "castle-tower-se-front-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-se-back-1-2",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": 7.68,
+        "y": 4.5,
+        "z": 9.27
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 3,
+      "role": "castle-tower-se back box face",
+      "subassemblyId": "castle-tower-se",
+      "root": false,
+      "parentTileId": "castle-tower-se-back-1-1",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-se-left-1-1",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": 6.09,
+        "y": 1.5,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "castle-tower-se left box face",
+      "subassemblyId": "castle-tower-se",
+      "root": false,
+      "parentTileId": "castle-tower-se-front-1-1",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-se-right-1-1",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": 9.27,
+        "y": 1.5,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 2,
+      "role": "castle-tower-se right box face",
+      "subassemblyId": "castle-tower-se",
+      "root": false,
+      "parentTileId": "castle-tower-se-front-1-1",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-se-left-1-2",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": 6.09,
+        "y": 4.5,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "castle-tower-se left box face",
+      "subassemblyId": "castle-tower-se",
+      "root": false,
+      "parentTileId": "castle-tower-se-front-1-2",
+      "parentEdge": 3,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-tower-se-right-1-2",
+      "shape": "small-square",
+      "color": "#4d5bd1",
+      "position": {
+        "x": 9.27,
+        "y": 4.5,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 3,
+      "role": "castle-tower-se right box face",
+      "subassemblyId": "castle-tower-se",
+      "root": false,
+      "parentTileId": "castle-tower-se-front-1-2",
+      "parentEdge": 1,
+      "childEdge": 3,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-nw-base-cap",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 6.09,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 4,
+      "role": "castle-cap-nw hidden square nose cone cap",
+      "subassemblyId": "castle-cap-nw",
+      "root": false,
+      "parentTileId": "castle-tower-nw-front-1-2",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-nw-front-face",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 7.3194524524050015,
+        "z": -2.7235499290444496
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0.880832939135831,
+          "z": 0.47342722073549315
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -0.47342722073549315,
+          "z": 0.880832939135831
+        }
+      },
+      "step": 5,
+      "role": "castle-cap-nw front triangular nose cone face",
+      "subassemblyId": "castle-cap-nw",
+      "root": false,
+      "parentTileId": "castle-cap-nw-base-cap",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-nw-right-face",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": -0.6364500709555507,
+        "y": 7.3194524524050015,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": -0.47342722073549315,
+          "y": 0.880832939135831,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -0.880832939135831,
+          "y": -0.47342722073549315,
+          "z": 0
+        }
+      },
+      "step": 6,
+      "role": "castle-cap-nw right triangular nose cone face",
+      "subassemblyId": "castle-cap-nw",
+      "root": false,
+      "parentTileId": "castle-cap-nw-base-cap",
+      "parentEdge": 1,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-nw-back-face",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 7.3194524524050015,
+        "z": -0.6364500709555507
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0.880832939135831,
+          "z": -0.47342722073549315
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -0.47342722073549315,
+          "z": -0.880832939135831
+        }
+      },
+      "step": 7,
+      "role": "castle-cap-nw back triangular nose cone face",
+      "subassemblyId": "castle-cap-nw",
+      "root": false,
+      "parentTileId": "castle-cap-nw-base-cap",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-nw-left-face",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": -2.7235499290444496,
+        "y": 7.3194524524050015,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        },
+        "yAxis": {
+          "x": 0.47342722073549315,
+          "y": 0.880832939135831,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0.880832939135831,
+          "y": -0.47342722073549315,
+          "z": 0
+        }
+      },
+      "step": 8,
+      "role": "castle-cap-nw left triangular nose cone face",
+      "subassemblyId": "castle-cap-nw",
+      "root": false,
+      "parentTileId": "castle-cap-nw-base-cap",
+      "parentEdge": 3,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-ne-base-cap",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": 7.68,
+        "y": 6.09,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 4,
+      "role": "castle-cap-ne hidden square nose cone cap",
+      "subassemblyId": "castle-cap-ne",
+      "root": false,
+      "parentTileId": "castle-tower-ne-front-1-2",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-ne-front-face",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": 7.68,
+        "y": 7.3194524524050015,
+        "z": -2.7235499290444496
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0.880832939135831,
+          "z": 0.47342722073549315
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -0.47342722073549315,
+          "z": 0.880832939135831
+        }
+      },
+      "step": 5,
+      "role": "castle-cap-ne front triangular nose cone face",
+      "subassemblyId": "castle-cap-ne",
+      "root": false,
+      "parentTileId": "castle-cap-ne-base-cap",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-ne-right-face",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": 8.723549929044449,
+        "y": 7.3194524524050015,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": -0.47342722073549315,
+          "y": 0.880832939135831,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -0.880832939135831,
+          "y": -0.47342722073549315,
+          "z": 0
+        }
+      },
+      "step": 6,
+      "role": "castle-cap-ne right triangular nose cone face",
+      "subassemblyId": "castle-cap-ne",
+      "root": false,
+      "parentTileId": "castle-cap-ne-base-cap",
+      "parentEdge": 1,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-ne-back-face",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": 7.68,
+        "y": 7.3194524524050015,
+        "z": -0.6364500709555507
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0.880832939135831,
+          "z": -0.47342722073549315
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -0.47342722073549315,
+          "z": -0.880832939135831
+        }
+      },
+      "step": 7,
+      "role": "castle-cap-ne back triangular nose cone face",
+      "subassemblyId": "castle-cap-ne",
+      "root": false,
+      "parentTileId": "castle-cap-ne-base-cap",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-ne-left-face",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": 6.63645007095555,
+        "y": 7.3194524524050015,
+        "z": -1.6800000000000002
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        },
+        "yAxis": {
+          "x": 0.47342722073549315,
+          "y": 0.880832939135831,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0.880832939135831,
+          "y": -0.47342722073549315,
+          "z": 0
+        }
+      },
+      "step": 8,
+      "role": "castle-cap-ne left triangular nose cone face",
+      "subassemblyId": "castle-cap-ne",
+      "root": false,
+      "parentTileId": "castle-cap-ne-base-cap",
+      "parentEdge": 3,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-sw-base-cap",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 6.09,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 4,
+      "role": "castle-cap-sw hidden square nose cone cap",
+      "subassemblyId": "castle-cap-sw",
+      "root": false,
+      "parentTileId": "castle-tower-sw-front-1-2",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-sw-front-face",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 7.3194524524050015,
+        "z": 6.63645007095555
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0.880832939135831,
+          "z": 0.47342722073549315
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -0.47342722073549315,
+          "z": 0.880832939135831
+        }
+      },
+      "step": 5,
+      "role": "castle-cap-sw front triangular nose cone face",
+      "subassemblyId": "castle-cap-sw",
+      "root": false,
+      "parentTileId": "castle-cap-sw-base-cap",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-sw-right-face",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": -0.6364500709555507,
+        "y": 7.3194524524050015,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": -0.47342722073549315,
+          "y": 0.880832939135831,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -0.880832939135831,
+          "y": -0.47342722073549315,
+          "z": 0
+        }
+      },
+      "step": 6,
+      "role": "castle-cap-sw right triangular nose cone face",
+      "subassemblyId": "castle-cap-sw",
+      "root": false,
+      "parentTileId": "castle-cap-sw-base-cap",
+      "parentEdge": 1,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-sw-back-face",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": -1.6800000000000002,
+        "y": 7.3194524524050015,
+        "z": 8.723549929044449
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0.880832939135831,
+          "z": -0.47342722073549315
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -0.47342722073549315,
+          "z": -0.880832939135831
+        }
+      },
+      "step": 7,
+      "role": "castle-cap-sw back triangular nose cone face",
+      "subassemblyId": "castle-cap-sw",
+      "root": false,
+      "parentTileId": "castle-cap-sw-base-cap",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-sw-left-face",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": -2.7235499290444496,
+        "y": 7.3194524524050015,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        },
+        "yAxis": {
+          "x": 0.47342722073549315,
+          "y": 0.880832939135831,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0.880832939135831,
+          "y": -0.47342722073549315,
+          "z": 0
+        }
+      },
+      "step": 8,
+      "role": "castle-cap-sw left triangular nose cone face",
+      "subassemblyId": "castle-cap-sw",
+      "root": false,
+      "parentTileId": "castle-cap-sw-base-cap",
+      "parentEdge": 3,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-se-base-cap",
+      "shape": "small-square",
+      "color": "#ef476f",
+      "position": {
+        "x": 7.68,
+        "y": 6.09,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "step": 4,
+      "role": "castle-cap-se hidden square nose cone cap",
+      "subassemblyId": "castle-cap-se",
+      "root": false,
+      "parentTileId": "castle-tower-se-front-1-2",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-se-front-face",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": 7.68,
+        "y": 7.3194524524050015,
+        "z": 6.63645007095555
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0.880832939135831,
+          "z": 0.47342722073549315
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -0.47342722073549315,
+          "z": 0.880832939135831
+        }
+      },
+      "step": 5,
+      "role": "castle-cap-se front triangular nose cone face",
+      "subassemblyId": "castle-cap-se",
+      "root": false,
+      "parentTileId": "castle-cap-se-base-cap",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-se-right-face",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": 8.723549929044449,
+        "y": 7.3194524524050015,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "yAxis": {
+          "x": -0.47342722073549315,
+          "y": 0.880832939135831,
+          "z": 0
+        },
+        "zAxis": {
+          "x": -0.880832939135831,
+          "y": -0.47342722073549315,
+          "z": 0
+        }
+      },
+      "step": 6,
+      "role": "castle-cap-se right triangular nose cone face",
+      "subassemblyId": "castle-cap-se",
+      "root": false,
+      "parentTileId": "castle-cap-se-base-cap",
+      "parentEdge": 1,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-se-back-face",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": 7.68,
+        "y": 7.3194524524050015,
+        "z": 8.723549929044449
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0.880832939135831,
+          "z": -0.47342722073549315
+        },
+        "zAxis": {
+          "x": 0,
+          "y": -0.47342722073549315,
+          "z": -0.880832939135831
+        }
+      },
+      "step": 7,
+      "role": "castle-cap-se back triangular nose cone face",
+      "subassemblyId": "castle-cap-se",
+      "root": false,
+      "parentTileId": "castle-cap-se-base-cap",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "castle-cap-se-left-face",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": 6.63645007095555,
+        "y": 7.3194524524050015,
+        "z": 7.68
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        },
+        "yAxis": {
+          "x": 0.47342722073549315,
+          "y": 0.880832939135831,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0.880832939135831,
+          "y": -0.47342722073549315,
+          "z": 0
+        }
+      },
+      "step": 8,
+      "role": "castle-cap-se left triangular nose cone face",
+      "subassemblyId": "castle-cap-se",
+      "root": false,
+      "parentTileId": "castle-cap-se-base-cap",
+      "parentEdge": 3,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    }
+  ],
+  "connections": [
+    {
+      "fromTileId": "castle-keep-front-1-1",
+      "fromEdge": 1,
+      "toTileId": "castle-keep-front-2-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-back-1-1",
+      "fromEdge": 1,
+      "toTileId": "castle-keep-back-2-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "castle-keep-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-front-2-1",
+      "fromEdge": 1,
+      "toTileId": "castle-keep-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-left-1-1",
+      "fromEdge": 1,
+      "toTileId": "castle-keep-left-2-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "castle-keep-left-2-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-right-1-1",
+      "fromEdge": 1,
+      "toTileId": "castle-keep-right-2-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-back-2-1",
+      "fromEdge": 1,
+      "toTileId": "castle-keep-right-2-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-front-1-1",
+      "fromEdge": 2,
+      "toTileId": "castle-tower-nw-front-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-back-1-1",
+      "fromEdge": 2,
+      "toTileId": "castle-tower-nw-back-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-nw-left-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-nw-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-back-1-1",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-nw-right-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-front-1-1",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-nw-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-left-1-1",
+      "fromEdge": 2,
+      "toTileId": "castle-tower-nw-left-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-back-1-2",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-nw-left-1-2",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-front-1-2",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-nw-left-1-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-right-1-1",
+      "fromEdge": 2,
+      "toTileId": "castle-tower-nw-right-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-back-1-2",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-nw-right-1-2",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-front-1-2",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-nw-right-1-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-front-1-1",
+      "fromEdge": 2,
+      "toTileId": "castle-tower-ne-front-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-back-1-1",
+      "fromEdge": 2,
+      "toTileId": "castle-tower-ne-back-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-ne-left-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-ne-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-back-1-1",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-ne-right-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-front-1-1",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-ne-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-left-1-1",
+      "fromEdge": 2,
+      "toTileId": "castle-tower-ne-left-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-back-1-2",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-ne-left-1-2",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-front-1-2",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-ne-left-1-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-right-1-1",
+      "fromEdge": 2,
+      "toTileId": "castle-tower-ne-right-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-back-1-2",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-ne-right-1-2",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-front-1-2",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-ne-right-1-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-front-1-1",
+      "fromEdge": 2,
+      "toTileId": "castle-tower-sw-front-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-back-1-1",
+      "fromEdge": 2,
+      "toTileId": "castle-tower-sw-back-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-sw-left-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-sw-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-back-1-1",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-sw-right-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-front-1-1",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-sw-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-left-1-1",
+      "fromEdge": 2,
+      "toTileId": "castle-tower-sw-left-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-back-1-2",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-sw-left-1-2",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-front-1-2",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-sw-left-1-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-right-1-1",
+      "fromEdge": 2,
+      "toTileId": "castle-tower-sw-right-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-back-1-2",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-sw-right-1-2",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-front-1-2",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-sw-right-1-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-front-1-1",
+      "fromEdge": 2,
+      "toTileId": "castle-tower-se-front-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-back-1-1",
+      "fromEdge": 2,
+      "toTileId": "castle-tower-se-back-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-se-left-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-se-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-back-1-1",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-se-right-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-front-1-1",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-se-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-left-1-1",
+      "fromEdge": 2,
+      "toTileId": "castle-tower-se-left-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-back-1-2",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-se-left-1-2",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-front-1-2",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-se-left-1-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-right-1-1",
+      "fromEdge": 2,
+      "toTileId": "castle-tower-se-right-1-2",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-back-1-2",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-se-right-1-2",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-front-1-2",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-se-right-1-2",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-nw-base-cap",
+      "fromEdge": 0,
+      "toTileId": "castle-cap-nw-front-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-nw-front-face",
+      "fromEdge": 1,
+      "toTileId": "castle-cap-nw-right-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-nw-base-cap",
+      "fromEdge": 1,
+      "toTileId": "castle-cap-nw-right-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-nw-right-face",
+      "fromEdge": 1,
+      "toTileId": "castle-cap-nw-back-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-nw-base-cap",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-nw-back-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-nw-back-face",
+      "fromEdge": 1,
+      "toTileId": "castle-cap-nw-left-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-nw-front-face",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-nw-left-face",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-nw-base-cap",
+      "fromEdge": 3,
+      "toTileId": "castle-cap-nw-left-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-ne-base-cap",
+      "fromEdge": 0,
+      "toTileId": "castle-cap-ne-front-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-ne-front-face",
+      "fromEdge": 1,
+      "toTileId": "castle-cap-ne-right-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-ne-base-cap",
+      "fromEdge": 1,
+      "toTileId": "castle-cap-ne-right-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-ne-right-face",
+      "fromEdge": 1,
+      "toTileId": "castle-cap-ne-back-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-ne-base-cap",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-ne-back-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-ne-back-face",
+      "fromEdge": 1,
+      "toTileId": "castle-cap-ne-left-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-ne-front-face",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-ne-left-face",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-ne-base-cap",
+      "fromEdge": 3,
+      "toTileId": "castle-cap-ne-left-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-sw-base-cap",
+      "fromEdge": 0,
+      "toTileId": "castle-cap-sw-front-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-sw-front-face",
+      "fromEdge": 1,
+      "toTileId": "castle-cap-sw-right-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-sw-base-cap",
+      "fromEdge": 1,
+      "toTileId": "castle-cap-sw-right-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-sw-right-face",
+      "fromEdge": 1,
+      "toTileId": "castle-cap-sw-back-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-sw-base-cap",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-sw-back-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-sw-back-face",
+      "fromEdge": 1,
+      "toTileId": "castle-cap-sw-left-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-sw-front-face",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-sw-left-face",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-sw-base-cap",
+      "fromEdge": 3,
+      "toTileId": "castle-cap-sw-left-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-se-base-cap",
+      "fromEdge": 0,
+      "toTileId": "castle-cap-se-front-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-se-front-face",
+      "fromEdge": 1,
+      "toTileId": "castle-cap-se-right-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-se-base-cap",
+      "fromEdge": 1,
+      "toTileId": "castle-cap-se-right-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-se-right-face",
+      "fromEdge": 1,
+      "toTileId": "castle-cap-se-back-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-se-base-cap",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-se-back-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-se-back-face",
+      "fromEdge": 1,
+      "toTileId": "castle-cap-se-left-face",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-se-front-face",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-se-left-face",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-cap-se-base-cap",
+      "fromEdge": 3,
+      "toTileId": "castle-cap-se-left-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-left-1-1",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-nw-back-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-nw-back-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-left-1-1",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-nw-right-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-front-1-1",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-nw-right-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-right-1-1",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-ne-back-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-front-2-1",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-ne-back-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-right-1-1",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-ne-left-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-front-2-1",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-ne-left-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-left-2-1",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-sw-front-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-sw-front-1-1",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-left-2-1",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-sw-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-back-1-1",
+      "fromEdge": 3,
+      "toTileId": "castle-tower-sw-right-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-right-2-1",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-se-front-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-back-2-1",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-se-front-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-right-2-1",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-se-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-keep-back-2-1",
+      "fromEdge": 1,
+      "toTileId": "castle-tower-se-left-1-1",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-right-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-nw-base-cap",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-left-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-nw-base-cap",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-back-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-nw-base-cap",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-front-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-nw-base-cap",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-front-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-nw-front-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-right-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-nw-right-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-back-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-nw-back-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-nw-left-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-nw-left-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-right-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-ne-base-cap",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-left-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-ne-base-cap",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-back-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-ne-base-cap",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-front-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-ne-base-cap",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-front-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-ne-front-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-right-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-ne-right-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-back-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-ne-back-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-ne-left-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-ne-left-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-right-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-sw-base-cap",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-left-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-sw-base-cap",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-back-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-sw-base-cap",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-front-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-sw-base-cap",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-front-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-sw-front-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-right-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-sw-right-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-back-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-sw-back-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-sw-left-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-sw-left-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-right-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-se-base-cap",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-left-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-se-base-cap",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-back-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-se-base-cap",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-front-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-se-base-cap",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-front-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-se-front-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-right-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-se-right-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-back-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-se-back-face",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "castle-tower-se-left-1-2",
+      "fromEdge": 2,
+      "toTileId": "castle-cap-se-left-face",
+      "toEdge": 0,
+      "kind": "edge"
+    }
+  ]
+}

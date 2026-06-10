@@ -948,10 +948,16 @@ function CameraRig({ bounds, nonce }: { bounds: { width: number; height: number;
   const camera = useThree((state) => state.camera);
   const controls = useThree((state) => state.controls) as { target: THREE.Vector3; update: () => void } | null;
   const framedNonceRef = useRef(0);
+  const framedWithControlsRef = useRef(false);
 
   useEffect(() => {
-    if (nonce === framedNonceRef.current) return;
+    // A frame applied before OrbitControls registered is incomplete (the
+    // controls never synced to the new target), so redo it once they exist —
+    // otherwise a build adopted during canvas mount (?draft= handoff) leaves
+    // the camera unframed and the scene reads as blank sky.
+    if (nonce === framedNonceRef.current && (framedWithControlsRef.current || !controls)) return;
     framedNonceRef.current = nonce;
+    framedWithControlsRef.current = Boolean(controls);
     const cameraDistance = Math.max(16, bounds.width, bounds.height, bounds.depth) * 1.8;
     camera.position.set(cameraDistance * 0.62, cameraDistance * 0.52, cameraDistance * 0.82);
     const target = new THREE.Vector3(0, Math.max(1.5, bounds.height * 0.22), 0);
