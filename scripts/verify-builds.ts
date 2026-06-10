@@ -77,7 +77,11 @@ async function main() {
 async function captureLibraryBuild(page: Page, id: string, title: string, prompt: string): Promise<CaptureRecord> {
   await page.goto(BASE_URL, { waitUntil: "domcontentloaded" });
   await page.getByRole("button", { name: new RegExp(`^${escapeRegExp(title)}`) }).click();
-  await waitForBuild(page, title);
+  // The viewer h2 shows the draft's own title, which can differ from the library
+  // card label — wait on the card's selected/loading state instead of title text.
+  await page.locator(".library-card.selected", { hasText: title }).waitFor({ timeout: 30_000 });
+  await page.locator(".library-card.selected[disabled]").waitFor({ state: "detached", timeout: 30_000 });
+  await waitForBuild(page);
   return captureCurrentBuild(page, { id, title, prompt, kind: "library", directory: join(OUTPUT_ROOT, id) });
 }
 
