@@ -23,7 +23,9 @@ import type {
 } from "./types";
 
 const SNAP_FOLDS = [0, Math.PI / 2, -Math.PI / 2, Math.PI / 4, -Math.PI / 4, Math.PI / 3, -Math.PI / 3];
-const COLORS = ["#118ab2", "#ffb703", "#06d6a0", "#ef476f", "#7b2cbf", "#8ecae6"];
+/** The Magna-Tiles classic palette used across the app (blue, yellow, green, magenta, purple, ice). */
+export const CLASSIC_TILE_COLORS = ["#118ab2", "#ffb703", "#06d6a0", "#ef476f", "#7b2cbf", "#8ecae6"];
+const COLORS = CLASSIC_TILE_COLORS;
 
 export type EdgeFitMode = "auto" | "flush" | "magnet-overlap";
 
@@ -136,14 +138,19 @@ export function addRootTile(
     role?: string;
     subassemblyId?: string;
     step?: number;
+    /** Lay the root tile flat on the ground plane (normal up) instead of standing upright. */
+    flat?: boolean;
   }
 ): AuthoredBuildDraft {
   const key = nextTileId(draft, input.shape);
+  const defaultPosition = input.flat
+    ? { x: 0, y: TILE_THICKNESS / 2, z: 0 }
+    : { x: 0, y: TILE_SPECS[input.shape].height / 2, z: 0 };
   const placed = makeAnchorTile(
     key,
     input.shape,
-    input.position ?? { x: 0, y: TILE_SPECS[input.shape].height / 2, z: 0 },
-    identityBasis(),
+    input.position ?? defaultPosition,
+    input.flat ? basisFromEuler(-Math.PI / 2, 0, 0) : identityBasis(),
     input.step ?? 1,
     input.role ?? "root panel",
     input.color ?? COLORS[draft.tiles.length % COLORS.length]

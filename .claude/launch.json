@@ -12,6 +12,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--", "-p", "3102"],
       "port": 3102
+    },
+    {
+      "name": "pillar-c-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "-p", "3101"],
+      "port": 3101
     }
   ]
 }
