@@ -2,7 +2,10 @@ import { spawn } from "node:child_process";
 import { mkdtemp, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { secondsToTimestamp } from "./timecode";
 import type { ReferenceFrameCandidate, ReferenceVideoSource } from "./types";
+
+export { secondsToTimestamp };
 
 export type FrameSample = Pick<
   ReferenceFrameCandidate,
@@ -188,6 +191,15 @@ async function captureYouTubeFrames(
   maxCount: number,
   options: FrameSamplingOptions
 ): Promise<AnalyzedFrame[]> {
+  // Prefer the real local download from the ingestion cache (.video-cache/):
+  // faster, deterministic, and avoids re-resolving a remote stream URL.
+  const { findCachedSourceFile } = await import("./ingest");
+  const cachedSource = await findCachedSourceFile(source.videoId);
+  if (cachedSource) {
+    const durationSeconds = await getVideoFileDuration(cachedSource);
+    return captureFramesFromInput(cachedSource, durationSeconds, requestedCount, maxCount, options);
+  }
+
   const info = await getVideoInfo(source.url);
   const durationSeconds = Number(info.duration);
   const videoUrl = await getVideoStreamUrl(source.url);
@@ -531,9 +543,3 @@ function uniqueSorted(values: number[]): number[] {
   return [...new Set(values.map((value) => Math.floor(value)))].sort((a, b) => a - b);
 }
 
-export function secondsToTimestamp(seconds: number): string {
-  const safeSeconds = Math.max(0, Math.floor(seconds));
-  const minutes = Math.floor(safeSeconds / 60);
-  const remainder = safeSeconds % 60;
-  return `${minutes}:${String(remainder).padStart(2, "0")}`;
-}
