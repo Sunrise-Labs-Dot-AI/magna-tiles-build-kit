@@ -100,37 +100,72 @@ export function validateMagneticBuild(build: EngineBuild): BuildValidation {
     });
   }
 
-  const connected = new Set<string>();
-  if (build.tiles[0]) connected.add(build.tiles[0].id);
-
-  let changed = true;
-  while (changed) {
-    changed = false;
-    for (const { connection } of validConnections) {
-      if (connected.has(connection.fromTileId) && !connected.has(connection.toTileId)) {
-        connected.add(connection.toTileId);
-        changed = true;
-      }
-      if (connected.has(connection.toTileId) && !connected.has(connection.fromTileId)) {
-        connected.add(connection.fromTileId);
-        changed = true;
-      }
-    }
+  // Connectivity is judged PER CONNECTED COMPONENT, not against tiles[0]: two separate
+  // grounded towers on a table are physically real. A component is acceptable when at
+  // least one of its tiles rests on the ground; a component with no ground support is a
+  // floating fragment and is rejected. This is per-component ground support, not a
+  // loosened check — a genuinely floating tile still fails, and any DECLARED connection
+  // that is not a real magnetic edge match still rejects the build above.
+  const componentOf = connectedComponents(build.tiles, validConnections);
+  const groundedComponents = new Set<number>();
+  for (const tile of build.tiles) {
+    if (tileRestsOnGround(tile)) groundedComponents.add(componentOf.get(tile.id)!);
   }
 
   for (const tile of build.tiles) {
     const isOnlyTile = build.tiles.length === 1;
-    const isConnected = connected.has(tile.id);
     const hasParent = tile.parentTileId || tile.root || isOnlyTile;
-    if (!isConnected) rejectedReasons.push(`disconnected-tile:${tile.id}`);
+    if (!groundedComponents.has(componentOf.get(tile.id)!)) {
+      rejectedReasons.push(`ungrounded-component:${tile.id}`);
+    }
     if (!isOnlyTile && !hasParent) rejectedReasons.push(`unsnapped-tile:${tile.id}`);
   }
 
-  if (build.tiles.length > 1 && validConnections.length === 0) {
-    rejectedReasons.push("no-valid-magnetic-joints");
+  return { validConnections, rejectedReasons };
+}
+
+/**
+ * A tile "rests on the ground" when its prism reaches down to the table surface. The
+ * epsilon matches the established ground-contact threshold used by the validator's
+ * floating-tile check (0.05); it is a contact threshold, not an overlap tolerance.
+ */
+const GROUND_CONTACT_EPSILON = 0.05;
+
+function tileRestsOnGround(tile: TileInstance): boolean {
+  const minY = Math.min(...tilePrismVertices(tile, TILE_THICKNESS).map((point) => point.y));
+  return minY <= GROUND_CONTACT_EPSILON;
+}
+
+/** Union-find over valid magnetic connections: tile id → component index. */
+function connectedComponents(
+  tiles: TileInstance[],
+  validConnections: ValidatedConnection[]
+): Map<string, number> {
+  const parent = new Map<string, string>(tiles.map((tile) => [tile.id, tile.id]));
+  const find = (id: string): string => {
+    let root = id;
+    while (parent.get(root) !== root) root = parent.get(root)!;
+    let cursor = id;
+    while (parent.get(cursor) !== cursor) {
+      const next = parent.get(cursor)!;
+      parent.set(cursor, root);
+      cursor = next;
+    }
+    return root;
+  };
+  for (const { connection } of validConnections) {
+    if (!parent.has(connection.fromTileId) || !parent.has(connection.toTileId)) continue;
+    parent.set(find(connection.fromTileId), find(connection.toTileId));
   }
 
-  return { validConnections, rejectedReasons };
+  const componentIndex = new Map<string, number>();
+  const componentOf = new Map<string, number>();
+  for (const tile of tiles) {
+    const root = find(tile.id);
+    if (!componentIndex.has(root)) componentIndex.set(root, componentIndex.size);
+    componentOf.set(tile.id, componentIndex.get(root)!);
+  }
+  return componentOf;
 }
 
 export function connectionId(connection: MagneticConnection): string {
