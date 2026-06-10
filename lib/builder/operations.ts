@@ -2,7 +2,7 @@ import { SHAPE_ORDER, SMALL_EDGE, TILE_SPECS, TILE_THICKNESS, emptyInventory } f
 import { attachTile, basisFromEuler, identityBasis, makeAnchorTile, worldEdge, type EdgePlacedTile } from "@/lib/magnetic-tiles/edge-attachment";
 import { assertNoRawOverlaps, overlapsInvolvingTile } from "@/lib/engine/overlap";
 import { findMagneticEdgeMatch, tileLocalVertices, tileWorldVertices } from "@/lib/magnetic-tiles/magnet-geometry";
-import { tilesIntersectAsPrisms } from "@/lib/magnetic-tiles/prism-geometry";
+import { tilePrismVertices, tilesIntersectAsPrisms } from "@/lib/magnetic-tiles/prism-geometry";
 import { validateBuild } from "@/lib/magnetic-tiles/validation";
 import type {
   BuildBounds,
@@ -12,6 +12,7 @@ import type {
   Inventory,
   MagneticConnection,
   Rotation,
+  TileBasis,
   TileShape,
   Vec3
 } from "@/lib/magnetic-tiles/types";
@@ -129,6 +130,50 @@ export function assembleBuildGraph(
   return graph;
 }
 
+/**
+ * Snapped root-tile orientation: how the first tile meets the ground.
+ * - standAngle: radians up from the ground plane — 0 lays the tile flat (normal up),
+ *   PI/4 leans it, PI/2 stands it upright on its bottom edge.
+ * - yaw: rotation about the world Y axis (multiples of PI from the placement flow).
+ * No free rotation: callers derive these from the discrete fold/flip controls.
+ */
+export interface RootOrientation {
+  standAngle: number;
+  yaw: number;
+}
+
+/** Basis for a root orientation: world = Ry(yaw) ∘ Rx(standAngle - PI/2) on an upright tile. */
+export function rootOrientationBasis(orientation: RootOrientation): TileBasis {
+  const theta = orientation.standAngle - Math.PI / 2;
+  const cosT = Math.cos(theta);
+  const sinT = Math.sin(theta);
+  const cosY = Math.cos(orientation.yaw);
+  const sinY = Math.sin(orientation.yaw);
+  return {
+    xAxis: { x: cosY, y: 0, z: -sinY },
+    yAxis: { x: sinT * sinY, y: cosT, z: sinT * cosY },
+    zAxis: { x: cosT * sinY, y: -sinT, z: cosT * cosY }
+  };
+}
+
+/** Center height at which a tile with this basis rests exactly on the ground plane. */
+export function rootRestingHeight(shape: TileShape, basis: TileBasis): number {
+  const probe: BuilderTile = {
+    id: "resting-probe",
+    shape,
+    color: "#000000",
+    position: { x: 0, y: 0, z: 0 },
+    rotation: { x: 0, y: 0, z: 0 },
+    basis,
+    step: 1,
+    role: "probe",
+    authoredMode: "edge-snap",
+    confirmed: false
+  };
+  const minY = Math.min(...tilePrismVertices(probe, TILE_THICKNESS).map((point) => point.y));
+  return -minY;
+}
+
 export function addRootTile(
   draft: AuthoredBuildDraft,
   input: {
@@ -140,17 +185,32 @@ export function addRootTile(
     step?: number;
     /** Lay the root tile flat on the ground plane (normal up) instead of standing upright. */
     flat?: boolean;
+    /**
+     * Snapped ground orientation (flat / leaning / standing). When given, it wins over
+     * `flat`, and the tile's y is recomputed so the prism rests exactly on the ground
+     * (input.position supplies only x/z).
+     */
+    orientation?: RootOrientation;
   }
 ): AuthoredBuildDraft {
   const key = nextTileId(draft, input.shape);
   const defaultPosition = input.flat
     ? { x: 0, y: TILE_THICKNESS / 2, z: 0 }
     : { x: 0, y: TILE_SPECS[input.shape].height / 2, z: 0 };
+  const basis = input.orientation
+    ? rootOrientationBasis(input.orientation)
+    : input.flat
+      ? basisFromEuler(-Math.PI / 2, 0, 0)
+      : identityBasis();
+  const requestedPosition = input.position ?? defaultPosition;
+  const position = input.orientation
+    ? { x: requestedPosition.x, y: rootRestingHeight(input.shape, basis), z: requestedPosition.z }
+    : requestedPosition;
   const placed = makeAnchorTile(
     key,
     input.shape,
-    input.position ?? defaultPosition,
-    input.flat ? basisFromEuler(-Math.PI / 2, 0, 0) : identityBasis(),
+    position,
+    basis,
     input.step ?? 1,
     input.role ?? "root panel",
     input.color ?? COLORS[draft.tiles.length % COLORS.length]

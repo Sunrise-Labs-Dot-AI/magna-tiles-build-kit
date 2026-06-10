@@ -9,12 +9,15 @@
  */
 import { SMALL_EDGE, TILE_SPECS, TILE_THICKNESS } from "@/lib/magnetic-tiles/catalog";
 import { overlapsInvolvingTile } from "@/lib/engine/overlap";
-import { tileWorldVertices } from "@/lib/magnetic-tiles/magnet-geometry";
+import { tileLocalVertices, tileWorldVertices } from "@/lib/magnetic-tiles/magnet-geometry";
+import { magnetFractionsForLength, tileWorldMagnetPositions } from "@/lib/magnetic-tiles/magnets";
 import type { TileShape, Vec3 } from "@/lib/magnetic-tiles/types";
 import {
   addEdgeSnappedTile,
   addRootTile,
-  previewEdgeSnappedTile
+  createEmptyDraft,
+  previewEdgeSnappedTile,
+  type RootOrientation
 } from "./operations";
 import type { AuthoredBuildDraft, BuilderTile } from "./types";
 
@@ -39,6 +42,22 @@ export interface PlacementSettings {
   foldIndex: number;
   reverse: boolean;
   childEdge: number;
+}
+
+/**
+ * Map the fold controls onto a root-tile orientation. The same Q/E angle set drives
+ * both flows: Flat lays the tile down, ±45° leans it, ±90° stands it upright on its
+ * edge. Negative angles lean/stand facing the opposite way, and R (reverse) spins the
+ * tile 180° about the vertical axis. Everything stays angle-snapped: the only inputs
+ * are the five fold choices and a boolean flip.
+ */
+export function rootOrientationFromSettings(
+  settings: Pick<PlacementSettings, "foldIndex" | "reverse">
+): RootOrientation {
+  const fold = foldAngleFromIndex(settings.foldIndex);
+  const standAngle = Math.abs(fold);
+  const yaw = (fold < 0 ? Math.PI : 0) + (settings.reverse ? Math.PI : 0);
+  return { standAngle, yaw };
 }
 
 /** The magnet dot (or edge) currently hovered in the canvas. */
@@ -173,25 +192,160 @@ export function snapRootPosition(point: { x: number; z: number }, grid = ROOT_SN
 }
 
 /**
- * Place the first tile flat on the ground at the clicked point.
- * Only legal on an empty draft: every later tile must edge-snap to an existing one.
+ * Place the first tile on the ground at the clicked point, in the orientation chosen by
+ * the fold controls (flat by default — callers that omit foldIndex keep the old flat
+ * behavior). The tile rests on the ground in any orientation; addRootTile computes the
+ * resting height from the prism geometry. Only legal on an empty draft: every later
+ * tile must edge-snap to an existing one.
  */
 export function placeRootOnGround(
   draft: AuthoredBuildDraft,
-  input: { shape: TileShape; color: string; point: { x: number; z: number } }
+  input: {
+    shape: TileShape;
+    color: string;
+    point: { x: number; z: number };
+    foldIndex?: number;
+    reverse?: boolean;
+  }
 ): { draft: AuthoredBuildDraft; placedTileId: string | null } {
   if (draft.tiles.length > 0) {
     return { draft, placedTileId: null };
   }
+  const snapped = snapRootPosition(input.point);
+  const orientation = rootOrientationFromSettings({
+    foldIndex: input.foldIndex ?? FLAT_FOLD_INDEX,
+    reverse: input.reverse ?? false
+  });
   const next = addRootTile(draft, {
     shape: input.shape,
     color: input.color,
-    position: snapRootPosition(input.point),
-    flat: true,
+    position: { x: snapped.x, y: 0, z: snapped.z },
+    orientation,
     role: "root panel",
     subassemblyId: "body"
   });
   return { draft: next, placedTileId: next.tiles[next.tiles.length - 1].id };
+}
+
+/** Index of the "Flat" entry in FOLD_CHOICES. */
+export const FLAT_FOLD_INDEX = FOLD_CHOICES.findIndex((choice) => choice.radians === 0);
+
+/**
+ * Derive the root ghost: the exact tile a ground click would place right now.
+ * WYSIWYG by construction — it runs the same placeRootOnGround the click runs.
+ */
+export function deriveRootGhost(
+  draft: AuthoredBuildDraft,
+  settings: PlacementSettings,
+  point: { x: number; z: number } | null
+): BuilderTile | null {
+  if (!point || draft.tiles.length > 0) return null;
+  const { draft: next } = placeRootOnGround(draft, {
+    shape: settings.shape,
+    color: settings.color,
+    point,
+    foldIndex: settings.foldIndex,
+    reverse: settings.reverse
+  });
+  return next.tiles[0] ?? null;
+}
+
+/**
+ * Derive the canonical "tile in hand": the held tile at the grid origin, oriented per
+ * the current fold/flip controls and resting on the ground. The canvas offsets this
+ * tile to follow the cursor; on an empty draft it is exactly the root ghost at (0,0).
+ */
+export function deriveHandTile(settings: PlacementSettings): BuilderTile {
+  const { draft } = placeRootOnGround(createEmptyDraft("hand"), {
+    shape: settings.shape,
+    color: settings.color,
+    point: { x: 0, z: 0 },
+    foldIndex: settings.foldIndex,
+    reverse: settings.reverse
+  });
+  return { ...draft.tiles[0], id: "hand-ghost" };
+}
+
+/* ------------------------------------------------------------------ */
+/* Cursor-proximity snapping (the anti-flicker hover model)            */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Hover is derived from the cursor's world position — never from pointerenter/leave on
+ * tiny meshes. The cursor within SNAP_RADIUS of a snap point acquires it; once held, the
+ * hover survives until the cursor moves beyond SNAP_RELEASE_RADIUS (hysteresis), so a
+ * ghost can't oscillate on micro-movements at the boundary.
+ */
+export const SNAP_RADIUS = 1.6;
+export const SNAP_RELEASE_RADIUS = 2.3;
+
+export interface SnapPoint {
+  hover: MagnetHover;
+  position: Vec3;
+}
+
+/** Stable identity for a hover target, for change detection. */
+export function hoverKey(hover: MagnetHover | null): string {
+  if (!hover) return "";
+  return `${hover.tileId}:${hover.edge}:${hover.magnetIndex ?? "bar"}`;
+}
+
+/**
+ * Every snappable point on the draft: each magnet pair on every edge, plus the edge
+ * midpoint (the old edge-bar target). All placement still flows through the
+ * edge-attachment APIs; these are only hover candidates.
+ */
+export function collectSnapPoints(draft: AuthoredBuildDraft): SnapPoint[] {
+  return draft.tiles.flatMap((tile) => {
+    const magnets = builderTileMagnetWorldPoints(tile).map((magnet) => ({
+      hover: { tileId: tile.id, edge: magnet.edgeIndex, magnetIndex: magnet.magnetIndex, t: magnet.t },
+      position: magnet.position
+    }));
+    const vertices = builderTileWorldVertices(tile);
+    const midpoints = vertices.map((start, edgeIndex) => {
+      const end = vertices[(edgeIndex + 1) % vertices.length];
+      return {
+        hover: { tileId: tile.id, edge: edgeIndex, t: 0.5 },
+        position: {
+          x: (start.x + end.x) / 2,
+          y: (start.y + end.y) / 2,
+          z: (start.z + end.z) / 2
+        }
+      };
+    });
+    return [...magnets, ...midpoints];
+  });
+}
+
+/**
+ * Resolve the hover for the current cursor position with hysteresis. Pure and
+ * deterministic: same cursor + same current hover → same answer.
+ */
+export function resolveSnapHover(
+  points: SnapPoint[],
+  cursor: Vec3 | null,
+  current: MagnetHover | null
+): MagnetHover | null {
+  if (!cursor) return null;
+
+  let best: SnapPoint | null = null;
+  let bestDistance = Number.POSITIVE_INFINITY;
+  let currentDistance = Number.POSITIVE_INFINITY;
+  const currentKey = hoverKey(current);
+  for (const point of points) {
+    const d = distance3(point.position, cursor);
+    if (d < bestDistance) {
+      best = point;
+      bestDistance = d;
+    }
+    if (currentKey && hoverKey(point.hover) === currentKey) {
+      currentDistance = d;
+    }
+  }
+
+  if (best && bestDistance <= SNAP_RADIUS) return best.hover;
+  if (current && currentDistance <= SNAP_RELEASE_RADIUS) return current;
+  return null;
 }
 
 /**
@@ -260,4 +414,116 @@ export function ghostBlockedReason(draft: AuthoredBuildDraft, ghost: BuilderTile
 
 function normalizeIndex(value: number, length: number): number {
   return ((value % length) + length) % length;
+}
+
+/* ------------------------------------------------------------------ */
+/* Builder tile geometry (sizeOverride-aware), shared with the canvas  */
+/* ------------------------------------------------------------------ */
+
+/** Local polygon vertices, honoring a reference-encoder sizeOverride. */
+export function builderTileLocalVertices(tile: {
+  shape: TileShape;
+  sizeOverride?: BuilderTile["sizeOverride"];
+}): Vec3[] {
+  if (!tile.sizeOverride) return tileLocalVertices(tile.shape);
+  const halfW = tile.sizeOverride.width / 2;
+  const halfH = tile.sizeOverride.height / 2;
+
+  if (TILE_SPECS[tile.shape].maxEdges === 4) {
+    return [
+      { x: -halfW, y: -halfH, z: 0 },
+      { x: halfW, y: -halfH, z: 0 },
+      { x: halfW, y: halfH, z: 0 },
+      { x: -halfW, y: halfH, z: 0 }
+    ];
+  }
+
+  if (tile.shape === "right-triangle") {
+    return [
+      { x: -halfW, y: -halfH, z: 0 },
+      { x: halfW, y: -halfH, z: 0 },
+      { x: -halfW, y: halfH, z: 0 }
+    ];
+  }
+
+  return [
+    { x: -halfW, y: -halfH, z: 0 },
+    { x: halfW, y: -halfH, z: 0 },
+    { x: 0, y: halfH, z: 0 }
+  ];
+}
+
+/** World polygon vertices, honoring sizeOverride. */
+export function builderTileWorldVertices(tile: BuilderTile): Vec3[] {
+  if (!tile.sizeOverride) return tileWorldVertices(tile);
+  return builderTileLocalVertices(tile).map((point) => transformBuilderPoint(point, tile));
+}
+
+/** World magnet points for a builder tile, honoring sizeOverride. */
+export function builderTileMagnetWorldPoints(
+  tile: BuilderTile
+): Array<{ edgeIndex: number; magnetIndex: number; position: Vec3; t: number }> {
+  if (!tile.sizeOverride) {
+    return tileWorldMagnetPositions(tile).map((magnet) => ({
+      edgeIndex: magnet.edgeIndex,
+      magnetIndex: magnet.magnetIndex,
+      t: magnet.fraction,
+      position: magnet.worldPoint
+    }));
+  }
+
+  const vertices = builderTileWorldVertices(tile);
+  return vertices.flatMap((start, edgeIndex) => {
+    const end = vertices[(edgeIndex + 1) % vertices.length];
+    const length = distance3(start, end);
+    return magnetFractionsForLength(length).map((t, magnetIndex) => ({
+      edgeIndex,
+      magnetIndex,
+      t,
+      position: {
+        x: start.x + (end.x - start.x) * t,
+        y: start.y + (end.y - start.y) * t,
+        z: start.z + (end.z - start.z) * t
+      }
+    }));
+  });
+}
+
+/** Apply a builder tile's basis (or Euler rotation) + position to a local point. */
+export function transformBuilderPoint(point: Vec3, tile: BuilderTile): Vec3 {
+  if (tile.basis) {
+    return {
+      x: tile.basis.xAxis.x * point.x + tile.basis.yAxis.x * point.y + tile.basis.zAxis.x * point.z + tile.position.x,
+      y: tile.basis.xAxis.y * point.x + tile.basis.yAxis.y * point.y + tile.basis.zAxis.y * point.z + tile.position.y,
+      z: tile.basis.xAxis.z * point.x + tile.basis.yAxis.z * point.y + tile.basis.zAxis.z * point.z + tile.position.z
+    };
+  }
+
+  const cosZ = Math.cos(tile.rotation.z);
+  const sinZ = Math.sin(tile.rotation.z);
+  const zRotated = {
+    x: point.x * cosZ - point.y * sinZ,
+    y: point.x * sinZ + point.y * cosZ,
+    z: point.z
+  };
+  const cosY = Math.cos(tile.rotation.y);
+  const sinY = Math.sin(tile.rotation.y);
+  const yRotated = {
+    x: zRotated.x * cosY + zRotated.z * sinY,
+    y: zRotated.y,
+    z: -zRotated.x * sinY + zRotated.z * cosY
+  };
+  const cosX = Math.cos(tile.rotation.x);
+  const sinX = Math.sin(tile.rotation.x);
+  return {
+    x: yRotated.x + tile.position.x,
+    y: yRotated.y * cosX - yRotated.z * sinX + tile.position.y,
+    z: yRotated.y * sinX + yRotated.z * cosX + tile.position.z
+  };
+}
+
+function distance3(first: Vec3, second: Vec3): number {
+  return Math.sqrt(
+    (first.x - second.x) ** 2 + (first.y - second.y) ** 2 + (first.z - second.z) ** 2
+  );
 }
