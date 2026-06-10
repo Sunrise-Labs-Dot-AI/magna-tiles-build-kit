@@ -1,7 +1,7 @@
 "use client";
 
 import { Edges, OrbitControls } from "@react-three/drei";
-import { Canvas, useThree } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import {
   BallCollider,
   ConvexHullCollider,
@@ -16,44 +16,71 @@ import {
 import {
   ArrowLeft,
   Circle,
+  FolderOpen,
   Magnet,
-  Plus,
   Play,
+  Redo2,
   RotateCcw,
   Save,
   Trash2,
-  Undo2
+  Undo2,
+  X
 } from "lucide-react";
 import Link from "next/link";
-import { createRef, useEffect, useMemo, useRef, useState, type RefObject } from "react";
+import { createRef, useCallback, useEffect, useMemo, useRef, useState, type RefObject } from "react";
 import * as THREE from "three";
-import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import {
-  addEdgeSnappedTile,
-  addRootTile,
+  CLASSIC_TILE_COLORS,
   createDraftFromGenerated,
   createEmptyDraft,
   deleteBuilderTiles,
-  draftToBuildGraph,
-  previewEdgeSnappedTile,
-  updateBuilderTile
+  draftToBuildGraph
 } from "@/lib/builder/operations";
-import type { EdgeFitMode } from "@/lib/builder/operations";
+import {
+  FOLD_CHOICES,
+  collectTileSubtree,
+  confirmGhostPlacement,
+  clampChildEdge,
+  cycleChildEdge,
+  cycleFoldIndex,
+  defaultPlacementSettings,
+  deriveGhostPreview,
+  placeRootOnGround,
+  snapRootPosition,
+  type MagnetHover,
+  type PlacementSettings
+} from "@/lib/builder/placement";
 import type { AuthoredBuildDraft, BuildDraftSummary, BuilderTile } from "@/lib/builder/types";
-import { BALL_FRICTION, GROUND_FRICTION, HINGE_MAX_ANGLE, HINGE_MIN_ANGLE, ROLL_TEST_OFF_SURFACE_MARGIN, ROLL_TEST_SETTLE_STEPS, SIMULATION_TIMESTEP_SECONDS, TILE_FRICTION, TILE_THICKNESS } from "@/lib/engine/constants";
-import { createMagneticPhysicsModel, createRollTestPlan, currentWorldEdgeFromBody, gravityVector, isFunctionalRamp, sampleJointBreak, type MagneticPhysicsModel, type PhysicsBodyModel, type PhysicsJointModel, type RollTestPlan } from "@/lib/engine/physics-model";
+import {
+  BALL_FRICTION,
+  GROUND_FRICTION,
+  HINGE_MAX_ANGLE,
+  HINGE_MIN_ANGLE,
+  ROLL_TEST_OFF_SURFACE_MARGIN,
+  ROLL_TEST_SETTLE_STEPS,
+  SIMULATION_TIMESTEP_SECONDS,
+  TILE_FRICTION,
+  TILE_THICKNESS
+} from "@/lib/engine/constants";
+import {
+  createMagneticPhysicsModel,
+  createRollTestPlan,
+  currentWorldEdgeFromBody,
+  gravityVector,
+  isFunctionalRamp,
+  sampleJointBreak,
+  type MagneticPhysicsModel,
+  type PhysicsBodyModel,
+  type PhysicsJointModel,
+  type RollTestPlan
+} from "@/lib/engine/physics-model";
 import type { GateBuildResult } from "@/lib/engine";
 import { SHAPE_ORDER, TILE_SPECS } from "@/lib/magnetic-tiles/catalog";
-import { tileLocalVertices } from "@/lib/magnetic-tiles/magnet-geometry";
+import { tileLocalVertices, tileWorldVertices } from "@/lib/magnetic-tiles/magnet-geometry";
 import { magnetFractionsForLength, tileWorldMagnetPositions } from "@/lib/magnetic-tiles/magnets";
 import { BUILD_LIBRARY } from "@/lib/magnetic-tiles/library";
 import type { GeneratedBuildResponse, TileShape, Vec3 } from "@/lib/magnetic-tiles/types";
-import { JET_AIRCRAFT_REFERENCE_FRAMES } from "@/lib/reference-encoder/examples/jet-aircraft-frames";
 
-const DEFAULT_COLOR = "#118ab2";
-const EMPTY_WORKBENCH_TIME = "1970-01-01T00:00:00.000Z";
-type CameraMove = { direction: "left" | "right" | "up" | "down" | "in" | "out"; nonce: number };
-type SelectedEdge = { tileId: string; edge: number; magnetIndex?: number; t?: number };
 type SimulationMode = "edit" | "stability" | "roll";
 type GateState =
   | { status: "checking"; gate?: GateBuildResult; detail?: string }
@@ -65,61 +92,161 @@ type SandboxStatus = {
   poppedJoints: string[];
   roll?: "running" | "reached-bottom" | "fell-off";
 };
+type SnapBurstInstance = { id: number; position: Vec3 };
 type BodyRef = RefObject<RapierRigidBody | null>;
-const FOLD_OPTIONS = [
-  { label: "-90", value: -Math.PI / 2 },
-  { label: "-45", value: -Math.PI / 4 },
-  { label: "0", value: 0 },
-  { label: "45", value: Math.PI / 4 },
-  { label: "90", value: Math.PI / 2 }
-];
+
+const HISTORY_CAP = 60;
+const WHEEL_STEP_THRESHOLD = 28;
 
 export default function BuilderPage() {
-  const [draft, setDraft] = useState<AuthoredBuildDraft>(() => createStableWorkbenchDraft());
-  const [draftHistory, setDraftHistory] = useState<AuthoredBuildDraft[]>([]);
+  const [draft, setDraft] = useState<AuthoredBuildDraft>(() => createEmptyDraft("My Build"));
+  const [past, setPast] = useState<AuthoredBuildDraft[]>([]);
+  const [future, setFuture] = useState<AuthoredBuildDraft[]>([]);
   const [savedDrafts, setSavedDrafts] = useState<BuildDraftSummary[]>([]);
+  const [settings, setSettings] = useState<PlacementSettings>(() => defaultPlacementSettings());
+  const [hover, setHover] = useState<MagnetHover | null>(null);
+  const [rootHover, setRootHover] = useState<{ x: number; z: number } | null>(null);
   const [selectedTileId, setSelectedTileId] = useState<string | null>(null);
-  const [selectedTileIds, setSelectedTileIds] = useState<string[]>([]);
-  const [selectedEdge, setSelectedEdge] = useState<SelectedEdge | null>(null);
-  const [shape, setShape] = useState<TileShape>("small-square");
-  const [childEdge, setChildEdge] = useState(0);
-  const [foldAngle, setFoldAngle] = useState(0);
-  const [edgeFit, setEdgeFit] = useState<EdgeFitMode>("auto");
-  const [reverse, setReverse] = useState(true);
-  const [color, setColor] = useState(DEFAULT_COLOR);
-  const [status, setStatus] = useState<string | null>(null);
+  const [flash, setFlash] = useState<{ tileId: string; at: number } | null>(null);
+  const [bursts, setBursts] = useState<SnapBurstInstance[]>([]);
+  const [toast, setToast] = useState<{ text: string; kind: "info" | "blocked" } | null>(null);
   const [gateState, setGateState] = useState<GateState>({ status: "checking" });
+  const [gateOpen, setGateOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [simulationMode, setSimulationMode] = useState<SimulationMode>("edit");
   const [simulationNonce, setSimulationNonce] = useState(0);
   const [sandboxStatus, setSandboxStatus] = useState<SandboxStatus | null>(null);
+
+  const burstIdRef = useRef(1);
+  const toastTimerRef = useRef<number | null>(null);
+  const hoverRef = useRef<MagnetHover | null>(null);
+  hoverRef.current = hover;
+  const wheelAccumRef = useRef(0);
+
   const build = useMemo(() => draftToBuildGraph(draft), [draft]);
   const rollPlan = useMemo(() => createRollTestPlan(build), [build]);
   const isRamp = useMemo(() => isFunctionalRamp(build), [build]);
-  const selectedTile = draft.tiles.find((tile) => tile.id === selectedTileId) ?? null;
-  const actionTileIds = selectedTileIds.length > 0 ? selectedTileIds : selectedTileId ? [selectedTileId] : [];
-  const ghostTile = useMemo(() => {
-    if (!selectedEdge) return null;
-    return previewEdgeSnappedTile(draft, {
-      parentTileId: selectedEdge.tileId,
-      parentEdge: selectedEdge.edge,
-      parentMagnetT: selectedEdge.t,
-      childShape: shape,
-      childEdge,
-      foldAngle,
-      edgeFit,
-      reverse,
-      color,
-      role: `${TILE_SPECS[shape].shortLabel.toLowerCase()} attached panel`,
-      step: selectedTile?.step ?? 1,
-      subassemblyId: selectedTile?.subassemblyId
+  const ghost = useMemo(() => deriveGhostPreview(draft, hover, settings), [draft, hover, settings]);
+  const rootGhost = useMemo(() => {
+    if (draft.tiles.length > 0 || !rootHover || simulationMode !== "edit") return null;
+    const { draft: next } = placeRootOnGround(draft, {
+      shape: settings.shape,
+      color: settings.color,
+      point: rootHover
     });
-  }, [childEdge, color, draft, edgeFit, foldAngle, reverse, selectedEdge, selectedTile?.step, selectedTile?.subassemblyId, shape]);
+    return next.tiles[0] ?? null;
+  }, [draft, rootHover, settings.color, settings.shape, simulationMode]);
+  const selectedTile = draft.tiles.find((tile) => tile.id === selectedTileId) ?? null;
+  const selectedSubtree = useMemo(
+    () => (selectedTileId ? collectTileSubtree(draft, selectedTileId) : []),
+    [draft, selectedTileId]
+  );
+  const isSimulating = simulationMode !== "edit";
 
-  useEffect(() => {
-    void loadLibraryDraft(BUILD_LIBRARY[0]?.prompt ?? "Jet Aircraft");
-    void refreshDrafts();
+  const showToast = useCallback((text: string, kind: "info" | "blocked" = "info") => {
+    setToast({ text, kind });
+    if (toastTimerRef.current) window.clearTimeout(toastTimerRef.current);
+    toastTimerRef.current = window.setTimeout(() => setToast(null), 2600);
   }, []);
 
+  const resetSimulation = useCallback(() => {
+    setSimulationMode("edit");
+    setSimulationNonce((nonce) => nonce + 1);
+    setSandboxStatus(null);
+  }, []);
+
+  const commitDraft = useCallback(
+    (next: AuthoredBuildDraft) => {
+      setPast((history) => [...history.slice(-(HISTORY_CAP - 1)), draft]);
+      setFuture([]);
+      setDraft(next);
+      resetSimulation();
+    },
+    [draft, resetSimulation]
+  );
+
+  const undo = useCallback(() => {
+    setPast((history) => {
+      const previous = history[history.length - 1];
+      if (!previous) return history;
+      setFuture((stack) => [draft, ...stack].slice(0, HISTORY_CAP));
+      setDraft(previous);
+      setSelectedTileId((id) => (id && previous.tiles.some((tile) => tile.id === id) ? id : null));
+      setHover(null);
+      resetSimulation();
+      return history.slice(0, -1);
+    });
+  }, [draft, resetSimulation]);
+
+  const redo = useCallback(() => {
+    setFuture((stack) => {
+      const next = stack[0];
+      if (!next) return stack;
+      setPast((history) => [...history.slice(-(HISTORY_CAP - 1)), draft]);
+      setDraft(next);
+      setSelectedTileId((id) => (id && next.tiles.some((tile) => tile.id === id) ? id : null));
+      setHover(null);
+      resetSimulation();
+      return stack.slice(1);
+    });
+  }, [draft, resetSimulation]);
+
+  const spawnBurst = useCallback((position: Vec3) => {
+    const id = burstIdRef.current;
+    burstIdRef.current += 1;
+    setBursts((current) => [...current, { id, position }]);
+    window.setTimeout(() => {
+      setBursts((current) => current.filter((burst) => burst.id !== id));
+    }, 520);
+  }, []);
+
+  const placeAtHover = useCallback(
+    (target: MagnetHover) => {
+      const result = confirmGhostPlacement(draft, target, settings);
+      if (!result.placedTileId) {
+        const blocked = deriveGhostPreview(draft, target, settings);
+        showToast(blocked?.reason ?? "That tile can't snap there.", "blocked");
+        return;
+      }
+      const placed = result.draft.tiles.find((tile) => tile.id === result.placedTileId);
+      commitDraft(result.draft);
+      setSelectedTileId(result.placedTileId);
+      setHover(null);
+      setFlash({ tileId: result.placedTileId, at: performance.now() });
+      if (placed) spawnBurst(placed.position);
+    },
+    [commitDraft, draft, settings, showToast, spawnBurst]
+  );
+
+  const placeRoot = useCallback(
+    (point: { x: number; z: number }) => {
+      if (draft.tiles.length > 0) return;
+      const result = placeRootOnGround(draft, { shape: settings.shape, color: settings.color, point });
+      if (!result.placedTileId) return;
+      commitDraft(result.draft);
+      setSelectedTileId(result.placedTileId);
+      setFlash({ tileId: result.placedTileId, at: performance.now() });
+      spawnBurst(snapRootPosition(point));
+      showToast("First tile down. Hover a magnet dot to snap the next one.");
+    },
+    [commitDraft, draft, settings.color, settings.shape, showToast, spawnBurst]
+  );
+
+  const deleteSelected = useCallback(() => {
+    if (!selectedTileId || selectedSubtree.length === 0) return;
+    const next = deleteBuilderTiles(draft, selectedSubtree);
+    commitDraft(next);
+    setSelectedTileId(null);
+    setHover(null);
+    showToast(
+      selectedSubtree.length === 1
+        ? "Tile removed."
+        : `Removed ${selectedSubtree.length} tiles (the tile and everything built on it).`
+    );
+  }, [commitDraft, draft, selectedSubtree, selectedTileId, showToast]);
+
+  // Engine gate: debounce-check every draft state. The gate is law; this only reports it.
   useEffect(() => {
     const controller = new AbortController();
     const timer = window.setTimeout(() => {
@@ -137,7 +264,10 @@ export default function BuilderPage() {
         })
         .catch((error) => {
           if (controller.signal.aborted) return;
-          setGateState({ status: "error", detail: error instanceof Error ? error.message : "Could not run engine gate." });
+          setGateState({
+            status: "error",
+            detail: error instanceof Error ? error.message : "Could not run engine gate."
+          });
         });
     }, 250);
 
@@ -148,17 +278,95 @@ export default function BuilderPage() {
   }, [draft]);
 
   useEffect(() => {
-    function handleKeyDown(event: KeyboardEvent) {
-      if (event.key !== "Delete" && event.key !== "Backspace") return;
-      if (isEditableTarget(event.target) || actionTileIds.length === 0) return;
+    void refreshDrafts();
+  }, []);
 
-      event.preventDefault();
-      deleteSelected();
+  // Game keyboard map.
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (isEditableTarget(event.target)) return;
+
+      const key = event.key.toLowerCase();
+      if ((event.metaKey || event.ctrlKey) && key === "z") {
+        event.preventDefault();
+        if (event.shiftKey) redo();
+        else undo();
+        return;
+      }
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+
+      if (event.key >= "1" && event.key <= "9") {
+        const index = Number(event.key) - 1;
+        const shape = SHAPE_ORDER[index];
+        if (shape) {
+          setSettings((current) => ({
+            ...current,
+            shape,
+            childEdge: clampChildEdge(shape, current.childEdge)
+          }));
+        }
+        return;
+      }
+
+      switch (key) {
+        case "q":
+          setSettings((current) => ({ ...current, foldIndex: cycleFoldIndex(current.foldIndex, -1) }));
+          break;
+        case "e":
+          setSettings((current) => ({ ...current, foldIndex: cycleFoldIndex(current.foldIndex, 1) }));
+          break;
+        case "r":
+          setSettings((current) => ({ ...current, reverse: !current.reverse }));
+          break;
+        case "t":
+          setSettings((current) => ({
+            ...current,
+            childEdge: cycleChildEdge(current.shape, current.childEdge, 1)
+          }));
+          break;
+        case "enter":
+          if (hoverRef.current) {
+            event.preventDefault();
+            placeAtHover(hoverRef.current);
+          }
+          break;
+        case "backspace":
+        case "delete":
+          event.preventDefault();
+          deleteSelected();
+          break;
+        case "escape":
+          setHover(null);
+          setSelectedTileId(null);
+          setDrawerOpen(false);
+          setGateOpen(false);
+          break;
+        default:
+          break;
+      }
     }
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [actionTileIds, draft]);
+  }, [deleteSelected, placeAtHover, redo, undo]);
+
+  // Scroll wheel cycles the fold while a ghost is live (non-passive so we can stop zoom).
+  const stageRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const node = stageRef.current;
+    if (!node) return;
+    function handleWheel(event: WheelEvent) {
+      if (!hoverRef.current) return;
+      event.preventDefault();
+      wheelAccumRef.current += event.deltaY;
+      if (Math.abs(wheelAccumRef.current) < WHEEL_STEP_THRESHOLD) return;
+      const direction = wheelAccumRef.current > 0 ? 1 : -1;
+      wheelAccumRef.current = 0;
+      setSettings((current) => ({ ...current, foldIndex: cycleFoldIndex(current.foldIndex, direction) }));
+    }
+    node.addEventListener("wheel", handleWheel, { passive: false });
+    return () => node.removeEventListener("wheel", handleWheel);
+  }, []);
 
   async function refreshDrafts() {
     const response = await fetch("/api/build-drafts");
@@ -167,53 +375,56 @@ export default function BuilderPage() {
     setSavedDrafts(body.drafts);
   }
 
-  async function loadLibraryDraft(prompt: string, draftId?: string) {
-    setStatus("Loading build into workbench");
-    if (draftId) {
-      const savedResponse = await fetch(`/api/build-drafts/${draftId}`);
-      if (savedResponse.ok) {
-        const body = (await savedResponse.json()) as { draft: AuthoredBuildDraft };
-        setDraft(body.draft);
-        setDraftHistory([]);
-        setSelectedTileId(body.draft.tiles[0]?.id ?? null);
-        setSelectedTileIds(body.draft.tiles[0] ? [body.draft.tiles[0].id] : []);
-        setSelectedEdge(null);
-        resetSimulation();
-        setStatus("Loaded saved stock draft.");
-        return;
-      }
-    }
-
-    const response = await fetch("/api/generate-build", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ prompt, inventoryPreset: "classic-100" })
-    });
-    const generated = (await response.json()) as GeneratedBuildResponse;
-    const next = createDraftFromGenerated(generated, {
-      id: generated.build.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""),
-      status: "draft",
-      referenceFrameSrcs: generated.build.title === "Jet Aircraft" ? JET_AIRCRAFT_REFERENCE_FRAMES.map((frame) => frame.src) : []
-    });
+  function adoptDraft(next: AuthoredBuildDraft, note?: string) {
     setDraft(next);
-    setDraftHistory([]);
-    setSelectedTileId(next.tiles[0]?.id ?? null);
-    setSelectedTileIds(next.tiles[0] ? [next.tiles[0].id] : []);
-    setSelectedEdge(null);
+    setPast([]);
+    setFuture([]);
+    setSelectedTileId(null);
+    setHover(null);
+    setRootHover(null);
     resetSimulation();
-    setStatus(null);
+    setDrawerOpen(false);
+    if (note) showToast(note);
+  }
+
+  async function loadLibraryDraft(prompt: string, draftId?: string) {
+    setLoading(true);
+    try {
+      if (draftId) {
+        const savedResponse = await fetch(`/api/build-drafts/${draftId}`);
+        if (savedResponse.ok) {
+          const body = (await savedResponse.json()) as { draft: AuthoredBuildDraft };
+          adoptDraft(body.draft, `Loaded ${body.draft.title}.`);
+          return;
+        }
+      }
+      const response = await fetch("/api/generate-build", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt, inventoryPreset: "classic-100" })
+      });
+      const generated = (await response.json()) as GeneratedBuildResponse;
+      const next = createDraftFromGenerated(generated, {
+        id: generated.build.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""),
+        status: "draft"
+      });
+      adoptDraft(next, `Loaded ${next.title} as a starting point.`);
+    } finally {
+      setLoading(false);
+    }
   }
 
   async function loadSavedDraft(id: string) {
     if (!id) return;
-    const response = await fetch(`/api/build-drafts/${id}`);
-    const body = (await response.json()) as { draft: AuthoredBuildDraft };
-    setDraft(body.draft);
-    setDraftHistory([]);
-    setSelectedTileId(body.draft.tiles[0]?.id ?? null);
-    setSelectedTileIds(body.draft.tiles[0] ? [body.draft.tiles[0].id] : []);
-    setSelectedEdge(null);
-    resetSimulation();
+    setLoading(true);
+    try {
+      const response = await fetch(`/api/build-drafts/${id}`);
+      if (!response.ok) return;
+      const body = (await response.json()) as { draft: AuthoredBuildDraft };
+      adoptDraft(body.draft, `Loaded ${body.draft.title}.`);
+    } finally {
+      setLoading(false);
+    }
   }
 
   async function saveDraft() {
@@ -224,589 +435,850 @@ export default function BuilderPage() {
     });
     const body = (await response.json()) as { draft?: AuthoredBuildDraft; gate?: GateBuildResult; detail?: string };
     if (!response.ok || !body.draft) {
-      setStatus(body.detail ?? "Could not save draft.");
+      showToast(body.detail ?? "Could not save the build.", "blocked");
       return;
     }
     setDraft(body.draft);
-    setDraftHistory([]);
     if (body.gate) setGateState({ status: "ready", gate: body.gate });
-    setStatus(`Saved ${body.draft.title}. Engine gate: ${body.gate?.passed ? "passed" : "failed"}.`);
+    showToast(`Saved ${body.draft.title}. Gate: ${body.gate?.passed ? "passed" : "not yet passing"}.`);
     await refreshDrafts();
   }
 
-  function addRoot() {
-    if (draft.tiles.length > 0) return;
-    const next = addRootTile(draft, {
-      shape,
-      color,
-      role: "root panel",
-      subassemblyId: "body"
-    });
-    const added = next.tiles[next.tiles.length - 1];
-    commitDraft(next);
-    setSelectedTileId(added.id);
-    setSelectedTileIds([added.id]);
-    setSelectedEdge(null);
+  function startEmptyBuild() {
+    adoptDraft(createEmptyDraft("My Build"), "Fresh ground. Click anywhere to lay the first tile.");
   }
 
-  function addSnapped() {
-    if (!selectedEdge) return;
-    const next = addEdgeSnappedTile(draft, {
-      parentTileId: selectedEdge.tileId,
-      parentEdge: selectedEdge.edge,
-      parentMagnetT: selectedEdge.t,
-      childShape: shape,
-      childEdge,
-      foldAngle,
-      edgeFit,
-      reverse,
-      color,
-      role: `${TILE_SPECS[shape].shortLabel.toLowerCase()} attached panel`,
-      step: selectedTile?.step ?? 1,
-      subassemblyId: selectedTile?.subassemblyId
-    });
-    const added = next.tiles[next.tiles.length - 1];
-    commitDraft(next);
-    setSelectedTileId(added?.id ?? selectedTileId);
-    setSelectedTileIds(added ? [added.id] : selectedTileId ? [selectedTileId] : []);
-    setSelectedEdge(null);
-  }
-
-  function updateSelected(patch: Partial<Pick<BuilderTile, "role" | "subassemblyId" | "step" | "color" | "confirmed">>) {
-    if (!selectedTileId) return;
-    commitDraft(updateBuilderTile(draft, selectedTileId, patch));
-  }
-
-  function selectTile(tileId: string, additive: boolean) {
-    setSelectedEdge(null);
-    setSelectedTileId(tileId);
-    setSelectedTileIds((current) => {
-      if (!additive) return [tileId];
-      if (current.includes(tileId)) {
-        const next = current.filter((id) => id !== tileId);
-        if (next.length === 0) {
-          setSelectedTileId(null);
-        }
-        return next;
-      }
-      return [...current, tileId];
-    });
-  }
-
-  function deleteSelected() {
-    if (actionTileIds.length === 0) return;
-
-    const next = deleteBuilderTiles(draft, actionTileIds);
-    commitDraft(next);
-    setSelectedTileId(next.tiles[0]?.id ?? null);
-    setSelectedTileIds(next.tiles[0] ? [next.tiles[0].id] : []);
-    setSelectedEdge(null);
-    setStatus(`Deleted ${actionTileIds.length} selected tile${actionTileIds.length === 1 ? "" : "s"}.`);
-  }
-
-  function commitDraft(next: AuthoredBuildDraft) {
-    setDraftHistory((history) => [...history.slice(-29), draft]);
-    setDraft(next);
-    resetSimulation();
-  }
-
-  function undoDraft() {
-    const previous = draftHistory[draftHistory.length - 1];
-    if (!previous) return;
-
-    setDraftHistory((history) => history.slice(0, -1));
-    setDraft(previous);
-    const previousIds = new Set(previous.tiles.map((tile) => tile.id));
-    const nextSelectedIds = selectedTileIds.filter((id) => previousIds.has(id));
-    const nextPrimary = selectedTileId && previousIds.has(selectedTileId)
-      ? selectedTileId
-      : nextSelectedIds[0] ?? previous.tiles[0]?.id ?? null;
-    setSelectedTileId(nextPrimary);
-    setSelectedTileIds(nextSelectedIds.length > 0 ? nextSelectedIds : nextPrimary ? [nextPrimary] : []);
-    setSelectedEdge(null);
-    resetSimulation();
-    setStatus("Undid last builder edit.");
-  }
-
-  function runStabilityTest() {
-    setSimulationMode("stability");
-    setSimulationNonce((nonce) => nonce + 1);
-    setSandboxStatus(null);
-  }
-
-  function runRollTest() {
-    setSimulationMode("roll");
-    setSimulationNonce((nonce) => nonce + 1);
-    setSandboxStatus(null);
-  }
-
-  function resetSimulation() {
-    setSimulationMode("edit");
-    setSimulationNonce((nonce) => nonce + 1);
-    setSandboxStatus(null);
-  }
-
-  const selectedEdgeCount = selectedTile ? TILE_SPECS[selectedTile.shape].maxEdges : 0;
-  const childEdgeCount = TILE_SPECS[shape].maxEdges;
-  const gateLabel = gateState.status === "checking"
-    ? "checking engine"
-    : gateState.status === "error"
-      ? "gate unavailable"
-      : gateState.gate.passed
-        ? "engine-valid"
-        : "engine failed";
-  const gateClass = gateState.status === "checking" ? "warn" : gateState.status === "ready" && gateState.gate.passed ? "pass" : "error";
+  const gateLabel =
+    draft.tiles.length === 0
+      ? "ready to build"
+      : gateState.status === "checking"
+        ? "checking…"
+        : gateState.status === "error"
+          ? "gate offline"
+          : gateState.gate.passed
+            ? "stands strong"
+            : "won't stand yet";
+  const gateClass =
+    draft.tiles.length === 0
+      ? "idle"
+      : gateState.status === "checking"
+        ? "checking"
+        : gateState.status === "ready" && gateState.gate.passed
+          ? "pass"
+          : "fail";
+  const gateReasons = gateState.status === "ready" ? gateState.gate.reasons : [];
+  const usedByShape = useMemo(() => {
+    const counts = new Map<TileShape, number>();
+    draft.tiles.forEach((tile) => counts.set(tile.shape, (counts.get(tile.shape) ?? 0) + 1));
+    return counts;
+  }, [draft.tiles]);
 
   return (
-    <main className="app-shell builder-shell">
-      <header className="topbar">
-        <div className="brand">
-          <div className="brand-mark">
-            <Magnet size={22} />
-          </div>
-          <div>
-            <h1>Build Workbench</h1>
-            <span>Author magnetic tile geometry before calling a build reviewed</span>
-          </div>
-        </div>
-        <Link className="builder-link" href="/">
-          <ArrowLeft size={16} />
-          Library
-        </Link>
-        <button className="builder-link" disabled={draftHistory.length === 0} onClick={undoDraft} type="button">
-          <Undo2 size={16} />
-          Undo
-        </button>
-      </header>
+    <main className="play-shell">
+      <div className="play-stage" ref={stageRef}>
+        <BuilderCanvas
+          key={draft.id}
+          bursts={bursts}
+          draft={draft}
+          flash={flash}
+          ghost={ghost}
+          hover={hover}
+          isSimulating={isSimulating}
+          onGroundClick={(point) => {
+            if (draft.tiles.length === 0) placeRoot(point);
+            else {
+              setSelectedTileId(null);
+              setHover(null);
+            }
+          }}
+          onGroundMove={(point) => {
+            if (draft.tiles.length === 0) setRootHover(point);
+          }}
+          onGroundLeave={() => setRootHover(null)}
+          onHoverMagnet={setHover}
+          onPlace={placeAtHover}
+          onSelectTile={(tileId) => {
+            setSelectedTileId(tileId);
+            setHover(null);
+          }}
+          onSimulationStatus={setSandboxStatus}
+          rootGhost={rootGhost}
+          selectedTileId={selectedTileId}
+          simulationMode={simulationMode}
+          simulationNonce={simulationNonce}
+          build={build}
+        />
 
-      <section className="builder-workspace">
-        <aside className="panel builder-panel">
-          <section>
-            <h2 className="section-title">Load</h2>
-            <div className="builder-button-grid">
+        {/* ---- top bar ---- */}
+        <header className="play-topbar">
+          <div className="play-topbar-left">
+            <Link aria-label="Back to library" className="play-chip play-chip-icon" href="/">
+              <ArrowLeft size={16} />
+            </Link>
+            <div className="play-brand">
+              <span className="play-brand-mark">
+                <Magnet size={16} />
+              </span>
+              <input
+                aria-label="Build title"
+                className="play-title-input"
+                onChange={(event) => setDraft({ ...draft, title: event.target.value, prompt: event.target.value })}
+                value={draft.title}
+              />
+            </div>
+            <span className="play-tile-count">
+              {draft.tiles.length} {draft.tiles.length === 1 ? "tile" : "tiles"}
+            </span>
+          </div>
+          <div className="play-topbar-right">
+            <div className="play-gate">
+              <button
+                className={`play-gate-pill ${gateClass}`}
+                onClick={() => setGateOpen((open) => !open)}
+                type="button"
+              >
+                <span className="play-gate-dot" />
+                {gateLabel}
+              </button>
+              {gateOpen ? (
+                <div className="play-gate-popover">
+                  <strong>Engine gate</strong>
+                  {gateState.status === "error" ? (
+                    <p>{gateState.detail}</p>
+                  ) : gateReasons.length > 0 ? (
+                    <ul>
+                      {gateReasons.map((reason) => (
+                        <li key={reason}>{reason}</li>
+                      ))}
+                    </ul>
+                  ) : gateState.status === "ready" ? (
+                    <p>No overlaps, valid magnet joints, and it stands under simulation.</p>
+                  ) : (
+                    <p>Checking physics…</p>
+                  )}
+                </div>
+              ) : null}
+            </div>
+            <button className="play-chip" disabled={past.length === 0} onClick={undo} title="Undo (Cmd+Z)" type="button">
+              <Undo2 size={15} />
+            </button>
+            <button
+              className="play-chip"
+              disabled={future.length === 0}
+              onClick={redo}
+              title="Redo (Shift+Cmd+Z)"
+              type="button"
+            >
+              <Redo2 size={15} />
+            </button>
+            <button className="play-chip" onClick={() => setDrawerOpen((open) => !open)} type="button">
+              <FolderOpen size={15} />
+              Builds
+            </button>
+            <button className="play-chip play-chip-strong" onClick={saveDraft} type="button">
+              <Save size={15} />
+              Save
+            </button>
+          </div>
+        </header>
+
+        {/* ---- physics dock ---- */}
+        <aside className="play-physics-dock">
+          <span className="play-dock-label">Physics</span>
+          <button
+            className="play-dock-button"
+            disabled={isSimulating || draft.tiles.length === 0}
+            onClick={() => {
+              setSimulationMode("stability");
+              setSimulationNonce((nonce) => nonce + 1);
+              setSandboxStatus(null);
+            }}
+            type="button"
+          >
+            <Play size={15} />
+            Shake test
+          </button>
+          <button
+            className="play-dock-button"
+            disabled={!isRamp || !rollPlan || isSimulating}
+            onClick={() => {
+              setSimulationMode("roll");
+              setSimulationNonce((nonce) => nonce + 1);
+              setSandboxStatus(null);
+            }}
+            type="button"
+          >
+            <Circle size={15} />
+            Roll a ball
+          </button>
+          <button className="play-dock-button" disabled={!isSimulating} onClick={resetSimulation} type="button">
+            <RotateCcw size={15} />
+            Rebuild
+          </button>
+          {sandboxStatus ? (
+            <div className="play-dock-readout">
+              <span>drift {sandboxStatus.maxDisplacement.toFixed(2)}</span>
+              <span>speed {sandboxStatus.maxSpeed.toFixed(2)}</span>
+              {sandboxStatus.poppedJoints.length > 0 ? (
+                <span className="bad">{sandboxStatus.poppedJoints.length} joints popped</span>
+              ) : null}
+              {sandboxStatus.roll ? (
+                <span className={sandboxStatus.roll === "fell-off" ? "bad" : sandboxStatus.roll === "reached-bottom" ? "good" : ""}>
+                  {sandboxStatus.roll === "reached-bottom"
+                    ? "ball made it!"
+                    : sandboxStatus.roll === "fell-off"
+                      ? "ball fell off"
+                      : "rolling…"}
+                </span>
+              ) : null}
+            </div>
+          ) : null}
+        </aside>
+
+        {/* ---- selected tile chip ---- */}
+        {selectedTile && !isSimulating ? (
+          <div className="play-selected-chip">
+            <span className="play-selected-swatch" style={{ background: selectedTile.color }} />
+            <span className="play-selected-name">
+              {TILE_SPECS[selectedTile.shape].label}
+              {selectedSubtree.length > 1 ? <small> +{selectedSubtree.length - 1} built on it</small> : null}
+            </span>
+            <button className="play-selected-delete" onClick={deleteSelected} type="button">
+              <Trash2 size={14} />
+              {selectedSubtree.length > 1 ? `Remove ${selectedSubtree.length}` : "Remove"}
+            </button>
+            <button aria-label="Clear selection" className="play-selected-clear" onClick={() => setSelectedTileId(null)} type="button">
+              <X size={13} />
+            </button>
+          </div>
+        ) : null}
+
+        {/* ---- toast ---- */}
+        {toast ? <div className={`play-toast ${toast.kind}`}>{toast.text}</div> : null}
+
+        {/* ---- empty state hint ---- */}
+        {draft.tiles.length === 0 && !isSimulating ? (
+          <div className="play-empty-hint">Click the ground to lay your first tile</div>
+        ) : null}
+        {isSimulating ? (
+          <div className="play-sim-banner">
+            Physics running — press <strong>Rebuild</strong> to keep building
+          </div>
+        ) : null}
+
+        {/* ---- hotbar ---- */}
+        <footer className="play-hotbar-wrap">
+          <div className="play-fold-row">
+            <span className="play-key-hint">
+              <kbd>Q</kbd>
+            </span>
+            <div className="play-fold-ticks" title="Fold angle (Q/E or scroll on a magnet)">
+              {FOLD_CHOICES.map((choice, index) => (
+                <button
+                  className={`play-fold-tick ${index === settings.foldIndex ? "active" : ""}`}
+                  key={choice.label}
+                  onClick={() => setSettings((current) => ({ ...current, foldIndex: index }))}
+                  type="button"
+                >
+                  {choice.label}
+                </button>
+              ))}
+            </div>
+            <span className="play-key-hint">
+              <kbd>E</kbd>
+            </span>
+            <button
+              className={`play-modifier ${settings.reverse ? "active" : ""}`}
+              onClick={() => setSettings((current) => ({ ...current, reverse: !current.reverse }))}
+              title="Flip edge direction (R)"
+              type="button"
+            >
+              <kbd>R</kbd> flip
+            </button>
+            <button
+              className="play-modifier"
+              onClick={() =>
+                setSettings((current) => ({
+                  ...current,
+                  childEdge: cycleChildEdge(current.shape, current.childEdge, 1)
+                }))
+              }
+              title="Cycle which edge of the new tile attaches (T)"
+              type="button"
+            >
+              <kbd>T</kbd> edge {settings.childEdge + 1}/{TILE_SPECS[settings.shape].maxEdges}
+            </button>
+          </div>
+          <div className="play-hotbar">
+            {SHAPE_ORDER.map((shape, index) => {
+              const used = usedByShape.get(shape) ?? 0;
+              return (
+                <button
+                  className={`play-slot ${settings.shape === shape ? "active" : ""}`}
+                  key={shape}
+                  onClick={() =>
+                    setSettings((current) => ({
+                      ...current,
+                      shape,
+                      childEdge: clampChildEdge(shape, current.childEdge)
+                    }))
+                  }
+                  title={TILE_SPECS[shape].label}
+                  type="button"
+                >
+                  <span className="play-slot-key">{index + 1}</span>
+                  <ShapeGlyph color={settings.shape === shape ? settings.color : "#a8b8c2"} shape={shape} />
+                  {used > 0 ? <span className="play-slot-count">{used}</span> : null}
+                </button>
+              );
+            })}
+            <div className="play-swatches">
+              {CLASSIC_TILE_COLORS.map((swatch) => (
+                <button
+                  aria-label={`Tile color ${swatch}`}
+                  className={`play-swatch ${settings.color === swatch ? "active" : ""}`}
+                  key={swatch}
+                  onClick={() => setSettings((current) => ({ ...current, color: swatch }))}
+                  style={{ background: swatch }}
+                  type="button"
+                />
+              ))}
+            </div>
+          </div>
+        </footer>
+
+        {/* ---- builds drawer ---- */}
+        {drawerOpen ? (
+          <div className="play-drawer">
+            <div className="play-drawer-head">
+              <strong>Builds</strong>
+              <button aria-label="Close" className="play-selected-clear" onClick={() => setDrawerOpen(false)} type="button">
+                <X size={14} />
+              </button>
+            </div>
+            <button className="play-drawer-item play-drawer-new" disabled={loading} onClick={startEmptyBuild} type="button">
+              + New empty build
+            </button>
+            <span className="play-drawer-label">Library starting points</span>
+            <div className="play-drawer-list">
               {BUILD_LIBRARY.map((item) => (
-                <button className="chip-button" key={item.id} onClick={() => loadLibraryDraft(item.prompt, item.id)} type="button">
+                <button
+                  className="play-drawer-item"
+                  disabled={loading}
+                  key={item.id}
+                  onClick={() => void loadLibraryDraft(item.prompt, item.id)}
+                  type="button"
+                >
                   {item.title}
                 </button>
               ))}
             </div>
-            <label className="builder-label">
-              <span>Saved drafts</span>
-              <select className="text-input" onChange={(event) => loadSavedDraft(event.target.value)} value="">
-                <option value="">Choose a saved draft</option>
-                {savedDrafts.map((item) => (
-                  <option key={item.id} value={item.id}>
-                    {item.title} · {item.status}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </section>
-
-          <section>
-            <h2 className="section-title">Tools</h2>
-            <label className="builder-label">
-              <span>Shape</span>
-              <select className="text-input" onChange={(event) => setShape(event.target.value as TileShape)} value={shape}>
-                {SHAPE_ORDER.map((item) => (
-                  <option key={item} value={item}>{TILE_SPECS[item].label}</option>
-                ))}
-              </select>
-            </label>
-            <label className="builder-label">
-              <span>Color</span>
-              <input className="text-input color-input" onChange={(event) => setColor(event.target.value)} type="color" value={color} />
-            </label>
-            <div className="builder-stack">
-              <p className="builder-hint">
-                Construction is edge-to-edge only: create one root tile, then click a magnet dot on an existing tile and attach the next tile to that edge.
-              </p>
-              {draft.tiles.length === 0 ? (
-                <button className="primary-button" onClick={addRoot} type="button">
-                  <Plus size={16} />
-                  Start root tile
-                </button>
-              ) : (
-                <button className="primary-button" disabled={!selectedEdge} onClick={addSnapped} type="button">
-                  <Plus size={16} />
-                  Add snapped tile
-                </button>
-              )}
-              <div className="mini-grid">
-                <label>
-                  <span>Parent edge</span>
-                  <select
-                    className="text-input"
-                    disabled={!selectedTile || draft.tiles.length === 0}
-                    onChange={(event) => setSelectedEdge(selectedTileId ? { tileId: selectedTileId, edge: Number(event.target.value) } : null)}
-                    value={selectedEdge?.edge ?? 0}
-                  >
-                    {Array.from({ length: Math.max(1, selectedEdgeCount) }, (_, index) => (
-                      <option key={index} value={index}>edge {index}</option>
-                    ))}
-                  </select>
-                </label>
-                <label>
-                  <span>Child edge</span>
-                  <select className="text-input" onChange={(event) => setChildEdge(Number(event.target.value))} value={childEdge}>
-                    {Array.from({ length: childEdgeCount }, (_, index) => (
-                      <option key={index} value={index}>edge {index}</option>
-                    ))}
-                  </select>
-                </label>
-              </div>
-              <div className="mini-grid">
-                <label>
-                  <span>Fold</span>
-                  <select className="text-input" onChange={(event) => setFoldAngle(Number(event.target.value))} value={foldAngle}>
-                    {FOLD_OPTIONS.map((option) => (
-                      <option key={option.label} value={option.value}>{option.label} deg</option>
-                    ))}
-                  </select>
-                </label>
-                <label className="check-row">
-                  <input checked={reverse} onChange={(event) => setReverse(event.target.checked)} type="checkbox" />
-                  Reverse edge
-                </label>
-              </div>
-              <label className="builder-label">
-                <span>Joint fit</span>
-                <select className="text-input" onChange={(event) => setEdgeFit(event.target.value as EdgeFitMode)} value={edgeFit}>
-                  <option value="auto">Auto: folded joins use clicked magnet</option>
-                  <option value="flush">Flush edge alignment</option>
-                  <option value="magnet-overlap">Magnet overlap alignment</option>
-                </select>
-              </label>
-            </div>
-          </section>
-
-          <section>
-            <h2 className="section-title">Actions</h2>
-            <div className="builder-button-grid">
-              <button
-                className="secondary-button"
-                disabled={actionTileIds.length === 0}
-                onClick={deleteSelected}
-                type="button"
-              >
-                <Trash2 size={15} />
-                Delete
-              </button>
-              <button className="secondary-button" disabled={simulationMode !== "edit"} onClick={runStabilityTest} type="button">
-                <Play size={15} />
-                Test stability
-              </button>
-              <button className="secondary-button" disabled={!isRamp || !rollPlan} onClick={runRollTest} type="button">
-                <Circle size={15} />
-                Roll a ball
-              </button>
-              <button className="secondary-button" disabled={simulationMode === "edit"} onClick={resetSimulation} type="button">
-                <RotateCcw size={15} />
-                Reset
-              </button>
-            </div>
-            {sandboxStatus ? (
-              <p className="issue-detail">
-                Run: displacement {sandboxStatus.maxDisplacement.toFixed(2)}, speed {sandboxStatus.maxSpeed.toFixed(2)}
-                {sandboxStatus.poppedJoints.length ? `, popped joints ${sandboxStatus.poppedJoints.length}` : ""}
-                {sandboxStatus.roll ? `, roll ${sandboxStatus.roll}` : ""}
-              </p>
+            {savedDrafts.length > 0 ? (
+              <>
+                <span className="play-drawer-label">Your saved builds</span>
+                <div className="play-drawer-list">
+                  {savedDrafts.map((item) => (
+                    <button
+                      className="play-drawer-item"
+                      disabled={loading}
+                      key={item.id}
+                      onClick={() => void loadSavedDraft(item.id)}
+                      type="button"
+                    >
+                      {item.title}
+                      <small>
+                        {item.tileCount} tiles · {item.status}
+                      </small>
+                    </button>
+                  ))}
+                </div>
+              </>
             ) : null}
-          </section>
-        </aside>
-
-        <section className="panel builder-canvas-panel">
-          <div className="builder-title-row">
-            <div>
-              <input
-                className="builder-title-input"
-                onChange={(event) => setDraft({ ...draft, title: event.target.value, prompt: event.target.value })}
-                value={draft.title}
-              />
-              <div className="builder-selection-meta">
-                <span>{draft.tiles.length} tiles · {draft.connections.length} confirmed joins</span>
-                <span>
-                  {selectedTileIds.length > 1
-                    ? `${selectedTileIds.length} selected`
-                    : selectedTile
-                      ? `selected ${selectedTile.id}`
-                      : "select a tile body or tile row"}
-                </span>
-                <span>
-                  {selectedEdge
-                    ? `edge ${selectedEdge.edge}${selectedEdge.magnetIndex !== undefined ? ` · magnet ${selectedEdge.magnetIndex + 1}` : ""} armed`
-                    : "pick a magnet dot or parent edge to preview"}
-                </span>
-              </div>
-            </div>
-            <span className={`pill ${gateClass}`}>
-              {gateLabel}
-            </span>
           </div>
-          <div className="builder-canvas-wrap">
-            <BuilderCanvas
-              build={build}
-              draft={draft}
-              ghostTile={ghostTile}
-              onSimulationStatus={setSandboxStatus}
-              selectedEdge={selectedEdge}
-              selectedTileId={selectedTileId}
-              selectedTileIds={selectedTileIds}
-              simulationMode={simulationMode}
-              simulationNonce={simulationNonce}
-              onSelectEdge={(tileId, edge, magnetIndex, t) => {
-                setSelectedTileId(tileId);
-                setSelectedTileIds([tileId]);
-                setSelectedEdge({ tileId, edge, magnetIndex, t });
-              }}
-              onSelectTile={selectTile}
-            />
-          </div>
-          {draft.referenceFrameSrcs.length > 0 ? (
-            <div className="builder-reference-rail">
-              {draft.referenceFrameSrcs.map((src) => (
-                <img alt="Reference frame" key={src} src={src} />
-              ))}
-            </div>
-          ) : null}
-        </section>
-
-        <aside className="panel builder-panel">
-          <section>
-            <h2 className="section-title">Selection</h2>
-            <p className="builder-hint">
-              Click a tile body to select it. Shift-click tile bodies or rows to select a group. New tiles can only be attached through a selected magnet edge.
-            </p>
-            {selectedTileIds.length > 1 ? (
-              <div className="selection-count">
-                <strong>{selectedTileIds.length} tiles selected</strong>
-                <button className="text-button" onClick={() => setSelectedTileIds(selectedTileId ? [selectedTileId] : [])} type="button">
-                  Keep primary only
-                </button>
-              </div>
-            ) : null}
-            <div className="builder-tile-list">
-              {draft.tiles.map((tile) => (
-                <button
-                  className={`builder-tile-button ${selectedTileIds.includes(tile.id) ? "selected" : ""}`}
-                  key={tile.id}
-                  onClick={(event) => selectTile(tile.id, event.shiftKey)}
-                  type="button"
-                >
-                  <span>
-                    <strong>{tile.id}</strong>
-                    <small>{TILE_SPECS[tile.shape].shortLabel} · step {tile.step}</small>
-                  </span>
-                  <span className={`mini-pill ${tile.confirmed ? "pass" : "warn"}`}>
-                    {tile.root ? "root" : tile.confirmed ? "snap" : "loaded"}
-                  </span>
-                </button>
-              ))}
-            </div>
-          </section>
-
-          <section>
-            <h2 className="section-title">Selected Tile</h2>
-            {selectedTile ? (
-              <div className="builder-stack">
-                <strong>{selectedTile.id}</strong>
-                <span className="muted">{TILE_SPECS[selectedTile.shape].label} · {selectedTile.authoredMode}</span>
-                <label className="builder-label">
-                  <span>Role</span>
-                  <input className="text-input" onChange={(event) => updateSelected({ role: event.target.value })} value={selectedTile.role} />
-                </label>
-                <label className="builder-label">
-                  <span>Subassembly</span>
-                  <input className="text-input" onChange={(event) => updateSelected({ subassemblyId: event.target.value })} value={selectedTile.subassemblyId ?? ""} />
-                </label>
-                <label className="builder-label">
-                  <span>Build step</span>
-                  <input className="text-input" min={1} onChange={(event) => updateSelected({ step: Number(event.target.value) })} type="number" value={selectedTile.step} />
-                </label>
-                <small className="muted">
-                  Position {formatVec(selectedTile.position)}
-                </small>
-                {selectedTileIds.length > 1 ? (
-                  <small className="muted">
-                    Group actions will affect {selectedTileIds.length} selected tiles. Inspector fields edit the primary tile only.
-                  </small>
-                ) : null}
-              </div>
-            ) : (
-              <p className="muted">Select a tile or edge in the canvas.</p>
-            )}
-          </section>
-
-          <section>
-            <h2 className="section-title">Readiness</h2>
-            <label className="check-row">
-              <input
-                checked={draft.visualSignoff}
-                onChange={(event) => commitDraft({ ...draft, visualSignoff: event.target.checked })}
-                type="checkbox"
-              />
-              Visual signoff complete
-            </label>
-            <div className="issues-list">
-              {gateState.status === "checking" ? (
-                <div className="issue">
-                  <strong>Running engine gate</strong>
-                  <span className="issue-detail">Checking pre-filters, standing stability, and ramp roll test when applicable.</span>
-                </div>
-              ) : gateState.status === "error" ? (
-                <div className="issue">
-                  <strong>Engine gate unavailable</strong>
-                  <span className="issue-detail">{gateState.detail}</span>
-                </div>
-              ) : gateState.gate.reasons.length ? (
-                gateState.gate.reasons.map((reason) => (
-                  <div className="issue" key={reason}>
-                    <span className="issue-detail">{reason}</span>
-                  </div>
-                ))
-              ) : (
-                <div className="issue">
-                  <strong>Engine gate passed</strong>
-                  <span className="issue-detail">Recognizable-object resemblance remains a human note on top of the physics gate.</span>
-                </div>
-              )}
-            </div>
-          </section>
-
-          <section>
-            <h2 className="section-title">Inventory</h2>
-            <div className="inventory-list">
-              {SHAPE_ORDER.map((item) => {
-                const used = draft.tiles.filter((tile) => tile.shape === item).length;
-                const total = draft.expectedInventory?.[item] ?? used;
-                return (
-                  <div className="tile-row compact-row" key={item}>
-                    <strong>{TILE_SPECS[item].shortLabel}</strong>
-                    <span className={used > total ? "error-text" : "muted"}>{used}/{total}</span>
-                  </div>
-                );
-              })}
-            </div>
-          </section>
-
-          <section>
-            <h2 className="section-title">Save</h2>
-            <button className="primary-button" onClick={saveDraft} type="button">
-              <Save size={16} />
-              Save local draft
-            </button>
-            {status ? <p className="issue-detail">{status}</p> : null}
-            <details className="secondary-details">
-              <summary className="secondary-button export-summary">Reference JSON</summary>
-              <pre className="json-preview">{JSON.stringify(draft, null, 2)}</pre>
-            </details>
-          </section>
-        </aside>
-      </section>
+        ) : null}
+      </div>
     </main>
   );
 }
 
-function createStableWorkbenchDraft(): AuthoredBuildDraft {
-  const draft = createEmptyDraft("Workbench Draft");
-  return {
-    ...draft,
-    createdAt: EMPTY_WORKBENCH_TIME,
-    updatedAt: EMPTY_WORKBENCH_TIME
-  };
-}
+/* ================================================================== */
+/* Canvas                                                              */
+/* ================================================================== */
 
 function BuilderCanvas({
   build,
+  bursts,
   draft,
-  ghostTile,
+  flash,
+  ghost,
+  hover,
+  isSimulating,
+  onGroundClick,
+  onGroundLeave,
+  onGroundMove,
+  onHoverMagnet,
+  onPlace,
+  onSelectTile,
   onSimulationStatus,
-  selectedEdge,
+  rootGhost,
   selectedTileId,
-  selectedTileIds,
   simulationMode,
-  simulationNonce,
-  onSelectEdge,
-  onSelectTile
+  simulationNonce
 }: {
   build: ReturnType<typeof draftToBuildGraph>;
+  bursts: SnapBurstInstance[];
   draft: AuthoredBuildDraft;
-  ghostTile: BuilderTile | null;
+  flash: { tileId: string; at: number } | null;
+  ghost: ReturnType<typeof deriveGhostPreview>;
+  hover: MagnetHover | null;
+  isSimulating: boolean;
+  onGroundClick: (point: { x: number; z: number }) => void;
+  onGroundLeave: () => void;
+  onGroundMove: (point: { x: number; z: number }) => void;
+  onHoverMagnet: (hover: MagnetHover | null) => void;
+  onPlace: (hover: MagnetHover) => void;
+  onSelectTile: (tileId: string) => void;
   onSimulationStatus: (status: SandboxStatus) => void;
-  selectedEdge: SelectedEdge | null;
+  rootGhost: BuilderTile | null;
   selectedTileId: string | null;
-  selectedTileIds: string[];
   simulationMode: SimulationMode;
   simulationNonce: number;
-  onSelectEdge: (tileId: string, edge: number, magnetIndex?: number, t?: number) => void;
-  onSelectTile: (tileId: string, additive: boolean) => void;
 }) {
-  const initialCameraPosition = useMemo<[number, number, number]>(() => {
-    const cameraDistance = Math.max(18, build.bounds.width, build.bounds.height, build.bounds.depth) * 1.9;
-    return [cameraDistance * 0.65, cameraDistance * 0.5, cameraDistance * 0.8];
-  }, [build.bounds.depth, build.bounds.height, build.bounds.width]);
-  const [cameraMove, setCameraMove] = useState<CameraMove | null>(null);
-  const moveCamera = (direction: CameraMove["direction"]) => {
-    setCameraMove({ direction, nonce: Date.now() });
-  };
+  // The canvas remounts when a different build is adopted (key={draft.id}), so this
+  // frames the camera once per build without chasing every edit.
+  const [initialCameraPosition] = useState<[number, number, number]>(() => {
+    const cameraDistance = Math.max(16, build.bounds.width, build.bounds.height, build.bounds.depth) * 1.8;
+    return [cameraDistance * 0.62, cameraDistance * 0.52, cameraDistance * 0.82];
+  });
   const physicsModel = useMemo(() => createMagneticPhysicsModel(build, { drop: true }), [build]);
   const rollPlan = useMemo(() => createRollTestPlan(build), [build]);
-  const isRunning = simulationMode !== "edit";
   const physicsKey = `${simulationMode}-${simulationNonce}-${build.id}-${draft.updatedAt}`;
 
   return (
-    <div className="builder-camera-stage">
-      <Canvas camera={{ position: initialCameraPosition, fov: 42 }} shadows>
-        <ambientLight intensity={0.75} />
-        <directionalLight castShadow intensity={1.6} position={[8, 16, 12]} />
-        {isRunning ? (
-          <Physics
-            colliders={false}
-            gravity={tuple(gravityVector())}
-            interpolate
-            key={physicsKey}
-            lengthUnit={10}
-            numSolverIterations={16}
-            paused={false}
-            timeStep={SIMULATION_TIMESTEP_SECONDS}
-          >
-            <PhysicsSandbox
-              model={physicsModel}
-              onSimulationStatus={onSimulationStatus}
-              rollPlan={simulationMode === "roll" ? rollPlan : null}
+    <Canvas camera={{ position: initialCameraPosition, fov: 42 }} shadows>
+      <ambientLight intensity={0.85} />
+      <hemisphereLight args={["#cfeefc", "#f6e3bd", 0.5]} />
+      <directionalLight
+        castShadow
+        intensity={1.7}
+        position={[10, 18, 9]}
+        shadow-camera-bottom={-30}
+        shadow-camera-left={-30}
+        shadow-camera-right={30}
+        shadow-camera-top={30}
+        shadow-mapSize-height={2048}
+        shadow-mapSize-width={2048}
+      />
+      <fog args={["#dff1f7", 70, 160]} attach="fog" />
+
+      <WarmGround
+        interactive={!isSimulating}
+        onGroundClick={onGroundClick}
+        onGroundLeave={onGroundLeave}
+        onGroundMove={onGroundMove}
+      />
+
+      {isSimulating ? (
+        <Physics
+          colliders={false}
+          gravity={tuple(gravityVector())}
+          interpolate
+          key={physicsKey}
+          lengthUnit={10}
+          numSolverIterations={16}
+          paused={false}
+          timeStep={SIMULATION_TIMESTEP_SECONDS}
+        >
+          <PhysicsSandbox
+            model={physicsModel}
+            onSimulationStatus={onSimulationStatus}
+            rollPlan={simulationMode === "roll" ? rollPlan : null}
+          />
+        </Physics>
+      ) : (
+        <>
+          {draft.tiles.map((tile) => (
+            <BuilderTileMesh
+              flashAt={flash?.tileId === tile.id ? flash.at : undefined}
+              hover={hover}
+              isSelected={tile.id === selectedTileId}
+              key={tile.id}
+              onHoverMagnet={onHoverMagnet}
+              onPlace={onPlace}
+              onSelectTile={onSelectTile}
+              tile={tile}
             />
-          </Physics>
-        ) : (
-          <>
-            {draft.tiles.map((tile) => (
-              <BuilderTileMesh
-                isPrimarySelected={tile.id === selectedTileId}
-                isSelected={selectedTileIds.includes(tile.id)}
-                key={tile.id}
-                onSelectEdge={onSelectEdge}
-                onSelectTile={onSelectTile}
-                selectedEdge={selectedEdge}
-                tile={tile}
-              />
-            ))}
-            {ghostTile ? <BuilderTileMesh ghost tile={ghostTile} /> : null}
-          </>
-        )}
-        <gridHelper args={[Math.max(24, build.bounds.width + 16), 16, "#9fb0b8", "#d4dde0"]} position={[0, 0, 0]} />
-        <BuilderOrbitControls build={build} command={cameraMove} />
-      </Canvas>
-      <div className="camera-nudge-panel" aria-label="Camera movement controls">
-        <span>POV</span>
-        <button onClick={() => moveCamera("up")} type="button">Up</button>
-        <button onClick={() => moveCamera("in")} type="button">In</button>
-        <button onClick={() => moveCamera("left")} type="button">Left</button>
-        <button onClick={() => moveCamera("right")} type="button">Right</button>
-        <button onClick={() => moveCamera("out")} type="button">Out</button>
-        <button onClick={() => moveCamera("down")} type="button">Down</button>
-      </div>
-    </div>
+          ))}
+          {ghost ? <GhostTileMesh invalid={!ghost.valid} tile={ghost.tile} /> : null}
+          {rootGhost ? <GhostTileMesh tile={rootGhost} /> : null}
+          {bursts.map((burst) => (
+            <SnapBurst key={burst.id} position={burst.position} />
+          ))}
+        </>
+      )}
+      <OrbitControls
+        enableDamping
+        enableZoom={!hover}
+        makeDefault
+        maxDistance={90}
+        maxPolarAngle={Math.PI / 2 - 0.04}
+        minDistance={6}
+        target={[0, 1.5, 0]}
+      />
+    </Canvas>
   );
 }
+
+function WarmGround({
+  interactive,
+  onGroundClick,
+  onGroundLeave,
+  onGroundMove
+}: {
+  interactive: boolean;
+  onGroundClick: (point: { x: number; z: number }) => void;
+  onGroundLeave: () => void;
+  onGroundMove: (point: { x: number; z: number }) => void;
+}) {
+  return (
+    <group>
+      <mesh
+        onPointerUp={
+          interactive
+            ? (event) => {
+                if (event.delta > 5) return;
+                event.stopPropagation();
+                onGroundClick({ x: event.point.x, z: event.point.z });
+              }
+            : undefined
+        }
+        onPointerMove={
+          interactive
+            ? (event) => onGroundMove({ x: event.point.x, z: event.point.z })
+            : undefined
+        }
+        onPointerOut={interactive ? () => onGroundLeave() : undefined}
+        position={[0, -0.01, 0]}
+        receiveShadow
+        rotation={[-Math.PI / 2, 0, 0]}
+      >
+        <circleGeometry args={[110, 64]} />
+        <meshStandardMaterial color="#f3e3bf" roughness={0.95} />
+      </mesh>
+      <mesh position={[0, 0.005, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <circleGeometry args={[26, 64]} />
+        <meshStandardMaterial color="#f7ecd2" roughness={0.9} />
+      </mesh>
+      <gridHelper args={[52, 17, "#e3cfa2", "#ecdcb6"]} position={[0, 0.02, 0]} />
+    </group>
+  );
+}
+
+/* ================================================================== */
+/* Tiles                                                               */
+/* ================================================================== */
+
+function BuilderTileMesh({
+  flashAt,
+  hover,
+  isSelected,
+  onHoverMagnet,
+  onPlace,
+  onSelectTile,
+  tile
+}: {
+  flashAt?: number;
+  hover: MagnetHover | null;
+  isSelected: boolean;
+  onHoverMagnet: (hover: MagnetHover | null) => void;
+  onPlace: (hover: MagnetHover) => void;
+  onSelectTile: (tileId: string) => void;
+  tile: BuilderTile;
+}) {
+  const geometry = useMemo(() => createTileGeometry(tile), [tile]);
+  const materialRef = useRef<THREE.MeshPhysicalMaterial>(null);
+
+  useFrame(() => {
+    const material = materialRef.current;
+    if (!material) return;
+    if (flashAt === undefined) {
+      if (material.emissiveIntensity !== 0) material.emissiveIntensity = 0;
+      return;
+    }
+    const elapsed = performance.now() - flashAt;
+    material.emissiveIntensity = Math.max(0, 0.85 * (1 - elapsed / 420));
+  });
+
+  const meshProps = useTileTransformProps(tile);
+  const magnetPoints = useMemo(() => builderTileWorldMagnetPoints(tile), [tile]);
+  const edgeMidpoints = useMemo(() => builderTileEdgeBars(tile), [tile]);
+
+  return (
+    <group>
+      <mesh
+        castShadow
+        geometry={geometry}
+        onPointerUp={(event) => {
+          if (event.delta > 5) return;
+          event.stopPropagation();
+          onSelectTile(tile.id);
+        }}
+        receiveShadow
+        {...meshProps}
+      >
+        <meshPhysicalMaterial
+          clearcoat={0.6}
+          clearcoatRoughness={0.35}
+          color={tile.color}
+          emissive={tile.color}
+          emissiveIntensity={0}
+          metalness={0.02}
+          opacity={0.85}
+          ref={materialRef}
+          roughness={0.22}
+          side={THREE.DoubleSide}
+          transparent
+        />
+        <Edges color={isSelected ? "#f7b733" : "#27343c"} lineWidth={isSelected ? 2.6 : 1.15} threshold={15} />
+      </mesh>
+      {magnetPoints.map((magnet) => (
+        <MagnetDot
+          hovered={
+            hover?.tileId === tile.id &&
+            hover.edge === magnet.edgeIndex &&
+            hover.magnetIndex === magnet.magnetIndex
+          }
+          key={`${tile.id}-e${magnet.edgeIndex}-m${magnet.magnetIndex}`}
+          onClick={() =>
+            onPlace({ tileId: tile.id, edge: magnet.edgeIndex, magnetIndex: magnet.magnetIndex, t: magnet.t })
+          }
+          onEnter={() =>
+            onHoverMagnet({ tileId: tile.id, edge: magnet.edgeIndex, magnetIndex: magnet.magnetIndex, t: magnet.t })
+          }
+          onLeave={() => onHoverMagnet(null)}
+          position={magnet.position}
+        />
+      ))}
+      {edgeMidpoints.map((bar) => (
+        <EdgeBar
+          bar={bar}
+          hovered={hover?.tileId === tile.id && hover.edge === bar.edgeIndex && hover.magnetIndex === undefined}
+          key={`${tile.id}-bar-${bar.edgeIndex}`}
+          onClick={() => onPlace({ tileId: tile.id, edge: bar.edgeIndex, t: 0.5 })}
+          onEnter={() => onHoverMagnet({ tileId: tile.id, edge: bar.edgeIndex, t: 0.5 })}
+          onLeave={() => onHoverMagnet(null)}
+        />
+      ))}
+    </group>
+  );
+}
+
+function MagnetDot({
+  hovered,
+  onClick,
+  onEnter,
+  onLeave,
+  position
+}: {
+  hovered: boolean;
+  onClick: () => void;
+  onEnter: () => void;
+  onLeave: () => void;
+  position: Vec3;
+}) {
+  const ref = useRef<THREE.Mesh>(null);
+  useFrame(({ clock }) => {
+    if (!ref.current) return;
+    const target = hovered ? 1.85 + Math.sin(clock.elapsedTime * 7) * 0.12 : 1;
+    const current = ref.current.scale.x;
+    const next = current + (target - current) * 0.25;
+    ref.current.scale.setScalar(next);
+  });
+
+  return (
+    <mesh
+      onPointerUp={(event) => {
+        if (event.delta > 5) return;
+        event.stopPropagation();
+        onClick();
+      }}
+      onPointerOut={(event) => {
+        event.stopPropagation();
+        document.body.style.cursor = "auto";
+        onLeave();
+      }}
+      onPointerOver={(event) => {
+        event.stopPropagation();
+        document.body.style.cursor = "pointer";
+        onEnter();
+      }}
+      position={[position.x, position.y, position.z]}
+      ref={ref}
+    >
+      <sphereGeometry args={[0.14, 16, 16]} />
+      <meshStandardMaterial
+        color={hovered ? "#f7b733" : "#5b6b75"}
+        emissive={hovered ? "#f7b733" : "#000000"}
+        emissiveIntensity={hovered ? 0.7 : 0}
+        metalness={0.45}
+        roughness={0.3}
+      />
+    </mesh>
+  );
+}
+
+type EdgeBarInfo = {
+  edgeIndex: number;
+  center: Vec3;
+  quaternion: THREE.Quaternion;
+  length: number;
+};
+
+function EdgeBar({
+  bar,
+  hovered,
+  onClick,
+  onEnter,
+  onLeave
+}: {
+  bar: EdgeBarInfo;
+  hovered: boolean;
+  onClick: () => void;
+  onEnter: () => void;
+  onLeave: () => void;
+}) {
+  return (
+    <mesh
+      onPointerUp={(event) => {
+        if (event.delta > 5) return;
+        event.stopPropagation();
+        onClick();
+      }}
+      onPointerOut={(event) => {
+        event.stopPropagation();
+        document.body.style.cursor = "auto";
+        onLeave();
+      }}
+      onPointerOver={(event) => {
+        event.stopPropagation();
+        document.body.style.cursor = "pointer";
+        onEnter();
+      }}
+      position={[bar.center.x, bar.center.y, bar.center.z]}
+      quaternion={bar.quaternion}
+    >
+      <cylinderGeometry args={[hovered ? 0.085 : 0.05, hovered ? 0.085 : 0.05, bar.length, 8]} />
+      <meshStandardMaterial
+        color={hovered ? "#f7b733" : "#8da0ab"}
+        emissive={hovered ? "#f7b733" : "#000000"}
+        emissiveIntensity={hovered ? 0.55 : 0}
+        opacity={hovered ? 0.95 : 0.0}
+        transparent
+      />
+    </mesh>
+  );
+}
+
+function GhostTileMesh({ invalid = false, tile }: { invalid?: boolean; tile: BuilderTile }) {
+  const geometry = useMemo(() => createTileGeometry(tile), [tile]);
+  const materialRef = useRef<THREE.MeshPhysicalMaterial>(null);
+  useFrame(({ clock }) => {
+    if (!materialRef.current) return;
+    materialRef.current.opacity = 0.36 + Math.sin(clock.elapsedTime * 5) * 0.08;
+  });
+  const meshProps = useTileTransformProps(tile);
+
+  return (
+    <mesh geometry={geometry} raycast={() => null} {...meshProps}>
+      <meshPhysicalMaterial
+        color={invalid ? "#e84855" : tile.color}
+        depthWrite={false}
+        emissive={invalid ? "#e84855" : tile.color}
+        emissiveIntensity={0.25}
+        metalness={0}
+        opacity={0.42}
+        ref={materialRef}
+        roughness={0.3}
+        side={THREE.DoubleSide}
+        transparent
+      />
+      <Edges color={invalid ? "#e84855" : "#ffffff"} lineWidth={1.6} threshold={15} />
+    </mesh>
+  );
+}
+
+function SnapBurst({ position }: { position: Vec3 }) {
+  const ref = useRef<THREE.Mesh>(null);
+  const materialRef = useRef<THREE.MeshBasicMaterial>(null);
+  const startRef = useRef<number | null>(null);
+
+  useFrame(({ camera }) => {
+    if (!ref.current || !materialRef.current) return;
+    if (startRef.current === null) startRef.current = performance.now();
+    const t = Math.min(1, (performance.now() - startRef.current) / 460);
+    const eased = 1 - (1 - t) ** 3;
+    ref.current.scale.setScalar(0.3 + eased * 1.5);
+    ref.current.quaternion.copy(camera.quaternion);
+    materialRef.current.opacity = 0.85 * (1 - eased);
+  });
+
+  return (
+    <mesh position={[position.x, position.y, position.z]} raycast={() => null} ref={ref}>
+      <ringGeometry args={[0.42, 0.55, 32]} />
+      <meshBasicMaterial color="#f7b733" ref={materialRef} transparent />
+    </mesh>
+  );
+}
+
+function useTileTransformProps(tile: BuilderTile) {
+  return useMemo(() => {
+    if (tile.basis) {
+      const matrix = new THREE.Matrix4();
+      matrix.makeBasis(
+        new THREE.Vector3(tile.basis.xAxis.x, tile.basis.xAxis.y, tile.basis.xAxis.z),
+        new THREE.Vector3(tile.basis.yAxis.x, tile.basis.yAxis.y, tile.basis.yAxis.z),
+        new THREE.Vector3(tile.basis.zAxis.x, tile.basis.zAxis.y, tile.basis.zAxis.z)
+      );
+      matrix.setPosition(tile.position.x, tile.position.y, tile.position.z);
+      return { matrix, matrixAutoUpdate: false as const };
+    }
+    return {
+      position: [tile.position.x, tile.position.y, tile.position.z] as [number, number, number],
+      rotation: [tile.rotation.x, tile.rotation.y, tile.rotation.z] as [number, number, number]
+    };
+  }, [tile.basis, tile.position.x, tile.position.y, tile.position.z, tile.rotation.x, tile.rotation.y, tile.rotation.z]);
+}
+
+/* ================================================================== */
+/* Hotbar glyphs                                                       */
+/* ================================================================== */
+
+function ShapeGlyph({ color, shape }: { color: string; shape: TileShape }) {
+  const points: Record<TileShape, string> = {
+    "small-square": "8,8 24,8 24,24 8,24",
+    "large-square": "4,4 28,4 28,28 4,28",
+    "xl-square": "2,2 30,2 30,30 2,30",
+    "equilateral-triangle": "16,5 28,26 4,26",
+    "right-triangle": "6,5 6,27 28,27",
+    "isosceles-triangle": "16,3 24,28 8,28"
+  };
+  return (
+    <svg aria-hidden className="play-slot-glyph" viewBox="0 0 32 32">
+      <polygon
+        fill={color}
+        fillOpacity={0.82}
+        points={points[shape]}
+        stroke="#27343c"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
+    </svg>
+  );
+}
+
+/* ================================================================== */
+/* Physics sandbox (stability + roll), unchanged behavior              */
+/* ================================================================== */
 
 function PhysicsSandbox({
   model,
@@ -861,9 +1333,10 @@ function PhysicsTileBody({ body, bodyRef }: { body: PhysicsBodyModel; bodyRef: B
       new THREE.MeshPhysicalMaterial({
         color: body.tile.color,
         transparent: true,
-        opacity: 0.78,
-        roughness: 0.36,
+        opacity: 0.82,
+        roughness: 0.3,
         metalness: 0.02,
+        clearcoat: 0.5,
         side: THREE.DoubleSide
       }),
     [body.tile.color]
@@ -889,7 +1362,7 @@ function PhysicsTileBody({ body, bodyRef }: { body: PhysicsBodyModel; bodyRef: B
         restitution={0.02}
       />
       <mesh castShadow geometry={geometry} material={material} receiveShadow>
-        <Edges color="#1b252b" lineWidth={1.1} threshold={15} />
+        <Edges color="#27343c" lineWidth={1.1} threshold={15} />
       </mesh>
     </RigidBody>
   );
@@ -1027,138 +1500,9 @@ function PhysicsRollBall({ onRollStatus, plan }: { onRollStatus: (status: Sandbo
   );
 }
 
-function BuilderOrbitControls({ build, command }: { build: ReturnType<typeof draftToBuildGraph>; command: CameraMove | null }) {
-  const controlsRef = useRef<OrbitControlsImpl | null>(null);
-  const initializedRef = useRef(false);
-  const { camera } = useThree();
-
-  useEffect(() => {
-    const controls = controlsRef.current;
-    if (!controls || initializedRef.current || build.tiles.length === 0) return;
-    controls.target.set(0, Math.max(1, build.bounds.height * 0.2), 0);
-    controls.update();
-    initializedRef.current = true;
-  }, [build.bounds.height, build.tiles.length]);
-
-  useEffect(() => {
-    const controls = controlsRef.current;
-    if (!command || !controls) return;
-
-    const viewDirection = new THREE.Vector3();
-    camera.getWorldDirection(viewDirection).normalize();
-    const right = new THREE.Vector3().crossVectors(viewDirection, camera.up).normalize();
-    const up = new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld, 1).normalize();
-    const panStep = Math.max(0.75, Math.min(3, Math.max(build.bounds.width, build.bounds.height, build.bounds.depth) * 0.08));
-    const dollyStep = panStep * 1.4;
-    const movement = new THREE.Vector3();
-
-    if (command.direction === "left") movement.copy(right).multiplyScalar(-panStep);
-    if (command.direction === "right") movement.copy(right).multiplyScalar(panStep);
-    if (command.direction === "up") movement.copy(up).multiplyScalar(panStep);
-    if (command.direction === "down") movement.copy(up).multiplyScalar(-panStep);
-    if (command.direction === "in") movement.copy(viewDirection).multiplyScalar(dollyStep);
-    if (command.direction === "out") movement.copy(viewDirection).multiplyScalar(-dollyStep);
-
-    camera.position.add(movement);
-    if (command.direction !== "in" && command.direction !== "out") {
-      controls.target.add(movement);
-    }
-    controls.update();
-  }, [build.bounds.depth, build.bounds.height, build.bounds.width, camera, command]);
-
-  return <OrbitControls ref={controlsRef} enableDamping makeDefault maxDistance={90} minDistance={8} />;
-}
-
-function BuilderTileMesh({
-  ghost = false,
-  isPrimarySelected = false,
-  isSelected = false,
-  selectedEdge,
-  tile,
-  onSelectEdge,
-  onSelectTile
-}: {
-  ghost?: boolean;
-  isPrimarySelected?: boolean;
-  isSelected?: boolean;
-  selectedEdge?: SelectedEdge | null;
-  tile: BuilderTile;
-  onSelectEdge?: (tileId: string, edge: number, magnetIndex?: number, t?: number) => void;
-  onSelectTile?: (tileId: string, additive: boolean) => void;
-}) {
-  const geometry = useMemo(() => createTileGeometry(tile), [tile]);
-  const material = useMemo(
-    () =>
-      new THREE.MeshPhysicalMaterial({
-        color: tile.color,
-        transparent: true,
-        opacity: ghost ? 0.32 : tile.confirmed ? 0.78 : 0.54,
-        roughness: 0.36,
-        metalness: 0.02,
-        side: THREE.DoubleSide
-      }),
-    [ghost, tile.color, tile.confirmed]
-  );
-  const matrix = useMemo(() => {
-    if (!tile.basis) return null;
-    const next = new THREE.Matrix4();
-    next.makeBasis(
-      new THREE.Vector3(tile.basis.xAxis.x, tile.basis.xAxis.y, tile.basis.xAxis.z),
-      new THREE.Vector3(tile.basis.yAxis.x, tile.basis.yAxis.y, tile.basis.yAxis.z),
-      new THREE.Vector3(tile.basis.zAxis.x, tile.basis.zAxis.y, tile.basis.zAxis.z)
-    );
-    next.setPosition(tile.position.x, tile.position.y, tile.position.z);
-    return next;
-  }, [tile.basis, tile.position.x, tile.position.y, tile.position.z]);
-
-  const meshProps = matrix
-    ? { matrix, matrixAutoUpdate: false }
-    : {
-        position: [tile.position.x, tile.position.y, tile.position.z] as [number, number, number],
-        rotation: [tile.rotation.x, tile.rotation.y, tile.rotation.z] as [number, number, number]
-      };
-  const magnetPoints = useMemo(() => builderTileWorldMagnetPoints(tile), [tile]);
-
-  return (
-    <group>
-      <mesh
-        castShadow
-        geometry={geometry}
-        material={material}
-        onClick={(event) => {
-          event.stopPropagation();
-          onSelectTile?.(tile.id, event.shiftKey);
-        }}
-        receiveShadow
-        {...meshProps}
-      >
-        <Edges
-          color={isPrimarySelected ? "#f05d5e" : isSelected ? "#24b7c9" : "#1b252b"}
-          lineWidth={isPrimarySelected ? 2.4 : isSelected ? 2 : 1.1}
-          threshold={15}
-        />
-      </mesh>
-      {!ghost
-        ? magnetPoints.map((magnet) => {
-            const selected = selectedEdge?.tileId === tile.id && selectedEdge.edge === magnet.edgeIndex;
-            return (
-              <mesh
-                key={`${tile.id}-edge-${magnet.edgeIndex}-magnet-${magnet.magnetIndex}`}
-                onClick={(event) => {
-                  event.stopPropagation();
-                  onSelectEdge?.(tile.id, magnet.edgeIndex, magnet.magnetIndex, magnet.t);
-                }}
-                position={[magnet.position.x, magnet.position.y, magnet.position.z]}
-              >
-                <sphereGeometry args={[selected ? 0.17 : 0.095, 14, 14]} />
-                <meshBasicMaterial color={selected ? "#f7b733" : isSelected ? "#24b7c9" : "#142126"} />
-              </mesh>
-            );
-          })
-        : null}
-    </group>
-  );
-}
+/* ================================================================== */
+/* Geometry helpers                                                    */
+/* ================================================================== */
 
 function createTileGeometry(tile: { shape: TileShape; sizeOverride?: BuilderTile["sizeOverride"] }): THREE.ExtrudeGeometry {
   const path = new THREE.Shape();
@@ -1203,6 +1547,27 @@ function builderTileWorldMagnetPoints(tile: BuilderTile): Array<{ edgeIndex: num
         }
       };
     });
+  });
+}
+
+function builderTileEdgeBars(tile: BuilderTile): EdgeBarInfo[] {
+  const vertices = tile.sizeOverride
+    ? builderLocalVertices(tile).map((point) => transformBuilderPoint(point, tile))
+    : tileWorldVertices(tile);
+  return vertices.map((start, edgeIndex) => {
+    const end = vertices[(edgeIndex + 1) % vertices.length];
+    const center = {
+      x: (start.x + end.x) / 2,
+      y: (start.y + end.y) / 2,
+      z: (start.z + end.z) / 2
+    };
+    const direction = new THREE.Vector3(end.x - start.x, end.y - start.y, end.z - start.z);
+    const length = Math.max(0.2, direction.length() - 1.7);
+    const quaternion = new THREE.Quaternion().setFromUnitVectors(
+      new THREE.Vector3(0, 1, 0),
+      direction.clone().normalize()
+    );
+    return { edgeIndex, center, quaternion, length };
   });
 }
 
@@ -1313,10 +1678,6 @@ function distance2d(first: { x: number; z: number }, second: { x: number; z: num
 
 function distance(first: Vec3, second: Vec3): number {
   return Math.sqrt((first.x - second.x) ** 2 + (first.y - second.y) ** 2 + (first.z - second.z) ** 2);
-}
-
-function formatVec(point: Vec3): string {
-  return `${point.x.toFixed(1)}, ${point.y.toFixed(1)}, ${point.z.toFixed(1)}`;
 }
 
 function isEditableTarget(target: EventTarget | null): boolean {
