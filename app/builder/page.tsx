@@ -1,7 +1,7 @@
 "use client";
 
 import { Edges, OrbitControls } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import {
   BallCollider,
   ConvexHullCollider,
@@ -117,6 +117,7 @@ export default function BuilderPage() {
   const [simulationMode, setSimulationMode] = useState<SimulationMode>("edit");
   const [simulationNonce, setSimulationNonce] = useState(0);
   const [sandboxStatus, setSandboxStatus] = useState<SandboxStatus | null>(null);
+  const [frameNonce, setFrameNonce] = useState(0);
 
   const burstIdRef = useRef(1);
   const toastTimerRef = useRef<number | null>(null);
@@ -384,6 +385,7 @@ export default function BuilderPage() {
     setRootHover(null);
     resetSimulation();
     setDrawerOpen(false);
+    setFrameNonce((nonce) => nonce + 1);
     if (note) showToast(note);
   }
 
@@ -477,7 +479,7 @@ export default function BuilderPage() {
     <main className="play-shell">
       <div className="play-stage" ref={stageRef}>
         <BuilderCanvas
-          key={draft.id}
+          frameNonce={frameNonce}
           bursts={bursts}
           draft={draft}
           flash={flash}
@@ -810,6 +812,7 @@ function BuilderCanvas({
   bursts,
   draft,
   flash,
+  frameNonce,
   ghost,
   hover,
   isSimulating,
@@ -829,6 +832,7 @@ function BuilderCanvas({
   bursts: SnapBurstInstance[];
   draft: AuthoredBuildDraft;
   flash: { tileId: string; at: number } | null;
+  frameNonce: number;
   ghost: ReturnType<typeof deriveGhostPreview>;
   hover: MagnetHover | null;
   isSimulating: boolean;
@@ -844,12 +848,12 @@ function BuilderCanvas({
   simulationMode: SimulationMode;
   simulationNonce: number;
 }) {
-  // The canvas remounts when a different build is adopted (key={draft.id}), so this
-  // frames the camera once per build without chasing every edit.
   const [initialCameraPosition] = useState<[number, number, number]>(() => {
     const cameraDistance = Math.max(16, build.bounds.width, build.bounds.height, build.bounds.depth) * 1.8;
     return [cameraDistance * 0.62, cameraDistance * 0.52, cameraDistance * 0.82];
   });
+  // drop:true matches the engine gate's own stand test (lib/engine/simulate.ts): the
+  // build is dropped a calibrated height and must settle. Same sandbox as v1.
   const physicsModel = useMemo(() => createMagneticPhysicsModel(build, { drop: true }), [build]);
   const rollPlan = useMemo(() => createRollTestPlan(build), [build]);
   const physicsKey = `${simulationMode}-${simulationNonce}-${build.id}-${draft.updatedAt}`;
@@ -925,8 +929,35 @@ function BuilderCanvas({
         minDistance={6}
         target={[0, 1.5, 0]}
       />
+      <CameraRig bounds={build.bounds} nonce={frameNonce} />
     </Canvas>
   );
+}
+
+/**
+ * Reframes the camera when a different build is adopted (load/new), without
+ * remounting the canvas — remounting kills the live Rapier physics provider.
+ */
+function CameraRig({ bounds, nonce }: { bounds: { width: number; height: number; depth: number }; nonce: number }) {
+  const camera = useThree((state) => state.camera);
+  const controls = useThree((state) => state.controls) as { target: THREE.Vector3; update: () => void } | null;
+  const framedNonceRef = useRef(0);
+
+  useEffect(() => {
+    if (nonce === framedNonceRef.current) return;
+    framedNonceRef.current = nonce;
+    const cameraDistance = Math.max(16, bounds.width, bounds.height, bounds.depth) * 1.8;
+    camera.position.set(cameraDistance * 0.62, cameraDistance * 0.52, cameraDistance * 0.82);
+    const target = new THREE.Vector3(0, Math.max(1.5, bounds.height * 0.22), 0);
+    if (controls) {
+      controls.target.copy(target);
+      controls.update();
+    } else {
+      camera.lookAt(target);
+    }
+  }, [bounds, camera, controls, nonce]);
+
+  return null;
 }
 
 function WarmGround({
