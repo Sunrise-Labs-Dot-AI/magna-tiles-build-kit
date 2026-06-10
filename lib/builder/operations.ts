@@ -1,7 +1,12 @@
 import { SHAPE_ORDER, SMALL_EDGE, TILE_SPECS, TILE_THICKNESS, emptyInventory } from "@/lib/magnetic-tiles/catalog";
 import { attachTile, basisFromEuler, identityBasis, makeAnchorTile, worldEdge, type EdgePlacedTile } from "@/lib/magnetic-tiles/edge-attachment";
 import { assertNoRawOverlaps, overlapsInvolvingTile } from "@/lib/engine/overlap";
-import { findMagneticEdgeMatch, tileLocalVertices, tileWorldVertices } from "@/lib/magnetic-tiles/magnet-geometry";
+import {
+  connectionWithMagneticEdges,
+  findMagneticEdgeMatch,
+  tileLocalVertices,
+  tileWorldVertices
+} from "@/lib/magnetic-tiles/magnet-geometry";
 import { tilePrismVertices, tilesIntersectAsPrisms } from "@/lib/magnetic-tiles/prism-geometry";
 import { validateBuild } from "@/lib/magnetic-tiles/validation";
 import type {
@@ -30,7 +35,7 @@ const COLORS = CLASSIC_TILE_COLORS;
 
 export type EdgeFitMode = "auto" | "flush" | "magnet-overlap";
 
-interface EdgeSnapInput {
+export interface EdgeSnapInput {
   parentTileId: string;
   parentEdge: number;
   parentMagnetT?: number;
@@ -39,6 +44,9 @@ interface EdgeSnapInput {
   foldAngle: number;
   edgeFit?: EdgeFitMode;
   reverse?: boolean;
+  /** Explicit edge alignment (used by the span solver and re-fold); wins over edgeFit. */
+  edgeAlign?: "start" | "center";
+  edgeOffset?: number;
   color?: string;
   role?: string;
   subassemblyId?: string;
@@ -222,6 +230,7 @@ export function addRootTile(
       ...draft.tiles,
       {
         ...edgePlacedToBuilderTile(placed),
+        subassemblyId: input.subassemblyId,
         authoredMode: "edge-snap",
         confirmed: true
       }
@@ -295,6 +304,9 @@ function resolveEdgeAlignment(
   parent: EdgePlacedTile,
   input: EdgeSnapInput
 ): { edgeAlign?: "start" | "center"; edgeOffset?: number } {
+  if (input.edgeAlign !== undefined) {
+    return { edgeAlign: input.edgeAlign, edgeOffset: input.edgeOffset };
+  }
   if (input.edgeFit === "flush" || input.parentMagnetT === undefined) {
     return {};
   }
@@ -317,6 +329,196 @@ function resolveEdgeAlignment(
     edgeAlign: "center",
     edgeOffset: (directedMagnetT - 0.5) * parentLength
   };
+}
+
+/**
+ * Re-fold a non-root tile around its existing hinge. The tile and its whole attached
+ * subtree re-derive through the edge-attachment math (attachTile) at the new angle, so
+ * overlap stays impossible by construction: any angle whose result would interpenetrate
+ * a tile or the floor is refused (returns null) rather than applied.
+ */
+export function refoldTile(
+  draft: AuthoredBuildDraft,
+  tileId: string,
+  newFoldAngle: number
+): AuthoredBuildDraft | null {
+  const byId = new Map(draft.tiles.map((tile) => [tile.id, tile]));
+  const target = byId.get(tileId);
+  if (
+    !target ||
+    !target.parentTileId ||
+    target.parentEdge === undefined ||
+    target.childEdge === undefined ||
+    !byId.get(target.parentTileId)
+  ) {
+    return null;
+  }
+
+  const childrenByParent = new Map<string, BuilderTile[]>();
+  for (const tile of draft.tiles) {
+    if (!tile.parentTileId) continue;
+    const list = childrenByParent.get(tile.parentTileId) ?? [];
+    list.push(tile);
+    childrenByParent.set(tile.parentTileId, list);
+  }
+
+  // Breadth-first subtree order guarantees parents re-derive before their children.
+  const order: BuilderTile[] = [];
+  const queue: BuilderTile[] = [target];
+  while (queue.length > 0) {
+    const tile = queue.shift()!;
+    order.push(tile);
+    for (const child of childrenByParent.get(tile.id) ?? []) queue.push(child);
+  }
+
+  // Derive every subtree member's hinge alignment from CURRENT geometry before moving.
+  const alignments = new Map<string, { reverse: boolean; edgeOffset: number }>();
+  for (const tile of order) {
+    const tileParent = byId.get(tile.parentTileId ?? "");
+    if (!tileParent || tile.parentEdge === undefined || tile.childEdge === undefined) return null;
+    if (tile.id !== tileId && tile.foldAngle === undefined) return null;
+    const alignment = deriveAttachmentAlignment(tileParent, tile);
+    if (!alignment) return null;
+    alignments.set(tile.id, alignment);
+  }
+
+  const updated = new Map<string, BuilderTile>();
+  const poseOf = (id: string): BuilderTile => updated.get(id) ?? byId.get(id)!;
+  for (const tile of order) {
+    const alignment = alignments.get(tile.id)!;
+    const parentPose = poseOf(tile.parentTileId!);
+    const fold = tile.id === tileId ? newFoldAngle : tile.foldAngle!;
+    const placed = attachTile(tileToEdgePlaced(parentPose), {
+      key: tile.id,
+      shape: tile.shape,
+      attachTo: parentPose.id,
+      parentEdge: tile.parentEdge!,
+      childEdge: tile.childEdge!,
+      foldAngle: fold,
+      edgeAlign: "center",
+      edgeOffset: alignment.edgeOffset,
+      reverse: alignment.reverse,
+      color: tile.color,
+      step: tile.step,
+      role: tile.role,
+      subassemblyId: tile.subassemblyId
+    });
+    updated.set(tile.id, {
+      ...tile,
+      position: placed.position,
+      basis: placed.basis,
+      rotation: { x: 0, y: 0, z: 0 },
+      foldAngle: fold
+    });
+  }
+
+  const movedIds = new Set(updated.keys());
+  const nextTiles = draft.tiles.map((tile) => updated.get(tile.id) ?? tile);
+
+  for (const tile of updated.values()) {
+    if (tileWorldVertices(tile).some((vertex) => vertex.y < -0.05)) return null;
+  }
+  const overlaps = findRawOverlapsAmong(nextTiles);
+  if (overlaps.some((pair) => movedIds.has(pair.firstTileId) || movedIds.has(pair.secondTileId))) {
+    return null;
+  }
+
+  // Prune connections that the move broke (hinges within the subtree stay matched by
+  // construction; stale contact joins to the rest of the build are dropped honestly).
+  const tilesById = new Map(nextTiles.map((tile) => [tile.id, tile]));
+  const connections = draft.connections.filter((connection) => {
+    const first = tilesById.get(connection.fromTileId);
+    const second = tilesById.get(connection.toTileId);
+    if (!first || !second) return false;
+    if (!movedIds.has(first.id) && !movedIds.has(second.id)) return true;
+    return findMagneticEdgeMatch(first, second) !== null;
+  });
+
+  return touch({ ...draft, tiles: nextTiles, connections });
+}
+
+/**
+ * Derive the hinge alignment (edge direction + lateral offset) of an attached tile from
+ * its current world geometry, so a re-fold reproduces the exact same seating.
+ */
+function deriveAttachmentAlignment(
+  parent: BuilderTile,
+  child: BuilderTile
+): { reverse: boolean; edgeOffset: number } | null {
+  if (child.parentEdge === undefined || child.childEdge === undefined) return null;
+  const parentEdge = worldEdge(tileToEdgePlaced(parent), child.parentEdge);
+  const childEdge = worldEdge(tileToEdgePlaced(child), child.childEdge);
+  const parentVector = subtractVec(parentEdge.end, parentEdge.start);
+  const childVector = subtractVec(childEdge.end, childEdge.start);
+  const parentLength = Math.sqrt(dotVec(parentVector, parentVector));
+  if (parentLength < 0.001) return null;
+  const reverse = dotVec(parentVector, childVector) < 0;
+  const direction = scaleVec(reverse ? scaleVec(parentVector, -1) : parentVector, 1 / parentLength);
+  const parentMid = midpointVec(parentEdge.start, parentEdge.end);
+  const childMid = midpointVec(childEdge.start, childEdge.end);
+  const edgeOffset = dotVec(subtractVec(childMid, parentMid), direction);
+  return { reverse, edgeOffset };
+}
+
+/** Raw overlap pairs among the given tiles (hairline tolerance, same as the gate). */
+function findRawOverlapsAmong(tiles: BuilderTile[]): Array<{ firstTileId: string; secondTileId: string }> {
+  const overlaps: Array<{ firstTileId: string; secondTileId: string }> = [];
+  for (let firstIndex = 0; firstIndex < tiles.length; firstIndex += 1) {
+    for (let secondIndex = firstIndex + 1; secondIndex < tiles.length; secondIndex += 1) {
+      const intersection = tilesIntersectAsPrisms(tiles[firstIndex], tiles[secondIndex]);
+      if (intersection.overlaps && intersection.penetration > 0.03) {
+        overlaps.push({ firstTileId: tiles[firstIndex].id, secondTileId: tiles[secondIndex].id });
+      }
+    }
+  }
+  return overlaps;
+}
+
+/**
+ * Add explicit connections for every magnetic edge contact involving the given tiles
+ * that is not already recorded (ring closures, prefab seams, stacked module rims). The
+ * gate validates each one against the real geometry, so this can never fabricate joints.
+ */
+export function withContactConnections(draft: AuthoredBuildDraft, tileIds: string[]): AuthoredBuildDraft {
+  const focus = new Set(tileIds);
+  const recorded = new Set(
+    draft.connections.flatMap((connection) => [
+      `${connection.fromTileId}|${connection.toTileId}`,
+      `${connection.toTileId}|${connection.fromTileId}`
+    ])
+  );
+  const additions: MagneticConnection[] = [];
+  for (let firstIndex = 0; firstIndex < draft.tiles.length; firstIndex += 1) {
+    for (let secondIndex = firstIndex + 1; secondIndex < draft.tiles.length; secondIndex += 1) {
+      const first = draft.tiles[firstIndex];
+      const second = draft.tiles[secondIndex];
+      if (!focus.has(first.id) && !focus.has(second.id)) continue;
+      if (recorded.has(`${first.id}|${second.id}`)) continue;
+      const connection = connectionWithMagneticEdges(first, second);
+      if (!connection) continue;
+      additions.push(connection);
+      recorded.add(`${first.id}|${second.id}`);
+      recorded.add(`${second.id}|${first.id}`);
+    }
+  }
+  if (additions.length === 0) return draft;
+  return touch({ ...draft, connections: [...draft.connections, ...additions] });
+}
+
+function subtractVec(first: Vec3, second: Vec3): Vec3 {
+  return { x: first.x - second.x, y: first.y - second.y, z: first.z - second.z };
+}
+
+function scaleVec(point: Vec3, amount: number): Vec3 {
+  return { x: point.x * amount, y: point.y * amount, z: point.z * amount };
+}
+
+function dotVec(first: Vec3, second: Vec3): number {
+  return first.x * second.x + first.y * second.y + first.z * second.z;
+}
+
+function midpointVec(first: Vec3, second: Vec3): Vec3 {
+  return { x: (first.x + second.x) / 2, y: (first.y + second.y) / 2, z: (first.z + second.z) / 2 };
 }
 
 export function addFreeformTile(

@@ -1,29 +1,35 @@
 import { describe, expect, it } from "vitest";
 import {
-  FOLD_CHOICES,
   DEFAULT_FOLD_INDEX,
-  FLAT_FOLD_INDEX,
+  FOLD_CHOICES,
+  FINE_FOLD_STEP,
+  PRESET_FOLDS,
   SNAP_RADIUS,
   SNAP_RELEASE_RADIUS,
+  candidateFoldAngles,
   clampChildEdge,
   collectSnapPoints,
   collectTileSubtree,
   confirmGhostPlacement,
   cycleChildEdge,
+  cycleFold,
   cycleFoldIndex,
   defaultPlacementSettings,
   deriveGhostPreview,
   deriveHandTile,
   deriveRootGhost,
   foldAngleFromIndex,
+  foldLabel,
   hoverKey,
   placeRootOnGround,
   resolveSnapHover,
   rootOrientationFromSettings,
   snapRootPosition,
+  validFoldAngles,
   type PlacementSettings
 } from "@/lib/builder/placement";
 import { createEmptyDraft } from "@/lib/builder/operations";
+import { placePrefabOnGround } from "@/lib/builder/prefabs";
 import { findRawOverlaps } from "@/lib/engine/overlap";
 import { TILE_THICKNESS } from "@/lib/magnetic-tiles/catalog";
 import { tilePrismVertices } from "@/lib/magnetic-tiles/prism-geometry";
@@ -109,38 +115,58 @@ describe("root tile ground placement", () => {
     expect(root.position.y).toBeCloseTo(TILE_THICKNESS / 2);
   });
 
-  it("refuses to place a root when tiles already exist", () => {
+  it("starts a NEW grounded island when clicking open ground with tiles present", () => {
     const draft = draftWithFlatRoot();
     const result = placeRootOnGround(draft, {
       shape: "small-square",
       color: "#ffb703",
       point: { x: 9, z: 9 }
     });
+    expect(result.placedTileId).not.toBeNull();
+    expect(result.draft.tiles).toHaveLength(2);
+    const second = result.draft.tiles[1];
+    expect(second.root).toBe(true);
+    expect(second.subassemblyId).not.toBe(draft.tiles[0].subassemblyId);
+  });
+
+  it("refuses a root that would interpenetrate an existing tile", () => {
+    const draft = draftWithFlatRoot();
+    const result = placeRootOnGround(draft, {
+      shape: "small-square",
+      color: "#ffb703",
+      point: { x: 0, z: 0 }
+    });
     expect(result.placedTileId).toBeNull();
     expect(result.draft).toBe(draft);
+    expect(result.reason).toBeTruthy();
   });
 });
 
 describe("free root orientation", () => {
   it("maps the fold controls onto snapped root orientations", () => {
     // Flat
-    expect(rootOrientationFromSettings({ foldIndex: FLAT_FOLD_INDEX, reverse: false })).toEqual({
+    expect(rootOrientationFromSettings({ foldAngle: 0, reverse: false })).toEqual({
       standAngle: 0,
       yaw: 0
     });
     // +90 stands upright; -90 stands upright facing the other way.
-    expect(rootOrientationFromSettings({ foldIndex: 4, reverse: false })).toEqual({
+    expect(rootOrientationFromSettings({ foldAngle: Math.PI / 2, reverse: false })).toEqual({
       standAngle: Math.PI / 2,
       yaw: 0
     });
-    expect(rootOrientationFromSettings({ foldIndex: 0, reverse: false })).toEqual({
+    expect(rootOrientationFromSettings({ foldAngle: -Math.PI / 2, reverse: false })).toEqual({
       standAngle: Math.PI / 2,
       yaw: Math.PI
     });
     // R adds a half-turn.
-    expect(rootOrientationFromSettings({ foldIndex: 4, reverse: true })).toEqual({
+    expect(rootOrientationFromSettings({ foldAngle: Math.PI / 2, reverse: true })).toEqual({
       standAngle: Math.PI / 2,
       yaw: Math.PI
+    });
+    // Fine angles map directly: hinges are continuous.
+    expect(rootOrientationFromSettings({ foldAngle: Math.PI / 6, reverse: false })).toEqual({
+      standAngle: Math.PI / 6,
+      yaw: 0
     });
   });
 
@@ -149,7 +175,7 @@ describe("free root orientation", () => {
       shape: "small-square",
       color: "#118ab2",
       point: { x: 0, z: 0 },
-      foldIndex: 4,
+      foldAngle: Math.PI / 2,
       reverse: false
     });
     // Placement is not pre-gated: a lone standing tile is placeable; the engine gate
@@ -162,25 +188,26 @@ describe("free root orientation", () => {
     expect(root.position.y).toBeCloseTo(1.5);
   });
 
-  it("rests the root tile exactly on the ground for every fold choice", () => {
-    FOLD_CHOICES.forEach((_, foldIndex) => {
+  it("rests the root tile exactly on the ground for every candidate fold angle", () => {
+    candidateFoldAngles().forEach((foldAngle) => {
       [false, true].forEach((reverse) => {
-        const { draft } = placeRootOnGround(createEmptyDraft(`fold-${foldIndex}-${reverse}`), {
+        const { draft } = placeRootOnGround(createEmptyDraft(`fold-${foldAngle}-${reverse}`), {
           shape: "equilateral-triangle",
           color: "#06d6a0",
           point: { x: 1.4, z: -2.6 },
-          foldIndex,
+          foldAngle,
           reverse
         });
         const root = draft.tiles[0];
         const minY = Math.min(...tilePrismVertices(root, TILE_THICKNESS).map((point) => point.y));
+        // The ground is never penetrated, at ANY angle: the resting height is solved.
         expect(minY).toBeGreaterThan(-1e-6);
         expect(minY).toBeLessThan(1e-6);
       });
     });
   });
 
-  it("keeps the legacy flat default when foldIndex is omitted", () => {
+  it("keeps the legacy flat default when foldAngle is omitted", () => {
     const { draft } = placeRootOnGround(createEmptyDraft("legacy"), {
       shape: "small-square",
       color: "#118ab2",
@@ -195,14 +222,14 @@ describe("free root orientation", () => {
       shape: "small-square",
       color: "#118ab2",
       point: { x: 0, z: 0 },
-      foldIndex: 4,
+      foldAngle: Math.PI / 2,
       reverse: false
     }).draft.tiles[0];
     const flipped = placeRootOnGround(createEmptyDraft("rev"), {
       shape: "small-square",
       color: "#118ab2",
       point: { x: 0, z: 0 },
-      foldIndex: 4,
+      foldAngle: Math.PI / 2,
       reverse: true
     }).draft.tiles[0];
     expect(forward.basis!.zAxis.z).toBeCloseTo(-flipped.basis!.zAxis.z);
@@ -212,34 +239,40 @@ describe("free root orientation", () => {
 describe("hand ghost derivation", () => {
   it("derives a root ghost identical to what a click would place (WYSIWYG)", () => {
     const draft = createEmptyDraft("ghost-vs-place");
-    const settings = settingsWith({ foldIndex: 4, shape: "large-square", color: "#ef476f" });
+    const settings = settingsWith({ foldAngle: Math.PI / 2, shape: "large-square", color: "#ef476f" });
     const ghost = deriveRootGhost(draft, settings, { x: 3.2, z: -1.1 });
     const placed = placeRootOnGround(draft, {
       shape: settings.shape,
       color: settings.color,
       point: { x: 3.2, z: -1.1 },
-      foldIndex: settings.foldIndex,
+      foldAngle: settings.foldAngle,
       reverse: settings.reverse
     }).draft.tiles[0];
 
     expect(ghost).not.toBeNull();
-    expect(ghost!.shape).toBe(placed.shape);
-    expect(ghost!.position).toEqual(placed.position);
-    expect(ghost!.basis).toEqual(placed.basis);
+    expect(ghost!.valid).toBe(true);
+    expect(ghost!.tile.shape).toBe(placed.shape);
+    expect(ghost!.tile.position).toEqual(placed.position);
+    expect(ghost!.tile.basis).toEqual(placed.basis);
   });
 
-  it("returns no root ghost once tiles exist", () => {
+  it("marks the root ghost no-fit when it would land on an existing tile", () => {
     const draft = draftWithFlatRoot();
-    expect(deriveRootGhost(draft, settingsWith({}), { x: 0, z: 0 })).toBeNull();
+    const ghost = deriveRootGhost(draft, settingsWith({ foldAngle: 0 }), { x: 0, z: 0 });
+    expect(ghost).not.toBeNull();
+    expect(ghost!.valid).toBe(false);
+    // And away from the structure it is valid again (multi-island).
+    const clear = deriveRootGhost(draft, settingsWith({ foldAngle: 0 }), { x: 12, z: 12 });
+    expect(clear!.valid).toBe(true);
   });
 
   it("derives a held tile oriented like the root ghost at the origin", () => {
-    const settings = settingsWith({ foldIndex: 3, reverse: true, shape: "isosceles-triangle" });
+    const settings = settingsWith({ foldAngle: Math.PI / 4, reverse: true, shape: "isosceles-triangle" });
     const hand = deriveHandTile(settings);
     const rootGhost = deriveRootGhost(createEmptyDraft("origin"), settings, { x: 0, z: 0 });
     expect(hand.id).toBe("hand-ghost");
-    expect(hand.position).toEqual(rootGhost!.position);
-    expect(hand.basis).toEqual(rootGhost!.basis);
+    expect(hand.position).toEqual(rootGhost!.tile.position);
+    expect(hand.basis).toEqual(rootGhost!.tile.basis);
   });
 });
 
@@ -320,10 +353,11 @@ describe("ghost preview derivation", () => {
     const ghost = deriveGhostPreview(
       draft,
       { tileId: root.id, edge: 0, t: 0.5 },
-      settingsWith({ foldIndex: DEFAULT_FOLD_INDEX })
+      settingsWith({ foldAngle: Math.PI / 2 })
     );
     expect(ghost).not.toBeNull();
     expect(ghost!.valid).toBe(true);
+    expect(ghost!.autoAngled).toBe(false);
     // The ghost rises above the flat root: a wall.
     expect(ghost!.tile.position.y).toBeGreaterThan(root.position.y);
     // And the combined layout has no raw overlap.
@@ -338,7 +372,7 @@ describe("ghost preview derivation", () => {
     const ghost = deriveGhostPreview(
       draft,
       { tileId: root.id, edge: 0, t: 0.5 },
-      settingsWith({ foldIndex: 2, reverse: false })
+      settingsWith({ foldAngle: 0, reverse: false })
     );
     expect(ghost).not.toBeNull();
     expect(ghost!.valid).toBe(true);
@@ -347,18 +381,95 @@ describe("ghost preview derivation", () => {
     expect(findRawOverlaps([...draft.tiles, ghost!.tile])).toHaveLength(0);
   });
 
-  it("marks the ghost invalid when no orientation avoids overlap", () => {
-    const draft = draftWithFlatRoot();
-    const root = draft.tiles[0];
-    const wallSettings = settingsWith({ foldIndex: DEFAULT_FOLD_INDEX });
-    const placed = confirmGhostPlacement(draft, { tileId: root.id, edge: 0, t: 0.5 }, wallSettings);
-    expect(placed.placedTileId).not.toBeNull();
+  it("auto-selects the nearest valid angle instead of offering an invalid ghost", () => {
+    // Two flat islands 1.5 apart: a FLAT extension from island A's facing edge would
+    // overlap island B, so the ghost must substitute a nearby rising angle instead.
+    let draft = draftWithFlatRoot();
+    const islandA = draft.tiles[0];
+    draft = placeRootOnGround(draft, {
+      shape: "small-square",
+      color: "#ffb703",
+      point: { x: 4.5, z: 0 },
+      foldAngle: 0
+    }).draft;
 
-    // Hovering the same magnet with the same fold now collides with the placed wall.
-    const ghost = deriveGhostPreview(placed.draft, { tileId: root.id, edge: 0, t: 0.5 }, wallSettings);
+    const hover = { tileId: islandA.id, edge: 1, t: 0.5 };
+    const flatSettings = settingsWith({ foldAngle: 0 });
+    const ghost = deriveGhostPreview(draft, hover, flatSettings);
+    expect(ghost).not.toBeNull();
+    expect(ghost!.valid).toBe(true);
+    expect(ghost!.autoAngled).toBe(true);
+    expect(Math.abs(ghost!.effectiveFoldAngle)).toBeGreaterThan(0.01);
+    expect(findRawOverlaps([...draft.tiles, ghost!.tile])).toHaveLength(0);
+  });
+
+  it("shows a quiet no-fit ghost when NO candidate angle fits, and refuses the click", () => {
+    // An XL square hinged on an interior bottom edge of a CLOSED box cannot fold
+    // anywhere: outward is the wall, inward hits the far wall or lid, down is the floor.
+    const { draft } = placePrefabOnGround(createEmptyDraft("no-fit"), "closed-box", { x: 0, z: 0 }, "#118ab2");
+    const bottom = draft.tiles.find((tile) => tile.id.includes("bottom"));
+    expect(bottom).toBeDefined();
+
+    const settings = settingsWith({ shape: "xl-square", foldAngle: Math.PI / 2 });
+    const hover = { tileId: bottom!.id, edge: 0, t: 0.5 };
+    expect(validFoldAngles(draft, { kind: "hover", hover }, settings)).toHaveLength(0);
+
+    const ghost = deriveGhostPreview(draft, hover, settings);
     expect(ghost).not.toBeNull();
     expect(ghost!.valid).toBe(false);
-    expect(ghost!.reason).toMatch(/overlap/i);
+    expect(ghost!.noFit).toBe(true);
+
+    const refused = confirmGhostPlacement(draft, hover, settings);
+    expect(refused.placedTileId).toBeNull();
+    expect(refused.draft).toBe(draft);
+  });
+});
+
+describe("valid-angle filtering (Q/E never lands on a collision)", () => {
+  it("skips collision-invalid angles when cycling presets", () => {
+    let draft = draftWithFlatRoot();
+    const islandA = draft.tiles[0];
+    draft = placeRootOnGround(draft, {
+      shape: "small-square",
+      color: "#ffb703",
+      point: { x: 4.5, z: 0 },
+      foldAngle: 0
+    }).draft;
+
+    // Flat (0) is blocked toward island B; the valid set must exclude it, and cycling
+    // must only ever land on members of the valid set.
+    const hover = { tileId: islandA.id, edge: 1, t: 0.5 };
+    const context = { kind: "hover", hover } as const;
+    const flatSettings = settingsWith({ foldAngle: 0 });
+    const valid = validFoldAngles(draft, context, flatSettings);
+    expect(valid.length).toBeGreaterThan(0);
+    expect(valid.every((angle) => Math.abs(angle) > 0.01)).toBe(true);
+
+    let angle = Math.PI / 2;
+    for (let step = 0; step < PRESET_FOLDS.length * 2; step += 1) {
+      angle = cycleFold(draft, context, { ...flatSettings, foldAngle: angle }, 1, false);
+      expect(valid.some((candidate) => Math.abs(candidate - angle) < 0.0001)).toBe(true);
+    }
+  });
+
+  it("offers fine ±5° steps that are likewise collision-filtered", () => {
+    const draft = draftWithFlatRoot();
+    const root = draft.tiles[0];
+    const hover = { tileId: root.id, edge: 1, t: 0.5 };
+    const settings = settingsWith({ foldAngle: Math.PI / 4 });
+    const context = { kind: "hover", hover } as const;
+    const fineUp = cycleFold(draft, context, settings, 1, true);
+    expect(fineUp).toBeCloseTo(Math.PI / 4 + FINE_FOLD_STEP, 6);
+    const fineDown = cycleFold(draft, context, settings, -1, true);
+    expect(fineDown).toBeCloseTo(Math.PI / 4 - FINE_FOLD_STEP, 6);
+  });
+
+  it("keeps the legacy preset cycling helpers stable", () => {
+    expect(FOLD_CHOICES.map((choice) => choice.radians)).toEqual(PRESET_FOLDS);
+    expect(cycleFoldIndex(FOLD_CHOICES.length - 1, 1)).toBe(0);
+    expect(foldAngleFromIndex(4)).toBe(Math.PI / 2);
+    expect(foldLabel(Math.PI / 6)).toBe("+30°");
+    expect(foldLabel(0)).toBe("Flat");
   });
 });
 
@@ -369,7 +480,7 @@ describe("ghost placement confirmation", () => {
     const result = confirmGhostPlacement(
       draft,
       { tileId: root.id, edge: 1, t: 0.5 },
-      settingsWith({ shape: "equilateral-triangle", foldIndex: DEFAULT_FOLD_INDEX, color: "#06d6a0" })
+      settingsWith({ shape: "equilateral-triangle", foldAngle: Math.PI / 2, color: "#06d6a0" })
     );
 
     expect(result.placedTileId).not.toBeNull();
@@ -391,7 +502,7 @@ describe("ghost placement confirmation", () => {
     const draft = draftWithFlatRoot();
     const root = draft.tiles[0];
     const hover = { tileId: root.id, edge: 2, t: 0.25 };
-    const settings = settingsWith({ foldIndex: 3, color: "#ef476f" });
+    const settings = settingsWith({ foldAngle: Math.PI / 4, color: "#ef476f" });
     const ghost = deriveGhostPreview(draft, hover, settings);
     const result = confirmGhostPlacement(draft, hover, settings);
     const placed = result.draft.tiles.find((tile) => tile.id === result.placedTileId);
@@ -406,7 +517,7 @@ describe("ghost placement confirmation", () => {
   it("refuses blocked placements and leaves the draft untouched", () => {
     const draft = draftWithFlatRoot();
     const root = draft.tiles[0];
-    const wallSettings = settingsWith({ foldIndex: DEFAULT_FOLD_INDEX });
+    const wallSettings = settingsWith({ foldAngle: Math.PI / 2 });
     const first = confirmGhostPlacement(draft, { tileId: root.id, edge: 0, t: 0.5 }, wallSettings);
     const second = confirmGhostPlacement(first.draft, { tileId: root.id, edge: 0, t: 0.5 }, wallSettings);
 
@@ -422,12 +533,12 @@ describe("subtree deletion semantics", () => {
     const wall = confirmGhostPlacement(
       rootDraft,
       { tileId: root.id, edge: 0, t: 0.5 },
-      settingsWith({ foldIndex: DEFAULT_FOLD_INDEX })
+      settingsWith({ foldAngle: Math.PI / 2 })
     );
     const roof = confirmGhostPlacement(
       wall.draft,
       { tileId: wall.placedTileId!, edge: 2, t: 0.5 },
-      settingsWith({ foldIndex: 3 })
+      settingsWith({ foldAngle: Math.PI / 4 })
     );
     return {
       draft: roof.draft,

@@ -2034,14 +2034,15 @@ select {
 /* ---- selected tile chip ---- */
 
 .play-selected-chip {
-  align-items: center;
+  align-items: stretch;
   background: rgba(255, 255, 255, 0.95);
   border: 2px solid rgba(39, 52, 60, 0.14);
   border-radius: 14px;
   bottom: 132px;
   box-shadow: 0 10px 30px rgba(25, 35, 42, 0.18);
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  gap: 8px;
   left: 14px;
   padding: 9px 12px;
   position: absolute;
@@ -2459,4 +2460,117 @@ select {
 
 .play-gate-pill.idle .play-gate-dot {
   background: #9fb0b8;
+}
+
+/* ---- selected tile panel rows (recolor + re-fold) ---- */
+
+.play-selected-row {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.play-selected-fold {
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 900;
+  min-width: 44px;
+  text-align: center;
+}
+
+.play-selected-fold.muted {
+  color: var(--muted);
+  font-weight: 750;
+  min-width: 0;
+}
+
+.play-swatch.small {
+  height: 18px;
+  width: 18px;
+}
+
+/* ---- fold readout + span chip ---- */
+
+.play-fold-readout {
+  background: #eef2f4;
+  border-radius: 9px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 900;
+  min-width: 52px;
+  padding: 4px 8px;
+  text-align: center;
+}
+
+.play-fold-readout small {
+  color: #14707f;
+  font-size: 10px;
+  font-weight: 900;
+  margin-left: 4px;
+  text-transform: uppercase;
+}
+
+.play-span-chip {
+  background: rgba(122, 78, 233, 0.94);
+  border-radius: 12px;
+  bottom: 230px;
+  box-shadow: 0 10px 26px rgba(64, 33, 136, 0.32);
+  color: white;
+  font-size: 13px;
+  font-weight: 800;
+  left: 50%;
+  max-width: 540px;
+  padding: 9px 16px;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
+  z-index: 6;
+}
+
+/* ---- prefab strip in the hotbar ---- */
+
+.play-prefab-strip {
+  display: flex;
+  gap: 6px;
+  margin-left: 8px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.play-prefab-strip::before {
+  background: rgba(39, 52, 60, 0.14);
+  bottom: 4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 4px;
+  width: 2px;
+}
+
+.play-prefab-slot {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.play-prefab-slot .play-slot-glyph {
+  height: 26px;
+  margin-top: 0;
+  width: 26px;
+}
+
+.play-prefab-label {
+  color: #6c7d88;
+  font-size: 8.5px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  margin-top: 2px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.play-prefab-slot.active .play-prefab-label {
+  color: #ab7c10;
 }

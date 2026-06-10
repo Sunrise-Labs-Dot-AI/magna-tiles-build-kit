@@ -33,14 +33,16 @@ import {
 import { createRef, useEffect, useMemo, useRef, useState, type RefObject } from "react";
 import * as THREE from "three";
 import {
-  ROOT_SNAP_GRID,
   builderTileLocalVertices,
   builderTileMagnetWorldPoints,
   builderTileWorldVertices,
   deriveGhostPreview,
   type MagnetHover,
+  type RootGhost,
   type SnapPoint
 } from "@/lib/builder/placement";
+import type { PrefabGhost } from "@/lib/builder/prefabs";
+import type { SpanEdgeRef, SpanResult } from "@/lib/builder/span";
 import type { AuthoredBuildDraft, BuilderTile } from "@/lib/builder/types";
 import {
   BALL_FRICTION,
@@ -84,22 +86,24 @@ export interface PlaySceneProps {
   aimingRoot: boolean;
   build: BuildGraph;
   bursts: SnapBurstInstance[];
-  cursorRef: RefObject<Vec3 | null>;
   draft: AuthoredBuildDraft;
   flash: { tileId: string; at: number } | null;
   frameNonce: number;
   ghost: ReturnType<typeof deriveGhostPreview>;
   handActive: boolean;
-  handTile: BuilderTile;
   hover: MagnetHover | null;
   isSimulating: boolean;
   onCursorMove: (point: Vec3) => void;
   onSceneClick: (point: Vec3, source: "ground" | string) => void;
   onSimulationStatus: (status: SandboxStatus) => void;
+  prefabGhost: PrefabGhost | null;
+  rootGhost: RootGhost | null;
   selectedTileId: string | null;
   simulationMode: SimulationMode;
   simulationNonce: number;
   snapPoints: SnapPoint[];
+  spanAnchor: SpanEdgeRef | null;
+  spanGhost: SpanResult | null;
 }
 
 export type BuildSceneProps =
@@ -167,7 +171,13 @@ declare global {
         shape: TileShape;
         position: Vec3;
         basis: NonNullable<BuilderTile["basis"]> | null;
+        subassemblyId: string | null;
+        foldAngle: number | null;
+        color: string;
+        parentTileId: string | null;
+        root: boolean;
       }>;
+      connections: () => Array<{ fromTileId: string; fromEdge: number; toTileId: string; toEdge: number }>;
       snapScreenPoints: () => Array<{
         tileId: string;
         edge: number;
@@ -214,22 +224,24 @@ function PlayScene({
   aimingRoot,
   build,
   bursts,
-  cursorRef,
   draft,
   flash,
   frameNonce,
   ghost,
   handActive,
-  handTile,
   hover,
   isSimulating,
   onCursorMove,
   onSceneClick,
   onSimulationStatus,
+  prefabGhost,
+  rootGhost,
   selectedTileId,
   simulationMode,
   simulationNonce,
-  snapPoints
+  snapPoints,
+  spanAnchor,
+  spanGhost
 }: PlaySceneProps) {
   const [initialCameraPosition] = useState<[number, number, number]>(() => {
     const cameraDistance = Math.max(16, build.bounds.width, build.bounds.height, build.bounds.depth) * 1.8;
@@ -280,11 +292,34 @@ function PlayScene({
             />
           ))}
           {handActive && ghost ? (
-            <GhostTileMesh invalid={!ghost.valid} snapped statKind="snap" tile={ghost.tile} />
+            <GhostTileMesh
+              appearance={ghost.valid ? "valid" : ghost.noFit ? "nofit" : "invalid"}
+              snapped
+              statKind="snap"
+              tile={ghost.tile}
+            />
           ) : null}
-          {handActive && !ghost ? (
-            <HandGhost cursorRef={cursorRef} gridSnap={draft.tiles.length === 0} tile={handTile} />
+          {handActive && !ghost && rootGhost ? (
+            <GhostTileMesh
+              appearance={rootGhost.valid ? "valid" : "nofit"}
+              statKind="hand"
+              tile={rootGhost.tile}
+            />
           ) : null}
+          {handActive && prefabGhost
+            ? prefabGhost.tiles.map((tile) => (
+                <GhostTileMesh
+                  appearance={prefabGhost.valid ? "valid" : "nofit"}
+                  key={`prefab-ghost-${tile.id}`}
+                  snapped={prefabGhost.valid}
+                  tile={tile}
+                />
+              ))
+            : null}
+          {spanGhost && spanGhost.ok ? (
+            <GhostTileMesh appearance="valid" snapped tile={spanGhost.tile} />
+          ) : null}
+          {spanAnchor ? <SpanAnchorEdge anchor={spanAnchor} draft={draft} /> : null}
           {bursts.map((burst) => (
             <SnapBurst key={burst.id} position={burst.position} />
           ))}
@@ -560,52 +595,34 @@ function WarmGround({
   );
 }
 
-/**
- * The held tile: follows the cursor every frame (outside React state, so following is
- * free of re-renders and cannot thrash the ghost lifecycle). On an empty draft it
- * grid-snaps and previews the exact root placement a click would commit.
- */
-function HandGhost({
-  cursorRef,
-  gridSnap,
-  tile
-}: {
-  cursorRef: RefObject<Vec3 | null>;
-  gridSnap: boolean;
-  tile: BuilderTile;
-}) {
-  const groupRef = useRef<THREE.Group>(null);
-
-  useEffect(() => {
-    bumpGhostStat("handMounts");
-    return () => bumpGhostStat("handUnmounts");
-  }, []);
-
-  useFrame(() => {
-    const node = groupRef.current;
-    if (!node) return;
-    const cursor = cursorRef.current;
-    if (!cursor) {
-      node.visible = false;
-      return;
-    }
-    node.visible = true;
-    const targetX = gridSnap ? Math.round(cursor.x / ROOT_SNAP_GRID) * ROOT_SNAP_GRID : cursor.x;
-    const targetZ = gridSnap ? Math.round(cursor.z / ROOT_SNAP_GRID) * ROOT_SNAP_GRID : cursor.z;
-    if (gridSnap) {
-      node.position.set(targetX, 0, targetZ);
-    } else {
-      // Light smoothing makes the held tile feel carried rather than glued to the ray.
-      node.position.x += (targetX - node.position.x) * 0.45;
-      node.position.z += (targetZ - node.position.z) * 0.45;
-      node.position.y = 0;
-    }
-  });
-
+/** Glowing highlight on the armed span-anchor edge (pure visual, raycast-transparent). */
+function SpanAnchorEdge({ anchor, draft }: { anchor: SpanEdgeRef; draft: AuthoredBuildDraft }) {
+  const bar = useMemo(() => {
+    const tile = draft.tiles.find((candidate) => candidate.id === anchor.tileId);
+    if (!tile) return null;
+    const vertices = builderTileWorldVertices(tile);
+    const start = vertices[anchor.edge % vertices.length];
+    const end = vertices[(anchor.edge + 1) % vertices.length];
+    const direction = new THREE.Vector3(end.x - start.x, end.y - start.y, end.z - start.z);
+    return {
+      center: { x: (start.x + end.x) / 2, y: (start.y + end.y) / 2, z: (start.z + end.z) / 2 },
+      quaternion: new THREE.Quaternion().setFromUnitVectors(
+        new THREE.Vector3(0, 1, 0),
+        direction.clone().normalize()
+      ),
+      length: Math.max(0.4, direction.length() - 0.4)
+    };
+  }, [anchor, draft]);
+  if (!bar) return null;
   return (
-    <group ref={groupRef} visible={false}>
-      <GhostTileMesh statKind="hand" tile={tile} />
-    </group>
+    <mesh
+      position={[bar.center.x, bar.center.y, bar.center.z]}
+      quaternion={bar.quaternion}
+      raycast={() => null}
+    >
+      <cylinderGeometry args={[0.11, 0.11, bar.length, 10]} />
+      <meshStandardMaterial color="#8a5cf6" emissive="#8a5cf6" emissiveIntensity={0.8} opacity={0.95} transparent />
+    </mesh>
   );
 }
 
@@ -624,7 +641,19 @@ function DevProbe({ draft, snapPoints }: { draft: AuthoredBuildDraft; snapPoints
           id: tile.id,
           shape: tile.shape,
           position: tile.position,
-          basis: tile.basis ?? null
+          basis: tile.basis ?? null,
+          subassemblyId: tile.subassemblyId ?? null,
+          foldAngle: tile.foldAngle ?? null,
+          color: tile.color,
+          parentTileId: tile.parentTileId ?? null,
+          root: Boolean(tile.root)
+        })),
+      connections: () =>
+        draft.connections.map((connection) => ({
+          fromTileId: connection.fromTileId,
+          fromEdge: connection.fromEdge,
+          toTileId: connection.toTileId,
+          toEdge: connection.toEdge
         })),
       snapScreenPoints: () => {
         const rect = gl.domElement.getBoundingClientRect();
@@ -833,12 +862,17 @@ function EdgeBar({ bar, hovered }: { bar: EdgeBarInfo; hovered: boolean }) {
 }
 
 function GhostTileMesh({
-  invalid = false,
+  appearance = "valid",
   snapped = false,
   statKind,
   tile
 }: {
-  invalid?: boolean;
+  /**
+   * valid: placeable, shown in the tile's color. nofit: quiet grey "nothing fits here"
+   * state (clicking does nothing). invalid: red backstop — unreachable in normal flow
+   * because invalid options are never offered; kept as a visual assertion.
+   */
+  appearance?: "valid" | "nofit" | "invalid";
   snapped?: boolean;
   statKind?: "snap" | "hand";
   tile: BuilderTile;
@@ -852,22 +886,29 @@ function GhostTileMesh({
     return () => bumpGhostStat(statKind === "snap" ? "snapUnmounts" : "handUnmounts");
   }, [statKind]);
 
+  const noFit = appearance === "nofit";
+  const invalid = appearance === "invalid";
+
   useFrame(({ clock }) => {
     if (!materialRef.current) return;
-    // Snapped: solidify (steady, more opaque). In hand: soft breathing pulse.
-    materialRef.current.opacity = snapped
-      ? 0.62
-      : 0.3 + Math.sin(clock.elapsedTime * 5) * 0.07;
+    // Snapped: solidify (steady, more opaque). No-fit: faint. In hand: breathing pulse.
+    materialRef.current.opacity = noFit
+      ? 0.16
+      : snapped
+        ? 0.62
+        : 0.3 + Math.sin(clock.elapsedTime * 5) * 0.07;
   });
   const meshProps = useTileTransformProps(tile);
+
+  const color = invalid ? "#e84855" : noFit ? "#8d9aa5" : tile.color;
 
   return (
     <mesh geometry={geometry} raycast={() => null} {...meshProps}>
       <meshPhysicalMaterial
-        color={invalid ? "#e84855" : tile.color}
+        color={color}
         depthWrite={false}
-        emissive={invalid ? "#e84855" : tile.color}
-        emissiveIntensity={snapped ? 0.45 : 0.25}
+        emissive={color}
+        emissiveIntensity={noFit ? 0.05 : snapped ? 0.45 : 0.25}
         metalness={0}
         opacity={0.42}
         ref={materialRef}
@@ -876,7 +917,7 @@ function GhostTileMesh({
         transparent
       />
       <Edges
-        color={invalid ? "#e84855" : snapped ? "#f7b733" : "#ffffff"}
+        color={invalid ? "#e84855" : noFit ? "#9aa7b0" : snapped ? "#f7b733" : "#ffffff"}
         lineWidth={snapped ? 2.2 : 1.6}
         threshold={15}
       />
