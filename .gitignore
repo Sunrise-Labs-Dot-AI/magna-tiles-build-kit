@@ -14,6 +14,10 @@ node_modules/
 # Large input media (third-party source videos; not redistributed, regenerate locally)
 sample-videos/
 
+# Local video ingestion cache (downloaded creator videos + extracted frames/masks;
+# never committed — README attribution policy forbids redistributing creator content)
+.video-cache/
+
 # Third-party extracted video frames (research only; not redistributed)
 public/reference-frames/
 

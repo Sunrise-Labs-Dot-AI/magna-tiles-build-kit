@@ -33,6 +33,35 @@ export interface ReferenceFrameCandidate {
   landmarkRole?: "bill-of-materials";
 }
 
+/**
+ * Measured (pixel-derived) evidence attached to a timeline step. Every field
+ * is computed deterministically from real video frames by
+ * lib/reference-encoder/segmentation.ts — never authored by a model.
+ */
+export interface MeasuredStepEvidence {
+  startSeconds: number;
+  endSeconds: number;
+  representativeSeconds: number;
+  stabilitySeconds: number;
+  precedingMotionPeak: number;
+  intraSpanMeanChangedFraction: number;
+  foregroundRatio: number;
+  silhouetteDeltaRatio: number;
+  confidence: number;
+  confidenceParts: {
+    stability: number;
+    motion: number;
+    quiet: number;
+    delta: number;
+  };
+  needsHumanReview: boolean;
+  baseline: boolean;
+  /** Set by a human reviewer to clear a needs-review flag. Never set by code. */
+  humanAccepted?: boolean;
+  representativeFrameDataUrl?: string;
+  silhouetteDataUrl?: string;
+}
+
 export interface ReferenceEncodingStep {
   id: string;
   timestamp: string;
@@ -50,6 +79,7 @@ export interface ReferenceEncodingStep {
     visualCues: string[];
   };
   physicalNotes?: string[];
+  measured?: MeasuredStepEvidence;
 }
 
 export interface ReferenceMaterialCount {
@@ -87,6 +117,48 @@ export interface ReferenceBuildCollection {
   collectionLabel: string;
   encoderLessons?: string[];
   segments: ReferenceBuildSegment[];
+}
+
+/**
+ * Client-safe serialized form of a measured ingestion run (lib/reference-encoder/ingest.ts).
+ * Image evidence is inlined as data URLs so the review UI needs no extra file routes.
+ */
+export interface MeasuredTimelineStepPayload {
+  index: number;
+  startSeconds: number;
+  endSeconds: number;
+  representativeSeconds: number;
+  stabilitySeconds: number;
+  precedingMotionPeak: number;
+  intraSpanMeanChangedFraction: number;
+  foregroundRatio: number;
+  silhouetteDeltaRatio: number;
+  confidence: number;
+  confidenceParts: {
+    stability: number;
+    motion: number;
+    quiet: number;
+    delta: number;
+  };
+  needsHumanReview: boolean;
+  baseline: boolean;
+  representativeFrameDataUrl: string;
+  silhouetteDataUrl: string;
+}
+
+export interface MeasuredTimelinePayload {
+  videoId: string;
+  sourceUrl: string;
+  durationSeconds: number;
+  analysisFps: number;
+  analysisFrameCount: number;
+  analysisWidth: number;
+  analysisHeight: number;
+  motionSpanCount: number;
+  stableSpanCount: number;
+  reviewConfidenceThreshold: number;
+  steps: MeasuredTimelineStepPayload[];
+  generatedAt: string;
 }
 
 export const ASSEMBLY_ACTIONS: AssemblyAction[] = [
