@@ -10,6 +10,7 @@
     "judge:build": "tsx scripts/judge-build.ts",
     "render:draft": "tsx scripts/render-draft.ts",
     "verify:builds": "tsx scripts/verify-builds.ts",
+    "verify:feel": "tsx scripts/verify-feel.ts",
     "ingest:video": "tsx scripts/ingest-video.ts",
     "test": "vitest run",
     "test:watch": "vitest"

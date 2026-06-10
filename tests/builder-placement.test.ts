@@ -2,21 +2,31 @@ import { describe, expect, it } from "vitest";
 import {
   FOLD_CHOICES,
   DEFAULT_FOLD_INDEX,
+  FLAT_FOLD_INDEX,
+  SNAP_RADIUS,
+  SNAP_RELEASE_RADIUS,
   clampChildEdge,
+  collectSnapPoints,
   collectTileSubtree,
   confirmGhostPlacement,
   cycleChildEdge,
   cycleFoldIndex,
   defaultPlacementSettings,
   deriveGhostPreview,
+  deriveHandTile,
+  deriveRootGhost,
   foldAngleFromIndex,
+  hoverKey,
   placeRootOnGround,
+  resolveSnapHover,
+  rootOrientationFromSettings,
   snapRootPosition,
   type PlacementSettings
 } from "@/lib/builder/placement";
 import { createEmptyDraft } from "@/lib/builder/operations";
 import { findRawOverlaps } from "@/lib/engine/overlap";
 import { TILE_THICKNESS } from "@/lib/magnetic-tiles/catalog";
+import { tilePrismVertices } from "@/lib/magnetic-tiles/prism-geometry";
 import type { AuthoredBuildDraft } from "@/lib/builder/types";
 
 function settingsWith(patch: Partial<PlacementSettings>): PlacementSettings {
@@ -110,6 +120,194 @@ describe("root tile ground placement", () => {
     expect(result.draft).toBe(draft);
   });
 });
+
+describe("free root orientation", () => {
+  it("maps the fold controls onto snapped root orientations", () => {
+    // Flat
+    expect(rootOrientationFromSettings({ foldIndex: FLAT_FOLD_INDEX, reverse: false })).toEqual({
+      standAngle: 0,
+      yaw: 0
+    });
+    // +90 stands upright; -90 stands upright facing the other way.
+    expect(rootOrientationFromSettings({ foldIndex: 4, reverse: false })).toEqual({
+      standAngle: Math.PI / 2,
+      yaw: 0
+    });
+    expect(rootOrientationFromSettings({ foldIndex: 0, reverse: false })).toEqual({
+      standAngle: Math.PI / 2,
+      yaw: Math.PI
+    });
+    // R adds a half-turn.
+    expect(rootOrientationFromSettings({ foldIndex: 4, reverse: true })).toEqual({
+      standAngle: Math.PI / 2,
+      yaw: Math.PI
+    });
+  });
+
+  it("places a standing root tile (normal horizontal, resting on its edge)", () => {
+    const { draft, placedTileId } = placeRootOnGround(createEmptyDraft("standing"), {
+      shape: "small-square",
+      color: "#118ab2",
+      point: { x: 0, z: 0 },
+      foldIndex: 4,
+      reverse: false
+    });
+    // Placement is not pre-gated: a lone standing tile is placeable; the engine gate
+    // reports honestly whether it would stand.
+    expect(placedTileId).not.toBeNull();
+    const root = draft.tiles[0];
+    expect(Math.abs(root.basis!.zAxis.y)).toBeLessThan(1e-9);
+    // Standing on its edge: the center sits half an edge length up (thickness is
+    // horizontal when the tile is vertical, so it does not lift the center).
+    expect(root.position.y).toBeCloseTo(1.5);
+  });
+
+  it("rests the root tile exactly on the ground for every fold choice", () => {
+    FOLD_CHOICES.forEach((_, foldIndex) => {
+      [false, true].forEach((reverse) => {
+        const { draft } = placeRootOnGround(createEmptyDraft(`fold-${foldIndex}-${reverse}`), {
+          shape: "equilateral-triangle",
+          color: "#06d6a0",
+          point: { x: 1.4, z: -2.6 },
+          foldIndex,
+          reverse
+        });
+        const root = draft.tiles[0];
+        const minY = Math.min(...tilePrismVertices(root, TILE_THICKNESS).map((point) => point.y));
+        expect(minY).toBeGreaterThan(-1e-6);
+        expect(minY).toBeLessThan(1e-6);
+      });
+    });
+  });
+
+  it("keeps the legacy flat default when foldIndex is omitted", () => {
+    const { draft } = placeRootOnGround(createEmptyDraft("legacy"), {
+      shape: "small-square",
+      color: "#118ab2",
+      point: { x: 0, z: 0 }
+    });
+    expect(draft.tiles[0].basis?.zAxis.y).toBeCloseTo(1);
+    expect(draft.tiles[0].position.y).toBeCloseTo(TILE_THICKNESS / 2);
+  });
+
+  it("flips the standing tile's facing with reverse", () => {
+    const forward = placeRootOnGround(createEmptyDraft("fwd"), {
+      shape: "small-square",
+      color: "#118ab2",
+      point: { x: 0, z: 0 },
+      foldIndex: 4,
+      reverse: false
+    }).draft.tiles[0];
+    const flipped = placeRootOnGround(createEmptyDraft("rev"), {
+      shape: "small-square",
+      color: "#118ab2",
+      point: { x: 0, z: 0 },
+      foldIndex: 4,
+      reverse: true
+    }).draft.tiles[0];
+    expect(forward.basis!.zAxis.z).toBeCloseTo(-flipped.basis!.zAxis.z);
+  });
+});
+
+describe("hand ghost derivation", () => {
+  it("derives a root ghost identical to what a click would place (WYSIWYG)", () => {
+    const draft = createEmptyDraft("ghost-vs-place");
+    const settings = settingsWith({ foldIndex: 4, shape: "large-square", color: "#ef476f" });
+    const ghost = deriveRootGhost(draft, settings, { x: 3.2, z: -1.1 });
+    const placed = placeRootOnGround(draft, {
+      shape: settings.shape,
+      color: settings.color,
+      point: { x: 3.2, z: -1.1 },
+      foldIndex: settings.foldIndex,
+      reverse: settings.reverse
+    }).draft.tiles[0];
+
+    expect(ghost).not.toBeNull();
+    expect(ghost!.shape).toBe(placed.shape);
+    expect(ghost!.position).toEqual(placed.position);
+    expect(ghost!.basis).toEqual(placed.basis);
+  });
+
+  it("returns no root ghost once tiles exist", () => {
+    const draft = draftWithFlatRoot();
+    expect(deriveRootGhost(draft, settingsWith({}), { x: 0, z: 0 })).toBeNull();
+  });
+
+  it("derives a held tile oriented like the root ghost at the origin", () => {
+    const settings = settingsWith({ foldIndex: 3, reverse: true, shape: "isosceles-triangle" });
+    const hand = deriveHandTile(settings);
+    const rootGhost = deriveRootGhost(createEmptyDraft("origin"), settings, { x: 0, z: 0 });
+    expect(hand.id).toBe("hand-ghost");
+    expect(hand.position).toEqual(rootGhost!.position);
+    expect(hand.basis).toEqual(rootGhost!.basis);
+  });
+});
+
+describe("cursor-proximity snapping", () => {
+  it("collects magnet pairs plus edge midpoints for every edge", () => {
+    const draft = draftWithFlatRoot();
+    const points = collectSnapPoints(draft);
+    // small-square: 4 edges × (2 magnets + 1 midpoint)
+    expect(points).toHaveLength(12);
+    const midpoints = points.filter((point) => point.hover.magnetIndex === undefined);
+    expect(midpoints).toHaveLength(4);
+  });
+
+  it("acquires the nearest snap point within the snap radius", () => {
+    const draft = draftWithFlatRoot();
+    const points = collectSnapPoints(draft);
+    const target = points[0];
+    const cursor = {
+      x: target.position.x + SNAP_RADIUS * 0.5,
+      y: target.position.y,
+      z: target.position.z
+    };
+    const hover = resolveSnapHover(points, cursor, null);
+    expect(hover).not.toBeNull();
+    // It picked the actual nearest point, whichever that is.
+    const nearest = [...points].sort(
+      (a, b) =>
+        distanceTo(a.position, cursor) - distanceTo(b.position, cursor)
+    )[0];
+    expect(hoverKey(hover)).toBe(hoverKey(nearest.hover));
+  });
+
+  it("holds the current snap until the cursor leaves the release radius (hysteresis)", () => {
+    const draft = draftWithFlatRoot();
+    const points = collectSnapPoints(draft);
+    const target = points[0];
+    const acquired = resolveSnapHover(points, target.position, null);
+    expect(acquired).not.toBeNull();
+
+    // Drift just past the acquire radius but inside the release radius: hover must hold.
+    const drifted = {
+      x: target.position.x,
+      y: target.position.y + (SNAP_RADIUS + SNAP_RELEASE_RADIUS) / 2,
+      z: target.position.z
+    };
+    const held = resolveSnapHover(points, drifted, acquired);
+    expect(hoverKey(held)).toBe(hoverKey(acquired));
+
+    // Without a current hover the same cursor would NOT acquire: that asymmetry is the
+    // hysteresis that makes boundary micro-movements flicker-free.
+    if (Math.min(...points.map((p) => distanceTo(p.position, drifted))) > SNAP_RADIUS) {
+      expect(resolveSnapHover(points, drifted, null)).toBeNull();
+    }
+
+    // Far away: released.
+    const far = { x: 50, y: 0, z: 50 };
+    expect(resolveSnapHover(points, far, acquired)).toBeNull();
+  });
+
+  it("returns null without a cursor", () => {
+    const draft = draftWithFlatRoot();
+    expect(resolveSnapHover(collectSnapPoints(draft), null, null)).toBeNull();
+  });
+});
+
+function distanceTo(a: { x: number; y: number; z: number }, b: { x: number; y: number; z: number }): number {
+  return Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2 + (a.z - b.z) ** 2);
+}
 
 describe("ghost preview derivation", () => {
   it("returns null without a hover target", () => {

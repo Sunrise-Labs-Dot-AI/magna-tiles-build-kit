@@ -38,6 +38,11 @@ import {
 } from "@/lib/builder/operations";
 import {
   FOLD_CHOICES,
+  ROOT_SNAP_GRID,
+  builderTileLocalVertices,
+  builderTileMagnetWorldPoints,
+  builderTileWorldVertices,
+  collectSnapPoints,
   collectTileSubtree,
   confirmGhostPlacement,
   clampChildEdge,
@@ -45,10 +50,13 @@ import {
   cycleFoldIndex,
   defaultPlacementSettings,
   deriveGhostPreview,
+  deriveHandTile,
+  hoverKey,
   placeRootOnGround,
-  snapRootPosition,
+  resolveSnapHover,
   type MagnetHover,
-  type PlacementSettings
+  type PlacementSettings,
+  type SnapPoint
 } from "@/lib/builder/placement";
 import type { AuthoredBuildDraft, BuildDraftSummary, BuilderTile } from "@/lib/builder/types";
 import {
@@ -76,8 +84,6 @@ import {
 } from "@/lib/engine/physics-model";
 import type { GateBuildResult } from "@/lib/engine";
 import { SHAPE_ORDER, TILE_SPECS } from "@/lib/magnetic-tiles/catalog";
-import { tileLocalVertices, tileWorldVertices } from "@/lib/magnetic-tiles/magnet-geometry";
-import { magnetFractionsForLength, tileWorldMagnetPositions } from "@/lib/magnetic-tiles/magnets";
 import { BUILD_LIBRARY } from "@/lib/magnetic-tiles/library";
 import type { GeneratedBuildResponse, TileShape, Vec3 } from "@/lib/magnetic-tiles/types";
 
@@ -98,6 +104,52 @@ type BodyRef = RefObject<RapierRigidBody | null>;
 const HISTORY_CAP = 60;
 const WHEEL_STEP_THRESHOLD = 28;
 
+/* ------------------------------------------------------------------ */
+/* Dev instrumentation: ghost mount/unmount stats + scene probe.       */
+/* The flicker bug was a ghost mount/unmount oscillation; these stats  */
+/* make "the ghost mounted exactly once during a steady hover" a       */
+/* machine-checkable invariant (see scripts/verify-feel.ts).           */
+/* ------------------------------------------------------------------ */
+
+type GhostStats = {
+  snapMounts: number;
+  snapUnmounts: number;
+  handMounts: number;
+  handUnmounts: number;
+};
+
+declare global {
+  interface Window {
+    __ghostStats?: GhostStats;
+    __builderProbe?: {
+      tiles: () => Array<{
+        id: string;
+        shape: TileShape;
+        position: Vec3;
+        basis: NonNullable<BuilderTile["basis"]> | null;
+      }>;
+      snapScreenPoints: () => Array<{
+        tileId: string;
+        edge: number;
+        magnetIndex: number | null;
+        x: number;
+        y: number;
+      }>;
+    };
+  }
+}
+
+function bumpGhostStat(key: keyof GhostStats): void {
+  if (process.env.NODE_ENV === "production" || typeof window === "undefined") return;
+  const stats = (window.__ghostStats ??= {
+    snapMounts: 0,
+    snapUnmounts: 0,
+    handMounts: 0,
+    handUnmounts: 0
+  });
+  stats[key] += 1;
+}
+
 export default function BuilderPage() {
   const [draft, setDraft] = useState<AuthoredBuildDraft>(() => createEmptyDraft("My Build"));
   const [past, setPast] = useState<AuthoredBuildDraft[]>([]);
@@ -105,7 +157,8 @@ export default function BuilderPage() {
   const [savedDrafts, setSavedDrafts] = useState<BuildDraftSummary[]>([]);
   const [settings, setSettings] = useState<PlacementSettings>(() => defaultPlacementSettings());
   const [hover, setHover] = useState<MagnetHover | null>(null);
-  const [rootHover, setRootHover] = useState<{ x: number; z: number } | null>(null);
+  const [handActive, setHandActive] = useState(true);
+  const [cursorActive, setCursorActive] = useState(false);
   const [selectedTileId, setSelectedTileId] = useState<string | null>(null);
   const [flash, setFlash] = useState<{ tileId: string; at: number } | null>(null);
   const [bursts, setBursts] = useState<SnapBurstInstance[]>([]);
@@ -123,21 +176,23 @@ export default function BuilderPage() {
   const toastTimerRef = useRef<number | null>(null);
   const hoverRef = useRef<MagnetHover | null>(null);
   hoverRef.current = hover;
+  const handActiveRef = useRef(handActive);
+  handActiveRef.current = handActive;
+  const draftRef = useRef(draft);
+  draftRef.current = draft;
   const wheelAccumRef = useRef(0);
+  /** Latest cursor world point on ground/tile geometry, updated outside React. */
+  const cursorRef = useRef<Vec3 | null>(null);
 
   const build = useMemo(() => draftToBuildGraph(draft), [draft]);
   const rollPlan = useMemo(() => createRollTestPlan(build), [build]);
   const isRamp = useMemo(() => isFunctionalRamp(build), [build]);
-  const ghost = useMemo(() => deriveGhostPreview(draft, hover, settings), [draft, hover, settings]);
-  const rootGhost = useMemo(() => {
-    if (draft.tiles.length > 0 || !rootHover || simulationMode !== "edit") return null;
-    const { draft: next } = placeRootOnGround(draft, {
-      shape: settings.shape,
-      color: settings.color,
-      point: rootHover
-    });
-    return next.tiles[0] ?? null;
-  }, [draft, rootHover, settings.color, settings.shape, simulationMode]);
+  const ghost = useMemo(
+    () => (handActive ? deriveGhostPreview(draft, hover, settings) : null),
+    [draft, handActive, hover, settings]
+  );
+  const handTile = useMemo(() => deriveHandTile(settings), [settings]);
+  const snapPoints = useMemo(() => collectSnapPoints(draft), [draft]);
   const selectedTile = draft.tiles.find((tile) => tile.id === selectedTileId) ?? null;
   const selectedSubtree = useMemo(
     () => (selectedTileId ? collectTileSubtree(draft, selectedTileId) : []),
@@ -213,7 +268,9 @@ export default function BuilderPage() {
       const placed = result.draft.tiles.find((tile) => tile.id === result.placedTileId);
       commitDraft(result.draft);
       setSelectedTileId(result.placedTileId);
-      setHover(null);
+      // Keep the hand live: re-derive the snap against the new draft from the cursor's
+      // current position, so the next ghost appears without wiggling the mouse.
+      setHover(resolveSnapHover(collectSnapPoints(result.draft), cursorRef.current, null));
       setFlash({ tileId: result.placedTileId, at: performance.now() });
       if (placed) spawnBurst(placed.position);
     },
@@ -223,16 +280,89 @@ export default function BuilderPage() {
   const placeRoot = useCallback(
     (point: { x: number; z: number }) => {
       if (draft.tiles.length > 0) return;
-      const result = placeRootOnGround(draft, { shape: settings.shape, color: settings.color, point });
+      const result = placeRootOnGround(draft, {
+        shape: settings.shape,
+        color: settings.color,
+        point,
+        foldIndex: settings.foldIndex,
+        reverse: settings.reverse
+      });
       if (!result.placedTileId) return;
+      const placed = result.draft.tiles.find((tile) => tile.id === result.placedTileId);
       commitDraft(result.draft);
       setSelectedTileId(result.placedTileId);
       setFlash({ tileId: result.placedTileId, at: performance.now() });
-      spawnBurst(snapRootPosition(point));
-      showToast("First tile down. Hover a magnet dot to snap the next one.");
+      if (placed) spawnBurst(placed.position);
+      const foldLabel = FOLD_CHOICES[settings.foldIndex]?.label ?? "Flat";
+      showToast(
+        foldLabel === "Flat"
+          ? "First tile down. Bring the next one close to a magnet to snap it."
+          : `First tile ${Math.abs(FOLD_CHOICES[settings.foldIndex].radians) === Math.PI / 2 ? "standing on its edge" : "leaning"} — the gate pill says if it stands for real.`
+      );
     },
-    [commitDraft, draft, settings.color, settings.shape, showToast, spawnBurst]
+    [commitDraft, draft, settings.color, settings.foldIndex, settings.reverse, settings.shape, showToast, spawnBurst]
   );
+
+  /** Cursor moved over scene geometry (ground or a tile): track + derive snap hover. */
+  const handleCursorMove = useCallback(
+    (point: Vec3) => {
+      cursorRef.current = point;
+      setCursorActive(true);
+      if (!handActiveRef.current) {
+        if (hoverRef.current) setHover(null);
+        return;
+      }
+      const next = resolveSnapHover(snapPoints, point, hoverRef.current);
+      if (hoverKey(next) !== hoverKey(hoverRef.current)) setHover(next);
+    },
+    [snapPoints]
+  );
+
+  /**
+   * Clear the cursor ONLY when the pointer leaves the whole stage. Scene meshes never
+   * clear it: R3F fires a mesh pointerout mid-crossing (ground→tile and back), and any
+   * transient clear there is exactly the ghost unmount/remount flicker this rework
+   * removes. Moving away from snap points is handled by resolveSnapHover's hysteresis.
+   */
+  const handleStageLeave = useCallback(() => {
+    cursorRef.current = null;
+    setCursorActive(false);
+    if (hoverRef.current) setHover(null);
+  }, []);
+
+  /** One click handler for the whole scene: snap-place > root-place > select > clear. */
+  const handleSceneClick = useCallback(
+    (point: Vec3, source: "ground" | string) => {
+      if (handActiveRef.current && hoverRef.current) {
+        placeAtHover(hoverRef.current);
+        return;
+      }
+      if (handActiveRef.current && draft.tiles.length === 0 && source === "ground") {
+        placeRoot({ x: point.x, z: point.z });
+        return;
+      }
+      if (source !== "ground") {
+        setSelectedTileId(source);
+        return;
+      }
+      setSelectedTileId(null);
+    },
+    [draft.tiles.length, placeAtHover, placeRoot]
+  );
+
+  const emptyHand = useCallback(() => {
+    setHandActive(false);
+    setHover(null);
+  }, []);
+
+  const pickUpTile = useCallback((shape: TileShape) => {
+    setHandActive(true);
+    setSettings((current) => ({
+      ...current,
+      shape,
+      childEdge: clampChildEdge(shape, current.childEdge)
+    }));
+  }, []);
 
   const deleteSelected = useCallback(() => {
     if (!selectedTileId || selectedSubtree.length === 0) return;
@@ -305,13 +435,7 @@ export default function BuilderPage() {
       if (event.key >= "1" && event.key <= "9") {
         const index = Number(event.key) - 1;
         const shape = SHAPE_ORDER[index];
-        if (shape) {
-          setSettings((current) => ({
-            ...current,
-            shape,
-            childEdge: clampChildEdge(shape, current.childEdge)
-          }));
-        }
+        if (shape) pickUpTile(shape);
         return;
       }
 
@@ -343,7 +467,7 @@ export default function BuilderPage() {
           deleteSelected();
           break;
         case "escape":
-          setHover(null);
+          emptyHand();
           setSelectedTileId(null);
           setDrawerOpen(false);
           setGateOpen(false);
@@ -355,15 +479,34 @@ export default function BuilderPage() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [deleteSelected, placeAtHover, redo, undo]);
+  }, [deleteSelected, emptyHand, pickUpTile, placeAtHover, redo, undo]);
 
-  // Scroll wheel cycles the fold while a ghost is live (non-passive so we can stop zoom).
+  // The snap hover is a pointer affordance: show the pointer cursor while snapped.
+  useEffect(() => {
+    document.body.style.cursor = hover ? "pointer" : "auto";
+    return () => {
+      document.body.style.cursor = "auto";
+    };
+  }, [hover]);
+
+  // The stage owns "the pointer is gone": leaving the canvas empties the cursor.
   const stageRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     const node = stageRef.current;
     if (!node) return;
+    node.addEventListener("pointerleave", handleStageLeave);
+    return () => node.removeEventListener("pointerleave", handleStageLeave);
+  }, [handleStageLeave]);
+
+  // Scroll wheel cycles the fold while a ghost is live (non-passive so we can stop zoom):
+  // either snapped to a magnet, or aiming the first tile at open ground.
+  useEffect(() => {
+    const node = stageRef.current;
+    if (!node) return;
     function handleWheel(event: WheelEvent) {
-      if (!hoverRef.current) return;
+      const aimingRoot =
+        handActiveRef.current && draftRef.current.tiles.length === 0 && cursorRef.current !== null;
+      if (!hoverRef.current && !aimingRoot) return;
       event.preventDefault();
       wheelAccumRef.current += event.deltaY;
       if (Math.abs(wheelAccumRef.current) < WHEEL_STEP_THRESHOLD) return;
@@ -388,7 +531,6 @@ export default function BuilderPage() {
     setFuture([]);
     setSelectedTileId(null);
     setHover(null);
-    setRootHover(null);
     resetSimulation();
     setDrawerOpen(false);
     setFrameNonce((nonce) => nonce + 1);
@@ -486,34 +628,23 @@ export default function BuilderPage() {
       <div className="play-stage" ref={stageRef}>
         <BuilderCanvas
           frameNonce={frameNonce}
+          aimingRoot={handActive && cursorActive && draft.tiles.length === 0}
           bursts={bursts}
+          cursorRef={cursorRef}
           draft={draft}
           flash={flash}
           ghost={ghost}
+          handActive={handActive}
+          handTile={handTile}
           hover={hover}
           isSimulating={isSimulating}
-          onGroundClick={(point) => {
-            if (draft.tiles.length === 0) placeRoot(point);
-            else {
-              setSelectedTileId(null);
-              setHover(null);
-            }
-          }}
-          onGroundMove={(point) => {
-            if (draft.tiles.length === 0) setRootHover(point);
-          }}
-          onGroundLeave={() => setRootHover(null)}
-          onHoverMagnet={setHover}
-          onPlace={placeAtHover}
-          onSelectTile={(tileId) => {
-            setSelectedTileId(tileId);
-            setHover(null);
-          }}
+          onCursorMove={handleCursorMove}
+          onSceneClick={handleSceneClick}
           onSimulationStatus={setSandboxStatus}
-          rootGhost={rootGhost}
           selectedTileId={selectedTileId}
           simulationMode={simulationMode}
           simulationNonce={simulationNonce}
+          snapPoints={snapPoints}
           build={build}
         />
 
@@ -665,8 +796,15 @@ export default function BuilderPage() {
         {toast ? <div className={`play-toast ${toast.kind}`}>{toast.text}</div> : null}
 
         {/* ---- empty state hint ---- */}
-        {draft.tiles.length === 0 && !isSimulating ? (
-          <div className="play-empty-hint">Click the ground to lay your first tile</div>
+        {draft.tiles.length === 0 && !isSimulating && handActive ? (
+          <div className="play-empty-hint">
+            Your tile is in hand — <kbd>Q</kbd>/<kbd>E</kbd> tilts it, <kbd>R</kbd> flips, click the ground to place
+          </div>
+        ) : null}
+        {!handActive && !isSimulating ? (
+          <div className="play-empty-hint">
+            Hand empty — press <kbd>1</kbd>–<kbd>6</kbd> or click a shape below to pick up a tile
+          </div>
         ) : null}
         {isSimulating ? (
           <div className="play-sim-banner">
@@ -722,15 +860,9 @@ export default function BuilderPage() {
               const used = usedByShape.get(shape) ?? 0;
               return (
                 <button
-                  className={`play-slot ${settings.shape === shape ? "active" : ""}`}
+                  className={`play-slot ${handActive && settings.shape === shape ? "active" : ""}`}
                   key={shape}
-                  onClick={() =>
-                    setSettings((current) => ({
-                      ...current,
-                      shape,
-                      childEdge: clampChildEdge(shape, current.childEdge)
-                    }))
-                  }
+                  onClick={() => pickUpTile(shape)}
                   title={TILE_SPECS[shape].label}
                   type="button"
                 >
@@ -814,53 +946,54 @@ export default function BuilderPage() {
 /* ================================================================== */
 
 function BuilderCanvas({
+  aimingRoot,
   build,
   bursts,
+  cursorRef,
   draft,
   flash,
   frameNonce,
   ghost,
+  handActive,
+  handTile,
   hover,
   isSimulating,
-  onGroundClick,
-  onGroundLeave,
-  onGroundMove,
-  onHoverMagnet,
-  onPlace,
-  onSelectTile,
+  onCursorMove,
+  onSceneClick,
   onSimulationStatus,
-  rootGhost,
   selectedTileId,
   simulationMode,
-  simulationNonce
+  simulationNonce,
+  snapPoints
 }: {
+  aimingRoot: boolean;
   build: ReturnType<typeof draftToBuildGraph>;
   bursts: SnapBurstInstance[];
+  cursorRef: RefObject<Vec3 | null>;
   draft: AuthoredBuildDraft;
   flash: { tileId: string; at: number } | null;
   frameNonce: number;
   ghost: ReturnType<typeof deriveGhostPreview>;
+  handActive: boolean;
+  handTile: BuilderTile;
   hover: MagnetHover | null;
   isSimulating: boolean;
-  onGroundClick: (point: { x: number; z: number }) => void;
-  onGroundLeave: () => void;
-  onGroundMove: (point: { x: number; z: number }) => void;
-  onHoverMagnet: (hover: MagnetHover | null) => void;
-  onPlace: (hover: MagnetHover) => void;
-  onSelectTile: (tileId: string) => void;
+  onCursorMove: (point: Vec3) => void;
+  onSceneClick: (point: Vec3, source: "ground" | string) => void;
   onSimulationStatus: (status: SandboxStatus) => void;
-  rootGhost: BuilderTile | null;
   selectedTileId: string | null;
   simulationMode: SimulationMode;
   simulationNonce: number;
+  snapPoints: SnapPoint[];
 }) {
   const [initialCameraPosition] = useState<[number, number, number]>(() => {
     const cameraDistance = Math.max(16, build.bounds.width, build.bounds.height, build.bounds.depth) * 1.8;
     return [cameraDistance * 0.62, cameraDistance * 0.52, cameraDistance * 0.82];
   });
-  // drop:true matches the engine gate's own stand test (lib/engine/simulate.ts): the
-  // build is dropped a calibrated height and must settle. Same sandbox as v1.
-  const physicsModel = useMemo(() => createMagneticPhysicsModel(build, { drop: true }), [build]);
+  // drop:false — the sandbox settles the build IN PLACE so what you see simulated is
+  // exactly what you built, where you built it. The engine gate (lib/engine/simulate.ts)
+  // still runs its own calibrated drop test; the gate is law, this is presentation.
+  const physicsModel = useMemo(() => createMagneticPhysicsModel(build, { drop: false }), [build]);
   const rollPlan = useMemo(() => createRollTestPlan(build), [build]);
   const physicsKey = `${simulationMode}-${simulationNonce}-${build.id}-${draft.updatedAt}`;
 
@@ -881,12 +1014,7 @@ function BuilderCanvas({
       />
       <fog args={["#dff1f7", 70, 160]} attach="fog" />
 
-      <WarmGround
-        interactive={!isSimulating}
-        onGroundClick={onGroundClick}
-        onGroundLeave={onGroundLeave}
-        onGroundMove={onGroundMove}
-      />
+      <WarmGround interactive={!isSimulating} onCursorMove={onCursorMove} onSceneClick={onSceneClick} />
 
       {isSimulating ? (
         <Physics
@@ -910,17 +1038,21 @@ function BuilderCanvas({
           {draft.tiles.map((tile) => (
             <BuilderTileMesh
               flashAt={flash?.tileId === tile.id ? flash.at : undefined}
+              handActive={handActive}
               hover={hover}
               isSelected={tile.id === selectedTileId}
               key={tile.id}
-              onHoverMagnet={onHoverMagnet}
-              onPlace={onPlace}
-              onSelectTile={onSelectTile}
+              onCursorMove={onCursorMove}
+              onSceneClick={onSceneClick}
               tile={tile}
             />
           ))}
-          {ghost ? <GhostTileMesh invalid={!ghost.valid} tile={ghost.tile} /> : null}
-          {rootGhost ? <GhostTileMesh tile={rootGhost} /> : null}
+          {handActive && ghost ? (
+            <GhostTileMesh invalid={!ghost.valid} snapped statKind="snap" tile={ghost.tile} />
+          ) : null}
+          {handActive && !ghost ? (
+            <HandGhost cursorRef={cursorRef} gridSnap={draft.tiles.length === 0} tile={handTile} />
+          ) : null}
           {bursts.map((burst) => (
             <SnapBurst key={burst.id} position={burst.position} />
           ))}
@@ -928,7 +1060,7 @@ function BuilderCanvas({
       )}
       <OrbitControls
         enableDamping
-        enableZoom={!hover}
+        enableZoom={!hover && !aimingRoot}
         makeDefault
         maxDistance={90}
         maxPolarAngle={Math.PI / 2 - 0.04}
@@ -936,8 +1068,94 @@ function BuilderCanvas({
         target={[0, 1.5, 0]}
       />
       <CameraRig bounds={build.bounds} nonce={frameNonce} />
+      {process.env.NODE_ENV !== "production" ? <DevProbe draft={draft} snapPoints={snapPoints} /> : null}
     </Canvas>
   );
+}
+
+/**
+ * The held tile: follows the cursor every frame (outside React state, so following is
+ * free of re-renders and cannot thrash the ghost lifecycle). On an empty draft it
+ * grid-snaps and previews the exact root placement a click would commit.
+ */
+function HandGhost({
+  cursorRef,
+  gridSnap,
+  tile
+}: {
+  cursorRef: RefObject<Vec3 | null>;
+  gridSnap: boolean;
+  tile: BuilderTile;
+}) {
+  const groupRef = useRef<THREE.Group>(null);
+
+  useEffect(() => {
+    bumpGhostStat("handMounts");
+    return () => bumpGhostStat("handUnmounts");
+  }, []);
+
+  useFrame(() => {
+    const node = groupRef.current;
+    if (!node) return;
+    const cursor = cursorRef.current;
+    if (!cursor) {
+      node.visible = false;
+      return;
+    }
+    node.visible = true;
+    const targetX = gridSnap ? Math.round(cursor.x / ROOT_SNAP_GRID) * ROOT_SNAP_GRID : cursor.x;
+    const targetZ = gridSnap ? Math.round(cursor.z / ROOT_SNAP_GRID) * ROOT_SNAP_GRID : cursor.z;
+    if (gridSnap) {
+      node.position.set(targetX, 0, targetZ);
+    } else {
+      // Light smoothing makes the held tile feel carried rather than glued to the ray.
+      node.position.x += (targetX - node.position.x) * 0.45;
+      node.position.z += (targetZ - node.position.z) * 0.45;
+      node.position.y = 0;
+    }
+  });
+
+  return (
+    <group ref={groupRef} visible={false}>
+      <GhostTileMesh statKind="hand" tile={tile} />
+    </group>
+  );
+}
+
+/**
+ * Dev-only scene probe for scripted verification (scripts/verify-feel.ts): exposes
+ * tile transforms and the screen-space coordinates of every snap point.
+ */
+function DevProbe({ draft, snapPoints }: { draft: AuthoredBuildDraft; snapPoints: SnapPoint[] }) {
+  const camera = useThree((state) => state.camera);
+  const gl = useThree((state) => state.gl);
+
+  useEffect(() => {
+    window.__builderProbe = {
+      tiles: () =>
+        draft.tiles.map((tile) => ({
+          id: tile.id,
+          shape: tile.shape,
+          position: tile.position,
+          basis: tile.basis ?? null
+        })),
+      snapScreenPoints: () => {
+        const rect = gl.domElement.getBoundingClientRect();
+        return snapPoints.map((point) => {
+          const projected = new THREE.Vector3(point.position.x, point.position.y, point.position.z).project(camera);
+          return {
+            tileId: point.hover.tileId,
+            edge: point.hover.edge,
+            magnetIndex: point.hover.magnetIndex ?? null,
+            x: rect.left + ((projected.x + 1) / 2) * rect.width,
+            y: rect.top + ((1 - projected.y) / 2) * rect.height
+          };
+        });
+      }
+    };
+  }, [camera, draft, gl, snapPoints]);
+
+  return null;
 }
 
 /**
@@ -974,14 +1192,12 @@ function CameraRig({ bounds, nonce }: { bounds: { width: number; height: number;
 
 function WarmGround({
   interactive,
-  onGroundClick,
-  onGroundLeave,
-  onGroundMove
+  onCursorMove,
+  onSceneClick
 }: {
   interactive: boolean;
-  onGroundClick: (point: { x: number; z: number }) => void;
-  onGroundLeave: () => void;
-  onGroundMove: (point: { x: number; z: number }) => void;
+  onCursorMove: (point: Vec3) => void;
+  onSceneClick: (point: Vec3, source: "ground" | string) => void;
 }) {
   return (
     <group>
@@ -991,16 +1207,15 @@ function WarmGround({
             ? (event) => {
                 if (event.delta > 5) return;
                 event.stopPropagation();
-                onGroundClick({ x: event.point.x, z: event.point.z });
+                onSceneClick({ x: event.point.x, y: event.point.y, z: event.point.z }, "ground");
               }
             : undefined
         }
         onPointerMove={
           interactive
-            ? (event) => onGroundMove({ x: event.point.x, z: event.point.z })
+            ? (event) => onCursorMove({ x: event.point.x, y: event.point.y, z: event.point.z })
             : undefined
         }
-        onPointerOut={interactive ? () => onGroundLeave() : undefined}
         position={[0, -0.01, 0]}
         receiveShadow
         rotation={[-Math.PI / 2, 0, 0]}
@@ -1008,7 +1223,7 @@ function WarmGround({
         <circleGeometry args={[110, 64]} />
         <meshStandardMaterial color="#f3e3bf" roughness={0.95} />
       </mesh>
-      <mesh position={[0, 0.005, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+      <mesh position={[0, 0.005, 0]} raycast={() => null} rotation={[-Math.PI / 2, 0, 0]}>
         <circleGeometry args={[26, 64]} />
         <meshStandardMaterial color="#f7ecd2" roughness={0.9} />
       </mesh>
@@ -1023,19 +1238,19 @@ function WarmGround({
 
 function BuilderTileMesh({
   flashAt,
+  handActive,
   hover,
   isSelected,
-  onHoverMagnet,
-  onPlace,
-  onSelectTile,
+  onCursorMove,
+  onSceneClick,
   tile
 }: {
   flashAt?: number;
+  handActive: boolean;
   hover: MagnetHover | null;
   isSelected: boolean;
-  onHoverMagnet: (hover: MagnetHover | null) => void;
-  onPlace: (hover: MagnetHover) => void;
-  onSelectTile: (tileId: string) => void;
+  onCursorMove: (point: Vec3) => void;
+  onSceneClick: (point: Vec3, source: "ground" | string) => void;
   tile: BuilderTile;
 }) {
   const geometry = useMemo(() => createTileGeometry(tile), [tile]);
@@ -1053,7 +1268,7 @@ function BuilderTileMesh({
   });
 
   const meshProps = useTileTransformProps(tile);
-  const magnetPoints = useMemo(() => builderTileWorldMagnetPoints(tile), [tile]);
+  const magnetPoints = useMemo(() => builderTileMagnetWorldPoints(tile), [tile]);
   const edgeMidpoints = useMemo(() => builderTileEdgeBars(tile), [tile]);
 
   return (
@@ -1061,10 +1276,14 @@ function BuilderTileMesh({
       <mesh
         castShadow
         geometry={geometry}
+        onPointerMove={(event) => {
+          event.stopPropagation();
+          onCursorMove({ x: event.point.x, y: event.point.y, z: event.point.z });
+        }}
         onPointerUp={(event) => {
           if (event.delta > 5) return;
           event.stopPropagation();
-          onSelectTile(tile.id);
+          onSceneClick({ x: event.point.x, y: event.point.y, z: event.point.z }, tile.id);
         }}
         receiveShadow
         {...meshProps}
@@ -1084,80 +1303,45 @@ function BuilderTileMesh({
         />
         <Edges color={isSelected ? "#f7b733" : "#27343c"} lineWidth={isSelected ? 2.6 : 1.15} threshold={15} />
       </mesh>
+      {/* Magnet dots and edge bars are pure visuals now: raycast-transparent, never
+          pointer targets. Hover is derived from cursor proximity (resolveSnapHover),
+          which is what makes ghost flicker structurally impossible. */}
       {magnetPoints.map((magnet) => (
         <MagnetDot
+          active={handActive}
           hovered={
             hover?.tileId === tile.id &&
             hover.edge === magnet.edgeIndex &&
             hover.magnetIndex === magnet.magnetIndex
           }
           key={`${tile.id}-e${magnet.edgeIndex}-m${magnet.magnetIndex}`}
-          onClick={() =>
-            onPlace({ tileId: tile.id, edge: magnet.edgeIndex, magnetIndex: magnet.magnetIndex, t: magnet.t })
-          }
-          onEnter={() =>
-            onHoverMagnet({ tileId: tile.id, edge: magnet.edgeIndex, magnetIndex: magnet.magnetIndex, t: magnet.t })
-          }
-          onLeave={() => onHoverMagnet(null)}
           position={magnet.position}
         />
       ))}
       {edgeMidpoints.map((bar) => (
         <EdgeBar
           bar={bar}
-          hovered={hover?.tileId === tile.id && hover.edge === bar.edgeIndex && hover.magnetIndex === undefined}
+          hovered={hover?.tileId === tile.id && hover.edge === bar.edgeIndex}
           key={`${tile.id}-bar-${bar.edgeIndex}`}
-          onClick={() => onPlace({ tileId: tile.id, edge: bar.edgeIndex, t: 0.5 })}
-          onEnter={() => onHoverMagnet({ tileId: tile.id, edge: bar.edgeIndex, t: 0.5 })}
-          onLeave={() => onHoverMagnet(null)}
         />
       ))}
     </group>
   );
 }
 
-function MagnetDot({
-  hovered,
-  onClick,
-  onEnter,
-  onLeave,
-  position
-}: {
-  hovered: boolean;
-  onClick: () => void;
-  onEnter: () => void;
-  onLeave: () => void;
-  position: Vec3;
-}) {
+function MagnetDot({ active, hovered, position }: { active: boolean; hovered: boolean; position: Vec3 }) {
   const ref = useRef<THREE.Mesh>(null);
   useFrame(({ clock }) => {
     if (!ref.current) return;
-    const target = hovered ? 1.85 + Math.sin(clock.elapsedTime * 7) * 0.12 : 1;
+    const base = active ? 1.2 : 1;
+    const target = hovered ? 1.95 + Math.sin(clock.elapsedTime * 7) * 0.12 : base;
     const current = ref.current.scale.x;
     const next = current + (target - current) * 0.25;
     ref.current.scale.setScalar(next);
   });
 
   return (
-    <mesh
-      onPointerUp={(event) => {
-        if (event.delta > 5) return;
-        event.stopPropagation();
-        onClick();
-      }}
-      onPointerOut={(event) => {
-        event.stopPropagation();
-        document.body.style.cursor = "auto";
-        onLeave();
-      }}
-      onPointerOver={(event) => {
-        event.stopPropagation();
-        document.body.style.cursor = "pointer";
-        onEnter();
-      }}
-      position={[position.x, position.y, position.z]}
-      ref={ref}
-    >
+    <mesh position={[position.x, position.y, position.z]} raycast={() => null} ref={ref}>
       <sphereGeometry args={[0.14, 16, 16]} />
       <meshStandardMaterial
         color={hovered ? "#f7b733" : "#5b6b75"}
@@ -1177,38 +1361,13 @@ type EdgeBarInfo = {
   length: number;
 };
 
-function EdgeBar({
-  bar,
-  hovered,
-  onClick,
-  onEnter,
-  onLeave
-}: {
-  bar: EdgeBarInfo;
-  hovered: boolean;
-  onClick: () => void;
-  onEnter: () => void;
-  onLeave: () => void;
-}) {
+/** Edge highlight bar: pure visual (raycast-transparent), lit when its edge is snapped. */
+function EdgeBar({ bar, hovered }: { bar: EdgeBarInfo; hovered: boolean }) {
   return (
     <mesh
-      onPointerUp={(event) => {
-        if (event.delta > 5) return;
-        event.stopPropagation();
-        onClick();
-      }}
-      onPointerOut={(event) => {
-        event.stopPropagation();
-        document.body.style.cursor = "auto";
-        onLeave();
-      }}
-      onPointerOver={(event) => {
-        event.stopPropagation();
-        document.body.style.cursor = "pointer";
-        onEnter();
-      }}
       position={[bar.center.x, bar.center.y, bar.center.z]}
       quaternion={bar.quaternion}
+      raycast={() => null}
     >
       <cylinderGeometry args={[hovered ? 0.085 : 0.05, hovered ? 0.085 : 0.05, bar.length, 8]} />
       <meshStandardMaterial
@@ -1222,12 +1381,32 @@ function EdgeBar({
   );
 }
 
-function GhostTileMesh({ invalid = false, tile }: { invalid?: boolean; tile: BuilderTile }) {
+function GhostTileMesh({
+  invalid = false,
+  snapped = false,
+  statKind,
+  tile
+}: {
+  invalid?: boolean;
+  snapped?: boolean;
+  statKind?: "snap" | "hand";
+  tile: BuilderTile;
+}) {
   const geometry = useMemo(() => createTileGeometry(tile), [tile]);
   const materialRef = useRef<THREE.MeshPhysicalMaterial>(null);
+
+  useEffect(() => {
+    if (!statKind) return;
+    bumpGhostStat(statKind === "snap" ? "snapMounts" : "handMounts");
+    return () => bumpGhostStat(statKind === "snap" ? "snapUnmounts" : "handUnmounts");
+  }, [statKind]);
+
   useFrame(({ clock }) => {
     if (!materialRef.current) return;
-    materialRef.current.opacity = 0.36 + Math.sin(clock.elapsedTime * 5) * 0.08;
+    // Snapped: solidify (steady, more opaque). In hand: soft breathing pulse.
+    materialRef.current.opacity = snapped
+      ? 0.62
+      : 0.3 + Math.sin(clock.elapsedTime * 5) * 0.07;
   });
   const meshProps = useTileTransformProps(tile);
 
@@ -1237,7 +1416,7 @@ function GhostTileMesh({ invalid = false, tile }: { invalid?: boolean; tile: Bui
         color={invalid ? "#e84855" : tile.color}
         depthWrite={false}
         emissive={invalid ? "#e84855" : tile.color}
-        emissiveIntensity={0.25}
+        emissiveIntensity={snapped ? 0.45 : 0.25}
         metalness={0}
         opacity={0.42}
         ref={materialRef}
@@ -1245,7 +1424,11 @@ function GhostTileMesh({ invalid = false, tile }: { invalid?: boolean; tile: Bui
         side={THREE.DoubleSide}
         transparent
       />
-      <Edges color={invalid ? "#e84855" : "#ffffff"} lineWidth={1.6} threshold={15} />
+      <Edges
+        color={invalid ? "#e84855" : snapped ? "#f7b733" : "#ffffff"}
+        lineWidth={snapped ? 2.2 : 1.6}
+        threshold={15}
+      />
     </mesh>
   );
 }
@@ -1273,7 +1456,7 @@ function SnapBurst({ position }: { position: Vec3 }) {
   );
 }
 
-function useTileTransformProps(tile: BuilderTile) {
+function useTileTransformProps(tile: Pick<BuilderTile, "basis" | "position" | "rotation">) {
   return useMemo(() => {
     if (tile.basis) {
       const matrix = new THREE.Matrix4();
@@ -1384,6 +1567,17 @@ function PhysicsTileBody({ body, bodyRef }: { body: PhysicsBodyModel; bodyRef: B
       }),
     [body.tile.color]
   );
+  // The physics model bakes each tile's orientation into the hull points
+  // (tilePrismPoints = world vertices minus position) and into the joint anchors, and
+  // the headless gate world (lib/engine/rapier-world.ts) therefore spawns every body
+  // with IDENTITY rotation. Rotating the RigidBody here double-rotated the collider and
+  // anchors — the simulated build visibly didn't match the built orientation. The body
+  // stays unrotated to match the gate exactly; only the visual mesh inside is oriented.
+  const orientedTile = useMemo(
+    () => ({ ...body.tile, position: { x: 0, y: 0, z: 0 } }),
+    [body.tile]
+  );
+  const meshProps = useTileTransformProps(orientedTile);
 
   return (
     <RigidBody
@@ -1393,7 +1587,6 @@ function PhysicsTileBody({ body, bodyRef }: { body: PhysicsBodyModel; bodyRef: B
       linearVelocity={tuple(body.linearVelocity)}
       position={tuple(body.translation)}
       ref={bodyRef}
-      rotation={tileRotation(body.tile)}
       type="dynamic"
       userData={{ tileId: body.tile.id }}
     >
@@ -1404,7 +1597,7 @@ function PhysicsTileBody({ body, bodyRef }: { body: PhysicsBodyModel; bodyRef: B
         mass={body.mass}
         restitution={0.02}
       />
-      <mesh castShadow geometry={geometry} material={material} receiveShadow>
+      <mesh castShadow geometry={geometry} material={material} receiveShadow {...meshProps}>
         <Edges color="#27343c" lineWidth={1.1} threshold={15} />
       </mesh>
     </RigidBody>
@@ -1549,7 +1742,7 @@ function PhysicsRollBall({ onRollStatus, plan }: { onRollStatus: (status: Sandbo
 
 function createTileGeometry(tile: { shape: TileShape; sizeOverride?: BuilderTile["sizeOverride"] }): THREE.ExtrudeGeometry {
   const path = new THREE.Shape();
-  const vertices = builderLocalVertices(tile);
+  const vertices = builderTileLocalVertices(tile);
   path.moveTo(vertices[0].x, vertices[0].y);
   vertices.slice(1).forEach((vertex) => path.lineTo(vertex.x, vertex.y));
   path.lineTo(vertices[0].x, vertices[0].y);
@@ -1564,39 +1757,8 @@ function createTileGeometry(tile: { shape: TileShape; sizeOverride?: BuilderTile
   return geometry;
 }
 
-function builderTileWorldMagnetPoints(tile: BuilderTile): Array<{ edgeIndex: number; magnetIndex: number; position: Vec3; t: number }> {
-  if (!tile.sizeOverride) {
-    return tileWorldMagnetPositions(tile).map((magnet) => ({
-      edgeIndex: magnet.edgeIndex,
-      magnetIndex: magnet.magnetIndex,
-      t: magnet.fraction,
-      position: magnet.worldPoint
-    }));
-  }
-
-  const vertices = builderLocalVertices(tile).map((point) => transformBuilderPoint(point, tile));
-  return vertices.flatMap((start, edgeIndex) => {
-    const end = vertices[(edgeIndex + 1) % vertices.length];
-    const length = distance(start, end);
-    return magnetFractionsForLength(length).map((t, magnetIndex) => {
-      return {
-        edgeIndex,
-        magnetIndex,
-        t,
-        position: {
-          x: start.x + (end.x - start.x) * t,
-          y: start.y + (end.y - start.y) * t,
-          z: start.z + (end.z - start.z) * t
-        }
-      };
-    });
-  });
-}
-
 function builderTileEdgeBars(tile: BuilderTile): EdgeBarInfo[] {
-  const vertices = tile.sizeOverride
-    ? builderLocalVertices(tile).map((point) => transformBuilderPoint(point, tile))
-    : tileWorldVertices(tile);
+  const vertices = builderTileWorldVertices(tile);
   return vertices.map((start, edgeIndex) => {
     const end = vertices[(edgeIndex + 1) % vertices.length];
     const center = {
@@ -1612,79 +1774,6 @@ function builderTileEdgeBars(tile: BuilderTile): EdgeBarInfo[] {
     );
     return { edgeIndex, center, quaternion, length };
   });
-}
-
-function builderLocalVertices(tile: { shape: TileShape; sizeOverride?: BuilderTile["sizeOverride"] }): Vec3[] {
-  if (!tile.sizeOverride) return tileLocalVertices(tile.shape);
-  const halfW = tile.sizeOverride.width / 2;
-  const halfH = tile.sizeOverride.height / 2;
-
-  if (TILE_SPECS[tile.shape].maxEdges === 4) {
-    return [
-      { x: -halfW, y: -halfH, z: 0 },
-      { x: halfW, y: -halfH, z: 0 },
-      { x: halfW, y: halfH, z: 0 },
-      { x: -halfW, y: halfH, z: 0 }
-    ];
-  }
-
-  if (tile.shape === "right-triangle") {
-    return [
-      { x: -halfW, y: -halfH, z: 0 },
-      { x: halfW, y: -halfH, z: 0 },
-      { x: -halfW, y: halfH, z: 0 }
-    ];
-  }
-
-  return [
-    { x: -halfW, y: -halfH, z: 0 },
-    { x: halfW, y: -halfH, z: 0 },
-    { x: 0, y: halfH, z: 0 }
-  ];
-}
-
-function transformBuilderPoint(point: Vec3, tile: BuilderTile): Vec3 {
-  if (tile.basis) {
-    return {
-      x: tile.basis.xAxis.x * point.x + tile.basis.yAxis.x * point.y + tile.basis.zAxis.x * point.z + tile.position.x,
-      y: tile.basis.xAxis.y * point.x + tile.basis.yAxis.y * point.y + tile.basis.zAxis.y * point.z + tile.position.y,
-      z: tile.basis.xAxis.z * point.x + tile.basis.yAxis.z * point.y + tile.basis.zAxis.z * point.z + tile.position.z
-    };
-  }
-
-  const cosZ = Math.cos(tile.rotation.z);
-  const sinZ = Math.sin(tile.rotation.z);
-  const zRotated = {
-    x: point.x * cosZ - point.y * sinZ,
-    y: point.x * sinZ + point.y * cosZ,
-    z: point.z
-  };
-  const cosY = Math.cos(tile.rotation.y);
-  const sinY = Math.sin(tile.rotation.y);
-  const yRotated = {
-    x: zRotated.x * cosY + zRotated.z * sinY,
-    y: zRotated.y,
-    z: -zRotated.x * sinY + zRotated.z * cosY
-  };
-  const cosX = Math.cos(tile.rotation.x);
-  const sinX = Math.sin(tile.rotation.x);
-  return {
-    x: yRotated.x + tile.position.x,
-    y: yRotated.y * cosX - yRotated.z * sinX + tile.position.y,
-    z: yRotated.y * sinX + yRotated.z * cosX + tile.position.z
-  };
-}
-
-function tileRotation(tile: PhysicsBodyModel["tile"]): [number, number, number] {
-  if (!tile.basis) return [tile.rotation.x, tile.rotation.y, tile.rotation.z];
-  const matrix = new THREE.Matrix4();
-  matrix.makeBasis(
-    new THREE.Vector3(tile.basis.xAxis.x, tile.basis.xAxis.y, tile.basis.xAxis.z),
-    new THREE.Vector3(tile.basis.yAxis.x, tile.basis.yAxis.y, tile.basis.yAxis.z),
-    new THREE.Vector3(tile.basis.zAxis.x, tile.basis.zAxis.y, tile.basis.zAxis.z)
-  );
-  const euler = new THREE.Euler().setFromRotationMatrix(matrix);
-  return [euler.x, euler.y, euler.z];
 }
 
 function tuple(point: Vec3): [number, number, number] {
@@ -1717,10 +1806,6 @@ function dot3(first: Vec3, second: Vec3): number {
 
 function distance2d(first: { x: number; z: number }, second: { x: number; z: number }): number {
   return Math.hypot(first.x - second.x, first.z - second.z);
-}
-
-function distance(first: Vec3, second: Vec3): number {
-  return Math.sqrt((first.x - second.x) ** 2 + (first.y - second.y) ** 2 + (first.z - second.z) ** 2);
 }
 
 function isEditableTarget(target: EventTarget | null): boolean {
