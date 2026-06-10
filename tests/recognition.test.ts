@@ -34,8 +34,7 @@ describe("recognizability scorer", () => {
       height: 1,
       depth: 1,
       openFaces: ["left", "right"],
-      subassemblyId: "body",
-      role: "fuselage body square"
+      subassemblyId: "body"
     });
     const tubeGraph = draftToBuildGraph(macroToDraft(tube, "tube-only"));
 

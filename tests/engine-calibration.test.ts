@@ -250,7 +250,7 @@ function square(
   position: TileInstance["position"],
   basis: TileInstance["basis"],
   role: string,
-  parent: Pick<TileInstance, "parentTileId" | "parentEdge" | "childEdge" | "foldAngle"> | true = false
+  parent: Pick<TileInstance, "parentTileId" | "parentEdge" | "childEdge" | "foldAngle"> | boolean = false
 ): TileInstance {
   return {
     id,
@@ -261,7 +261,7 @@ function square(
     basis,
     step: 1,
     role,
-    ...(parent === true ? { root: true } : parent)
+    ...(parent === true ? { root: true } : typeof parent === "object" ? parent : {})
   };
 }
 
