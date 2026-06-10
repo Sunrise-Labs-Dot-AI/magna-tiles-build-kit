@@ -1224,7 +1224,10 @@ export function guardRail(params: GuardRailParams): TileMacro {
         localBasis: basis,
         frame,
         step: stepStart + segment,
-        role: `${params.id} ${params.side} slope-parallel guard rail`,
+        // "side guard rail" (not "slope-parallel ..."): the roll planner must treat rails as
+        // guards beside the driving surface, never as part of it (isDriveSurfaceRole excludes
+        // roles containing "side", while "slope" would have marked them as drive surface).
+        role: `${params.id} ${params.side} side guard rail`,
         subassemblyId,
         root: segment === 0
       })

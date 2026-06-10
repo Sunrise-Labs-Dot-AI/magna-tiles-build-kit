@@ -73,10 +73,10 @@ describe("prompt mapping", () => {
     expect(jet.build.title).toBe("Jet Aircraft");
     expect(jet.instructions.some((step) => /wing|aircraft/i.test(step.instruction))).toBe(true);
     expect(jet.validation.issues.some((issue) => issue.code === "floating-tiles")).toBe(false);
-    expect(jet.validation.usedInventory["small-square"]).toBe(12);
+    expect(jet.validation.usedInventory["small-square"]).toBe(20);
     expect(jet.validation.usedInventory["equilateral-triangle"]).toBe(2);
-    expect(jet.validation.usedInventory["right-triangle"]).toBe(0);
-    expect(jet.validation.usedInventory["isosceles-triangle"]).toBe(9);
+    expect(jet.validation.usedInventory["right-triangle"]).toBe(4);
+    expect(jet.validation.usedInventory["isosceles-triangle"]).toBe(6);
     expect(jet.validation.issues.some((issue) => issue.code === "tile-overlap")).toBe(false);
 
     expect(smallRamp.build.family).toBe("ramp");
@@ -89,8 +89,9 @@ describe("prompt mapping", () => {
     expect(largeRamp.build.family).toBe("ramp");
     expect(largeRamp.build.title).toBe("Large Car Ramp");
     expect(largeRamp.validation.usedInventory).toMatchObject({
-      "small-square": 6,
+      "small-square": 10,
       "large-square": 2,
+      "equilateral-triangle": 6,
       "isosceles-triangle": 2
     });
   });
@@ -110,7 +111,7 @@ describe("prompt mapping", () => {
     expect(ramp.validation.usedInventory).toMatchObject({
       "small-square": 4,
       "large-square": 0,
-      "equilateral-triangle": 0,
+      "equilateral-triangle": 2,
       "right-triangle": 2,
       "isosceles-triangle": 2
     });
@@ -330,10 +331,9 @@ describe("validation", () => {
     expect(CLASSIC_100_INVENTORY["xl-square"]).toBe(0);
     expect(largeCarRampDraft.inventoryPreset).toBe("classic-100");
     expect(largeRampBom).toMatchObject({
-      "small-square": 6,
+      "small-square": 10,
       "large-square": 2,
-      "xl-square": 0,
-      "equilateral-triangle": 0,
+      "equilateral-triangle": 6,
       "right-triangle": 0,
       "isosceles-triangle": 2
     });

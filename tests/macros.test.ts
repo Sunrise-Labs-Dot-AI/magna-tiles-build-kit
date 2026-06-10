@@ -222,7 +222,7 @@ describe("magnetic tile structural macros", () => {
     });
   });
 
-  it("builds an overlap-free, valid standalone slope-parallel guard rail with a predictable BOM", () => {
+  it("builds an overlap-free, valid standalone side guard rail with a predictable BOM", () => {
     const rail = guardRail({ id: "left-rail", side: "left", deckLength: 1, tileShape: "equilateral-triangle" });
 
     expect(rawOverlaps(rail.tiles)).toEqual([]);
@@ -237,7 +237,7 @@ describe("magnetic tile structural macros", () => {
     });
     expect(rail.tiles[0]).toMatchObject({
       id: "left-rail-left-rail-1",
-      role: "left-rail left slope-parallel guard rail",
+      role: "left-rail left side guard rail",
       step: 1,
       subassemblyId: "left-rail-guards"
     });
@@ -283,7 +283,7 @@ describe("magnetic tile structural macros", () => {
     expect(leftGuard.position.z).toBeCloseTo(-rightGuard.position.z, 5);
     expect(roundedPoint(directRightGuard.position)).toEqual(roundedPoint(rightGuard.position));
     expect(roundedBasis(directRightGuard.basis)).toEqual(roundedBasis(rightGuard.basis));
-    expect(rightGuard.role).toBe("guard right slope-parallel guard rail");
+    expect(rightGuard.role).toBe("guard right side guard rail");
   });
 
   it("builds an overlap-free, valid wall grid with a predictable BOM", () => {

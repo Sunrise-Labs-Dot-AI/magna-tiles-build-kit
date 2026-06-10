@@ -6,13 +6,12 @@
   "inventoryPreset": "classic-100",
   "status": "engine-valid",
   "createdAt": "2026-05-15T18:06:12.367Z",
-  "updatedAt": "2026-06-02T21:30:00.000Z",
-  "notes": "Re-authored as a larger clean bare wedge: the continuous two-square sloped driving deck now feeds a two-square raised landing, with the vertical end support moved to the far landing edge and mirrored right-triangle side supports under the extension. No rails, switchback, or stray protruding panels; headless gateBuild passes pre-filters, stands, and rollTest.",
+  "updatedAt": "2026-06-09T00:00:00.000Z",
+  "notes": "Extended per the car-ramps reference description: the gate-valid continuous wedge now carries equilateral side bracing along the slope, landing side braces enclosing the top, and a widened rear upright support wall. Additions authored via the edge-attachment system with a deterministic fold resolver; gateBuild passes stand + roll test headlessly.",
   "expectedInventory": {
-    "small-square": 5,
+    "small-square": 7,
     "large-square": 0,
-    "xl-square": 0,
-    "equilateral-triangle": 0,
+    "equilateral-triangle": 8,
     "right-triangle": 4,
     "isosceles-triangle": 2
   },
@@ -472,6 +471,416 @@
       "parentEdge": 2,
       "childEdge": 2,
       "foldAngle": 1.5707963267948966
+    },
+    {
+      "id": "medium-lower-left-slope-brace",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": 0.640035,
+        "y": 1.941593,
+        "z": -1.59
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -0.875,
+          "y": -0.484123,
+          "z": 0
+        },
+        "yAxis": {
+          "x": -0.484123,
+          "y": 0.875,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 6,
+      "role": "medium lower left slope brace left upright side brace triangle along the slope",
+      "subassemblyId": "braces",
+      "parentTileId": "medium-lower-sloped-driving-square",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": 1.570796,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "medium-lower-right-slope-brace",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": 0.640035,
+        "y": 1.941593,
+        "z": 1.41
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0.875,
+          "y": 0.484123,
+          "z": 0
+        },
+        "yAxis": {
+          "x": -0.484123,
+          "y": 0.875,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 6,
+      "role": "medium lower right slope brace right upright side brace triangle along the slope",
+      "subassemblyId": "braces",
+      "parentTileId": "medium-lower-sloped-driving-square",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 1.570796,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "medium-upper-left-slope-brace",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": 3.265035,
+        "y": 3.393961,
+        "z": -1.59
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -0.875,
+          "y": -0.484123,
+          "z": 0
+        },
+        "yAxis": {
+          "x": -0.484123,
+          "y": 0.875,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 6,
+      "role": "medium upper left slope brace left upright side brace triangle along the slope",
+      "subassemblyId": "braces",
+      "parentTileId": "medium-upper-sloped-driving-square",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": 1.570796,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "medium-upper-right-slope-brace",
+      "shape": "equilateral-triangle",
+      "color": "#ffb703",
+      "position": {
+        "x": 3.265035,
+        "y": 3.393961,
+        "z": 1.41
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0.875,
+          "y": 0.484123,
+          "z": 0
+        },
+        "yAxis": {
+          "x": -0.484123,
+          "y": 0.875,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 6,
+      "role": "medium upper right slope brace right upright side brace triangle along the slope",
+      "subassemblyId": "braces",
+      "parentTileId": "medium-upper-sloped-driving-square",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 1.570796,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "medium-landing-left-brace",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": 6.75,
+        "y": 4.269038,
+        "z": -1.59
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 7,
+      "role": "medium landing left brace left upright landing side brace triangle",
+      "subassemblyId": "braces",
+      "parentTileId": "medium-top-landing-square",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": 1.570796,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "medium-landing-right-brace",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": 6.75,
+        "y": 4.269038,
+        "z": 1.59
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 7,
+      "role": "medium landing right brace right upright landing side brace triangle",
+      "subassemblyId": "braces",
+      "parentTileId": "medium-top-landing-square",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 1.570796,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "medium-extended-landing-left-brace",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": 9.75,
+        "y": 4.269038,
+        "z": -1.59
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 7,
+      "role": "medium extended landing left brace left upright landing side brace triangle",
+      "subassemblyId": "braces",
+      "parentTileId": "medium-extended-top-landing-square",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": 1.570796,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "medium-extended-landing-right-brace",
+      "shape": "equilateral-triangle",
+      "color": "#ef476f",
+      "position": {
+        "x": 9.75,
+        "y": 4.269038,
+        "z": 1.59
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 7,
+      "role": "medium extended landing right brace right upright landing side brace triangle",
+      "subassemblyId": "braces",
+      "parentTileId": "medium-extended-top-landing-square",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 1.570796,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "medium-rear-wall-left-square",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 11.34,
+        "y": 1.5,
+        "z": -3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 8,
+      "role": "medium rear wall left square rear upright support wall square",
+      "subassemblyId": "rear-support-wall",
+      "parentTileId": "medium-extended-red-vertical-leg-support-square",
+      "parentEdge": 3,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "medium-rear-wall-right-square",
+      "shape": "small-square",
+      "color": "#118ab2",
+      "position": {
+        "x": 11.34,
+        "y": 1.5,
+        "z": 3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        },
+        "zAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "step": 8,
+      "role": "medium rear wall right square rear upright support wall square",
+      "subassemblyId": "rear-support-wall",
+      "parentTileId": "medium-extended-red-vertical-leg-support-square",
+      "parentEdge": 1,
+      "childEdge": 0,
+      "foldAngle": 0,
+      "authoredMode": "edge-snap",
+      "confirmed": true
     }
   ],
   "connections": [
@@ -557,6 +966,76 @@
       "fromEdge": 2,
       "toTileId": "medium-extended-right-green-right-triangle-support",
       "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-lower-sloped-driving-square",
+      "fromEdge": 0,
+      "toTileId": "medium-lower-left-slope-brace",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-lower-sloped-driving-square",
+      "fromEdge": 2,
+      "toTileId": "medium-lower-right-slope-brace",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-upper-sloped-driving-square",
+      "fromEdge": 0,
+      "toTileId": "medium-upper-left-slope-brace",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-upper-sloped-driving-square",
+      "fromEdge": 2,
+      "toTileId": "medium-upper-right-slope-brace",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-top-landing-square",
+      "fromEdge": 0,
+      "toTileId": "medium-landing-left-brace",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-top-landing-square",
+      "fromEdge": 2,
+      "toTileId": "medium-landing-right-brace",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-extended-top-landing-square",
+      "fromEdge": 0,
+      "toTileId": "medium-extended-landing-left-brace",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-extended-top-landing-square",
+      "fromEdge": 2,
+      "toTileId": "medium-extended-landing-right-brace",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-extended-red-vertical-leg-support-square",
+      "fromEdge": 3,
+      "toTileId": "medium-rear-wall-left-square",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "medium-extended-red-vertical-leg-support-square",
+      "fromEdge": 1,
+      "toTileId": "medium-rear-wall-right-square",
+      "toEdge": 0,
       "kind": "edge"
     }
   ]

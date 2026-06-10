@@ -6,12 +6,12 @@
   "inventoryPreset": "classic-100",
   "status": "engine-valid",
   "createdAt": "2026-05-15T21:07:46.320Z",
-  "updatedAt": "2026-06-02T19:17:54.377Z",
-  "notes": "Tile geometry regeneration: right-triangle local geometry now comes from the corrected 45-45-90 catalog constants. Rechecked the macro-derived wedge plus smallLanding support structure; absolute support centers remain unchanged because the corrected geometry changes the local right-triangle vertices, not the accepted landing/support anchor centers. Headless gateBuild passes stands plus rollTest.",
+  "updatedAt": "2026-06-09T00:00:00.000Z",
+  "notes": "Extended per the car-ramps reference description: the gate-valid wedge (orange sloped driving face, red landing with vertical support, paired green right-triangle side supports) now carries upright equilateral guard rails enclosing the landing. Additions authored via the edge-attachment system with a deterministic fold resolver; gateBuild passes stand + roll test headlessly.",
   "expectedInventory": {
-    "small-square": 5,
+    "small-square": 4,
     "large-square": 0,
-    "equilateral-triangle": 0,
+    "equilateral-triangle": 2,
     "right-triangle": 2,
     "isosceles-triangle": 2
   },
@@ -347,6 +347,88 @@
       "parentEdge": 2,
       "childEdge": 2,
       "foldAngle": 1.5707963267948966
+    },
+    {
+      "id": "small-left-guard-rail",
+      "shape": "equilateral-triangle",
+      "color": "#7b2cbf",
+      "position": {
+        "x": 6.75,
+        "y": 4.269038,
+        "z": -1.59
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      },
+      "step": 5,
+      "role": "small left guard rail upright landing side guard rail triangle",
+      "subassemblyId": "guards",
+      "parentTileId": "red-top-landing-square",
+      "parentEdge": 0,
+      "childEdge": 0,
+      "foldAngle": 1.570796,
+      "authoredMode": "edge-snap",
+      "confirmed": true
+    },
+    {
+      "id": "small-right-guard-rail",
+      "shape": "equilateral-triangle",
+      "color": "#f7b733",
+      "position": {
+        "x": 6.75,
+        "y": 4.269038,
+        "z": 1.59
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "basis": {
+        "xAxis": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "yAxis": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "zAxis": {
+          "x": 0,
+          "y": 0,
+          "z": 1
+        }
+      },
+      "step": 5,
+      "role": "small right guard rail upright landing side guard rail triangle",
+      "subassemblyId": "guards",
+      "parentTileId": "red-top-landing-square",
+      "parentEdge": 2,
+      "childEdge": 0,
+      "foldAngle": 1.570796,
+      "authoredMode": "edge-snap",
+      "confirmed": true
     }
   ],
   "connections": [
@@ -411,6 +493,20 @@
       "fromEdge": 2,
       "toTileId": "right-green-right-triangle-support",
       "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "red-top-landing-square",
+      "fromEdge": 0,
+      "toTileId": "small-left-guard-rail",
+      "toEdge": 0,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "red-top-landing-square",
+      "fromEdge": 2,
+      "toTileId": "small-right-guard-rail",
+      "toEdge": 0,
       "kind": "edge"
     }
   ]
