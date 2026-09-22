@@ -119,6 +119,7 @@ export interface AssemblyStep {
 }
 
 export interface GeneratedBuildResponse {
+  physics?: { passed: boolean; reasons: string[] };
   build: BuildGraph;
   validation: StabilityReport;
   instructions: AssemblyStep[];

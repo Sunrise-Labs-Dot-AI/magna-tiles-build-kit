@@ -1,16 +1,17 @@
 export { TILE_THICKNESS } from "@/lib/magnetic-tiles/catalog";
 
-export const ENGINE_UNITS_PER_METER = 10;
+// Catalog coordinates and UI dimensions are inches.
+export const ENGINE_UNITS_PER_METER = 1000 / 25.4;
 
-// ASSUMED + CALIBRATED: uniform plastic + magnet assembly mass per catalog small square.
-// Tuned only against the calibration fixtures in tests/engine-calibration.test.ts.
+// ASSUMED; fixture-tuned, not physically measured: uniform plastic + magnet assembly mass per catalog small square.
+// Tested only against the simulation fixtures in tests/engine-calibration.test.ts.
 export const TILE_MASS_KG = 0.026;
 
-// ASSUMED + CALIBRATED: finite magnetic edge hold threshold before a hinge is removed.
+// ASSUMED; fixture-tuned, not physically measured: finite magnetic edge hold threshold before a hinge is removed.
 // Real Magna-Tiles vary by age and production batch; replace this with measured pull-force data when available.
 export const MAGNET_HOLD_FORCE = 5.8;
 
-// ASSUMED + CALIBRATED: surface interaction constants for glossy plastic on Magna-Tiles.
+// ASSUMED; fixture-tuned, not physically measured: surface interaction constants for glossy plastic on Magna-Tiles.
 export const TILE_FRICTION = 0.82;
 export const BALL_FRICTION = 0.34;
 export const GROUND_FRICTION = 0.95;

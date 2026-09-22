@@ -378,7 +378,7 @@ export function mirrorBuilderTiles(draft: AuthoredBuildDraft, tileIds: string[])
 
 export function snapNearestEdge(draft: AuthoredBuildDraft, tileId: string): AuthoredBuildDraft {
   const target = draft.tiles.find((tile) => tile.id === tileId);
-  if (!target) return draft;
+  if (!target || target.locked || draft.tiles.some((tile) => tile.parentTileId === tileId)) return draft;
 
   const candidates = draft.tiles.filter((tile) => tile.id !== tileId);
   const matches: Array<{ tile: BuilderTile; parentId: string; parentEdge: number; childEdge: number; score: number }> = [];
@@ -402,8 +402,15 @@ export function snapNearestEdge(draft: AuthoredBuildDraft, tileId: string): Auth
             });
             if (!preview) return;
             const score = distance(preview.position, target.position);
-            if (score > SMALL_EDGE + 0.25 || overlapsOtherTiles(preview, draft.tiles.filter((tile) => tile.id !== tileId))) return;
-            matches.push({ tile: { ...preview, id: target.id }, parentId: parent.id, parentEdge, childEdge, score });
+            // Capture nearby edges, not tiles several inches away. Preserve the user's
+            // orientation when two candidates are equally close, and never waive SAT.
+            const parentMatch = findMagneticEdgeMatch(parent, preview);
+            if (!parentMatch || parentMatch.fromEdge !== parentEdge || parentMatch.toEdge !== childEdge) return;
+            if (score > 0.75 || overlapsOtherTiles(preview, draft.tiles.filter((tile) => tile.id !== tileId))) return;
+            const currentNormal = tileToEdgePlaced(target).basis.zAxis;
+            const nextNormal = preview.basis!.zAxis;
+            const orientationPenalty = 0.5 * (1 - Math.abs(currentNormal.x * nextNormal.x + currentNormal.y * nextNormal.y + currentNormal.z * nextNormal.z));
+            matches.push({ tile: { ...preview, id: target.id }, parentId: parent.id, parentEdge, childEdge, score: score + orientationPenalty });
           });
         });
       }
@@ -520,7 +527,6 @@ function inventoryMismatch(usedInventory: Inventory, expectedInventory?: Partial
 
 function overlapsOtherTiles(tile: BuilderTile, others: BuilderTile[]): boolean {
   return others.some((other) => {
-    if (findMagneticEdgeMatch(tile, other)) return false;
     return tilesIntersectAsPrisms(tile, other).overlaps;
   });
 }

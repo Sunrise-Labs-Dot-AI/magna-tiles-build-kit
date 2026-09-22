@@ -1,4 +1,3 @@
-import { execFileSync } from "node:child_process";
 import { describe, expect, it } from "vitest";
 import largeCarRampDraft from "@/build-drafts/large-car-ramp.json";
 import mediumCarRampDraft from "@/build-drafts/medium-car-ramp.json";
@@ -63,18 +62,18 @@ describe("headless Magna-Tiles physics calibration", () => {
     expect(verdict.reasons.join(" ")).toContain("engine failed: build does not stand");
   });
 
-  it("rejects the iteration-13 floating-arms medium ramp recovered from git", async () => {
-    const iteration13 = JSON.parse(
-      execFileSync("git", ["show", "7b18c1e:build-drafts/medium-car-ramp.json"], { encoding: "utf8" })
-    ) as EngineBuild;
-    const simulation = await simulate(iteration13);
-    const roll = await rollTest(iteration13);
-    const verdict = await gateBuild(iteration13);
-
-    expect(simulation.stands).toBe(false);
-    expect(simulation.poppedJoints.length).toBeGreaterThan(0);
-    expect(roll.reachedBottom && !roll.fellOff).toBe(false);
+  it("rejects a reproducible floating-arm fixture without depending on deleted git history", async () => {
+    const floating = structuredClone(smallCarRampDraft) as EngineBuild;
+    const arm = structuredClone(floating.tiles[0]);
+    arm.id = 'unsupported-floating-arm';
+    arm.position.y += 12;
+    arm.position.x += 12;
+    arm.root = false;
+    arm.parentTileId = undefined;
+    floating.tiles.push(arm);
+    const verdict = await gateBuild(floating);
     expect(verdict.passed).toBe(false);
+    expect(verdict.reasons.join(' ')).toContain('disconnected-tile:unsupported-floating-arm');
   });
 });
 
@@ -244,7 +243,7 @@ function square(
   position: TileInstance["position"],
   basis: TileInstance["basis"],
   role: string,
-  parent: Pick<TileInstance, "parentTileId" | "parentEdge" | "childEdge" | "foldAngle"> | true = false
+  parent: Pick<TileInstance, "parentTileId" | "parentEdge" | "childEdge" | "foldAngle"> | boolean = false
 ): TileInstance {
   return {
     id,
@@ -255,7 +254,7 @@ function square(
     basis,
     step: 1,
     role,
-    ...(parent === true ? { root: true } : parent)
+    ...(parent === true ? { root: true } : parent || {})
   };
 }
 

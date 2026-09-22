@@ -1,6 +1,6 @@
 "use client";
 
-import { Edges, OrbitControls } from "@react-three/drei";
+import { Edges, OrbitControls, Line, Html } from "@react-three/drei";
 import { Canvas, useThree } from "@react-three/fiber";
 import { useEffect, useMemo } from "react";
 import * as THREE from "three";
@@ -9,7 +9,13 @@ import { tileWorldVertices } from "@/lib/magnetic-tiles/magnet-geometry";
 import { tileWorldMagnetPositions } from "@/lib/magnetic-tiles/magnets";
 import type { BuildGraph, TileInstance, TileShape } from "@/lib/magnetic-tiles/types";
 
+import type { CourseLane, CarTrial } from "@/lib/planner/types";
+
 interface TileViewerProps {
+  lanes?: CourseLane[];
+  trials?: CarTrial[];
+  playbackTime?: number;
+  showLabels?: boolean;
   build: BuildGraph | null;
   visibleStep: number;
 }
@@ -52,7 +58,7 @@ function unregisterBuildViewer(handle: BuildViewerHandle, domElement: HTMLElemen
   delete domElement.dataset.buildViewer;
 }
 
-export function TileViewer({ build, visibleStep }: TileViewerProps) {
+export function TileViewer({ build, visibleStep, lanes = [], trials = [], playbackTime = 0, showLabels = false }: TileViewerProps) {
   if (!build) {
     return (
       <div className="empty-state">
@@ -92,6 +98,16 @@ export function TileViewer({ build, visibleStep }: TileViewerProps) {
         {visibleTiles.map((tile) => (
           <TileMesh key={tile.id} tile={tile} />
         ))}
+        {showLabels && visibleTiles.map(tile => <group key={`label-${tile.id}`}>
+          <Html position={[tile.position.x,tile.position.y+0.2,tile.position.z]} center><span className="design-piece-label">{`P${build.tiles.findIndex(t=>t.id===tile.id)+1}`}</span></Html>
+          {tileWorldVertices(tile).map((p,index,vertices) => { const q=vertices[(index+1)%vertices.length]; return <Html key={index} center position={[(p.x+q.x)/2,(p.y+q.y)/2+0.15,(p.z+q.z)/2]}><span className="design-edge-label">{index+1}</span></Html>; })}
+        </group>)}
+        {lanes.map((lane,i)=><Line key={lane.id} points={lane.waypoints.map(p=>[p.x,p.y+0.2,p.z] as [number,number,number])} color={i?'#dd4c48':'#2165dc'} lineWidth={3}/>) }
+        {trials.map((trial,i)=> {
+          const sample=trial.samples.find(s=>s.time>=playbackTime)??trial.samples.at(-1);
+          if(!sample)return null;
+          return <mesh key={trial.laneId} position={[sample.position.x,sample.position.y,sample.position.z]}><sphereGeometry args={[0.25,16,16]}/><meshStandardMaterial color={i?'#dd4c48':'#2165dc'}/></mesh>;
+        })}
       </group>
       <Grid build={build} />
       <OrbitControls enableDamping makeDefault maxDistance={80} minDistance={10} target={cameraTarget} />
@@ -242,6 +258,9 @@ function TileMesh({ tile }: { tile: TileInstance }) {
       }),
     [tile.color]
   );
+
+  useEffect(() => () => geometry.dispose(), [geometry]);
+  useEffect(() => () => material.dispose(), [material]);
 
   if (matrix) {
     return (
