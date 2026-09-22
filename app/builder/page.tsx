@@ -265,6 +265,11 @@ export default function BuilderPage() {
       step: selectedTile?.step ?? 1,
       subassemblyId: selectedTile?.subassemblyId
     });
+    if (next === draft) {
+      setStatus("That placement intersects another tile. Try another edge or fold angle.");
+      return;
+    }
+    setStatus(null);
     const added = next.tiles[next.tiles.length - 1];
     commitDraft(next);
     setSelectedTileId(added?.id ?? selectedTileId);
@@ -916,7 +921,7 @@ function BreakableRevoluteJoint({
   ]);
 
   useEffect(() => {
-    impulseJoint.current?.setContactsEnabled(false);
+    impulseJoint.current?.setContactsEnabled(true);
   }, [impulseJoint]);
 
   useAfterPhysicsStep(() => {

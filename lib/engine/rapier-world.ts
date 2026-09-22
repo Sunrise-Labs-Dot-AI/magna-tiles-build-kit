@@ -14,7 +14,7 @@ import {
   SIMULATION_TIMESTEP_SECONDS,
   TILE_FRICTION
 } from "./constants";
-import { distance, magnitude } from "./math";
+import { add, distance, magnitude, quaternionToBasis, transformLocal } from "./math";
 import {
   createMagneticPhysicsModel,
   currentWorldEdgeFromBody,
@@ -30,6 +30,7 @@ interface BodyRecord {
   tile: TileInstance;
   body: RigidBody;
   targetPosition: Vec3;
+  hull: Float32Array;
 }
 
 interface JointRecord {
@@ -48,6 +49,7 @@ export interface EngineWorld {
   step(): void;
   maxDisplacement(): number;
   maxSpeed(): number;
+  dispose(): void;
 }
 
 let rapierReady: Promise<void> | null = null;
@@ -103,10 +105,19 @@ export async function createEngineWorld(input: EngineBuild, options: { drop?: bo
       world.step();
       updateBreakableJoints(engine);
     },
+    dispose() { world.free(); },
     maxDisplacement() {
       return Math.max(
         0,
-        ...Array.from(bodies.values()).map(({ body, targetPosition }) => distance(vector(body.translation()), targetPosition))
+        ...Array.from(bodies.values()).map(({ body, hull, targetPosition }) => {
+          const basis = quaternionToBasis(body.rotation());
+          let maximum = distance(vector(body.translation()), targetPosition);
+          for (let i = 0; i < hull.length; i += 3) {
+            const vertex = { x: hull[i], y: hull[i + 1], z: hull[i + 2] };
+            maximum = Math.max(maximum, distance(transformLocal(vertex, vector(body.translation()), basis), add(targetPosition, vertex)));
+          }
+          return maximum;
+        })
       );
     },
     maxSpeed() {
@@ -143,7 +154,8 @@ function addTileBody(world: World, model: PhysicsBodyModel): BodyRecord {
   return {
     tile: model.tile,
     body,
-    targetPosition: model.targetPosition
+    targetPosition: model.targetPosition,
+    hull: model.localHullPoints
   };
 }
 
@@ -153,7 +165,7 @@ function addHingeJoint(world: World, from: BodyRecord, to: BodyRecord, model: Ph
   if ("setLimits" in joint && typeof joint.setLimits === "function") {
     joint.setLimits(HINGE_MIN_ANGLE, HINGE_MAX_ANGLE);
   }
-  joint.setContactsEnabled(false);
+  joint.setContactsEnabled(true);
 
   return {
     id: model.id,

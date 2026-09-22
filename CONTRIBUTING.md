@@ -1,14 +1,12 @@
 # Contributing
 
-## This is an archived exploration
+## An active experiment
 
-This repository is a **completed research exploration, published as a public archive**. It is not actively maintained, and there is no roadmap. Issues and pull requests may not get a response.
+Development has resumed from the initial public archive. See [STATUS.md](STATUS.md) and [docs/design-lab.md](docs/design-lab.md) for the current implementation and limitations.
 
-It is here to be read and learned from. The interesting parts are the honest write-up of what worked and what didn't ([README.md](README.md), [STATUS.md](STATUS.md), [research/diagnosis.md](research/diagnosis.md)) and the literature-grounded system design ([research/magna_tiles_system_design.md](research/magna_tiles_system_design.md)).
+Changes should include evidence for their physical or functional claims. Keep failed candidates visible, preserve inventory and overlap checks, and do not loosen thresholds just to make a target pass. A simulator result is not physical calibration. Useful regression cases include incorrect geometry, unsupported prompts, discontinuous road surfaces, unstable assembly steps, and cars that leave the track.
 
-## If you want to build on it
-
-You are welcome to fork it under the [MIT license](LICENSE). The most useful direction is the one in [STATUS.md](STATUS.md): replace the hand-eyeballed reconstruction target with a real, measured one (COLMAP / DUSt3R-MASt3R or human-encoded ground truth), add a real search/constraint solver, and add a perceptual scorer measured against the actual frames. That is the change that would let the pipeline converge on the real build instead of an approximation of it.
+The original research and diagnosis remain available under `research/`.
 
 ## Running it locally
 

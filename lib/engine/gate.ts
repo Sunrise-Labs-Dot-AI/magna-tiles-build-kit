@@ -1,3 +1,4 @@
+import { validateEngineInput } from "./input";
 import { validateBuild } from "@/lib/magnetic-tiles/validation";
 import type { BuildGraph } from "@/lib/magnetic-tiles/types";
 import { normalizeBuild, validateMagneticBuild, type EngineBuild } from "./build";
@@ -11,8 +12,14 @@ export interface GateBuildResult {
 }
 
 export async function gateBuild(input: EngineBuild | BuildGraph): Promise<GateBuildResult> {
+  const inputErrors = validateEngineInput(input);
+  if (inputErrors.length) return { passed: false, reasons: inputErrors };
   const build = normalizeBuild(input);
   const reasons: string[] = [];
+  if (isBuildGraph(input)) {
+    const inventoryErrors = validateBuild(input).issues.filter(issue => issue.code === 'inventory-overrun');
+    if (inventoryErrors.length) return { passed: false, reasons: inventoryErrors.map(issue => issue.detail) };
+  }
 
   const rawOverlaps = findRawOverlaps(build.tiles);
   if (rawOverlaps.length > 0) {

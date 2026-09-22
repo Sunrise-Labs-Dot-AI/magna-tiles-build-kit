@@ -1,3 +1,4 @@
+import { gateBuild } from "@/lib/engine/gate";
 import { NextResponse } from "next/server";
 import { generateBuild } from "@/lib/magnetic-tiles/generate";
 import type { InventoryPreset } from "@/lib/magnetic-tiles/types";
@@ -14,7 +15,8 @@ export async function POST(request: Request) {
         ? (body.inventoryPreset as InventoryPreset)
         : "classic-100";
 
-    return NextResponse.json(generateBuild(prompt, inventoryPreset));
+    const result = generateBuild(prompt, inventoryPreset);
+    return NextResponse.json({ ...result, physics: await gateBuild(result.build) });
   } catch (error) {
     return NextResponse.json(
       {

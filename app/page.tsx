@@ -147,8 +147,7 @@ export default function Home() {
 
   const usedTotal = result ? inventoryTotal(result.validation.usedInventory) : 0;
   const remainingTotal = result ? inventoryTotal(result.validation.remainingInventory) : inventoryTotal(CLASSIC_100_INVENTORY);
-  const isEngineVerifiedLibraryBuild =
-    !!result && BUILD_LIBRARY.some((item) => item.id === selectedLibraryId && item.status === "engine-valid");
+  const isEngineVerifiedLibraryBuild = result?.physics?.passed === true;
 
   return (
     <main className="app-shell">
@@ -162,8 +161,8 @@ export default function Home() {
             <span>Build library with 3D instructions for Classic 100-compatible sets</span>
           </div>
         </div>
-        <Link className="builder-link" href="/builder">
-          Open workbench
+        <Link className="builder-link" href="/design">
+          Open Design Lab
         </Link>
       </header>
 
@@ -186,7 +185,7 @@ export default function Home() {
                   <div className="library-card-header">
                     <strong>{item.title}</strong>
                     <span className={`mini-pill ${item.status === "human-reviewed" || item.status === "engine-valid" ? "info" : "warning"}`}>
-                      {item.status}
+                      {item.status === "engine-valid" ? "authored candidate" : item.status}
                     </span>
                   </div>
                   <span className="library-summary">{item.summary}</span>
@@ -360,7 +359,7 @@ export default function Home() {
                   : "Orbit, zoom, and scrub through steps after generation"}
               </span>
             </div>
-            <StatusPill isReference={isEngineVerifiedLibraryBuild} status={result?.validation.status ?? "pass"} />
+            <StatusPill isReference={isEngineVerifiedLibraryBuild} status={result?.physics?.passed === false ? "error" : result?.validation.status ?? "pass"} />
           </div>
           <div className="canvas-wrap">
             <TileViewer build={result?.build ?? null} visibleStep={currentStep} />
@@ -541,7 +540,7 @@ function StatusPill({ isReference = false, status }: { isReference?: boolean; st
   const label =
     status === "pass"
       ? isReference
-        ? "engine verified"
+        ? "simulation passed"
         : "magnet checks pass"
       : status === "warning"
         ? "review magnet joins"

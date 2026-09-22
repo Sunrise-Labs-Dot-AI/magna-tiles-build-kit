@@ -1,3 +1,4 @@
+import { gateBuild } from "@/lib/engine/gate";
 import { generateStepInstructions } from "@/lib/magnetic-tiles/instructions";
 import { validateBuild } from "@/lib/magnetic-tiles/validation";
 import type { GeneratedBuildResponse } from "@/lib/magnetic-tiles/types";
@@ -20,5 +21,5 @@ export async function loadAuthoredLibraryBuild(
   const build = draftToBuildGraph(draft);
   const validation = validateBuild(build);
   const instructions = generateStepInstructions(build);
-  return { build, validation, instructions };
+  return { build, validation, instructions, physics: await gateBuild(build) };
 }
