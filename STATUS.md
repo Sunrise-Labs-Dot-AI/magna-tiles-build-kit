@@ -6,7 +6,7 @@ Updated 2026-09-22. Development has resumed from the archived exploration.
 
 The new structural path handles parameterized towers, open containers, through tunnels, and staircases. It parses a reviewable contract, constructs catalog geometry, measures requirements independently, runs three release perturbations, checks settled shape and completed assembly prefixes, and repairs failed candidates without changing the contract. The Design Lab exposes unlimited pieces, the contract, and repair evidence. Agent tools can solve a contract or evaluate an externally authored tile graph.
 
-The reproducible acceptance corpus covers 20 constructive briefs and five required rejections; current per-case outcomes, actual models, and measurements are in `verification/harness-benchmark.json`. Run `npm run benchmark:harness` to reproduce rather than trusting stored success labels. See [docs/intent-harness.md](docs/intent-harness.md) for precise scope, passage assumptions, and limitations.
+The reproducible acceptance corpus passed **20/20 constructive briefs and 5/5 required rejections**; recorded outcomes are in `verification/harness-benchmark-summary.json`. The full per-tile report was not recovered after a workspace disconnect during publishing. The benchmark command regenerates models, instructions, and measurements in `verification/harness-benchmark.json`. Run `npm run benchmark:harness` to reproduce rather than trusting stored success labels. See [docs/intent-harness.md](docs/intent-harness.md) for precise scope, passage assumptions, and limitations.
 
 ## Demonstrated in simulation
 
