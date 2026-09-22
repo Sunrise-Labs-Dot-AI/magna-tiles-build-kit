@@ -28,12 +28,24 @@ export interface RollTestResult {
   fellOff: boolean;
 }
 
-export async function simulate(input: EngineBuild): Promise<SimulationResult> {
+export class SimulationBudgetExceeded extends Error {
+  constructor() {
+    super("Analysis time budget exceeded.");
+    this.name = "SimulationBudgetExceeded";
+  }
+}
+
+export async function simulate(
+  input: EngineBuild,
+  options: { deadline?: number } = {},
+): Promise<SimulationResult> {
   const engine = await createEngineWorld(normalizeBuild(input), { drop: true });
   try {
     let settledSteps = 0;
 
     for (let step = 0; step < SIMULATION_MAX_STEPS; step += 1) {
+      if (step % 32 === 0 && Date.now() > (options.deadline ?? Infinity))
+        throw new SimulationBudgetExceeded();
       engine.step();
       if (engine.maxDisplacement() > COLLAPSE_DISPLACEMENT) break;
       if (

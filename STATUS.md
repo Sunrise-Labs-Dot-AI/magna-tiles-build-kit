@@ -2,6 +2,12 @@
 
 Updated 2026-09-22. Development has resumed from the archived exploration.
 
+## Intent-driven structural harness
+
+The new structural path handles parameterized towers, open containers, through tunnels, and staircases. It parses a reviewable contract, constructs catalog geometry, measures requirements independently, runs three release perturbations, checks settled shape and completed assembly prefixes, and repairs failed candidates without changing the contract. The Design Lab exposes unlimited pieces, the contract, and repair evidence. Agent tools can solve a contract or evaluate an externally authored tile graph.
+
+The reproducible acceptance corpus covers 20 constructive briefs and five required rejections; current per-case outcomes, actual models, and measurements are in `verification/harness-benchmark.json`. Run `npm run benchmark:harness` to reproduce rather than trusting stored success labels. See [docs/intent-harness.md](docs/intent-harness.md) for precise scope, passage assumptions, and limitations.
+
 ## Demonstrated in simulation
 
 The Design Lab at `/design` produces an authored ten-piece downhill sprint from a supported prompt, runs two unpowered car proxies together, and returns a 3D model, a piece list, numbered joins, three assembly steps, recorded car traces, and individual check results. Each completed step passes the structure simulation.
@@ -25,7 +31,7 @@ The existing manual editor, authored library, recognition scorer, and reference 
 - **Real magnet behavior.** Ideal hinges and a separation-based break heuristic are not measured magnetic force, torque, or magnet polarity.
 - **Vehicle realism.** Cars are rigid chassis with four axle-constrained spherical wheels. They have no suspension, steering, axle friction calibration, or measured tire properties. Their nominal dimensions are explicit assumptions.
 - **Reliable zigzags.** The current switchback macro has geometry and support problems. It does not yet provide a valid two-turn course or guide cars through turns.
-- **Broad prompt fidelity.** The grammar handles a small set of course requirements. Unknown terms remain unverified. Other object prompts use legacy templates and cannot receive a fully verified result.
+- **Unrestricted prompt fidelity.** Four structural families now have explicit measurable contracts and constructive repair search. This is not arbitrary structure synthesis; unresolved clauses fail closed. Course requests use the earlier experimental planner, and other object families still use unverified legacy templates.
 - **Video reconstruction.** The existing target was estimated from frames, not recovered through measured multiview geometry. The earlier [diagnosis](research/diagnosis.md) still applies.
 - **Physical assembly.** Each completed instruction group is simulated; hand access and the transient process of holding and joining its individual pieces are not.
 

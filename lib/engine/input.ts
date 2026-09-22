@@ -9,8 +9,11 @@ export function validateEngineInput(value: EngineBuild): string[] {
     !Array.isArray(value.connections)
   )
     return ["invalid build payload"];
-  if (!value.tiles.length || value.tiles.length > 250)
-    return ["build must contain 1 to 250 tiles"];
+  if (!value.tiles.length) return ["Build must contain at least one tile."];
+  if (value.tiles.length > 250)
+    return [
+      "Analysis resource budget exceeded: this evaluator handles 250 tiles per candidate. This is not an inventory limit.",
+    ];
   if (value.connections.length > 1500) return ["too many connections"];
   const errors: string[] = [];
   const ids = new Set<string>();

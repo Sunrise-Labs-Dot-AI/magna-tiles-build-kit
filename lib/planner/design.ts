@@ -1,25 +1,62 @@
 import { gateBuild } from "@/lib/engine/gate";
 import { simulate } from "@/lib/engine/simulate";
 import { generateBuild } from "@/lib/magnetic-tiles/generate";
-import { generateStepInstructions } from "@/lib/magnetic-tiles/instructions";
-import { TILE_SPECS } from "@/lib/magnetic-tiles/catalog";
+import { assemblyInstructions } from "./instructions";
+export { assemblyInstructions } from "./instructions";
 import { validateBuild } from "@/lib/magnetic-tiles/validation";
-import type {
-  AssemblyStep,
-  BuildGraph,
-  InventoryPreset,
-} from "@/lib/magnetic-tiles/types";
+import type { InventoryPreset } from "@/lib/magnetic-tiles/types";
 import { parseDesignBrief } from "./brief";
 import { courseCandidates } from "./candidates";
 import { checkCourse } from "./route-checks";
 import { testCars } from "./car-test";
 import type { CandidateResult, DesignCheck, DesignResult } from "./types";
+import { parseIntent } from "@/lib/harness/contract";
+import { solveContract } from "@/lib/harness/solve";
 
 export async function designBuild(
   prompt: string,
   inventory: InventoryPreset = "classic-100",
+  options: { unlimitedPieces?: boolean } = {},
 ): Promise<DesignResult> {
   const brief = parseDesignBrief(prompt, inventory);
+  brief.unlimitedPieces = options.unlimitedPieces === true;
+  const contract = parseIntent(prompt, inventory, brief.unlimitedPieces);
+  if (contract) {
+    const harness = await solveContract(contract);
+    if (!harness.build || !harness.evaluation)
+      throw new Error(harness.explanation);
+    return {
+      brief: {
+        ...brief,
+        kind: "structure",
+        unsupportedTerms: contract.unresolved,
+      },
+      build: harness.build,
+      instructions: harness.instructions,
+      lanes: [],
+      trials: [],
+      checks: harness.evaluation.evidence.map((e) => ({
+        code: e.id,
+        label: e.label,
+        status: e.passed ? "pass" : "fail",
+        detail: `Expected: ${e.expected}\nMeasured: ${e.actual}`,
+      })),
+      candidates: harness.attempts.map((a) => ({
+        id: `attempt-${a.index}`,
+        passed: a.evaluation.passed,
+        checks: a.evaluation.evidence.map((e) => ({
+          code: e.id,
+          label: e.label,
+          status: e.passed ? "pass" : "fail",
+          detail: e.actual,
+        })),
+      })),
+      status:
+        harness.status === "solved" ? "simulation-passed" : "needs-repair",
+      model: harness.model,
+      harness,
+    };
+  }
   const candidates =
     brief.kind === "racecourse"
       ? courseCandidates(brief)
@@ -29,17 +66,21 @@ export async function designBuild(
   let bestScore = -Infinity;
   for (const candidate of candidates) {
     const validation = validateBuild(candidate.build);
-    const inventoryOk = !validation.issues.some(
-      (i) => i.code === "inventory-overrun",
-    );
-    const gate = await gateBuild(candidate.build);
+    const inventoryOk =
+      brief.unlimitedPieces ||
+      !validation.issues.some((i) => i.code === "inventory-overrun");
+    const gate = await gateBuild(candidate.build, {
+      unlimitedPieces: brief.unlimitedPieces,
+    });
     const checks: DesignCheck[] = [
       {
         code: "inventory",
         label: "Available pieces",
         status: inventoryOk ? "pass" : "fail",
         detail: inventoryOk
-          ? "Fits the selected set."
+          ? brief.unlimitedPieces
+            ? "Unlimited pieces: inventory limits disabled."
+            : "Fits the selected set."
           : validation.issues
               .filter((i) => i.code === "inventory-overrun")
               .map((i) => i.detail)
@@ -142,54 +183,4 @@ export async function designBuild(
   selectedRecord.passed = best.status === "simulation-passed";
   best.candidates = records;
   return best;
-}
-
-export function assemblyInstructions(build: BuildGraph): AssemblyStep[] {
-  const steps = generateStepInstructions(build);
-  const labels = new Map(build.tiles.map((tile, i) => [tile.id, `P${i + 1}`]));
-  return steps.map((step) => {
-    const ids = new Set(step.tileIds);
-    const connections = build.connections.filter(
-      (c) => ids.has(c.fromTileId) || ids.has(c.toTileId),
-    );
-    const usable = connections.filter((c) => {
-      const a = build.tiles.find((t) => t.id === c.fromTileId)!;
-      const b = build.tiles.find((t) => t.id === c.toTileId)!;
-      return a.step <= step.step && b.step <= step.step;
-    });
-    const pieces = step.tileIds
-      .map(
-        (id) =>
-          `${labels.get(id)} (${TILE_SPECS[build.tiles.find((t) => t.id === id)!.shape].label.toLowerCase()})`,
-      )
-      .join(", ");
-    const joins = usable
-      .map(
-        (c) =>
-          `${labels.get(c.fromTileId)} edge ${c.fromEdge + 1} ↔ ${labels.get(c.toTileId)} edge ${c.toEdge + 1}`,
-      )
-      .join("; ");
-    let title = step.title;
-    let guidance =
-      "Hold the pieces in the highlighted orientation while connecting this group. Release them only after the whole step is assembled.";
-    if (build.id.startsWith("course-")) {
-      title =
-        [
-          "Assemble the supported slope",
-          "Add the launch box",
-          "Brace the rear wall",
-        ][step.step - 1] ?? title;
-      guidance =
-        [
-          "Hold the two triangular sides parallel, then join the large square across their sloping edges. Set both triangle bases on the table.",
-          "Form a box from the four small square walls and the large square roof. Join its front roof edge to the high end of the slope. Keep the driving path open.",
-          "Add the two rear squares above the launch box, joined side by side. Gently seat each connection before releasing the model.",
-        ][step.step - 1] ?? guidance;
-    }
-    return {
-      ...step,
-      title,
-      instruction: `${guidance} Pieces: ${pieces}. Joins: ${joins || "Position the pieces as shown."}`,
-    };
-  });
 }

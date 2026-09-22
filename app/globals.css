@@ -1525,3 +1525,5 @@ select {
 @media(max-width:1150px) { .design-layout{grid-template-columns:250px minmax(0,1fr);} .design-results{grid-column:1/-1;max-height:none;border-top:1px solid #dbe2eb;} }
 @media(max-width:700px) { .design-layout{display:flex;flex-direction:column;} .design-header{padding:16px;gap:16px;} .design-header nav{gap:12px;font-size:12px;} .design-brand{font-size:13px;} .design-prompt-panel{padding:24px 18px;} .design-prompt-panel h1{margin-bottom:18px;} .design-center{padding:24px 14px;} .design-canvas{height:390px;} .design-viewer-heading h2{font-size:17px;} .design-status{font-size:10px;} .design-playback small{display:none;} }
 @media(prefers-reduced-motion:reduce) { .design-loading span {animation:none;} }
+.design-inventory-toggle { display:flex; gap:8px; align-items:center; margin-top:12px; }
+.design-contract { white-space:pre-wrap; overflow-wrap:anywhere; font-size:11px; max-height:320px; overflow:auto; }

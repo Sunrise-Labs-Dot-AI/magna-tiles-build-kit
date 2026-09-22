@@ -2,7 +2,7 @@
 
 A workbench for turning magnetic-tile ideas into inspectable 3D assemblies, testing them, and producing instructions. Next.js 16, React 19, TypeScript, Three.js, and Rapier.
 
-**Status: active experiment.** The new `/design` lab can produce a two-car downhill sprint that passes the modeled structure, car, and assembly checks. The requested zigzag course still fails and is shown with repair findings. Arbitrary prompt generation, reliable video reconstruction, and real-world physics calibration remain open problems. A passing simulation is not proof that a real build works.
+**Status: active experiment.** The `/design` lab now uses intent contracts, independent measurements, and evidence-guided repairs for towers, open containers, tunnels, and staircases. It includes an unlimited-pieces setting and an inspectable multi-family benchmark. The earlier two-car downhill sprint also works in simulation; turning courses remain unsolved. Arbitrary prompt generation, reliable video reconstruction, and real-world physics calibration remain open problems. A passing simulation is not proof that a real build works.
 
 ## Try it
 
@@ -13,12 +13,18 @@ npm run dev
 
 Open [http://localhost:3000/design](http://localhost:3000/design) and try:
 
+- `an open top box 2 tiles wide`: an independently measured and repaired structural build.
+- `a tunnel 2 tiles wide and 4 tiles long`: a braced tunnel with an explicit clear-passage contract; enable Unlimited pieces.
+- `a tower with 3 levels and at most 30 pieces`: a finite-budget build with actual floors.
+- `a staircase with 5 steps`: a larger constructive case; enable Unlimited pieces and allow several minutes for testing.
 - `a downhill racecourse for two side by side cars`: the working baseline.
 - `a zigzagging downhill racecourse for two side by side cars`: six candidates are evaluated and the closest is shown with explicit failures.
 
 The Design Lab shows the pieces, dimensions, interpreted requirements, route checks, recorded car motion, and assembly steps. Turn on piece and edge labels to follow the joins. Export downloads the model, instructions, assumptions, and all check results as JSON. No model key is needed for this bounded planner.
 
 The existing build library is at `/`; the manual workbench is at `/builder`.
+
+For structural requests, review the interpreted contract and assumptions, inspect the repair trace, and follow the completed assembly groups. Unlimited pieces disables selected-set limits and prompt piece caps, not physics or compute safeguards. See [the harness specification](docs/intent-harness.md) for semantics, API tools, budgets, and reproducible evidence.
 
 ## What is actually checked
 
@@ -37,6 +43,7 @@ The magnetic model still uses ideal hinge constraints with a separation-based br
 
 ```bash
 npm test
+npm run benchmark:harness
 npm run lint
 npm run build
 npm run verify:builds
@@ -44,6 +51,8 @@ npm run verify:builds
 
 | Area | Path |
 |---|---|
+| Intent contracts, catalog compiler, independent evaluation, repair search | `lib/harness/` |
+| Agent-facing solve/evaluate APIs | `app/api/solve-build/`, `app/api/evaluate-build/` |
 | Candidate planning, route checks, car tests, instructions | `lib/planner/` |
 | Design Lab UI and endpoint | `app/design/`, `app/api/design-build/` |
 | Physics gate and rigid-body model | `lib/engine/` |

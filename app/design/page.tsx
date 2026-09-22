@@ -24,11 +24,15 @@ import {
 import type { DesignResult } from "@/lib/planner/types";
 
 const examples = [
+  "a tower at least 12 inches tall",
+  "an open top box 2 tiles wide",
+  "a tunnel 3 tiles long",
+  "a staircase with 4 steps",
   "a downhill racecourse for two side by side cars",
   "a zigzagging downhill racecourse for two side by side cars",
 ];
 export default function DesignLab() {
-  const [prompt, setPrompt] = useState(examples[0]);
+  const [prompt, setPrompt] = useState(examples[1]);
   const [result, setResult] = useState<DesignResult | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -37,6 +41,7 @@ export default function DesignLab() {
   const [time, setTime] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [labels, setLabels] = useState(false);
+  const [unlimitedPieces, setUnlimitedPieces] = useState(false);
   const duration = Math.max(
     0,
     ...(result?.trials.flatMap((t) => t.samples.map((s) => s.time)) ?? []),
@@ -68,7 +73,7 @@ export default function DesignLab() {
       const response = await fetch("/api/design-build", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt }),
+        body: JSON.stringify({ prompt, unlimitedPieces }),
       });
       const data = await response.json();
       if (!response.ok)
@@ -131,6 +136,22 @@ export default function DesignLab() {
               maxLength={1000}
               rows={5}
             />
+            <label className="design-inventory-toggle">
+              <input
+                type="checkbox"
+                checked={unlimitedPieces}
+                disabled={busy}
+                onChange={(e) => setUnlimitedPieces(e.target.checked)}
+              />{" "}
+              Unlimited pieces
+            </label>
+            <p className="design-note">
+              {unlimitedPieces
+                ? "Set inventory and requested piece-count caps are disabled."
+                : "Use the Classic 100 inventory and any piece cap in your prompt."}{" "}
+              Simulation time and complexity budgets are separate. Larger builds
+              can take several minutes to test.
+            </p>
             <button
               className="design-primary"
               disabled={busy || !prompt.trim()}
@@ -140,23 +161,22 @@ export default function DesignLab() {
             </button>
           </form>
           <div className="design-examples">
-            <span>Try a course</span>
-            {examples.map((example, i) => (
+            <span>Try a design brief</span>
+            {examples.map((example) => (
               <button
                 key={example}
                 disabled={busy}
                 onClick={() => setPrompt(example)}
               >
-                {i === 0
-                  ? "Two-car downhill sprint"
-                  : "Zigzag downhill racecourse"}
+                {example.replace(/^(?:a|an) /, "")}
                 <ArrowRight size={15} />
               </button>
             ))}
           </div>
           <p className="design-note">
-            The sprint is the working baseline. The switchback search is
-            experimental and currently returns repair findings.
+            Structural requests use a measured intent contract and repair
+            search. Racecourses use the earlier experimental planner; turning
+            courses remain unsolved.
           </p>
           {error ? (
             <p className="design-error" role="alert">
@@ -167,16 +187,36 @@ export default function DesignLab() {
             <>
               <div className="design-requirements">
                 <span className="design-eyebrow">Interpreted brief</span>
-                <strong>
-                  {result.brief.lanes} lane{result.brief.lanes === 2 ? "s" : ""}{" "}
-                  · {result.brief.turns} turns ·{" "}
-                  {result.brief.downhill ? "downhill" : "no slope specified"}
-                </strong>
-                <span>
-                  Car proxy: {result.brief.car.length} ×{" "}
-                  {result.brief.car.width} in, {result.brief.car.massKg * 1000}{" "}
-                  g
-                </span>
+                {result.harness ? (
+                  <>
+                    <strong>
+                      {result.harness.contract.kind} · {result.harness.status}
+                    </strong>
+                    <p>{result.harness.explanation}</p>
+                    <details>
+                      <summary>Review the intent contract</summary>
+                      <pre className="design-contract">
+                        {JSON.stringify(result.harness.contract, null, 2)}
+                      </pre>
+                    </details>
+                  </>
+                ) : (
+                  <>
+                    <strong>
+                      {result.brief.lanes} lane
+                      {result.brief.lanes === 2 ? "s" : ""} ·{" "}
+                      {result.brief.turns} turns ·{" "}
+                      {result.brief.downhill
+                        ? "downhill"
+                        : "no slope specified"}
+                    </strong>
+                    <span>
+                      Car proxy: {result.brief.car.length} ×{" "}
+                      {result.brief.car.width} in,{" "}
+                      {result.brief.car.massKg * 1000} g
+                    </span>
+                  </>
+                )}
               </div>
               <div className="design-inventory">
                 <h2>
@@ -188,14 +228,18 @@ export default function DesignLab() {
                       <span>{TILE_SPECS[shape].label}</span>
                       <strong>
                         {inventory![shape]}{" "}
-                        <small>
-                          /{" "}
-                          {
-                            inventoryForPreset(result.brief.inventoryPreset)[
-                              shape
-                            ]
-                          }
-                        </small>
+                        {result.brief.unlimitedPieces ? (
+                          <small>/ unlimited</small>
+                        ) : (
+                          <small>
+                            /{" "}
+                            {
+                              inventoryForPreset(result.brief.inventoryPreset)[
+                                shape
+                              ]
+                            }
+                          </small>
+                        )}
                       </strong>
                     </div>
                   ),
@@ -386,7 +430,9 @@ export default function DesignLab() {
             <>
               <p className="design-result-summary">
                 {result.status === "simulation-passed"
-                  ? "The modeled structure, cars, and completed assembly steps passed. Try the real build to test the assumptions."
+                  ? result.harness
+                    ? "The geometry meets the extracted intent contract, all three release trials passed, and every completed assembly stage stands in the model. Review the contract before trying the real build."
+                    : "The modeled structure, cars, and completed assembly steps passed. Try the real build to test the assumptions."
                   : "This candidate is not a verified build. The failed or unverified checks below explain why."}
               </p>
               {result.checks.map((check) => (
@@ -428,6 +474,26 @@ export default function DesignLab() {
                 {result.candidates.length === 1 ? "" : "s"} evaluated. No failed
                 candidate is promoted to a passing result.
               </small>
+              {result.harness ? (
+                <details className="design-assumptions">
+                  <summary>Search and repair trace</summary>
+                  {result.harness.attempts.map((attempt) => (
+                    <div key={attempt.index}>
+                      <strong>
+                        Attempt {attempt.index}: {attempt.program.reinforcement}{" "}
+                        · {attempt.evaluation.passed ? "passed" : "rejected"}
+                      </strong>
+                      <p>{attempt.triggeredBy.join("\n")}</p>
+                      <p>
+                        {attempt.evaluation.evidence
+                          .filter((e) => !e.passed)
+                          .map((e) => `${e.label}: ${e.actual}`)
+                          .join("\n")}
+                      </p>
+                    </div>
+                  ))}
+                </details>
+              ) : null}
             </>
           ) : (
             <>

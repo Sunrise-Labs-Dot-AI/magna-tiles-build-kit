@@ -11,6 +11,7 @@
     "render:draft": "tsx scripts/render-draft.ts",
     "verify:builds": "tsx scripts/verify-builds.ts",
     "test": "vitest run",
+    "benchmark:harness": "node --import tsx scripts/benchmark-harness.ts",
     "test:watch": "vitest"
   },
   "dependencies": {
