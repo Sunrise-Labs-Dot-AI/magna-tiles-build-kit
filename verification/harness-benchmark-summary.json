@@ -1,0 +1,218 @@
+{
+  "model": "intent-harness-v1",
+  "date": "2026-09-22",
+  "provenance": "Recorded from the completed local benchmark console output. The workspace disconnected while publishing the full 816230-byte per-tile report; this is a recovered outcome summary, not that detailed report. Run npm run benchmark:harness to regenerate full geometry, instructions, and release evidence.",
+  "outcomes": {
+    "constructiveSolved": 20,
+    "constructiveTotal": 20,
+    "rejectionsCorrect": 5,
+    "rejectionsTotal": 5,
+    "elapsedMilliseconds": 416001,
+    "largestBuildPieces": 62
+  },
+  "checks": {
+    "unitTestsPassed": 232,
+    "unitTestsSkipped": 1,
+    "productionBuild": "passed",
+    "lintErrors": 0,
+    "existingLintWarnings": 38,
+    "browserWebGL": "not verified for this revision"
+  },
+  "httpSmoke": {
+    "page": "/design rendered Unlimited pieces and structural help",
+    "limited": {
+      "prompt": "an open top box with at most 4 pieces",
+      "unlimitedPieces": false,
+      "httpStatus": 200,
+      "status": "needs-repair",
+      "failedCheck": "inventory",
+      "pieces": 5
+    },
+    "unlimited": {
+      "prompt": "an open top box with at most 4 pieces",
+      "unlimitedPieces": true,
+      "httpStatus": 200,
+      "status": "simulation-passed",
+      "failedChecks": [],
+      "pieces": 5
+    },
+    "unsupported": "a tower with an elevator returned unsupported"
+  },
+  "entries": [
+    {
+      "prompt": "a tower at least 6 inches tall",
+      "unlimitedPieces": true,
+      "status": "solved",
+      "pieces": 10,
+      "attempts": 1
+    },
+    {
+      "prompt": "a tower at least 9 inches tall",
+      "unlimitedPieces": true,
+      "status": "solved",
+      "pieces": 15,
+      "attempts": 2
+    },
+    {
+      "prompt": "a tower at least 12 inches tall",
+      "unlimitedPieces": true,
+      "status": "solved",
+      "pieces": 11,
+      "attempts": 2
+    },
+    {
+      "prompt": "a tower at least 15 inches tall",
+      "unlimitedPieces": true,
+      "status": "solved",
+      "pieces": 20,
+      "attempts": 2
+    },
+    {
+      "prompt": "a tower with 3 levels and at most 30 pieces",
+      "unlimitedPieces": false,
+      "status": "solved",
+      "pieces": 28,
+      "attempts": 2
+    },
+    {
+      "prompt": "an open top box",
+      "unlimitedPieces": true,
+      "status": "solved",
+      "pieces": 5,
+      "attempts": 1
+    },
+    {
+      "prompt": "an open top box 2 tiles wide",
+      "unlimitedPieces": true,
+      "status": "solved",
+      "pieces": 9,
+      "attempts": 2
+    },
+    {
+      "prompt": "an open top box 3 tiles wide",
+      "unlimitedPieces": true,
+      "status": "solved",
+      "pieces": 13,
+      "attempts": 2
+    },
+    {
+      "prompt": "an open top box 2 tiles wide and 2 tiles deep",
+      "unlimitedPieces": true,
+      "status": "solved",
+      "pieces": 9,
+      "attempts": 2
+    },
+    {
+      "prompt": "an open top box 3 tiles wide and 2 tiles deep",
+      "unlimitedPieces": true,
+      "status": "solved",
+      "pieces": 13,
+      "attempts": 2
+    },
+    {
+      "prompt": "a tunnel",
+      "unlimitedPieces": true,
+      "status": "solved",
+      "pieces": 8,
+      "attempts": 3
+    },
+    {
+      "prompt": "a tunnel 2 tiles long",
+      "unlimitedPieces": true,
+      "status": "solved",
+      "pieces": 8,
+      "attempts": 3
+    },
+    {
+      "prompt": "a tunnel 3 tiles long",
+      "unlimitedPieces": true,
+      "status": "solved",
+      "pieces": 12,
+      "attempts": 3
+    },
+    {
+      "prompt": "a tunnel 4 tiles long",
+      "unlimitedPieces": true,
+      "status": "solved",
+      "pieces": 14,
+      "attempts": 3
+    },
+    {
+      "prompt": "a tunnel 2 tiles wide and 2 tiles long",
+      "unlimitedPieces": true,
+      "status": "solved",
+      "pieces": 8,
+      "attempts": 3
+    },
+    {
+      "prompt": "a staircase with 2 steps",
+      "unlimitedPieces": true,
+      "status": "solved",
+      "pieces": 16,
+      "attempts": 1
+    },
+    {
+      "prompt": "a staircase with 3 steps",
+      "unlimitedPieces": true,
+      "status": "solved",
+      "pieces": 30,
+      "attempts": 1
+    },
+    {
+      "prompt": "a staircase with 4 steps",
+      "unlimitedPieces": true,
+      "status": "solved",
+      "pieces": 48,
+      "attempts": 1
+    },
+    {
+      "prompt": "a staircase with 5 steps",
+      "unlimitedPieces": true,
+      "status": "solved",
+      "pieces": 62,
+      "attempts": 2
+    },
+    {
+      "prompt": "a staircase with 3 steps and 2 tiles deep",
+      "unlimitedPieces": true,
+      "status": "solved",
+      "pieces": 31,
+      "attempts": 2
+    },
+    {
+      "prompt": "a tower at least 12 inches tall and at most 6 inches tall",
+      "unlimitedPieces": true,
+      "status": "infeasible",
+      "pieces": 0,
+      "attempts": 0
+    },
+    {
+      "prompt": "a tower with a working elevator",
+      "unlimitedPieces": true,
+      "status": "unsupported",
+      "pieces": 0,
+      "attempts": 0
+    },
+    {
+      "prompt": "an open top box with a lid",
+      "unlimitedPieces": true,
+      "status": "unsupported",
+      "pieces": 0,
+      "attempts": 0
+    },
+    {
+      "prompt": "a tunnel with a door",
+      "unlimitedPieces": true,
+      "status": "unsupported",
+      "pieces": 0,
+      "attempts": 0
+    },
+    {
+      "prompt": "a staircase with a slide",
+      "unlimitedPieces": true,
+      "status": "unsupported",
+      "pieces": 0,
+      "attempts": 0
+    }
+  ]
+}

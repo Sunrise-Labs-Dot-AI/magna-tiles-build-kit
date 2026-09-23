@@ -12,6 +12,7 @@ export interface DesignBrief {
   turns: number;
   downhill: boolean;
   unsupportedTerms: string[];
+  unlimitedPieces?: boolean;
   inventoryPreset: InventoryPreset;
   car: { width: number; length: number; wheelRadius: number; massKg: number };
 }
@@ -46,6 +47,7 @@ export interface CandidateResult {
   passed: boolean;
 }
 export interface DesignResult {
+  harness?: import("@/lib/harness/types").HarnessResult;
   brief: DesignBrief;
   build: BuildGraph;
   instructions: AssemblyStep[];

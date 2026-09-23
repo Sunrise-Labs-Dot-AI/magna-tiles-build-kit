@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { designBuild } from "@/lib/planner/design";
 
 export const runtime = "nodejs";
-export const maxDuration = 60;
+export const maxDuration = 300;
 
 export async function POST(request: Request) {
   try {
@@ -15,8 +15,14 @@ export async function POST(request: Request) {
     const body = JSON.parse(text) as {
       prompt?: unknown;
       inventoryPreset?: unknown;
+      unlimitedPieces?: unknown;
     };
-    if (typeof body.prompt !== "string")
+    if (
+      !body ||
+      typeof body.prompt !== "string" ||
+      (body.unlimitedPieces !== undefined &&
+        typeof body.unlimitedPieces !== "boolean")
+    )
       return NextResponse.json(
         { error: "A build prompt is required." },
         { status: 400 },
@@ -24,6 +30,7 @@ export async function POST(request: Request) {
     const result = await designBuild(
       body.prompt,
       body.inventoryPreset === "builder-xl" ? "builder-xl" : "classic-100",
+      { unlimitedPieces: body.unlimitedPieces === true },
     );
     return NextResponse.json(result);
   } catch (error) {
