@@ -1,0 +1,23 @@
+**Verdict: BLOCK**
+
+1. **CRITICAL: Artifact check can pass falsified green reports.**
+   [scripts/reference/check-artifacts.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/check-artifacts.ts:25) only verifies `saved.replica`, `report.fingerprint`, and `report.validationCodeHash`. It does not verify `report.checks`, `report.replication`, `report.projections`, or generated SVG overlays.
+   Failure scenario: change `public/reference-replicas/jet.json` so `report.checks.fidelity.status = "pass"` or `replication = "simulation-verified"` while leaving the fingerprint fields alone. `npm run reference:check-artifacts` would still pass, and [app/references/reference-lab.tsx](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/app/references/reference-lab.tsx:252) would display the falsified green evidence.
+   Fix: recompute the full `ReplicaReport` and deep-compare it, or hash/sign the report body and required SVG/result artifacts.
+
+2. **WARNING: Medium ramp stage links to the wrong source evidence.**
+   [lib/replication/models.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/models.ts:792) defines the `medium-lower` stage using frame `"small-fit"`, which [verification/replication/sources.json](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/verification/replication/sources.json:121) identifies as the small-ramp frame.
+   Failure scenario: in `/references`, selecting Henry’s medium ramp and the lower-wedge checkpoint sends the user to small-ramp footage via [app/references/reference-lab.tsx](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/app/references/reference-lab.tsx:212). That makes the stage instruction inspectable against the wrong source.
+   Fix: bind every stage frame to a frame whose `stage` matches the replica stage, and add a test over `replicas().flatMap(stages)`.
+
+3. **WARNING: Observation binding accepts non-evaluation frame uses as projection partitions.**
+   [lib/replication/evaluate.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/evaluate.ts:117) only checks `frame.use === observation.partition`. Because JSON is cast to `Observation`, an observation with `"partition": "construction"` on a construction frame would pass binding even though `Observation.partition` is meant to be only `fit | holdout`. The UI then labels anything not `holdout` as “fitting view” at [app/references/reference-lab.tsx](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/app/references/reference-lab.tsx:307).
+   Failure scenario: a malformed observation against `medium-support` contaminates projection reports as a fitting view instead of being rejected.
+   Fix: runtime-validate `partition`, `frame.use`, and landmark `use` enums before comparison.
+
+4. **WARNING: Passive-car validation still has a malformed-route crash path.**
+   [lib/planner/car-test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/planner/car-test.ts:31) validates finite, distinct waypoints, but not that a lane has a nonzero horizontal direction. A vertical route passes validation, then [line 87](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/planner/car-test.ts:87) computes a zero side vector and the car hull can become degenerate, reaching the throw at [line 115](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/planner/car-test.ts:115) instead of returning failed trials.
+   Failure scenario: malformed route waypoints with identical `x/z` but different `y` crash evaluation.
+   Fix: fail closed when `Math.hypot(dx, dz)` is below tolerance for any lane segment.
+
+**Verification:** `npx tsc --noEmit --incremental false` passes. Vitest and `reference:check-artifacts` could not run in this read-only sandbox because they attempt temp/cache writes and fail with `EPERM`.

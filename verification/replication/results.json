@@ -1,0 +1,614 @@
+{
+  "schema": 1,
+  "scope": "Source, shape, physics, assembly and function remain separate. Artifact generation success is not replica acceptance.",
+  "summaries": [
+    {
+      "id": "jet",
+      "pieces": 40,
+      "checks": {
+        "source": {
+          "status": "pass",
+          "detail": "Verified original video SHA-256 7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7 and 20 extracted frame hashes. Manual annotations remain reviewable measurements."
+        },
+        "inventory": {
+          "status": "pass",
+          "detail": "40 parts match the independently transcribed source card. Colors and placements are separate checks."
+        },
+        "fidelity": {
+          "status": "fail",
+          "detail": "2 measured views, 1 withheld views, 33/40 parts lack independent scored landmarks. Need complete visible/occluded part constraints and at least two distinct withheld final views. Pod incidence, longitudinal bay and the red leading triangle contacts are candidate hypotheses; the footage does not expose every join. Hidden cockpit floor/contact geometry and final inclination remain unresolved. The six rigid pieces are retained rather than collapsed to one fin."
+        },
+        "materials": {
+          "status": "unverified",
+          "detail": "Triangle side lengths and magnet layout use the existing catalog; source-specific calibration is pending."
+        },
+        "geometry": {
+          "status": "pass",
+          "detail": "40 rigid catalog parts; 84 nominal edge connections; zero raw intersections. Magnet spacing and force are not physically calibrated."
+        },
+        "release": {
+          "status": "fail",
+          "detail": "seed 0: fail, peak 1.004 in, linear 27.819 in/s, angular 28.089 rad/s, 0/90 rest steps; seed 17: fail, peak 1.129 in, linear 32.056 in/s, angular 32.254 rad/s, 0/90 rest steps; seed 53: fail, peak 1.199 in, linear 28.862 in/s, angular 30.613 rad/s, 0/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
+        },
+        "settledShape": {
+          "status": "fail",
+          "detail": "6 settled point comparisons. Original camera held fixed. Sparse passing landmarks do not cover the full settled shape."
+        },
+        "assembly": {
+          "status": "fail",
+          "detail": "0/16 nominal checkpoints passed. Held modules, joining motions and hand access are separate unverified requirements."
+        },
+        "function": {
+          "status": "unverified",
+          "detail": "Not applicable to the static aircraft; no flight claim."
+        }
+      },
+      "replication": "not-verified",
+      "fingerprint": "19d51f281d12554d9c07334f2c23e0a2d7656cb349b125a9188e7955c7f15706",
+      "stages": [
+        {
+          "id": "body-upright-1",
+          "status": "unverified",
+          "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
+          "displacement": null
+        },
+        {
+          "id": "body-upright-2",
+          "status": "unverified",
+          "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
+          "displacement": null
+        },
+        {
+          "id": "body-upright-3",
+          "status": "unverified",
+          "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
+          "displacement": null
+        },
+        {
+          "id": "body-upright-4",
+          "status": "unverified",
+          "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
+          "displacement": null
+        },
+        {
+          "id": "body-horizontal",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 0.957 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 0.9573724539491966
+        },
+        {
+          "id": "nose",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 0.983 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 0.9832945574135937
+        },
+        {
+          "id": "wing-module--1",
+          "status": "unverified",
+          "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
+          "displacement": null
+        },
+        {
+          "id": "wing-root--1",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 0.963 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 0.9625367311886
+        },
+        {
+          "id": "wing-module-1",
+          "status": "unverified",
+          "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
+          "displacement": null
+        },
+        {
+          "id": "wing-root-1",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 0.799 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 0.7993512051397991
+        },
+        {
+          "id": "wing-roots",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 0.974 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 0.974330392560982
+        },
+        {
+          "id": "wingtips",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 0.963 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 0.9628147645268345
+        },
+        {
+          "id": "tail-cone",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 0.692 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 0.6924036877062211
+        },
+        {
+          "id": "tail-horizontal",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 1.052 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 1.0521558597034013
+        },
+        {
+          "id": "tail-fins",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 0.958 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 0.9581295518365787
+        },
+        {
+          "id": "final",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 1.004 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 1.003751425805195
+        }
+      ],
+      "releaseTrials": [
+        {
+          "seed": 0,
+          "status": "fail",
+          "peakDisplacement": 1.003751425805195,
+          "finalDisplacement": 1.003751425805195,
+          "finalSpeed": 28.08871286763535,
+          "linearSpeed": 27.81916884459083,
+          "angularSpeed": 28.088712867635344,
+          "settledSteps": 0,
+          "poppedJoints": [],
+          "settledProjectionStatuses": [
+            {
+              "id": "jet-side-388",
+              "status": "fail",
+              "rmsPx": 25.468383063104525
+            },
+            {
+              "id": "jet-quarter-397",
+              "status": "fail",
+              "rmsPx": 508.95497502148385
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "status": "fail",
+          "peakDisplacement": 1.1290841571252979,
+          "finalDisplacement": 1.1290841571252979,
+          "finalSpeed": 32.25416934404125,
+          "linearSpeed": 32.05612618522565,
+          "angularSpeed": 32.25416934404125,
+          "settledSteps": 0,
+          "poppedJoints": [],
+          "settledProjectionStatuses": [
+            {
+              "id": "jet-side-388",
+              "status": "fail",
+              "rmsPx": 25.324624251301337
+            },
+            {
+              "id": "jet-quarter-397",
+              "status": "fail",
+              "rmsPx": 506.8094569362153
+            }
+          ]
+        },
+        {
+          "seed": 53,
+          "status": "fail",
+          "peakDisplacement": 1.198996727898081,
+          "finalDisplacement": 1.198996727898081,
+          "finalSpeed": 30.612701320738285,
+          "linearSpeed": 28.862063190016116,
+          "angularSpeed": 30.61270132073829,
+          "settledSteps": 0,
+          "poppedJoints": [],
+          "settledProjectionStatuses": [
+            {
+              "id": "jet-side-388",
+              "status": "fail",
+              "rmsPx": 24.45167634854912
+            },
+            {
+              "id": "jet-quarter-397",
+              "status": "fail",
+              "rmsPx": 519.6191186557393
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "small-ramp",
+      "pieces": 9,
+      "checks": {
+        "source": {
+          "status": "pass",
+          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 25 extracted frame hashes. Manual annotations remain reviewable measurements."
+        },
+        "inventory": {
+          "status": "pass",
+          "detail": "9 parts match the independently transcribed source card. Colors and placements are separate checks."
+        },
+        "fidelity": {
+          "status": "fail",
+          "detail": "1 measured views, 1 withheld views, 7/9 parts lack independent scored landmarks. Need complete visible/occluded part constraints and at least two distinct withheld final views. The source long-edge/short-edge ratio and exact launch-to-wedge seam need measurement. The 143 mm catalog side is shorter than two squares; retained as an explicit overhang, not stretched."
+        },
+        "materials": {
+          "status": "unverified",
+          "detail": "Isosceles long side is the existing noisy 143 mm catalog measurement; source-specific dimensions and magnets not calibrated."
+        },
+        "geometry": {
+          "status": "pass",
+          "detail": "9 rigid catalog parts; 15 nominal edge connections; zero raw intersections. Magnet spacing and force are not physically calibrated."
+        },
+        "release": {
+          "status": "pass",
+          "detail": "seed 0: pass, peak 0.266 in, linear 0.000 in/s, angular 0.000 rad/s, 640/90 rest steps; seed 17: pass, peak 0.266 in, linear 0.000 in/s, angular 0.000 rad/s, 639/90 rest steps; seed 53: pass, peak 0.266 in, linear 0.000 in/s, angular 0.000 rad/s, 605/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
+        },
+        "settledShape": {
+          "status": "fail",
+          "detail": "3 settled point comparisons. Original camera held fixed. Sparse passing landmarks do not cover the full settled shape."
+        },
+        "assembly": {
+          "status": "unverified",
+          "detail": "2/3 nominal checkpoints passed. Held modules, joining motions and hand access are separate unverified requirements."
+        },
+        "function": {
+          "status": "pass",
+          "detail": "Inferred deck route; the sampled source frames do not establish a completed vehicle run or measured car parameters. All ordered checkpoints reached under gravity with passive wheel contact; 1 car released from rest."
+        }
+      },
+      "replication": "not-verified",
+      "fingerprint": "61b5c8f337cd51a8877047260042a6813235116df4428d07f8bcdd6292b188b1",
+      "stages": [
+        {
+          "id": "small-wedge",
+          "status": "pass",
+          "detail": "Released checkpoint: peak 0.266 in; 0 broken/rejected joints; 636 consecutive steps at rest (90 required).",
+          "displacement": 0.26620777021693404
+        },
+        {
+          "id": "small-launch",
+          "status": "unverified",
+          "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
+          "displacement": null
+        },
+        {
+          "id": "small-final",
+          "status": "pass",
+          "detail": "Released checkpoint: peak 0.266 in; 0 broken/rejected joints; 640 consecutive steps at rest (90 required).",
+          "displacement": 0.2661746444328546
+        }
+      ],
+      "releaseTrials": [
+        {
+          "seed": 0,
+          "status": "pass",
+          "peakDisplacement": 0.2661746444328546,
+          "finalDisplacement": 0.17384119407013748,
+          "finalSpeed": 0,
+          "linearSpeed": 0,
+          "angularSpeed": 0,
+          "settledSteps": 640,
+          "poppedJoints": [],
+          "settledProjectionStatuses": [
+            {
+              "id": "small-final-34",
+              "status": "fail",
+              "rmsPx": 31.61044453385851
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "status": "pass",
+          "peakDisplacement": 0.26610484817319596,
+          "finalDisplacement": 0.17431771484039307,
+          "finalSpeed": 0,
+          "linearSpeed": 0,
+          "angularSpeed": 0,
+          "settledSteps": 639,
+          "poppedJoints": [],
+          "settledProjectionStatuses": [
+            {
+              "id": "small-final-34",
+              "status": "fail",
+              "rmsPx": 31.6147036696002
+            }
+          ]
+        },
+        {
+          "seed": 53,
+          "status": "pass",
+          "peakDisplacement": 0.2663746005672277,
+          "finalDisplacement": 0.17400146633506133,
+          "finalSpeed": 0,
+          "linearSpeed": 0,
+          "angularSpeed": 0,
+          "settledSteps": 605,
+          "poppedJoints": [],
+          "settledProjectionStatuses": [
+            {
+              "id": "small-final-34",
+              "status": "fail",
+              "rmsPx": 31.732574657696308
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "medium-ramp",
+      "pieces": 37,
+      "checks": {
+        "source": {
+          "status": "pass",
+          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 25 extracted frame hashes. Manual annotations remain reviewable measurements."
+        },
+        "inventory": {
+          "status": "pass",
+          "detail": "37 parts match the independently transcribed source card. Colors and placements are separate checks."
+        },
+        "fidelity": {
+          "status": "fail",
+          "detail": "2 measured views, 1 withheld views, 33/37 parts lack independent scored landmarks. Need complete visible/occluded part constraints and at least two distinct withheld final views. Canopy roof pitch, triangular tessellation, end closures and red launch flap joins require additional fitting. Exact BOM alone does not validate this hypothesis. Upper wedge elevation/support alignment and the blue turn's dihedral remain unresolved."
+        },
+        "materials": {
+          "status": "unverified",
+          "detail": "Source isosceles dimensions and magnets are uncalibrated; the simulated vehicle is an assumed proxy."
+        },
+        "geometry": {
+          "status": "pass",
+          "detail": "37 rigid catalog parts; 64 nominal edge connections; zero raw intersections. Magnet spacing and force are not physically calibrated."
+        },
+        "release": {
+          "status": "fail",
+          "detail": "seed 0: fail, peak 0.923 in, linear 5.560 in/s, angular 5.070 rad/s, 0/90 rest steps; seed 17: fail, peak 0.916 in, linear 4.845 in/s, angular 4.611 rad/s, 0/90 rest steps; seed 53: fail, peak 0.902 in, linear 2.842 in/s, angular 12.984 rad/s, 0/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
+        },
+        "settledShape": {
+          "status": "fail",
+          "detail": "3 settled point comparisons. Original camera held fixed. Sparse passing landmarks do not cover the full settled shape."
+        },
+        "assembly": {
+          "status": "fail",
+          "detail": "2/8 nominal checkpoints passed. Held modules, joining motions and hand access are separate unverified requirements."
+        },
+        "function": {
+          "status": "fail",
+          "detail": "The 01:46 close-up shows Henry gesturing along the upper squares. No complete toy-car trajectory is visible. The roof route below is an inferred functional target, not a measured successful turn. Car left the road before completing the route."
+        }
+      },
+      "replication": "not-verified",
+      "fingerprint": "d48b89265f7d5b7b5069895ced5c1366178f06f6d7e7abcf618ca84de49791fc",
+      "stages": [
+        {
+          "id": "medium-lower",
+          "status": "pass",
+          "detail": "Released checkpoint: peak 0.266 in; 0 broken/rejected joints; 640 consecutive steps at rest (90 required).",
+          "displacement": 0.2663788603873846
+        },
+        {
+          "id": "medium-support",
+          "status": "pass",
+          "detail": "Released checkpoint: peak 0.268 in; 0 broken/rejected joints; 654 consecutive steps at rest (90 required).",
+          "displacement": 0.2679991496677511
+        },
+        {
+          "id": "medium-turn",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 0.569 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 0.569262499197038
+        },
+        {
+          "id": "medium-lower-walls",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 0.559 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 0.5589898263267028
+        },
+        {
+          "id": "medium-lower-cover",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 0.720 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 0.7203987383485272
+        },
+        {
+          "id": "medium-turn-cover",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 1.018 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 1.0184854833104788
+        },
+        {
+          "id": "medium-upper-cover",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 0.860 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 0.8603833162236609
+        },
+        {
+          "id": "medium-final",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 0.923 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 0.9234739190326748
+        }
+      ],
+      "releaseTrials": [
+        {
+          "seed": 0,
+          "status": "fail",
+          "peakDisplacement": 0.9234739190326748,
+          "finalDisplacement": 0.7543060035428892,
+          "finalSpeed": 5.559678650987474,
+          "linearSpeed": 5.559678650987474,
+          "angularSpeed": 5.069641738436813,
+          "settledSteps": 0,
+          "poppedJoints": [],
+          "settledProjectionStatuses": [
+            {
+              "id": "medium-final-101",
+              "status": "fail",
+              "rmsPx": 216.04551522823624
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "status": "fail",
+          "peakDisplacement": 0.9162206577936254,
+          "finalDisplacement": 0.6198386890410114,
+          "finalSpeed": 4.84483360985289,
+          "linearSpeed": 4.84483360985289,
+          "angularSpeed": 4.610550743788075,
+          "settledSteps": 0,
+          "poppedJoints": [],
+          "settledProjectionStatuses": [
+            {
+              "id": "medium-final-101",
+              "status": "fail",
+              "rmsPx": 214.99069632138162
+            }
+          ]
+        },
+        {
+          "seed": 53,
+          "status": "fail",
+          "peakDisplacement": 0.9017269039616105,
+          "finalDisplacement": 0.6932694239979598,
+          "finalSpeed": 12.984112058564607,
+          "linearSpeed": 2.842315195952902,
+          "angularSpeed": 12.984112058564605,
+          "settledSteps": 0,
+          "poppedJoints": [],
+          "settledProjectionStatuses": [
+            {
+              "id": "medium-final-101",
+              "status": "fail",
+              "rmsPx": 218.23180833140214
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "large-ramp",
+      "pieces": 51,
+      "checks": {
+        "source": {
+          "status": "pass",
+          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 25 extracted frame hashes. Manual annotations remain reviewable measurements."
+        },
+        "inventory": {
+          "status": "pass",
+          "detail": "51 parts match the independently transcribed source card. Colors and placements are separate checks."
+        },
+        "fidelity": {
+          "status": "unverified",
+          "detail": "0 measured views, 0 withheld views, 51/51 parts lack independent scored landmarks. Need complete visible/occluded part constraints and at least two distinct withheld final views. 42-square shell allocation and exact deck seams are source-informed hypotheses; intermediate ring release checks and independent camera fitting remain incomplete."
+        },
+        "materials": {
+          "status": "unverified",
+          "detail": "Source XL spans two classic-square widths at 02:50, supporting the six-inch interpretation. Magnet layout and force remain uncalibrated."
+        },
+        "geometry": {
+          "status": "pass",
+          "detail": "51 rigid catalog parts; 107 nominal edge connections; zero raw intersections. Magnet spacing and force are not physically calibrated."
+        },
+        "release": {
+          "status": "fail",
+          "detail": "seed 0: fail, peak 0.647 in, linear 3.090 in/s, angular 3.782 rad/s, 0/90 rest steps; seed 17: fail, peak 0.659 in, linear 5.078 in/s, angular 6.069 rad/s, 0/90 rest steps; seed 53: fail, peak 0.759 in, linear 5.441 in/s, angular 4.618 rad/s, 0/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
+        },
+        "settledShape": {
+          "status": "unverified",
+          "detail": "0 settled point comparisons. No source projections cover the final shape; displacement alone cannot certify fidelity."
+        },
+        "assembly": {
+          "status": "fail",
+          "detail": "0/5 nominal checkpoints passed. Held modules, joining motions and hand access are separate unverified requirements."
+        },
+        "function": {
+          "status": "unverified",
+          "detail": "Source vehicle path has not been reconstructed and tested."
+        }
+      },
+      "replication": "not-verified",
+      "fingerprint": "880bbf9d3a1af6fa711e2eb0e6d4a8ab919dc9d848889d3b27bfe8530f234b82",
+      "stages": [
+        {
+          "id": "large-bay-0",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 0.975 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 0.9754342551273272
+        },
+        {
+          "id": "large-bay-1",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 0.953 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 0.9528259212618939
+        },
+        {
+          "id": "large-bay-2",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 0.271 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 0.2706869748938883
+        },
+        {
+          "id": "large-decks",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 0.805 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 0.8046695058196744
+        },
+        {
+          "id": "large-final",
+          "status": "fail",
+          "detail": "Released checkpoint: peak 0.647 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 0.6467094686900741
+        }
+      ],
+      "releaseTrials": [
+        {
+          "seed": 0,
+          "status": "fail",
+          "peakDisplacement": 0.6467094686900741,
+          "finalDisplacement": 0.6173966706579211,
+          "finalSpeed": 3.781946872337619,
+          "linearSpeed": 3.0904282592116012,
+          "angularSpeed": 3.781946872337619,
+          "settledSteps": 0,
+          "poppedJoints": [],
+          "settledProjectionStatuses": []
+        },
+        {
+          "seed": 17,
+          "status": "fail",
+          "peakDisplacement": 0.6591783136533336,
+          "finalDisplacement": 0.6295345551356497,
+          "finalSpeed": 6.0693463166274,
+          "linearSpeed": 5.078417465604589,
+          "angularSpeed": 6.0693463166274,
+          "settledSteps": 0,
+          "poppedJoints": [],
+          "settledProjectionStatuses": []
+        },
+        {
+          "seed": 53,
+          "status": "fail",
+          "peakDisplacement": 0.7588533033702621,
+          "finalDisplacement": 0.7058758843231384,
+          "finalSpeed": 5.441417276571218,
+          "linearSpeed": 5.441417276571218,
+          "angularSpeed": 4.618154708983065,
+          "settledSteps": 0,
+          "poppedJoints": [],
+          "settledProjectionStatuses": []
+        }
+      ]
+    },
+    {
+      "id": "snail",
+      "pieces": null,
+      "checks": {
+        "source": {
+          "status": "unverified",
+          "detail": "Exact 3D source missing; no substitute model authored."
+        }
+      },
+      "replication": "not-verified"
+    }
+  ]
+}

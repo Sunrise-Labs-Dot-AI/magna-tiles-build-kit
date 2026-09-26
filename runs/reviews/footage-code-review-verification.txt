@@ -1,0 +1,5 @@
+**Verdict:** MERGE-OK
+
+No actionable remaining bugs found in the reviewed fixes. Static review confirms the four accepted findings are addressed, plus the claimed observation lock, Euler/basis preservation, sustained-rest release, fixed settled-camera comparison, vertical-route rejection, and explicit non-passing replica statuses.
+
+**Limits:** I did not rerun Vitest/tsx in the read-only sandbox. The checksum manifest is only a reviewable integrity record, not cryptographic authentication against a repository author editing both artifacts and manifest.

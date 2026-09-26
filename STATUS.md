@@ -1,6 +1,12 @@
 # Current status
 
-Updated 2026-09-22. Development has resumed from the archived exploration.
+Updated 2026-09-26. Development has resumed from the archived exploration.
+
+## Footage reconstruction workshop
+
+`/references` now exposes source-informed 40-piece jet and 9/37/51-piece Henry ramp candidates, stable part/edge numbers, construction snapshots, five measured camera comparisons, and independent evidence for source shape, geometry, release, assembly and cars. Forty-five extracted frames are bound to two local source hashes. The original 3D snail source remains missing.
+
+All four candidates preserve the inspected BOM and pass raw geometry checks. **None meets full replica acceptance.** The small ramp passes perturbed release and an inferred passive car route; its source-shape comparison fails, and held-module assembly remains unverified. Jet/medium source comparisons fail, larger release checks fail, and the medium turn does not pass. See [the reconstruction report](docs/footage-reconstruction.md) for precise boundaries and reproduction commands. The historical drafts and their nominal scores remain separate.
 
 ## Intent-driven structural harness
 

@@ -1,0 +1,27 @@
+**Verdict: BLOCK**
+
+I did not edit files or spawn agents. The plan is directionally aware of the right risks, but it still has blockers around source provenance, falsifiability, and scope.
+
+1. **BLOCK: Source acquisition is not a hard gate.**
+   The plan depends on local/hashable videos at [runs/2026-09-26-footage-reconstruction-plan.md](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-26-footage-reconstruction-plan.md:7>), but this worktree has no source videos, no `sample-videos/`, and `.video-cache` contains only the directory. Existing “reviewed” encodings point at ignored local files, for example [jet-aircraft-reference.ts](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/reference-encoder/examples/jet-aircraft-reference.ts:5>) and [car-ramps-reference.ts](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/reference-encoder/examples/car-ramps-reference.ts:5>).
+   Minimal correction: add a first preflight that must locate or retrieve exact source videos, hash them, extract frames from those hashes, and stop the whole plan if any required source is missing.
+
+2. **BLOCK: Circularity is still possible through existing repo artifacts.**
+   Current source encodings already contain BOMs and observations, while the current jet draft is marked `engine-valid` with a different BOM than the source card, see [build-drafts/jet-aircraft.json](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/build-drafts/jet-aircraft.json:7>) and [build-drafts/jet-aircraft.json](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/build-drafts/jet-aircraft.json:11>). The plan says claims must cite frames, but does not explicitly quarantine existing encodings, drafts, generated verification images, or old docs as non-source.
+   Minimal correction: declare those artifacts prior hypotheses or negative controls only. “Source evidence” should mean hashed video frame plus frame id plus annotation id, never generated renders or existing reference files.
+
+3. **BLOCK: Stage transforms are required but not represented.**
+   The plan requires upright assembly versus final horizontal jet poses at [runs/2026-09-26-footage-reconstruction-plan.md](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-26-footage-reconstruction-plan.md:11>) and per-stage pose checks at line 14. The current model stores one `position` and `basis` per tile, plus `step` and `subassemblyId`, not a per-source-stage transform graph, see [types.ts](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/types.ts:53>).
+   Minimal correction: add a `StagePose` or assembly-checkpoint schema before reconstruction, with stage id, source frame, tile ids, transform, joins, and release result. Add a negative test proving a single final pose cannot satisfy stage evidence.
+
+4. **BLOCK: XL and large-ramp geometry can pass with the wrong physical piece.**
+   The plan says XL must be identified independently, but the current catalog makes `xl-square` equal to `large-square` at [catalog.ts](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/catalog.ts:14>), while existing tests still expect generated large ramp inventory as `large-square: 3` at [magnetic-tiles.test.ts](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/magnetic-tiles.test.ts:89>).
+   Minimal correction: large ramp must remain blocked unless XL edge ratio and magnet geometry are source-backed. Add tests that fail if three large squares are silently substituted for three XL squares.
+
+5. **CONCERN: Fit/test leakage controls are under-specified.**
+   Reserving “at least one complete final view” at [runs/2026-09-26-footage-reconstruction-plan.md](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-26-footage-reconstruction-plan.md:13>) is too weak for 3D reconstruction with camera fitting. One view plus manually selected landmarks can still overfit.
+   Minimal correction: lock the train/validation split and landmark JSON hash before authoring geometry. Require at least two withheld final views with different yaw/depth, plus withheld stage landmarks, and report camera degrees of freedom versus fitting anchors.
+
+6. **CONCERN: Scope is too large for one reviewable PR.**
+   This spans source retrieval, manifests, new geometry primitives, camera projection, physics, vehicle trials, UI, export, and adversarial tests in one plan.
+   Minimal correction: split into gated PRs: source manifest/quarantine first, stage schema and geometry primitives second, jet-only reconstruction third, ramps and vehicle checks after that. Large and snail should be explicit non-pass candidates until evidence exists.

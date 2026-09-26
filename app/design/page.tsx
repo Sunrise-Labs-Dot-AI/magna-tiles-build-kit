@@ -116,6 +116,7 @@ export default function DesignLab() {
         <nav>
           <Link href="/">Build library</Link>
           <Link href="/builder">Workbench</Link>
+          <Link href="/references">Reference workshop</Link>
         </nav>
       </header>
       <div className="design-layout">

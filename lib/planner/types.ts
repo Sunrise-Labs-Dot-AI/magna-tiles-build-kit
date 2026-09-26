@@ -40,6 +40,12 @@ export interface CarTrial {
   reachedWaypoint: number;
   reason: string;
   samples: CarSample[];
+  contactEvidence?: {
+    roadContactSteps: number;
+    longestContactGapSeconds: number;
+    allowedContactGapSeconds: number;
+    postRunStructurePassed: boolean;
+  };
 }
 export interface CandidateResult {
   id: string;

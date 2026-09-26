@@ -1,0 +1,3383 @@
+{
+  "replica": {
+    "id": "large-ramp",
+    "sourceId": "henry",
+    "title": "Henry's large ramp · 51-piece candidate",
+    "build": {
+      "id": "replica-large",
+      "title": "Henry's large ramp",
+      "prompt": "Henry's large ramp",
+      "summary": "Source-constrained reconstruction candidate. Read the independent evidence before building.",
+      "seed": 0,
+      "family": "ramp",
+      "inventoryPreset": "builder-xl",
+      "tiles": [
+        {
+          "id": "bay-0-side--1-0",
+          "shape": "small-square",
+          "color": "#32ad66",
+          "position": {
+            "x": 1.5,
+            "y": 1.5,
+            "z": -3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": true
+        },
+        {
+          "id": "bay-0-side-1-0",
+          "shape": "small-square",
+          "color": "#32ad66",
+          "position": {
+            "x": 1.5,
+            "y": 1.5,
+            "z": 3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": true
+        },
+        {
+          "id": "bay-0-end-0-0-0",
+          "shape": "small-square",
+          "color": "#168db3",
+          "position": {
+            "x": -0.09,
+            "y": 1.5,
+            "z": -1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": false,
+          "parentTileId": "bay-0-side--1-0",
+          "parentEdge": 3,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-0-end-0-0-1",
+          "shape": "small-square",
+          "color": "#168db3",
+          "position": {
+            "x": -0.09,
+            "y": 1.5,
+            "z": 1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": false,
+          "parentTileId": "bay-0-side-1-0",
+          "parentEdge": 3,
+          "childEdge": 1,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-0-end-1-0-0",
+          "shape": "small-square",
+          "color": "#168db3",
+          "position": {
+            "x": 3.09,
+            "y": 1.5,
+            "z": -1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": false,
+          "parentTileId": "bay-0-side--1-0",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-0-end-1-0-1",
+          "shape": "small-square",
+          "color": "#168db3",
+          "position": {
+            "x": 3.09,
+            "y": 1.5,
+            "z": 1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": false,
+          "parentTileId": "bay-0-side-1-0",
+          "parentEdge": 1,
+          "childEdge": 1,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-0-side--1-1",
+          "shape": "small-square",
+          "color": "#32ad66",
+          "position": {
+            "x": 1.5,
+            "y": 4.5,
+            "z": -3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": false,
+          "parentTileId": "bay-0-side--1-0",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-0-side-1-1",
+          "shape": "small-square",
+          "color": "#32ad66",
+          "position": {
+            "x": 1.5,
+            "y": 4.5,
+            "z": 3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": false,
+          "parentTileId": "bay-0-side-1-0",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-0-end-0-1-0",
+          "shape": "small-square",
+          "color": "#168db3",
+          "position": {
+            "x": -0.09,
+            "y": 4.5,
+            "z": -1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": false,
+          "parentTileId": "bay-0-end-0-0-0",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-0-end-0-1-1",
+          "shape": "small-square",
+          "color": "#168db3",
+          "position": {
+            "x": -0.09,
+            "y": 4.5,
+            "z": 1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": false,
+          "parentTileId": "bay-0-end-0-0-1",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-0-end-1-1-0",
+          "shape": "small-square",
+          "color": "#168db3",
+          "position": {
+            "x": 3.09,
+            "y": 4.5,
+            "z": -1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": false,
+          "parentTileId": "bay-0-end-1-0-0",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-0-end-1-1-1",
+          "shape": "small-square",
+          "color": "#168db3",
+          "position": {
+            "x": 3.09,
+            "y": 4.5,
+            "z": 1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": false,
+          "parentTileId": "bay-0-end-1-0-1",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-0-side--1-2",
+          "shape": "small-square",
+          "color": "#32ad66",
+          "position": {
+            "x": 1.5,
+            "y": 7.5,
+            "z": -3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": false,
+          "parentTileId": "bay-0-side--1-1",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-0-side-1-2",
+          "shape": "small-square",
+          "color": "#32ad66",
+          "position": {
+            "x": 1.5,
+            "y": 7.5,
+            "z": 3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": false,
+          "parentTileId": "bay-0-side-1-1",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-0-end-0-2-0",
+          "shape": "small-square",
+          "color": "#168db3",
+          "position": {
+            "x": -0.09,
+            "y": 7.5,
+            "z": -1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": false,
+          "parentTileId": "bay-0-end-0-1-0",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-0-end-0-2-1",
+          "shape": "small-square",
+          "color": "#168db3",
+          "position": {
+            "x": -0.09,
+            "y": 7.5,
+            "z": 1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": false,
+          "parentTileId": "bay-0-end-0-1-1",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-0-end-1-2-0",
+          "shape": "small-square",
+          "color": "#168db3",
+          "position": {
+            "x": 3.09,
+            "y": 7.5,
+            "z": -1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": false,
+          "parentTileId": "bay-0-end-1-1-0",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-0-end-1-2-1",
+          "shape": "small-square",
+          "color": "#168db3",
+          "position": {
+            "x": 3.09,
+            "y": 7.5,
+            "z": 1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": false,
+          "parentTileId": "bay-0-end-1-1-1",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-0-roof-0",
+          "shape": "small-square",
+          "color": "#32ad66",
+          "position": {
+            "x": 1.5,
+            "y": 9.09,
+            "z": -1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": false,
+          "parentTileId": "bay-0-side--1-2",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-0-roof-1",
+          "shape": "small-square",
+          "color": "#32ad66",
+          "position": {
+            "x": 1.5,
+            "y": 9.09,
+            "z": 1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "bay 0",
+          "subassemblyId": "bay 0",
+          "root": false,
+          "parentTileId": "bay-0-side-1-2",
+          "parentEdge": 2,
+          "childEdge": 2,
+          "foldAngle": 0
+        },
+        {
+          "id": "xl-deck-0",
+          "shape": "xl-square",
+          "color": "#168db3",
+          "position": {
+            "x": 5.778076211353316,
+            "y": 7.68,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.8660254037844386,
+              "y": -0.5,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": -0.5,
+              "y": -0.8660254037844386,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 4,
+          "role": "XL driving deck",
+          "subassemblyId": "XL driving deck",
+          "root": false,
+          "parentTileId": "bay-0-end-1-2-0",
+          "parentEdge": 2,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "marker-0--1",
+          "shape": "equilateral-triangle",
+          "color": "#32ad66",
+          "position": {
+            "x": 1.5,
+            "y": 10.479038105676658,
+            "z": -3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 7,
+          "role": "side markers",
+          "subassemblyId": "side markers",
+          "root": false,
+          "parentTileId": "bay-0-side--1-2",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "marker-0-1",
+          "shape": "equilateral-triangle",
+          "color": "#32ad66",
+          "position": {
+            "x": 1.5,
+            "y": 10.479038105676658,
+            "z": 3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 7,
+          "role": "side markers",
+          "subassemblyId": "side markers",
+          "root": false,
+          "parentTileId": "bay-0-side-1-2",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-1-side--1-0",
+          "shape": "small-square",
+          "color": "#d93747",
+          "position": {
+            "x": 9.876,
+            "y": 1.5,
+            "z": -3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "bay 1",
+          "subassemblyId": "bay 1",
+          "root": true
+        },
+        {
+          "id": "bay-1-side-1-0",
+          "shape": "small-square",
+          "color": "#d93747",
+          "position": {
+            "x": 9.876,
+            "y": 1.5,
+            "z": 3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "bay 1",
+          "subassemblyId": "bay 1",
+          "root": true
+        },
+        {
+          "id": "bay-1-end-0-0-0",
+          "shape": "small-square",
+          "color": "#eb802b",
+          "position": {
+            "x": 8.286,
+            "y": 1.5,
+            "z": -1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "bay 1",
+          "subassemblyId": "bay 1",
+          "root": false,
+          "parentTileId": "bay-1-side--1-0",
+          "parentEdge": 3,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-1-end-0-0-1",
+          "shape": "small-square",
+          "color": "#eb802b",
+          "position": {
+            "x": 8.286,
+            "y": 1.5,
+            "z": 1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "bay 1",
+          "subassemblyId": "bay 1",
+          "root": false,
+          "parentTileId": "bay-1-side-1-0",
+          "parentEdge": 3,
+          "childEdge": 1,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-1-end-1-0-0",
+          "shape": "small-square",
+          "color": "#eb802b",
+          "position": {
+            "x": 11.466,
+            "y": 1.5,
+            "z": -1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "bay 1",
+          "subassemblyId": "bay 1",
+          "root": false,
+          "parentTileId": "bay-1-side--1-0",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-1-end-1-0-1",
+          "shape": "small-square",
+          "color": "#eb802b",
+          "position": {
+            "x": 11.466,
+            "y": 1.5,
+            "z": 1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "bay 1",
+          "subassemblyId": "bay 1",
+          "root": false,
+          "parentTileId": "bay-1-side-1-0",
+          "parentEdge": 1,
+          "childEdge": 1,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-1-side--1-1",
+          "shape": "small-square",
+          "color": "#d93747",
+          "position": {
+            "x": 9.876,
+            "y": 4.5,
+            "z": -3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "bay 1",
+          "subassemblyId": "bay 1",
+          "root": false,
+          "parentTileId": "bay-1-side--1-0",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-1-side-1-1",
+          "shape": "small-square",
+          "color": "#d93747",
+          "position": {
+            "x": 9.876,
+            "y": 4.5,
+            "z": 3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "bay 1",
+          "subassemblyId": "bay 1",
+          "root": false,
+          "parentTileId": "bay-1-side-1-0",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-1-end-0-1-0",
+          "shape": "small-square",
+          "color": "#eb802b",
+          "position": {
+            "x": 8.286,
+            "y": 4.5,
+            "z": -1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "bay 1",
+          "subassemblyId": "bay 1",
+          "root": false,
+          "parentTileId": "xl-deck-0",
+          "parentEdge": 1,
+          "childEdge": 2,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-1-end-0-1-1",
+          "shape": "small-square",
+          "color": "#eb802b",
+          "position": {
+            "x": 8.286,
+            "y": 4.5,
+            "z": 1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "bay 1",
+          "subassemblyId": "bay 1",
+          "root": false,
+          "parentTileId": "xl-deck-0",
+          "parentEdge": 1,
+          "childEdge": 2,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-1-end-1-1-0",
+          "shape": "small-square",
+          "color": "#eb802b",
+          "position": {
+            "x": 11.466,
+            "y": 4.5,
+            "z": -1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "bay 1",
+          "subassemblyId": "bay 1",
+          "root": false,
+          "parentTileId": "bay-1-end-1-0-0",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-1-end-1-1-1",
+          "shape": "small-square",
+          "color": "#eb802b",
+          "position": {
+            "x": 11.466,
+            "y": 4.5,
+            "z": 1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "bay 1",
+          "subassemblyId": "bay 1",
+          "root": false,
+          "parentTileId": "bay-1-end-1-0-1",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-1-roof-0",
+          "shape": "small-square",
+          "color": "#d93747",
+          "position": {
+            "x": 9.876,
+            "y": 6.09,
+            "z": -1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "bay 1",
+          "subassemblyId": "bay 1",
+          "root": false,
+          "parentTileId": "xl-deck-0",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-1-roof-1",
+          "shape": "small-square",
+          "color": "#d93747",
+          "position": {
+            "x": 9.876,
+            "y": 6.09,
+            "z": 1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "bay 1",
+          "subassemblyId": "bay 1",
+          "root": false,
+          "parentTileId": "xl-deck-0",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "xl-deck-1",
+          "shape": "xl-square",
+          "color": "#168db3",
+          "position": {
+            "x": 14.154076211353315,
+            "y": 4.679999999999999,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.8660254037844385,
+              "y": -0.5,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 2.9605947323337506e-16,
+              "y": -2.220446049250313e-16,
+              "z": 1
+            },
+            "zAxis": {
+              "x": -0.5,
+              "y": -0.8660254037844385,
+              "z": -4.4266532021668826e-17
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 5,
+          "role": "XL driving deck",
+          "subassemblyId": "XL driving deck",
+          "root": false,
+          "parentTileId": "bay-1-end-1-1-0",
+          "parentEdge": 2,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "marker-1--1",
+          "shape": "equilateral-triangle",
+          "color": "#f3bc25",
+          "position": {
+            "x": 9.876,
+            "y": 7.479038105676658,
+            "z": -3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 7,
+          "role": "side markers",
+          "subassemblyId": "side markers",
+          "root": false,
+          "parentTileId": "bay-1-side--1-1",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "marker-1-1",
+          "shape": "equilateral-triangle",
+          "color": "#f3bc25",
+          "position": {
+            "x": 9.876,
+            "y": 7.479038105676658,
+            "z": 3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 7,
+          "role": "side markers",
+          "subassemblyId": "side markers",
+          "root": false,
+          "parentTileId": "bay-1-side-1-1",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-2-side--1-0",
+          "shape": "small-square",
+          "color": "#d93747",
+          "position": {
+            "x": 18.252,
+            "y": 1.5,
+            "z": -3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 3,
+          "role": "bay 2",
+          "subassemblyId": "bay 2",
+          "root": true
+        },
+        {
+          "id": "bay-2-side-1-0",
+          "shape": "small-square",
+          "color": "#d93747",
+          "position": {
+            "x": 18.252,
+            "y": 1.5,
+            "z": 3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 3,
+          "role": "bay 2",
+          "subassemblyId": "bay 2",
+          "root": true
+        },
+        {
+          "id": "bay-2-end-0-0-0",
+          "shape": "small-square",
+          "color": "#eb802b",
+          "position": {
+            "x": 16.662,
+            "y": 1.5,
+            "z": -1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 3,
+          "role": "bay 2",
+          "subassemblyId": "bay 2",
+          "root": false,
+          "parentTileId": "xl-deck-1",
+          "parentEdge": 1,
+          "childEdge": 2,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-2-end-0-0-1",
+          "shape": "small-square",
+          "color": "#eb802b",
+          "position": {
+            "x": 16.662,
+            "y": 1.5,
+            "z": 1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 3,
+          "role": "bay 2",
+          "subassemblyId": "bay 2",
+          "root": false,
+          "parentTileId": "xl-deck-1",
+          "parentEdge": 1,
+          "childEdge": 2,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-2-end-1-0-0",
+          "shape": "small-square",
+          "color": "#eb802b",
+          "position": {
+            "x": 19.842,
+            "y": 1.5,
+            "z": -1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 3,
+          "role": "bay 2",
+          "subassemblyId": "bay 2",
+          "root": false,
+          "parentTileId": "bay-2-side--1-0",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-2-end-1-0-1",
+          "shape": "small-square",
+          "color": "#eb802b",
+          "position": {
+            "x": 19.842,
+            "y": 1.5,
+            "z": 1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 3,
+          "role": "bay 2",
+          "subassemblyId": "bay 2",
+          "root": false,
+          "parentTileId": "bay-2-side-1-0",
+          "parentEdge": 1,
+          "childEdge": 1,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-2-roof-0",
+          "shape": "small-square",
+          "color": "#d93747",
+          "position": {
+            "x": 18.252,
+            "y": 3.09,
+            "z": -1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 3,
+          "role": "bay 2",
+          "subassemblyId": "bay 2",
+          "root": false,
+          "parentTileId": "xl-deck-1",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "bay-2-roof-1",
+          "shape": "small-square",
+          "color": "#d93747",
+          "position": {
+            "x": 18.252,
+            "y": 3.09,
+            "z": 1.5
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 3,
+          "role": "bay 2",
+          "subassemblyId": "bay 2",
+          "root": false,
+          "parentTileId": "xl-deck-1",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "xl-deck-2",
+          "shape": "xl-square",
+          "color": "#168db3",
+          "position": {
+            "x": 22.530076211353315,
+            "y": 1.6800000000000002,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.8660254037844386,
+              "y": -0.5,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": -0.5,
+              "y": -0.8660254037844386,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 6,
+          "role": "XL driving deck",
+          "subassemblyId": "XL driving deck",
+          "root": false,
+          "parentTileId": "bay-2-end-1-0-0",
+          "parentEdge": 2,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "marker-2--1",
+          "shape": "equilateral-triangle",
+          "color": "#d93747",
+          "position": {
+            "x": 18.252,
+            "y": 4.479038105676658,
+            "z": -3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 7,
+          "role": "side markers",
+          "subassemblyId": "side markers",
+          "root": false,
+          "parentTileId": "bay-2-side--1-0",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "marker-2-1",
+          "shape": "equilateral-triangle",
+          "color": "#d93747",
+          "position": {
+            "x": 18.252,
+            "y": 4.479038105676658,
+            "z": 3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 7,
+          "role": "side markers",
+          "subassemblyId": "side markers",
+          "root": false,
+          "parentTileId": "bay-2-side-1-0",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        }
+      ],
+      "connections": [
+        {
+          "fromTileId": "bay-0-side--1-0",
+          "fromEdge": 3,
+          "toTileId": "bay-0-end-0-0-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-0-0-0",
+          "fromEdge": 1,
+          "toTileId": "bay-0-end-0-0-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-side-1-0",
+          "fromEdge": 3,
+          "toTileId": "bay-0-end-0-0-1",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-side--1-0",
+          "fromEdge": 1,
+          "toTileId": "bay-0-end-1-0-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-1-0-0",
+          "fromEdge": 1,
+          "toTileId": "bay-0-end-1-0-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-side-1-0",
+          "fromEdge": 1,
+          "toTileId": "bay-0-end-1-0-1",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-side--1-0",
+          "fromEdge": 2,
+          "toTileId": "bay-0-side--1-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-side-1-0",
+          "fromEdge": 2,
+          "toTileId": "bay-0-side-1-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-side--1-1",
+          "fromEdge": 3,
+          "toTileId": "bay-0-end-0-1-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-0-0-0",
+          "fromEdge": 2,
+          "toTileId": "bay-0-end-0-1-0",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-0-1-0",
+          "fromEdge": 1,
+          "toTileId": "bay-0-end-0-1-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-side-1-1",
+          "fromEdge": 3,
+          "toTileId": "bay-0-end-0-1-1",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-0-0-1",
+          "fromEdge": 2,
+          "toTileId": "bay-0-end-0-1-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-side--1-1",
+          "fromEdge": 1,
+          "toTileId": "bay-0-end-1-1-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-1-0-0",
+          "fromEdge": 2,
+          "toTileId": "bay-0-end-1-1-0",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-1-1-0",
+          "fromEdge": 1,
+          "toTileId": "bay-0-end-1-1-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-side-1-1",
+          "fromEdge": 1,
+          "toTileId": "bay-0-end-1-1-1",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-1-0-1",
+          "fromEdge": 2,
+          "toTileId": "bay-0-end-1-1-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-side--1-1",
+          "fromEdge": 2,
+          "toTileId": "bay-0-side--1-2",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-side-1-1",
+          "fromEdge": 2,
+          "toTileId": "bay-0-side-1-2",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-side--1-2",
+          "fromEdge": 3,
+          "toTileId": "bay-0-end-0-2-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-0-1-0",
+          "fromEdge": 2,
+          "toTileId": "bay-0-end-0-2-0",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-0-2-0",
+          "fromEdge": 1,
+          "toTileId": "bay-0-end-0-2-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-side-1-2",
+          "fromEdge": 3,
+          "toTileId": "bay-0-end-0-2-1",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-0-1-1",
+          "fromEdge": 2,
+          "toTileId": "bay-0-end-0-2-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-side--1-2",
+          "fromEdge": 1,
+          "toTileId": "bay-0-end-1-2-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-1-1-0",
+          "fromEdge": 2,
+          "toTileId": "bay-0-end-1-2-0",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-1-2-0",
+          "fromEdge": 1,
+          "toTileId": "bay-0-end-1-2-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-side-1-2",
+          "fromEdge": 1,
+          "toTileId": "bay-0-end-1-2-1",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-1-1-1",
+          "fromEdge": 2,
+          "toTileId": "bay-0-end-1-2-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-1-2-0",
+          "fromEdge": 2,
+          "toTileId": "bay-0-roof-0",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-0-2-0",
+          "fromEdge": 2,
+          "toTileId": "bay-0-roof-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-side--1-2",
+          "fromEdge": 2,
+          "toTileId": "bay-0-roof-0",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-roof-0",
+          "fromEdge": 2,
+          "toTileId": "bay-0-roof-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-1-2-1",
+          "fromEdge": 2,
+          "toTileId": "bay-0-roof-1",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-0-2-1",
+          "fromEdge": 2,
+          "toTileId": "bay-0-roof-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-side-1-2",
+          "fromEdge": 2,
+          "toTileId": "bay-0-roof-1",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-roof-1",
+          "fromEdge": 1,
+          "toTileId": "xl-deck-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-roof-0",
+          "fromEdge": 1,
+          "toTileId": "xl-deck-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-1-2-1",
+          "fromEdge": 2,
+          "toTileId": "xl-deck-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-end-1-2-0",
+          "fromEdge": 2,
+          "toTileId": "xl-deck-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-roof-0",
+          "fromEdge": 0,
+          "toTileId": "marker-0--1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-side--1-2",
+          "fromEdge": 2,
+          "toTileId": "marker-0--1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-roof-1",
+          "fromEdge": 2,
+          "toTileId": "marker-0-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-0-side-1-2",
+          "fromEdge": 2,
+          "toTileId": "marker-0-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-side--1-0",
+          "fromEdge": 3,
+          "toTileId": "bay-1-end-0-0-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-end-0-0-0",
+          "fromEdge": 1,
+          "toTileId": "bay-1-end-0-0-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-side-1-0",
+          "fromEdge": 3,
+          "toTileId": "bay-1-end-0-0-1",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-side--1-0",
+          "fromEdge": 1,
+          "toTileId": "bay-1-end-1-0-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-end-1-0-0",
+          "fromEdge": 1,
+          "toTileId": "bay-1-end-1-0-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-side-1-0",
+          "fromEdge": 1,
+          "toTileId": "bay-1-end-1-0-1",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-side--1-0",
+          "fromEdge": 2,
+          "toTileId": "bay-1-side--1-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-side-1-0",
+          "fromEdge": 2,
+          "toTileId": "bay-1-side-1-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-side--1-1",
+          "fromEdge": 3,
+          "toTileId": "bay-1-end-0-1-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-end-0-0-0",
+          "fromEdge": 2,
+          "toTileId": "bay-1-end-0-1-0",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "xl-deck-0",
+          "fromEdge": 1,
+          "toTileId": "bay-1-end-0-1-0",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-end-0-1-0",
+          "fromEdge": 1,
+          "toTileId": "bay-1-end-0-1-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-side-1-1",
+          "fromEdge": 3,
+          "toTileId": "bay-1-end-0-1-1",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-end-0-0-1",
+          "fromEdge": 2,
+          "toTileId": "bay-1-end-0-1-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "xl-deck-0",
+          "fromEdge": 1,
+          "toTileId": "bay-1-end-0-1-1",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-side--1-1",
+          "fromEdge": 1,
+          "toTileId": "bay-1-end-1-1-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-end-1-0-0",
+          "fromEdge": 2,
+          "toTileId": "bay-1-end-1-1-0",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-end-1-1-0",
+          "fromEdge": 1,
+          "toTileId": "bay-1-end-1-1-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-side-1-1",
+          "fromEdge": 1,
+          "toTileId": "bay-1-end-1-1-1",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-end-1-0-1",
+          "fromEdge": 2,
+          "toTileId": "bay-1-end-1-1-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-end-1-1-0",
+          "fromEdge": 2,
+          "toTileId": "bay-1-roof-0",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-end-0-1-0",
+          "fromEdge": 2,
+          "toTileId": "bay-1-roof-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-side--1-1",
+          "fromEdge": 2,
+          "toTileId": "bay-1-roof-0",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "xl-deck-0",
+          "fromEdge": 1,
+          "toTileId": "bay-1-roof-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-roof-0",
+          "fromEdge": 2,
+          "toTileId": "bay-1-roof-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-end-1-1-1",
+          "fromEdge": 2,
+          "toTileId": "bay-1-roof-1",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-end-0-1-1",
+          "fromEdge": 2,
+          "toTileId": "bay-1-roof-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-side-1-1",
+          "fromEdge": 2,
+          "toTileId": "bay-1-roof-1",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "xl-deck-0",
+          "fromEdge": 1,
+          "toTileId": "bay-1-roof-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-roof-1",
+          "fromEdge": 1,
+          "toTileId": "xl-deck-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-roof-0",
+          "fromEdge": 1,
+          "toTileId": "xl-deck-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-end-1-1-1",
+          "fromEdge": 2,
+          "toTileId": "xl-deck-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-end-1-1-0",
+          "fromEdge": 2,
+          "toTileId": "xl-deck-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-roof-0",
+          "fromEdge": 0,
+          "toTileId": "marker-1--1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-side--1-1",
+          "fromEdge": 2,
+          "toTileId": "marker-1--1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-roof-1",
+          "fromEdge": 2,
+          "toTileId": "marker-1-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-1-side-1-1",
+          "fromEdge": 2,
+          "toTileId": "marker-1-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-side--1-0",
+          "fromEdge": 3,
+          "toTileId": "bay-2-end-0-0-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "xl-deck-1",
+          "fromEdge": 1,
+          "toTileId": "bay-2-end-0-0-0",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-end-0-0-0",
+          "fromEdge": 1,
+          "toTileId": "bay-2-end-0-0-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-side-1-0",
+          "fromEdge": 3,
+          "toTileId": "bay-2-end-0-0-1",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "xl-deck-1",
+          "fromEdge": 1,
+          "toTileId": "bay-2-end-0-0-1",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-side--1-0",
+          "fromEdge": 1,
+          "toTileId": "bay-2-end-1-0-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-end-1-0-0",
+          "fromEdge": 1,
+          "toTileId": "bay-2-end-1-0-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-side-1-0",
+          "fromEdge": 1,
+          "toTileId": "bay-2-end-1-0-1",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-end-1-0-0",
+          "fromEdge": 2,
+          "toTileId": "bay-2-roof-0",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-end-0-0-0",
+          "fromEdge": 2,
+          "toTileId": "bay-2-roof-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-side--1-0",
+          "fromEdge": 2,
+          "toTileId": "bay-2-roof-0",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "xl-deck-1",
+          "fromEdge": 1,
+          "toTileId": "bay-2-roof-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-roof-0",
+          "fromEdge": 2,
+          "toTileId": "bay-2-roof-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-end-1-0-1",
+          "fromEdge": 2,
+          "toTileId": "bay-2-roof-1",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-end-0-0-1",
+          "fromEdge": 2,
+          "toTileId": "bay-2-roof-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-side-1-0",
+          "fromEdge": 2,
+          "toTileId": "bay-2-roof-1",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "xl-deck-1",
+          "fromEdge": 1,
+          "toTileId": "bay-2-roof-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-roof-1",
+          "fromEdge": 1,
+          "toTileId": "xl-deck-2",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-roof-0",
+          "fromEdge": 1,
+          "toTileId": "xl-deck-2",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-end-1-0-1",
+          "fromEdge": 2,
+          "toTileId": "xl-deck-2",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-end-1-0-0",
+          "fromEdge": 2,
+          "toTileId": "xl-deck-2",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-roof-0",
+          "fromEdge": 0,
+          "toTileId": "marker-2--1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-side--1-0",
+          "fromEdge": 2,
+          "toTileId": "marker-2--1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-roof-1",
+          "fromEdge": 2,
+          "toTileId": "marker-2-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "bay-2-side-1-0",
+          "fromEdge": 2,
+          "toTileId": "marker-2-1",
+          "toEdge": 0,
+          "kind": "edge"
+        }
+      ],
+      "bounds": {
+        "width": 25.353152422706632,
+        "height": 11.778076211353316,
+        "depth": 6.359999999999999
+      }
+    },
+    "inventory": {
+      "small-square": 42,
+      "large-square": 0,
+      "xl-square": 3,
+      "equilateral-triangle": 6,
+      "right-triangle": 0,
+      "isosceles-triangle": 0
+    },
+    "bomFrameId": "large-bom",
+    "stages": [
+      {
+        "id": "large-bay-0",
+        "frameId": "large-tower-finished",
+        "title": "Build support 1",
+        "instruction": "Build the two-square-wide open-bottom shell one ring at a time, then add its two roof squares. The individual ring releases remain unverified.",
+        "tileIds": [
+          "bay-0-side--1-0",
+          "bay-0-side-1-0",
+          "bay-0-end-0-0-0",
+          "bay-0-end-0-0-1",
+          "bay-0-end-1-0-0",
+          "bay-0-end-1-0-1",
+          "bay-0-side--1-1",
+          "bay-0-side-1-1",
+          "bay-0-end-0-1-0",
+          "bay-0-end-0-1-1",
+          "bay-0-end-1-1-0",
+          "bay-0-end-1-1-1",
+          "bay-0-side--1-2",
+          "bay-0-side-1-2",
+          "bay-0-end-0-2-0",
+          "bay-0-end-0-2-1",
+          "bay-0-end-1-2-0",
+          "bay-0-end-1-2-1",
+          "bay-0-roof-0",
+          "bay-0-roof-1"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "large-bay-1",
+        "frameId": "large-box-finished",
+        "title": "Build support 2",
+        "instruction": "Build the two-square-wide open-bottom shell one ring at a time, then add its two roof squares. The individual ring releases remain unverified.",
+        "tileIds": [
+          "bay-1-side--1-0",
+          "bay-1-side-1-0",
+          "bay-1-end-0-0-0",
+          "bay-1-end-0-0-1",
+          "bay-1-end-1-0-0",
+          "bay-1-end-1-0-1",
+          "bay-1-side--1-1",
+          "bay-1-side-1-1",
+          "bay-1-end-0-1-0",
+          "bay-1-end-0-1-1",
+          "bay-1-end-1-1-0",
+          "bay-1-end-1-1-1",
+          "bay-1-roof-0",
+          "bay-1-roof-1"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "large-bay-2",
+        "frameId": "large-lowbox-finished",
+        "title": "Build support 3",
+        "instruction": "Build the two-square-wide open-bottom shell one ring at a time, then add its two roof squares. The individual ring releases remain unverified.",
+        "tileIds": [
+          "bay-2-side--1-0",
+          "bay-2-side-1-0",
+          "bay-2-end-0-0-0",
+          "bay-2-end-0-0-1",
+          "bay-2-end-1-0-0",
+          "bay-2-end-1-0-1",
+          "bay-2-roof-0",
+          "bay-2-roof-1"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "large-decks",
+        "frameId": "large-xl",
+        "title": "Bridge the supports with the three XL squares",
+        "instruction": "Seat the large blue panels between the roof edges, preserving a three-inch fall at each span. Each XL is one part, not four small squares.",
+        "tileIds": [
+          "bay-0-side--1-0",
+          "bay-0-side-1-0",
+          "bay-0-end-0-0-0",
+          "bay-0-end-0-0-1",
+          "bay-0-end-1-0-0",
+          "bay-0-end-1-0-1",
+          "bay-0-side--1-1",
+          "bay-0-side-1-1",
+          "bay-0-end-0-1-0",
+          "bay-0-end-0-1-1",
+          "bay-0-end-1-1-0",
+          "bay-0-end-1-1-1",
+          "bay-0-side--1-2",
+          "bay-0-side-1-2",
+          "bay-0-end-0-2-0",
+          "bay-0-end-0-2-1",
+          "bay-0-end-1-2-0",
+          "bay-0-end-1-2-1",
+          "bay-0-roof-0",
+          "bay-0-roof-1",
+          "xl-deck-0",
+          "bay-1-side--1-0",
+          "bay-1-side-1-0",
+          "bay-1-end-0-0-0",
+          "bay-1-end-0-0-1",
+          "bay-1-end-1-0-0",
+          "bay-1-end-1-0-1",
+          "bay-1-side--1-1",
+          "bay-1-side-1-1",
+          "bay-1-end-0-1-0",
+          "bay-1-end-0-1-1",
+          "bay-1-end-1-1-0",
+          "bay-1-end-1-1-1",
+          "bay-1-roof-0",
+          "bay-1-roof-1",
+          "xl-deck-1",
+          "bay-2-side--1-0",
+          "bay-2-side-1-0",
+          "bay-2-end-0-0-0",
+          "bay-2-end-0-0-1",
+          "bay-2-end-1-0-0",
+          "bay-2-end-1-0-1",
+          "bay-2-roof-0",
+          "bay-2-roof-1",
+          "xl-deck-2"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "large-final",
+        "frameId": "large-final",
+        "title": "Add the six side markers",
+        "instruction": "Add the two triangular markers on each support roof.",
+        "tileIds": [
+          "bay-0-side--1-0",
+          "bay-0-side-1-0",
+          "bay-0-end-0-0-0",
+          "bay-0-end-0-0-1",
+          "bay-0-end-1-0-0",
+          "bay-0-end-1-0-1",
+          "bay-0-side--1-1",
+          "bay-0-side-1-1",
+          "bay-0-end-0-1-0",
+          "bay-0-end-0-1-1",
+          "bay-0-end-1-1-0",
+          "bay-0-end-1-1-1",
+          "bay-0-side--1-2",
+          "bay-0-side-1-2",
+          "bay-0-end-0-2-0",
+          "bay-0-end-0-2-1",
+          "bay-0-end-1-2-0",
+          "bay-0-end-1-2-1",
+          "bay-0-roof-0",
+          "bay-0-roof-1",
+          "xl-deck-0",
+          "marker-0--1",
+          "marker-0-1",
+          "bay-1-side--1-0",
+          "bay-1-side-1-0",
+          "bay-1-end-0-0-0",
+          "bay-1-end-0-0-1",
+          "bay-1-end-1-0-0",
+          "bay-1-end-1-0-1",
+          "bay-1-side--1-1",
+          "bay-1-side-1-1",
+          "bay-1-end-0-1-0",
+          "bay-1-end-0-1-1",
+          "bay-1-end-1-1-0",
+          "bay-1-end-1-1-1",
+          "bay-1-roof-0",
+          "bay-1-roof-1",
+          "xl-deck-1",
+          "marker-1--1",
+          "marker-1-1",
+          "bay-2-side--1-0",
+          "bay-2-side-1-0",
+          "bay-2-end-0-0-0",
+          "bay-2-end-0-0-1",
+          "bay-2-end-1-0-0",
+          "bay-2-end-1-0-1",
+          "bay-2-roof-0",
+          "bay-2-roof-1",
+          "xl-deck-2",
+          "marker-2--1",
+          "marker-2-1"
+        ],
+        "support": "released"
+      }
+    ],
+    "materialQuestions": [
+      "Source XL spans two classic-square widths at 02:50, supporting the six-inch interpretation. Magnet layout and force remain uncalibrated."
+    ],
+    "uncertainties": [
+      {
+        "id": "large-supports",
+        "tileIds": [
+          "bay-0-side--1-0",
+          "bay-0-side-1-0",
+          "bay-0-end-0-0-0",
+          "bay-0-end-0-0-1",
+          "bay-0-end-1-0-0",
+          "bay-0-end-1-0-1",
+          "bay-0-side--1-1",
+          "bay-0-side-1-1",
+          "bay-0-end-0-1-0",
+          "bay-0-end-0-1-1",
+          "bay-0-end-1-1-0",
+          "bay-0-end-1-1-1",
+          "bay-0-side--1-2",
+          "bay-0-side-1-2",
+          "bay-0-end-0-2-0",
+          "bay-0-end-0-2-1",
+          "bay-0-end-1-2-0",
+          "bay-0-end-1-2-1",
+          "bay-0-roof-0",
+          "bay-0-roof-1",
+          "xl-deck-0",
+          "marker-0--1",
+          "marker-0-1",
+          "bay-1-side--1-0",
+          "bay-1-side-1-0",
+          "bay-1-end-0-0-0",
+          "bay-1-end-0-0-1",
+          "bay-1-end-1-0-0",
+          "bay-1-end-1-0-1",
+          "bay-1-side--1-1",
+          "bay-1-side-1-1",
+          "bay-1-end-0-1-0",
+          "bay-1-end-0-1-1",
+          "bay-1-end-1-1-0",
+          "bay-1-end-1-1-1",
+          "bay-1-roof-0",
+          "bay-1-roof-1",
+          "xl-deck-1",
+          "marker-1--1",
+          "marker-1-1",
+          "bay-2-side--1-0",
+          "bay-2-side-1-0",
+          "bay-2-end-0-0-0",
+          "bay-2-end-0-0-1",
+          "bay-2-end-1-0-0",
+          "bay-2-end-1-0-1",
+          "bay-2-roof-0",
+          "bay-2-roof-1",
+          "xl-deck-2",
+          "marker-2--1",
+          "marker-2-1"
+        ],
+        "frameIds": [
+          "large-tower",
+          "large-box",
+          "large-xl"
+        ],
+        "detail": "42-square shell allocation and exact deck seams are source-informed hypotheses; intermediate ring release checks and independent camera fitting remain incomplete."
+      }
+    ]
+  },
+  "report": {
+    "id": "large-ramp",
+    "fingerprint": "880bbf9d3a1af6fa711e2eb0e6d4a8ab919dc9d848889d3b27bfe8530f234b82",
+    "validationCodeHash": "25e42698100b72d400cebf386440c1c67af38784ef58f4f5e0c8651e745d1169",
+    "generatedAt": "2026-09-26T18:35:42.328Z",
+    "replication": "not-verified",
+    "checks": {
+      "source": {
+        "status": "pass",
+        "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 25 extracted frame hashes. Manual annotations remain reviewable measurements."
+      },
+      "inventory": {
+        "status": "pass",
+        "detail": "51 parts match the independently transcribed source card. Colors and placements are separate checks."
+      },
+      "fidelity": {
+        "status": "unverified",
+        "detail": "0 measured views, 0 withheld views, 51/51 parts lack independent scored landmarks. Need complete visible/occluded part constraints and at least two distinct withheld final views. 42-square shell allocation and exact deck seams are source-informed hypotheses; intermediate ring release checks and independent camera fitting remain incomplete."
+      },
+      "materials": {
+        "status": "unverified",
+        "detail": "Source XL spans two classic-square widths at 02:50, supporting the six-inch interpretation. Magnet layout and force remain uncalibrated."
+      },
+      "geometry": {
+        "status": "pass",
+        "detail": "51 rigid catalog parts; 107 nominal edge connections; zero raw intersections. Magnet spacing and force are not physically calibrated."
+      },
+      "release": {
+        "status": "fail",
+        "detail": "seed 0: fail, peak 0.647 in, linear 3.090 in/s, angular 3.782 rad/s, 0/90 rest steps; seed 17: fail, peak 0.659 in, linear 5.078 in/s, angular 6.069 rad/s, 0/90 rest steps; seed 53: fail, peak 0.759 in, linear 5.441 in/s, angular 4.618 rad/s, 0/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
+      },
+      "settledShape": {
+        "status": "unverified",
+        "detail": "0 settled point comparisons. No source projections cover the final shape; displacement alone cannot certify fidelity."
+      },
+      "assembly": {
+        "status": "fail",
+        "detail": "0/5 nominal checkpoints passed. Held modules, joining motions and hand access are separate unverified requirements."
+      },
+      "function": {
+        "status": "unverified",
+        "detail": "Source vehicle path has not been reconstructed and tested."
+      }
+    },
+    "projections": [],
+    "releases": [
+      {
+        "seed": 0,
+        "status": "fail",
+        "peakDisplacement": 0.6467094686900741,
+        "finalDisplacement": 0.6173966706579211,
+        "finalSpeed": 3.781946872337619,
+        "linearSpeed": 3.0904282592116012,
+        "angularSpeed": 3.781946872337619,
+        "settledSteps": 0,
+        "poppedJoints": [],
+        "settledProjections": []
+      },
+      {
+        "seed": 17,
+        "status": "fail",
+        "peakDisplacement": 0.6591783136533336,
+        "finalDisplacement": 0.6295345551356497,
+        "finalSpeed": 6.0693463166274,
+        "linearSpeed": 5.078417465604589,
+        "angularSpeed": 6.0693463166274,
+        "settledSteps": 0,
+        "poppedJoints": [],
+        "settledProjections": []
+      },
+      {
+        "seed": 53,
+        "status": "fail",
+        "peakDisplacement": 0.7588533033702621,
+        "finalDisplacement": 0.7058758843231384,
+        "finalSpeed": 5.441417276571218,
+        "linearSpeed": 5.441417276571218,
+        "angularSpeed": 4.618154708983065,
+        "settledSteps": 0,
+        "poppedJoints": [],
+        "settledProjections": []
+      }
+    ],
+    "stages": [
+      {
+        "id": "large-bay-0",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 0.975 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 0.9754342551273272
+      },
+      {
+        "id": "large-bay-1",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 0.953 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 0.9528259212618939
+      },
+      {
+        "id": "large-bay-2",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 0.271 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 0.2706869748938883
+      },
+      {
+        "id": "large-decks",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 0.805 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 0.8046695058196744
+      },
+      {
+        "id": "large-final",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 0.647 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 0.6467094686900741
+      }
+    ],
+    "instructions": [
+      {
+        "step": 1,
+        "title": "Build support 1",
+        "tileIds": [
+          "bay-0-side--1-0",
+          "bay-0-side-1-0",
+          "bay-0-end-0-0-0",
+          "bay-0-end-0-0-1",
+          "bay-0-end-1-0-0",
+          "bay-0-end-1-0-1",
+          "bay-0-side--1-1",
+          "bay-0-side-1-1",
+          "bay-0-end-0-1-0",
+          "bay-0-end-0-1-1",
+          "bay-0-end-1-1-0",
+          "bay-0-end-1-1-1",
+          "bay-0-side--1-2",
+          "bay-0-side-1-2",
+          "bay-0-end-0-2-0",
+          "bay-0-end-0-2-1",
+          "bay-0-end-1-2-0",
+          "bay-0-end-1-2-1",
+          "bay-0-roof-0",
+          "bay-0-roof-1"
+        ],
+        "tileCounts": {
+          "small-square": 20,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Build the two-square-wide open-bottom shell one ring at a time, then add its two roof squares. The individual ring releases remain unverified. New parts: P1 (Small square), P2 (Small square), P3 (Small square), P4 (Small square), P5 (Small square), P6 (Small square), P7 (Small square), P8 (Small square), P9 (Small square), P10 (Small square), P11 (Small square), P12 (Small square), P13 (Small square), P14 (Small square), P15 (Small square), P16 (Small square), P17 (Small square), P18 (Small square), P19 (Small square), P20 (Small square). Joins: P1 edge 4 to P3 edge 4; P3 edge 2 to P4 edge 4; P2 edge 4 to P4 edge 2; P1 edge 2 to P5 edge 4; P5 edge 2 to P6 edge 4; P2 edge 2 to P6 edge 2; P1 edge 3 to P7 edge 1; P2 edge 3 to P8 edge 1; P7 edge 4 to P9 edge 4; P3 edge 3 to P9 edge 1; P9 edge 2 to P10 edge 4; P8 edge 4 to P10 edge 2; P4 edge 3 to P10 edge 1; P7 edge 2 to P11 edge 4; P5 edge 3 to P11 edge 1; P11 edge 2 to P12 edge 4; P8 edge 2 to P12 edge 2; P6 edge 3 to P12 edge 1; P7 edge 3 to P13 edge 1; P8 edge 3 to P14 edge 1; P13 edge 4 to P15 edge 4; P9 edge 3 to P15 edge 1; P15 edge 2 to P16 edge 4; P14 edge 4 to P16 edge 2; P10 edge 3 to P16 edge 1; P13 edge 2 to P17 edge 4; P11 edge 3 to P17 edge 1; P17 edge 2 to P18 edge 4; P14 edge 2 to P18 edge 2; P12 edge 3 to P18 edge 1; P17 edge 3 to P19 edge 2; P15 edge 3 to P19 edge 4; P13 edge 3 to P19 edge 1; P19 edge 3 to P20 edge 1; P18 edge 3 to P20 edge 2; P16 edge 3 to P20 edge 4; P14 edge 3 to P20 edge 3. Source frame: large-tower-finished. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 2,
+        "title": "Build support 2",
+        "tileIds": [
+          "bay-1-side--1-0",
+          "bay-1-side-1-0",
+          "bay-1-end-0-0-0",
+          "bay-1-end-0-0-1",
+          "bay-1-end-1-0-0",
+          "bay-1-end-1-0-1",
+          "bay-1-side--1-1",
+          "bay-1-side-1-1",
+          "bay-1-end-0-1-0",
+          "bay-1-end-0-1-1",
+          "bay-1-end-1-1-0",
+          "bay-1-end-1-1-1",
+          "bay-1-roof-0",
+          "bay-1-roof-1"
+        ],
+        "tileCounts": {
+          "small-square": 14,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Build the two-square-wide open-bottom shell one ring at a time, then add its two roof squares. The individual ring releases remain unverified. New parts: P24 (Small square), P25 (Small square), P26 (Small square), P27 (Small square), P28 (Small square), P29 (Small square), P30 (Small square), P31 (Small square), P32 (Small square), P33 (Small square), P34 (Small square), P35 (Small square), P36 (Small square), P37 (Small square). Joins: P24 edge 4 to P26 edge 4; P26 edge 2 to P27 edge 4; P25 edge 4 to P27 edge 2; P24 edge 2 to P28 edge 4; P28 edge 2 to P29 edge 4; P25 edge 2 to P29 edge 2; P24 edge 3 to P30 edge 1; P25 edge 3 to P31 edge 1; P30 edge 4 to P32 edge 4; P26 edge 3 to P32 edge 1; P32 edge 2 to P33 edge 4; P31 edge 4 to P33 edge 2; P27 edge 3 to P33 edge 1; P30 edge 2 to P34 edge 4; P28 edge 3 to P34 edge 1; P34 edge 2 to P35 edge 4; P31 edge 2 to P35 edge 2; P29 edge 3 to P35 edge 1; P34 edge 3 to P36 edge 2; P32 edge 3 to P36 edge 4; P30 edge 3 to P36 edge 1; P36 edge 3 to P37 edge 1; P35 edge 3 to P37 edge 2; P33 edge 3 to P37 edge 4; P31 edge 3 to P37 edge 3. Source frame: large-box-finished. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 3,
+        "title": "Build support 3",
+        "tileIds": [
+          "bay-2-side--1-0",
+          "bay-2-side-1-0",
+          "bay-2-end-0-0-0",
+          "bay-2-end-0-0-1",
+          "bay-2-end-1-0-0",
+          "bay-2-end-1-0-1",
+          "bay-2-roof-0",
+          "bay-2-roof-1"
+        ],
+        "tileCounts": {
+          "small-square": 8,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Build the two-square-wide open-bottom shell one ring at a time, then add its two roof squares. The individual ring releases remain unverified. New parts: P41 (Small square), P42 (Small square), P43 (Small square), P44 (Small square), P45 (Small square), P46 (Small square), P47 (Small square), P48 (Small square). Joins: P41 edge 4 to P43 edge 4; P43 edge 2 to P44 edge 4; P42 edge 4 to P44 edge 2; P41 edge 2 to P45 edge 4; P45 edge 2 to P46 edge 4; P42 edge 2 to P46 edge 2; P45 edge 3 to P47 edge 2; P43 edge 3 to P47 edge 4; P41 edge 3 to P47 edge 1; P47 edge 3 to P48 edge 1; P46 edge 3 to P48 edge 2; P44 edge 3 to P48 edge 4; P42 edge 3 to P48 edge 3. Source frame: large-lowbox-finished. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 4,
+        "title": "Bridge the supports with the three XL squares",
+        "tileIds": [
+          "bay-0-side--1-0",
+          "bay-0-side-1-0",
+          "bay-0-end-0-0-0",
+          "bay-0-end-0-0-1",
+          "bay-0-end-1-0-0",
+          "bay-0-end-1-0-1",
+          "bay-0-side--1-1",
+          "bay-0-side-1-1",
+          "bay-0-end-0-1-0",
+          "bay-0-end-0-1-1",
+          "bay-0-end-1-1-0",
+          "bay-0-end-1-1-1",
+          "bay-0-side--1-2",
+          "bay-0-side-1-2",
+          "bay-0-end-0-2-0",
+          "bay-0-end-0-2-1",
+          "bay-0-end-1-2-0",
+          "bay-0-end-1-2-1",
+          "bay-0-roof-0",
+          "bay-0-roof-1",
+          "xl-deck-0",
+          "bay-1-side--1-0",
+          "bay-1-side-1-0",
+          "bay-1-end-0-0-0",
+          "bay-1-end-0-0-1",
+          "bay-1-end-1-0-0",
+          "bay-1-end-1-0-1",
+          "bay-1-side--1-1",
+          "bay-1-side-1-1",
+          "bay-1-end-0-1-0",
+          "bay-1-end-0-1-1",
+          "bay-1-end-1-1-0",
+          "bay-1-end-1-1-1",
+          "bay-1-roof-0",
+          "bay-1-roof-1",
+          "xl-deck-1",
+          "bay-2-side--1-0",
+          "bay-2-side-1-0",
+          "bay-2-end-0-0-0",
+          "bay-2-end-0-0-1",
+          "bay-2-end-1-0-0",
+          "bay-2-end-1-0-1",
+          "bay-2-roof-0",
+          "bay-2-roof-1",
+          "xl-deck-2"
+        ],
+        "tileCounts": {
+          "small-square": 0,
+          "large-square": 0,
+          "xl-square": 3,
+          "equilateral-triangle": 0,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Seat the large blue panels between the roof edges, preserving a three-inch fall at each span. Each XL is one part, not four small squares. New parts: P21 (XL square), P38 (XL square), P49 (XL square). Joins: P20 edge 2 to P21 edge 4; P19 edge 2 to P21 edge 4; P18 edge 3 to P21 edge 4; P17 edge 3 to P21 edge 4; P21 edge 2 to P32 edge 3; P21 edge 2 to P33 edge 3; P21 edge 2 to P36 edge 4; P21 edge 2 to P37 edge 4; P37 edge 2 to P38 edge 4; P36 edge 2 to P38 edge 4; P35 edge 3 to P38 edge 4; P34 edge 3 to P38 edge 4; P38 edge 2 to P43 edge 3; P38 edge 2 to P44 edge 3; P38 edge 2 to P47 edge 4; P38 edge 2 to P48 edge 4; P48 edge 2 to P49 edge 4; P47 edge 2 to P49 edge 4; P46 edge 3 to P49 edge 4; P45 edge 3 to P49 edge 4. Source frame: large-xl. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 5,
+        "title": "Add the six side markers",
+        "tileIds": [
+          "bay-0-side--1-0",
+          "bay-0-side-1-0",
+          "bay-0-end-0-0-0",
+          "bay-0-end-0-0-1",
+          "bay-0-end-1-0-0",
+          "bay-0-end-1-0-1",
+          "bay-0-side--1-1",
+          "bay-0-side-1-1",
+          "bay-0-end-0-1-0",
+          "bay-0-end-0-1-1",
+          "bay-0-end-1-1-0",
+          "bay-0-end-1-1-1",
+          "bay-0-side--1-2",
+          "bay-0-side-1-2",
+          "bay-0-end-0-2-0",
+          "bay-0-end-0-2-1",
+          "bay-0-end-1-2-0",
+          "bay-0-end-1-2-1",
+          "bay-0-roof-0",
+          "bay-0-roof-1",
+          "xl-deck-0",
+          "marker-0--1",
+          "marker-0-1",
+          "bay-1-side--1-0",
+          "bay-1-side-1-0",
+          "bay-1-end-0-0-0",
+          "bay-1-end-0-0-1",
+          "bay-1-end-1-0-0",
+          "bay-1-end-1-0-1",
+          "bay-1-side--1-1",
+          "bay-1-side-1-1",
+          "bay-1-end-0-1-0",
+          "bay-1-end-0-1-1",
+          "bay-1-end-1-1-0",
+          "bay-1-end-1-1-1",
+          "bay-1-roof-0",
+          "bay-1-roof-1",
+          "xl-deck-1",
+          "marker-1--1",
+          "marker-1-1",
+          "bay-2-side--1-0",
+          "bay-2-side-1-0",
+          "bay-2-end-0-0-0",
+          "bay-2-end-0-0-1",
+          "bay-2-end-1-0-0",
+          "bay-2-end-1-0-1",
+          "bay-2-roof-0",
+          "bay-2-roof-1",
+          "xl-deck-2",
+          "marker-2--1",
+          "marker-2-1"
+        ],
+        "tileCounts": {
+          "small-square": 0,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 6,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Add the two triangular markers on each support roof. New parts: P22 (Equilateral triangle), P23 (Equilateral triangle), P39 (Equilateral triangle), P40 (Equilateral triangle), P50 (Equilateral triangle), P51 (Equilateral triangle). Joins: P19 edge 1 to P22 edge 1; P13 edge 3 to P22 edge 1; P20 edge 3 to P23 edge 1; P14 edge 3 to P23 edge 1; P36 edge 1 to P39 edge 1; P30 edge 3 to P39 edge 1; P37 edge 3 to P40 edge 1; P31 edge 3 to P40 edge 1; P47 edge 1 to P50 edge 1; P41 edge 3 to P50 edge 1; P48 edge 3 to P51 edge 1; P42 edge 3 to P51 edge 1. Source frame: large-final. Release checkpoint: consult the measured result before following this candidate."
+      }
+    ],
+    "carTrials": []
+  }
+}

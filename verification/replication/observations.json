@@ -1,0 +1,514 @@
+{
+  "schema": 1,
+  "provenance": "Manual pixel annotations from the hashed source footage, 2026-09-26. Points target outer tile corners, not rivet centres. This initial sparse observation set is insufficient for full reconstruction signoff. Holdout points are excluded from geometry tuning; only separately labeled camera anchors fit their camera. Initial topology hypotheses predate these annotations, so this is not a blind recognition study.",
+  "observations": [
+    {
+      "id": "jet-side-388",
+      "replicaId": "jet",
+      "frameId": "jet-final-fit",
+      "stageId": "final",
+      "partition": "fit",
+      "width": 1280,
+      "height": 720,
+      "viewDirection": {
+        "x": -0.12,
+        "y": 0.32,
+        "z": 1
+      },
+      "landmarks": [
+        {
+          "id": "j-body-front-top",
+          "tileId": "body-1-side-1",
+          "vertex": 0,
+          "pixel": [393, 438],
+          "uncertaintyPx": 5,
+          "use": "camera"
+        },
+        {
+          "id": "j-body-bay1-top",
+          "tileId": "body-1-side-1",
+          "vertex": 1,
+          "pixel": [537, 447],
+          "uncertaintyPx": 6,
+          "use": "camera"
+        },
+        {
+          "id": "j-body-bay1-keel",
+          "tileId": "body-1-side-1",
+          "vertex": 2,
+          "pixel": [537, 549],
+          "uncertaintyPx": 5,
+          "use": "camera"
+        },
+        {
+          "id": "j-body-front-keel",
+          "tileId": "body-1-side-1",
+          "vertex": 3,
+          "pixel": [393, 549],
+          "uncertaintyPx": 5,
+          "use": "camera"
+        },
+        {
+          "id": "j-body-tail-near",
+          "tileId": "body-4-side-1",
+          "vertex": 1,
+          "pixel": [974, 443],
+          "uncertaintyPx": 10,
+          "use": "camera"
+        },
+        {
+          "id": "j-body-bay3-far",
+          "tileId": "body-3-top",
+          "vertex": 1,
+          "pixel": [810, 397],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "j-nose-tip",
+          "tileId": "nose-3",
+          "vertex": 2,
+          "pixel": [142, 473],
+          "uncertaintyPx": 6,
+          "use": "check"
+        },
+        {
+          "id": "j-tail-point",
+          "tileId": "tail-cone-1",
+          "vertex": 2,
+          "pixel": [1066, 484],
+          "uncertaintyPx": 8,
+          "use": "check"
+        },
+        {
+          "id": "j-cockpit-front-top",
+          "tileId": "cockpit-divider",
+          "vertex": 2,
+          "pixel": [561, 292],
+          "uncertaintyPx": 10,
+          "use": "check"
+        },
+        {
+          "id": "j-cockpit-rear-tip",
+          "tileId": "cockpit-rear-left",
+          "vertex": 2,
+          "pixel": [801, 402],
+          "uncertaintyPx": 8,
+          "use": "check"
+        }
+      ]
+    },
+    {
+      "id": "small-final-34",
+      "replicaId": "small-ramp",
+      "frameId": "small-check",
+      "stageId": "small-final",
+      "partition": "holdout",
+      "width": 1920,
+      "height": 1080,
+      "viewDirection": {
+        "x": -0.8,
+        "y": 0.8,
+        "z": 1.5
+      },
+      "landmarks": [
+        {
+          "id": "s-launch-front-near",
+          "tileId": "launch-roof",
+          "vertex": 3,
+          "pixel": [926, 500],
+          "uncertaintyPx": 9,
+          "use": "camera"
+        },
+        {
+          "id": "s-launch-back-near",
+          "tileId": "launch-roof",
+          "vertex": 2,
+          "pixel": [593, 463],
+          "uncertaintyPx": 9,
+          "use": "camera"
+        },
+        {
+          "id": "s-launch-back-far",
+          "tileId": "launch-roof",
+          "vertex": 1,
+          "pixel": [686, 291],
+          "uncertaintyPx": 9,
+          "use": "camera"
+        },
+        {
+          "id": "s-launch-front-far",
+          "tileId": "launch-roof",
+          "vertex": 0,
+          "pixel": [976, 326],
+          "uncertaintyPx": 9,
+          "use": "camera"
+        },
+        {
+          "id": "s-launch-bottom-near",
+          "tileId": "launch-back",
+          "vertex": 3,
+          "pixel": [609, 715],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "s-slope-low-far",
+          "tileId": "small-deck-1",
+          "vertex": 0,
+          "pixel": [1467, 639],
+          "uncertaintyPx": 9,
+          "use": "camera"
+        },
+        {
+          "id": "s-slope-low-near",
+          "tileId": "small-deck-1",
+          "vertex": 3,
+          "pixel": [1444, 825],
+          "uncertaintyPx": 9,
+          "use": "check"
+        },
+        {
+          "id": "s-slope-mid-near",
+          "tileId": "small-deck-1",
+          "vertex": 2,
+          "pixel": [1205, 653],
+          "uncertaintyPx": 9,
+          "use": "check"
+        },
+        {
+          "id": "s-slope-high-near",
+          "tileId": "small-deck-2",
+          "vertex": 2,
+          "pixel": [935, 491],
+          "uncertaintyPx": 9,
+          "use": "check"
+        },
+        {
+          "id": "s-slope-mid-far",
+          "tileId": "small-deck-1",
+          "vertex": 1,
+          "pixel": [1240, 489],
+          "uncertaintyPx": 9,
+          "use": "check"
+        }
+      ]
+    },
+    {
+      "id": "jet-quarter-397",
+      "replicaId": "jet",
+      "frameId": "jet-final-check-a",
+      "stageId": "final",
+      "partition": "holdout",
+      "width": 1280,
+      "height": 720,
+      "viewDirection": {
+        "x": -0.8,
+        "y": 0.5,
+        "z": 1
+      },
+      "landmarks": [
+        {
+          "id": "jet-quarter-397-camera-1",
+          "tileId": "wing-1-roof",
+          "vertex": 0,
+          "pixel": [674, 416],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "jet-quarter-397-camera-2",
+          "tileId": "wing-1-roof",
+          "vertex": 1,
+          "pixel": [764, 384],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "jet-quarter-397-camera-3",
+          "tileId": "wing-1-roof",
+          "vertex": 2,
+          "pixel": [881, 411],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "jet-quarter-397-camera-4",
+          "tileId": "wing-1-roof",
+          "vertex": 3,
+          "pixel": [804, 449],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "jet-quarter-397-camera-5",
+          "tileId": "wing-1-front",
+          "vertex": 1,
+          "pixel": [712, 531],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "jet-quarter-397-camera-6",
+          "tileId": "wing-1-front",
+          "vertex": 2,
+          "pixel": [840, 557],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "jet-quarter-397-check-1",
+          "tileId": "wing-1-tip",
+          "vertex": 2,
+          "pixel": [990, 443],
+          "uncertaintyPx": 12,
+          "use": "check"
+        },
+        {
+          "id": "jet-quarter-397-check-2",
+          "tileId": "nose-3",
+          "vertex": 2,
+          "pixel": [266, 610],
+          "uncertaintyPx": 12,
+          "use": "check"
+        },
+        {
+          "id": "jet-quarter-397-check-3",
+          "tileId": "cockpit-divider",
+          "vertex": 2,
+          "pixel": [552, 310],
+          "uncertaintyPx": 12,
+          "use": "check"
+        },
+        {
+          "id": "jet-quarter-397-check-4",
+          "tileId": "cockpit-front-left",
+          "vertex": 2,
+          "pixel": [452, 470],
+          "uncertaintyPx": 12,
+          "use": "check"
+        },
+        {
+          "id": "jet-quarter-397-check-5",
+          "tileId": "tail-vertical-1",
+          "vertex": 2,
+          "pixel": [890, 254],
+          "uncertaintyPx": 12,
+          "use": "check"
+        },
+        {
+          "id": "jet-quarter-397-check-6",
+          "tileId": "cockpit-rear-left",
+          "vertex": 2,
+          "pixel": [707, 371],
+          "uncertaintyPx": 12,
+          "use": "check"
+        }
+      ]
+    },
+    {
+      "id": "medium-stage-63",
+      "replicaId": "medium-ramp",
+      "frameId": "medium-fit",
+      "stageId": "medium-lower-walls",
+      "partition": "fit",
+      "width": 1920,
+      "height": 1080,
+      "viewDirection": {
+        "x": -0.8,
+        "y": 0.8,
+        "z": -1.5
+      },
+      "landmarks": [
+        {
+          "id": "medium-stage-63-camera-1",
+          "tileId": "upper-deck-2",
+          "vertex": 0,
+          "pixel": [773, 253],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "medium-stage-63-camera-2",
+          "tileId": "upper-deck-2",
+          "vertex": 1,
+          "pixel": [829, 93],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "medium-stage-63-camera-3",
+          "tileId": "upper-deck-2",
+          "vertex": 2,
+          "pixel": [1012, 125],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "medium-stage-63-camera-4",
+          "tileId": "upper-deck-2",
+          "vertex": 3,
+          "pixel": [942, 288],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "medium-stage-63-camera-5",
+          "tileId": "support-side-1-0",
+          "vertex": 0,
+          "pixel": [965, 505],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "medium-stage-63-camera-6",
+          "tileId": "support-side-1-1",
+          "vertex": 1,
+          "pixel": [1041, 420],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "medium-stage-63-check-1",
+          "tileId": "lower-deck-1",
+          "vertex": 0,
+          "pixel": [930, 900],
+          "uncertaintyPx": 12,
+          "use": "check"
+        },
+        {
+          "id": "medium-stage-63-check-2",
+          "tileId": "lower-deck-1",
+          "vertex": 3,
+          "pixel": [1101, 804],
+          "uncertaintyPx": 12,
+          "use": "check"
+        },
+        {
+          "id": "medium-stage-63-check-3",
+          "tileId": "lower-deck-2",
+          "vertex": 1,
+          "pixel": [713, 544],
+          "uncertaintyPx": 12,
+          "use": "check"
+        },
+        {
+          "id": "medium-stage-63-check-4",
+          "tileId": "lower-deck-2",
+          "vertex": 2,
+          "pixel": [884, 478],
+          "uncertaintyPx": 12,
+          "use": "check"
+        }
+      ]
+    },
+    {
+      "id": "medium-final-101",
+      "replicaId": "medium-ramp",
+      "frameId": "medium-check-a",
+      "stageId": "medium-final",
+      "partition": "holdout",
+      "width": 1920,
+      "height": 1080,
+      "viewDirection": {
+        "x": -0.8,
+        "y": 0.8,
+        "z": -1.5
+      },
+      "landmarks": [
+        {
+          "id": "medium-final-101-camera-1",
+          "tileId": "upper-cover-2",
+          "vertex": 0,
+          "pixel": [824, 235],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "medium-final-101-camera-2",
+          "tileId": "upper-cover-2",
+          "vertex": 1,
+          "pixel": [920, 78],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "medium-final-101-camera-3",
+          "tileId": "upper-cover-2",
+          "vertex": 2,
+          "pixel": [1080, 130],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "medium-final-101-camera-4",
+          "tileId": "upper-cover-2",
+          "vertex": 3,
+          "pixel": [982, 282],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "medium-final-101-camera-5",
+          "tileId": "support-side-1-0",
+          "vertex": 0,
+          "pixel": [1008, 662],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "medium-final-101-camera-6",
+          "tileId": "support-side-1-1",
+          "vertex": 1,
+          "pixel": [1110, 580],
+          "uncertaintyPx": 12,
+          "use": "camera"
+        },
+        {
+          "id": "medium-final-101-check-1",
+          "tileId": "lower-cover-1",
+          "vertex": 0,
+          "pixel": [812, 916],
+          "uncertaintyPx": 12,
+          "use": "check"
+        },
+        {
+          "id": "medium-final-101-check-2",
+          "tileId": "lower-cover-1",
+          "vertex": 3,
+          "pixel": [1031, 845],
+          "uncertaintyPx": 12,
+          "use": "check"
+        },
+        {
+          "id": "medium-final-101-check-3",
+          "tileId": "lower-cover-2",
+          "vertex": 1,
+          "pixel": [653, 524],
+          "uncertaintyPx": 12,
+          "use": "check"
+        },
+        {
+          "id": "medium-final-101-check-4",
+          "tileId": "lower-cover-2",
+          "vertex": 2,
+          "pixel": [874, 467],
+          "uncertaintyPx": 12,
+          "use": "check"
+        }
+      ]
+    }
+  ],
+  "annotationChanges": [
+    {
+      "date": "2026-09-26",
+      "detail": "Corrected a mirrored face/vertex transcription in the 388-second FIT view: visible side is +Z; far roof corner is vertex 1. Pixel measurements unchanged. Cockpit thickness and pitch revised using construction frames before opening the 397/416 held views. No geometry tuning uses their measured errors."
+    }
+  ],
+  "excludedFrames": [
+    {
+      "frameId": "jet-final-check-b",
+      "reason": "416-second frame fades to black, crops the tail and is held by the creator. Insufficient unambiguous noncoplanar anchors for a second independent full-shape view. Kept in source manifest, not scored."
+    }
+  ]
+}

@@ -23,3 +23,7 @@ yarn-error.log*
 pnpm-debug.log*
 
 *.tsbuildinfo
+
+# Source videos, extraction, and local comparison overlays
+.video-cache/
+.video-cache

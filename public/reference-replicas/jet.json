@@ -1,0 +1,5023 @@
+{
+  "replica": {
+    "id": "jet",
+    "sourceId": "jet",
+    "title": "Jet aircraft · 40-piece candidate",
+    "build": {
+      "id": "replica-jet",
+      "title": "Jet aircraft",
+      "prompt": "Jet aircraft",
+      "summary": "Source-constrained reconstruction candidate. Read the independent evidence before building.",
+      "seed": 0,
+      "family": "aircraft",
+      "inventoryPreset": "builder-xl",
+      "tiles": [
+        {
+          "id": "body-1-top",
+          "shape": "small-square",
+          "color": "#168db3",
+          "position": {
+            "x": 1.5,
+            "y": 2.688076211353316,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "body",
+          "subassemblyId": "body",
+          "root": true
+        },
+        {
+          "id": "body-1-side--1",
+          "shape": "small-square",
+          "color": "#168db3",
+          "position": {
+            "x": 1.5,
+            "y": 1.254038105676658,
+            "z": -0.8279422863405994
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": -0.8660254037844386,
+              "z": 0.5
+            },
+            "zAxis": {
+              "x": 0,
+              "y": -0.5,
+              "z": -0.8660254037844386
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "body",
+          "subassemblyId": "body",
+          "root": false,
+          "parentTileId": "body-1-top",
+          "parentEdge": 0,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "body-1-side-1",
+          "shape": "small-square",
+          "color": "#168db3",
+          "position": {
+            "x": 1.5,
+            "y": 1.254038105676658,
+            "z": 0.8279422863405994
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": -0.8660254037844386,
+              "z": -0.5
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0.5,
+              "z": -0.8660254037844386
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "body",
+          "subassemblyId": "body",
+          "root": false,
+          "parentTileId": "body-1-top",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "body-2-top",
+          "shape": "small-square",
+          "color": "#d93747",
+          "position": {
+            "x": 4.5,
+            "y": 2.688076211353316,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "body",
+          "subassemblyId": "body",
+          "root": false,
+          "parentTileId": "body-1-top",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "body-2-side--1",
+          "shape": "small-square",
+          "color": "#d93747",
+          "position": {
+            "x": 4.5,
+            "y": 1.254038105676658,
+            "z": -0.8279422863405994
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": -0.8660254037844386,
+              "z": 0.5
+            },
+            "zAxis": {
+              "x": 0,
+              "y": -0.5,
+              "z": -0.8660254037844386
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "body",
+          "subassemblyId": "body",
+          "root": false,
+          "parentTileId": "body-1-side--1",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "body-2-side-1",
+          "shape": "small-square",
+          "color": "#d93747",
+          "position": {
+            "x": 4.5,
+            "y": 1.254038105676658,
+            "z": 0.8279422863405994
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": -0.8660254037844386,
+              "z": -0.5
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0.5,
+              "z": -0.8660254037844386
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "body",
+          "subassemblyId": "body",
+          "root": false,
+          "parentTileId": "body-1-side-1",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "body-3-top",
+          "shape": "small-square",
+          "color": "#f3bc25",
+          "position": {
+            "x": 7.5,
+            "y": 2.688076211353316,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 3,
+          "role": "body",
+          "subassemblyId": "body",
+          "root": false,
+          "parentTileId": "body-2-top",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "body-3-side--1",
+          "shape": "small-square",
+          "color": "#f3bc25",
+          "position": {
+            "x": 7.5,
+            "y": 1.254038105676658,
+            "z": -0.8279422863405994
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": -0.8660254037844386,
+              "z": 0.5
+            },
+            "zAxis": {
+              "x": 0,
+              "y": -0.5,
+              "z": -0.8660254037844386
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 3,
+          "role": "body",
+          "subassemblyId": "body",
+          "root": false,
+          "parentTileId": "body-2-side--1",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "body-3-side-1",
+          "shape": "small-square",
+          "color": "#f3bc25",
+          "position": {
+            "x": 7.5,
+            "y": 1.254038105676658,
+            "z": 0.8279422863405994
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": -0.8660254037844386,
+              "z": -0.5
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0.5,
+              "z": -0.8660254037844386
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 3,
+          "role": "body",
+          "subassemblyId": "body",
+          "root": false,
+          "parentTileId": "body-2-side-1",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "body-4-top",
+          "shape": "small-square",
+          "color": "#eb802b",
+          "position": {
+            "x": 10.5,
+            "y": 2.688076211353316,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 4,
+          "role": "body",
+          "subassemblyId": "body",
+          "root": false,
+          "parentTileId": "body-3-top",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "body-4-side--1",
+          "shape": "small-square",
+          "color": "#eb802b",
+          "position": {
+            "x": 10.5,
+            "y": 1.254038105676658,
+            "z": -0.8279422863405994
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": -0.8660254037844386,
+              "z": 0.5
+            },
+            "zAxis": {
+              "x": 0,
+              "y": -0.5,
+              "z": -0.8660254037844386
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 4,
+          "role": "body",
+          "subassemblyId": "body",
+          "root": false,
+          "parentTileId": "body-3-side--1",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "body-4-side-1",
+          "shape": "small-square",
+          "color": "#eb802b",
+          "position": {
+            "x": 10.5,
+            "y": 1.254038105676658,
+            "z": 0.8279422863405994
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": -0.8660254037844386,
+              "z": -0.5
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0.5,
+              "z": -0.8660254037844386
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 4,
+          "role": "body",
+          "subassemblyId": "body",
+          "root": false,
+          "parentTileId": "body-3-side-1",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "nose-1",
+          "shape": "isosceles-triangle",
+          "color": "#168db3",
+          "position": {
+            "x": -2.6927964894307337,
+            "y": 2.2539099513622847,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": -0.9871826877909783,
+              "y": -0.15959430104417827,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0.15959430104417827,
+              "y": -0.9871826877909783,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 5,
+          "role": "nose",
+          "subassemblyId": "nose",
+          "root": false,
+          "parentTileId": "body-1-top",
+          "parentEdge": 3,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "nose-2",
+          "shape": "isosceles-triangle",
+          "color": "#168db3",
+          "position": {
+            "x": -2.6927964894307337,
+            "y": 1.471121235672174,
+            "z": 0.45194327572228704
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": -0.8660254037844386,
+              "z": -0.5
+            },
+            "yAxis": {
+              "x": -0.9871826877909783,
+              "y": 0.07979715052208915,
+              "z": -0.13821271900347976
+            },
+            "zAxis": {
+              "x": 0.15959430104417827,
+              "y": 0.49359134389548914,
+              "z": -0.8549252858031894
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 5,
+          "role": "nose",
+          "subassemblyId": "nose",
+          "root": false,
+          "parentTileId": "body-1-side-1",
+          "parentEdge": 3,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "nose-3",
+          "shape": "isosceles-triangle",
+          "color": "#168db3",
+          "position": {
+            "x": -2.6927964894307337,
+            "y": 1.471121235672174,
+            "z": -0.451943275722287
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0.8660254037844386,
+              "z": -0.5
+            },
+            "yAxis": {
+              "x": -0.9871826877909783,
+              "y": 0.07979715052208915,
+              "z": 0.13821271900347976
+            },
+            "zAxis": {
+              "x": 0.15959430104417827,
+              "y": 0.49359134389548914,
+              "z": 0.8549252858031894
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 5,
+          "role": "nose",
+          "subassemblyId": "nose",
+          "root": false,
+          "parentTileId": "body-1-side--1",
+          "parentEdge": 3,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "wing--1-roof",
+          "shape": "small-square",
+          "color": "#168db3",
+          "position": {
+            "x": 7.5,
+            "y": 2.688076211353316,
+            "z": -3.34
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": -1
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 6,
+          "role": "wing--1",
+          "subassemblyId": "wing--1",
+          "root": false,
+          "parentTileId": "body-3-top",
+          "parentEdge": 0,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "wing--1-front",
+          "shape": "small-square",
+          "color": "#6c42aa",
+          "position": {
+            "x": 5.91,
+            "y": 1.098076211353316,
+            "z": -3.34
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": -1
+            },
+            "zAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 6,
+          "role": "wing--1",
+          "subassemblyId": "wing--1",
+          "root": false,
+          "parentTileId": "wing--1-roof",
+          "parentEdge": 3,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "wing--1-cap-0",
+          "shape": "right-triangle",
+          "color": "#eb802b",
+          "position": {
+            "x": 7.5,
+            "y": 1.098076211353316,
+            "z": -1.75
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": -1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 6,
+          "role": "wing--1",
+          "subassemblyId": "wing--1",
+          "root": false,
+          "parentTileId": "body-3-top",
+          "parentEdge": 0,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "wing--1-cap-1",
+          "shape": "right-triangle",
+          "color": "#eb802b",
+          "position": {
+            "x": 7.5,
+            "y": 1.098076211353316,
+            "z": -4.93
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": -1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 6,
+          "role": "wing--1",
+          "subassemblyId": "wing--1",
+          "root": false,
+          "parentTileId": "wing--1-roof",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "wing--1-leading",
+          "shape": "equilateral-triangle",
+          "color": "#d93747",
+          "position": {
+            "x": 4.700961894323342,
+            "y": 2.778076211353316,
+            "z": -3.34
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": -1
+            },
+            "yAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 8,
+          "role": "leading wings",
+          "subassemblyId": "leading wings",
+          "root": false,
+          "parentTileId": "wing--1-roof",
+          "parentEdge": 3,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "wing--1-tip",
+          "shape": "right-triangle",
+          "color": "#168db3",
+          "position": {
+            "x": 7.5,
+            "y": 2.778076211353316,
+            "z": -6.34
+          },
+          "basis": {
+            "xAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": -1
+            },
+            "zAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 9,
+          "role": "outer wings",
+          "subassemblyId": "outer wings",
+          "root": false,
+          "parentTileId": "wing--1-roof",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "wing-1-roof",
+          "shape": "small-square",
+          "color": "#168db3",
+          "position": {
+            "x": 7.5,
+            "y": 2.688076211353316,
+            "z": 3.34
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 7,
+          "role": "wing-1",
+          "subassemblyId": "wing-1",
+          "root": false,
+          "parentTileId": "body-3-top",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "wing-1-front",
+          "shape": "small-square",
+          "color": "#6c42aa",
+          "position": {
+            "x": 5.91,
+            "y": 1.098076211353316,
+            "z": 3.34
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 7,
+          "role": "wing-1",
+          "subassemblyId": "wing-1",
+          "root": false,
+          "parentTileId": "wing-1-roof",
+          "parentEdge": 3,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "wing-1-cap-0",
+          "shape": "right-triangle",
+          "color": "#eb802b",
+          "position": {
+            "x": 7.5,
+            "y": 1.098076211353316,
+            "z": 1.75
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": -1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 7,
+          "role": "wing-1",
+          "subassemblyId": "wing-1",
+          "root": false,
+          "parentTileId": "body-3-top",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "wing-1-cap-1",
+          "shape": "right-triangle",
+          "color": "#eb802b",
+          "position": {
+            "x": 7.5,
+            "y": 1.098076211353316,
+            "z": 4.93
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": -1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 7,
+          "role": "wing-1",
+          "subassemblyId": "wing-1",
+          "root": false,
+          "parentTileId": "wing-1-roof",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "wing-1-leading",
+          "shape": "equilateral-triangle",
+          "color": "#d93747",
+          "position": {
+            "x": 4.700961894323342,
+            "y": 2.778076211353316,
+            "z": 3.34
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 8,
+          "role": "leading wings",
+          "subassemblyId": "leading wings",
+          "root": false,
+          "parentTileId": "wing-1-roof",
+          "parentEdge": 3,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "wing-1-tip",
+          "shape": "right-triangle",
+          "color": "#168db3",
+          "position": {
+            "x": 7.5,
+            "y": 2.778076211353316,
+            "z": 6.34
+          },
+          "basis": {
+            "xAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 9,
+          "role": "outer wings",
+          "subassemblyId": "outer wings",
+          "root": false,
+          "parentTileId": "wing-1-roof",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "tail-cone-1",
+          "shape": "equilateral-triangle",
+          "color": "#d93747",
+          "position": {
+            "x": 13.254744871391589,
+            "y": 2.2499163232034824,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0.9428090415820634,
+              "y": -0.3333333333333332,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0.3333333333333332,
+              "y": 0.9428090415820634,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 10,
+          "role": "tail cone",
+          "subassemblyId": "tail cone",
+          "root": false,
+          "parentTileId": "body-4-top",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "tail-cone-2",
+          "shape": "equilateral-triangle",
+          "color": "#d93747",
+          "position": {
+            "x": 13.254744871391589,
+            "y": 1.4731180497515748,
+            "z": 0.4484846922834953
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": -0.8660254037844386,
+              "z": -0.5
+            },
+            "yAxis": {
+              "x": 0.9428090415820634,
+              "y": 0.16666666666666666,
+              "z": -0.2886751345948128
+            },
+            "zAxis": {
+              "x": 0.33333333333333326,
+              "y": -0.4714045207910317,
+              "z": 0.8164965809277259
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 10,
+          "role": "tail cone",
+          "subassemblyId": "tail cone",
+          "root": false,
+          "parentTileId": "body-4-side-1",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "tail-cone-3",
+          "shape": "equilateral-triangle",
+          "color": "#d93747",
+          "position": {
+            "x": 13.254744871391589,
+            "y": 1.4731180497515748,
+            "z": -0.4484846922834954
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0.8660254037844386,
+              "z": -0.5
+            },
+            "yAxis": {
+              "x": 0.9428090415820634,
+              "y": 0.16666666666666666,
+              "z": 0.2886751345948128
+            },
+            "zAxis": {
+              "x": 0.33333333333333326,
+              "y": -0.4714045207910317,
+              "z": -0.8164965809277259
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 10,
+          "role": "tail cone",
+          "subassemblyId": "tail cone",
+          "root": false,
+          "parentTileId": "body-4-side--1",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "tail-horizontal--1",
+          "shape": "right-triangle",
+          "color": "#eb802b",
+          "position": {
+            "x": 10.5,
+            "y": 2.778076211353316,
+            "z": -3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": -1
+            },
+            "zAxis": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 11,
+          "role": "horizontal tail",
+          "subassemblyId": "horizontal tail",
+          "root": false,
+          "parentTileId": "body-4-top",
+          "parentEdge": 0,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "tail-vertical--1",
+          "shape": "equilateral-triangle",
+          "color": "#6c42aa",
+          "position": {
+            "x": 10.5,
+            "y": 4.2571143170299734,
+            "z": -1.59
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 12,
+          "role": "vertical tail",
+          "subassemblyId": "vertical tail",
+          "root": false,
+          "parentTileId": "body-4-top",
+          "parentEdge": 0,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "tail-horizontal-1",
+          "shape": "right-triangle",
+          "color": "#eb802b",
+          "position": {
+            "x": 10.5,
+            "y": 2.778076211353316,
+            "z": 3.09
+          },
+          "basis": {
+            "xAxis": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 11,
+          "role": "horizontal tail",
+          "subassemblyId": "horizontal tail",
+          "root": false,
+          "parentTileId": "body-4-top",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "tail-vertical-1",
+          "shape": "equilateral-triangle",
+          "color": "#6c42aa",
+          "position": {
+            "x": 10.5,
+            "y": 4.2571143170299734,
+            "z": 1.59
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 12,
+          "role": "vertical tail",
+          "subassemblyId": "vertical tail",
+          "root": false,
+          "parentTileId": "body-4-top",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "cockpit-rear-left",
+          "shape": "isosceles-triangle",
+          "color": "#6c42aa",
+          "position": {
+            "x": 5.872974038698583,
+            "y": 3.7898730757166255,
+            "z": -0.45194327572228704
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.18758914059471948,
+              "y": 0.8454645553368483,
+              "z": 0.5
+            },
+            "yAxis": {
+              "x": 0.9464605653590138,
+              "y": -0.2917355695248028,
+              "z": 0.13821271900347976
+            },
+            "zAxis": {
+              "x": 0.2627217397765752,
+              "y": 0.4473030775023847,
+              "z": -0.8549252858031894
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 13,
+          "role": "cockpit",
+          "subassemblyId": "cockpit",
+          "root": true
+        },
+        {
+          "id": "cockpit-rear-right",
+          "shape": "isosceles-triangle",
+          "color": "#6c42aa",
+          "position": {
+            "x": 5.872974038698583,
+            "y": 3.7898730757166255,
+            "z": 0.45194327572228704
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.18758914059471948,
+              "y": 0.8454645553368483,
+              "z": -0.5
+            },
+            "yAxis": {
+              "x": 0.9464605653590138,
+              "y": -0.2917355695248028,
+              "z": -0.13821271900347976
+            },
+            "zAxis": {
+              "x": -0.2627217397765752,
+              "y": -0.4473030775023847,
+              "z": -0.8549252858031894
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 13,
+          "role": "cockpit",
+          "subassemblyId": "cockpit",
+          "root": false,
+          "parentTileId": "cockpit-rear-left",
+          "parentEdge": 1,
+          "childEdge": 1,
+          "foldAngle": 0
+        },
+        {
+          "id": "cockpit-divider",
+          "shape": "equilateral-triangle",
+          "color": "#f3bc25",
+          "position": {
+            "x": 3.2813837108920794,
+            "y": 4.541155386129506,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 0.2166092816388237,
+              "y": 0.9762583772280332,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -0.9762583772280332,
+              "y": 0.2166092816388237,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 13,
+          "role": "cockpit",
+          "subassemblyId": "cockpit",
+          "root": false,
+          "parentTileId": "body-1-top",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "cockpit-front-left",
+          "shape": "right-triangle",
+          "color": "#32ad66",
+          "position": {
+            "x": 1.8612893058643656,
+            "y": 4.450334422247118,
+            "z": -0.06363961030678926
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.18758914059471948,
+              "y": 0.8454645553368483,
+              "z": 0.5
+            },
+            "yAxis": {
+              "x": -0.8596413406403123,
+              "y": -0.1049607805903057,
+              "z": 0.5
+            },
+            "zAxis": {
+              "x": 0.475212667963577,
+              "y": -0.5236152406175159,
+              "z": 0.7071067811865474
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 13,
+          "role": "cockpit",
+          "subassemblyId": "cockpit",
+          "root": false,
+          "parentTileId": "cockpit-rear-left",
+          "parentEdge": 0,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "cockpit-front-right",
+          "shape": "right-triangle",
+          "color": "#32ad66",
+          "position": {
+            "x": 1.8612893058643656,
+            "y": 4.450334422247118,
+            "z": 0.06363961030678926
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.18758914059471948,
+              "y": 0.8454645553368483,
+              "z": -0.5
+            },
+            "yAxis": {
+              "x": -0.8596413406403123,
+              "y": -0.1049607805903057,
+              "z": -0.5
+            },
+            "zAxis": {
+              "x": -0.475212667963577,
+              "y": 0.5236152406175159,
+              "z": 0.7071067811865474
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 13,
+          "role": "cockpit",
+          "subassemblyId": "cockpit",
+          "root": false,
+          "parentTileId": "cockpit-rear-right",
+          "parentEdge": 0,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "cockpit-floor",
+          "shape": "equilateral-triangle",
+          "color": "#d93747",
+          "position": {
+            "x": 1.6335825793760779,
+            "y": 3.04567566888973,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": -0.9926283188504306,
+              "y": -0.12119826985633259,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0.12119826985633259,
+              "y": -0.9926283188504306,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 13,
+          "role": "cockpit",
+          "subassemblyId": "cockpit",
+          "root": false,
+          "parentTileId": "body-1-top",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        }
+      ],
+      "connections": [
+        {
+          "fromTileId": "body-1-top",
+          "fromEdge": 0,
+          "toTileId": "body-1-side--1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-1-side--1",
+          "fromEdge": 2,
+          "toTileId": "body-1-side-1",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-1-top",
+          "fromEdge": 2,
+          "toTileId": "body-1-side-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-1-top",
+          "fromEdge": 1,
+          "toTileId": "body-2-top",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-2-top",
+          "fromEdge": 0,
+          "toTileId": "body-2-side--1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-1-side--1",
+          "fromEdge": 1,
+          "toTileId": "body-2-side--1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-2-side--1",
+          "fromEdge": 2,
+          "toTileId": "body-2-side-1",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-2-top",
+          "fromEdge": 2,
+          "toTileId": "body-2-side-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-1-side-1",
+          "fromEdge": 1,
+          "toTileId": "body-2-side-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-2-top",
+          "fromEdge": 1,
+          "toTileId": "body-3-top",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-3-top",
+          "fromEdge": 0,
+          "toTileId": "body-3-side--1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-2-side--1",
+          "fromEdge": 1,
+          "toTileId": "body-3-side--1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-3-side--1",
+          "fromEdge": 2,
+          "toTileId": "body-3-side-1",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-3-top",
+          "fromEdge": 2,
+          "toTileId": "body-3-side-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-2-side-1",
+          "fromEdge": 1,
+          "toTileId": "body-3-side-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-3-top",
+          "fromEdge": 1,
+          "toTileId": "body-4-top",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-4-top",
+          "fromEdge": 0,
+          "toTileId": "body-4-side--1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-3-side--1",
+          "fromEdge": 1,
+          "toTileId": "body-4-side--1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-4-side--1",
+          "fromEdge": 2,
+          "toTileId": "body-4-side-1",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-4-top",
+          "fromEdge": 2,
+          "toTileId": "body-4-side-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-3-side-1",
+          "fromEdge": 1,
+          "toTileId": "body-4-side-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-1-top",
+          "fromEdge": 3,
+          "toTileId": "nose-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "nose-1",
+          "fromEdge": 1,
+          "toTileId": "nose-2",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-1-side-1",
+          "fromEdge": 3,
+          "toTileId": "nose-2",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "nose-2",
+          "fromEdge": 1,
+          "toTileId": "nose-3",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "nose-1",
+          "fromEdge": 2,
+          "toTileId": "nose-3",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-1-side--1",
+          "fromEdge": 3,
+          "toTileId": "nose-3",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-3-side--1",
+          "fromEdge": 0,
+          "toTileId": "wing--1-roof",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-3-top",
+          "fromEdge": 0,
+          "toTileId": "wing--1-roof",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "wing--1-roof",
+          "fromEdge": 3,
+          "toTileId": "wing--1-front",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "wing--1-front",
+          "fromEdge": 0,
+          "toTileId": "wing--1-cap-0",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "wing--1-roof",
+          "fromEdge": 0,
+          "toTileId": "wing--1-cap-0",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-3-side--1",
+          "fromEdge": 0,
+          "toTileId": "wing--1-cap-0",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-3-top",
+          "fromEdge": 0,
+          "toTileId": "wing--1-cap-0",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "wing--1-front",
+          "fromEdge": 2,
+          "toTileId": "wing--1-cap-1",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "wing--1-roof",
+          "fromEdge": 2,
+          "toTileId": "wing--1-cap-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "wing--1-front",
+          "fromEdge": 3,
+          "toTileId": "wing--1-leading",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "wing--1-roof",
+          "fromEdge": 3,
+          "toTileId": "wing--1-leading",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "wing--1-cap-1",
+          "fromEdge": 0,
+          "toTileId": "wing--1-tip",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "wing--1-roof",
+          "fromEdge": 2,
+          "toTileId": "wing--1-tip",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-3-side-1",
+          "fromEdge": 0,
+          "toTileId": "wing-1-roof",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-3-top",
+          "fromEdge": 2,
+          "toTileId": "wing-1-roof",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "wing-1-roof",
+          "fromEdge": 3,
+          "toTileId": "wing-1-front",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "wing-1-front",
+          "fromEdge": 0,
+          "toTileId": "wing-1-cap-0",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "wing-1-roof",
+          "fromEdge": 0,
+          "toTileId": "wing-1-cap-0",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-3-side-1",
+          "fromEdge": 0,
+          "toTileId": "wing-1-cap-0",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-3-top",
+          "fromEdge": 2,
+          "toTileId": "wing-1-cap-0",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "wing-1-front",
+          "fromEdge": 2,
+          "toTileId": "wing-1-cap-1",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "wing-1-roof",
+          "fromEdge": 2,
+          "toTileId": "wing-1-cap-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "wing-1-front",
+          "fromEdge": 3,
+          "toTileId": "wing-1-leading",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "wing-1-roof",
+          "fromEdge": 3,
+          "toTileId": "wing-1-leading",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "wing-1-cap-1",
+          "fromEdge": 0,
+          "toTileId": "wing-1-tip",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "wing-1-roof",
+          "fromEdge": 2,
+          "toTileId": "wing-1-tip",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-4-top",
+          "fromEdge": 1,
+          "toTileId": "tail-cone-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "tail-cone-1",
+          "fromEdge": 1,
+          "toTileId": "tail-cone-2",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-4-side-1",
+          "fromEdge": 1,
+          "toTileId": "tail-cone-2",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "tail-cone-2",
+          "fromEdge": 1,
+          "toTileId": "tail-cone-3",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "tail-cone-1",
+          "fromEdge": 2,
+          "toTileId": "tail-cone-3",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-4-side--1",
+          "fromEdge": 1,
+          "toTileId": "tail-cone-3",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-4-side--1",
+          "fromEdge": 0,
+          "toTileId": "tail-horizontal--1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-4-top",
+          "fromEdge": 0,
+          "toTileId": "tail-horizontal--1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "tail-horizontal--1",
+          "fromEdge": 0,
+          "toTileId": "tail-vertical--1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-4-side--1",
+          "fromEdge": 0,
+          "toTileId": "tail-vertical--1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-4-top",
+          "fromEdge": 0,
+          "toTileId": "tail-vertical--1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-4-side-1",
+          "fromEdge": 0,
+          "toTileId": "tail-horizontal-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-4-top",
+          "fromEdge": 2,
+          "toTileId": "tail-horizontal-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "tail-horizontal-1",
+          "fromEdge": 0,
+          "toTileId": "tail-vertical-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-4-side-1",
+          "fromEdge": 0,
+          "toTileId": "tail-vertical-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-4-top",
+          "fromEdge": 2,
+          "toTileId": "tail-vertical-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "cockpit-rear-left",
+          "fromEdge": 1,
+          "toTileId": "cockpit-rear-right",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "cockpit-rear-right",
+          "fromEdge": 0,
+          "toTileId": "cockpit-divider",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "cockpit-rear-left",
+          "fromEdge": 0,
+          "toTileId": "cockpit-divider",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-2-top",
+          "fromEdge": 3,
+          "toTileId": "cockpit-divider",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-1-top",
+          "fromEdge": 1,
+          "toTileId": "cockpit-divider",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "cockpit-divider",
+          "fromEdge": 2,
+          "toTileId": "cockpit-front-left",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "cockpit-rear-left",
+          "fromEdge": 0,
+          "toTileId": "cockpit-front-left",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "cockpit-front-left",
+          "fromEdge": 1,
+          "toTileId": "cockpit-front-right",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "cockpit-divider",
+          "fromEdge": 1,
+          "toTileId": "cockpit-front-right",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "cockpit-rear-right",
+          "fromEdge": 0,
+          "toTileId": "cockpit-front-right",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "cockpit-front-right",
+          "fromEdge": 2,
+          "toTileId": "cockpit-floor",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "cockpit-front-left",
+          "fromEdge": 2,
+          "toTileId": "cockpit-floor",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "cockpit-divider",
+          "fromEdge": 0,
+          "toTileId": "cockpit-floor",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-2-top",
+          "fromEdge": 3,
+          "toTileId": "cockpit-floor",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "body-1-top",
+          "fromEdge": 1,
+          "toTileId": "cockpit-floor",
+          "toEdge": 0,
+          "kind": "edge"
+        }
+      ],
+      "bounds": {
+        "width": 19.895082721644645,
+        "height": 6.32502158644011,
+        "depth": 15.68
+      }
+    },
+    "inventory": {
+      "small-square": 16,
+      "large-square": 0,
+      "xl-square": 0,
+      "equilateral-triangle": 9,
+      "right-triangle": 10,
+      "isosceles-triangle": 5
+    },
+    "bomFrameId": "jet-bom",
+    "stages": [
+      {
+        "id": "body-upright-1",
+        "frameId": "jet-body-ring",
+        "title": "Build body bay 1 upright",
+        "instruction": "Join three square tiles into an open triangular ring. Stack the next ring on its three matching edges. The creator supports the upright assembly; its first clear hands-off checkpoint is the horizontal pose.",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1"
+        ],
+        "support": "held",
+        "transform": {
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": -1
+            }
+          },
+          "translation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      },
+      {
+        "id": "body-upright-2",
+        "frameId": "jet-body-second",
+        "title": "Build body bay 2 upright",
+        "instruction": "Join three square tiles into an open triangular ring. Stack the next ring on its three matching edges. The creator supports the upright assembly; its first clear hands-off checkpoint is the horizontal pose.",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1"
+        ],
+        "support": "held",
+        "transform": {
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": -1
+            }
+          },
+          "translation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      },
+      {
+        "id": "body-upright-3",
+        "frameId": "jet-body-third",
+        "title": "Build body bay 3 upright",
+        "instruction": "Join three square tiles into an open triangular ring. Stack the next ring on its three matching edges. The creator supports the upright assembly; its first clear hands-off checkpoint is the horizontal pose.",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1"
+        ],
+        "support": "held",
+        "transform": {
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": -1
+            }
+          },
+          "translation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      },
+      {
+        "id": "body-upright-4",
+        "frameId": "jet-body-upright",
+        "title": "Build body bay 4 upright",
+        "instruction": "Join three square tiles into an open triangular ring. Stack the next ring on its three matching edges. The creator supports the upright assembly; its first clear hands-off checkpoint is the horizontal pose.",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1"
+        ],
+        "support": "held",
+        "transform": {
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": -1
+            }
+          },
+          "translation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      },
+      {
+        "id": "body-horizontal",
+        "frameId": "jet-body-release",
+        "title": "Lay the body on its keel",
+        "instruction": "Turn the four connected triangular bays onto the long keel. Adjust as shown in the source and release for the balance check.",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "nose",
+        "frameId": "jet-nose",
+        "title": "Make and attach the three-triangle nose",
+        "instruction": "Join the three long blue isosceles triangles into a point. Attach all three short bases around the front triangular opening.",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1",
+          "nose-1",
+          "nose-2",
+          "nose-3"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "wing-module--1",
+        "frameId": "jet-wing-module",
+        "title": "Make a wing pod beside the body",
+        "instruction": "Join its two squares at a right angle and add the two right-triangle end caps. Keep the third long side open.",
+        "tileIds": [
+          "wing--1-roof",
+          "wing--1-front",
+          "wing--1-cap-0",
+          "wing--1-cap-1"
+        ],
+        "support": "held"
+      },
+      {
+        "id": "wing-root--1",
+        "frameId": "jet-wing-root-left",
+        "title": "Seat the wing pod against the body",
+        "instruction": "Hold the pod against the middle body bay, matching its top edge. The exact seating remains unresolved; this step is not certified buildable.",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1",
+          "nose-1",
+          "nose-2",
+          "nose-3",
+          "wing--1-roof",
+          "wing--1-front",
+          "wing--1-cap-0",
+          "wing--1-cap-1"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "wing-module-1",
+        "frameId": "jet-wing-module-right",
+        "title": "Make a wing pod beside the body",
+        "instruction": "Join its two squares at a right angle and add the two right-triangle end caps. Keep the third long side open.",
+        "tileIds": [
+          "wing-1-roof",
+          "wing-1-front",
+          "wing-1-cap-0",
+          "wing-1-cap-1"
+        ],
+        "support": "held"
+      },
+      {
+        "id": "wing-root-1",
+        "frameId": "jet-wing-root-right",
+        "title": "Seat the wing pod against the body",
+        "instruction": "Hold the pod against the middle body bay, matching its top edge. The exact seating remains unresolved; this step is not certified buildable.",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1",
+          "nose-1",
+          "nose-2",
+          "nose-3",
+          "wing--1-roof",
+          "wing--1-front",
+          "wing--1-cap-0",
+          "wing--1-cap-1",
+          "wing-1-roof",
+          "wing-1-front",
+          "wing-1-cap-0",
+          "wing-1-cap-1"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "wing-roots",
+        "frameId": "jet-wings",
+        "title": "Add the red leading panels",
+        "instruction": "Seat each red equilateral triangle along the front edge of its pod.",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1",
+          "nose-1",
+          "nose-2",
+          "nose-3",
+          "wing--1-roof",
+          "wing--1-front",
+          "wing--1-cap-0",
+          "wing--1-cap-1",
+          "wing--1-leading",
+          "wing-1-roof",
+          "wing-1-front",
+          "wing-1-cap-0",
+          "wing-1-cap-1",
+          "wing-1-leading"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "wingtips",
+        "frameId": "jet-wingtips",
+        "title": "Add the blue outer wingtips",
+        "instruction": "Join one right triangle to each outer roof edge, preserving the mirrored sweep.",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1",
+          "nose-1",
+          "nose-2",
+          "nose-3",
+          "wing--1-roof",
+          "wing--1-front",
+          "wing--1-cap-0",
+          "wing--1-cap-1",
+          "wing--1-leading",
+          "wing--1-tip",
+          "wing-1-roof",
+          "wing-1-front",
+          "wing-1-cap-0",
+          "wing-1-cap-1",
+          "wing-1-leading",
+          "wing-1-tip"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "tail-cone",
+        "frameId": "jet-tail-cone",
+        "title": "Close the tail point",
+        "instruction": "Join the three red equilateral triangles into a point and seat around the rear opening.",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1",
+          "nose-1",
+          "nose-2",
+          "nose-3",
+          "wing--1-roof",
+          "wing--1-front",
+          "wing--1-cap-0",
+          "wing--1-cap-1",
+          "wing--1-leading",
+          "wing--1-tip",
+          "wing-1-roof",
+          "wing-1-front",
+          "wing-1-cap-0",
+          "wing-1-cap-1",
+          "wing-1-leading",
+          "wing-1-tip",
+          "tail-cone-1",
+          "tail-cone-2",
+          "tail-cone-3"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "tail-horizontal",
+        "frameId": "jet-horizontal-tail",
+        "title": "Attach the horizontal tail first",
+        "instruction": "Join the two orange horizontal stabilizers to the rear bay. Keep their outer edges clear.",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1",
+          "nose-1",
+          "nose-2",
+          "nose-3",
+          "wing--1-roof",
+          "wing--1-front",
+          "wing--1-cap-0",
+          "wing--1-cap-1",
+          "wing--1-leading",
+          "wing--1-tip",
+          "wing-1-roof",
+          "wing-1-front",
+          "wing-1-cap-0",
+          "wing-1-cap-1",
+          "wing-1-leading",
+          "wing-1-tip",
+          "tail-cone-1",
+          "tail-cone-2",
+          "tail-cone-3",
+          "tail-horizontal--1",
+          "tail-horizontal-1"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "tail-fins",
+        "frameId": "jet-tail-order",
+        "title": "Put the upright fins on the tail",
+        "instruction": "Attach each purple equilateral fin above its horizontal stabilizer, following the source ordering.",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1",
+          "nose-1",
+          "nose-2",
+          "nose-3",
+          "wing--1-roof",
+          "wing--1-front",
+          "wing--1-cap-0",
+          "wing--1-cap-1",
+          "wing--1-leading",
+          "wing--1-tip",
+          "wing-1-roof",
+          "wing-1-front",
+          "wing-1-cap-0",
+          "wing-1-cap-1",
+          "wing-1-leading",
+          "wing-1-tip",
+          "tail-cone-1",
+          "tail-cone-2",
+          "tail-cone-3",
+          "tail-horizontal--1",
+          "tail-vertical--1",
+          "tail-horizontal-1",
+          "tail-vertical-1"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "final",
+        "frameId": "jet-final-fit",
+        "title": "Build and seat the cockpit module",
+        "instruction": "Join the two purple long triangles to the yellow divider; add the green right triangles and red front floor. Seat the six-piece module on the forward body. The hidden bottom joins require further reconstruction.",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1",
+          "nose-1",
+          "nose-2",
+          "nose-3",
+          "wing--1-roof",
+          "wing--1-front",
+          "wing--1-cap-0",
+          "wing--1-cap-1",
+          "wing--1-leading",
+          "wing--1-tip",
+          "wing-1-roof",
+          "wing-1-front",
+          "wing-1-cap-0",
+          "wing-1-cap-1",
+          "wing-1-leading",
+          "wing-1-tip",
+          "tail-cone-1",
+          "tail-cone-2",
+          "tail-cone-3",
+          "tail-horizontal--1",
+          "tail-vertical--1",
+          "tail-horizontal-1",
+          "tail-vertical-1",
+          "cockpit-rear-left",
+          "cockpit-rear-right",
+          "cockpit-divider",
+          "cockpit-front-left",
+          "cockpit-front-right",
+          "cockpit-floor"
+        ],
+        "support": "released"
+      }
+    ],
+    "materialQuestions": [
+      "Triangle side lengths and magnet layout use the existing catalog; source-specific calibration is pending."
+    ],
+    "uncertainties": [
+      {
+        "id": "wing-seat",
+        "tileIds": [
+          "wing--1-roof",
+          "wing--1-front",
+          "wing--1-cap-0",
+          "wing--1-cap-1",
+          "wing--1-leading",
+          "wing--1-tip",
+          "wing-1-roof",
+          "wing-1-front",
+          "wing-1-cap-0",
+          "wing-1-cap-1",
+          "wing-1-leading",
+          "wing-1-tip"
+        ],
+        "frameIds": [
+          "jet-wing-module",
+          "jet-wings",
+          "jet-final-fit"
+        ],
+        "detail": "Pod incidence, longitudinal bay and the red leading triangle contacts are candidate hypotheses; the footage does not expose every join."
+      },
+      {
+        "id": "cockpit-seat",
+        "tileIds": [
+          "cockpit-rear-left",
+          "cockpit-rear-right",
+          "cockpit-divider",
+          "cockpit-front-left",
+          "cockpit-front-right",
+          "cockpit-floor"
+        ],
+        "frameIds": [
+          "jet-cockpit-module",
+          "jet-final-fit"
+        ],
+        "detail": "Hidden cockpit floor/contact geometry and final inclination remain unresolved. The six rigid pieces are retained rather than collapsed to one fin."
+      }
+    ]
+  },
+  "report": {
+    "id": "jet",
+    "fingerprint": "19d51f281d12554d9c07334f2c23e0a2d7656cb349b125a9188e7955c7f15706",
+    "validationCodeHash": "25e42698100b72d400cebf386440c1c67af38784ef58f4f5e0c8651e745d1169",
+    "generatedAt": "2026-09-26T18:35:28.069Z",
+    "replication": "not-verified",
+    "checks": {
+      "source": {
+        "status": "pass",
+        "detail": "Verified original video SHA-256 7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7 and 20 extracted frame hashes. Manual annotations remain reviewable measurements."
+      },
+      "inventory": {
+        "status": "pass",
+        "detail": "40 parts match the independently transcribed source card. Colors and placements are separate checks."
+      },
+      "fidelity": {
+        "status": "fail",
+        "detail": "2 measured views, 1 withheld views, 33/40 parts lack independent scored landmarks. Need complete visible/occluded part constraints and at least two distinct withheld final views. Pod incidence, longitudinal bay and the red leading triangle contacts are candidate hypotheses; the footage does not expose every join. Hidden cockpit floor/contact geometry and final inclination remain unresolved. The six rigid pieces are retained rather than collapsed to one fin."
+      },
+      "materials": {
+        "status": "unverified",
+        "detail": "Triangle side lengths and magnet layout use the existing catalog; source-specific calibration is pending."
+      },
+      "geometry": {
+        "status": "pass",
+        "detail": "40 rigid catalog parts; 84 nominal edge connections; zero raw intersections. Magnet spacing and force are not physically calibrated."
+      },
+      "release": {
+        "status": "fail",
+        "detail": "seed 0: fail, peak 1.004 in, linear 27.819 in/s, angular 28.089 rad/s, 0/90 rest steps; seed 17: fail, peak 1.129 in, linear 32.056 in/s, angular 32.254 rad/s, 0/90 rest steps; seed 53: fail, peak 1.199 in, linear 28.862 in/s, angular 30.613 rad/s, 0/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
+      },
+      "settledShape": {
+        "status": "fail",
+        "detail": "6 settled point comparisons. Original camera held fixed. Sparse passing landmarks do not cover the full settled shape."
+      },
+      "assembly": {
+        "status": "fail",
+        "detail": "0/16 nominal checkpoints passed. Held modules, joining motions and hand access are separate unverified requirements."
+      },
+      "function": {
+        "status": "unverified",
+        "detail": "Not applicable to the static aircraft; no flight claim."
+      }
+    },
+    "projections": [
+      {
+        "id": "jet-side-388",
+        "frameId": "jet-final-fit",
+        "partition": "fit",
+        "status": "pass",
+        "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 4.93 px. Independent point agreement only; not complete shape fidelity.",
+        "camera": {
+          "position": {
+            "x": 0.5040457847226278,
+            "y": 18.593544119700848,
+            "z": 76.74312375403443
+          },
+          "target": {
+            "x": 4.5,
+            "y": 1.7095508075688772,
+            "z": 0.5649519052838328
+          },
+          "up": {
+            "x": 0.0007643806798835768,
+            "y": 0.9763158376568911,
+            "z": -0.2163487944558481
+          },
+          "focal": 3742.5571661404424,
+          "cx": 608.6948068068475,
+          "cy": 471.5091326261269
+        },
+        "cameraAnchors": 6,
+        "checkLandmarks": 4,
+        "rmsPx": 17.441338980065723,
+        "maxPx": 26.721970609007784,
+        "sourceDiagonalPx": 959.0750752678332,
+        "residuals": [
+          {
+            "id": "j-body-front-top",
+            "use": "camera",
+            "observed": [
+              393,
+              438
+            ],
+            "projected": [
+              392.38856724091227,
+              442.1970682408261
+            ],
+            "errorPx": 4.2413714570922645,
+            "uncertaintyPx": 5
+          },
+          {
+            "id": "j-body-bay1-top",
+            "use": "camera",
+            "observed": [
+              537,
+              447
+            ],
+            "projected": [
+              538.6661093875789,
+              442.1439394102753
+            ],
+            "errorPx": 5.133930749674728,
+            "uncertaintyPx": 6
+          },
+          {
+            "id": "j-body-bay1-keel",
+            "use": "camera",
+            "observed": [
+              537,
+              549
+            ],
+            "projected": [
+              535.6263339451335,
+              547.8140714715959
+            ],
+            "errorPx": 1.814768554051789,
+            "uncertaintyPx": 5
+          },
+          {
+            "id": "j-body-front-keel",
+            "use": "camera",
+            "observed": [
+              393,
+              549
+            ],
+            "projected": [
+              393.1022931429511,
+              548.0717151127483
+            ],
+            "errorPx": 0.9339040202262524,
+            "uncertaintyPx": 5
+          },
+          {
+            "id": "j-body-tail-near",
+            "use": "camera",
+            "observed": [
+              974,
+              443
+            ],
+            "projected": [
+              974.016414317116,
+              441.98581771748866
+            ],
+            "errorPx": 1.014315104869438,
+            "uncertaintyPx": 10
+          },
+          {
+            "id": "j-body-bay3-far",
+            "use": "camera",
+            "observed": [
+              810,
+              397
+            ],
+            "projected": [
+              814.1568865014823,
+              405.887421097212
+            ],
+            "errorPx": 9.811521754823477,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "j-nose-tip",
+            "use": "check",
+            "observed": [
+              142,
+              473
+            ],
+            "projected": [
+              135.6697596082788,
+              466.25199288207807
+            ],
+            "errorPx": 9.252434462372781,
+            "uncertaintyPx": 6
+          },
+          {
+            "id": "j-tail-point",
+            "use": "check",
+            "observed": [
+              1066,
+              484
+            ],
+            "projected": [
+              1078.5633274440497,
+              460.4155450187573
+            ],
+            "errorPx": 26.721970609007784,
+            "uncertaintyPx": 8
+          },
+          {
+            "id": "j-cockpit-front-top",
+            "use": "check",
+            "observed": [
+              561,
+              292
+            ],
+            "projected": [
+              564.3113489503814,
+              272.9767541369405
+            ],
+            "errorPx": 19.30929607825213,
+            "uncertaintyPx": 10
+          },
+          {
+            "id": "j-cockpit-rear-tip",
+            "use": "check",
+            "observed": [
+              801,
+              402
+            ],
+            "projected": [
+              795.0141518357932,
+              404.90700390067155
+            ],
+            "errorPx": 6.654400793719713,
+            "uncertaintyPx": 8
+          }
+        ]
+      },
+      {
+        "id": "jet-quarter-397",
+        "frameId": "jet-final-check-a",
+        "partition": "holdout",
+        "status": "fail",
+        "detail": "6 camera anchors / 7 camera parameters; 6 scored landmarks; anchor RMS 16.79 px. Independent point agreement only; not complete shape fidelity.",
+        "camera": {
+          "position": {
+            "x": 0.10930456772481012,
+            "y": 6.1331955936499885,
+            "z": 8.174089983686812
+          },
+          "target": {
+            "x": 6.969999999999999,
+            "y": 1.6580762113533158,
+            "z": 3.34
+          },
+          "up": {
+            "x": 0.45131395025554993,
+            "y": 0.875948302209513,
+            "z": -0.17038277542346505
+          },
+          "focal": 407.5260339097957,
+          "cx": 777.1450961076156,
+          "cy": 456.2874609700916
+        },
+        "cameraAnchors": 6,
+        "checkLandmarks": 6,
+        "rmsPx": 551.2796799618741,
+        "maxPx": 1333.3934000027843,
+        "sourceDiagonalPx": 806.791174964129,
+        "residuals": [
+          {
+            "id": "jet-quarter-397-camera-1",
+            "use": "camera",
+            "observed": [
+              674,
+              416
+            ],
+            "projected": [
+              692.6048747554865,
+              424.0046368550266
+            ],
+            "errorPx": 20.25377929790366,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "jet-quarter-397-camera-2",
+            "use": "camera",
+            "observed": [
+              764,
+              384
+            ],
+            "projected": [
+              765.9382648042151,
+              381.1809951155093
+            ],
+            "errorPx": 3.421061091246628,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "jet-quarter-397-camera-3",
+            "use": "camera",
+            "observed": [
+              881,
+              411
+            ],
+            "projected": [
+              870.2700395991321,
+              390.8214737485431
+            ],
+            "errorPx": 22.853992471446382,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "jet-quarter-397-camera-4",
+            "use": "camera",
+            "observed": [
+              804,
+              449
+            ],
+            "projected": [
+              812.0010257028352,
+              445.03460744487285
+            ],
+            "errorPx": 8.929767657318312,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "jet-quarter-397-camera-5",
+            "use": "camera",
+            "observed": [
+              712,
+              531
+            ],
+            "projected": [
+              714.7685036560483,
+              535.1330095345721
+            ],
+            "errorPx": 4.9745733793378735,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "jet-quarter-397-camera-6",
+            "use": "camera",
+            "observed": [
+              840,
+              557
+            ],
+            "projected": [
+              819.4172915085556,
+              571.8252773093429
+            ],
+            "errorPx": 25.366054800514288,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "jet-quarter-397-check-1",
+            "use": "check",
+            "observed": [
+              990,
+              443
+            ],
+            "projected": [
+              1014.1308463125529,
+              399.83793934004945
+            ],
+            "errorPx": 49.44958264913161,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "jet-quarter-397-check-2",
+            "use": "check",
+            "observed": [
+              266,
+              610
+            ],
+            "projected": [
+              -860.5249245355197,
+              1323.3579421098684
+            ],
+            "errorPx": 1333.3934000027843,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "jet-quarter-397-check-3",
+            "use": "check",
+            "observed": [
+              552,
+              310
+            ],
+            "projected": [
+              474.30455715682444,
+              296.36505062487686
+            ],
+            "errorPx": 78.88278445300553,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "jet-quarter-397-check-4",
+            "use": "check",
+            "observed": [
+              452,
+              470
+            ],
+            "projected": [
+              316.88133877940294,
+              543.5429536386595
+            ],
+            "errorPx": 153.8363371897046,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "jet-quarter-397-check-5",
+            "use": "check",
+            "observed": [
+              890,
+              254
+            ],
+            "projected": [
+              775.7570995785702,
+              261.71539872240317
+            ],
+            "errorPx": 114.50313390534943,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "jet-quarter-397-check-6",
+            "use": "check",
+            "observed": [
+              707,
+              371
+            ],
+            "projected": [
+              698.4729782242762,
+              371.8382962038203
+            ],
+            "errorPx": 8.56812936929688,
+            "uncertaintyPx": 12
+          }
+        ]
+      }
+    ],
+    "releases": [
+      {
+        "seed": 0,
+        "status": "fail",
+        "peakDisplacement": 1.003751425805195,
+        "finalDisplacement": 1.003751425805195,
+        "finalSpeed": 28.08871286763535,
+        "linearSpeed": 27.81916884459083,
+        "angularSpeed": 28.088712867635344,
+        "settledSteps": 0,
+        "poppedJoints": [],
+        "settledProjections": [
+          {
+            "id": "jet-side-388",
+            "frameId": "jet-final-fit",
+            "partition": "fit",
+            "status": "fail",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 11.94 px. Independent point agreement only; not complete shape fidelity.",
+            "camera": {
+              "position": {
+                "x": 0.5040457847226278,
+                "y": 18.593544119700848,
+                "z": 76.74312375403443
+              },
+              "target": {
+                "x": 4.5,
+                "y": 1.7095508075688772,
+                "z": 0.5649519052838328
+              },
+              "up": {
+                "x": 0.0007643806798835768,
+                "y": 0.9763158376568911,
+                "z": -0.2163487944558481
+              },
+              "focal": 3742.5571661404424,
+              "cx": 608.6948068068475,
+              "cy": 471.5091326261269
+            },
+            "cameraAnchors": 6,
+            "checkLandmarks": 4,
+            "rmsPx": 25.468383063104525,
+            "maxPx": 41.757284190394586,
+            "sourceDiagonalPx": 959.0750752678332,
+            "residuals": [
+              {
+                "id": "j-body-front-top",
+                "use": "camera",
+                "observed": [
+                  393,
+                  438
+                ],
+                "projected": [
+                  387.3780302078719,
+                  457.7484479857197
+                ],
+                "errorPx": 20.53308895875816,
+                "uncertaintyPx": 5
+              },
+              {
+                "id": "j-body-bay1-top",
+                "use": "camera",
+                "observed": [
+                  537,
+                  447
+                ],
+                "projected": [
+                  533.4692987135574,
+                  450.70808309467327
+                ],
+                "errorPx": 5.120130058024843,
+                "uncertaintyPx": 6
+              },
+              {
+                "id": "j-body-bay1-keel",
+                "use": "camera",
+                "observed": [
+                  537,
+                  549
+                ],
+                "projected": [
+                  536.1727754993788,
+                  555.2096978759547
+                ],
+                "errorPx": 6.2645548991979005,
+                "uncertaintyPx": 5
+              },
+              {
+                "id": "j-body-front-keel",
+                "use": "camera",
+                "observed": [
+                  393,
+                  549
+                ],
+                "projected": [
+                  393.881523769473,
+                  562.2425010248418
+                ],
+                "errorPx": 13.27180912871645,
+                "uncertaintyPx": 5
+              },
+              {
+                "id": "j-body-tail-near",
+                "use": "camera",
+                "observed": [
+                  974,
+                  443
+                ],
+                "projected": [
+                  968.9240327505846,
+                  430.33590894497064
+                ],
+                "errorPx": 13.643483637517663,
+                "uncertaintyPx": 10
+              },
+              {
+                "id": "j-body-bay3-far",
+                "use": "camera",
+                "observed": [
+                  810,
+                  397
+                ],
+                "projected": [
+                  808.8457345480444,
+                  399.2001884293754
+                ],
+                "errorPx": 2.4845840413106233,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "j-nose-tip",
+                "use": "check",
+                "observed": [
+                  142,
+                  473
+                ],
+                "projected": [
+                  132.94066875721052,
+                  493.3877762168693
+                ],
+                "errorPx": 22.30992831982488,
+                "uncertaintyPx": 6
+              },
+              {
+                "id": "j-tail-point",
+                "use": "check",
+                "observed": [
+                  1066,
+                  484
+                ],
+                "projected": [
+                  1075.1634590439755,
+                  443.26056208896887
+                ],
+                "errorPx": 41.757284190394586,
+                "uncertaintyPx": 8
+              },
+              {
+                "id": "j-cockpit-front-top",
+                "use": "check",
+                "observed": [
+                  561,
+                  292
+                ],
+                "projected": [
+                  555.3531131473735,
+                  280.45705586008285
+                ],
+                "errorPx": 12.85017083713729,
+                "uncertaintyPx": 10
+              },
+              {
+                "id": "j-cockpit-rear-tip",
+                "use": "check",
+                "observed": [
+                  801,
+                  402
+                ],
+                "projected": [
+                  788.5490123950706,
+                  407.7442559066685
+                ],
+                "errorPx": 13.71216861985741,
+                "uncertaintyPx": 8
+              }
+            ]
+          },
+          {
+            "id": "jet-quarter-397",
+            "frameId": "jet-final-check-a",
+            "partition": "holdout",
+            "status": "fail",
+            "detail": "6 camera anchors / 7 camera parameters; 6 scored landmarks; anchor RMS 17.14 px. Independent point agreement only; not complete shape fidelity.",
+            "camera": {
+              "position": {
+                "x": 0.10930456772481012,
+                "y": 6.1331955936499885,
+                "z": 8.174089983686812
+              },
+              "target": {
+                "x": 6.969999999999999,
+                "y": 1.6580762113533158,
+                "z": 3.34
+              },
+              "up": {
+                "x": 0.45131395025554993,
+                "y": 0.875948302209513,
+                "z": -0.17038277542346505
+              },
+              "focal": 407.5260339097957,
+              "cx": 777.1450961076156,
+              "cy": 456.2874609700916
+            },
+            "cameraAnchors": 6,
+            "checkLandmarks": 6,
+            "rmsPx": 508.95497502148385,
+            "maxPx": 1228.7980080633915,
+            "sourceDiagonalPx": 806.791174964129,
+            "residuals": [
+              {
+                "id": "jet-quarter-397-camera-1",
+                "use": "camera",
+                "observed": [
+                  674,
+                  416
+                ],
+                "projected": [
+                  689.6413227014605,
+                  427.0142363040445
+                ],
+                "errorPx": 19.13019543058969,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-camera-2",
+                "use": "camera",
+                "observed": [
+                  764,
+                  384
+                ],
+                "projected": [
+                  763.0234417142432,
+                  378.52590011004224
+                ],
+                "errorPx": 5.560524767566081,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-camera-3",
+                "use": "camera",
+                "observed": [
+                  881,
+                  411
+                ],
+                "projected": [
+                  868.4222910765111,
+                  386.81808407192506
+                ],
+                "errorPx": 27.257362669864026,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-camera-4",
+                "use": "camera",
+                "observed": [
+                  804,
+                  449
+                ],
+                "projected": [
+                  809.6269592631719,
+                  447.53027960637166
+                ],
+                "errorPx": 5.815732850195499,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-camera-5",
+                "use": "camera",
+                "observed": [
+                  712,
+                  531
+                ],
+                "projected": [
+                  716.4927888818937,
+                  535.3680594648447
+                ],
+                "errorPx": 6.2661866733833484,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-camera-6",
+                "use": "camera",
+                "observed": [
+                  840,
+                  557
+                ],
+                "projected": [
+                  821.2299166275498,
+                  571.0745720101843
+                ],
+                "errorPx": 23.460810026054002,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-check-1",
+                "use": "check",
+                "observed": [
+                  990,
+                  443
+                ],
+                "projected": [
+                  1012.6611857516853,
+                  403.7261513351942
+                ],
+                "errorPx": 45.342745049439316,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-check-2",
+                "use": "check",
+                "observed": [
+                  266,
+                  610
+                ],
+                "projected": [
+                  -721.0869894279441,
+                  1341.8495883189635
+                ],
+                "errorPx": 1228.7980080633915,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-check-3",
+                "use": "check",
+                "observed": [
+                  552,
+                  310
+                ],
+                "projected": [
+                  467.4841165053261,
+                  307.9812540161744
+                ],
+                "errorPx": 84.53998993513369,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-check-4",
+                "use": "check",
+                "observed": [
+                  452,
+                  470
+                ],
+                "projected": [
+                  314.62107503361614,
+                  561.6060140265065
+                ],
+                "errorPx": 165.12004975394066,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-check-5",
+                "use": "check",
+                "observed": [
+                  890,
+                  254
+                ],
+                "projected": [
+                  802.7766810764269,
+                  260.5841826218931
+                ],
+                "errorPx": 87.47147434930874,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-check-6",
+                "use": "check",
+                "observed": [
+                  707,
+                  371
+                ],
+                "projected": [
+                  695.6617146273093,
+                  375.3628174987523
+                ],
+                "errorPx": 12.148699178101,
+                "uncertaintyPx": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "seed": 17,
+        "status": "fail",
+        "peakDisplacement": 1.1290841571252979,
+        "finalDisplacement": 1.1290841571252979,
+        "finalSpeed": 32.25416934404125,
+        "linearSpeed": 32.05612618522565,
+        "angularSpeed": 32.25416934404125,
+        "settledSteps": 0,
+        "poppedJoints": [],
+        "settledProjections": [
+          {
+            "id": "jet-side-388",
+            "frameId": "jet-final-fit",
+            "partition": "fit",
+            "status": "fail",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 11.83 px. Independent point agreement only; not complete shape fidelity.",
+            "camera": {
+              "position": {
+                "x": 0.5040457847226278,
+                "y": 18.593544119700848,
+                "z": 76.74312375403443
+              },
+              "target": {
+                "x": 4.5,
+                "y": 1.7095508075688772,
+                "z": 0.5649519052838328
+              },
+              "up": {
+                "x": 0.0007643806798835768,
+                "y": 0.9763158376568911,
+                "z": -0.2163487944558481
+              },
+              "focal": 3742.5571661404424,
+              "cx": 608.6948068068475,
+              "cy": 471.5091326261269
+            },
+            "cameraAnchors": 6,
+            "checkLandmarks": 4,
+            "rmsPx": 25.324624251301337,
+            "maxPx": 41.96089835620564,
+            "sourceDiagonalPx": 959.0750752678332,
+            "residuals": [
+              {
+                "id": "j-body-front-top",
+                "use": "camera",
+                "observed": [
+                  393,
+                  438
+                ],
+                "projected": [
+                  387.0068430807987,
+                  457.0688416473801
+                ],
+                "errorPx": 19.988462963195257,
+                "uncertaintyPx": 5
+              },
+              {
+                "id": "j-body-bay1-top",
+                "use": "camera",
+                "observed": [
+                  537,
+                  447
+                ],
+                "projected": [
+                  533.0661414636294,
+                  450.404595284352
+                ],
+                "errorPx": 5.202548609518989,
+                "uncertaintyPx": 6
+              },
+              {
+                "id": "j-body-bay1-keel",
+                "use": "camera",
+                "observed": [
+                  537,
+                  549
+                ],
+                "projected": [
+                  535.736438812781,
+                  555.2387123444835
+                ],
+                "errorPx": 6.365384402458095,
+                "uncertaintyPx": 5
+              },
+              {
+                "id": "j-body-front-keel",
+                "use": "camera",
+                "observed": [
+                  393,
+                  549
+                ],
+                "projected": [
+                  393.4603833976213,
+                  561.8981994695116
+                ],
+                "errorPx": 12.90641322862843,
+                "uncertaintyPx": 5
+              },
+              {
+                "id": "j-body-tail-near",
+                "use": "camera",
+                "observed": [
+                  974,
+                  443
+                ],
+                "projected": [
+                  968.6635964214893,
+                  430.0470481396911
+                ],
+                "errorPx": 14.009145764400524,
+                "uncertaintyPx": 10
+              },
+              {
+                "id": "j-body-bay3-far",
+                "use": "camera",
+                "observed": [
+                  810,
+                  397
+                ],
+                "projected": [
+                  808.4775917982067,
+                  399.7338019933156
+                ],
+                "errorPx": 3.1291212938369224,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "j-nose-tip",
+                "use": "check",
+                "observed": [
+                  142,
+                  473
+                ],
+                "projected": [
+                  132.89427918666735,
+                  492.1881832157441
+                ],
+                "errorPx": 21.239127257289173,
+                "uncertaintyPx": 6
+              },
+              {
+                "id": "j-tail-point",
+                "use": "check",
+                "observed": [
+                  1066,
+                  484
+                ],
+                "projected": [
+                  1074.822380336226,
+                  442.97704793578606
+                ],
+                "errorPx": 41.96089835620564,
+                "uncertaintyPx": 8
+              },
+              {
+                "id": "j-cockpit-front-top",
+                "use": "check",
+                "observed": [
+                  561,
+                  292
+                ],
+                "projected": [
+                  555.4488089653379,
+                  280.6396436051285
+                ],
+                "errorPx": 12.644106110034437,
+                "uncertaintyPx": 10
+              },
+              {
+                "id": "j-cockpit-rear-tip",
+                "use": "check",
+                "observed": [
+                  801,
+                  402
+                ],
+                "projected": [
+                  788.5366083352241,
+                  408.19025890054996
+                ],
+                "errorPx": 13.916013690904604,
+                "uncertaintyPx": 8
+              }
+            ]
+          },
+          {
+            "id": "jet-quarter-397",
+            "frameId": "jet-final-check-a",
+            "partition": "holdout",
+            "status": "fail",
+            "detail": "6 camera anchors / 7 camera parameters; 6 scored landmarks; anchor RMS 17.18 px. Independent point agreement only; not complete shape fidelity.",
+            "camera": {
+              "position": {
+                "x": 0.10930456772481012,
+                "y": 6.1331955936499885,
+                "z": 8.174089983686812
+              },
+              "target": {
+                "x": 6.969999999999999,
+                "y": 1.6580762113533158,
+                "z": 3.34
+              },
+              "up": {
+                "x": 0.45131395025554993,
+                "y": 0.875948302209513,
+                "z": -0.17038277542346505
+              },
+              "focal": 407.5260339097957,
+              "cx": 777.1450961076156,
+              "cy": 456.2874609700916
+            },
+            "cameraAnchors": 6,
+            "checkLandmarks": 6,
+            "rmsPx": 506.8094569362153,
+            "maxPx": 1223.6848308345984,
+            "sourceDiagonalPx": 806.791174964129,
+            "residuals": [
+              {
+                "id": "jet-quarter-397-camera-1",
+                "use": "camera",
+                "observed": [
+                  674,
+                  416
+                ],
+                "projected": [
+                  688.9348740475563,
+                  427.0872406542903
+                ],
+                "errorPx": 18.600466879691968,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-camera-2",
+                "use": "camera",
+                "observed": [
+                  764,
+                  384
+                ],
+                "projected": [
+                  762.5444241811051,
+                  378.4884425615428
+                ],
+                "errorPx": 5.700523341059525,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-camera-3",
+                "use": "camera",
+                "observed": [
+                  881,
+                  411
+                ],
+                "projected": [
+                  867.8624240372193,
+                  386.8055829702812
+                ],
+                "errorPx": 27.531177192154008,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-camera-4",
+                "use": "camera",
+                "observed": [
+                  804,
+                  449
+                ],
+                "projected": [
+                  808.7075268867125,
+                  447.6781427259743
+                ],
+                "errorPx": 4.88959262536414,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-camera-5",
+                "use": "camera",
+                "observed": [
+                  712,
+                  531
+                ],
+                "projected": [
+                  715.9964154108847,
+                  535.4806633764094
+                ],
+                "errorPx": 6.003972054319804,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-camera-6",
+                "use": "camera",
+                "observed": [
+                  840,
+                  557
+                ],
+                "projected": [
+                  820.6355504024436,
+                  571.1554637520692
+                ],
+                "errorPx": 23.98664341362595,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-check-1",
+                "use": "check",
+                "observed": [
+                  990,
+                  443
+                ],
+                "projected": [
+                  1012.3223226165951,
+                  402.79348040730105
+                ],
+                "errorPx": 45.987501614650014,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-check-2",
+                "use": "check",
+                "observed": [
+                  266,
+                  610
+                ],
+                "projected": [
+                  -720.2974737577039,
+                  1334.307847861578
+                ],
+                "errorPx": 1223.6848308345984,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-check-3",
+                "use": "check",
+                "observed": [
+                  552,
+                  310
+                ],
+                "projected": [
+                  467.1987839523263,
+                  308.48555039381927
+                ],
+                "errorPx": 84.8147381106249,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-check-4",
+                "use": "check",
+                "observed": [
+                  452,
+                  470
+                ],
+                "projected": [
+                  314.1568645783494,
+                  561.2479070417609
+                ],
+                "errorPx": 165.30853130547536,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-check-5",
+                "use": "check",
+                "observed": [
+                  890,
+                  254
+                ],
+                "projected": [
+                  807.1114643335288,
+                  262.54561501108606
+                ],
+                "errorPx": 83.32788777383934,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-check-6",
+                "use": "check",
+                "observed": [
+                  707,
+                  371
+                ],
+                "projected": [
+                  695.6238412580019,
+                  375.70469220160237
+                ],
+                "errorPx": 12.310609913199178,
+                "uncertaintyPx": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "seed": 53,
+        "status": "fail",
+        "peakDisplacement": 1.198996727898081,
+        "finalDisplacement": 1.198996727898081,
+        "finalSpeed": 30.612701320738285,
+        "linearSpeed": 28.862063190016116,
+        "angularSpeed": 30.61270132073829,
+        "settledSteps": 0,
+        "poppedJoints": [],
+        "settledProjections": [
+          {
+            "id": "jet-side-388",
+            "frameId": "jet-final-fit",
+            "partition": "fit",
+            "status": "fail",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 11.36 px. Independent point agreement only; not complete shape fidelity.",
+            "camera": {
+              "position": {
+                "x": 0.5040457847226278,
+                "y": 18.593544119700848,
+                "z": 76.74312375403443
+              },
+              "target": {
+                "x": 4.5,
+                "y": 1.7095508075688772,
+                "z": 0.5649519052838328
+              },
+              "up": {
+                "x": 0.0007643806798835768,
+                "y": 0.9763158376568911,
+                "z": -0.2163487944558481
+              },
+              "focal": 3742.5571661404424,
+              "cx": 608.6948068068475,
+              "cy": 471.5091326261269
+            },
+            "cameraAnchors": 6,
+            "checkLandmarks": 4,
+            "rmsPx": 24.45167634854912,
+            "maxPx": 40.0490740583657,
+            "sourceDiagonalPx": 959.0750752678332,
+            "residuals": [
+              {
+                "id": "j-body-front-top",
+                "use": "camera",
+                "observed": [
+                  393,
+                  438
+                ],
+                "projected": [
+                  386.077751178351,
+                  456.10589292386095
+                ],
+                "errorPx": 19.38403692008296,
+                "uncertaintyPx": 5
+              },
+              {
+                "id": "j-body-bay1-top",
+                "use": "camera",
+                "observed": [
+                  537,
+                  447
+                ],
+                "projected": [
+                  532.1917574127827,
+                  450.18604950400356
+                ],
+                "errorPx": 5.768024637559291,
+                "uncertaintyPx": 6
+              },
+              {
+                "id": "j-body-bay1-keel",
+                "use": "camera",
+                "observed": [
+                  537,
+                  549
+                ],
+                "projected": [
+                  534.1469105766275,
+                  554.7024401741518
+                ],
+                "errorPx": 6.37635814533186,
+                "uncertaintyPx": 5
+              },
+              {
+                "id": "j-body-front-keel",
+                "use": "camera",
+                "observed": [
+                  393,
+                  549
+                ],
+                "projected": [
+                  391.8307416325091,
+                  560.6433016944213
+                ],
+                "errorPx": 11.70186478631769,
+                "uncertaintyPx": 5
+              },
+              {
+                "id": "j-body-tail-near",
+                "use": "camera",
+                "observed": [
+                  974,
+                  443
+                ],
+                "projected": [
+                  967.8302195985668,
+                  431.49169320289013
+                ],
+                "errorPx": 13.057844980635744,
+                "uncertaintyPx": 10
+              },
+              {
+                "id": "j-body-bay3-far",
+                "use": "camera",
+                "observed": [
+                  810,
+                  397
+                ],
+                "projected": [
+                  807.7511670572597,
+                  400.5111730429391
+                ],
+                "errorPx": 4.169602587995172,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "j-nose-tip",
+                "use": "check",
+                "observed": [
+                  142,
+                  473
+                ],
+                "projected": [
+                  131.6812976162616,
+                  489.6761640112409
+                ],
+                "errorPx": 19.610458052120453,
+                "uncertaintyPx": 6
+              },
+              {
+                "id": "j-tail-point",
+                "use": "check",
+                "observed": [
+                  1066,
+                  484
+                ],
+                "projected": [
+                  1074.019595352759,
+                  444.76207926876776
+                ],
+                "errorPx": 40.0490740583657,
+                "uncertaintyPx": 8
+              },
+              {
+                "id": "j-cockpit-front-top",
+                "use": "check",
+                "observed": [
+                  561,
+                  292
+                ],
+                "projected": [
+                  555.3200827365753,
+                  279.917113930774
+                ],
+                "errorPx": 13.351314387776425,
+                "uncertaintyPx": 10
+              },
+              {
+                "id": "j-cockpit-rear-tip",
+                "use": "check",
+                "observed": [
+                  801,
+                  402
+                ],
+                "projected": [
+                  787.6927154458667,
+                  408.9063803098606
+                ],
+                "errorPx": 14.992728610533314,
+                "uncertaintyPx": 8
+              }
+            ]
+          },
+          {
+            "id": "jet-quarter-397",
+            "frameId": "jet-final-check-a",
+            "partition": "holdout",
+            "status": "fail",
+            "detail": "6 camera anchors / 7 camera parameters; 6 scored landmarks; anchor RMS 17.18 px. Independent point agreement only; not complete shape fidelity.",
+            "camera": {
+              "position": {
+                "x": 0.10930456772481012,
+                "y": 6.1331955936499885,
+                "z": 8.174089983686812
+              },
+              "target": {
+                "x": 6.969999999999999,
+                "y": 1.6580762113533158,
+                "z": 3.34
+              },
+              "up": {
+                "x": 0.45131395025554993,
+                "y": 0.875948302209513,
+                "z": -0.17038277542346505
+              },
+              "focal": 407.5260339097957,
+              "cx": 777.1450961076156,
+              "cy": 456.2874609700916
+            },
+            "cameraAnchors": 6,
+            "checkLandmarks": 6,
+            "rmsPx": 519.6191186557393,
+            "maxPx": 1255.3886671642886,
+            "sourceDiagonalPx": 806.791174964129,
+            "residuals": [
+              {
+                "id": "jet-quarter-397-camera-1",
+                "use": "camera",
+                "observed": [
+                  674,
+                  416
+                ],
+                "projected": [
+                  688.7363139882706,
+                  427.52643091797324
+                ],
+                "errorPx": 18.70875622984352,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-camera-2",
+                "use": "camera",
+                "observed": [
+                  764,
+                  384
+                ],
+                "projected": [
+                  762.7849644080687,
+                  379.3069702815451
+                ],
+                "errorPx": 4.847766437026514,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-camera-3",
+                "use": "camera",
+                "observed": [
+                  881,
+                  411
+                ],
+                "projected": [
+                  868.2072703103081,
+                  387.7868248003095
+                ],
+                "errorPx": 26.5048191045525,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-camera-4",
+                "use": "camera",
+                "observed": [
+                  804,
+                  449
+                ],
+                "projected": [
+                  808.6097727824995,
+                  448.32776117518944
+                ],
+                "errorPx": 4.658530899742498,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-camera-5",
+                "use": "camera",
+                "observed": [
+                  712,
+                  531
+                ],
+                "projected": [
+                  715.6109443029802,
+                  536.34562026113
+                ],
+                "errorPx": 6.45093595809387,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-camera-6",
+                "use": "camera",
+                "observed": [
+                  840,
+                  557
+                ],
+                "projected": [
+                  820.3109391500257,
+                  572.60370146875
+                ],
+                "errorPx": 25.122392733970717,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-check-1",
+                "use": "check",
+                "observed": [
+                  990,
+                  443
+                ],
+                "projected": [
+                  1012.7712150939324,
+                  405.29036989818684
+                ],
+                "errorPx": 44.05161108597172,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-check-2",
+                "use": "check",
+                "observed": [
+                  266,
+                  610
+                ],
+                "projected": [
+                  -751.3024483242922,
+                  1345.5925735608876
+                ],
+                "errorPx": 1255.3886671642886,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-check-3",
+                "use": "check",
+                "observed": [
+                  552,
+                  310
+                ],
+                "projected": [
+                  466.70461953030093,
+                  307.49136055259794
+                ],
+                "errorPx": 85.33226354285807,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-check-4",
+                "use": "check",
+                "observed": [
+                  452,
+                  470
+                ],
+                "projected": [
+                  311.0012353445632,
+                  560.4214124480136
+                ],
+                "errorPx": 167.50129391575769,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-check-5",
+                "use": "check",
+                "observed": [
+                  890,
+                  254
+                ],
+                "projected": [
+                  809.5161554195237,
+                  264.33851145482754
+                ],
+                "errorPx": 81.14514192208841,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "jet-quarter-397-check-6",
+                "use": "check",
+                "observed": [
+                  707,
+                  371
+                ],
+                "projected": [
+                  695.5484529633236,
+                  376.38238791942956
+                ],
+                "errorPx": 12.653380151107188,
+                "uncertaintyPx": 12
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "stages": [
+      {
+        "id": "body-upright-1",
+        "status": "unverified",
+        "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
+        "displacement": null
+      },
+      {
+        "id": "body-upright-2",
+        "status": "unverified",
+        "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
+        "displacement": null
+      },
+      {
+        "id": "body-upright-3",
+        "status": "unverified",
+        "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
+        "displacement": null
+      },
+      {
+        "id": "body-upright-4",
+        "status": "unverified",
+        "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
+        "displacement": null
+      },
+      {
+        "id": "body-horizontal",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 0.957 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 0.9573724539491966
+      },
+      {
+        "id": "nose",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 0.983 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 0.9832945574135937
+      },
+      {
+        "id": "wing-module--1",
+        "status": "unverified",
+        "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
+        "displacement": null
+      },
+      {
+        "id": "wing-root--1",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 0.963 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 0.9625367311886
+      },
+      {
+        "id": "wing-module-1",
+        "status": "unverified",
+        "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
+        "displacement": null
+      },
+      {
+        "id": "wing-root-1",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 0.799 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 0.7993512051397991
+      },
+      {
+        "id": "wing-roots",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 0.974 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 0.974330392560982
+      },
+      {
+        "id": "wingtips",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 0.963 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 0.9628147645268345
+      },
+      {
+        "id": "tail-cone",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 0.692 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 0.6924036877062211
+      },
+      {
+        "id": "tail-horizontal",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 1.052 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 1.0521558597034013
+      },
+      {
+        "id": "tail-fins",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 0.958 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 0.9581295518365787
+      },
+      {
+        "id": "final",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 1.004 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 1.003751425805195
+      }
+    ],
+    "instructions": [
+      {
+        "step": 1,
+        "title": "Build body bay 1 upright",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1"
+        ],
+        "tileCounts": {
+          "small-square": 3,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Join three square tiles into an open triangular ring. Stack the next ring on its three matching edges. The creator supports the upright assembly; its first clear hands-off checkpoint is the horizontal pose. New parts: P1 (Small square), P2 (Small square), P3 (Small square). Joins: P1 edge 1 to P2 edge 1; P2 edge 3 to P3 edge 3; P1 edge 3 to P3 edge 1. Source frame: jet-body-ring. Keep this module in your hand; no unattended release is asserted."
+      },
+      {
+        "step": 2,
+        "title": "Build body bay 2 upright",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1"
+        ],
+        "tileCounts": {
+          "small-square": 3,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Join three square tiles into an open triangular ring. Stack the next ring on its three matching edges. The creator supports the upright assembly; its first clear hands-off checkpoint is the horizontal pose. New parts: P4 (Small square), P5 (Small square), P6 (Small square). Joins: P1 edge 2 to P4 edge 4; P4 edge 1 to P5 edge 1; P2 edge 2 to P5 edge 4; P5 edge 3 to P6 edge 3; P4 edge 3 to P6 edge 1; P3 edge 2 to P6 edge 4. Source frame: jet-body-second. Keep this module in your hand; no unattended release is asserted."
+      },
+      {
+        "step": 3,
+        "title": "Build body bay 3 upright",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1"
+        ],
+        "tileCounts": {
+          "small-square": 3,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Join three square tiles into an open triangular ring. Stack the next ring on its three matching edges. The creator supports the upright assembly; its first clear hands-off checkpoint is the horizontal pose. New parts: P7 (Small square), P8 (Small square), P9 (Small square). Joins: P4 edge 2 to P7 edge 4; P7 edge 1 to P8 edge 1; P5 edge 2 to P8 edge 4; P8 edge 3 to P9 edge 3; P7 edge 3 to P9 edge 1; P6 edge 2 to P9 edge 4. Source frame: jet-body-third. Keep this module in your hand; no unattended release is asserted."
+      },
+      {
+        "step": 4,
+        "title": "Build body bay 4 upright",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1"
+        ],
+        "tileCounts": {
+          "small-square": 3,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Join three square tiles into an open triangular ring. Stack the next ring on its three matching edges. The creator supports the upright assembly; its first clear hands-off checkpoint is the horizontal pose. New parts: P10 (Small square), P11 (Small square), P12 (Small square). Joins: P7 edge 2 to P10 edge 4; P10 edge 1 to P11 edge 1; P8 edge 2 to P11 edge 4; P11 edge 3 to P12 edge 3; P10 edge 3 to P12 edge 1; P9 edge 2 to P12 edge 4. Source frame: jet-body-upright. Keep this module in your hand; no unattended release is asserted."
+      },
+      {
+        "step": 5,
+        "title": "Lay the body on its keel",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1"
+        ],
+        "tileCounts": {
+          "small-square": 0,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Turn the four connected triangular bays onto the long keel. Adjust as shown in the source and release for the balance check. Reuse the numbered parts already assembled. No new magnetic joins in this pose change. Source frame: jet-body-release. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 6,
+        "title": "Make and attach the three-triangle nose",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1",
+          "nose-1",
+          "nose-2",
+          "nose-3"
+        ],
+        "tileCounts": {
+          "small-square": 0,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 0,
+          "isosceles-triangle": 3
+        },
+        "instruction": "Join the three long blue isosceles triangles into a point. Attach all three short bases around the front triangular opening. New parts: P13 (Isosceles triangle), P14 (Isosceles triangle), P15 (Isosceles triangle). Joins: P1 edge 4 to P13 edge 1; P13 edge 2 to P14 edge 3; P3 edge 4 to P14 edge 1; P14 edge 2 to P15 edge 3; P13 edge 3 to P15 edge 2; P2 edge 4 to P15 edge 1. Source frame: jet-nose. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 7,
+        "title": "Make a wing pod beside the body",
+        "tileIds": [
+          "wing--1-roof",
+          "wing--1-front",
+          "wing--1-cap-0",
+          "wing--1-cap-1"
+        ],
+        "tileCounts": {
+          "small-square": 2,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 2,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Join its two squares at a right angle and add the two right-triangle end caps. Keep the third long side open. New parts: P16 (Small square), P17 (Small square), P18 (Right triangle), P19 (Right triangle). Joins: P16 edge 4 to P17 edge 4; P17 edge 1 to P18 edge 3; P16 edge 1 to P18 edge 1; P17 edge 3 to P19 edge 3; P16 edge 3 to P19 edge 1. Source frame: jet-wing-module. Keep this module in your hand; no unattended release is asserted."
+      },
+      {
+        "step": 8,
+        "title": "Seat the wing pod against the body",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1",
+          "nose-1",
+          "nose-2",
+          "nose-3",
+          "wing--1-roof",
+          "wing--1-front",
+          "wing--1-cap-0",
+          "wing--1-cap-1"
+        ],
+        "tileCounts": {
+          "small-square": 0,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Hold the pod against the middle body bay, matching its top edge. The exact seating remains unresolved; this step is not certified buildable. Reuse the numbered parts already assembled. Joins: P8 edge 1 to P16 edge 1; P7 edge 1 to P16 edge 1; P8 edge 1 to P18 edge 1; P7 edge 1 to P18 edge 1. Source frame: jet-wing-root-left. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 9,
+        "title": "Make a wing pod beside the body",
+        "tileIds": [
+          "wing-1-roof",
+          "wing-1-front",
+          "wing-1-cap-0",
+          "wing-1-cap-1"
+        ],
+        "tileCounts": {
+          "small-square": 2,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 2,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Join its two squares at a right angle and add the two right-triangle end caps. Keep the third long side open. New parts: P22 (Small square), P23 (Small square), P24 (Right triangle), P25 (Right triangle). Joins: P22 edge 4 to P23 edge 4; P23 edge 1 to P24 edge 3; P22 edge 1 to P24 edge 1; P23 edge 3 to P25 edge 3; P22 edge 3 to P25 edge 1. Source frame: jet-wing-module-right. Keep this module in your hand; no unattended release is asserted."
+      },
+      {
+        "step": 10,
+        "title": "Seat the wing pod against the body",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1",
+          "nose-1",
+          "nose-2",
+          "nose-3",
+          "wing--1-roof",
+          "wing--1-front",
+          "wing--1-cap-0",
+          "wing--1-cap-1",
+          "wing-1-roof",
+          "wing-1-front",
+          "wing-1-cap-0",
+          "wing-1-cap-1"
+        ],
+        "tileCounts": {
+          "small-square": 0,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Hold the pod against the middle body bay, matching its top edge. The exact seating remains unresolved; this step is not certified buildable. Reuse the numbered parts already assembled. Joins: P9 edge 1 to P22 edge 1; P7 edge 3 to P22 edge 1; P9 edge 1 to P24 edge 1; P7 edge 3 to P24 edge 1. Source frame: jet-wing-root-right. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 11,
+        "title": "Add the red leading panels",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1",
+          "nose-1",
+          "nose-2",
+          "nose-3",
+          "wing--1-roof",
+          "wing--1-front",
+          "wing--1-cap-0",
+          "wing--1-cap-1",
+          "wing--1-leading",
+          "wing-1-roof",
+          "wing-1-front",
+          "wing-1-cap-0",
+          "wing-1-cap-1",
+          "wing-1-leading"
+        ],
+        "tileCounts": {
+          "small-square": 0,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 2,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Seat each red equilateral triangle along the front edge of its pod. New parts: P20 (Equilateral triangle), P26 (Equilateral triangle). Joins: P17 edge 4 to P20 edge 1; P16 edge 4 to P20 edge 1; P23 edge 4 to P26 edge 1; P22 edge 4 to P26 edge 1. Source frame: jet-wings. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 12,
+        "title": "Add the blue outer wingtips",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1",
+          "nose-1",
+          "nose-2",
+          "nose-3",
+          "wing--1-roof",
+          "wing--1-front",
+          "wing--1-cap-0",
+          "wing--1-cap-1",
+          "wing--1-leading",
+          "wing--1-tip",
+          "wing-1-roof",
+          "wing-1-front",
+          "wing-1-cap-0",
+          "wing-1-cap-1",
+          "wing-1-leading",
+          "wing-1-tip"
+        ],
+        "tileCounts": {
+          "small-square": 0,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 2,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Join one right triangle to each outer roof edge, preserving the mirrored sweep. New parts: P21 (Right triangle), P27 (Right triangle). Joins: P19 edge 1 to P21 edge 1; P16 edge 3 to P21 edge 1; P25 edge 1 to P27 edge 1; P22 edge 3 to P27 edge 1. Source frame: jet-wingtips. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 13,
+        "title": "Close the tail point",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1",
+          "nose-1",
+          "nose-2",
+          "nose-3",
+          "wing--1-roof",
+          "wing--1-front",
+          "wing--1-cap-0",
+          "wing--1-cap-1",
+          "wing--1-leading",
+          "wing--1-tip",
+          "wing-1-roof",
+          "wing-1-front",
+          "wing-1-cap-0",
+          "wing-1-cap-1",
+          "wing-1-leading",
+          "wing-1-tip",
+          "tail-cone-1",
+          "tail-cone-2",
+          "tail-cone-3"
+        ],
+        "tileCounts": {
+          "small-square": 0,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 3,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Join the three red equilateral triangles into a point and seat around the rear opening. New parts: P28 (Equilateral triangle), P29 (Equilateral triangle), P30 (Equilateral triangle). Joins: P10 edge 2 to P28 edge 1; P28 edge 2 to P29 edge 3; P12 edge 2 to P29 edge 1; P29 edge 2 to P30 edge 3; P28 edge 3 to P30 edge 2; P11 edge 2 to P30 edge 1. Source frame: jet-tail-cone. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 14,
+        "title": "Attach the horizontal tail first",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1",
+          "nose-1",
+          "nose-2",
+          "nose-3",
+          "wing--1-roof",
+          "wing--1-front",
+          "wing--1-cap-0",
+          "wing--1-cap-1",
+          "wing--1-leading",
+          "wing--1-tip",
+          "wing-1-roof",
+          "wing-1-front",
+          "wing-1-cap-0",
+          "wing-1-cap-1",
+          "wing-1-leading",
+          "wing-1-tip",
+          "tail-cone-1",
+          "tail-cone-2",
+          "tail-cone-3",
+          "tail-horizontal--1",
+          "tail-horizontal-1"
+        ],
+        "tileCounts": {
+          "small-square": 0,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 2,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Join the two orange horizontal stabilizers to the rear bay. Keep their outer edges clear. New parts: P31 (Right triangle), P33 (Right triangle). Joins: P11 edge 1 to P31 edge 1; P10 edge 1 to P31 edge 1; P12 edge 1 to P33 edge 1; P10 edge 3 to P33 edge 1. Source frame: jet-horizontal-tail. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 15,
+        "title": "Put the upright fins on the tail",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1",
+          "nose-1",
+          "nose-2",
+          "nose-3",
+          "wing--1-roof",
+          "wing--1-front",
+          "wing--1-cap-0",
+          "wing--1-cap-1",
+          "wing--1-leading",
+          "wing--1-tip",
+          "wing-1-roof",
+          "wing-1-front",
+          "wing-1-cap-0",
+          "wing-1-cap-1",
+          "wing-1-leading",
+          "wing-1-tip",
+          "tail-cone-1",
+          "tail-cone-2",
+          "tail-cone-3",
+          "tail-horizontal--1",
+          "tail-vertical--1",
+          "tail-horizontal-1",
+          "tail-vertical-1"
+        ],
+        "tileCounts": {
+          "small-square": 0,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 2,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Attach each purple equilateral fin above its horizontal stabilizer, following the source ordering. New parts: P32 (Equilateral triangle), P34 (Equilateral triangle). Joins: P31 edge 1 to P32 edge 1; P11 edge 1 to P32 edge 1; P10 edge 1 to P32 edge 1; P33 edge 1 to P34 edge 1; P12 edge 1 to P34 edge 1; P10 edge 3 to P34 edge 1. Source frame: jet-tail-order. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 16,
+        "title": "Build and seat the cockpit module",
+        "tileIds": [
+          "body-1-top",
+          "body-1-side--1",
+          "body-1-side-1",
+          "body-2-top",
+          "body-2-side--1",
+          "body-2-side-1",
+          "body-3-top",
+          "body-3-side--1",
+          "body-3-side-1",
+          "body-4-top",
+          "body-4-side--1",
+          "body-4-side-1",
+          "nose-1",
+          "nose-2",
+          "nose-3",
+          "wing--1-roof",
+          "wing--1-front",
+          "wing--1-cap-0",
+          "wing--1-cap-1",
+          "wing--1-leading",
+          "wing--1-tip",
+          "wing-1-roof",
+          "wing-1-front",
+          "wing-1-cap-0",
+          "wing-1-cap-1",
+          "wing-1-leading",
+          "wing-1-tip",
+          "tail-cone-1",
+          "tail-cone-2",
+          "tail-cone-3",
+          "tail-horizontal--1",
+          "tail-vertical--1",
+          "tail-horizontal-1",
+          "tail-vertical-1",
+          "cockpit-rear-left",
+          "cockpit-rear-right",
+          "cockpit-divider",
+          "cockpit-front-left",
+          "cockpit-front-right",
+          "cockpit-floor"
+        ],
+        "tileCounts": {
+          "small-square": 0,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 2,
+          "right-triangle": 2,
+          "isosceles-triangle": 2
+        },
+        "instruction": "Join the two purple long triangles to the yellow divider; add the green right triangles and red front floor. Seat the six-piece module on the forward body. The hidden bottom joins require further reconstruction. New parts: P35 (Isosceles triangle), P36 (Isosceles triangle), P37 (Equilateral triangle), P38 (Right triangle), P39 (Right triangle), P40 (Equilateral triangle). Joins: P35 edge 2 to P36 edge 2; P36 edge 1 to P37 edge 2; P35 edge 1 to P37 edge 3; P4 edge 4 to P37 edge 1; P1 edge 2 to P37 edge 1; P37 edge 3 to P38 edge 1; P35 edge 1 to P38 edge 1; P38 edge 2 to P39 edge 2; P37 edge 2 to P39 edge 1; P36 edge 1 to P39 edge 1; P39 edge 3 to P40 edge 2; P38 edge 3 to P40 edge 3; P37 edge 1 to P40 edge 1; P4 edge 4 to P40 edge 1; P1 edge 2 to P40 edge 1. Source frame: jet-final-fit. Release checkpoint: consult the measured result before following this candidate."
+      }
+    ],
+    "carTrials": []
+  }
+}

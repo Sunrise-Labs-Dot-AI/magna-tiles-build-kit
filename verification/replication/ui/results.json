@@ -1,0 +1,18 @@
+{
+  "builds": 4,
+  "downloads": [
+    "jet",
+    "small-ramp",
+    "medium-ramp",
+    "large-ramp"
+  ],
+  "snailEmptyState": true,
+  "stableModuleLabels": [
+    "P6",
+    "P7",
+    "P8",
+    "P9"
+  ],
+  "mobileOverflow": false,
+  "pageErrors": []
+}

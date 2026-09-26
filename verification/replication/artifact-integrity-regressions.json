@@ -1,0 +1,15 @@
+{
+  "modifiedArtifacts": [
+    {
+      "file": "public/reference-replicas/jet.json",
+      "rejected": true,
+      "exitCode": 1
+    },
+    {
+      "file": "public/reference-replicas/jet-side-388.svg",
+      "rejected": true,
+      "exitCode": 1
+    }
+  ],
+  "restoredBundlePasses": true
+}

@@ -67,3 +67,7 @@ The fingerprint binds the complete contract, model version, and tile graph. Proc
 This is simulation evidence, **not a real-world guarantee**. Magnet force/torque, friction, tile mass, hinge behavior, and load capacity remain uncalibrated. Three release seeds are not exhaustive reliability testing. Human hand access, manipulation inside a held group, and assembly under car loads are not modeled. Geometry coverage is sampled rather than proven over all points.
 
 Remaining milestones: physical calibration fixtures; explicit vehicle/passenger clearance and load contracts; richer constructive grammars; a continuous turning-course generator with passive car contact; and measured multiview video reconstruction. A requested zigzag or video reconstruction is not fixed by making the structural benchmark pass.
+
+## Source reconstruction lane
+
+`evaluateReferenceCandidate` in `lib/harness/reference.ts` evaluates externally supplied tile graphs against locked source observations and explicit construction poses. It reuses the catalog and physics engine while keeping source fidelity, sustained release, assembly and passive vehicle results separate. Structural grammar success does not grant source fidelity. See [footage reconstruction](footage-reconstruction.md) for its API, local source requirements, artifacts and current failures.

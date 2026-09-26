@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-26",
+  "command": "npm run benchmark:harness",
+  "constructive": {
+    "correct": 20,
+    "total": 20
+  },
+  "requiredRejections": {
+    "correct": 5,
+    "total": 5
+  },
+  "note": "Full models unchanged from inherited benchmark; timing-only rerun is summarized here."
+}

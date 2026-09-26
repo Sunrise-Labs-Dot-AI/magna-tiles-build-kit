@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run reference:check-artifacts && next build",
     "lint": "eslint .",
     "judge:all": "tsx scripts/judge-all.ts",
     "judge:build": "tsx scripts/judge-build.ts",
@@ -12,7 +12,12 @@
     "verify:builds": "tsx scripts/verify-builds.ts",
     "test": "vitest run",
     "benchmark:harness": "node --import tsx scripts/benchmark-harness.ts",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "reference:extract": "tsx scripts/reference/extract.ts",
+    "reference:verify": "tsx scripts/reference/verify.ts",
+    "reference:report": "tsx scripts/reference/verify.ts --report-only",
+    "reference:fixtures": "tsx scripts/reference/fixtures.ts",
+    "reference:check-artifacts": "tsx scripts/reference/check-artifacts.ts"
   },
   "dependencies": {
     "@dimforge/rapier3d-compat": "^0.19.2",

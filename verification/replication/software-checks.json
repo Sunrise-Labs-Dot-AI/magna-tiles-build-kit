@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-26",
+  "tests": {
+    "passed": 248,
+    "skipped": 1,
+    "files": 19
+  },
+  "productionBuild": "pass",
+  "lint": {
+    "errors": 0,
+    "existingWarnings": 38,
+    "newWarnings": 0
+  },
+  "structuralBenchmark": {
+    "correct": 25,
+    "total": 25
+  },
+  "replicationAcceptance": {
+    "verifiedTargets": 0,
+    "strictExitCode": 1
+  },
+  "review": {
+    "initial": "BLOCK",
+    "acceptedFindingsResolved": 4,
+    "followup": "MERGE-OK",
+    "model": "gpt-5.5",
+    "limitation": "Independent static review; executable verification performed in the implementation lane."
+  },
+  "browserEvidence": "ui/results.json",
+  "artifactIntegrityEvidence": "artifact-integrity-regressions.json",
+  "originalLocalChangesPreserved": true
+}

@@ -1,0 +1,3697 @@
+{
+  "replica": {
+    "id": "medium-ramp",
+    "sourceId": "henry",
+    "title": "Henry's medium ramp · 37-piece candidate",
+    "build": {
+      "id": "replica-medium",
+      "title": "Henry's medium ramp",
+      "prompt": "Henry's medium ramp",
+      "summary": "Source-constrained reconstruction candidate. Read the independent evidence before building.",
+      "seed": 0,
+      "family": "ramp",
+      "inventoryPreset": "builder-xl",
+      "tiles": [
+        {
+          "id": "lower-side--1",
+          "shape": "isosceles-triangle",
+          "color": "#f3bc25",
+          "position": {
+            "x": 2.6151354550960852,
+            "y": 0.7228899636224644,
+            "z": -1.59
+          },
+          "basis": {
+            "xAxis": {
+              "x": -0.2664335664335665,
+              "y": 0.9638532848299529,
+              "z": 0
+            },
+            "yAxis": {
+              "x": -0.9638532848299529,
+              "y": -0.2664335664335665,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "lower",
+          "subassemblyId": "lower",
+          "root": true
+        },
+        {
+          "id": "lower-side-1",
+          "shape": "isosceles-triangle",
+          "color": "#f3bc25",
+          "position": {
+            "x": 2.6151354550960852,
+            "y": 0.7228899636224644,
+            "z": 1.59
+          },
+          "basis": {
+            "xAxis": {
+              "x": -0.2664335664335665,
+              "y": 0.9638532848299529,
+              "z": 0
+            },
+            "yAxis": {
+              "x": -0.9638532848299529,
+              "y": -0.2664335664335665,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "lower",
+          "subassemblyId": "lower",
+          "root": true
+        },
+        {
+          "id": "lower-deck-1",
+          "shape": "small-square",
+          "color": "#eb802b",
+          "position": {
+            "x": 1.0820462999631681,
+            "y": 0.7525936904990206,
+            "z": -4.588603803098342e-18
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.8580263093549806,
+              "y": 0.513605736391905,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 1.4802973661668753e-16,
+              "y": 1.4802973661668753e-16,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 0.513605736391905,
+              "y": -0.8580263093549806,
+              "z": 5.098448670109269e-17
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "lower",
+          "subassemblyId": "lower",
+          "root": false,
+          "parentTileId": "lower-side--1",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "lower-deck-2",
+          "shape": "small-square",
+          "color": "#eb802b",
+          "position": {
+            "x": 3.65612522802811,
+            "y": 2.2934108996747358,
+            "z": -4.588603803098343e-18
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.8580263093549806,
+              "y": 0.5136057363919049,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 1.4802973661668753e-16,
+              "y": 1.4802973661668753e-16,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 0.5136057363919049,
+              "y": -0.8580263093549806,
+              "z": 5.09844867010927e-17
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "lower",
+          "subassemblyId": "lower",
+          "root": false,
+          "parentTileId": "lower-side--1",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "support-side--1-0",
+          "shape": "small-square",
+          "color": "#32ad66",
+          "position": {
+            "x": 8.749183189754497,
+            "y": 1.733819504262593,
+            "z": 1.7043713156445657
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.5000000000000002,
+              "y": 0,
+              "z": 0.8660254037844385
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -0.8660254037844385,
+              "y": 0,
+              "z": 0.5000000000000002
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "support",
+          "subassemblyId": "support",
+          "root": true
+        },
+        {
+          "id": "support-side--1-1",
+          "shape": "small-square",
+          "color": "#32ad66",
+          "position": {
+            "x": 10.249183189754497,
+            "y": 1.733819504262593,
+            "z": 4.302447526997883
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.4999999999999999,
+              "y": 0,
+              "z": 0.8660254037844386
+            },
+            "yAxis": {
+              "x": 1.4802973661668753e-16,
+              "y": 1,
+              "z": 1.4802973661668753e-16
+            },
+            "zAxis": {
+              "x": -0.8660254037844386,
+              "y": 5.418264411722717e-17,
+              "z": 0.4999999999999999
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "support",
+          "subassemblyId": "support",
+          "root": false,
+          "parentTileId": "support-side--1-0",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "support-side-1-0",
+          "shape": "small-square",
+          "color": "#32ad66",
+          "position": {
+            "x": 5.995222405719981,
+            "y": 1.733819504262593,
+            "z": 3.2943713156445664
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.5000000000000002,
+              "y": 0,
+              "z": 0.8660254037844385
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -0.8660254037844385,
+              "y": 0,
+              "z": 0.5000000000000002
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "support",
+          "subassemblyId": "support",
+          "root": false,
+          "parentTileId": "lower-side-1",
+          "parentEdge": 0,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "support-side-1-1",
+          "shape": "small-square",
+          "color": "#32ad66",
+          "position": {
+            "x": 7.495222405719982,
+            "y": 1.733819504262593,
+            "z": 5.892447526997882
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.5,
+              "y": 0,
+              "z": 0.8660254037844386
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -0.8660254037844386,
+              "y": 0,
+              "z": 0.5
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "support",
+          "subassemblyId": "support",
+          "root": false,
+          "parentTileId": "support-side-1-0",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "support-back",
+          "shape": "small-square",
+          "color": "#32ad66",
+          "position": {
+            "x": 9.66720279773724,
+            "y": 1.733819504262593,
+            "z": 6.474427919015138
+          },
+          "basis": {
+            "xAxis": {
+              "x": -0.8660254037844386,
+              "y": 0,
+              "z": 0.5
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": -0.5,
+              "y": 0,
+              "z": -0.8660254037844386
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "support",
+          "subassemblyId": "support",
+          "root": false,
+          "parentTileId": "support-side--1-1",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "upper-side--1",
+          "shape": "isosceles-triangle",
+          "color": "#f3bc25",
+          "position": {
+            "x": 9.216750917302539,
+            "y": 3.956709467885058,
+            "z": 2.5142223757372975
+          },
+          "basis": {
+            "xAxis": {
+              "x": -0.13321678321678296,
+              "y": 0.9638532848299529,
+              "z": -0.23073823695235748
+            },
+            "yAxis": {
+              "x": -0.48192664241497657,
+              "y": -0.26643356643356636,
+              "z": -0.8347214301838176
+            },
+            "zAxis": {
+              "x": -0.8660254037844387,
+              "y": 2.498001805406602e-16,
+              "z": 0.5
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 3,
+          "role": "upper",
+          "subassemblyId": "upper",
+          "root": false,
+          "parentTileId": "support-side--1-0",
+          "parentEdge": 2,
+          "childEdge": 2,
+          "foldAngle": 0
+        },
+        {
+          "id": "upper-side-1",
+          "shape": "isosceles-triangle",
+          "color": "#f3bc25",
+          "position": {
+            "x": 6.462790133268024,
+            "y": 3.956709467885058,
+            "z": 4.104222375737297
+          },
+          "basis": {
+            "xAxis": {
+              "x": -0.13321678321678296,
+              "y": 0.9638532848299529,
+              "z": -0.23073823695235748
+            },
+            "yAxis": {
+              "x": -0.4819266424149766,
+              "y": -0.26643356643356636,
+              "z": -0.8347214301838175
+            },
+            "zAxis": {
+              "x": -0.8660254037844386,
+              "y": 2.7755575615628914e-16,
+              "z": 0.5000000000000001
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 3,
+          "role": "upper",
+          "subassemblyId": "upper",
+          "root": false,
+          "parentTileId": "support-side-1-0",
+          "parentEdge": 2,
+          "childEdge": 2,
+          "foldAngle": 0
+        },
+        {
+          "id": "upper-deck-1",
+          "shape": "small-square",
+          "color": "#eb802b",
+          "position": {
+            "x": 7.073225947718822,
+            "y": 3.9864131947616137,
+            "z": 1.9815282211257699
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.42901315467749035,
+              "y": 0.513605736391905,
+              "z": 0.7430725810168186
+            },
+            "yAxis": {
+              "x": -0.8660254037844385,
+              "y": 1.480297366166875e-16,
+              "z": 0.5000000000000002
+            },
+            "zAxis": {
+              "x": 0.2568028681959525,
+              "y": -0.8580263093549805,
+              "z": 0.44479561524480343
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 3,
+          "role": "upper",
+          "subassemblyId": "upper",
+          "root": false,
+          "parentTileId": "upper-side--1",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "upper-deck-2",
+          "shape": "small-square",
+          "color": "#eb802b",
+          "position": {
+            "x": 8.360265411751294,
+            "y": 5.527230403937328,
+            "z": 4.210745964176226
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.42901315467749035,
+              "y": 0.5136057363919051,
+              "z": 0.7430725810168186
+            },
+            "yAxis": {
+              "x": -0.8660254037844385,
+              "y": 1.480297366166875e-16,
+              "z": 0.5
+            },
+            "zAxis": {
+              "x": 0.25680286819595244,
+              "y": -0.8580263093549805,
+              "z": 0.44479561524480354
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 3,
+          "role": "upper",
+          "subassemblyId": "upper",
+          "root": false,
+          "parentTileId": "upper-side--1",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "turn-floor",
+          "shape": "equilateral-triangle",
+          "color": "#168db3",
+          "position": {
+            "x": 6.362202797737239,
+            "y": 3.183819504262593,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 4,
+          "role": "turn",
+          "subassemblyId": "turn",
+          "root": false,
+          "parentTileId": "lower-deck-2",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "lower-wall--1-1",
+          "shape": "equilateral-triangle",
+          "color": "#d93747",
+          "position": {
+            "x": 0.4610773933712343,
+            "y": 1.7899801941823004,
+            "z": -1.6
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.8580263093549806,
+              "y": 0.513605736391905,
+              "z": 0
+            },
+            "yAxis": {
+              "x": -0.5136057363919049,
+              "y": 0.8580263093549807,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 0.9999999999999999
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 5,
+          "role": "lower canopy walls",
+          "subassemblyId": "lower canopy walls",
+          "root": false,
+          "parentTileId": "lower-side--1",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "lower-wall--1-2",
+          "shape": "equilateral-triangle",
+          "color": "#d93747",
+          "position": {
+            "x": 1.748116857403705,
+            "y": 2.560388798770158,
+            "z": -1.6
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.8580263093549806,
+              "y": 0.513605736391905,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0.5136057363919051,
+              "y": -0.8580263093549807,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": -1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 5,
+          "role": "lower canopy walls",
+          "subassemblyId": "lower canopy walls",
+          "root": false,
+          "parentTileId": "lower-wall--1-1",
+          "parentEdge": 1,
+          "childEdge": 2,
+          "foldAngle": 0
+        },
+        {
+          "id": "lower-wall--1-3",
+          "shape": "equilateral-triangle",
+          "color": "#d93747",
+          "position": {
+            "x": 3.0351563214361756,
+            "y": 3.3307974033580154,
+            "z": -1.6
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.8580263093549806,
+              "y": 0.5136057363919051,
+              "z": 0
+            },
+            "yAxis": {
+              "x": -0.5136057363919052,
+              "y": 0.8580263093549806,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 5,
+          "role": "lower canopy walls",
+          "subassemblyId": "lower canopy walls",
+          "root": false,
+          "parentTileId": "lower-side--1",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "lower-wall--1-4",
+          "shape": "equilateral-triangle",
+          "color": "#d93747",
+          "position": {
+            "x": 4.322195785468646,
+            "y": 4.101206007945873,
+            "z": -1.6
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.8580263093549806,
+              "y": 0.5136057363919051,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0.5136057363919051,
+              "y": -0.8580263093549807,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": -1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 5,
+          "role": "lower canopy walls",
+          "subassemblyId": "lower canopy walls",
+          "root": false,
+          "parentTileId": "lower-wall--1-3",
+          "parentEdge": 1,
+          "childEdge": 2,
+          "foldAngle": 0
+        },
+        {
+          "id": "lower-wall-1-1",
+          "shape": "equilateral-triangle",
+          "color": "#d93747",
+          "position": {
+            "x": 0.4610773933712343,
+            "y": 1.7899801941823004,
+            "z": 1.6
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.8580263093549806,
+              "y": 0.513605736391905,
+              "z": 0
+            },
+            "yAxis": {
+              "x": -0.5136057363919049,
+              "y": 0.8580263093549807,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 0.9999999999999999
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 5,
+          "role": "lower canopy walls",
+          "subassemblyId": "lower canopy walls",
+          "root": false,
+          "parentTileId": "lower-side-1",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "lower-wall-1-2",
+          "shape": "equilateral-triangle",
+          "color": "#d93747",
+          "position": {
+            "x": 1.748116857403705,
+            "y": 2.560388798770158,
+            "z": 1.6
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.8580263093549806,
+              "y": 0.513605736391905,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0.5136057363919051,
+              "y": -0.8580263093549807,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": -1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 5,
+          "role": "lower canopy walls",
+          "subassemblyId": "lower canopy walls",
+          "root": false,
+          "parentTileId": "lower-wall-1-1",
+          "parentEdge": 1,
+          "childEdge": 2,
+          "foldAngle": 0
+        },
+        {
+          "id": "lower-wall-1-3",
+          "shape": "equilateral-triangle",
+          "color": "#d93747",
+          "position": {
+            "x": 3.0351563214361756,
+            "y": 3.3307974033580154,
+            "z": 1.6
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.8580263093549806,
+              "y": 0.5136057363919051,
+              "z": 0
+            },
+            "yAxis": {
+              "x": -0.5136057363919052,
+              "y": 0.8580263093549806,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 5,
+          "role": "lower canopy walls",
+          "subassemblyId": "lower canopy walls",
+          "root": false,
+          "parentTileId": "lower-side-1",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "lower-wall-1-4",
+          "shape": "equilateral-triangle",
+          "color": "#d93747",
+          "position": {
+            "x": 4.322195785468646,
+            "y": 4.101206007945873,
+            "z": 1.6
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.8580263093549806,
+              "y": 0.5136057363919051,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0.5136057363919051,
+              "y": -0.8580263093549807,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": -1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 5,
+          "role": "lower canopy walls",
+          "subassemblyId": "lower canopy walls",
+          "root": false,
+          "parentTileId": "lower-wall-1-3",
+          "parentEdge": 1,
+          "childEdge": 2,
+          "foldAngle": 0
+        },
+        {
+          "id": "lower-cover-1",
+          "shape": "small-square",
+          "color": "#f3bc25",
+          "position": {
+            "x": 1.0346989182612283,
+            "y": 3.7522200381373345,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.8580263093549807,
+              "y": 0.5136057363919049,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 0.5136057363919049,
+              "y": -0.8580263093549807,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 6,
+          "role": "lower canopy roof",
+          "subassemblyId": "lower canopy roof",
+          "root": false,
+          "parentTileId": "lower-wall--1-2",
+          "parentEdge": 0,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "lower-cover-2",
+          "shape": "small-square",
+          "color": "#f3bc25",
+          "position": {
+            "x": 3.6087778463261695,
+            "y": 5.293037247313049,
+            "z": -5.71560338628028e-18
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.8580263093549806,
+              "y": 0.5136057363919051,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 7.401486830834377e-17,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 0.5136057363919051,
+              "y": -0.8580263093549806,
+              "z": 6.350670429200312e-17
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 6,
+          "role": "lower canopy roof",
+          "subassemblyId": "lower canopy roof",
+          "root": false,
+          "parentTileId": "lower-wall--1-4",
+          "parentEdge": 0,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "upper-wall--1-1",
+          "shape": "equilateral-triangle",
+          "color": "#32ad66",
+          "position": {
+            "x": 8.148382140477958,
+            "y": 5.023799698444893,
+            "z": 0.6437533730569088
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.42901315467749057,
+              "y": 0.5136057363919049,
+              "z": 0.7430725810168187
+            },
+            "yAxis": {
+              "x": -0.2568028681959528,
+              "y": 0.8580263093549807,
+              "z": -0.4447956152448031
+            },
+            "zAxis": {
+              "x": -0.8660254037844384,
+              "y": -2.7755575615628914e-16,
+              "z": 0.5000000000000003
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 8,
+          "role": "upper canopy walls",
+          "subassemblyId": "upper canopy walls",
+          "root": false,
+          "parentTileId": "upper-side--1",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "upper-wall--1-2",
+          "shape": "equilateral-triangle",
+          "color": "#32ad66",
+          "position": {
+            "x": 8.791901872494194,
+            "y": 5.794208303032751,
+            "z": 1.758362244582136
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.42901315467749035,
+              "y": 0.5136057363919049,
+              "z": 0.7430725810168188
+            },
+            "yAxis": {
+              "x": 0.256802868195953,
+              "y": -0.8580263093549807,
+              "z": 0.4447956152448031
+            },
+            "zAxis": {
+              "x": 0.8660254037844384,
+              "y": 5.273559366969494e-16,
+              "z": -0.5000000000000002
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 8,
+          "role": "upper canopy walls",
+          "subassemblyId": "upper canopy walls",
+          "root": false,
+          "parentTileId": "upper-wall--1-1",
+          "parentEdge": 1,
+          "childEdge": 2,
+          "foldAngle": 0
+        },
+        {
+          "id": "upper-wall--1-3",
+          "shape": "equilateral-triangle",
+          "color": "#32ad66",
+          "position": {
+            "x": 9.435421604510429,
+            "y": 6.564616907620609,
+            "z": 2.8729711161073648
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.42901315467749046,
+              "y": 0.5136057363919052,
+              "z": 0.7430725810168186
+            },
+            "yAxis": {
+              "x": -0.25680286819595327,
+              "y": 0.8580263093549806,
+              "z": -0.4447956152448034
+            },
+            "zAxis": {
+              "x": -0.8660254037844385,
+              "y": -4.996003610813204e-16,
+              "z": 0.5000000000000006
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 8,
+          "role": "upper canopy walls",
+          "subassemblyId": "upper canopy walls",
+          "root": false,
+          "parentTileId": "upper-side--1",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "upper-wall--1-4",
+          "shape": "equilateral-triangle",
+          "color": "#32ad66",
+          "position": {
+            "x": 10.078941336526665,
+            "y": 7.335025512208466,
+            "z": 3.9875799876325924
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.4290131546774909,
+              "y": 0.5136057363919051,
+              "z": 0.7430725810168185
+            },
+            "yAxis": {
+              "x": 0.25680286819595294,
+              "y": -0.8580263093549807,
+              "z": 0.4447956152448034
+            },
+            "zAxis": {
+              "x": 0.8660254037844384,
+              "y": 2.7755575615628914e-17,
+              "z": -0.5000000000000007
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 8,
+          "role": "upper canopy walls",
+          "subassemblyId": "upper canopy walls",
+          "root": false,
+          "parentTileId": "upper-wall--1-3",
+          "parentEdge": 1,
+          "childEdge": 2,
+          "foldAngle": 0
+        },
+        {
+          "id": "upper-wall-1-1",
+          "shape": "equilateral-triangle",
+          "color": "#32ad66",
+          "position": {
+            "x": 5.377100848367754,
+            "y": 5.023799698444893,
+            "z": 2.243753373056909
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.4290131546774903,
+              "y": 0.5136057363919049,
+              "z": 0.7430725810168187
+            },
+            "yAxis": {
+              "x": -0.25680286819595244,
+              "y": 0.8580263093549807,
+              "z": -0.4447956152448034
+            },
+            "zAxis": {
+              "x": -0.8660254037844385,
+              "y": 0,
+              "z": 0.4999999999999999
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 8,
+          "role": "upper canopy walls",
+          "subassemblyId": "upper canopy walls",
+          "root": false,
+          "parentTileId": "upper-side-1",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "upper-wall-1-2",
+          "shape": "equilateral-triangle",
+          "color": "#32ad66",
+          "position": {
+            "x": 6.02062058038399,
+            "y": 5.794208303032751,
+            "z": 3.358362244582137
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.42901315467749035,
+              "y": 0.5136057363919049,
+              "z": 0.7430725810168188
+            },
+            "yAxis": {
+              "x": 0.25680286819595244,
+              "y": -0.8580263093549807,
+              "z": 0.4447956152448034
+            },
+            "zAxis": {
+              "x": 0.8660254037844386,
+              "y": 0,
+              "z": -0.5
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 8,
+          "role": "upper canopy walls",
+          "subassemblyId": "upper canopy walls",
+          "root": false,
+          "parentTileId": "upper-wall-1-1",
+          "parentEdge": 1,
+          "childEdge": 2,
+          "foldAngle": 0
+        },
+        {
+          "id": "upper-wall-1-3",
+          "shape": "equilateral-triangle",
+          "color": "#32ad66",
+          "position": {
+            "x": 6.664140312400225,
+            "y": 6.564616907620609,
+            "z": 4.472971116107365
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.4290131546774903,
+              "y": 0.5136057363919051,
+              "z": 0.7430725810168187
+            },
+            "yAxis": {
+              "x": -0.2568028681959526,
+              "y": 0.8580263093549806,
+              "z": -0.44479561524480354
+            },
+            "zAxis": {
+              "x": -0.8660254037844386,
+              "y": -5.551115123125783e-17,
+              "z": 0.5
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 8,
+          "role": "upper canopy walls",
+          "subassemblyId": "upper canopy walls",
+          "root": false,
+          "parentTileId": "upper-side-1",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "upper-wall-1-4",
+          "shape": "equilateral-triangle",
+          "color": "#32ad66",
+          "position": {
+            "x": 7.307660044416461,
+            "y": 7.335025512208466,
+            "z": 5.587579987632594
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.4290131546774903,
+              "y": 0.5136057363919051,
+              "z": 0.7430725810168188
+            },
+            "yAxis": {
+              "x": 0.2568028681959526,
+              "y": -0.8580263093549807,
+              "z": 0.44479561524480354
+            },
+            "zAxis": {
+              "x": 0.8660254037844388,
+              "y": 8.326672684688674e-17,
+              "z": -0.5
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 8,
+          "role": "upper canopy walls",
+          "subassemblyId": "upper canopy walls",
+          "root": false,
+          "parentTileId": "upper-wall-1-3",
+          "parentEdge": 1,
+          "childEdge": 2,
+          "foldAngle": 0
+        },
+        {
+          "id": "upper-cover-1",
+          "shape": "small-square",
+          "color": "#f3bc25",
+          "position": {
+            "x": 7.049552256867853,
+            "y": 6.9860395423999275,
+            "z": 1.9405241857692115
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.42901315467749046,
+              "y": 0.513605736391905,
+              "z": 0.7430725810168187
+            },
+            "yAxis": {
+              "x": -0.8660254037844385,
+              "y": -1.480297366166875e-16,
+              "z": 0.5000000000000002
+            },
+            "zAxis": {
+              "x": 0.2568028681959527,
+              "y": -0.8580263093549807,
+              "z": 0.4447956152448033
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 9,
+          "role": "upper canopy roof",
+          "subassemblyId": "upper canopy roof",
+          "root": false,
+          "parentTileId": "upper-wall--1-2",
+          "parentEdge": 0,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "upper-cover-2",
+          "shape": "small-square",
+          "color": "#f3bc25",
+          "position": {
+            "x": 8.336591720900325,
+            "y": 8.526856751575641,
+            "z": 4.1697419288196675
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.42901315467749035,
+              "y": 0.5136057363919051,
+              "z": 0.7430725810168186
+            },
+            "yAxis": {
+              "x": -0.8660254037844385,
+              "y": 0,
+              "z": 0.5000000000000002
+            },
+            "zAxis": {
+              "x": 0.25680286819595266,
+              "y": -0.8580263093549805,
+              "z": 0.4447956152448035
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 9,
+          "role": "upper canopy roof",
+          "subassemblyId": "upper canopy roof",
+          "root": false,
+          "parentTileId": "upper-wall--1-4",
+          "parentEdge": 0,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "turn-roof",
+          "shape": "equilateral-triangle",
+          "color": "#168db3",
+          "position": {
+            "x": 6.362202797737239,
+            "y": 5.781895715615909,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "yAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 7,
+          "role": "turn cover",
+          "subassemblyId": "turn cover",
+          "root": false,
+          "parentTileId": "lower-cover-2",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "launch-flap--1",
+          "shape": "small-square",
+          "color": "#d93747",
+          "position": {
+            "x": 9.4366014006101,
+            "y": 9.986155865380848,
+            "z": 2.7750145828945647
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.42901315467749046,
+              "y": 0.513605736391905,
+              "z": 0.7430725810168187
+            },
+            "yAxis": {
+              "x": -0.2568028681959523,
+              "y": 0.8580263093549806,
+              "z": -0.4447956152448036
+            },
+            "zAxis": {
+              "x": -0.8660254037844385,
+              "y": 2.498001805406602e-16,
+              "z": 0.5
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 10,
+          "role": "launch flaps",
+          "subassemblyId": "launch flaps",
+          "root": false,
+          "parentTileId": "upper-wall--1-4",
+          "parentEdge": 0,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "launch-flap-1",
+          "shape": "small-square",
+          "color": "#d93747",
+          "position": {
+            "x": 6.578717568121452,
+            "y": 9.986155865380848,
+            "z": 4.4250145828945655
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0.42901315467749046,
+              "y": 0.513605736391905,
+              "z": 0.7430725810168187
+            },
+            "yAxis": {
+              "x": -0.25680286819595255,
+              "y": 0.8580263093549806,
+              "z": -0.4447956152448035
+            },
+            "zAxis": {
+              "x": -0.8660254037844385,
+              "y": 2.7755575615628914e-17,
+              "z": 0.5000000000000001
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 10,
+          "role": "launch flaps",
+          "subassemblyId": "launch flaps",
+          "root": false,
+          "parentTileId": "upper-wall-1-4",
+          "parentEdge": 0,
+          "childEdge": 0,
+          "foldAngle": 0
+        }
+      ],
+      "connections": [
+        {
+          "fromTileId": "lower-side-1",
+          "fromEdge": 1,
+          "toTileId": "lower-deck-1",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-side--1",
+          "fromEdge": 1,
+          "toTileId": "lower-deck-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-deck-1",
+          "fromEdge": 1,
+          "toTileId": "lower-deck-2",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-side-1",
+          "fromEdge": 1,
+          "toTileId": "lower-deck-2",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-side--1",
+          "fromEdge": 1,
+          "toTileId": "lower-deck-2",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "support-side--1-0",
+          "fromEdge": 1,
+          "toTileId": "support-side--1-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-side-1",
+          "fromEdge": 0,
+          "toTileId": "support-side-1-0",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "support-side-1-0",
+          "fromEdge": 1,
+          "toTileId": "support-side-1-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "support-side-1-1",
+          "fromEdge": 1,
+          "toTileId": "support-back",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "support-side--1-1",
+          "fromEdge": 1,
+          "toTileId": "support-back",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "support-side--1-0",
+          "fromEdge": 2,
+          "toTileId": "upper-side--1",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "support-side-1-0",
+          "fromEdge": 2,
+          "toTileId": "upper-side-1",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-side-1",
+          "fromEdge": 1,
+          "toTileId": "upper-deck-1",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-side--1",
+          "fromEdge": 1,
+          "toTileId": "upper-deck-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-deck-1",
+          "fromEdge": 1,
+          "toTileId": "upper-deck-2",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-side-1",
+          "fromEdge": 1,
+          "toTileId": "upper-deck-2",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-side--1",
+          "fromEdge": 1,
+          "toTileId": "upper-deck-2",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-deck-1",
+          "fromEdge": 3,
+          "toTileId": "turn-floor",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-deck-2",
+          "fromEdge": 1,
+          "toTileId": "turn-floor",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-deck-1",
+          "fromEdge": 0,
+          "toTileId": "lower-wall--1-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-side--1",
+          "fromEdge": 1,
+          "toTileId": "lower-wall--1-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-wall--1-1",
+          "fromEdge": 1,
+          "toTileId": "lower-wall--1-2",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-wall--1-2",
+          "fromEdge": 1,
+          "toTileId": "lower-wall--1-3",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-deck-2",
+          "fromEdge": 0,
+          "toTileId": "lower-wall--1-3",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-side--1",
+          "fromEdge": 1,
+          "toTileId": "lower-wall--1-3",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-wall--1-3",
+          "fromEdge": 1,
+          "toTileId": "lower-wall--1-4",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-deck-1",
+          "fromEdge": 2,
+          "toTileId": "lower-wall-1-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-side-1",
+          "fromEdge": 1,
+          "toTileId": "lower-wall-1-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-wall-1-1",
+          "fromEdge": 1,
+          "toTileId": "lower-wall-1-2",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-wall-1-2",
+          "fromEdge": 1,
+          "toTileId": "lower-wall-1-3",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-deck-2",
+          "fromEdge": 2,
+          "toTileId": "lower-wall-1-3",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-side-1",
+          "fromEdge": 1,
+          "toTileId": "lower-wall-1-3",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-wall-1-3",
+          "fromEdge": 1,
+          "toTileId": "lower-wall-1-4",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-wall-1-2",
+          "fromEdge": 0,
+          "toTileId": "lower-cover-1",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-wall--1-2",
+          "fromEdge": 0,
+          "toTileId": "lower-cover-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-cover-1",
+          "fromEdge": 1,
+          "toTileId": "lower-cover-2",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-wall-1-4",
+          "fromEdge": 0,
+          "toTileId": "lower-cover-2",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-wall--1-4",
+          "fromEdge": 0,
+          "toTileId": "lower-cover-2",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-deck-1",
+          "fromEdge": 0,
+          "toTileId": "upper-wall--1-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-side--1",
+          "fromEdge": 1,
+          "toTileId": "upper-wall--1-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-wall--1-1",
+          "fromEdge": 1,
+          "toTileId": "upper-wall--1-2",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-wall--1-2",
+          "fromEdge": 1,
+          "toTileId": "upper-wall--1-3",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-deck-2",
+          "fromEdge": 0,
+          "toTileId": "upper-wall--1-3",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-side--1",
+          "fromEdge": 1,
+          "toTileId": "upper-wall--1-3",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-wall--1-3",
+          "fromEdge": 1,
+          "toTileId": "upper-wall--1-4",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-wall-1-4",
+          "fromEdge": 1,
+          "toTileId": "upper-wall-1-1",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-deck-1",
+          "fromEdge": 2,
+          "toTileId": "upper-wall-1-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-side-1",
+          "fromEdge": 1,
+          "toTileId": "upper-wall-1-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-wall-1-1",
+          "fromEdge": 1,
+          "toTileId": "upper-wall-1-2",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-wall-1-2",
+          "fromEdge": 1,
+          "toTileId": "upper-wall-1-3",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-deck-2",
+          "fromEdge": 2,
+          "toTileId": "upper-wall-1-3",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-side-1",
+          "fromEdge": 1,
+          "toTileId": "upper-wall-1-3",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-wall-1-3",
+          "fromEdge": 1,
+          "toTileId": "upper-wall-1-4",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-wall-1-2",
+          "fromEdge": 0,
+          "toTileId": "upper-cover-1",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-wall--1-2",
+          "fromEdge": 0,
+          "toTileId": "upper-cover-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-cover-1",
+          "fromEdge": 1,
+          "toTileId": "upper-cover-2",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-wall-1-4",
+          "fromEdge": 0,
+          "toTileId": "upper-cover-2",
+          "toEdge": 2,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-wall--1-4",
+          "fromEdge": 0,
+          "toTileId": "upper-cover-2",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-cover-1",
+          "fromEdge": 3,
+          "toTileId": "turn-roof",
+          "toEdge": 1,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "lower-cover-2",
+          "fromEdge": 1,
+          "toTileId": "turn-roof",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-cover-2",
+          "fromEdge": 0,
+          "toTileId": "launch-flap--1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-wall--1-4",
+          "fromEdge": 0,
+          "toTileId": "launch-flap--1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-cover-2",
+          "fromEdge": 2,
+          "toTileId": "launch-flap-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "upper-wall-1-4",
+          "fromEdge": 0,
+          "toTileId": "launch-flap-1",
+          "toEdge": 0,
+          "kind": "edge"
+        }
+      ],
+      "bounds": {
+        "width": 11.37569053814161,
+        "height": 12.138641215931962,
+        "depth": 8.992370205355737
+      }
+    },
+    "inventory": {
+      "small-square": 15,
+      "large-square": 0,
+      "xl-square": 0,
+      "equilateral-triangle": 18,
+      "right-triangle": 0,
+      "isosceles-triangle": 4
+    },
+    "bomFrameId": "medium-bom",
+    "stages": [
+      {
+        "id": "medium-lower",
+        "frameId": "medium-lower",
+        "title": "Build the lower wedge",
+        "instruction": "Join two long isosceles sides and two square deck tiles. The medium flight has four pieces; it omits the small ramp's rear square.",
+        "tileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "medium-support",
+        "frameId": "medium-support",
+        "title": "Make the five-square support",
+        "instruction": "Join two green squares along each long side and one across the back to make the elongated U beside the lower wedge.",
+        "tileIds": [
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "medium-turn",
+        "frameId": "medium-turn",
+        "title": "Add the upper wedge and triangular turn",
+        "instruction": "Place the second wedge on the U support. Join the blue equilateral turn between the upper exit and lower entrance; retain its 60-degree change of direction.",
+        "tileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2",
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back",
+          "upper-side--1",
+          "upper-side-1",
+          "upper-deck-1",
+          "upper-deck-2",
+          "turn-floor"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "medium-lower-walls",
+        "frameId": "medium-fit",
+        "title": "Add the lower triangular walls",
+        "instruction": "Add only the numbered pieces in this step. The canopy end geometry and support contacts remain hypotheses; stop if the shown joins do not seat without force.",
+        "tileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2",
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back",
+          "upper-side--1",
+          "upper-side-1",
+          "upper-deck-1",
+          "upper-deck-2",
+          "turn-floor",
+          "lower-wall--1-1",
+          "lower-wall--1-2",
+          "lower-wall--1-3",
+          "lower-wall--1-4",
+          "lower-wall-1-1",
+          "lower-wall-1-2",
+          "lower-wall-1-3",
+          "lower-wall-1-4"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "medium-lower-cover",
+        "frameId": "medium-lower-cover",
+        "title": "Cover the lower driving section",
+        "instruction": "Add only the numbered pieces in this step. The canopy end geometry and support contacts remain hypotheses; stop if the shown joins do not seat without force.",
+        "tileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2",
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back",
+          "upper-side--1",
+          "upper-side-1",
+          "upper-deck-1",
+          "upper-deck-2",
+          "turn-floor",
+          "lower-wall--1-1",
+          "lower-wall--1-2",
+          "lower-wall--1-3",
+          "lower-wall--1-4",
+          "lower-wall-1-1",
+          "lower-wall-1-2",
+          "lower-wall-1-3",
+          "lower-wall-1-4",
+          "lower-cover-1",
+          "lower-cover-2"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "medium-turn-cover",
+        "frameId": "medium-turn-cover",
+        "title": "Cover the triangular turn",
+        "instruction": "Add only the numbered pieces in this step. The canopy end geometry and support contacts remain hypotheses; stop if the shown joins do not seat without force.",
+        "tileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2",
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back",
+          "upper-side--1",
+          "upper-side-1",
+          "upper-deck-1",
+          "upper-deck-2",
+          "turn-floor",
+          "lower-wall--1-1",
+          "lower-wall--1-2",
+          "lower-wall--1-3",
+          "lower-wall--1-4",
+          "lower-wall-1-1",
+          "lower-wall-1-2",
+          "lower-wall-1-3",
+          "lower-wall-1-4",
+          "lower-cover-1",
+          "lower-cover-2",
+          "turn-roof"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "medium-upper-cover",
+        "frameId": "medium-upper-cover",
+        "title": "Add the upper walls and cover",
+        "instruction": "Add only the numbered pieces in this step. The canopy end geometry and support contacts remain hypotheses; stop if the shown joins do not seat without force.",
+        "tileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2",
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back",
+          "upper-side--1",
+          "upper-side-1",
+          "upper-deck-1",
+          "upper-deck-2",
+          "turn-floor",
+          "lower-wall--1-1",
+          "lower-wall--1-2",
+          "lower-wall--1-3",
+          "lower-wall--1-4",
+          "lower-wall-1-1",
+          "lower-wall-1-2",
+          "lower-wall-1-3",
+          "lower-wall-1-4",
+          "lower-cover-1",
+          "lower-cover-2",
+          "upper-wall--1-1",
+          "upper-wall--1-2",
+          "upper-wall--1-3",
+          "upper-wall--1-4",
+          "upper-wall-1-1",
+          "upper-wall-1-2",
+          "upper-wall-1-3",
+          "upper-wall-1-4",
+          "upper-cover-1",
+          "upper-cover-2",
+          "turn-roof"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "medium-final",
+        "frameId": "medium-check-a",
+        "title": "Add the launch flaps",
+        "instruction": "Add only the numbered pieces in this step. The canopy end geometry and support contacts remain hypotheses; stop if the shown joins do not seat without force.",
+        "tileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2",
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back",
+          "upper-side--1",
+          "upper-side-1",
+          "upper-deck-1",
+          "upper-deck-2",
+          "turn-floor",
+          "lower-wall--1-1",
+          "lower-wall--1-2",
+          "lower-wall--1-3",
+          "lower-wall--1-4",
+          "lower-wall-1-1",
+          "lower-wall-1-2",
+          "lower-wall-1-3",
+          "lower-wall-1-4",
+          "lower-cover-1",
+          "lower-cover-2",
+          "upper-wall--1-1",
+          "upper-wall--1-2",
+          "upper-wall--1-3",
+          "upper-wall--1-4",
+          "upper-wall-1-1",
+          "upper-wall-1-2",
+          "upper-wall-1-3",
+          "upper-wall-1-4",
+          "upper-cover-1",
+          "upper-cover-2",
+          "turn-roof",
+          "launch-flap--1",
+          "launch-flap-1"
+        ],
+        "support": "released"
+      }
+    ],
+    "materialQuestions": [
+      "Source isosceles dimensions and magnets are uncalibrated; the simulated vehicle is an assumed proxy."
+    ],
+    "uncertainties": [
+      {
+        "id": "canopy-topology",
+        "tileIds": [
+          "lower-wall--1-1",
+          "lower-wall--1-2",
+          "lower-wall--1-3",
+          "lower-wall--1-4",
+          "lower-wall-1-1",
+          "lower-wall-1-2",
+          "lower-wall-1-3",
+          "lower-wall-1-4",
+          "lower-cover-1",
+          "lower-cover-2",
+          "upper-wall--1-1",
+          "upper-wall--1-2",
+          "upper-wall--1-3",
+          "upper-wall--1-4",
+          "upper-wall-1-1",
+          "upper-wall-1-2",
+          "upper-wall-1-3",
+          "upper-wall-1-4",
+          "upper-cover-1",
+          "upper-cover-2",
+          "turn-roof",
+          "launch-flap--1",
+          "launch-flap-1"
+        ],
+        "frameIds": [
+          "medium-fit",
+          "medium-lower-cover",
+          "medium-check-a"
+        ],
+        "detail": "Canopy roof pitch, triangular tessellation, end closures and red launch flap joins require additional fitting. Exact BOM alone does not validate this hypothesis."
+      },
+      {
+        "id": "support-turn",
+        "tileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2",
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back",
+          "upper-side--1",
+          "upper-side-1",
+          "upper-deck-1",
+          "upper-deck-2",
+          "turn-floor"
+        ],
+        "frameIds": [
+          "medium-support",
+          "medium-turn"
+        ],
+        "detail": "Upper wedge elevation/support alignment and the blue turn's dihedral remain unresolved."
+      }
+    ],
+    "route": {
+      "sourceFrameId": "medium-car",
+      "evidence": "The 01:46 close-up shows Henry gesturing along the upper squares. No complete toy-car trajectory is visible. The roof route below is an inferred functional target, not a measured successful turn.",
+      "brief": {
+        "prompt": "Henry's medium ramp with a triangular passive turn",
+        "kind": "racecourse",
+        "lanes": 1,
+        "turns": 1,
+        "downhill": true,
+        "unsupportedTerms": [],
+        "unlimitedPieces": true,
+        "inventoryPreset": "classic-100",
+        "car": {
+          "width": 1.1,
+          "length": 2.3,
+          "wheelRadius": 0.24,
+          "massKg": 0.035
+        }
+      },
+      "lanes": [
+        {
+          "id": "car",
+          "width": 3,
+          "surfaceTileIds": [
+            "upper-cover-2",
+            "upper-cover-1",
+            "turn-roof",
+            "lower-cover-2",
+            "lower-cover-1"
+          ],
+          "waypoints": [
+            {
+              "x": 8.336591720900325,
+              "y": 8.526856751575641,
+              "z": 4.1697419288196675
+            },
+            {
+              "x": 7.049552256867853,
+              "y": 6.9860395423999275,
+              "z": 1.9405241857692115
+            },
+            {
+              "x": 6.362202797737239,
+              "y": 5.781895715615909,
+              "z": 0
+            },
+            {
+              "x": 3.6087778463261695,
+              "y": 5.293037247313049,
+              "z": -5.71560338628028e-18
+            },
+            {
+              "x": 1.0346989182612283,
+              "y": 3.7522200381373345,
+              "z": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "report": {
+    "id": "medium-ramp",
+    "fingerprint": "d48b89265f7d5b7b5069895ced5c1366178f06f6d7e7abcf618ca84de49791fc",
+    "validationCodeHash": "25e42698100b72d400cebf386440c1c67af38784ef58f4f5e0c8651e745d1169",
+    "generatedAt": "2026-09-26T18:35:33.172Z",
+    "replication": "not-verified",
+    "checks": {
+      "source": {
+        "status": "pass",
+        "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 25 extracted frame hashes. Manual annotations remain reviewable measurements."
+      },
+      "inventory": {
+        "status": "pass",
+        "detail": "37 parts match the independently transcribed source card. Colors and placements are separate checks."
+      },
+      "fidelity": {
+        "status": "fail",
+        "detail": "2 measured views, 1 withheld views, 33/37 parts lack independent scored landmarks. Need complete visible/occluded part constraints and at least two distinct withheld final views. Canopy roof pitch, triangular tessellation, end closures and red launch flap joins require additional fitting. Exact BOM alone does not validate this hypothesis. Upper wedge elevation/support alignment and the blue turn's dihedral remain unresolved."
+      },
+      "materials": {
+        "status": "unverified",
+        "detail": "Source isosceles dimensions and magnets are uncalibrated; the simulated vehicle is an assumed proxy."
+      },
+      "geometry": {
+        "status": "pass",
+        "detail": "37 rigid catalog parts; 64 nominal edge connections; zero raw intersections. Magnet spacing and force are not physically calibrated."
+      },
+      "release": {
+        "status": "fail",
+        "detail": "seed 0: fail, peak 0.923 in, linear 5.560 in/s, angular 5.070 rad/s, 0/90 rest steps; seed 17: fail, peak 0.916 in, linear 4.845 in/s, angular 4.611 rad/s, 0/90 rest steps; seed 53: fail, peak 0.902 in, linear 2.842 in/s, angular 12.984 rad/s, 0/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
+      },
+      "settledShape": {
+        "status": "fail",
+        "detail": "3 settled point comparisons. Original camera held fixed. Sparse passing landmarks do not cover the full settled shape."
+      },
+      "assembly": {
+        "status": "fail",
+        "detail": "2/8 nominal checkpoints passed. Held modules, joining motions and hand access are separate unverified requirements."
+      },
+      "function": {
+        "status": "fail",
+        "detail": "The 01:46 close-up shows Henry gesturing along the upper squares. No complete toy-car trajectory is visible. The roof route below is an inferred functional target, not a measured successful turn. Car left the road before completing the route."
+      }
+    },
+    "projections": [
+      {
+        "id": "medium-stage-63",
+        "frameId": "medium-fit",
+        "partition": "fit",
+        "status": "fail",
+        "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 26.68 px. Independent point agreement only; not complete shape fidelity.",
+        "camera": {
+          "position": {
+            "x": -339.4676329902065,
+            "y": 178.15872145896756,
+            "z": -303.5558009413435
+          },
+          "target": {
+            "x": 7.82191774307419,
+            "y": 3.76276010404575,
+            "z": 4.338300449891226
+          },
+          "up": {
+            "x": 0.2078298376939027,
+            "y": 0.9329345611046079,
+            "z": 0.29400657009780934
+          },
+          "focal": 27749.26512621425,
+          "cx": 926.7640906827627,
+          "cy": 280.6974699689322
+        },
+        "cameraAnchors": 6,
+        "checkLandmarks": 4,
+        "rmsPx": 171.2466071893747,
+        "maxPx": 241.18851738388042,
+        "sourceDiagonalPx": 895.4289474882974,
+        "residuals": [
+          {
+            "id": "medium-stage-63-camera-1",
+            "use": "camera",
+            "observed": [
+              773,
+              253
+            ],
+            "projected": [
+              795.6551225653188,
+              247.63709109730667
+            ],
+            "errorPx": 23.281223557798803,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-camera-2",
+            "use": "camera",
+            "observed": [
+              829,
+              93
+            ],
+            "projected": [
+              830.8864115112885,
+              115.9118158638754
+            ],
+            "errorPx": 22.989342195244618,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-camera-3",
+            "use": "camera",
+            "observed": [
+              1012,
+              125
+            ],
+            "projected": [
+              990.9592977566273,
+              121.15338181647789
+            ],
+            "errorPx": 21.389427817126688,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-camera-4",
+            "use": "camera",
+            "observed": [
+              942,
+              288
+            ],
+            "projected": [
+              956.2295625975934,
+              253.1339506865431
+            ],
+            "errorPx": 37.65795860700945,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-camera-5",
+            "use": "camera",
+            "observed": [
+              965,
+              505
+            ],
+            "projected": [
+              945.2086711305101,
+              534.518116006167
+            ],
+            "errorPx": 35.538934578485026,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-camera-6",
+            "use": "camera",
+            "observed": [
+              1041,
+              420
+            ],
+            "projected": [
+              1041.0352109510839,
+              412.2087546860197
+            ],
+            "errorPx": 7.791324877945753,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-check-1",
+            "use": "check",
+            "observed": [
+              930,
+              900
+            ],
+            "projected": [
+              1013.7355934513555,
+              673.8136801060159
+            ],
+            "errorPx": 241.18851738388042,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-check-2",
+            "use": "check",
+            "observed": [
+              1101,
+              804
+            ],
+            "projected": [
+              1136.9093293562237,
+              622.342974023257
+            ],
+            "errorPx": 185.17223069760973,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-check-3",
+            "use": "check",
+            "observed": [
+              713,
+              544
+            ],
+            "projected": [
+              800.9916728578968,
+              448.5737830215091
+            ],
+            "errorPx": 129.80253225248404,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-check-4",
+            "use": "check",
+            "observed": [
+              884,
+              478
+            ],
+            "projected": [
+              924.3394642314271,
+              398.2191990358014
+            ],
+            "errorPx": 89.39937682650621,
+            "uncertaintyPx": 12
+          }
+        ]
+      },
+      {
+        "id": "medium-final-101",
+        "frameId": "medium-check-a",
+        "partition": "holdout",
+        "status": "fail",
+        "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 29.10 px. Independent point agreement only; not complete shape fidelity.",
+        "camera": {
+          "position": {
+            "x": -494.6163609908715,
+            "y": 246.21516344695505,
+            "z": -334.2487510167188
+          },
+          "target": {
+            "x": 7.806135282506877,
+            "y": 5.762511002471291,
+            "z": 4.3109644263201865
+          },
+          "up": {
+            "x": 0.2742764916167289,
+            "y": 0.928024449387496,
+            "z": 0.2520774235933342
+          },
+          "focal": 36279.56320564102,
+          "cx": 987.2828273177972,
+          "cy": 327.70425689815147
+        },
+        "cameraAnchors": 6,
+        "checkLandmarks": 4,
+        "rmsPx": 214.2232202604155,
+        "maxPx": 294.8346712067375,
+        "sourceDiagonalPx": 954.5119171597597,
+        "residuals": [
+          {
+            "id": "medium-final-101-camera-1",
+            "use": "camera",
+            "observed": [
+              824,
+              235
+            ],
+            "projected": [
+              852.2380325544138,
+              234.6259929125381
+            ],
+            "errorPx": 28.240509270294826,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-final-101-camera-2",
+            "use": "camera",
+            "observed": [
+              920,
+              78
+            ],
+            "projected": [
+              908.1750708419997,
+              104.48308140824685
+            ],
+            "errorPx": 29.00314725107526,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-final-101-camera-3",
+            "use": "camera",
+            "observed": [
+              1080,
+              130
+            ],
+            "projected": [
+              1059.4624876840558,
+              122.6947255057132
+            ],
+            "errorPx": 21.79808357549899,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-final-101-camera-4",
+            "use": "camera",
+            "observed": [
+              982,
+              282
+            ],
+            "projected": [
+              1003.7883672185127,
+              253.127033350156
+            ],
+            "errorPx": 36.17155165612558,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-final-101-camera-5",
+            "use": "camera",
+            "observed": [
+              1008,
+              662
+            ],
+            "projected": [
+              979.9481664908351,
+              685.4849267602194
+            ],
+            "errorPx": 36.58479394719585,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-final-101-camera-6",
+            "use": "camera",
+            "observed": [
+              1110,
+              580
+            ],
+            "projected": [
+              1119.3044766770558,
+              564.7501556224499
+            ],
+            "errorPx": 17.864239132226466,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-final-101-check-1",
+            "use": "check",
+            "observed": [
+              812,
+              916
+            ],
+            "projected": [
+              989.1554796514274,
+              680.3234857372129
+            ],
+            "errorPx": 294.8346712067375,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-final-101-check-2",
+            "use": "check",
+            "observed": [
+              1031,
+              845
+            ],
+            "projected": [
+              1126.8919248574207,
+              636.9472031966689
+            ],
+            "errorPx": 229.0878161547432,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-final-101-check-3",
+            "use": "check",
+            "observed": [
+              653,
+              524
+            ],
+            "projected": [
+              814.0477640051026,
+              439.0363847950259
+            ],
+            "errorPx": 182.08568916788087,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-final-101-check-4",
+            "use": "check",
+            "observed": [
+              874,
+              467
+            ],
+            "projected": [
+              951.603453395009,
+              396.42984086554634
+            ],
+            "errorPx": 104.89253233235166,
+            "uncertaintyPx": 12
+          }
+        ]
+      }
+    ],
+    "releases": [
+      {
+        "seed": 0,
+        "status": "fail",
+        "peakDisplacement": 0.9234739190326748,
+        "finalDisplacement": 0.7543060035428892,
+        "finalSpeed": 5.559678650987474,
+        "linearSpeed": 5.559678650987474,
+        "angularSpeed": 5.069641738436813,
+        "settledSteps": 0,
+        "poppedJoints": [],
+        "settledProjections": [
+          {
+            "id": "medium-final-101",
+            "frameId": "medium-check-a",
+            "partition": "holdout",
+            "status": "fail",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 40.59 px. Independent point agreement only; not complete shape fidelity.",
+            "camera": {
+              "position": {
+                "x": -494.6163609908715,
+                "y": 246.21516344695505,
+                "z": -334.2487510167188
+              },
+              "target": {
+                "x": 7.806135282506877,
+                "y": 5.762511002471291,
+                "z": 4.3109644263201865
+              },
+              "up": {
+                "x": 0.2742764916167289,
+                "y": 0.928024449387496,
+                "z": 0.2520774235933342
+              },
+              "focal": 36279.56320564102,
+              "cx": 987.2828273177972,
+              "cy": 327.70425689815147
+            },
+            "cameraAnchors": 6,
+            "checkLandmarks": 4,
+            "rmsPx": 216.04551522823624,
+            "maxPx": 294.05787349217053,
+            "sourceDiagonalPx": 954.5119171597597,
+            "residuals": [
+              {
+                "id": "medium-final-101-camera-1",
+                "use": "camera",
+                "observed": [
+                  824,
+                  235
+                ],
+                "projected": [
+                  878.3121317803723,
+                  248.45860630523194
+                ],
+                "errorPx": 55.954818757706235,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-camera-2",
+                "use": "camera",
+                "observed": [
+                  920,
+                  78
+                ],
+                "projected": [
+                  939.0752014677115,
+                  121.01548397806033
+                ],
+                "errorPx": 47.055235339976235,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-camera-3",
+                "use": "camera",
+                "observed": [
+                  1080,
+                  130
+                ],
+                "projected": [
+                  1087.2634696845082,
+                  138.80759558501975
+                ],
+                "errorPx": 11.416292386192167,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-camera-4",
+                "use": "camera",
+                "observed": [
+                  982,
+                  282
+                ],
+                "projected": [
+                  1026.7385674658956,
+                  266.5582393335061
+                ],
+                "errorPx": 47.32850506176768,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-camera-5",
+                "use": "camera",
+                "observed": [
+                  1008,
+                  662
+                ],
+                "projected": [
+                  1000.4498707450034,
+                  700.0560552675425
+                ],
+                "errorPx": 38.79778079083143,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-camera-6",
+                "use": "camera",
+                "observed": [
+                  1110,
+                  580
+                ],
+                "projected": [
+                  1134.9561057187595,
+                  586.3337083336529
+                ],
+                "errorPx": 25.747292554785002,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-check-1",
+                "use": "check",
+                "observed": [
+                  812,
+                  916
+                ],
+                "projected": [
+                  993.3527568316593,
+                  684.5238445275747
+                ],
+                "errorPx": 294.05787349217053,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-check-2",
+                "use": "check",
+                "observed": [
+                  1031,
+                  845
+                ],
+                "projected": [
+                  1135.1312782858124,
+                  644.8670972086079
+                ],
+                "errorPx": 225.60253078621724,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-check-3",
+                "use": "check",
+                "observed": [
+                  653,
+                  524
+                ],
+                "projected": [
+                  827.6127074953064,
+                  445.5795339707182
+                ],
+                "errorPx": 191.4141246384163,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-check-4",
+                "use": "check",
+                "observed": [
+                  874,
+                  467
+                ],
+                "projected": [
+                  969.153120950071,
+                  406.6457109774065
+                ],
+                "errorPx": 112.67988564939876,
+                "uncertaintyPx": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "seed": 17,
+        "status": "fail",
+        "peakDisplacement": 0.9162206577936254,
+        "finalDisplacement": 0.6198386890410114,
+        "finalSpeed": 4.84483360985289,
+        "linearSpeed": 4.84483360985289,
+        "angularSpeed": 4.610550743788075,
+        "settledSteps": 0,
+        "poppedJoints": [],
+        "settledProjections": [
+          {
+            "id": "medium-final-101",
+            "frameId": "medium-check-a",
+            "partition": "holdout",
+            "status": "fail",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 37.34 px. Independent point agreement only; not complete shape fidelity.",
+            "camera": {
+              "position": {
+                "x": -494.6163609908715,
+                "y": 246.21516344695505,
+                "z": -334.2487510167188
+              },
+              "target": {
+                "x": 7.806135282506877,
+                "y": 5.762511002471291,
+                "z": 4.3109644263201865
+              },
+              "up": {
+                "x": 0.2742764916167289,
+                "y": 0.928024449387496,
+                "z": 0.2520774235933342
+              },
+              "focal": 36279.56320564102,
+              "cx": 987.2828273177972,
+              "cy": 327.70425689815147
+            },
+            "cameraAnchors": 6,
+            "checkLandmarks": 4,
+            "rmsPx": 214.99069632138162,
+            "maxPx": 293.487534938825,
+            "sourceDiagonalPx": 954.5119171597597,
+            "residuals": [
+              {
+                "id": "medium-final-101-camera-1",
+                "use": "camera",
+                "observed": [
+                  824,
+                  235
+                ],
+                "projected": [
+                  873.8794512914196,
+                  245.8456294802844
+                ],
+                "errorPx": 51.04495410867481,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-camera-2",
+                "use": "camera",
+                "observed": [
+                  920,
+                  78
+                ],
+                "projected": [
+                  934.7324939673749,
+                  118.80216330125441
+                ],
+                "errorPx": 43.38044384928502,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-camera-3",
+                "use": "camera",
+                "observed": [
+                  1080,
+                  130
+                ],
+                "projected": [
+                  1083.2846442835596,
+                  137.3264950597946
+                ],
+                "errorPx": 8.029098201586253,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-camera-4",
+                "use": "camera",
+                "observed": [
+                  982,
+                  282
+                ],
+                "projected": [
+                  1022.6740558183362,
+                  264.67526452252355
+                ],
+                "errorPx": 44.21001330103467,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-camera-5",
+                "use": "camera",
+                "observed": [
+                  1008,
+                  662
+                ],
+                "projected": [
+                  994.8319435678907,
+                  697.9906973100894
+                ],
+                "errorPx": 38.32398730645984,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-camera-6",
+                "use": "camera",
+                "observed": [
+                  1110,
+                  580
+                ],
+                "projected": [
+                  1129.0972958670382,
+                  585.0230242572138
+                ],
+                "errorPx": 19.746834736781263,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-check-1",
+                "use": "check",
+                "observed": [
+                  812,
+                  916
+                ],
+                "projected": [
+                  990.6981236131209,
+                  683.1869553018607
+                ],
+                "errorPx": 293.487534938825,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-check-2",
+                "use": "check",
+                "observed": [
+                  1031,
+                  845
+                ],
+                "projected": [
+                  1132.1210593142132,
+                  642.8949081432079
+                ],
+                "errorPx": 225.99101042136834,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-check-3",
+                "use": "check",
+                "observed": [
+                  653,
+                  524
+                ],
+                "projected": [
+                  823.8026872047814,
+                  444.28314131139183
+                ],
+                "errorPx": 188.4896164661436,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-check-4",
+                "use": "check",
+                "observed": [
+                  874,
+                  467
+                ],
+                "projected": [
+                  964.9342148512999,
+                  404.71227153688426
+                ],
+                "errorPx": 110.22156117437824,
+                "uncertaintyPx": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "seed": 53,
+        "status": "fail",
+        "peakDisplacement": 0.9017269039616105,
+        "finalDisplacement": 0.6932694239979598,
+        "finalSpeed": 12.984112058564607,
+        "linearSpeed": 2.842315195952902,
+        "angularSpeed": 12.984112058564605,
+        "settledSteps": 0,
+        "poppedJoints": [],
+        "settledProjections": [
+          {
+            "id": "medium-final-101",
+            "frameId": "medium-check-a",
+            "partition": "holdout",
+            "status": "fail",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 40.75 px. Independent point agreement only; not complete shape fidelity.",
+            "camera": {
+              "position": {
+                "x": -494.6163609908715,
+                "y": 246.21516344695505,
+                "z": -334.2487510167188
+              },
+              "target": {
+                "x": 7.806135282506877,
+                "y": 5.762511002471291,
+                "z": 4.3109644263201865
+              },
+              "up": {
+                "x": 0.2742764916167289,
+                "y": 0.928024449387496,
+                "z": 0.2520774235933342
+              },
+              "focal": 36279.56320564102,
+              "cx": 987.2828273177972,
+              "cy": 327.70425689815147
+            },
+            "cameraAnchors": 6,
+            "checkLandmarks": 4,
+            "rmsPx": 218.23180833140214,
+            "maxPx": 297.04304620891156,
+            "sourceDiagonalPx": 954.5119171597597,
+            "residuals": [
+              {
+                "id": "medium-final-101-camera-1",
+                "use": "camera",
+                "observed": [
+                  824,
+                  235
+                ],
+                "projected": [
+                  877.9977607020853,
+                  247.76499188996033
+                ],
+                "errorPx": 55.48606292385884,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-camera-2",
+                "use": "camera",
+                "observed": [
+                  920,
+                  78
+                ],
+                "projected": [
+                  938.0897250118545,
+                  120.70153490703592
+                ],
+                "errorPx": 46.37520064022712,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-camera-3",
+                "use": "camera",
+                "observed": [
+                  1080,
+                  130
+                ],
+                "projected": [
+                  1087.0569286357295,
+                  138.70666611698658
+                ],
+                "errorPx": 11.207420606119015,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-camera-4",
+                "use": "camera",
+                "observed": [
+                  982,
+                  282
+                ],
+                "projected": [
+                  1027.2132138444845,
+                  266.072139673435
+                ],
+                "errorPx": 47.93674416071293,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-camera-5",
+                "use": "camera",
+                "observed": [
+                  1008,
+                  662
+                ],
+                "projected": [
+                  999.4431224847943,
+                  699.648694319905
+                ],
+                "errorPx": 38.608863448745495,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-camera-6",
+                "use": "camera",
+                "observed": [
+                  1110,
+                  580
+                ],
+                "projected": [
+                  1137.664983157074,
+                  587.3146538221345
+                ],
+                "errorPx": 28.615650501410087,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-check-1",
+                "use": "check",
+                "observed": [
+                  812,
+                  916
+                ],
+                "projected": [
+                  997.3248970852173,
+                  683.8594093627244
+                ],
+                "errorPx": 297.04304620891156,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-check-2",
+                "use": "check",
+                "observed": [
+                  1031,
+                  845
+                ],
+                "projected": [
+                  1138.200204388318,
+                  643.9222512050015
+                ],
+                "errorPx": 227.8687009691363,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-check-3",
+                "use": "check",
+                "observed": [
+                  653,
+                  524
+                ],
+                "projected": [
+                  829.5426279552933,
+                  445.15485329849355
+                ],
+                "errorPx": 193.3490538992709,
+                "uncertaintyPx": 12
+              },
+              {
+                "id": "medium-final-101-check-4",
+                "use": "check",
+                "observed": [
+                  874,
+                  467
+                ],
+                "projected": [
+                  970.175484530149,
+                  406.1050739421417
+                ],
+                "errorPx": 113.83284167673649,
+                "uncertaintyPx": 12
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "stages": [
+      {
+        "id": "medium-lower",
+        "status": "pass",
+        "detail": "Released checkpoint: peak 0.266 in; 0 broken/rejected joints; 640 consecutive steps at rest (90 required).",
+        "displacement": 0.2663788603873846
+      },
+      {
+        "id": "medium-support",
+        "status": "pass",
+        "detail": "Released checkpoint: peak 0.268 in; 0 broken/rejected joints; 654 consecutive steps at rest (90 required).",
+        "displacement": 0.2679991496677511
+      },
+      {
+        "id": "medium-turn",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 0.569 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 0.569262499197038
+      },
+      {
+        "id": "medium-lower-walls",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 0.559 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 0.5589898263267028
+      },
+      {
+        "id": "medium-lower-cover",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 0.720 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 0.7203987383485272
+      },
+      {
+        "id": "medium-turn-cover",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 1.018 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 1.0184854833104788
+      },
+      {
+        "id": "medium-upper-cover",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 0.860 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 0.8603833162236609
+      },
+      {
+        "id": "medium-final",
+        "status": "fail",
+        "detail": "Released checkpoint: peak 0.923 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 0.9234739190326748
+      }
+    ],
+    "instructions": [
+      {
+        "step": 1,
+        "title": "Build the lower wedge",
+        "tileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2"
+        ],
+        "tileCounts": {
+          "small-square": 2,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 0,
+          "isosceles-triangle": 2
+        },
+        "instruction": "Join two long isosceles sides and two square deck tiles. The medium flight has four pieces; it omits the small ramp's rear square. New parts: P1 (Isosceles triangle), P2 (Isosceles triangle), P3 (Small square), P4 (Small square). Joins: P2 edge 2 to P3 edge 3; P1 edge 2 to P3 edge 1; P3 edge 2 to P4 edge 4; P2 edge 2 to P4 edge 3; P1 edge 2 to P4 edge 1. Source frame: medium-lower. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 2,
+        "title": "Make the five-square support",
+        "tileIds": [
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back"
+        ],
+        "tileCounts": {
+          "small-square": 5,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Join two green squares along each long side and one across the back to make the elongated U beside the lower wedge. New parts: P5 (Small square), P6 (Small square), P7 (Small square), P8 (Small square), P9 (Small square). Joins: P5 edge 2 to P6 edge 4; P7 edge 2 to P8 edge 4; P8 edge 2 to P9 edge 2; P6 edge 2 to P9 edge 4. Source frame: medium-support. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 3,
+        "title": "Add the upper wedge and triangular turn",
+        "tileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2",
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back",
+          "upper-side--1",
+          "upper-side-1",
+          "upper-deck-1",
+          "upper-deck-2",
+          "turn-floor"
+        ],
+        "tileCounts": {
+          "small-square": 2,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 1,
+          "right-triangle": 0,
+          "isosceles-triangle": 2
+        },
+        "instruction": "Place the second wedge on the U support. Join the blue equilateral turn between the upper exit and lower entrance; retain its 60-degree change of direction. New parts: P10 (Isosceles triangle), P11 (Isosceles triangle), P12 (Small square), P13 (Small square), P14 (Equilateral triangle). Joins: P2 edge 1 to P7 edge 4; P5 edge 3 to P10 edge 3; P7 edge 3 to P11 edge 3; P11 edge 2 to P12 edge 3; P10 edge 2 to P12 edge 1; P12 edge 2 to P13 edge 4; P11 edge 2 to P13 edge 3; P10 edge 2 to P13 edge 1; P12 edge 4 to P14 edge 2; P4 edge 2 to P14 edge 1. Source frame: medium-turn. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 4,
+        "title": "Add the lower triangular walls",
+        "tileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2",
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back",
+          "upper-side--1",
+          "upper-side-1",
+          "upper-deck-1",
+          "upper-deck-2",
+          "turn-floor",
+          "lower-wall--1-1",
+          "lower-wall--1-2",
+          "lower-wall--1-3",
+          "lower-wall--1-4",
+          "lower-wall-1-1",
+          "lower-wall-1-2",
+          "lower-wall-1-3",
+          "lower-wall-1-4"
+        ],
+        "tileCounts": {
+          "small-square": 0,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 8,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Add only the numbered pieces in this step. The canopy end geometry and support contacts remain hypotheses; stop if the shown joins do not seat without force. New parts: P15 (Equilateral triangle), P16 (Equilateral triangle), P17 (Equilateral triangle), P18 (Equilateral triangle), P19 (Equilateral triangle), P20 (Equilateral triangle), P21 (Equilateral triangle), P22 (Equilateral triangle). Joins: P3 edge 1 to P15 edge 1; P1 edge 2 to P15 edge 1; P15 edge 2 to P16 edge 3; P16 edge 2 to P17 edge 3; P4 edge 1 to P17 edge 1; P1 edge 2 to P17 edge 1; P17 edge 2 to P18 edge 3; P3 edge 3 to P19 edge 1; P2 edge 2 to P19 edge 1; P19 edge 2 to P20 edge 3; P20 edge 2 to P21 edge 3; P4 edge 3 to P21 edge 1; P2 edge 2 to P21 edge 1; P21 edge 2 to P22 edge 3. Source frame: medium-fit. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 5,
+        "title": "Cover the lower driving section",
+        "tileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2",
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back",
+          "upper-side--1",
+          "upper-side-1",
+          "upper-deck-1",
+          "upper-deck-2",
+          "turn-floor",
+          "lower-wall--1-1",
+          "lower-wall--1-2",
+          "lower-wall--1-3",
+          "lower-wall--1-4",
+          "lower-wall-1-1",
+          "lower-wall-1-2",
+          "lower-wall-1-3",
+          "lower-wall-1-4",
+          "lower-cover-1",
+          "lower-cover-2"
+        ],
+        "tileCounts": {
+          "small-square": 2,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Add only the numbered pieces in this step. The canopy end geometry and support contacts remain hypotheses; stop if the shown joins do not seat without force. New parts: P23 (Small square), P24 (Small square). Joins: P20 edge 1 to P23 edge 3; P16 edge 1 to P23 edge 1; P23 edge 2 to P24 edge 4; P22 edge 1 to P24 edge 3; P18 edge 1 to P24 edge 1. Source frame: medium-lower-cover. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 6,
+        "title": "Cover the triangular turn",
+        "tileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2",
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back",
+          "upper-side--1",
+          "upper-side-1",
+          "upper-deck-1",
+          "upper-deck-2",
+          "turn-floor",
+          "lower-wall--1-1",
+          "lower-wall--1-2",
+          "lower-wall--1-3",
+          "lower-wall--1-4",
+          "lower-wall-1-1",
+          "lower-wall-1-2",
+          "lower-wall-1-3",
+          "lower-wall-1-4",
+          "lower-cover-1",
+          "lower-cover-2",
+          "turn-roof"
+        ],
+        "tileCounts": {
+          "small-square": 0,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 1,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Add only the numbered pieces in this step. The canopy end geometry and support contacts remain hypotheses; stop if the shown joins do not seat without force. New parts: P35 (Equilateral triangle). Joins: P24 edge 2 to P35 edge 1. Source frame: medium-turn-cover. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 7,
+        "title": "Add the upper walls and cover",
+        "tileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2",
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back",
+          "upper-side--1",
+          "upper-side-1",
+          "upper-deck-1",
+          "upper-deck-2",
+          "turn-floor",
+          "lower-wall--1-1",
+          "lower-wall--1-2",
+          "lower-wall--1-3",
+          "lower-wall--1-4",
+          "lower-wall-1-1",
+          "lower-wall-1-2",
+          "lower-wall-1-3",
+          "lower-wall-1-4",
+          "lower-cover-1",
+          "lower-cover-2",
+          "upper-wall--1-1",
+          "upper-wall--1-2",
+          "upper-wall--1-3",
+          "upper-wall--1-4",
+          "upper-wall-1-1",
+          "upper-wall-1-2",
+          "upper-wall-1-3",
+          "upper-wall-1-4",
+          "upper-cover-1",
+          "upper-cover-2",
+          "turn-roof"
+        ],
+        "tileCounts": {
+          "small-square": 2,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 8,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Add only the numbered pieces in this step. The canopy end geometry and support contacts remain hypotheses; stop if the shown joins do not seat without force. New parts: P25 (Equilateral triangle), P26 (Equilateral triangle), P27 (Equilateral triangle), P28 (Equilateral triangle), P29 (Equilateral triangle), P30 (Equilateral triangle), P31 (Equilateral triangle), P32 (Equilateral triangle), P33 (Small square), P34 (Small square). Joins: P12 edge 1 to P25 edge 1; P10 edge 2 to P25 edge 1; P25 edge 2 to P26 edge 3; P26 edge 2 to P27 edge 3; P13 edge 1 to P27 edge 1; P10 edge 2 to P27 edge 1; P27 edge 2 to P28 edge 3; P22 edge 2 to P29 edge 3; P12 edge 3 to P29 edge 1; P11 edge 2 to P29 edge 1; P29 edge 2 to P30 edge 3; P30 edge 2 to P31 edge 3; P13 edge 3 to P31 edge 1; P11 edge 2 to P31 edge 1; P31 edge 2 to P32 edge 3; P30 edge 1 to P33 edge 3; P26 edge 1 to P33 edge 1; P33 edge 2 to P34 edge 4; P32 edge 1 to P34 edge 3; P28 edge 1 to P34 edge 1; P33 edge 4 to P35 edge 2. Source frame: medium-upper-cover. Release checkpoint: consult the measured result before following this candidate."
+      },
+      {
+        "step": 8,
+        "title": "Add the launch flaps",
+        "tileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2",
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back",
+          "upper-side--1",
+          "upper-side-1",
+          "upper-deck-1",
+          "upper-deck-2",
+          "turn-floor",
+          "lower-wall--1-1",
+          "lower-wall--1-2",
+          "lower-wall--1-3",
+          "lower-wall--1-4",
+          "lower-wall-1-1",
+          "lower-wall-1-2",
+          "lower-wall-1-3",
+          "lower-wall-1-4",
+          "lower-cover-1",
+          "lower-cover-2",
+          "upper-wall--1-1",
+          "upper-wall--1-2",
+          "upper-wall--1-3",
+          "upper-wall--1-4",
+          "upper-wall-1-1",
+          "upper-wall-1-2",
+          "upper-wall-1-3",
+          "upper-wall-1-4",
+          "upper-cover-1",
+          "upper-cover-2",
+          "turn-roof",
+          "launch-flap--1",
+          "launch-flap-1"
+        ],
+        "tileCounts": {
+          "small-square": 2,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 0,
+          "isosceles-triangle": 0
+        },
+        "instruction": "Add only the numbered pieces in this step. The canopy end geometry and support contacts remain hypotheses; stop if the shown joins do not seat without force. New parts: P36 (Small square), P37 (Small square). Joins: P34 edge 1 to P36 edge 1; P28 edge 1 to P36 edge 1; P34 edge 3 to P37 edge 1; P32 edge 1 to P37 edge 1. Source frame: medium-check-a. Release checkpoint: consult the measured result before following this candidate."
+      }
+    ],
+    "carTrials": [
+      {
+        "laneId": "car",
+        "passed": false,
+        "reachedWaypoint": 2,
+        "reason": "Car left the road before completing the route.",
+        "samples": [
+          {
+            "time": 0,
+            "position": {
+              "x": 8.239006630985863,
+              "y": 8.94794403106132,
+              "z": 4.000719595026642
+            }
+          },
+          {
+            "time": 0.008333333333333333,
+            "position": {
+              "x": 8.239006996154785,
+              "y": 8.933694839477539,
+              "z": 4.0007195472717285
+            }
+          },
+          {
+            "time": 0.075,
+            "position": {
+              "x": 8.131917953491211,
+              "y": 8.340544700622559,
+              "z": 3.790038824081421
+            }
+          },
+          {
+            "time": 0.14166666666666666,
+            "position": {
+              "x": 7.678342819213867,
+              "y": 7.909970760345459,
+              "z": 3.0843639373779297
+            }
+          },
+          {
+            "time": 0.20833333333333334,
+            "position": {
+              "x": 7.036151885986328,
+              "y": 7.38232946395874,
+              "z": 1.9170225858688354
+            }
+          },
+          {
+            "time": 0.275,
+            "position": {
+              "x": 6.371786594390869,
+              "y": 6.389406204223633,
+              "z": 0.5222455859184265
+            }
+          },
+          {
+            "time": 0.3416666666666667,
+            "position": {
+              "x": 5.886866569519043,
+              "y": 6.067728519439697,
+              "z": -0.8451261520385742
+            }
+          },
+          {
+            "time": 0.4083333333333333,
+            "position": {
+              "x": 5.7170915603637695,
+              "y": 5.597390174865723,
+              "z": -1.8656578063964844
+            }
+          },
+          {
+            "time": 0.475,
+            "position": {
+              "x": 5.693039894104004,
+              "y": 5.128005504608154,
+              "z": -2.2101662158966064
+            }
+          }
+        ],
+        "contactEvidence": {
+          "roadContactSteps": 45,
+          "longestContactGapSeconds": 0.041666666666666664,
+          "allowedContactGapSeconds": 0.15,
+          "postRunStructurePassed": true
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "schema": 1,
+  "createdAt": "2026-09-26",
+  "sources": [
+    {
+      "id": "jet",
+      "videoId": "WDtC_9se3ds",
+      "url": "https://www.youtube.com/watch?v=WDtC_9se3ds",
+      "localPath": ".video-cache/WDtC_9se3ds/source.mp4",
+      "sha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "width": 1280,
+      "height": 720,
+      "duration": 435.435,
+      "provenance": "Recovered original local ingestion cache; inspected 2026-09-26",
+      "frames": [
+        {
+          "id": "jet-bom",
+          "seconds": 11,
+          "stage": "inventory",
+          "use": "bom"
+        },
+        {
+          "id": "jet-body-ring",
+          "seconds": 33,
+          "stage": "body-upright-1",
+          "use": "construction"
+        },
+        {
+          "id": "jet-body-upright",
+          "seconds": 50,
+          "stage": "body-upright-4",
+          "use": "construction"
+        },
+        {
+          "id": "jet-body-release",
+          "seconds": 65,
+          "stage": "body-horizontal",
+          "use": "fit"
+        },
+        {
+          "id": "jet-nose",
+          "seconds": 80,
+          "stage": "nose",
+          "use": "construction"
+        },
+        {
+          "id": "jet-wing-module",
+          "seconds": 126,
+          "stage": "wing-module--1",
+          "use": "fit"
+        },
+        {
+          "id": "jet-wings",
+          "seconds": 179,
+          "stage": "wing-roots",
+          "use": "construction"
+        },
+        {
+          "id": "jet-wingtips",
+          "seconds": 208,
+          "stage": "wingtips",
+          "use": "construction"
+        },
+        {
+          "id": "jet-tail-cone",
+          "seconds": 222,
+          "stage": "tail-cone",
+          "use": "construction"
+        },
+        {
+          "id": "jet-tail-order",
+          "seconds": 258,
+          "stage": "tail-fins",
+          "use": "construction"
+        },
+        {
+          "id": "jet-cockpit-module",
+          "seconds": 316,
+          "stage": "cockpit-module",
+          "use": "construction"
+        },
+        {
+          "id": "jet-final-fit",
+          "seconds": 388,
+          "stage": "final",
+          "use": "fit"
+        },
+        {
+          "id": "jet-final-check-a",
+          "seconds": 397,
+          "stage": "final",
+          "use": "holdout"
+        },
+        {
+          "id": "jet-final-check-b",
+          "seconds": 416,
+          "stage": "final",
+          "use": "holdout"
+        },
+        {
+          "id": "jet-body-second",
+          "seconds": 43,
+          "stage": "body-upright-2",
+          "use": "construction"
+        },
+        {
+          "id": "jet-body-third",
+          "seconds": 46,
+          "stage": "body-upright-3",
+          "use": "construction"
+        },
+        {
+          "id": "jet-wing-root-left",
+          "seconds": 140,
+          "stage": "wing-root--1",
+          "use": "construction"
+        },
+        {
+          "id": "jet-wing-module-right",
+          "seconds": 158,
+          "stage": "wing-module-1",
+          "use": "construction"
+        },
+        {
+          "id": "jet-wing-root-right",
+          "seconds": 167,
+          "stage": "wing-root-1",
+          "use": "construction"
+        },
+        {
+          "id": "jet-horizontal-tail",
+          "seconds": 247,
+          "stage": "tail-horizontal",
+          "use": "construction"
+        }
+      ]
+    },
+    {
+      "id": "henry",
+      "videoId": "vxwBYubszZ8",
+      "url": "https://www.youtube.com/watch?v=vxwBYubszZ8",
+      "localPath": ".video-cache/vxwBYubszZ8/source.mp4",
+      "sha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "width": 1920,
+      "height": 1080,
+      "duration": 194.133333,
+      "provenance": "Exact supplied URL retrieved 2026-09-26 after local source search; yt-dlp format 399; AV1 1080p",
+      "frames": [
+        {
+          "id": "small-bom",
+          "seconds": 17,
+          "stage": "small-inventory",
+          "use": "bom"
+        },
+        {
+          "id": "small-wedge",
+          "seconds": 24,
+          "stage": "small-wedge",
+          "use": "construction"
+        },
+        {
+          "id": "small-fit",
+          "seconds": 27,
+          "stage": "small-wedge",
+          "use": "fit"
+        },
+        {
+          "id": "small-launch",
+          "seconds": 31,
+          "stage": "small-launch",
+          "use": "construction"
+        },
+        {
+          "id": "small-check",
+          "seconds": 34,
+          "stage": "small-final",
+          "use": "holdout"
+        },
+        {
+          "id": "small-car",
+          "seconds": 36,
+          "stage": "small-final",
+          "use": "function"
+        },
+        {
+          "id": "medium-bom",
+          "seconds": 45,
+          "stage": "medium-inventory",
+          "use": "bom"
+        },
+        {
+          "id": "medium-support",
+          "seconds": 50,
+          "stage": "medium-support",
+          "use": "construction"
+        },
+        {
+          "id": "medium-turn",
+          "seconds": 56,
+          "stage": "medium-turn",
+          "use": "construction"
+        },
+        {
+          "id": "medium-fit",
+          "seconds": 63,
+          "stage": "medium-lower-walls",
+          "use": "fit"
+        },
+        {
+          "id": "medium-lower-cover",
+          "seconds": 75,
+          "stage": "medium-lower-cover",
+          "use": "construction"
+        },
+        {
+          "id": "medium-turn-cover",
+          "seconds": 81,
+          "stage": "medium-turn-cover",
+          "use": "construction"
+        },
+        {
+          "id": "medium-upper-cover",
+          "seconds": 93,
+          "stage": "medium-upper-cover",
+          "use": "construction"
+        },
+        {
+          "id": "medium-check-a",
+          "seconds": 101,
+          "stage": "medium-final",
+          "use": "holdout"
+        },
+        {
+          "id": "medium-check-b",
+          "seconds": 108,
+          "stage": "medium-final",
+          "use": "holdout"
+        },
+        {
+          "id": "medium-car",
+          "seconds": 106,
+          "stage": "medium-final",
+          "use": "function"
+        },
+        {
+          "id": "large-bom",
+          "seconds": 116,
+          "stage": "large-inventory",
+          "use": "bom"
+        },
+        {
+          "id": "large-tower",
+          "seconds": 137,
+          "stage": "large-tower",
+          "use": "construction"
+        },
+        {
+          "id": "large-box",
+          "seconds": 148,
+          "stage": "large-box",
+          "use": "construction"
+        },
+        {
+          "id": "large-xl",
+          "seconds": 170,
+          "stage": "large-decks",
+          "use": "fit"
+        },
+        {
+          "id": "large-final",
+          "seconds": 188,
+          "stage": "large-final",
+          "use": "holdout"
+        },
+        {
+          "id": "medium-lower",
+          "seconds": 48,
+          "stage": "medium-lower",
+          "use": "construction"
+        },
+        {
+          "id": "large-tower-finished",
+          "seconds": 140,
+          "stage": "large-bay-0",
+          "use": "construction"
+        },
+        {
+          "id": "large-box-finished",
+          "seconds": 156,
+          "stage": "large-bay-1",
+          "use": "construction"
+        },
+        {
+          "id": "large-lowbox-finished",
+          "seconds": 168,
+          "stage": "large-bay-2",
+          "use": "construction"
+        }
+      ]
+    }
+  ],
+  "missingSources": [
+    {
+      "id": "snail",
+      "reason": "Exact 3D snail not found in project, Documents, Downloads, Movies, Desktop, home media filename search, or Spotlight. The official 2D snail is excluded."
+    }
+  ],
+  "tolerances": {
+    "rmsFraction": 0.02,
+    "maxFraction": 0.04,
+    "requiredHoldoutViews": 2,
+    "notes": "Declared before candidate tuning. Sparse landmarks cannot establish complete fidelity. Fractions are relative to source annotation bounding-box diagonal, never a candidate-controlled denominator."
+  },
+  "instructionFramePolicy": "Construction links identify the corresponding assembly operation or prepared subassembly in the clip; surrounding tiles may also be present. Only fit/holdout observations claim an exact projected stage snapshot."
+}

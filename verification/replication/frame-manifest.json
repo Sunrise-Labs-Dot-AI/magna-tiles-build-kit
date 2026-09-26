@@ -1,0 +1,456 @@
+{
+  "schema": 1,
+  "extractor": "ffmpeg accurate -ss before -i; PNG RGB output; timestamps are presentation seconds",
+  "frames": [
+    {
+      "id": "jet-bom",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 11,
+      "stage": "inventory",
+      "partition": "bom",
+      "path": "public/reference-frames/replication/jet/jet-bom.png",
+      "sha256": "1215f4746e9e03c699a554e9c8ea1122a9d4e34444f082218ad265102117bb5f"
+    },
+    {
+      "id": "jet-body-ring",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 33,
+      "stage": "body-upright-1",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/jet/jet-body-ring.png",
+      "sha256": "dbe1dba8c288b17b6bd7b58f7458820881c1f3877034610877258a3d92fe3470"
+    },
+    {
+      "id": "jet-body-upright",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 50,
+      "stage": "body-upright-4",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/jet/jet-body-upright.png",
+      "sha256": "90b95e25cc1cc8e633743a9f329cb800e836a46f93e5d330c839386abe6c01b3"
+    },
+    {
+      "id": "jet-body-release",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 65,
+      "stage": "body-horizontal",
+      "partition": "fit",
+      "path": "public/reference-frames/replication/jet/jet-body-release.png",
+      "sha256": "59ad7638e0cc6b4e106eb315f0a6e12f468ad92d61360e9886af67889107819b"
+    },
+    {
+      "id": "jet-nose",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 80,
+      "stage": "nose",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/jet/jet-nose.png",
+      "sha256": "d83a2ffc22c20406c0ca485438b44495226f419b27499a2f7db758af3c3234be"
+    },
+    {
+      "id": "jet-wing-module",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 126,
+      "stage": "wing-module--1",
+      "partition": "fit",
+      "path": "public/reference-frames/replication/jet/jet-wing-module.png",
+      "sha256": "0e858f07200877e81062c467f13f62c537d7479dd94d0d75eb157f0862755ee2"
+    },
+    {
+      "id": "jet-wings",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 179,
+      "stage": "wing-roots",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/jet/jet-wings.png",
+      "sha256": "4b5a95165bbceac89caa721447b74f80a3ca7c28b0a28377c1600442b78c43e2"
+    },
+    {
+      "id": "jet-wingtips",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 208,
+      "stage": "wingtips",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/jet/jet-wingtips.png",
+      "sha256": "b5c8656c19b1d21a48f8f1da400df11be853d304724e5ae6f7bddf80892abd70"
+    },
+    {
+      "id": "jet-tail-cone",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 222,
+      "stage": "tail-cone",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/jet/jet-tail-cone.png",
+      "sha256": "c49c55e91f858fc3dbab5f44602679382c66e3006cbdb73c83e99cf876f02855"
+    },
+    {
+      "id": "jet-tail-order",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 258,
+      "stage": "tail-fins",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/jet/jet-tail-order.png",
+      "sha256": "d6d6ec70f2e4a61a55f1929ecec7198fd3dd397f2f4bba527ab1208d0101821b"
+    },
+    {
+      "id": "jet-cockpit-module",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 316,
+      "stage": "cockpit-module",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/jet/jet-cockpit-module.png",
+      "sha256": "f5cec68b9d270c124027f0b3090d73241b6c59b3901744d50278f8915d1a885a"
+    },
+    {
+      "id": "jet-final-fit",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 388,
+      "stage": "final",
+      "partition": "fit",
+      "path": "public/reference-frames/replication/jet/jet-final-fit.png",
+      "sha256": "edc1e6e5646ad12748e203268977e5e8f94b5e073fc37a8e7f94c8ea33c1ec9f"
+    },
+    {
+      "id": "jet-final-check-a",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 397,
+      "stage": "final",
+      "partition": "holdout",
+      "path": "public/reference-frames/replication/jet/jet-final-check-a.png",
+      "sha256": "7209a39c42cc4e6719f20a2158eb0b3bb65c1f379082a7d11456d4aff78a8416"
+    },
+    {
+      "id": "jet-final-check-b",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 416,
+      "stage": "final",
+      "partition": "holdout",
+      "path": "public/reference-frames/replication/jet/jet-final-check-b.png",
+      "sha256": "386761ae973c18074a9ceb6652275c60acab5180f9d35f997f92491c2d632171"
+    },
+    {
+      "id": "jet-body-second",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 43,
+      "stage": "body-upright-2",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/jet/jet-body-second.png",
+      "sha256": "8477e0a2ceb42dc184040c365883f1d20cb3a2cfbadc3ade0102fdf1703c9c23"
+    },
+    {
+      "id": "jet-body-third",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 46,
+      "stage": "body-upright-3",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/jet/jet-body-third.png",
+      "sha256": "d48ba8030cd8c68d9bdc1de3aa09e084c2ca763abe5206c8670b1dab40283098"
+    },
+    {
+      "id": "jet-wing-root-left",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 140,
+      "stage": "wing-root--1",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/jet/jet-wing-root-left.png",
+      "sha256": "f1e759c67885c34667b81118e595ae5c54ba5ea6605c41bd83f9dff097c3d620"
+    },
+    {
+      "id": "jet-wing-module-right",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 158,
+      "stage": "wing-module-1",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/jet/jet-wing-module-right.png",
+      "sha256": "0a7af6d96b0a6eca05d9a56e0d4f11134fe196e1ee1a57fb801f56ed8f759543"
+    },
+    {
+      "id": "jet-wing-root-right",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 167,
+      "stage": "wing-root-1",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/jet/jet-wing-root-right.png",
+      "sha256": "3d76a4fcf3705dff274ced8f2afc7f4e16759019111ba5a94380301b3fefda17"
+    },
+    {
+      "id": "jet-horizontal-tail",
+      "sourceId": "jet",
+      "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+      "seconds": 247,
+      "stage": "tail-horizontal",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/jet/jet-horizontal-tail.png",
+      "sha256": "c06576f14239626541b9dabba903052ce50191959096f232dbbc3a2b2c40f16c"
+    },
+    {
+      "id": "small-bom",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 17,
+      "stage": "small-inventory",
+      "partition": "bom",
+      "path": "public/reference-frames/replication/henry/small-bom.png",
+      "sha256": "08f0b82510f9f872bcf65e017ad15cab5bfaae3c90fe50d4672ba48a4e4d27b4"
+    },
+    {
+      "id": "small-wedge",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 24,
+      "stage": "small-wedge",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/henry/small-wedge.png",
+      "sha256": "3dcf4c01478a4f4e641b8f57f71dd05138a0683852355adbc4f398796cc7b8f6"
+    },
+    {
+      "id": "small-fit",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 27,
+      "stage": "small-wedge",
+      "partition": "fit",
+      "path": "public/reference-frames/replication/henry/small-fit.png",
+      "sha256": "cd6657bc0191307bdb6408a9b8416882c5a4ec358f6e9041c4131e3c21141fbd"
+    },
+    {
+      "id": "small-launch",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 31,
+      "stage": "small-launch",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/henry/small-launch.png",
+      "sha256": "65ed040acd54fbaf6a7c80df4bbdd75589c5c7221d155215d3e77ffb454b8b72"
+    },
+    {
+      "id": "small-check",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 34,
+      "stage": "small-final",
+      "partition": "holdout",
+      "path": "public/reference-frames/replication/henry/small-check.png",
+      "sha256": "1b68f1e3a5bf9107d61d618dca83e4b7c914705b86b201e2189a6d3b6533187a"
+    },
+    {
+      "id": "small-car",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 36,
+      "stage": "small-final",
+      "partition": "function",
+      "path": "public/reference-frames/replication/henry/small-car.png",
+      "sha256": "73704294d18e5163488e7490a9ceba9b442f458149fbd60202dd20e8b0d471cc"
+    },
+    {
+      "id": "medium-bom",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 45,
+      "stage": "medium-inventory",
+      "partition": "bom",
+      "path": "public/reference-frames/replication/henry/medium-bom.png",
+      "sha256": "3c866bb1d96d5470ae504a862e41099a00dbd676bc53c565f17849b3c08e0367"
+    },
+    {
+      "id": "medium-support",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 50,
+      "stage": "medium-support",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/henry/medium-support.png",
+      "sha256": "d94c667ef9034622d853e425c4cbaa2f7fe9f7f9669783fd9b6ca56bae7554b5"
+    },
+    {
+      "id": "medium-turn",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 56,
+      "stage": "medium-turn",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/henry/medium-turn.png",
+      "sha256": "9f1fe8433ac690f6affe1730c6d87bf509b902e5a6d55d405158b98f7ae189e9"
+    },
+    {
+      "id": "medium-fit",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 63,
+      "stage": "medium-lower-walls",
+      "partition": "fit",
+      "path": "public/reference-frames/replication/henry/medium-fit.png",
+      "sha256": "df8b14e7d435c8c831e683b81a81771167e5f7d42d7aadedafe468616cc124a0"
+    },
+    {
+      "id": "medium-lower-cover",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 75,
+      "stage": "medium-lower-cover",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/henry/medium-lower-cover.png",
+      "sha256": "d38ed34189f1aa2f0581507e47f26fc064da02fed3996c3d7f78b844fdda7fab"
+    },
+    {
+      "id": "medium-turn-cover",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 81,
+      "stage": "medium-turn-cover",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/henry/medium-turn-cover.png",
+      "sha256": "dd0cbdd87a385ba3d70ed1f7ebcd15ff8c5ad3c71641540fbad42f5d2d808d1a"
+    },
+    {
+      "id": "medium-upper-cover",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 93,
+      "stage": "medium-upper-cover",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/henry/medium-upper-cover.png",
+      "sha256": "d63037ed1ef369434115e8b7911744e893e127ffe4b01d3e0c2713a29527132e"
+    },
+    {
+      "id": "medium-check-a",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 101,
+      "stage": "medium-final",
+      "partition": "holdout",
+      "path": "public/reference-frames/replication/henry/medium-check-a.png",
+      "sha256": "0b081c53968fb911ad13edf98d8e7b53965ef8b32b127e81172367a36a2a703a"
+    },
+    {
+      "id": "medium-check-b",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 108,
+      "stage": "medium-final",
+      "partition": "holdout",
+      "path": "public/reference-frames/replication/henry/medium-check-b.png",
+      "sha256": "ae500f9018300c393ea0c43e25ec2f003607ee609c818eca4dcfc2b4af70eff6"
+    },
+    {
+      "id": "medium-car",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 106,
+      "stage": "medium-final",
+      "partition": "function",
+      "path": "public/reference-frames/replication/henry/medium-car.png",
+      "sha256": "ca45d7314cc4c8c719b11dd422ae9278f5c8cd63d28737e034b71855b842facf"
+    },
+    {
+      "id": "large-bom",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 116,
+      "stage": "large-inventory",
+      "partition": "bom",
+      "path": "public/reference-frames/replication/henry/large-bom.png",
+      "sha256": "976513dd0afbf9f4a61f5051409c8a4d5cd63b832d2e847ccb1134be62086f40"
+    },
+    {
+      "id": "large-tower",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 137,
+      "stage": "large-tower",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/henry/large-tower.png",
+      "sha256": "2a5b8dd3820676e83b29b9ae18f60fd4dc14d9b5a1948263119bb679a62ef2bd"
+    },
+    {
+      "id": "large-box",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 148,
+      "stage": "large-box",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/henry/large-box.png",
+      "sha256": "d04604edd4c18a5585c9a1346e552cb0849f0c564af9470bcd677bfe36c5f049"
+    },
+    {
+      "id": "large-xl",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 170,
+      "stage": "large-decks",
+      "partition": "fit",
+      "path": "public/reference-frames/replication/henry/large-xl.png",
+      "sha256": "9b4a30f4c880a547ae52ab23c4032fe7da1774d35acb019d40fc6c0ec0ae6350"
+    },
+    {
+      "id": "large-final",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 188,
+      "stage": "large-final",
+      "partition": "holdout",
+      "path": "public/reference-frames/replication/henry/large-final.png",
+      "sha256": "50682f57f8abf964f0815803b693f14c2955f302a7283112fd975e07cb5ed8a7"
+    },
+    {
+      "id": "medium-lower",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 48,
+      "stage": "medium-lower",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/henry/medium-lower.png",
+      "sha256": "e67b2074a43eda6f228841eb888456dc5d6723c3e5a570470026ab63b5320e3d"
+    },
+    {
+      "id": "large-tower-finished",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 140,
+      "stage": "large-bay-0",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/henry/large-tower-finished.png",
+      "sha256": "67f007c4fe1a49ff699036f100e73b91cdb33b66b49c8e73274a25435bdb8e1c"
+    },
+    {
+      "id": "large-box-finished",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 156,
+      "stage": "large-bay-1",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/henry/large-box-finished.png",
+      "sha256": "be9718e659e4f209a3cadef1056c621b1510d08b0b5fe948e84c8ef4e23dc0e5"
+    },
+    {
+      "id": "large-lowbox-finished",
+      "sourceId": "henry",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "seconds": 168,
+      "stage": "large-bay-2",
+      "partition": "construction",
+      "path": "public/reference-frames/replication/henry/large-lowbox-finished.png",
+      "sha256": "5dd99c835ecf5ff2dc4eeef02ec8b69c13dd845617154d71b33ebd7c9b3ef063"
+    }
+  ]
+}
