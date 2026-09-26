@@ -84,7 +84,9 @@ export function TileViewer({ build, visibleStep, lanes = [], trials = [], playba
       ? [viewingBox.center.x + build.bounds.width * 0.05, loweredCenterY + cameraDistance * 1.05, viewingBox.center.z - cameraDistance * 0.08]
       : [viewingBox.center.x + cameraDistance * 0.72, loweredCenterY + cameraDistance * 0.38, viewingBox.center.z + cameraDistance * 0.82];
   const cameraTarget: [number, number, number] =
-    build.family === "aircraft"
+    viewDirection
+      ? [viewingBox.center.x, loweredCenterY, viewingBox.center.z]
+      : build.family === "aircraft"
       ? [viewingBox.center.x, loweredCenterY + build.bounds.height * 0.04, viewingBox.center.z - 0.2]
       : [viewingBox.center.x, loweredCenterY + build.bounds.height * 0.2, viewingBox.center.z];
 
