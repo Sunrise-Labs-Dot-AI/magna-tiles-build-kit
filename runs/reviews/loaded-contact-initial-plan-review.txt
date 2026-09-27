@@ -1,0 +1,30 @@
+**Verdict: CONCERNS**
+
+No forced findings, but I would not mark this CLEAN yet. I stayed read-only: no implementation, no physics runs, no source media, no file changes.
+
+1. **WARNING: Acceptance margin is too weak for a boundary failure.**  
+   The motivating 25-panel failures are only `0.0000065` to `0.0000324` inches over the `0.03` guard, but the proposed sensitivity allowance is `0.005` inches peak spread, about 150x to 770x larger than the observed miss. A candidate frequency could pass just under `0.03` while still being numerically fragile.  
+   Reference: [runs/2026-09-27-loaded-contact-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-loaded-contact-plan.md:13), [line 15](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-loaded-contact-plan.md:15).  
+   Suggested fix: require a predeclared near-boundary rule, for example worst tested peak must be below the limit by a stated margin, or any candidate within an epsilon band remains diagnostic and triggers finer numerical evidence before changing runtime settings.
+
+2. **WARNING: “Inspect throughout the run” conflicts with current failure-stop behavior unless a new diagnostic mode is specified.**  
+   The plan asks to inspect table/contact peaks throughout 7.5 seconds and says a solid failure may not pass even if it later recovers. Current `releaseCandidate` breaks immediately on solid failure or table penetration over tolerance, so it cannot measure later recovery, late interval behavior, or post-failure shape.  
+   Reference: [runs/2026-09-27-loaded-contact-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-loaded-contact-plan.md:13), [lib/replication/release.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/release.ts:53).  
+   Suggested fix: define a diagnostic-only latched-failure runner that continues to 7.5 seconds while preserving fail status, or explicitly state late/recovery metrics are not collected for failed trials.
+
+3. **WARNING: 480 Hz contact may be under-sampled by the declared integration rates.**  
+   The matrix tests contact frequencies `120/240/480 Hz` at integration rates `960/1920 Hz`. At 480 Hz, 960 Hz gives only two collision steps per natural-frequency period, and 1920 gives four. That may be too thin to call 480 numerically converged, even with solver counts varied.  
+   Reference: [runs/2026-09-27-loaded-contact-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-loaded-contact-plan.md:13).  
+   Suggested fix: either exclude 480 as a selectable runtime frequency unless 3840 Hz or another finer rate is also tested, or predeclare that 480 can only diagnose instability, not become the selected setting.
+
+4. **NOTE: Fixture-selection bias is reduced but not fully closed.**  
+   The diagnostic generated 5/9/13/17/25-panel levels, but the proposed matrix keeps 5/17/25 and drops 9/13. Heavier is not guaranteed monotonic in articulated contact systems, especially when the same inverted shell topology is reused.  
+   Reference: [scripts/reference/probe-loaded-shell.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/probe-loaded-shell.ts:11), [runs/2026-09-27-loaded-contact-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-loaded-contact-plan.md:13).  
+   Suggested fix: include 9 and 13, or state a concrete reason they are excluded and preserve their existing diagnostic rows as non-selection evidence.
+
+5. **NOTE: Sensitivity rule needs a precise denominator.**  
+   “For each fixed fixture/seed” does not say whether spread is computed per candidate frequency, across only passing trials, or including failed/latched trials. That ambiguity matters once solid failures stop or latch dynamics differently.  
+   Reference: [runs/2026-09-27-loaded-contact-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-loaded-contact-plan.md:15).  
+   Suggested fix: define spread as per `fixture × seed × frequency` across the four `rate × solver` cells, and require all four cells to pass before the spread can qualify that frequency.
+
+Boundaries I accept as clean: the plan preserves magnet/material/source measurements, keeps diagnostic versus source acceptance separate, requires failure retention, and bars source-credit from compact closed-support hypothesis changes.

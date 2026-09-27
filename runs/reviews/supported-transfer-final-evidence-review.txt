@@ -1,0 +1,11 @@
+VERIFIED/CLEAN within the requested implementation and diagnostic scope.
+
+Checked:
+- [STATUS.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/STATUS.md:25): no active all-72-pass claim; states `36` overall with `0/24`, `12/24`, `24/24`; current regression count is `669` passing, one existing skip, `56` files.
+- [docs/footage-reconstruction.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/docs/footage-reconstruction.md:176): `542` is explicitly historical; sweep counts are exact.
+- [docs/footage-reconstruction.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/docs/footage-reconstruction.md:257): explicitly says the sweep is not 72 passing physical trials and records `36/72`.
+- [runs/2026-09-27-supported-transfer-increment.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-supported-transfer-increment.md:31): cites `/tmp/magnatiles-supported-transfer-full-suite.log` with `669 passing tests`, one skip, `56` files, `2242.31s`.
+
+Confirmed `/tmp/magnatiles-supported-transfer-full-suite.log` tail: `56 passed (56)`, `669 passed | 1 skipped (670)`, duration `2242.31s`.
+
+No physics rerun, source media inspection, file changes, or credential access. Exact-head preview remains pending.

@@ -1,0 +1,116 @@
+{
+  "baselineCommit": "2afb3cfac41a5b7af826f708ce4f01024ad62fb7",
+  "validationCodeHash": "39bf11c647fd7845b96cd8e2748d5c6c388ec2229bdc14cad60be83b3c60c120",
+  "scope": "Exact comparison of unchanged published models and physical/source reports. New fixture and provenance do not confer source credit.",
+  "replicas": [
+    {
+      "replicaId": "jet",
+      "sameModel": true,
+      "reportKeysEqual": [
+        "assemblySimulation",
+        "carTrials",
+        "checks",
+        "constructionPaths",
+        "fingerprint",
+        "holdoutCoverage",
+        "id",
+        "instructions",
+        "projections",
+        "releases",
+        "replication",
+        "sourceStagePieces",
+        "stages"
+      ],
+      "changedReportKeys": [
+        "generatedAt",
+        "validationCodeHash"
+      ]
+    },
+    {
+      "replicaId": "small-ramp",
+      "sameModel": true,
+      "reportKeysEqual": [
+        "assemblySimulation",
+        "carTrials",
+        "checks",
+        "constructionPaths",
+        "fingerprint",
+        "holdoutCoverage",
+        "id",
+        "instructions",
+        "projections",
+        "releases",
+        "replication",
+        "sourceStagePieces",
+        "stages"
+      ],
+      "changedReportKeys": [
+        "generatedAt",
+        "validationCodeHash"
+      ]
+    },
+    {
+      "replicaId": "medium-ramp",
+      "sameModel": true,
+      "reportKeysEqual": [
+        "assemblySimulation",
+        "carTrials",
+        "checks",
+        "constructionPaths",
+        "fingerprint",
+        "holdoutCoverage",
+        "id",
+        "instructions",
+        "projections",
+        "releases",
+        "replication",
+        "sourceStagePieces",
+        "stages"
+      ],
+      "changedReportKeys": [
+        "generatedAt",
+        "validationCodeHash"
+      ]
+    },
+    {
+      "replicaId": "large-ramp",
+      "sameModel": true,
+      "reportKeysEqual": [
+        "assemblySimulation",
+        "carTrials",
+        "checks",
+        "constructionPaths",
+        "fingerprint",
+        "holdoutCoverage",
+        "id",
+        "instructions",
+        "projections",
+        "releases",
+        "replication",
+        "sourceStagePieces",
+        "stages"
+      ],
+      "changedReportKeys": [
+        "generatedAt",
+        "validationCodeHash"
+      ]
+    }
+  ],
+  "fixtures": {
+    "verification/replication/assembly-fixture.json": {
+      "changedKeys": [
+        "generatedAt",
+        "scope",
+        "supportedTransfer",
+        "validationCodeHash"
+      ],
+      "allPreviousPhysicalResultsIdentical": true
+    },
+    "verification/replication/rigid-contact-fixture.json": {
+      "changedKeys": [
+        "validationCodeHash"
+      ],
+      "allPreviousPhysicalResultsIdentical": true
+    }
+  }
+}

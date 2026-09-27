@@ -78,19 +78,23 @@ export async function simulatePreparedTransfer(nominal: BuildGraph, actual: Buil
     previousHands: structuredClone(previousHands),retainedHands: hands.filter(h => previousHands.some(old => sameHandContact(old,h))),
     acquiredHands: hands.filter(h => !previousHands.some(old => sameHandContact(old,h))),componentGroupsBefore: structuredClone(components),earnedComponentGroups: [] };
   const fail = (detail: string) => ({ ...result,detail });
-  const retained = hands.length === 1 && previousHands.some(h => sameHandContact(h,hands[0]));
-  if (hands.length !== 1 || !moving.has(hands[0].tileId) || (previousHands.length > 0 && !retained) ||
+  const movingHands = hands.filter(h => moving.has(h.tileId)), movingHand = movingHands[0];
+  const retained = movingHand && previousHands.some(h => sameHandContact(h,movingHand));
+  if (hands.length < 1 || hands.length > 2 || movingHands.length !== 1 || new Set(hands.map(h => h.tileId)).size !== hands.length || (previousHands.length > 0 && !retained) ||
       previousHands.length > 2 || previousHands.some(h => !moving.has(h.tileId)) || new Set(previousHands.map(h => h.tileId)).size !== previousHands.length)
-    return fail("Transfer needs one acquired grip on a released module or one unchanged retained module grip, with at most two prior module hands.");
+    return fail("Transfer needs exactly one acquired or unchanged retained moving-panel grip, optionally one receiving-panel grip, with at most two prior module hands.");
   const partition = joinComponentGroups(actual,components,movingIds,cross);
   if (partition.status !== "pass") return fail(partition.detail);
+  const receivingIds = partition.groups.find(group => group.includes(movingHand.tileId))!.filter(id => !moving.has(id));
+  if (hands.some(h => !moving.has(h.tileId) && !receivingIds.includes(h.tileId)))
+    return fail("The optional support hand must grip the receiving component named by the declared cross connections.");
   if (!expected.length || new Set(expected).size !== expected.length || actual.connections.some(c => moving.has(c.fromTileId) !== moving.has(c.toTileId)) ||
       state.connections.some(c => moving.has(c.fromTileId) !== moving.has(c.toTileId)) || state.poppedJoints.length ||
       state.joints.some(j => moving.has(j.model.fromTileId) !== moving.has(j.model.toTileId)))
     return fail("Prepared transfer has missing, duplicated, broken or pre-attached cross connections.");
   // Stationary grip access remains required even for an unchanged retained hand.
-  const accessFor = (build: BuildGraph, contacts: HandContact[]) => checkHandAccess(build,{ id: "prepared-handoff",movingTileIds: [contacts[0].tileId],
-    fixedTileIds: build.tiles.filter(t => t.id !== contacts[0].tileId).map(t => t.id),offsets: [{ x: 0,y: 0,z: 0 },{ x: 0,y: 0,z: 0 }] },contacts,floorY,deadline);
+  const accessFor = (build: BuildGraph, contacts: HandContact[]) => checkHandAccess(build,{ id: "prepared-handoff",movingTileIds: [movingHand.tileId],
+    fixedTileIds: build.tiles.filter(t => t.id !== movingHand.tileId).map(t => t.id),offsets: [{ x: 0,y: 0,z: 0 },{ x: 0,y: 0,z: 0 }] },contacts,floorY,deadline);
   result.handTransition = checkHandTransition(actual,previousHands,hands,floorY,deadline);
   if (result.handTransition.status !== "pass") return fail(result.handTransition.detail);
   const acquisition = accessFor(actual,hands);
@@ -102,7 +106,7 @@ export async function simulatePreparedTransfer(nominal: BuildGraph, actual: Buil
   if (withdrawal.status !== "pass") return fail(withdrawal.detail);
   const start = result.settled;
   const target = {...nominal,connections: [...start.connections,...cross]};
-  const proposal = transferTarget(target,start,movingIds,hands[0].tileId);
+  const proposal = transferTarget(target,start,movingIds,movingHand.tileId);
   const docking = dockToSupports(target,proposal,movingIds,fixed,hands,floorY,policy,deadline,partition.groups);
   result.docking = docking;
   if (docking.status !== "pass" || !docking.path) return fail(docking.detail);
@@ -126,7 +130,7 @@ export async function simulatePreparedTransfer(nominal: BuildGraph, actual: Buil
   }
   result.path = path;
   let waypoints: HeldWaypoint[];
-  try { waypoints = transferWaypoints(start,docking.build,hands[0].tileId,path,floorY,transitHeight); }
+  try { waypoints = transferWaypoints(start,docking.build,movingHand.tileId,path,floorY,transitHeight); }
   catch (error) { return fail(error instanceof Error ? error.message : String(error)); }
   result.carry = await simulateHeldMotion(start,result.state,movingIds,hands,waypoints,floorY,seed,deadline,components,
     {connections:cross,separationWaypoint:waypoints.length-path.offsets.length-1});

@@ -39,5 +39,16 @@ export function componentTransferFixture(): Replica {
     ]};
 }
 
+/** The same independently assembled workspace, with one explicit front-edge
+ * grip on a receiving wall. The other eight panels remain dynamic during carry. */
+export function supportedComponentTransferFixture(): Replica {
+  const replica=componentTransferFixture();
+  replica.id=replica.build.id="supported-component-transfer";
+  replica.title=replica.build.title="Stack a prepared module while steadying one receiving panel";
+  replica.stages[3].instruction="Hold the roof of the moving U and the exposed front edge of one receiving wall. Align and join, then withdraw both hands and release.";
+  replica.construction![3].operations[0].hands!.push(edgeGrips(replica.build.tiles.find(t=>t.id==="x-0--1")!)[2]);
+  return replica;
+}
+
 /** A nominal future fixed-to-fixed hypothesis must never enter this operation. */
 export const unearnedFixedConnection: MagneticConnection={kind:"edge",fromTileId:"z-0--1",fromEdge:0,toTileId:"third-x-0-1",toEdge:2};
