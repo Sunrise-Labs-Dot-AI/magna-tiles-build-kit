@@ -331,6 +331,24 @@
           "seconds": 33,
           "stage": "small-launch",
           "use": "fit"
+        },
+        {
+          "id": "medium-upper-preparation",
+          "seconds": 49,
+          "stage": "medium-upper-preparation",
+          "use": "fit"
+        },
+        {
+          "id": "medium-upper-transfer",
+          "seconds": 52.5,
+          "stage": "medium-upper-transfer",
+          "use": "fit"
+        },
+        {
+          "id": "medium-lower-placement",
+          "seconds": 53.5,
+          "stage": "medium-lower-placement",
+          "use": "fit"
         }
       ]
     }

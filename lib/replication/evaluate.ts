@@ -3,7 +3,7 @@ import { PHYSICS_MODEL_VERSION } from "@/lib/engine/constants";
 import { readFile } from "node:fs/promises";
 import { isDeepStrictEqual } from "node:util";
 import { validateEngineInput } from "@/lib/engine/input";
-import { validateMagneticBuild } from "@/lib/engine/build";
+import { connectionId, validateMagneticBuild } from "@/lib/engine/build";
 import { findRawOverlaps } from "@/lib/engine/overlap";
 import { SimulationBudgetExceeded } from "@/lib/engine/simulate";
 import { countInventory } from "@/lib/magnetic-tiles/validation";
@@ -17,7 +17,7 @@ import { stageBuild } from "./geometry";
 import { releaseCandidate } from "./release";
 import { compareObservation } from "./projection";
 import { planConstructionPaths } from "./construction";
-import { evaluateAssembly } from "./assembly";
+import { evaluateAssembly, type AssemblyResult } from "./assembly";
 import { constructionFrameBinding, independentHoldoutCoverage, reservedFrameBinding, type CandidateFreeze, type EvidenceUse } from "./evidence";
 import { validationCodeHash, verifyObservationLock } from "./provenance";
 import type {
@@ -135,19 +135,36 @@ export function validateObservationBinding(
     );
 }
 
-export function instructions(replica: Replica): ReplicaReport["instructions"] {
+export function instructions(replica: Replica, assemblies: AssemblyResult[] = []): ReplicaReport["instructions"] {
   const labels = new Map(
       replica.build.tiles.map((t, i) => [t.id, `P${i + 1}`]),
     ),
     seen = new Set<string>(),
-    seenJoins = new Set<string>();
+    proposedJoins = new Set<string>(),
+    establishedJoins = new Set<string>(),
+    knownJoins = new Set(replica.build.connections.map(connectionId));
   return replica.stages.map((stage, i) => {
+    const matches = assemblies.filter(a => a.stageId === stage.id);
+    if (matches.length > 1) throw new Error(`Duplicate assembly evidence: ${stage.id}`);
+    const assembly = matches[0], verified = assembly?.status === "pass";
+    let terminalIds: Set<string> | undefined;
+    if (verified) {
+      const terminal = assembly.terminalConnections;
+      if (!Array.isArray(terminal) || terminal.length !== 3 || terminal.some(t => !t || !Array.isArray(t.connectionIds)) ||
+          JSON.stringify(terminal.map(t => t.seed).sort((a,b) => a-b)) !== JSON.stringify([0,17,53]))
+        throw new Error(`Incomplete terminal assembly evidence: ${stage.id}`);
+      const ids = terminal.map(t => [...t.connectionIds].sort());
+      if (ids.some(list => new Set(list).size !== list.length || list.some(id => typeof id !== "string" || !knownJoins.has(id))) ||
+          ids.some(list => JSON.stringify(list) !== JSON.stringify(ids[0])))
+        throw new Error(`Invalid or inconsistent terminal assembly joins: ${stage.id}`);
+      terminalIds = new Set(ids[0]);
+    }
     const snapshot = stageBuild(replica, stage),
       newParts = snapshot.tiles.filter((t) => !seen.has(t.id));
     newParts.forEach((t) => seen.add(t.id));
     const joins = snapshot.connections.filter((c) => {
-      const key = JSON.stringify(c);
-      if (seenJoins.has(key)) return false;
+      const key = connectionId(c), seenJoins = verified ? establishedJoins : proposedJoins;
+      if ((terminalIds && !terminalIds.has(key)) || seenJoins.has(key) || (!verified && establishedJoins.has(key))) return false;
       seenJoins.add(key);
       return true;
     });
@@ -156,7 +173,7 @@ export function instructions(replica: Replica): ReplicaReport["instructions"] {
       title: stage.title,
       tileIds: stage.tileIds,
       tileCounts: countInventory(newParts),
-      instruction: `${stage.instruction} ${newParts.length ? `New parts: ${newParts.map((t) => `${labels.get(t.id)} (${TILE_SPECS[t.shape].label})`).join(", ")}.` : "Reuse the numbered parts already assembled."} ${joins.length ? `Joins: ${joins.map((c) => `${labels.get(c.fromTileId)} edge ${c.fromEdge + 1} to ${labels.get(c.toTileId)} edge ${c.toEdge + 1}`).join("; ")}.` : "No new magnetic joins in this pose change."} Source frame: ${stage.frameId}. ${stage.support === "held" ? "Keep this module in your hand; no unattended release is asserted." : "Release checkpoint: consult the measured result before following this candidate."}`,
+      instruction: `${stage.instruction} ${newParts.length ? `New parts: ${newParts.map((t) => `${labels.get(t.id)} (${TILE_SPECS[t.shape].label})`).join(", ")}.` : "Reuse the numbered parts already assembled."} ${joins.length ? `${verified ? "Joins present after assembly checks" : "Proposed joins (not verified)"}: ${joins.map((c) => `${labels.get(c.fromTileId)} edge ${c.fromEdge + 1} to ${labels.get(c.toTileId)} edge ${c.toEdge + 1}`).join("; ")}.` : verified ? "No new checked magnetic joins in this step." : "No new joins proposed in this step."} Source frame: ${stage.frameId}. ${stage.support === "held" ? "Keep this module in your hand; no unattended release is asserted." : "Release checkpoint: consult the measured result before following this candidate."}`,
     };
   });
 }
@@ -291,7 +308,6 @@ export async function evaluateReplica(
     )
   )
     throw new Error(`Construction/source stage mismatch: ${replica.id}`);
-  report.instructions = instructions(replica);
   report.constructionPaths = planConstructionPaths(replica, deadline);
   for (const o of observations) {
     validateObservationBinding(replica, o);
@@ -367,6 +383,7 @@ export async function evaluateReplica(
     });
   }
   report.assemblySimulation = await evaluateAssembly(replica, deadline);
+  report.instructions = instructions(replica, report.assemblySimulation);
   const assemblyFailed = report.stages.some(s => s.status === "fail") || report.assemblySimulation.some(s => s.status === "fail");
   report.checks.assembly = check(assemblyFailed ? "fail" : report.assemblySimulation.length > 0 && report.assemblySimulation.every(s => s.status === "pass") ? "pass" : "unverified",
     `${report.assemblySimulation.filter(s => s.status === "pass").length}/${replica.stages.length} complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. ${report.assemblySimulation.filter(s => s.status !== "pass").map(s => `${s.stageId}: ${s.detail}`).join(" ")} Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate.`);

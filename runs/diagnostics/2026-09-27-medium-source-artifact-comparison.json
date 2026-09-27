@@ -1,0 +1,171 @@
+{
+  "baseline": "807ec5d",
+  "validationCodeHash": "a02f2f243b188f0247b3e0f54e6b5d6bd50fc563513b61261ccc4f1565a28db2",
+  "replicas": {
+    "jet": {
+      "completeGeometryAndConnectionsUnchanged": true,
+      "projectionsReleaseCarAndHoldoutUnchanged": true,
+      "assembly": [
+        [
+          "body-upright-1",
+          "unverified"
+        ],
+        [
+          "body-upright-2",
+          "unverified"
+        ],
+        [
+          "body-upright-3",
+          "unverified"
+        ],
+        [
+          "body-upright-4",
+          "unverified"
+        ],
+        [
+          "body-horizontal",
+          "unverified"
+        ],
+        [
+          "nose",
+          "unverified"
+        ],
+        [
+          "wing-module--1",
+          "unverified"
+        ],
+        [
+          "wing-root--1",
+          "unverified"
+        ],
+        [
+          "wing-module-1",
+          "unverified"
+        ],
+        [
+          "wing-root-1",
+          "unverified"
+        ],
+        [
+          "wing-roots",
+          "unverified"
+        ],
+        [
+          "wingtips",
+          "unverified"
+        ],
+        [
+          "tail-cone",
+          "unverified"
+        ],
+        [
+          "tail-horizontal",
+          "unverified"
+        ],
+        [
+          "tail-fins",
+          "unverified"
+        ],
+        [
+          "final",
+          "unverified"
+        ]
+      ]
+    },
+    "small-ramp": {
+      "completeGeometryAndConnectionsUnchanged": true,
+      "projectionsReleaseCarAndHoldoutUnchanged": true,
+      "assembly": [
+        [
+          "small-wedge",
+          "pass"
+        ],
+        [
+          "small-launch",
+          "pass"
+        ],
+        [
+          "small-final",
+          "pass"
+        ]
+      ]
+    },
+    "medium-ramp": {
+      "completeGeometryAndConnectionsUnchanged": true,
+      "projectionsReleaseCarAndHoldoutUnchanged": true,
+      "assembly": [
+        [
+          "medium-lower",
+          "pass"
+        ],
+        [
+          "medium-upper-preparation",
+          "pass"
+        ],
+        [
+          "medium-support",
+          "pass"
+        ],
+        [
+          "medium-upper-transfer",
+          "pass"
+        ],
+        [
+          "medium-lower-placement",
+          "unverified"
+        ],
+        [
+          "medium-turn",
+          "unverified"
+        ],
+        [
+          "medium-lower-walls",
+          "unverified"
+        ],
+        [
+          "medium-lower-cover",
+          "unverified"
+        ],
+        [
+          "medium-turn-cover",
+          "unverified"
+        ],
+        [
+          "medium-upper-cover",
+          "unverified"
+        ],
+        [
+          "medium-final",
+          "unverified"
+        ]
+      ]
+    },
+    "large-ramp": {
+      "completeGeometryAndConnectionsUnchanged": true,
+      "projectionsReleaseCarAndHoldoutUnchanged": true,
+      "assembly": [
+        [
+          "large-bay-0",
+          "unverified"
+        ],
+        [
+          "large-bay-1",
+          "unverified"
+        ],
+        [
+          "large-bay-2",
+          "unverified"
+        ],
+        [
+          "large-decks",
+          "unverified"
+        ],
+        [
+          "large-final",
+          "unverified"
+        ]
+      ]
+    }
+  },
+  "physicalFixturesUnchangedExceptAdditiveTerminalMetadata": true
+}

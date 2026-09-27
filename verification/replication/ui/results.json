@@ -68,19 +68,51 @@
       "P1",
       "P4"
     ],
+    "preparedLabels": [
+      "P10",
+      "P11",
+      "P12",
+      "P13",
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ],
     "workspaceLabels": [
       "P5",
       "P6",
       "P7",
       "P8",
       "P9",
+      "P10",
+      "P11",
+      "P12",
+      "P13",
       "P1",
       "P2",
       "P3",
       "P4"
     ],
-    "firstTwoStagesPassed": true,
-    "laterStageUnverified": true
+    "transferLabels": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "P8",
+      "P9",
+      "P10",
+      "P11",
+      "P12",
+      "P13"
+    ],
+    "firstFourStagesPassed": true,
+    "transferPlaybackMoves": true,
+    "checkedJoinInstructions": true,
+    "lowerPlacementUnverified": true,
+    "blueTurnUnverified": true
   },
   "mobileOverflow": false,
   "pageErrors": []

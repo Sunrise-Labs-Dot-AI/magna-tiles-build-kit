@@ -1,0 +1,14 @@
+CONCERNS.
+
+No blocker found. The plan is directionally sound and explicitly preserves the model, physics, source fidelity caveats, unfinished lower relocation, blue turn and later canopy requirements. I would tighten three spots before implementation so reporting cannot over-certify.
+
+1. **WARNING, Saboteur: Terminal joins need a precise capture point.**
+   Plan line 16 says to add “terminal per-seed active connection IDs,” but current public result data only has operation timelines, while the actual terminal physics state is private at [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:417). Action: require capture from `physicalState.joints` immediately after the final free checkpoint, in the same block that creates the successful `PreparedWorkspace`, and only expose it when the whole stage has zero failures. Do not derive from `timeline.activeConnectionIds`, nominal `stageBuild`, rejected attempts, or transfer arrival rows.
+
+2. **WARNING, New Hire: `instructions(replica, assemblyResults?)` rejection semantics are underspecified.**
+   The current report computes instructions before assembly at [evaluate.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/evaluate.ts:294), and current joins are nominal at [evaluate.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/evaluate.ts:148). Plan line 16 says malformed terminal IDs are “rejected,” but not whether that throws, marks instruction generation failed, or falls back. Action: state the contract: `evaluateReplica` computes assembly first, then instructions; passing-stage terminal metadata errors must fail closed with no nominal fallback for that stage. Standalone `instructions(replica)` remains proposal-only.
+
+3. **WARNING, Saboteur/New Hire: Source wording can still imply observed preparation.**
+   Plan lines 7 and 13 are careful, but the stage name `medium-upper-preparation` plus “construction-evidence frame” at 49 seconds can read as “we observed the upper wedge being prepared,” while the stated evidence is only that the wedge already exists. Action: require the stage title, `constructionEvidence.claim`, UI copy and tests to say “prepared upper wedge already exists before transfer; assembly method proposed, not observed.”
+
+Cost/Scope: CLEAN. The scope is broad but justified by the specific false-acceptance risk in the current nominal instruction path and the new staged source presentation. I would not demand an architecture rewrite or extra simulation beyond the plan’s reuse of the existing three-component integration.

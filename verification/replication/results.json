@@ -44,7 +44,7 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "e01800f8878c8771acf6e4263cabf2cf8cd072423b72636041d09cf8b05748f0",
+      "fingerprint": "4b8a71326f3af30d7d66524f542296c4e0cd0dde5873eddaaef86cbcfee085f5",
       "stages": [
         {
           "id": "body-upright-1",
@@ -262,7 +262,7 @@
       "checks": {
         "source": {
           "status": "pass",
-          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 31 extracted frame hashes. Manual annotations remain reviewable measurements."
+          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 34 extracted frame hashes. Manual annotations remain reviewable measurements."
         },
         "inventory": {
           "status": "pass",
@@ -298,7 +298,7 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "607581ab0ec67cd752840dea821c9611e778ec3f6008f9f47baec448a2aa903e",
+      "fingerprint": "3b6c0233235894204ffdb8b4ccfa7fb46520050acb762d987c16efaba3926350",
       "stages": [
         {
           "id": "small-wedge",
@@ -397,7 +397,7 @@
       "checks": {
         "source": {
           "status": "pass",
-          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 31 extracted frame hashes. Manual annotations remain reviewable measurements."
+          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 34 extracted frame hashes. Manual annotations remain reviewable measurements."
         },
         "inventory": {
           "status": "pass",
@@ -425,7 +425,7 @@
         },
         "assembly": {
           "status": "fail",
-          "detail": "2/8 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. medium-turn: No per-part insertion sequence has been supplied. medium-lower-walls: No per-part insertion sequence has been supplied. medium-lower-cover: No per-part insertion sequence has been supplied. medium-turn-cover: No per-part insertion sequence has been supplied. medium-upper-cover: No per-part insertion sequence has been supplied. medium-final: No per-part insertion sequence has been supplied. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
+          "detail": "4/11 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. medium-lower-placement: No per-part insertion sequence has been supplied. medium-turn: No per-part insertion sequence has been supplied. medium-lower-walls: No per-part insertion sequence has been supplied. medium-lower-cover: No per-part insertion sequence has been supplied. medium-turn-cover: No per-part insertion sequence has been supplied. medium-upper-cover: No per-part insertion sequence has been supplied. medium-final: No per-part insertion sequence has been supplied. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
         },
         "function": {
           "status": "fail",
@@ -433,7 +433,7 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "f7a1a7d2d826a18328647a34ac46f6c9be9e57e601dc68b777eaae1cb5c8717c",
+      "fingerprint": "f49bb0a073fc00c69f7101b0170f889d077f5069b04fbba5af77af03e3008c37",
       "stages": [
         {
           "id": "medium-lower",
@@ -444,12 +444,36 @@
           "peakSolidOverlap": 0.00003352734835931903
         },
         {
+          "id": "medium-upper-preparation",
+          "status": "pass",
+          "detail": "Released checkpoint: peak 0.280 in; table penetration 0.017 in; 0 broken/rejected joints; 886 consecutive steps at rest (90 required).",
+          "displacement": 0.28000002815727704,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.000020512597070254657
+        },
+        {
           "id": "medium-support",
           "status": "pass",
           "detail": "Released checkpoint: peak 0.280 in; table penetration 0.008 in; 0 broken/rejected joints; 889 consecutive steps at rest (90 required).",
           "displacement": 0.2799999713902339,
           "solidFailures": [],
           "peakSolidOverlap": 0.000005530032555434161
+        },
+        {
+          "id": "medium-upper-transfer",
+          "status": "pass",
+          "detail": "Released checkpoint: peak 0.504 in; table penetration 0.012 in; 0 broken/rejected joints; 645 consecutive steps at rest (90 required).",
+          "displacement": 0.5040790916977722,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0072002429083317665
+        },
+        {
+          "id": "medium-lower-placement",
+          "status": "pass",
+          "detail": "Released checkpoint: peak 0.504 in; table penetration 0.012 in; 0 broken/rejected joints; 645 consecutive steps at rest (90 required).",
+          "displacement": 0.5040790916977722,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0072002429083317665
         },
         {
           "id": "medium-turn",
@@ -572,7 +596,7 @@
       "checks": {
         "source": {
           "status": "pass",
-          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 31 extracted frame hashes. Manual annotations remain reviewable measurements."
+          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 34 extracted frame hashes. Manual annotations remain reviewable measurements."
         },
         "inventory": {
           "status": "pass",
@@ -608,7 +632,7 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "60d465140d5b6d0f9eaeb05b3d2bf4d7e70903da1c7ebd7f5704c35ce457fe4d",
+      "fingerprint": "8176b1f5930b32bb17c69a09a0dff4a07f428f807f55df4dfb0f88245261c886",
       "stages": [
         {
           "id": "large-bay-0",

@@ -289,11 +289,12 @@ function Candidate({
                 </a>
               )}
               <details>
-                <summary>Numbered parts and candidate edge joins</summary>
+                <summary>Numbered parts and {assembly?.status === "pass" ? "checked" : "proposed"} edge joins</summary>
                 <p>{report.instructions[step]?.instruction}</p>
                 <p>
-                  These joins come from the nominal edge matcher. Read the
-                  checkpoint result before attempting this candidate.
+                  {assembly?.status === "pass"
+                    ? "Checked joins were present after the complete assembly simulation in all three runs. Physical magnetic forces remain uncalibrated."
+                    : "These proposed joins come from the nominal edge matcher. They have not passed the complete assembly check."}
                 </p>
               </details>
               <div className="reference-step-buttons">

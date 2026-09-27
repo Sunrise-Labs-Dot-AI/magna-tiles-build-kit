@@ -52,6 +52,8 @@ export interface AssemblyResult extends Check {
   operations: AssemblyOperationResult[];
   checkpoints: Omit<SupportTrial, "settled" | "state">[];
   checkpointHandTransitions?: (HandTransition & { seed: number })[];
+  /** Actual final joints, published only after every seed completes the stage. */
+  terminalConnections?: { seed: number; connectionIds: string[] }[];
 }
 const subset = (build: BuildGraph, ids: Set<string>): BuildGraph => ({ ...build,
   tiles: build.tiles.filter(t => ids.has(t.id)),
@@ -122,12 +124,13 @@ export async function evaluateAssembly(replica: Replica, deadline = Infinity): P
     for (const policy of ["clear-first","support-aligned"] as const) {
       if (Date.now() > deadline) throw new SimulationBudgetExceeded();
       result.attemptedPolicies.push(policy);
-      const { states,...attempt } = await runAssemblyStage(replica,stage,prepared,policy,deadline);
+      const { states,terminalConnections,...attempt } = await runAssemblyStage(replica,stage,prepared,policy,deadline);
       if (attempt.status === "pass") {
         result.status = "pass"; result.detail = attempt.detail;
         result.dockingPolicy = policy;
         result.operations = attempt.operations; result.checkpoints = attempt.checkpoints;
         result.checkpointHandTransitions = attempt.checkpointHandTransitions;
+        result.terminalConnections = terminalConnections;
         prepared.push(...states);
         break;
       }
@@ -142,7 +145,7 @@ export async function evaluateAssembly(replica: Replica, deadline = Infinity): P
 /** Each attempt owns its rows and terminal workspaces. A failed attempt cannot
  * contribute even successful seeds to a later stage. */
 async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: PreparedWorkspace[],
-  policy: DockingPolicy, deadline: number): Promise<AssemblyAttempt & { states: PreparedWorkspace[] }> {
+  policy: DockingPolicy, deadline: number): Promise<AssemblyAttempt & { states: PreparedWorkspace[]; terminalConnections?: AssemblyResult["terminalConnections"] }> {
   const plan = replica.construction!.find(p => p.stageId === stage.id)!;
   const transfers = plan.operations.filter(op => op.preparedStageId);
   const dependency = transfers[0]?.transfer?.afterStageId ?? transfers[0]?.preparedStageId ?? plan.workspace?.afterStageId ?? stage.installedStageIds?.[0];
@@ -153,6 +156,7 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
   const floorY = buildBounds(nominal.tiles).min.y;
   const result: AssemblyAttempt = { policy,status: "fail",detail: "",operations: [],checkpoints: [] };
   const states: PreparedWorkspace[] = [];
+  const terminalConnections: NonNullable<AssemblyResult["terminalConnections"]> = [];
   const failures: string[] = [];
   for (const seed of [0, 17, 53]) {
     let failure = "";
@@ -415,11 +419,12 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
       heldHands = [];
     }
     if (!physicalState) { failures.push(`Seed ${seed}: No terminal physical state.`); continue; }
+    terminalConnections.push({ seed,connectionIds: physicalState.joints.map(j => j.model.id).sort() });
     states.push({ id: `${stage.id}:${seed}`,stageId: stage.id,seed,predecessorId: predecessor?.id,
       lineage: predecessor ? [...predecessor.lineage,predecessor.id] : [],floorY,constructionOffset: offset,
       build: subset(current,placed),state: physicalState,hands: heldHands,components: components(subset(current,placed)) ?? [[...placed]] });
   }
   result.status = failures.length ? "fail" : "pass";
   result.detail = failures.join(" ") || "All operations passed with three perturbation seeds, at most two panel grips and mandatory free checkpoints. Fingertip-proxy simulation only; measured human grip and physical magnetic forces remain unverified.";
-  return { ...result,states: failures.length ? [] : states };
+  return { ...result,states: failures.length ? [] : states,terminalConnections: failures.length ? undefined : terminalConnections };
 }

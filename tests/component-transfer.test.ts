@@ -16,6 +16,7 @@ const unwanted=connectionId(unearnedFixedConnection);
 let results:Awaited<ReturnType<typeof evaluateAssembly>>;
 const inputs:TransferArgs[]=[],outputs:Awaited<ReturnType<typeof transfers.simulatePreparedTransfer>>[]=[];
 const selections:Parameters<typeof workspaces.selectWorkspace>[]=[];
+const finalJoints=new Map<string,string[]>();
 
 beforeAll(async()=>{
   const replica=componentTransferFixture();replica.build.connections.push(unearnedFixedConnection);
@@ -58,14 +59,31 @@ beforeAll(async()=>{
     inputs.push(structuredClone(args));const result=await transfer(...args);outputs.push(structuredClone(result));return result;
   });
   vi.spyOn(workspaces,"selectWorkspace").mockImplementation((...args)=>{
-    const result=select(...args);if(args[1]==="third")selections.push(structuredClone(args));return result;
+    const result=select(...args);finalJoints.set(result.id,result.state.joints.map(j=>j.model.id).sort());
+    if(args[1]==="third")selections.push(structuredClone(args));return result;
   });
   try{results=await evaluateAssembly(replica);}
   finally{vi.restoreAllMocks();}
+  for(const [seed,state] of lastState)finalJoints.set(`after-transfer:${seed}`,state.joints.map(j=>j.model.id).sort());
   expect(results.every(s=>s.status==="pass"),JSON.stringify(results.map(({stageId,status,detail})=>({stageId,status,detail})))).toBe(true);
 },900000);
 
 describe("released module transfer in one three-component workspace",()=>{
+  it("publishes only actual terminal joints after every successful checkpoint",()=>{
+    for(const stage of results){
+      expect(stage.terminalConnections?.map(t=>t.seed)).toEqual([0,17,53]);
+      for(const terminal of stage.terminalConnections!){
+        expect(terminal.connectionIds).toEqual(finalJoints.get(`${stage.stageId}:${terminal.seed}`));
+        expect(terminal.connectionIds).not.toContain(unwanted);
+      }
+    }
+  });
+
+  it("publishes no accepted terminal evidence when a prerequisite has no grip contract",async()=>{
+    const replica=componentTransferFixture();replica.construction![0].operations[0].hands=[];
+    const rejected=await evaluateAssembly(replica);
+    expect(rejected.every(s=>s.status!=="pass"&&s.terminalConnections===undefined)).toBe(true);
+  });
   it("earns only the intended joins and continues with the untouched component retained",()=>{
     expect(inputs).toHaveLength(3);expect(outputs).toHaveLength(3);
     for(const [i,trial] of outputs.entries()){

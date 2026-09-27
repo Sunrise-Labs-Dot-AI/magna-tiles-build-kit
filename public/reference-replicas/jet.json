@@ -2794,9 +2794,9 @@
   },
   "report": {
     "id": "jet",
-    "fingerprint": "e01800f8878c8771acf6e4263cabf2cf8cd072423b72636041d09cf8b05748f0",
-    "validationCodeHash": "17a1ca3fbb39df2fb4fcda1b55e32099db3beff6506b7c190c08f3a77bb696a9",
-    "generatedAt": "2026-09-27T13:20:40.624Z",
+    "fingerprint": "4b8a71326f3af30d7d66524f542296c4e0cd0dde5873eddaaef86cbcfee085f5",
+    "validationCodeHash": "a02f2f243b188f0247b3e0f54e6b5d6bd50fc563513b61261ccc4f1565a28db2",
+    "generatedAt": "2026-09-27T13:55:19.923Z",
     "replication": "not-verified",
     "checks": {
       "source": {
@@ -4571,7 +4571,7 @@
           "right-triangle": 0,
           "isosceles-triangle": 0
         },
-        "instruction": "Join three square tiles into an open triangular ring. Stack the next ring on its three matching edges. The creator supports the upright assembly; its first clear hands-off checkpoint is the horizontal pose. New parts: P1 (Small square), P2 (Small square), P3 (Small square). Joins: P1 edge 1 to P2 edge 1; P2 edge 3 to P3 edge 3; P1 edge 3 to P3 edge 1. Source frame: jet-body-ring. Keep this module in your hand; no unattended release is asserted."
+        "instruction": "Join three square tiles into an open triangular ring. Stack the next ring on its three matching edges. The creator supports the upright assembly; its first clear hands-off checkpoint is the horizontal pose. New parts: P1 (Small square), P2 (Small square), P3 (Small square). Proposed joins (not verified): P1 edge 1 to P2 edge 1; P2 edge 3 to P3 edge 3; P1 edge 3 to P3 edge 1. Source frame: jet-body-ring. Keep this module in your hand; no unattended release is asserted."
       },
       {
         "step": 2,
@@ -4592,7 +4592,7 @@
           "right-triangle": 0,
           "isosceles-triangle": 0
         },
-        "instruction": "Join three square tiles into an open triangular ring. Stack the next ring on its three matching edges. The creator supports the upright assembly; its first clear hands-off checkpoint is the horizontal pose. New parts: P4 (Small square), P5 (Small square), P6 (Small square). Joins: P1 edge 2 to P4 edge 4; P4 edge 1 to P5 edge 1; P2 edge 2 to P5 edge 4; P5 edge 3 to P6 edge 3; P4 edge 3 to P6 edge 1; P3 edge 2 to P6 edge 4. Source frame: jet-body-second. Keep this module in your hand; no unattended release is asserted."
+        "instruction": "Join three square tiles into an open triangular ring. Stack the next ring on its three matching edges. The creator supports the upright assembly; its first clear hands-off checkpoint is the horizontal pose. New parts: P4 (Small square), P5 (Small square), P6 (Small square). Proposed joins (not verified): P1 edge 2 to P4 edge 4; P4 edge 1 to P5 edge 1; P2 edge 2 to P5 edge 4; P5 edge 3 to P6 edge 3; P4 edge 3 to P6 edge 1; P3 edge 2 to P6 edge 4. Source frame: jet-body-second. Keep this module in your hand; no unattended release is asserted."
       },
       {
         "step": 3,
@@ -4616,7 +4616,7 @@
           "right-triangle": 0,
           "isosceles-triangle": 0
         },
-        "instruction": "Join three square tiles into an open triangular ring. Stack the next ring on its three matching edges. The creator supports the upright assembly; its first clear hands-off checkpoint is the horizontal pose. New parts: P7 (Small square), P8 (Small square), P9 (Small square). Joins: P4 edge 2 to P7 edge 4; P7 edge 1 to P8 edge 1; P5 edge 2 to P8 edge 4; P8 edge 3 to P9 edge 3; P7 edge 3 to P9 edge 1; P6 edge 2 to P9 edge 4. Source frame: jet-body-third. Keep this module in your hand; no unattended release is asserted."
+        "instruction": "Join three square tiles into an open triangular ring. Stack the next ring on its three matching edges. The creator supports the upright assembly; its first clear hands-off checkpoint is the horizontal pose. New parts: P7 (Small square), P8 (Small square), P9 (Small square). Proposed joins (not verified): P4 edge 2 to P7 edge 4; P7 edge 1 to P8 edge 1; P5 edge 2 to P8 edge 4; P8 edge 3 to P9 edge 3; P7 edge 3 to P9 edge 1; P6 edge 2 to P9 edge 4. Source frame: jet-body-third. Keep this module in your hand; no unattended release is asserted."
       },
       {
         "step": 4,
@@ -4643,7 +4643,7 @@
           "right-triangle": 0,
           "isosceles-triangle": 0
         },
-        "instruction": "Join three square tiles into an open triangular ring. Stack the next ring on its three matching edges. The creator supports the upright assembly; its first clear hands-off checkpoint is the horizontal pose. New parts: P10 (Small square), P11 (Small square), P12 (Small square). Joins: P7 edge 2 to P10 edge 4; P10 edge 1 to P11 edge 1; P8 edge 2 to P11 edge 4; P11 edge 3 to P12 edge 3; P10 edge 3 to P12 edge 1; P9 edge 2 to P12 edge 4. Source frame: jet-body-upright. Keep this module in your hand; no unattended release is asserted."
+        "instruction": "Join three square tiles into an open triangular ring. Stack the next ring on its three matching edges. The creator supports the upright assembly; its first clear hands-off checkpoint is the horizontal pose. New parts: P10 (Small square), P11 (Small square), P12 (Small square). Proposed joins (not verified): P7 edge 2 to P10 edge 4; P10 edge 1 to P11 edge 1; P8 edge 2 to P11 edge 4; P11 edge 3 to P12 edge 3; P10 edge 3 to P12 edge 1; P9 edge 2 to P12 edge 4. Source frame: jet-body-upright. Keep this module in your hand; no unattended release is asserted."
       },
       {
         "step": 5,
@@ -4670,7 +4670,7 @@
           "right-triangle": 0,
           "isosceles-triangle": 0
         },
-        "instruction": "Turn the four connected triangular bays onto the long keel. Adjust as shown in the source and release for the balance check. Reuse the numbered parts already assembled. No new magnetic joins in this pose change. Source frame: jet-body-release. Release checkpoint: consult the measured result before following this candidate."
+        "instruction": "Turn the four connected triangular bays onto the long keel. Adjust as shown in the source and release for the balance check. Reuse the numbered parts already assembled. No new joins proposed in this step. Source frame: jet-body-release. Release checkpoint: consult the measured result before following this candidate."
       },
       {
         "step": 6,
@@ -4700,7 +4700,7 @@
           "right-triangle": 0,
           "isosceles-triangle": 3
         },
-        "instruction": "Join the three long blue isosceles triangles into a point. Attach all three short bases around the front triangular opening. New parts: P13 (Isosceles triangle), P14 (Isosceles triangle), P15 (Isosceles triangle). Joins: P1 edge 4 to P13 edge 1; P13 edge 2 to P14 edge 3; P3 edge 4 to P14 edge 1; P14 edge 2 to P15 edge 3; P13 edge 3 to P15 edge 2; P2 edge 4 to P15 edge 1. Source frame: jet-nose. Release checkpoint: consult the measured result before following this candidate."
+        "instruction": "Join the three long blue isosceles triangles into a point. Attach all three short bases around the front triangular opening. New parts: P13 (Isosceles triangle), P14 (Isosceles triangle), P15 (Isosceles triangle). Proposed joins (not verified): P1 edge 4 to P13 edge 1; P13 edge 2 to P14 edge 3; P3 edge 4 to P14 edge 1; P14 edge 2 to P15 edge 3; P13 edge 3 to P15 edge 2; P2 edge 4 to P15 edge 1. Source frame: jet-nose. Release checkpoint: consult the measured result before following this candidate."
       },
       {
         "step": 7,
@@ -4719,7 +4719,7 @@
           "right-triangle": 2,
           "isosceles-triangle": 0
         },
-        "instruction": "Join its two squares at a right angle and add the two right-triangle end caps. Keep the third long side open. New parts: P16 (Small square), P17 (Small square), P18 (Right triangle), P19 (Right triangle). Joins: P16 edge 4 to P17 edge 4; P17 edge 1 to P18 edge 3; P16 edge 1 to P18 edge 1; P17 edge 3 to P19 edge 3; P16 edge 3 to P19 edge 1. Source frame: jet-wing-module. Keep this module in your hand; no unattended release is asserted."
+        "instruction": "Join its two squares at a right angle and add the two right-triangle end caps. Keep the third long side open. New parts: P16 (Small square), P17 (Small square), P18 (Right triangle), P19 (Right triangle). Proposed joins (not verified): P16 edge 4 to P17 edge 4; P17 edge 1 to P18 edge 3; P16 edge 1 to P18 edge 1; P17 edge 3 to P19 edge 3; P16 edge 3 to P19 edge 1. Source frame: jet-wing-module. Keep this module in your hand; no unattended release is asserted."
       },
       {
         "step": 8,
@@ -4753,7 +4753,7 @@
           "right-triangle": 0,
           "isosceles-triangle": 0
         },
-        "instruction": "Hold the pod against the middle body bay, matching its top edge. The exact seating remains unresolved; this step is not certified buildable. Reuse the numbered parts already assembled. Joins: P8 edge 1 to P16 edge 1; P7 edge 1 to P16 edge 1; P8 edge 1 to P18 edge 1; P7 edge 1 to P18 edge 1. Source frame: jet-wing-root-left. Release checkpoint: consult the measured result before following this candidate."
+        "instruction": "Hold the pod against the middle body bay, matching its top edge. The exact seating remains unresolved; this step is not certified buildable. Reuse the numbered parts already assembled. Proposed joins (not verified): P8 edge 1 to P16 edge 1; P7 edge 1 to P16 edge 1; P8 edge 1 to P18 edge 1; P7 edge 1 to P18 edge 1. Source frame: jet-wing-root-left. Release checkpoint: consult the measured result before following this candidate."
       },
       {
         "step": 9,
@@ -4772,7 +4772,7 @@
           "right-triangle": 2,
           "isosceles-triangle": 0
         },
-        "instruction": "Join its two squares at a right angle and add the two right-triangle end caps. Keep the third long side open. New parts: P22 (Small square), P23 (Small square), P24 (Right triangle), P25 (Right triangle). Joins: P22 edge 4 to P23 edge 4; P23 edge 1 to P24 edge 3; P22 edge 1 to P24 edge 1; P23 edge 3 to P25 edge 3; P22 edge 3 to P25 edge 1. Source frame: jet-wing-module-right. Keep this module in your hand; no unattended release is asserted."
+        "instruction": "Join its two squares at a right angle and add the two right-triangle end caps. Keep the third long side open. New parts: P22 (Small square), P23 (Small square), P24 (Right triangle), P25 (Right triangle). Proposed joins (not verified): P22 edge 4 to P23 edge 4; P23 edge 1 to P24 edge 3; P22 edge 1 to P24 edge 1; P23 edge 3 to P25 edge 3; P22 edge 3 to P25 edge 1. Source frame: jet-wing-module-right. Keep this module in your hand; no unattended release is asserted."
       },
       {
         "step": 10,
@@ -4810,7 +4810,7 @@
           "right-triangle": 0,
           "isosceles-triangle": 0
         },
-        "instruction": "Hold the pod against the middle body bay, matching its top edge. The exact seating remains unresolved; this step is not certified buildable. Reuse the numbered parts already assembled. Joins: P9 edge 1 to P22 edge 1; P7 edge 3 to P22 edge 1; P9 edge 1 to P24 edge 1; P7 edge 3 to P24 edge 1. Source frame: jet-wing-root-right. Release checkpoint: consult the measured result before following this candidate."
+        "instruction": "Hold the pod against the middle body bay, matching its top edge. The exact seating remains unresolved; this step is not certified buildable. Reuse the numbered parts already assembled. Proposed joins (not verified): P9 edge 1 to P22 edge 1; P7 edge 3 to P22 edge 1; P9 edge 1 to P24 edge 1; P7 edge 3 to P24 edge 1. Source frame: jet-wing-root-right. Release checkpoint: consult the measured result before following this candidate."
       },
       {
         "step": 11,
@@ -4850,7 +4850,7 @@
           "right-triangle": 0,
           "isosceles-triangle": 0
         },
-        "instruction": "Seat each red equilateral triangle along the front edge of its pod. New parts: P20 (Equilateral triangle), P26 (Equilateral triangle). Joins: P17 edge 4 to P20 edge 1; P16 edge 4 to P20 edge 1; P23 edge 4 to P26 edge 1; P22 edge 4 to P26 edge 1. Source frame: jet-wings. Release checkpoint: consult the measured result before following this candidate."
+        "instruction": "Seat each red equilateral triangle along the front edge of its pod. New parts: P20 (Equilateral triangle), P26 (Equilateral triangle). Proposed joins (not verified): P17 edge 4 to P20 edge 1; P16 edge 4 to P20 edge 1; P23 edge 4 to P26 edge 1; P22 edge 4 to P26 edge 1. Source frame: jet-wings. Release checkpoint: consult the measured result before following this candidate."
       },
       {
         "step": 12,
@@ -4892,7 +4892,7 @@
           "right-triangle": 2,
           "isosceles-triangle": 0
         },
-        "instruction": "Join one right triangle to each outer roof edge, preserving the mirrored sweep. New parts: P21 (Right triangle), P27 (Right triangle). Joins: P19 edge 1 to P21 edge 1; P16 edge 3 to P21 edge 1; P25 edge 1 to P27 edge 1; P22 edge 3 to P27 edge 1. Source frame: jet-wingtips. Release checkpoint: consult the measured result before following this candidate."
+        "instruction": "Join one right triangle to each outer roof edge, preserving the mirrored sweep. New parts: P21 (Right triangle), P27 (Right triangle). Proposed joins (not verified): P19 edge 1 to P21 edge 1; P16 edge 3 to P21 edge 1; P25 edge 1 to P27 edge 1; P22 edge 3 to P27 edge 1. Source frame: jet-wingtips. Release checkpoint: consult the measured result before following this candidate."
       },
       {
         "step": 13,
@@ -4937,7 +4937,7 @@
           "right-triangle": 0,
           "isosceles-triangle": 0
         },
-        "instruction": "Join the three red equilateral triangles into a point and seat around the rear opening. New parts: P28 (Equilateral triangle), P29 (Equilateral triangle), P30 (Equilateral triangle). Joins: P10 edge 2 to P28 edge 1; P28 edge 2 to P29 edge 3; P12 edge 2 to P29 edge 1; P29 edge 2 to P30 edge 3; P28 edge 3 to P30 edge 2; P11 edge 2 to P30 edge 1. Source frame: jet-tail-cone. Release checkpoint: consult the measured result before following this candidate."
+        "instruction": "Join the three red equilateral triangles into a point and seat around the rear opening. New parts: P28 (Equilateral triangle), P29 (Equilateral triangle), P30 (Equilateral triangle). Proposed joins (not verified): P10 edge 2 to P28 edge 1; P28 edge 2 to P29 edge 3; P12 edge 2 to P29 edge 1; P29 edge 2 to P30 edge 3; P28 edge 3 to P30 edge 2; P11 edge 2 to P30 edge 1. Source frame: jet-tail-cone. Release checkpoint: consult the measured result before following this candidate."
       },
       {
         "step": 14,
@@ -4984,7 +4984,7 @@
           "right-triangle": 2,
           "isosceles-triangle": 0
         },
-        "instruction": "Join the two orange horizontal stabilizers to the rear bay. Keep their outer edges clear. New parts: P31 (Right triangle), P33 (Right triangle). Joins: P11 edge 1 to P31 edge 1; P10 edge 1 to P31 edge 1; P12 edge 1 to P33 edge 1; P10 edge 3 to P33 edge 1. Source frame: jet-horizontal-tail. Release checkpoint: consult the measured result before following this candidate."
+        "instruction": "Join the two orange horizontal stabilizers to the rear bay. Keep their outer edges clear. New parts: P31 (Right triangle), P33 (Right triangle). Proposed joins (not verified): P11 edge 1 to P31 edge 1; P10 edge 1 to P31 edge 1; P12 edge 1 to P33 edge 1; P10 edge 3 to P33 edge 1. Source frame: jet-horizontal-tail. Release checkpoint: consult the measured result before following this candidate."
       },
       {
         "step": 15,
@@ -5033,7 +5033,7 @@
           "right-triangle": 0,
           "isosceles-triangle": 0
         },
-        "instruction": "Attach each purple equilateral fin above its horizontal stabilizer, following the source ordering. New parts: P32 (Equilateral triangle), P34 (Equilateral triangle). Joins: P31 edge 1 to P32 edge 1; P11 edge 1 to P32 edge 1; P10 edge 1 to P32 edge 1; P33 edge 1 to P34 edge 1; P12 edge 1 to P34 edge 1; P10 edge 3 to P34 edge 1. Source frame: jet-tail-order. Release checkpoint: consult the measured result before following this candidate."
+        "instruction": "Attach each purple equilateral fin above its horizontal stabilizer, following the source ordering. New parts: P32 (Equilateral triangle), P34 (Equilateral triangle). Proposed joins (not verified): P31 edge 1 to P32 edge 1; P11 edge 1 to P32 edge 1; P10 edge 1 to P32 edge 1; P33 edge 1 to P34 edge 1; P12 edge 1 to P34 edge 1; P10 edge 3 to P34 edge 1. Source frame: jet-tail-order. Release checkpoint: consult the measured result before following this candidate."
       },
       {
         "step": 16,
@@ -5088,7 +5088,7 @@
           "right-triangle": 2,
           "isosceles-triangle": 2
         },
-        "instruction": "Join the two purple long triangles to the yellow divider; add the green right triangles and red front floor. Seat the six-piece module on the forward body. The hidden bottom joins require further reconstruction. New parts: P35 (Isosceles triangle), P36 (Isosceles triangle), P37 (Equilateral triangle), P38 (Right triangle), P39 (Right triangle), P40 (Equilateral triangle). Joins: P35 edge 2 to P36 edge 2; P36 edge 1 to P37 edge 2; P35 edge 1 to P37 edge 3; P4 edge 4 to P37 edge 1; P1 edge 2 to P37 edge 1; P37 edge 3 to P38 edge 1; P35 edge 1 to P38 edge 1; P38 edge 2 to P39 edge 2; P37 edge 2 to P39 edge 1; P36 edge 1 to P39 edge 1; P39 edge 3 to P40 edge 2; P38 edge 3 to P40 edge 3; P37 edge 1 to P40 edge 1; P4 edge 4 to P40 edge 1; P1 edge 2 to P40 edge 1. Source frame: jet-final-fit. Release checkpoint: consult the measured result before following this candidate."
+        "instruction": "Join the two purple long triangles to the yellow divider; add the green right triangles and red front floor. Seat the six-piece module on the forward body. The hidden bottom joins require further reconstruction. New parts: P35 (Isosceles triangle), P36 (Isosceles triangle), P37 (Equilateral triangle), P38 (Right triangle), P39 (Right triangle), P40 (Equilateral triangle). Proposed joins (not verified): P35 edge 2 to P36 edge 2; P36 edge 1 to P37 edge 2; P35 edge 1 to P37 edge 3; P4 edge 4 to P37 edge 1; P1 edge 2 to P37 edge 1; P37 edge 3 to P38 edge 1; P35 edge 1 to P38 edge 1; P38 edge 2 to P39 edge 2; P37 edge 2 to P39 edge 1; P36 edge 1 to P39 edge 1; P39 edge 3 to P40 edge 2; P38 edge 3 to P40 edge 3; P37 edge 1 to P40 edge 1; P4 edge 4 to P40 edge 1; P1 edge 2 to P40 edge 1. Source frame: jet-final-fit. Release checkpoint: consult the measured result before following this candidate."
       }
     ],
     "constructionPaths": [

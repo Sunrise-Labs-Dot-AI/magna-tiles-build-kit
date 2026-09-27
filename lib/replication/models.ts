@@ -9,7 +9,7 @@ import type { Inventory, TileInstance, Vec3 } from "@/lib/magnetic-tiles/types";
 import { assemble, outside, rigidPanel, square, stageBuild, v } from "./geometry";
 import type { Replica, StagePose } from "./types";
 import { edgeGrips, findHandContacts } from "./grip";
-import { planConstructionPaths } from "./construction";
+import { planConstructionPaths, type ConstructionStage } from "./construction";
 import { findInsertionPath } from "./insertion";
 import { buildBounds } from "@/lib/engine/build";
 
@@ -870,16 +870,27 @@ export function mediumRamp(): Replica {
   }
   // Proposed hand sequence, not an observed source motion. Keep the same roof
   // pinch through pickup and both remaining insertions; every neighbor stays dynamic.
-  const lowerSide = lower.find(t => t.id === "lower-side-1")!;
-  const lowerDeck = lower.find(t => t.id === "lower-deck-1")!;
-  const firstHand = edgeGrips(lower.find(t => t.id === "lower-side--1")!)[0];
-  const roofHand = edgeGrips(lower.find(t => t.id === "lower-deck-2")!)[1];
   const lowestGrip = (tile: TileInstance) => edgeGrips(tile).sort((a,b) =>
     transformLocal(a.localPoint,tile.position,tile.basis!).y-transformLocal(b.localPoint,tile.position,tile.basis!).y)[0];
   const localVector = (tile: TileInstance, point: Vec3) =>
     v(dot(point,tile.basis!.xAxis),dot(point,tile.basis!.yAxis),dot(point,tile.basis!.zAxis));
-  const under = localVector(lowerSide,v(0,-.25,0)), sideApproach = localVector(lowerSide,v(0,0,2.4));
-  const deckHand = lowestGrip(lowerDeck), deckClearance = scale(deckHand.localOutward,.25);
+  const wedgeOperations = (id: "lower" | "upper", direction: Vec3): ConstructionStage["operations"] => {
+    const tile = (suffix: string) => tiles.find(t => t.id === `${id}-${suffix}`)!;
+    const side = tile("side-1"), deck = tile("deck-1");
+    const firstHand = edgeGrips(tile("side--1"))[0], roofHand = edgeGrips(tile("deck-2"))[1];
+    const under = localVector(side,v(0,-.25,0)), sideApproach = localVector(side,scale(normalize(cross(direction,v(0,1,0))),2.4));
+    const deckHand = lowestGrip(deck), deckClearance = scale(deckHand.localOutward,.25);
+    return [
+      { tileIds: [tile("side--1").id],hands: [firstHand] },
+      { tileIds: [tile("deck-2").id],hands: [roofHand,structuredClone(firstHand)] },
+      { tileIds: [side.id],pickup: { height: .85,hand: structuredClone(roofHand) },
+        hands: [{ ...lowestGrip(side),approachOffsets: [add(under,sideApproach),under,v(0,0,0)] },structuredClone(roofHand)] },
+      { tileIds: [deck.id],lowerBeforeRelease: .32,releaseAfter: true,
+        hands: [{ ...deckHand,approachOffsets: [add(localVector(deck,scale(direction,-2)),deckClearance),deckClearance,v(0,0,0)] },structuredClone(roofHand)] },
+    ];
+  };
+  const lowerOperations = wedgeOperations("lower",v(1,0,0)), upperOperations = wedgeOperations("upper",upperDirection);
+  const upperIds = upper.map(t => t.id), beforeTurnIds = prefix(tiles,3);
   const supportOrder = ["support-back","support-side--1-1","support-side-1-1","support-side--1-0","support-side-1-0"];
   const supportHolds = [null,"support-back","support-back","support-side--1-1","support-side-1-1"];
   const supportGrip = (id: string) => {
@@ -895,6 +906,11 @@ export function mediumRamp(): Replica {
       "Proposed sequence: hold the first long side and attach the upper deck. Keep that deck grip, withdraw the side hand and lift 0.85 in. Insert the opposite side sideways, then the lower deck. Lower 0.32 in before releasing the four-piece wedge. This hand sequence remains a simulation proposal, not a measured source motion.",
       prefix(tiles, 1),
     ),
+    {
+      ...stage("medium-upper-preparation","medium-upper-preparation","Prepare the upper wedge (proposed method)",
+        "The prepared upper wedge already exists before transfer in the footage; its assembly method is proposed, not observed. Build its four panels separately using the same checked side-and-deck sequence as the lower wedge, then release it. Keep both wedges present while building the support. Grips and workspace positions remain simulation proposals.",upperIds),
+      constructionEvidence: [{claim:"The prepared upper wedge already exists before transfer; its assembly method is proposed, not observed.",frameIds:["medium-upper-preparation"]}],
+    },
     stage(
       "medium-support",
       "medium-support",
@@ -902,11 +918,22 @@ export function mediumRamp(): Replica {
       "Proposed sequence: beside the released lower wedge, hold the green back square and attach one square to each side. Release this three-sided support, then hold each rear side while attaching its front extension. Release after each extension before changing your support grip. The workspace placement and grips remain simulation proposals.",
       tiles.filter((t) => t.step === 2).map((t) => t.id),
     ),
+    {
+      ...stage("medium-upper-transfer","medium-upper-transfer","Place the prepared upper wedge on the support",
+        "Acquire the upper driving-square grip, lift the prepared wedge, align both long side edges with the green support, and lower it into contact. Release after both upper-to-support joins pass the contact and support checks. The lower wedge remains a separate component. This follows the observed prepared-module transfer; the exact grip, path and workspace positions are simulation proposals.",beforeTurnIds),
+      installedStageIds:["medium-lower","medium-support"],
+      constructionEvidence:[{claim:"An already assembled upper wedge is placed onto the green support; this frame does not establish the later lower placement or blue turn.",frameIds:["medium-upper-transfer"]}],
+    },
+    {
+      ...stage("medium-lower-placement","medium-lower-placement","Position the lower wedge beside the upper ramp",
+        "Henry moves the separate lower wedge beside the supported upper ramp before adding the blue turn. This relocation has no verified motion contract yet. Earlier workspace positions are proposed staging locations; do not treat them as proof of this source movement or of a lower-to-support join.",beforeTurnIds),
+      constructionEvidence:[{claim:"The lower wedge is repositioned after upper placement and before blue-turn attachment; the relocation procedure remains unverified.",frameIds:["medium-lower-placement"]}],
+    },
     stage(
       "medium-turn",
       "medium-turn",
-      "Add the upper wedge and triangular turn",
-      "Place the second wedge on the U support. Join the blue equilateral turn between the upper exit and lower entrance; retain its 60-degree change of direction.",
+      "Join the triangular turn",
+      "After the lower wedge has been positioned, join the blue equilateral turn between the upper exit and lower entrance. This insertion and its joins still need their own continuous assembly check; the preceding upper transfer does not verify this step.",
       prefix(tiles, 4),
     ),
   ];
@@ -944,17 +971,14 @@ export function mediumRamp(): Replica {
     inventory: inventory(15, 18, 0, 4),
     bomFrameId: "medium-bom",
     stages,
-    construction: [{ stageId: "medium-lower", operations: [
-      { tileIds: ["lower-side--1"],hands: [firstHand] },
-      { tileIds: ["lower-deck-2"],hands: [roofHand,structuredClone(firstHand)] },
-      { tileIds: ["lower-side-1"],pickup: { height: .85,hand: structuredClone(roofHand) },
-        hands: [{ ...lowestGrip(lowerSide),approachOffsets: [add(under,sideApproach),under,v(0,0,0)] },structuredClone(roofHand)] },
-      { tileIds: ["lower-deck-1"],lowerBeforeRelease: .32,releaseAfter: true,
-        hands: [{ ...deckHand,approachOffsets: [add(localVector(lowerDeck,v(-2,0,0)),deckClearance),deckClearance,v(0,0,0)] },structuredClone(roofHand)] },
-    ] },{ stageId: "medium-support",workspace: { afterStageId: "medium-lower",offset: v(0,0,6) },
+    construction: [{ stageId: "medium-lower", operations: lowerOperations },
+      {stageId:"medium-upper-preparation",workspace:{afterStageId:"medium-lower",offset:v(-9,0,6)},operations:upperOperations},
+      { stageId: "medium-support",workspace: { afterStageId: "medium-upper-preparation",offset: v(0,0,0) },
       operations: supportOrder.map((id,i) => ({ tileIds: [id],
         hands: supportHolds[i] ? [supportGrip(id),supportGrip(supportHolds[i]!)] : [supportGrip(id)],
-        releaseAfter: i >= 2 })) }],
+        releaseAfter: i >= 2 })) },
+      {stageId:"medium-upper-transfer",operations:[{tileIds:upperIds,preparedStageId:"medium-upper-preparation",
+        transfer:{afterStageId:"medium-support",transitHeight:9},hands:[structuredClone(upperOperations.at(-1)!.hands![1])],releaseAfter:true}]}],
     materialQuestions: [
       "Source isosceles dimensions and magnets are uncalibrated; the simulated vehicle is an assumed proxy.",
     ],

@@ -1,0 +1,7 @@
+CLEAN.
+
+I found no actionable regression in `tests/medium-assembly.test.ts` against `807ec5d`.
+
+The updated test retains the prior lower-stage assertions, moves support coverage to the actual third returned stage, adds upper preparation and transfer coverage, checks pass status before dereferencing motion/transfer evidence, verifies free checkpoints and terminal metadata, and confirms the seven remaining medium stages stay unverified.
+
+The `900000` Vitest timeout is a wall-clock allowance only. It does not relax physical durations, solver settings, release checks, contact tolerances, or `evaluateAssembly` acceptance criteria, and it is proportionate to the expanded 42 operation rows plus continuous transfer. I did not rerun the expensive simulations, per scope.

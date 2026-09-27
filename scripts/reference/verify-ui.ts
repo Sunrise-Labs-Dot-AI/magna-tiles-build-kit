@@ -130,17 +130,53 @@ async function main() {
     await page.screenshot({path:"verification/replication/ui/medium-retained-pickup.png",fullPage:true});
     await page.getByLabel("Construction checkpoint").selectOption("1");
     if(!(await page.getByLabel("Complete assembly check").textContent())?.includes("Passed this check"))
+      throw Error("Medium proposed upper preparation pass is absent.");
+    if(!(await page.locator(".reference-instruction").textContent())?.includes("assembly method is proposed, not observed"))
+      throw Error("Upper preparation was presented as an observed construction method.");
+    await page.getByLabel("Part insertion preview").selectOption("3");
+    await mediumSlider.fill("100");
+    await page.waitForFunction(()=>document.querySelectorAll(".design-piece-label").length===8);
+    const mediumPrepared=await page.locator(".design-piece-label").allTextContents();
+    if(!["P1","P2","P3","P4","P10","P11","P12","P13"].every(id=>mediumPrepared.includes(id)))
+      throw Error(`Medium upper preparation lost the lower obstacle or added future support parts: ${mediumPrepared}`);
+    await page.screenshot({path:"verification/replication/ui/medium-upper-preparation.png",fullPage:true});
+    await page.getByLabel("Construction checkpoint").selectOption("2");
+    if(!(await page.getByLabel("Complete assembly check").textContent())?.includes("Passed this check"))
       throw Error("Medium support assembly pass is absent.");
     await page.getByLabel("Part insertion preview").selectOption("4");
     await mediumSlider.fill("100");
-    await page.waitForFunction(()=>document.querySelectorAll(".design-piece-label").length===9);
+    await page.waitForFunction(()=>document.querySelectorAll(".design-piece-label").length===13);
     const mediumWorkspace=await page.locator(".design-piece-label").allTextContents();
-    if(!Array.from({length:9},(_,i)=>`P${i+1}`).every(id=>mediumWorkspace.includes(id)))
+    if(!Array.from({length:13},(_,i)=>`P${i+1}`).every(id=>mediumWorkspace.includes(id)))
       throw Error(`Medium workspace omits predecessors or includes future parts: ${mediumWorkspace}`);
     await page.screenshot({path:"verification/replication/ui/medium-support-release.png",fullPage:true});
-    await page.getByLabel("Construction checkpoint").selectOption("2");
+    await page.getByLabel("Construction checkpoint").selectOption("3");
+    if(!(await page.getByLabel("Complete assembly check").textContent())?.includes("Passed this check"))
+      throw Error("Medium upper transfer pass is absent.");
+    await page.getByLabel("Part insertion preview").selectOption("0");
+    await mediumSlider.fill("0");
+    await ready();
+    await page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));
+    const mediumTransferStart=await page.locator("canvas").screenshot();
+    await mediumSlider.fill("100");
+    await page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));
+    if(mediumTransferStart.equals(await page.locator("canvas").screenshot()))throw Error("Medium upper transfer playback did not move.");
+    const mediumTransferred=await page.locator(".design-piece-label").allTextContents();
+    if(mediumTransferred.length!==13||!Array.from({length:13},(_,i)=>`P${i+1}`).every(id=>mediumTransferred.includes(id)))
+      throw Error(`Medium transfer omits actual workspace panels: ${mediumTransferred}`);
+    await page.getByText("Numbered parts and checked edge joins",{exact:true}).click();
+    const checkedInstructions=await page.locator(".reference-instruction").textContent();
+    if(!checkedInstructions?.includes("Joins present after assembly checks")||
+      !checkedInstructions.includes("P5 edge 3 to P10 edge 3")||!checkedInstructions.includes("P7 edge 3 to P11 edge 3")||
+      checkedInstructions.includes("P2 edge 1 to P7 edge 4"))
+      throw Error("Medium transfer instructions did not use actual checked joins.");
+    await page.screenshot({path:"verification/replication/ui/medium-upper-transfer-release.png",fullPage:true});
+    await page.getByLabel("Construction checkpoint").selectOption("4");
     if((await page.getByLabel("Complete assembly check").textContent())?.includes("Passed this check"))
-      throw Error("Unverified medium upper assembly was promoted.");
+      throw Error("Unverified medium lower placement was promoted.");
+    await page.getByLabel("Construction checkpoint").selectOption("5");
+    if((await page.getByLabel("Complete assembly check").textContent())?.includes("Passed this check"))
+      throw Error("Unverified medium blue turn was promoted.");
     await page.getByRole("button", { name: /3D snail/ }).click();
     await page.getByRole("heading", { name: /original 3D snail/ }).waitFor();
     await page.setViewportSize({ width: 390, height: 844 });
@@ -164,7 +200,8 @@ async function main() {
       gravityPreview: { labels: seatedLabels, recordedFramesDiffer: true, launchAssemblyPassed: true },
       pickupPreview: { labels: pickupLabels, terminalLabels: wedgeEndLabels, recordedFramesDiffer: true },
       transferPreview: {labels:transferLabels,recordedFramesDiffer:true,completeAssemblyPassed:true},
-      mediumPreview: {pickupLabels:mediumPickup,workspaceLabels:mediumWorkspace,firstTwoStagesPassed:true,laterStageUnverified:true},
+      mediumPreview: {pickupLabels:mediumPickup,preparedLabels:mediumPrepared,workspaceLabels:mediumWorkspace,transferLabels:mediumTransferred,
+        firstFourStagesPassed:true,transferPlaybackMoves:true,checkedJoinInstructions:true,lowerPlacementUnverified:true,blueTurnUnverified:true},
       mobileOverflow: overflow,
       pageErrors: errors,
     };
