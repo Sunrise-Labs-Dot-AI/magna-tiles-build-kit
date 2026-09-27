@@ -17,12 +17,30 @@ Updated 2026-09-26. `/references` contains four inspectable reconstruction candi
 | Target | Source and inventory | Source shape | Release simulation | Assembly | Car function |
 |---|---|---|---|---|---|
 | Jet, 40 | Verified local hashes and BOM | Fails withheld view; sparse side-view corners pass | Fails three perturbations | Released checkpoints fail; upright rings and separate pods are explicitly held | No flight test or claim |
-| Small ramp, 9 | Verified local hashes and BOM | Fails withheld view | Passes all three perturbations | Wedge and final checkpoint pass; separate held launch and joining motions remain unverified | One assumed car completes the inferred deck route with wheel contact |
+| Small ramp, 9 | Verified local hashes and BOM | Fails withheld view | Passes all three perturbations | Wedge/final release and ten insertion paths pass; held launch, grip access and magnetic closure remain unverified | One assumed car completes the inferred deck route with wheel contact |
 | Medium ramp, 37 | Verified local hashes and BOM | Fitting and withheld views fail | Does not reach sustained rest | Four-piece wedge and five-square support pass; combined stages fail | Fails; no successful passive turn demonstrated |
-| Large ramp, 51 | Verified local hashes and BOM | No scored camera fit yet | Does not reach sustained rest | Support and combined release checkpoints fail | Not reconstructed/tested |
+| Large ramp, 51 | Verified local hashes and BOM | No scored camera fit yet | Passes all three perturbations | Released checkpoints pass; insertion and grip checks remain unverified | Not reconstructed/tested |
 | 3D snail | Exact source absent | Not assessed | Not assessed | Not assessed | Not assessed |
 
 All real-world material behavior remains **uncalibrated**. Passing a simulator check is not a claim of physical validation. Detailed numbers and failures live in `verification/replication/results.json` and the workshop downloads.
+
+## Continued harness development
+
+The goal is reliable generation of verified builds. The earlier candidate PR is a checkpoint, not the acceptance event. The implementation plan and independent review are in `runs/2026-09-26-reliable-verification-plan.md` and its sidecar. No source verification is promoted by the current increment.
+
+`lib/replication/insertion.ts` checks the complete swept path of fixed-orientation translating catalog prisms against every installed part and the table. It intersects analytic time intervals on the full prism separating-axis set, including thickness edges; collisions between distant endpoints cannot evade the check. The unchanged 0.03-inch contact tolerance applies. Rotating insertions are outside this solver.
+
+`planConstructionPaths` performs bounded direction search in a supplied per-part order, validates each path independently, and retains all installed parts as obstacles. Multi-part moves require a previously planned matching module. Missing parts, duplicate insertions, future module references, and a single arbitrary whole-model insertion fail. These are clearance checks, not hand or stability checks.
+
+The small ramp has five wedge insertions, four separately held launch-module insertions, and one module-joining path. The per-part order is a candidate sequence within the source stages; the generated paths are not measurements of Henry’s hand motions. Select a construction checkpoint and an insertion in the workshop, then move the slider to inspect it. Downloads contain the same coordinates used by the validator.
+
+### Numerical contact correction
+
+The old engine inflated each already finite-thickness tile collider by a 0.006-inch contact skin. At flush, hinge-constrained seams that added competing separation and attachment constraints. Rapier documents that contact skin creates a gap between touching objects ([official documentation](https://rapier.rs/docs/user_guides/javascript/collider_contact_skin/)). Removing this extra margin retains full tile hulls, contact between connected tiles, and all physical constants. It changes neither magnetic torque nor raw intersection tolerances.
+
+A source-independent nine-piece closed support failed to settle with the old margin and reached sustained rest without it. A thirteen-piece support drifted 2.60 inches in the old 7.5-second diagnostic and only 0.266 inches without the margin, including the deliberate 0.28-inch drop. The 9/13-piece fixtures pass all three release seeds after the correction. Full differential results are in `verification/replication/contact-diagnostics.json`; reproduce with `node --import tsx scripts/reference/contact-diagnostics.ts`.
+
+The 51-piece source candidate now passes three releases with peak displacement about 0.270 inches. The medium candidate settles late and still fails the required 90 consecutive rest steps within 900 steps. The jet still fails. The correction also makes the historical 23-piece jet fail its nominal gate; its former stored engine-valid status was stale. A generated two-step riser now uses three explicit rear-bracing squares (13 pieces total) because the old open-ended linkage collapses without the artificial contact margin. No supports were added to source candidates.
 
 ## Source record and observations
 
@@ -57,7 +75,7 @@ Construction links identify an assembly operation or prepared subassembly; other
 
 The new source release check samples maximum corner displacement every step for up to 900 steps at 120 Hz. It requires no broken/rejected joints, peak displacement ≤0.95 inches, and at least 90 consecutive rest steps below 0.035 inches/second linear speed and 0.08 radians/second angular speed. Stage checkpoints use the same check. This is stronger than the historical nominal gate, which could report a low final displacement while the assembly was still moving.
 
-`physics-fixtures.json` records the tests. These results separate fixture behavior from source claims; they do not prove that magnet torque alone causes every candidate failure. Candidate topology, broad nominal edge matching, finite-thickness seating and contact/constraint jitter can also contribute. A measured hinge/cantilever fixture and tile dimensions are needed before changing the material model. No force threshold or overlap tolerance was weakened to pass these models.
+`physics-fixtures.json` records the tests. The subsequent contact-skin experiment above resolves one numerical cause for the support-shell jitter. These results separate fixture behavior from source claims; they do not prove that magnet torque alone causes every candidate failure. Candidate topology, broad nominal edge matching, finite-thickness seating and contact/constraint jitter can also contribute. A measured hinge/cantilever fixture and tile dimensions are needed before changing the material model. No force threshold or overlap tolerance was weakened to pass these models.
 
 The car's dimensions, mass, tire friction and spherical wheel approximation are assumptions. Continuous contact permits a maximum 0.15-second interruption for seams and requires contact at each ordered checkpoint. Turning and off-road failures stay visible.
 

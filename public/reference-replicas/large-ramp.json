@@ -3051,8 +3051,8 @@
   "report": {
     "id": "large-ramp",
     "fingerprint": "880bbf9d3a1af6fa711e2eb0e6d4a8ab919dc9d848889d3b27bfe8530f234b82",
-    "validationCodeHash": "25e42698100b72d400cebf386440c1c67af38784ef58f4f5e0c8651e745d1169",
-    "generatedAt": "2026-09-26T18:35:42.328Z",
+    "validationCodeHash": "6af4d03f7df8679d83d4e24627f307ab3b27823b962dad91913e8cea0ebdff6c",
+    "generatedAt": "2026-09-27T02:25:28.088Z",
     "replication": "not-verified",
     "checks": {
       "source": {
@@ -3076,16 +3076,16 @@
         "detail": "51 rigid catalog parts; 107 nominal edge connections; zero raw intersections. Magnet spacing and force are not physically calibrated."
       },
       "release": {
-        "status": "fail",
-        "detail": "seed 0: fail, peak 0.647 in, linear 3.090 in/s, angular 3.782 rad/s, 0/90 rest steps; seed 17: fail, peak 0.659 in, linear 5.078 in/s, angular 6.069 rad/s, 0/90 rest steps; seed 53: fail, peak 0.759 in, linear 5.441 in/s, angular 4.618 rad/s, 0/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
+        "status": "pass",
+        "detail": "seed 0: pass, peak 0.270 in, linear 0.000 in/s, angular 0.000 rad/s, 622/90 rest steps; seed 17: pass, peak 0.270 in, linear 0.000 in/s, angular 0.000 rad/s, 632/90 rest steps; seed 53: pass, peak 0.270 in, linear 0.000 in/s, angular 0.000 rad/s, 626/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
       },
       "settledShape": {
         "status": "unverified",
         "detail": "0 settled point comparisons. No source projections cover the final shape; displacement alone cannot certify fidelity."
       },
       "assembly": {
-        "status": "fail",
-        "detail": "0/5 nominal checkpoints passed. Held modules, joining motions and hand access are separate unverified requirements."
+        "status": "unverified",
+        "detail": "5/5 nominal checkpoints passed; 0/5 stage insertion sequences clear. Held stability, magnetic closure and hand access remain separate unverified requirements."
       },
       "function": {
         "status": "unverified",
@@ -3096,37 +3096,37 @@
     "releases": [
       {
         "seed": 0,
-        "status": "fail",
-        "peakDisplacement": 0.6467094686900741,
-        "finalDisplacement": 0.6173966706579211,
-        "finalSpeed": 3.781946872337619,
-        "linearSpeed": 3.0904282592116012,
-        "angularSpeed": 3.781946872337619,
-        "settledSteps": 0,
+        "status": "pass",
+        "peakDisplacement": 0.27018991617014504,
+        "finalDisplacement": 0.14035185845611303,
+        "finalSpeed": 0,
+        "linearSpeed": 0,
+        "angularSpeed": 0,
+        "settledSteps": 622,
         "poppedJoints": [],
         "settledProjections": []
       },
       {
         "seed": 17,
-        "status": "fail",
-        "peakDisplacement": 0.6591783136533336,
-        "finalDisplacement": 0.6295345551356497,
-        "finalSpeed": 6.0693463166274,
-        "linearSpeed": 5.078417465604589,
-        "angularSpeed": 6.0693463166274,
-        "settledSteps": 0,
+        "status": "pass",
+        "peakDisplacement": 0.2701681324498578,
+        "finalDisplacement": 0.1405174683024754,
+        "finalSpeed": 0,
+        "linearSpeed": 0,
+        "angularSpeed": 0,
+        "settledSteps": 632,
         "poppedJoints": [],
         "settledProjections": []
       },
       {
         "seed": 53,
-        "status": "fail",
-        "peakDisplacement": 0.7588533033702621,
-        "finalDisplacement": 0.7058758843231384,
-        "finalSpeed": 5.441417276571218,
-        "linearSpeed": 5.441417276571218,
-        "angularSpeed": 4.618154708983065,
-        "settledSteps": 0,
+        "status": "pass",
+        "peakDisplacement": 0.270182909041293,
+        "finalDisplacement": 0.14084945741238689,
+        "finalSpeed": 0,
+        "linearSpeed": 0,
+        "angularSpeed": 0,
+        "settledSteps": 626,
         "poppedJoints": [],
         "settledProjections": []
       }
@@ -3134,33 +3134,33 @@
     "stages": [
       {
         "id": "large-bay-0",
-        "status": "fail",
-        "detail": "Released checkpoint: peak 0.975 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-        "displacement": 0.9754342551273272
+        "status": "pass",
+        "detail": "Released checkpoint: peak 0.271 in; 0 broken/rejected joints; 655 consecutive steps at rest (90 required).",
+        "displacement": 0.2705237604586917
       },
       {
         "id": "large-bay-1",
-        "status": "fail",
-        "detail": "Released checkpoint: peak 0.953 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-        "displacement": 0.9528259212618939
+        "status": "pass",
+        "detail": "Released checkpoint: peak 0.268 in; 0 broken/rejected joints; 643 consecutive steps at rest (90 required).",
+        "displacement": 0.2683117488459394
       },
       {
         "id": "large-bay-2",
-        "status": "fail",
-        "detail": "Released checkpoint: peak 0.271 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-        "displacement": 0.2706869748938883
+        "status": "pass",
+        "detail": "Released checkpoint: peak 0.267 in; 0 broken/rejected joints; 651 consecutive steps at rest (90 required).",
+        "displacement": 0.26686657755406856
       },
       {
         "id": "large-decks",
-        "status": "fail",
-        "detail": "Released checkpoint: peak 0.805 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-        "displacement": 0.8046695058196744
+        "status": "pass",
+        "detail": "Released checkpoint: peak 0.270 in; 0 broken/rejected joints; 643 consecutive steps at rest (90 required).",
+        "displacement": 0.2701892005109441
       },
       {
         "id": "large-final",
-        "status": "fail",
-        "detail": "Released checkpoint: peak 0.647 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-        "displacement": 0.6467094686900741
+        "status": "pass",
+        "detail": "Released checkpoint: peak 0.270 in; 0 broken/rejected joints; 622 consecutive steps at rest (90 required).",
+        "displacement": 0.27018991617014504
       }
     ],
     "instructions": [
@@ -3376,6 +3376,38 @@
           "isosceles-triangle": 0
         },
         "instruction": "Add the two triangular markers on each support roof. New parts: P22 (Equilateral triangle), P23 (Equilateral triangle), P39 (Equilateral triangle), P40 (Equilateral triangle), P50 (Equilateral triangle), P51 (Equilateral triangle). Joins: P19 edge 1 to P22 edge 1; P13 edge 3 to P22 edge 1; P20 edge 3 to P23 edge 1; P14 edge 3 to P23 edge 1; P36 edge 1 to P39 edge 1; P30 edge 3 to P39 edge 1; P37 edge 3 to P40 edge 1; P31 edge 3 to P40 edge 1; P47 edge 1 to P50 edge 1; P41 edge 3 to P50 edge 1; P48 edge 3 to P51 edge 1; P42 edge 3 to P51 edge 1. Source frame: large-final. Release checkpoint: consult the measured result before following this candidate."
+      }
+    ],
+    "constructionPaths": [
+      {
+        "stageId": "large-bay-0",
+        "status": "unverified",
+        "paths": [],
+        "detail": "No per-part insertion sequence has been supplied."
+      },
+      {
+        "stageId": "large-bay-1",
+        "status": "unverified",
+        "paths": [],
+        "detail": "No per-part insertion sequence has been supplied."
+      },
+      {
+        "stageId": "large-bay-2",
+        "status": "unverified",
+        "paths": [],
+        "detail": "No per-part insertion sequence has been supplied."
+      },
+      {
+        "stageId": "large-decks",
+        "status": "unverified",
+        "paths": [],
+        "detail": "No per-part insertion sequence has been supplied."
+      },
+      {
+        "stageId": "large-final",
+        "status": "unverified",
+        "paths": [],
+        "detail": "No per-part insertion sequence has been supplied."
       }
     ],
     "carTrials": []

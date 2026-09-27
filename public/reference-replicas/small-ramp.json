@@ -487,6 +487,77 @@
       "isosceles-triangle": 2
     },
     "bomFrameId": "small-bom",
+    "construction": [
+      {
+        "stageId": "small-wedge",
+        "operations": [
+          {
+            "tileIds": [
+              "small-deck-1"
+            ]
+          },
+          {
+            "tileIds": [
+              "small-deck-2"
+            ]
+          },
+          {
+            "tileIds": [
+              "small-side--1"
+            ]
+          },
+          {
+            "tileIds": [
+              "small-side-1"
+            ]
+          },
+          {
+            "tileIds": [
+              "small-back"
+            ]
+          }
+        ]
+      },
+      {
+        "stageId": "small-launch",
+        "operations": [
+          {
+            "tileIds": [
+              "launch-roof"
+            ]
+          },
+          {
+            "tileIds": [
+              "launch-back"
+            ]
+          },
+          {
+            "tileIds": [
+              "launch-side--1"
+            ]
+          },
+          {
+            "tileIds": [
+              "launch-side-1"
+            ]
+          }
+        ]
+      },
+      {
+        "stageId": "small-final",
+        "operations": [
+          {
+            "tileIds": [
+              "launch-roof",
+              "launch-back",
+              "launch-side--1",
+              "launch-side-1"
+            ],
+            "preparedStageId": "small-launch"
+          }
+        ]
+      }
+    ],
     "stages": [
       {
         "id": "small-wedge",
@@ -531,7 +602,10 @@
           "launch-side--1",
           "launch-side-1"
         ],
-        "support": "released"
+        "support": "released",
+        "installedStageIds": [
+          "small-wedge"
+        ]
       }
     ],
     "uncertainties": [
@@ -603,9 +677,9 @@
   },
   "report": {
     "id": "small-ramp",
-    "fingerprint": "61b5c8f337cd51a8877047260042a6813235116df4428d07f8bcdd6292b188b1",
-    "validationCodeHash": "25e42698100b72d400cebf386440c1c67af38784ef58f4f5e0c8651e745d1169",
-    "generatedAt": "2026-09-26T18:35:32.599Z",
+    "fingerprint": "e74e8c80bc6448d1f543debde30c451de86d4ce111f9e9e05d92d5825a19b79e",
+    "validationCodeHash": "6af4d03f7df8679d83d4e24627f307ab3b27823b962dad91913e8cea0ebdff6c",
+    "generatedAt": "2026-09-27T02:25:21.097Z",
     "replication": "not-verified",
     "checks": {
       "source": {
@@ -630,7 +704,7 @@
       },
       "release": {
         "status": "pass",
-        "detail": "seed 0: pass, peak 0.266 in, linear 0.000 in/s, angular 0.000 rad/s, 640/90 rest steps; seed 17: pass, peak 0.266 in, linear 0.000 in/s, angular 0.000 rad/s, 639/90 rest steps; seed 53: pass, peak 0.266 in, linear 0.000 in/s, angular 0.000 rad/s, 605/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
+        "detail": "seed 0: pass, peak 0.266 in, linear 0.000 in/s, angular 0.000 rad/s, 661/90 rest steps; seed 17: pass, peak 0.266 in, linear 0.000 in/s, angular 0.000 rad/s, 680/90 rest steps; seed 53: pass, peak 0.266 in, linear 0.000 in/s, angular 0.000 rad/s, 711/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
       },
       "settledShape": {
         "status": "fail",
@@ -638,7 +712,7 @@
       },
       "assembly": {
         "status": "unverified",
-        "detail": "2/3 nominal checkpoints passed. Held modules, joining motions and hand access are separate unverified requirements."
+        "detail": "2/3 nominal checkpoints passed; 3/3 stage insertion sequences clear. Held stability, magnetic closure and hand access remain separate unverified requirements."
       },
       "function": {
         "status": "pass",
@@ -825,12 +899,12 @@
       {
         "seed": 0,
         "status": "pass",
-        "peakDisplacement": 0.2661746444328546,
-        "finalDisplacement": 0.17384119407013748,
+        "peakDisplacement": 0.26612191112211014,
+        "finalDisplacement": 0.1783393151251993,
         "finalSpeed": 0,
         "linearSpeed": 0,
         "angularSpeed": 0,
-        "settledSteps": 640,
+        "settledSteps": 661,
         "poppedJoints": [],
         "settledProjections": [
           {
@@ -838,7 +912,7 @@
             "frameId": "small-check",
             "partition": "holdout",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 16.82 px. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 17.22 px. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": 108.85008325921682,
@@ -861,8 +935,8 @@
             },
             "cameraAnchors": 6,
             "checkLandmarks": 4,
-            "rmsPx": 31.61044453385851,
-            "maxPx": 43.52672360185057,
+            "rmsPx": 31.523509991531075,
+            "maxPx": 43.39677499623688,
             "sourceDiagonalPx": 1024.2226320483257,
             "residuals": [
               {
@@ -873,10 +947,10 @@
                   500
                 ],
                 "projected": [
-                  906.3835105152554,
-                  507.91582493758347
+                  906.5536601659599,
+                  508.8271452419229
                 ],
-                "errorPx": 21.153414479642894,
+                "errorPx": 21.35599742608569,
                 "uncertaintyPx": 9
               },
               {
@@ -887,10 +961,10 @@
                   463
                 ],
                 "projected": [
-                  613.8507973460764,
-                  476.47474175264466
+                  613.9882391511213,
+                  477.26726458600143
                 ],
-                "errorPx": 24.825881963539853,
+                "errorPx": 25.37835734305182,
                 "uncertaintyPx": 9
               },
               {
@@ -901,10 +975,10 @@
                   291
                 ],
                 "projected": [
-                  673.9817994751402,
-                  303.7373391564197
+                  673.979628268793,
+                  304.36150393817627
                 ],
-                "errorPx": 17.512194398230143,
+                "errorPx": 17.972732792936633,
                 "uncertaintyPx": 9
               },
               {
@@ -915,10 +989,10 @@
                   326
                 ],
                 "projected": [
-                  967.5562727417101,
-                  335.4383840973742
+                  967.5868831954285,
+                  336.1811911045354
                 ],
-                "errorPx": 12.664107721507788,
+                "errorPx": 13.207467080194963,
                 "uncertaintyPx": 9
               },
               {
@@ -929,10 +1003,10 @@
                   715
                 ],
                 "projected": [
-                  609.591644564112,
-                  718.5216681069548
+                  609.5089927123997,
+                  719.1761129731262
                 ],
-                "errorPx": 3.571020798845373,
+                "errorPx": 4.207017131601593,
                 "uncertaintyPx": 12
               },
               {
@@ -943,10 +1017,10 @@
                   639
                 ],
                 "projected": [
-                  1478.3122224525882,
-                  644.0130912566149
+                  1478.6368709544709,
+                  644.2604222520558
                 ],
-                "errorPx": 12.373255867555223,
+                "errorPx": 12.770622846240958,
                 "uncertaintyPx": 9
               },
               {
@@ -957,10 +1031,10 @@
                   825
                 ],
                 "projected": [
-                  1415.1252953960034,
-                  815.6438884864078
+                  1415.5944340483616,
+                  816.0218905338902
                 ],
-                "errorPx": 30.352683384222164,
+                "errorPx": 29.7906466297449,
                 "uncertaintyPx": 9
               },
               {
@@ -971,10 +1045,10 @@
                   653
                 ],
                 "projected": [
-                  1162.44245683564,
-                  662.1340674031637
+                  1162.726381059251,
+                  662.8092416488921
                 ],
-                "errorPx": 43.52672360185057,
+                "errorPx": 43.39677499623688,
                 "uncertaintyPx": 9
               },
               {
@@ -985,10 +1059,10 @@
                   491
                 ],
                 "projected": [
-                  910.045377812392,
-                  508.9229796677939
+                  910.2094730554492,
+                  509.85054266453244
                 ],
-                "errorPx": 30.72403568378369,
+                "errorPx": 31.14342924174952,
                 "uncertaintyPx": 9
               },
               {
@@ -999,10 +1073,10 @@
                   489
                 ],
                 "projected": [
-                  1224.6397341700808,
-                  490.056230710429
+                  1224.778820448334,
+                  490.6020393791614
                 ],
-                "errorPx": 15.396538236871168,
+                "errorPx": 15.305255212391513,
                 "uncertaintyPx": 9
               }
             ]
@@ -1012,12 +1086,12 @@
       {
         "seed": 17,
         "status": "pass",
-        "peakDisplacement": 0.26610484817319596,
-        "finalDisplacement": 0.17431771484039307,
+        "peakDisplacement": 0.26615880956969856,
+        "finalDisplacement": 0.17793844168426845,
         "finalSpeed": 0,
         "linearSpeed": 0,
         "angularSpeed": 0,
-        "settledSteps": 639,
+        "settledSteps": 680,
         "poppedJoints": [],
         "settledProjections": [
           {
@@ -1025,7 +1099,7 @@
             "frameId": "small-check",
             "partition": "holdout",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 16.97 px. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 17.24 px. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": 108.85008325921682,
@@ -1048,8 +1122,8 @@
             },
             "cameraAnchors": 6,
             "checkLandmarks": 4,
-            "rmsPx": 31.6147036696002,
-            "maxPx": 43.55997442457326,
+            "rmsPx": 31.743616969340408,
+            "maxPx": 43.65714963849568,
             "sourceDiagonalPx": 1024.2226320483257,
             "residuals": [
               {
@@ -1060,10 +1134,10 @@
                   500
                 ],
                 "projected": [
-                  906.4537543398262,
-                  508.3249582630416
+                  906.2767417362713,
+                  508.8907996415378
                 ],
-                "errorPx": 21.245250045345358,
+                "errorPx": 21.634538007632834,
                 "uncertaintyPx": 9
               },
               {
@@ -1074,10 +1148,10 @@
                   463
                 ],
                 "projected": [
-                  613.9259184329132,
-                  476.9160871210759
+                  613.7312654727014,
+                  477.2175972050703
                 ],
-                "errorPx": 25.13068926675736,
+                "errorPx": 25.13812718531837,
                 "uncertaintyPx": 9
               },
               {
@@ -1088,10 +1162,10 @@
                   291
                 ],
                 "projected": [
-                  674.0649433396555,
-                  303.9673824150169
+                  673.8243989379562,
+                  304.32069255275496
                 ],
-                "errorPx": 17.623807312352305,
+                "errorPx": 18.04677564849367,
                 "uncertaintyPx": 9
               },
               {
@@ -1102,10 +1176,10 @@
                   326
                 ],
                 "projected": [
-                  967.6337452004163,
-                  335.63629318211747
+                  967.4114169917583,
+                  336.25422746936255
                 ],
-                "errorPx": 12.761362218167784,
+                "errorPx": 13.37583414531174,
                 "uncertaintyPx": 9
               },
               {
@@ -1116,10 +1190,10 @@
                   715
                 ],
                 "projected": [
-                  609.7564345282697,
-                  718.8349317580087
+                  609.1841638943379,
+                  719.1208318524779
                 ],
-                "errorPx": 3.908822685175434,
+                "errorPx": 4.124945029497221,
                 "uncertaintyPx": 12
               },
               {
@@ -1130,10 +1204,10 @@
                   639
                 ],
                 "projected": [
-                  1478.3997063645124,
-                  644.0928817049114
+                  1478.492370300398,
+                  644.3691598021444
                 ],
-                "errorPx": 12.48562170087364,
+                "errorPx": 12.684733032367495,
                 "uncertaintyPx": 9
               },
               {
@@ -1144,10 +1218,10 @@
                   825
                 ],
                 "projected": [
-                  1415.2250474139307,
-                  815.9274436830578
+                  1415.36103824828,
+                  816.0905294821868
                 ],
-                "errorPx": 30.171330339489867,
+                "errorPx": 29.992812391042357,
                 "uncertaintyPx": 9
               },
               {
@@ -1158,10 +1232,10 @@
                   653
                 ],
                 "projected": [
-                  1162.4935243120665,
-                  662.5221266774074
+                  1162.474362541604,
+                  662.8750632056242
                 ],
-                "errorPx": 43.55997442457326,
+                "errorPx": 43.65714963849568,
                 "uncertaintyPx": 9
               },
               {
@@ -1172,10 +1246,10 @@
                   491
                 ],
                 "projected": [
-                  910.141523834178,
-                  509.32906362949774
+                  909.9356490979035,
+                  509.9023332618748
                 ],
-                "errorPx": 30.885245843621163,
+                "errorPx": 31.39299107900368,
                 "uncertaintyPx": 9
               },
               {
@@ -1186,10 +1260,10 @@
                   489
                 ],
                 "projected": [
-                  1224.6788605868935,
-                  490.2416450401254
+                  1224.6156678892924,
+                  490.7075714109701
                 ],
-                "errorPx": 15.371369337879859,
+                "errorPx": 15.478807273692404,
                 "uncertaintyPx": 9
               }
             ]
@@ -1199,12 +1273,12 @@
       {
         "seed": 53,
         "status": "pass",
-        "peakDisplacement": 0.2663746005672277,
-        "finalDisplacement": 0.17400146633506133,
+        "peakDisplacement": 0.26619979301509,
+        "finalDisplacement": 0.17896574432863213,
         "finalSpeed": 0,
         "linearSpeed": 0,
         "angularSpeed": 0,
-        "settledSteps": 605,
+        "settledSteps": 711,
         "poppedJoints": [],
         "settledProjections": [
           {
@@ -1212,7 +1286,7 @@
             "frameId": "small-check",
             "partition": "holdout",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 17.08 px. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 17.18 px. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": 108.85008325921682,
@@ -1235,8 +1309,8 @@
             },
             "cameraAnchors": 6,
             "checkLandmarks": 4,
-            "rmsPx": 31.732574657696308,
-            "maxPx": 43.677165505250386,
+            "rmsPx": 31.67800399397233,
+            "maxPx": 43.6620475443855,
             "sourceDiagonalPx": 1024.2226320483257,
             "residuals": [
               {
@@ -1247,10 +1321,10 @@
                   500
                 ],
                 "projected": [
-                  906.3646340110228,
-                  508.5859116480867
+                  906.3790029883338,
+                  508.73711442622096
                 ],
-                "errorPx": 21.430480077446596,
+                "errorPx": 21.478377318333244,
                 "uncertaintyPx": 9
               },
               {
@@ -1261,10 +1335,10 @@
                   463
                 ],
                 "projected": [
-                  613.8241013601598,
-                  477.16444504582637
+                  613.8777371318524,
+                  476.9207412249986
                 ],
-                "errorPx": 25.18481091678962,
+                "errorPx": 25.093165284597024,
                 "uncertaintyPx": 9
               },
               {
@@ -1275,10 +1349,10 @@
                   291
                 ],
                 "projected": [
-                  673.897530500414,
-                  304.1207587943218
+                  674.1935536188009,
+                  304.30117865053023
                 ],
-                "errorPx": 17.850044238801843,
+                "errorPx": 17.785205358540278,
                 "uncertaintyPx": 9
               },
               {
@@ -1289,10 +1363,10 @@
                   326
                 ],
                 "projected": [
-                  967.4789600182755,
-                  335.8021254854387
+                  967.7365295992985,
+                  336.37870905386313
                 ],
-                "errorPx": 12.988063227534493,
+                "errorPx": 13.266595067612892,
                 "uncertaintyPx": 9
               },
               {
@@ -1303,10 +1377,10 @@
                   715
                 ],
                 "projected": [
-                  609.6131327737273,
-                  718.9899080998996
+                  609.2511786633834,
+                  718.992707095723
                 ],
-                "errorPx": 4.036743544475294,
+                "errorPx": 4.000600039141059,
                 "uncertaintyPx": 12
               },
               {
@@ -1317,10 +1391,10 @@
                   639
                 ],
                 "projected": [
-                  1478.2804841225206,
-                  644.153273556227
+                  1478.6304984120436,
+                  644.94922319188
                 ],
-                "errorPx": 12.401836573014036,
+                "errorPx": 13.063757112689757,
                 "uncertaintyPx": 9
               },
               {
@@ -1331,10 +1405,10 @@
                   825
                 ],
                 "projected": [
-                  1415.1656682618755,
-                  816.0935898279827
+                  1415.2749520458979,
+                  816.3844055744853
                 ],
-                "errorPx": 30.178516016140197,
+                "errorPx": 29.98927887213074,
                 "uncertaintyPx": 9
               },
               {
@@ -1345,10 +1419,10 @@
                   653
                 ],
                 "projected": [
-                  1162.4223979182962,
-                  662.7387159084308
+                  1162.4844477243555,
+                  662.9399301036335
                 ],
-                "errorPx": 43.677165505250386,
+                "errorPx": 43.6620475443855,
                 "uncertaintyPx": 9
               },
               {
@@ -1359,10 +1433,10 @@
                   491
                 ],
                 "projected": [
-                  910.0412634654037,
-                  509.59717330398496
+                  910.0377081819925,
+                  509.7451242242751
                 ],
-                "errorPx": 31.125445929365267,
+                "errorPx": 31.21691360450088,
                 "uncertaintyPx": 9
               },
               {
@@ -1373,10 +1447,10 @@
                   489
                 ],
                 "projected": [
-                  1224.548039453417,
-                  490.35317887975566
+                  1224.8498323511292,
+                  491.0565092633237
                 ],
-                "errorPx": 15.511098536653495,
+                "errorPx": 15.289107565159846,
                 "uncertaintyPx": 9
               }
             ]
@@ -1388,8 +1462,8 @@
       {
         "id": "small-wedge",
         "status": "pass",
-        "detail": "Released checkpoint: peak 0.266 in; 0 broken/rejected joints; 636 consecutive steps at rest (90 required).",
-        "displacement": 0.26620777021693404
+        "detail": "Released checkpoint: peak 0.266 in; 0 broken/rejected joints; 739 consecutive steps at rest (90 required).",
+        "displacement": 0.2661884950352786
       },
       {
         "id": "small-launch",
@@ -1400,8 +1474,8 @@
       {
         "id": "small-final",
         "status": "pass",
-        "detail": "Released checkpoint: peak 0.266 in; 0 broken/rejected joints; 640 consecutive steps at rest (90 required).",
-        "displacement": 0.2661746444328546
+        "detail": "Released checkpoint: peak 0.266 in; 0 broken/rejected joints; 661 consecutive steps at rest (90 required).",
+        "displacement": 0.26612191112211014
       }
     ],
     "instructions": [
@@ -1469,6 +1543,251 @@
         "instruction": "Bring the launch roof's front edge to the wedge's high edge. Seat both magnets before releasing; do not press through an unresolved gap. Reuse the numbered parts already assembled. Joins: P5 edge 2 to P6 edge 4; P4 edge 2 to P6 edge 4. Source frame: small-check. Release checkpoint: consult the measured result before following this candidate."
       }
     ],
+    "constructionPaths": [
+      {
+        "stageId": "small-wedge",
+        "status": "pass",
+        "paths": [
+          {
+            "id": "insert-small-deck-1",
+            "movingTileIds": [
+              "small-deck-1"
+            ],
+            "fixedTileIds": [],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 9.054632531456486,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          {
+            "id": "insert-small-deck-2",
+            "movingTileIds": [
+              "small-deck-2"
+            ],
+            "fixedTileIds": [
+              "small-deck-1"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 9.054632531456486,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          {
+            "id": "insert-small-side--1",
+            "movingTileIds": [
+              "small-side--1"
+            ],
+            "fixedTileIds": [
+              "small-deck-1",
+              "small-deck-2"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 9.054632531456486,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          {
+            "id": "insert-small-side-1",
+            "movingTileIds": [
+              "small-side-1"
+            ],
+            "fixedTileIds": [
+              "small-deck-1",
+              "small-deck-2",
+              "small-side--1"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 9.054632531456486,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          {
+            "id": "insert-small-back",
+            "movingTileIds": [
+              "small-back"
+            ],
+            "fixedTileIds": [
+              "small-deck-1",
+              "small-deck-2",
+              "small-side--1",
+              "small-side-1"
+            ],
+            "offsets": [
+              {
+                "x": 9.054632531456486,
+                "y": 0,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          }
+        ],
+        "detail": "5 continuous insertion paths clear every previously installed part. Grip access, held-pose stability and magnetic closure remain separate requirements."
+      },
+      {
+        "stageId": "small-launch",
+        "status": "pass",
+        "paths": [
+          {
+            "id": "insert-launch-roof",
+            "movingTileIds": [
+              "launch-roof"
+            ],
+            "fixedTileIds": [],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 6.36,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          {
+            "id": "insert-launch-back",
+            "movingTileIds": [
+              "launch-back"
+            ],
+            "fixedTileIds": [
+              "launch-roof"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 6.36,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          {
+            "id": "insert-launch-side--1",
+            "movingTileIds": [
+              "launch-side--1"
+            ],
+            "fixedTileIds": [
+              "launch-roof",
+              "launch-back"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 6.36,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          {
+            "id": "insert-launch-side-1",
+            "movingTileIds": [
+              "launch-side-1"
+            ],
+            "fixedTileIds": [
+              "launch-roof",
+              "launch-back",
+              "launch-side--1"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 6.36,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          }
+        ],
+        "detail": "4 continuous insertion paths clear every previously installed part. Grip access, held-pose stability and magnetic closure remain separate requirements."
+      },
+      {
+        "stageId": "small-final",
+        "status": "pass",
+        "paths": [
+          {
+            "id": "insert-launch-roof+launch-back+launch-side--1+launch-side-1",
+            "movingTileIds": [
+              "launch-roof",
+              "launch-back",
+              "launch-side--1",
+              "launch-side-1"
+            ],
+            "fixedTileIds": [
+              "small-side--1",
+              "small-side-1",
+              "small-deck-1",
+              "small-deck-2",
+              "small-back"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 11.411838240886395,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          }
+        ],
+        "detail": "1 continuous insertion paths clear every previously installed part. Grip access, held-pose stability and magnetic closure remain separate requirements."
+      }
+    ],
     "carTrials": [
       {
         "laneId": "car",
@@ -1495,33 +1814,33 @@
           {
             "time": 0.075,
             "position": {
-              "x": 3.373133420944214,
-              "y": 2.5106325149536133,
-              "z": -0.00011242788605159149
+              "x": 3.3732361793518066,
+              "y": 2.5045835971832275,
+              "z": 0.00024114806728903204
             }
           },
           {
             "time": 0.14166666666666666,
             "position": {
-              "x": 2.2895896434783936,
-              "y": 1.9234501123428345,
-              "z": 0.003540515201166272
+              "x": 2.2855594158172607,
+              "y": 1.8942720890045166,
+              "z": 0.00016994503675960004
             }
           },
           {
             "time": 0.20833333333333334,
             "position": {
-              "x": 0.6321761608123779,
-              "y": 0.8727879524230957,
-              "z": 0.01492265984416008
+              "x": 0.5999007821083069,
+              "y": 0.8368866443634033,
+              "z": 0.00024640592164359987
             }
           },
           {
             "time": 0.21666666666666667,
             "position": {
-              "x": 0.3763120770454407,
-              "y": 0.7188214659690857,
-              "z": 0.01571159064769745
+              "x": 0.3413375914096832,
+              "y": 0.6797994375228882,
+              "z": 0.0001903041556943208
             }
           }
         ],

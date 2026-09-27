@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "interpretation": "Identical finite-thickness shell geometry and material constants, changing only the artificial contact margin. Positive skin opposes flush hinge constraints and injects motion. Zero skin preserves full physical hulls and all contact pairs. This tests numerical consistency, not real magnetic force calibration.",
+  "trials": [
+    {
+      "levels": 1,
+      "pieces": 5,
+      "skin": 0.006,
+      "peakDisplacement": 0.26606304608736653,
+      "finalSpeed": 0,
+      "tailPeakSpeed": 0,
+      "restSteps": 646,
+      "rejected": [],
+      "rawOverlaps": [],
+      "poppedJoints": []
+    },
+    {
+      "levels": 1,
+      "pieces": 5,
+      "skin": 0,
+      "peakDisplacement": 0.26604482548573205,
+      "finalSpeed": 0,
+      "tailPeakSpeed": 0,
+      "restSteps": 825,
+      "rejected": [],
+      "rawOverlaps": [],
+      "poppedJoints": []
+    },
+    {
+      "levels": 2,
+      "pieces": 9,
+      "skin": 0.006,
+      "peakDisplacement": 0.2661639579469073,
+      "finalSpeed": 0.42221056254108136,
+      "tailPeakSpeed": 5.632537062794411,
+      "restSteps": 0,
+      "rejected": [],
+      "rawOverlaps": [],
+      "poppedJoints": []
+    },
+    {
+      "levels": 2,
+      "pieces": 9,
+      "skin": 0,
+      "peakDisplacement": 0.2660428916947103,
+      "finalSpeed": 0,
+      "tailPeakSpeed": 0,
+      "restSteps": 432,
+      "rejected": [],
+      "rawOverlaps": [],
+      "poppedJoints": []
+    },
+    {
+      "levels": 3,
+      "pieces": 13,
+      "skin": 0.006,
+      "peakDisplacement": 2.602327052964404,
+      "finalSpeed": 4.22675742889261,
+      "tailPeakSpeed": 14.490345136617233,
+      "restSteps": 0,
+      "rejected": [],
+      "rawOverlaps": [],
+      "poppedJoints": []
+    },
+    {
+      "levels": 3,
+      "pieces": 13,
+      "skin": 0,
+      "peakDisplacement": 0.26604098293110895,
+      "finalSpeed": 0,
+      "tailPeakSpeed": 0,
+      "restSteps": 650,
+      "rejected": [],
+      "rawOverlaps": [],
+      "poppedJoints": []
+    }
+  ]
+}

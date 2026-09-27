@@ -1,5 +1,6 @@
 {
   "date": "2026-09-26",
+  "model": "intent-harness-v2-exact-contact",
   "command": "npm run benchmark:harness",
   "constructive": {
     "correct": 20,
@@ -9,5 +10,232 @@
     "correct": 5,
     "total": 5
   },
-  "note": "Full models unchanged from inherited benchmark; timing-only rerun is summarized here."
+  "note": "Recomputed after exact-contact correction. Historical full benchmark remains preserved; current per-brief fingerprints and verdicts follow.",
+  "entries": [
+    {
+      "prompt": "a tower at least 6 inches tall",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 10,
+      "attempts": 1,
+      "fingerprint": "c60c95e628e71b450604b5c3932288816532f61c465bcf32819dd7b5b3c240da"
+    },
+    {
+      "prompt": "a tower at least 9 inches tall",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 14,
+      "attempts": 1,
+      "fingerprint": "9d6600e677ada0f2918eaca47b9c9bea80ab1510bc51b1f7833af9e93603bb64"
+    },
+    {
+      "prompt": "a tower at least 12 inches tall",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 18,
+      "attempts": 1,
+      "fingerprint": "8fbed1ffcc4f0bf6944fb51dd168216ad1850df09b7fa109b821272ff5eeb983"
+    },
+    {
+      "prompt": "a tower at least 15 inches tall",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 22,
+      "attempts": 1,
+      "fingerprint": "21bf070133af97b2639ea1d07cec16407dcabae1d81f148fbf7ad99d7fe24adc"
+    },
+    {
+      "prompt": "a tower with 3 levels and at most 30 pieces",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 28,
+      "attempts": 2,
+      "fingerprint": "9c22ef2daa06c6a3cbf3ccc085ae6ca52b4ca80f9eb9a7ae4175981f843932ba"
+    },
+    {
+      "prompt": "an open top box",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 5,
+      "attempts": 1,
+      "fingerprint": "30b6c061dbd5c59ae78e8535b369939b954e47fad9099f84940f11b708976f7e"
+    },
+    {
+      "prompt": "an open top box 2 tiles wide",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 8,
+      "attempts": 1,
+      "fingerprint": "36e26356419596c4d42f8d6f91c91f30a4e7f26e4dfe273ea0f841c49fa9021c"
+    },
+    {
+      "prompt": "an open top box 3 tiles wide",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 11,
+      "attempts": 1,
+      "fingerprint": "020cb0ab28bcd49de00d374677aa113a8f9358fc03ff0e67b45bb29d78995b29"
+    },
+    {
+      "prompt": "an open top box 2 tiles wide and 2 tiles deep",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 12,
+      "attempts": 1,
+      "fingerprint": "ae7903e597a8630e8f8911ae06d6d06721ddd5fe787825f8689eb5e638dbfd5d"
+    },
+    {
+      "prompt": "an open top box 3 tiles wide and 2 tiles deep",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 16,
+      "attempts": 1,
+      "fingerprint": "37c1c98ba77c50ce917747fd6ae522be194fd213dac947500b2d49166b715fdb"
+    },
+    {
+      "prompt": "a tunnel",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 8,
+      "attempts": 3,
+      "fingerprint": "2b0b31c35bd3edd9c9a080d64fd3f9936f2d7231e67dd6dd79d82f5815e2b2eb"
+    },
+    {
+      "prompt": "a tunnel 2 tiles long",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 8,
+      "attempts": 3,
+      "fingerprint": "b788e1a7861f4948f3e4bd6f00fb94c83a6eb10cf3114da695b72caf9192164a"
+    },
+    {
+      "prompt": "a tunnel 3 tiles long",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 12,
+      "attempts": 3,
+      "fingerprint": "41eb7d197f05c513e3436661012e39deefdc1c263b494f51f42cf9a624b0f502"
+    },
+    {
+      "prompt": "a tunnel 4 tiles long",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 14,
+      "attempts": 3,
+      "fingerprint": "99b3f23b8f5453bcf86d73de99457dddafc8b981e40fb0320523675645956a6a"
+    },
+    {
+      "prompt": "a tunnel 2 tiles wide and 2 tiles long",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 8,
+      "attempts": 3,
+      "fingerprint": "0161afb3a6cbad4da8dfeb4a5ec67bd14311c9ed93472dfbce40dfd8ec6692b3"
+    },
+    {
+      "prompt": "a staircase with 2 steps",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 16,
+      "attempts": 1,
+      "fingerprint": "ca75a632dce3c386133d54e2b62de1e9262619f40929a09369e2f706ca54aa97"
+    },
+    {
+      "prompt": "a staircase with 3 steps",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 30,
+      "attempts": 1,
+      "fingerprint": "67b2028950a5efa4ebc39300d019186fba2345f16ffb3b6ed1415e3281cd0189"
+    },
+    {
+      "prompt": "a staircase with 4 steps",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 48,
+      "attempts": 1,
+      "fingerprint": "b02e0003a7cfe47b9887bce505f93146d3897d62fd5119afc5f4239a6c48a88d"
+    },
+    {
+      "prompt": "a staircase with 5 steps",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 70,
+      "attempts": 1,
+      "fingerprint": "594fbdc9ce8400a490a08d8b4258920437d78204ffbd309720cc9133235f3793"
+    },
+    {
+      "prompt": "a staircase with 3 steps and 2 tiles deep",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "pieces": 48,
+      "attempts": 1,
+      "fingerprint": "38319aaf4e860cc7ad677eaa071eba12d4ecec43bede5e0b0cb2f0d1380c9959"
+    },
+    {
+      "prompt": "a tower at least 12 inches tall and at most 6 inches tall",
+      "expected": "rejected",
+      "status": "infeasible",
+      "passed": true,
+      "pieces": 0,
+      "attempts": 0,
+      "fingerprint": null
+    },
+    {
+      "prompt": "a tower with a working elevator",
+      "expected": "rejected",
+      "status": "unsupported",
+      "passed": true,
+      "pieces": 0,
+      "attempts": 0,
+      "fingerprint": null
+    },
+    {
+      "prompt": "an open top box with a lid",
+      "expected": "rejected",
+      "status": "unsupported",
+      "passed": true,
+      "pieces": 0,
+      "attempts": 0,
+      "fingerprint": null
+    },
+    {
+      "prompt": "a tunnel with a door",
+      "expected": "rejected",
+      "status": "unsupported",
+      "passed": true,
+      "pieces": 0,
+      "attempts": 0,
+      "fingerprint": null
+    },
+    {
+      "prompt": "a staircase with a slide",
+      "expected": "rejected",
+      "status": "unsupported",
+      "passed": true,
+      "pieces": 0,
+      "attempts": 0,
+      "fingerprint": null
+    }
+  ]
 }

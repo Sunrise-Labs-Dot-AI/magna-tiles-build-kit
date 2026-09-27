@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "validationCodeHash": "b1b371a9aefd8c9e044f59c807260c34c3e72e4154e2d50c2365f85e22dea4db",
+  "validationCodeHash": "6af4d03f7df8679d83d4e24627f307ab3b27823b962dad91913e8cea0ebdff6c",
   "sourceFixtures": [
     {
       "id": "body-upright-1",
@@ -12,8 +12,8 @@
       },
       "simulatedWithoutHands": {
         "stands": true,
-        "peakDisplacement": 0.2663064401154337,
-        "settledSteps": 656,
+        "peakDisplacement": 0.26632997880577214,
+        "settledSteps": 647,
         "poppedJoints": []
       },
       "interpretation": "Deliberately remove the source's hand support to diagnose the module. Failure is not evidence against the real held stage."
@@ -27,9 +27,9 @@
         "detail": "12 rigid catalog parts; 21 nominal edge connections; zero raw intersections. Magnet spacing and force are not physically calibrated."
       },
       "simulatedWithoutHands": {
-        "stands": false,
-        "peakDisplacement": 0.9686077279123436,
-        "settledSteps": 0,
+        "stands": true,
+        "peakDisplacement": 0.26790702585278053,
+        "settledSteps": 644,
         "poppedJoints": []
       },
       "interpretation": "Deliberately remove the source's hand support to diagnose the module. Failure is not evidence against the real held stage."
@@ -44,7 +44,7 @@
       },
       "simulatedWithoutHands": {
         "stands": false,
-        "peakDisplacement": 0.9573724539491966,
+        "peakDisplacement": 0.9748380402307332,
         "settledSteps": 0,
         "poppedJoints": []
       },
@@ -60,7 +60,7 @@
       },
       "simulatedWithoutHands": {
         "stands": false,
-        "peakDisplacement": 0.9832945574135937,
+        "peakDisplacement": 0.9681468865777024,
         "settledSteps": 0,
         "poppedJoints": []
       },
@@ -76,8 +76,8 @@
       },
       "simulatedWithoutHands": {
         "stands": true,
-        "peakDisplacement": 0.26620777021693404,
-        "settledSteps": 636,
+        "peakDisplacement": 0.2661884950352786,
+        "settledSteps": 739,
         "poppedJoints": []
       },
       "interpretation": "A failure can be reconstruction error, material mismatch or simulator error; it does not identify the cause alone."
@@ -92,7 +92,7 @@
       },
       "simulatedWithoutHands": {
         "stands": false,
-        "peakDisplacement": 1.0795062914352909,
+        "peakDisplacement": 1.0833227340818208,
         "settledSteps": 0,
         "poppedJoints": []
       },
@@ -108,8 +108,8 @@
       },
       "simulatedWithoutHands": {
         "stands": true,
-        "peakDisplacement": 0.2661746444328546,
-        "settledSteps": 640,
+        "peakDisplacement": 0.26612191112211014,
+        "settledSteps": 661,
         "poppedJoints": []
       },
       "interpretation": "A failure can be reconstruction error, material mismatch or simulator error; it does not identify the cause alone."
@@ -139,112 +139,112 @@
       {
         "seconds": 0.25,
         "normal": {
-          "x": -0.9927551199654011,
-          "y": -0.12015519872947955,
-          "z": 8.726364432621822e-7
+          "x": -0.9947472948319396,
+          "y": -0.10236122031348038,
+          "z": 6.881690471919618e-7
         },
         "position": {
-          "x": 0.26961615681648254,
-          "y": 1.6116788387298584,
-          "z": 1.500000238418579
+          "x": 0.24309509992599487,
+          "y": 1.6070894002914429,
+          "z": 1.5000001192092896
         },
         "poppedJoints": []
       },
       {
         "seconds": 0.5,
         "normal": {
-          "x": -0.9826443613427251,
-          "y": -0.18549948550148232,
-          "z": 1.8133814468722975e-7
+          "x": -0.9911544538546194,
+          "y": -0.13271340777838248,
+          "z": 2.0866468248665686e-9
         },
         "position": {
-          "x": 0.36668482422828674,
-          "y": 1.6327309608459473,
-          "z": 1.5000032186508179
+          "x": 0.28827425837516785,
+          "y": 1.6152126789093018,
+          "z": 1.4999998807907104
         },
         "poppedJoints": []
       },
       {
         "seconds": 0.75,
         "normal": {
-          "x": -0.9828786482682353,
-          "y": -0.18425407126683668,
-          "z": 4.66227449446963e-8
+          "x": -0.9904893984652204,
+          "y": -0.1375890676180166,
+          "z": -1.0523566851732137e-7
         },
         "position": {
-          "x": 0.36483898758888245,
-          "y": 1.632265567779541,
-          "z": 1.5000017881393433
+          "x": 0.2955273985862732,
+          "y": 1.6166496276855469,
+          "z": 1.4999994039535522
         },
         "poppedJoints": []
       },
       {
         "seconds": 1,
         "normal": {
-          "x": -0.9828275727691547,
-          "y": -0.1845263184607322,
-          "z": 1.4343158951485193e-7
+          "x": -0.9898059200958866,
+          "y": -0.14242275289830053,
+          "z": 6.821250096279479e-8
         },
         "position": {
-          "x": 0.3652418553829193,
-          "y": 1.6323672533035278,
-          "z": 1.5000025033950806
+          "x": 0.3027167320251465,
+          "y": 1.6181093454360962,
+          "z": 1.499999761581421
         },
         "poppedJoints": []
       },
       {
         "seconds": 1.25,
         "normal": {
-          "x": -0.9827976123250167,
-          "y": -0.18468582297574176,
-          "z": 1.3792772351475554e-7
+          "x": -0.9890043295725723,
+          "y": -0.14788656492957564,
+          "z": -1.9137564793239e-7
         },
         "position": {
-          "x": 0.3654788136482239,
-          "y": 1.6324262619018555,
-          "z": 1.5000027418136597
+          "x": 0.3108425438404083,
+          "y": 1.619795322418213,
+          "z": 1.4999948740005493
         },
         "poppedJoints": []
       },
       {
         "seconds": 1.5,
         "normal": {
-          "x": -0.9828594573732178,
-          "y": -0.18435641310243966,
-          "z": 1.6178322454323972e-7
+          "x": -0.9884270814862004,
+          "y": -0.15169675205709243,
+          "z": -3.3325829100542234e-8
         },
         "position": {
-          "x": 0.3649901747703552,
-          "y": 1.6323038339614868,
-          "z": 1.5000028610229492
+          "x": 0.31650498509407043,
+          "y": 1.6210124492645264,
+          "z": 1.4999983310699463
         },
         "poppedJoints": []
       },
       {
         "seconds": 1.75,
         "normal": {
-          "x": -0.9827953909333961,
-          "y": -0.18469764362341945,
-          "z": 1.7136330740005467e-7
+          "x": -0.988615021815672,
+          "y": -0.1504670682919994,
+          "z": -9.663789395373557e-8
         },
         "position": {
-          "x": 0.36549636721611023,
-          "y": 1.6324306726455688,
-          "z": 1.5000030994415283
+          "x": 0.31467777490615845,
+          "y": 1.6206175088882446,
+          "z": 1.4999970197677612
         },
         "poppedJoints": []
       },
       {
         "seconds": 2,
         "normal": {
-          "x": -0.9828435356630388,
-          "y": -0.1844412763058938,
-          "z": 1.7422187669808486e-7
+          "x": -0.9885143528008329,
+          "y": -0.1511270138219698,
+          "z": -6.845287085157007e-8
         },
         "position": {
-          "x": 0.3651160001754761,
-          "y": 1.6323349475860596,
-          "z": 1.5000030994415283
+          "x": 0.3156583309173584,
+          "y": 1.6208292245864868,
+          "z": 1.4999973773956299
         },
         "poppedJoints": []
       }

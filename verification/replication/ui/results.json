@@ -13,6 +13,13 @@
     "P8",
     "P9"
   ],
+  "insertionPreview": {
+    "labels": [
+      "P3"
+    ],
+    "keyboardStartEnd": true,
+    "resetsAtNextStage": true
+  },
   "mobileOverflow": false,
   "pageErrors": []
 }

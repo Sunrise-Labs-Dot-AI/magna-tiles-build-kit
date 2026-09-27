@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { TileViewer } from "@/app/components/TileViewer";
 import { stageBuild } from "@/lib/replication/geometry";
+import { insertionPreview } from "@/lib/replication/insertion";
 import { countInventory } from "@/lib/magnetic-tiles/validation";
 import { SHAPE_ORDER, TILE_SPECS } from "@/lib/magnetic-tiles/catalog";
 import type { Check, Replica, ReplicaReport } from "@/lib/replication/types";
@@ -107,9 +108,17 @@ function Candidate({
 }) {
   const [step, setStep] = useState(-1),
     [labels, setLabels] = useState(false),
-    [path, setPath] = useState(false);
+    [path, setPath] = useState(false),
+    [insertionIndex, setInsertionIndex] = useState(-1),
+    [insertionProgress, setInsertionProgress] = useState(100);
   const stage = replica.stages[step],
-    build = stage ? stageBuild(replica, stage) : replica.build;
+    construction = stage ? report.constructionPaths?.find(p => p.stageId === stage.id) : undefined,
+    insertion = construction?.paths[insertionIndex],
+    checkpointBuild = stage ? stageBuild(replica, stage) : replica.build,
+    build = insertion ? insertionPreview(checkpointBuild, insertion, insertionProgress / 100) : checkpointBuild;
+  const framingTiles = insertion ? insertion.offsets.flatMap((_, index) =>
+    insertionPreview(checkpointBuild, insertion, index / (insertion.offsets.length - 1)).tiles) : undefined;
+  const selectStep = (next: number) => { setStep(next); setInsertionIndex(-1); setInsertionProgress(100); };
   const counts = countInventory(replica.build.tiles),
     source = sources.sources.find((s) => s.id === replica.sourceId)!;
   const frame = stage
@@ -144,10 +153,11 @@ function Candidate({
           </div>
           <div className="reference-canvas">
             <TileViewer
-              key={`${replica.id}-${step}`}
+              key={`${replica.id}-${step}-${insertionIndex}`}
               build={build}
+              framingTiles={framingTiles}
               visibleStep={Infinity}
-              showLabels={labels}
+              showLabels={labels || !!insertion}
               partLabels={labelsById}
               viewDirection={replica.id === "medium-ramp" ? [-.6,.65,-1] : [-.4,.65,1]}
               lanes={path && !stage ? replica.route?.lanes : []}
@@ -179,7 +189,7 @@ function Candidate({
             Construction checkpoint
             <select
               value={step}
-              onChange={(e) => setStep(Number(e.target.value))}
+              onChange={(e) => selectStep(Number(e.target.value))}
             >
               <option value={-1}>
                 Complete candidate · {replica.build.tiles.length} pieces
@@ -200,6 +210,25 @@ function Candidate({
                 {checkpoint && <Status check={checkpoint} />}
               </div>
               <p>{stage.instruction}</p>
+              {construction && construction.paths.length > 0 && (
+                <div className="reference-insertion">
+                  <label>
+                    Part insertion preview
+                    <select value={insertionIndex} onChange={e => { setInsertionIndex(Number(e.target.value)); setInsertionProgress(100); }}>
+                      <option value={-1}>Show complete checkpoint</option>
+                      {construction.paths.map((p, index) => <option key={p.id} value={index}>
+                        {index + 1}. Insert {p.movingTileIds.map(id => labelsById[id]).join(" + ")}
+                      </option>)}
+                    </select>
+                  </label>
+                  {insertion && <label>
+                    Move into place · {insertionProgress}%
+                    <input type="range" min={0} max={100} value={insertionProgress}
+                      onChange={e => setInsertionProgress(Number(e.target.value))} />
+                  </label>}
+                  <p>{construction.detail}</p>
+                </div>
+              )}
               <p>
                 <strong>
                   {stage.support === "held"
@@ -230,13 +259,13 @@ function Candidate({
               <div className="reference-step-buttons">
                 <button
                   disabled={step === 0}
-                  onClick={() => setStep((s) => s - 1)}
+                  onClick={() => selectStep(step - 1)}
                 >
                   Previous
                 </button>
                 <button
                   disabled={step === replica.stages.length - 1}
-                  onClick={() => setStep((s) => s + 1)}
+                  onClick={() => selectStep(step + 1)}
                 >
                   Next
                 </button>

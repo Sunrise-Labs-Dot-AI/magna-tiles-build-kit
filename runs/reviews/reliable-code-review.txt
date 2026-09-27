@@ -1,0 +1,17 @@
+**Verdict: BLOCK**
+
+**Finding 1: construction plans can pass after removing already installed modules**
+[lib/replication/construction.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/construction.ts:41) only adds `installedStageIds` to `placed`, and [line 57](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/construction.ts:57) checks insertion against `[...]placed`. There is no invariant that earlier completed modules present in the current stage must remain installed obstacles.
+
+Failure scenario reproduced in-memory: mutate `small-final` to install `small-launch` first with `fixedTileIds: []`, then re-add `small-wedge`. `planConstructionPaths()` returns all stages `pass`, even though the source final operation should insert launch while the wedge is already present. This can fake assembly clearance by temporarily dropping obstacles.
+
+Suggested fix: before operations, require every completed prior stage whose `tileIds` are a subset of the current stage to be listed in `installedStageIds`, or otherwise derive carry-forward obstacles automatically. Add a negative test for “omitted installed prior module.”
+
+**Finding 2: legacy jet status is internally inconsistent**
+[verification/engine-valid-builds.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/verification/engine-valid-builds.ts:1) still lists `jet-aircraft` as engine-valid, and [lines 3-6](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/verification/engine-valid-builds.ts:3) still say the rebuilt jet stands. This contradicts the changed draft status and rejection tests.
+
+Failure scenario: `tests/no-overlap.test.ts` and `tests/overlap-guard.test.ts` keep treating the legacy jet as an “engine-valid” anchor, so CI can preserve stale acceptance language while `tests/engine-gate.test.ts` now expects the same draft not to stand.
+
+Suggested fix: remove `jet-aircraft` from `ENGINE_VALID_LIBRARY_BUILD_IDS` or move it to an expected-fail set and update the comment.
+
+I did not find a direct continuous-SAT math miss for fixed-orientation convex translation, but the evaluator can still miss collisions by giving SAT an incomplete obstacle set. Targeted Vitest run was blocked by the read-only sandbox: `EPERM mkdir .../T/.../ssr`.

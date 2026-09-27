@@ -6,7 +6,7 @@ Updated 2026-09-26. Development has resumed from the archived exploration.
 
 `/references` now exposes source-informed 40-piece jet and 9/37/51-piece Henry ramp candidates, stable part/edge numbers, construction snapshots, five measured camera comparisons, and independent evidence for source shape, geometry, release, assembly and cars. Forty-five extracted frames are bound to two local source hashes. The original 3D snail source remains missing.
 
-All four candidates preserve the inspected BOM and pass raw geometry checks. **None meets full replica acceptance.** The small ramp passes perturbed release and an inferred passive car route; its source-shape comparison fails, and held-module assembly remains unverified. Jet/medium source comparisons fail, larger release checks fail, and the medium turn does not pass. See [the reconstruction report](docs/footage-reconstruction.md) for precise boundaries and reproduction commands. The historical drafts and their nominal scores remain separate.
+All four candidates preserve the inspected BOM and pass raw geometry checks. **None meets full replica acceptance.** The small ramp passes perturbed release and an inferred passive car route; its source-shape comparison fails, and held-module assembly remains unverified. Jet/medium source comparisons fail. The large ramp now passes all three release trials; the medium ramp still misses the sustained-rest window, and its turn does not pass. See [the reconstruction report](docs/footage-reconstruction.md) for precise boundaries and reproduction commands. Ten continuous insertion paths now cover the small ramp’s three construction stages, with an interactive part-by-part preview. Grip access and closure remain unverified. The historical jet now fails the corrected contact model; its geometry is preserved and its stale engine-valid status was removed. The same audit corrected the historical snail’s stale label and the legacy large ramp’s stale failed label; all nine cards now have live-gate consistency coverage.
 
 ## Intent-driven structural harness
 
@@ -25,6 +25,7 @@ The existing manual editor, authored library, recognition scorer, and reference 
 ## Corrections to the original implementation
 
 - The catalog is in inches; gravity previously treated a meter as ten catalog units. The conversion is now 39.37 inches per meter.
+- Artificial collision skin was removed from finite-thickness tile hulls in both browser and headless physics. Closed supports now settle without opposing contact/hinge constraints. Generated stepped risers have explicit rear bracing.
 - Linked tiles now collide. Disabling contact between every connected pair allowed invalid folding behavior.
 - Structure displacement includes tile corners, so a rotating tile cannot pass solely because its center stays put.
 - Headless simulation worlds are released after use.

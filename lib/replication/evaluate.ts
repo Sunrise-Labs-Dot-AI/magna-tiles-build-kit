@@ -15,6 +15,7 @@ import { testCars } from "@/lib/planner/car-test";
 import { stageBuild } from "./geometry";
 import { releaseCandidate } from "./release";
 import { compareObservation } from "./projection";
+import { planConstructionPaths } from "./construction";
 import { validationCodeHash, verifyObservationLock } from "./provenance";
 import type {
   Check,
@@ -244,6 +245,7 @@ export async function evaluateReplica(
     releases: [],
     stages: [],
     instructions: [],
+    constructionPaths: [],
     carTrials: [],
   };
   const deadline = options.deadline ?? Infinity;
@@ -269,6 +271,7 @@ export async function evaluateReplica(
   )
     throw new Error(`Construction/source stage mismatch: ${replica.id}`);
   report.instructions = instructions(replica);
+  report.constructionPaths = planConstructionPaths(replica, deadline);
   for (const o of observations) {
     validateObservationBinding(replica, o);
     if (
@@ -331,8 +334,8 @@ export async function evaluateReplica(
     });
   }
   report.checks.assembly = check(
-    report.stages.some((s) => s.status === "fail") ? "fail" : "unverified",
-    `${report.stages.filter((s) => s.status === "pass").length}/${report.stages.length} nominal checkpoints passed. Held modules, joining motions and hand access are separate unverified requirements.`,
+    report.stages.some((s) => s.status === "fail") || report.constructionPaths.some(p => p.status === "fail") ? "fail" : "unverified",
+    `${report.stages.filter((s) => s.status === "pass").length}/${report.stages.length} nominal checkpoints passed; ${report.constructionPaths.filter(p => p.status === "pass").length}/${report.stages.length} stage insertion sequences clear. Held stability, magnetic closure and hand access remain separate unverified requirements.`,
   );
   if (report.checks.geometry.status === "pass") {
     for (const seed of [0, 17, 53]) {

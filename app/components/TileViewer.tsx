@@ -18,6 +18,8 @@ interface TileViewerProps {
   showLabels?: boolean;
   partLabels?: Record<string, string>;
   viewDirection?: [number, number, number];
+  /** Stable bounds for a motion preview, including its start and end poses. */
+  framingTiles?: TileInstance[];
   build: BuildGraph | null;
   visibleStep: number;
 }
@@ -60,7 +62,7 @@ function unregisterBuildViewer(handle: BuildViewerHandle, domElement: HTMLElemen
   delete domElement.dataset.buildViewer;
 }
 
-export function TileViewer({ build, visibleStep, lanes = [], trials = [], playbackTime = 0, showLabels = false, partLabels, viewDirection }: TileViewerProps) {
+export function TileViewer({ build, visibleStep, lanes = [], trials = [], playbackTime = 0, showLabels = false, partLabels, viewDirection, framingTiles }: TileViewerProps) {
   if (!build) {
     return (
       <div className="empty-state">
@@ -74,7 +76,7 @@ export function TileViewer({ build, visibleStep, lanes = [], trials = [], playba
   }
 
   const visibleTiles = build.tiles.filter((tile) => tile.step <= visibleStep);
-  const viewingBox = calculateViewingBox(build.tiles);
+  const viewingBox = calculateViewingBox(framingTiles ?? build.tiles);
   const cameraDistance = Math.max(viewingBox.width, viewingBox.height, viewingBox.depth) * 2.25;
   const loweredCenterY = viewingBox.center.y - build.bounds.height * 0.28;
   const cameraPosition: [number, number, number] =

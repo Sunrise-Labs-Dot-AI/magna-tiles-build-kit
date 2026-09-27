@@ -22,7 +22,7 @@ import type {
   ReleaseTrial,
 } from "./types";
 
-export const HARNESS_MODEL = "intent-harness-v1";
+export const HARNESS_MODEL = "intent-harness-v2-exact-contact";
 export const RELEASE_SEEDS = [0, 17, 53] as const;
 const releases = new Map<
   string,

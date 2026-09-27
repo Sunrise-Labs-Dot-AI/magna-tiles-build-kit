@@ -345,3 +345,6 @@
     margin-left: 0;
   }
 }
+.reference-insertion { margin: 1rem 0; padding: 1rem; border: 1px solid #c4d3d1; border-radius: 12px; }
+.reference-insertion label { display: grid; gap: .5rem; margin: .75rem 0; }
+.reference-insertion select, .reference-insertion input { width: 100%; min-width: 0; }

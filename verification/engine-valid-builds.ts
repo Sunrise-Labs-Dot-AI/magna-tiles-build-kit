@@ -1,9 +1,12 @@
-export const ENGINE_VALID_LIBRARY_BUILD_IDS = ["jet-aircraft", "house", "castle", "dog", "snail", "small-car-ramp", "medium-car-ramp", "large-car-ramp", "rocket"] as const;
+export const ENGINE_VALID_LIBRARY_BUILD_IDS = ["house", "castle", "dog", "small-car-ramp", "medium-car-ramp", "large-car-ramp", "rocket"] as const;
 
-// The rebuilt jet is engine-valid again (stands, overlap-free, composed from macros). Visual
-// resemblance polish (sharper nose, upright tail fin, swept wings) is tracked separately as the
-// human signoff gate, not by the engine tests.
-export const ENGINE_EXPECTED_FAIL_LIBRARY_BUILD_IDS = [] as const;
+// Raw non-intersection is a separate property; retain the jet as a geometry
+// regression fixture without claiming it stands.
+export const RAW_GEOMETRY_LIBRARY_BUILD_IDS = ["jet-aircraft", "snail", ...ENGINE_VALID_LIBRARY_BUILD_IDS] as const;
+
+// The historical 23-piece jet fails release after correcting artificial contact
+// expansion. Its geometry remains available as a diagnostic, not a valid anchor.
+export const ENGINE_EXPECTED_FAIL_LIBRARY_BUILD_IDS = ["jet-aircraft", "snail"] as const;
 
 export const ENGINE_EXPECTED_FAIL_PROMPT_IDS = [
   "jet-aircraft-prompt",

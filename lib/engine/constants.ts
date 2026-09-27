@@ -16,6 +16,10 @@ export const TILE_FRICTION = 0.82;
 export const BALL_FRICTION = 0.34;
 export const GROUND_FRICTION = 0.95;
 
+// The hull already includes physical tile thickness. Expanding it creates opposing
+// contact/hinge constraints at flush magnetic seams and injects motion into closed shells.
+export const TILE_CONTACT_SKIN = 0;
+
 export const HINGE_MIN_ANGLE = -Math.PI;
 export const HINGE_MAX_ANGLE = Math.PI;
 export const SIMULATION_TIMESTEP_SECONDS = 1 / 120;

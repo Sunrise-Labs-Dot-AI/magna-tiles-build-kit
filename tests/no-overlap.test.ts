@@ -2,19 +2,19 @@ import { describe, expect, it } from "vitest";
 import { readBuildDraft } from "@/lib/builder/storage";
 import { tilesIntersectAsPrisms } from "@/lib/magnetic-tiles/prism-geometry";
 import type { TileInstance } from "@/lib/magnetic-tiles/types";
-import { ENGINE_VALID_LIBRARY_BUILD_IDS } from "@/verification/engine-valid-builds";
+import { RAW_GEOMETRY_LIBRARY_BUILD_IDS } from "@/verification/engine-valid-builds";
 
 const HAIRLINE_TOLERANCE = 0.03;
 
-describe("engine-valid raw geometry anchor", () => {
-  it.each(ENGINE_VALID_LIBRARY_BUILD_IDS)("%s has no independent raw tile overlaps", async (id) => {
+describe("raw geometry anchors (independent of standing validity)", () => {
+  it.each(RAW_GEOMETRY_LIBRARY_BUILD_IDS)("%s has no independent raw tile overlaps", async (id) => {
     const draft = await readBuildDraft(id);
 
     expect(rawOverlaps(draft.tiles)).toEqual([]);
   });
 
   it("detects impossible duplicate tile interpenetration", async () => {
-    const draft = await readBuildDraft(ENGINE_VALID_LIBRARY_BUILD_IDS[0]);
+    const draft = await readBuildDraft(RAW_GEOMETRY_LIBRARY_BUILD_IDS[0]);
     const duplicateTiles = [
       draft.tiles[0],
       {

@@ -2313,8 +2313,8 @@
   "report": {
     "id": "medium-ramp",
     "fingerprint": "d48b89265f7d5b7b5069895ced5c1366178f06f6d7e7abcf618ca84de49791fc",
-    "validationCodeHash": "25e42698100b72d400cebf386440c1c67af38784ef58f4f5e0c8651e745d1169",
-    "generatedAt": "2026-09-26T18:35:33.172Z",
+    "validationCodeHash": "6af4d03f7df8679d83d4e24627f307ab3b27823b962dad91913e8cea0ebdff6c",
+    "generatedAt": "2026-09-27T02:25:21.672Z",
     "replication": "not-verified",
     "checks": {
       "source": {
@@ -2339,7 +2339,7 @@
       },
       "release": {
         "status": "fail",
-        "detail": "seed 0: fail, peak 0.923 in, linear 5.560 in/s, angular 5.070 rad/s, 0/90 rest steps; seed 17: fail, peak 0.916 in, linear 4.845 in/s, angular 4.611 rad/s, 0/90 rest steps; seed 53: fail, peak 0.902 in, linear 2.842 in/s, angular 12.984 rad/s, 0/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
+        "detail": "seed 0: fail, peak 0.925 in, linear 0.000 in/s, angular 0.000 rad/s, 67/90 rest steps; seed 17: fail, peak 0.902 in, linear 0.000 in/s, angular 0.000 rad/s, 47/90 rest steps; seed 53: fail, peak 0.906 in, linear 0.000 in/s, angular 0.000 rad/s, 19/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
       },
       "settledShape": {
         "status": "fail",
@@ -2347,11 +2347,11 @@
       },
       "assembly": {
         "status": "fail",
-        "detail": "2/8 nominal checkpoints passed. Held modules, joining motions and hand access are separate unverified requirements."
+        "detail": "5/8 nominal checkpoints passed; 0/8 stage insertion sequences clear. Held stability, magnetic closure and hand access remain separate unverified requirements."
       },
       "function": {
         "status": "fail",
-        "detail": "The 01:46 close-up shows Henry gesturing along the upper squares. No complete toy-car trajectory is visible. The roof route below is an inferred functional target, not a measured successful turn. Car left the road before completing the route."
+        "detail": "The 01:46 close-up shows Henry gesturing along the upper squares. No complete toy-car trajectory is visible. The roof route below is an inferred functional target, not a measured successful turn. Car stopped before the finish."
       }
     },
     "projections": [
@@ -2708,12 +2708,12 @@
       {
         "seed": 0,
         "status": "fail",
-        "peakDisplacement": 0.9234739190326748,
-        "finalDisplacement": 0.7543060035428892,
-        "finalSpeed": 5.559678650987474,
-        "linearSpeed": 5.559678650987474,
-        "angularSpeed": 5.069641738436813,
-        "settledSteps": 0,
+        "peakDisplacement": 0.9253791716880578,
+        "finalDisplacement": 0.5038571161658928,
+        "finalSpeed": 0,
+        "linearSpeed": 0,
+        "angularSpeed": 0,
+        "settledSteps": 67,
         "poppedJoints": [],
         "settledProjections": [
           {
@@ -2721,7 +2721,7 @@
             "frameId": "medium-check-a",
             "partition": "holdout",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 40.59 px. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 31.52 px. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": -494.6163609908715,
@@ -2744,8 +2744,8 @@
             },
             "cameraAnchors": 6,
             "checkLandmarks": 4,
-            "rmsPx": 216.04551522823624,
-            "maxPx": 294.05787349217053,
+            "rmsPx": 213.59270110544855,
+            "maxPx": 296.52901787752563,
             "sourceDiagonalPx": 954.5119171597597,
             "residuals": [
               {
@@ -2756,10 +2756,10 @@
                   235
                 ],
                 "projected": [
-                  878.3121317803723,
-                  248.45860630523194
+                  848.2426060788865,
+                  245.13818560296772
                 ],
-                "errorPx": 55.954818757706235,
+                "errorPx": 26.27711469732337,
                 "uncertaintyPx": 12
               },
               {
@@ -2770,10 +2770,10 @@
                   78
                 ],
                 "projected": [
-                  939.0752014677115,
-                  121.01548397806033
+                  902.8670273510323,
+                  116.99444963038576
                 ],
-                "errorPx": 47.055235339976235,
+                "errorPx": 42.59232153530688,
                 "uncertaintyPx": 12
               },
               {
@@ -2784,10 +2784,10 @@
                   130
                 ],
                 "projected": [
-                  1087.2634696845082,
-                  138.80759558501975
+                  1054.343366372993,
+                  132.08334672916178
                 ],
-                "errorPx": 11.416292386192167,
+                "errorPx": 25.741079671691686,
                 "uncertaintyPx": 12
               },
               {
@@ -2798,10 +2798,10 @@
                   282
                 ],
                 "projected": [
-                  1026.7385674658956,
-                  266.5582393335061
+                  999.9995118164259,
+                  260.5069575267202
                 ],
-                "errorPx": 47.32850506176768,
+                "errorPx": 28.034501964327156,
                 "uncertaintyPx": 12
               },
               {
@@ -2812,10 +2812,10 @@
                   662
                 ],
                 "projected": [
-                  1000.4498707450034,
-                  700.0560552675425
+                  979.2870940370511,
+                  694.1137999265184
                 ],
-                "errorPx": 38.79778079083143,
+                "errorPx": 43.07815124349693,
                 "uncertaintyPx": 12
               },
               {
@@ -2826,10 +2826,10 @@
                   580
                 ],
                 "projected": [
-                  1134.9561057187595,
-                  586.3337083336529
+                  1122.2945888723893,
+                  580.3229882172575
                 ],
-                "errorPx": 25.747292554785002,
+                "errorPx": 12.29883071391614,
                 "uncertaintyPx": 12
               },
               {
@@ -2840,10 +2840,10 @@
                   916
                 ],
                 "projected": [
-                  993.3527568316593,
-                  684.5238445275747
+                  989.2106512259031,
+                  678.2483574494148
                 ],
-                "errorPx": 294.05787349217053,
+                "errorPx": 296.52901787752563,
                 "uncertaintyPx": 12
               },
               {
@@ -2854,10 +2854,10 @@
                   845
                 ],
                 "projected": [
-                  1135.1312782858124,
-                  644.8670972086079
+                  1126.4021948256834,
+                  636.4742884283844
                 ],
-                "errorPx": 225.60253078621724,
+                "errorPx": 229.31321628725692,
                 "uncertaintyPx": 12
               },
               {
@@ -2868,10 +2868,10 @@
                   524
                 ],
                 "projected": [
-                  827.6127074953064,
-                  445.5795339707182
+                  812.272988191058,
+                  442.46972530914707
                 ],
-                "errorPx": 191.4141246384163,
+                "errorPx": 178.92755645365196,
                 "uncertaintyPx": 12
               },
               {
@@ -2882,10 +2882,10 @@
                   467
                 ],
                 "projected": [
-                  969.153120950071,
-                  406.6457109774065
+                  949.269433659133,
+                  401.4805360764579
                 ],
-                "errorPx": 112.67988564939876,
+                "errorPx": 99.79122103769932,
                 "uncertaintyPx": 12
               }
             ]
@@ -2895,12 +2895,12 @@
       {
         "seed": 17,
         "status": "fail",
-        "peakDisplacement": 0.9162206577936254,
-        "finalDisplacement": 0.6198386890410114,
-        "finalSpeed": 4.84483360985289,
-        "linearSpeed": 4.84483360985289,
-        "angularSpeed": 4.610550743788075,
-        "settledSteps": 0,
+        "peakDisplacement": 0.9020039749388288,
+        "finalDisplacement": 0.5095225183086551,
+        "finalSpeed": 0,
+        "linearSpeed": 0,
+        "angularSpeed": 0,
+        "settledSteps": 47,
         "poppedJoints": [],
         "settledProjections": [
           {
@@ -2908,7 +2908,7 @@
             "frameId": "medium-check-a",
             "partition": "holdout",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 37.34 px. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 31.43 px. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": -494.6163609908715,
@@ -2931,8 +2931,8 @@
             },
             "cameraAnchors": 6,
             "checkLandmarks": 4,
-            "rmsPx": 214.99069632138162,
-            "maxPx": 293.487534938825,
+            "rmsPx": 214.88329298395598,
+            "maxPx": 298.1685686286093,
             "sourceDiagonalPx": 954.5119171597597,
             "residuals": [
               {
@@ -2943,10 +2943,10 @@
                   235
                 ],
                 "projected": [
-                  873.8794512914196,
-                  245.8456294802844
+                  848.4073748997445,
+                  244.74676927984336
                 ],
-                "errorPx": 51.04495410867481,
+                "errorPx": 26.281542209146988,
                 "uncertaintyPx": 12
               },
               {
@@ -2957,10 +2957,10 @@
                   78
                 ],
                 "projected": [
-                  934.7324939673749,
-                  118.80216330125441
+                  902.6966542855442,
+                  116.69059669777675
                 ],
-                "errorPx": 43.38044384928502,
+                "errorPx": 42.3835822665332,
                 "uncertaintyPx": 12
               },
               {
@@ -2971,10 +2971,10 @@
                   130
                 ],
                 "projected": [
-                  1083.2846442835596,
-                  137.3264950597946
+                  1054.4393810478077,
+                  131.77404807176762
                 ],
-                "errorPx": 8.029098201586253,
+                "errorPx": 25.622109354620147,
                 "uncertaintyPx": 12
               },
               {
@@ -2985,10 +2985,10 @@
                   282
                 ],
                 "projected": [
-                  1022.6740558183362,
-                  264.67526452252355
+                  1000.4341932483105,
+                  260.10790647424597
                 ],
-                "errorPx": 44.21001330103467,
+                "errorPx": 28.619630320051638,
                 "uncertaintyPx": 12
               },
               {
@@ -2999,10 +2999,10 @@
                   662
                 ],
                 "projected": [
-                  994.8319435678907,
-                  697.9906973100894
+                  979.4392135392202,
+                  693.7357541766164
                 ],
-                "errorPx": 38.32398730645984,
+                "errorPx": 42.695159168421995,
                 "uncertaintyPx": 12
               },
               {
@@ -3013,10 +3013,10 @@
                   580
                 ],
                 "projected": [
-                  1129.0972958670382,
-                  585.0230242572138
+                  1121.8339813071761,
+                  580.2135816199641
                 ],
-                "errorPx": 19.746834736781263,
+                "errorPx": 11.835908528160436,
                 "uncertaintyPx": 12
               },
               {
@@ -3027,10 +3027,10 @@
                   916
                 ],
                 "projected": [
-                  990.6981236131209,
-                  683.1869553018607
+                  991.4042303257309,
+                  677.8432922228185
                 ],
-                "errorPx": 293.487534938825,
+                "errorPx": 298.1685686286093,
                 "uncertaintyPx": 12
               },
               {
@@ -3041,10 +3041,10 @@
                   845
                 ],
                 "projected": [
-                  1132.1210593142132,
-                  642.8949081432079
+                  1128.2009957488337,
+                  635.7536527441554
                 ],
-                "errorPx": 225.99101042136834,
+                "errorPx": 230.72075635815324,
                 "uncertaintyPx": 12
               },
               {
@@ -3055,10 +3055,10 @@
                   524
                 ],
                 "projected": [
-                  823.8026872047814,
-                  444.28314131139183
+                  813.4548593776466,
+                  442.30209025560623
                 ],
-                "errorPx": 188.4896164661436,
+                "errorPx": 180.05640881263696,
                 "uncertaintyPx": 12
               },
               {
@@ -3069,10 +3069,10 @@
                   467
                 ],
                 "projected": [
-                  964.9342148512999,
-                  404.71227153688426
+                  950.0676063706264,
+                  400.99875312887923
                 ],
-                "errorPx": 110.22156117437824,
+                "errorPx": 100.70970820878787,
                 "uncertaintyPx": 12
               }
             ]
@@ -3082,12 +3082,12 @@
       {
         "seed": 53,
         "status": "fail",
-        "peakDisplacement": 0.9017269039616105,
-        "finalDisplacement": 0.6932694239979598,
-        "finalSpeed": 12.984112058564607,
-        "linearSpeed": 2.842315195952902,
-        "angularSpeed": 12.984112058564605,
-        "settledSteps": 0,
+        "peakDisplacement": 0.9060893926491732,
+        "finalDisplacement": 0.5127231529783719,
+        "finalSpeed": 0,
+        "linearSpeed": 0,
+        "angularSpeed": 0,
+        "settledSteps": 19,
         "poppedJoints": [],
         "settledProjections": [
           {
@@ -3095,7 +3095,7 @@
             "frameId": "medium-check-a",
             "partition": "holdout",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 40.75 px. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 31.36 px. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": -494.6163609908715,
@@ -3118,8 +3118,8 @@
             },
             "cameraAnchors": 6,
             "checkLandmarks": 4,
-            "rmsPx": 218.23180833140214,
-            "maxPx": 297.04304620891156,
+            "rmsPx": 214.89925552774466,
+            "maxPx": 298.14625526730856,
             "sourceDiagonalPx": 954.5119171597597,
             "residuals": [
               {
@@ -3130,10 +3130,10 @@
                   235
                 ],
                 "projected": [
-                  877.9977607020853,
-                  247.76499188996033
+                  848.6037374792004,
+                  244.6856667622215
                 ],
-                "errorPx": 55.48606292385884,
+                "errorPx": 26.441558928592173,
                 "uncertaintyPx": 12
               },
               {
@@ -3144,10 +3144,10 @@
                   78
                 ],
                 "projected": [
-                  938.0897250118545,
-                  120.70153490703592
+                  902.9412430857973,
+                  116.62531467299559
                 ],
-                "errorPx": 46.37520064022712,
+                "errorPx": 42.22459142544528,
                 "uncertaintyPx": 12
               },
               {
@@ -3158,10 +3158,10 @@
                   130
                 ],
                 "projected": [
-                  1087.0569286357295,
-                  138.70666611698658
+                  1054.6541371812693,
+                  131.72674651477917
                 ],
-                "errorPx": 11.207420606119015,
+                "errorPx": 25.404614060288647,
                 "uncertaintyPx": 12
               },
               {
@@ -3172,10 +3172,10 @@
                   282
                 ],
                 "projected": [
-                  1027.2132138444845,
-                  266.072139673435
+                  1000.600313637643,
+                  260.06504532576974
                 ],
-                "errorPx": 47.93674416071293,
+                "errorPx": 28.759588035631253,
                 "uncertaintyPx": 12
               },
               {
@@ -3186,10 +3186,10 @@
                   662
                 ],
                 "projected": [
-                  999.4431224847943,
-                  699.648694319905
+                  979.6450271233529,
+                  693.6954541817711
                 ],
-                "errorPx": 38.608863448745495,
+                "errorPx": 42.52771217246638,
                 "uncertaintyPx": 12
               },
               {
@@ -3200,10 +3200,10 @@
                   580
                 ],
                 "projected": [
-                  1137.664983157074,
-                  587.3146538221345
+                  1121.7225793254238,
+                  580.0850753827492
                 ],
-                "errorPx": 28.615650501410087,
+                "errorPx": 11.722888034166465,
                 "uncertaintyPx": 12
               },
               {
@@ -3214,10 +3214,10 @@
                   916
                 ],
                 "projected": [
-                  997.3248970852173,
-                  683.8594093627244
+                  991.318073882394,
+                  677.8063436843302
                 ],
-                "errorPx": 297.04304620891156,
+                "errorPx": 298.14625526730856,
                 "uncertaintyPx": 12
               },
               {
@@ -3228,10 +3228,10 @@
                   845
                 ],
                 "projected": [
-                  1138.200204388318,
-                  643.9222512050015
+                  1128.1662017023589,
+                  635.7722061719372
                 ],
-                "errorPx": 227.8687009691363,
+                "errorPx": 230.6892725365049,
                 "uncertaintyPx": 12
               },
               {
@@ -3242,10 +3242,10 @@
                   524
                 ],
                 "projected": [
-                  829.5426279552933,
-                  445.15485329849355
+                  813.5188247704102,
+                  442.21758494666983
                 ],
-                "errorPx": 193.3490538992709,
+                "errorPx": 180.15175968507447,
                 "uncertaintyPx": 12
               },
               {
@@ -3256,10 +3256,10 @@
                   467
                 ],
                 "projected": [
-                  970.175484530149,
-                  406.1050739421417
+                  950.1806793887324,
+                  400.9706301528104
                 ],
-                "errorPx": 113.83284167673649,
+                "errorPx": 100.81355858487386,
                 "uncertaintyPx": 12
               }
             ]
@@ -3271,50 +3271,50 @@
       {
         "id": "medium-lower",
         "status": "pass",
-        "detail": "Released checkpoint: peak 0.266 in; 0 broken/rejected joints; 640 consecutive steps at rest (90 required).",
-        "displacement": 0.2663788603873846
+        "detail": "Released checkpoint: peak 0.277 in; 0 broken/rejected joints; 859 consecutive steps at rest (90 required).",
+        "displacement": 0.2772747230928073
       },
       {
         "id": "medium-support",
         "status": "pass",
-        "detail": "Released checkpoint: peak 0.268 in; 0 broken/rejected joints; 654 consecutive steps at rest (90 required).",
-        "displacement": 0.2679991496677511
+        "detail": "Released checkpoint: peak 0.267 in; 0 broken/rejected joints; 838 consecutive steps at rest (90 required).",
+        "displacement": 0.26730526847790237
       },
       {
         "id": "medium-turn",
-        "status": "fail",
-        "detail": "Released checkpoint: peak 0.569 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-        "displacement": 0.569262499197038
+        "status": "pass",
+        "detail": "Released checkpoint: peak 0.584 in; 0 broken/rejected joints; 639 consecutive steps at rest (90 required).",
+        "displacement": 0.5838172672606649
       },
       {
         "id": "medium-lower-walls",
         "status": "fail",
-        "detail": "Released checkpoint: peak 0.559 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-        "displacement": 0.5589898263267028
+        "detail": "Released checkpoint: peak 0.955 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 0.9545638228270336
       },
       {
         "id": "medium-lower-cover",
-        "status": "fail",
-        "detail": "Released checkpoint: peak 0.720 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-        "displacement": 0.7203987383485272
+        "status": "pass",
+        "detail": "Released checkpoint: peak 0.487 in; 0 broken/rejected joints; 641 consecutive steps at rest (90 required).",
+        "displacement": 0.48734842617224194
       },
       {
         "id": "medium-turn-cover",
         "status": "fail",
-        "detail": "Released checkpoint: peak 1.018 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-        "displacement": 1.0184854833104788
+        "detail": "Released checkpoint: peak 1.009 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 1.0087020392849595
       },
       {
         "id": "medium-upper-cover",
-        "status": "fail",
-        "detail": "Released checkpoint: peak 0.860 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-        "displacement": 0.8603833162236609
+        "status": "pass",
+        "detail": "Released checkpoint: peak 0.548 in; 0 broken/rejected joints; 636 consecutive steps at rest (90 required).",
+        "displacement": 0.547567121696772
       },
       {
         "id": "medium-final",
         "status": "fail",
-        "detail": "Released checkpoint: peak 0.923 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-        "displacement": 0.9234739190326748
+        "detail": "Released checkpoint: peak 0.925 in; 0 broken/rejected joints; 67 consecutive steps at rest (90 required).",
+        "displacement": 0.9253791716880578
       }
     ],
     "instructions": [
@@ -3605,12 +3605,62 @@
         "instruction": "Add only the numbered pieces in this step. The canopy end geometry and support contacts remain hypotheses; stop if the shown joins do not seat without force. New parts: P36 (Small square), P37 (Small square). Joins: P34 edge 1 to P36 edge 1; P28 edge 1 to P36 edge 1; P34 edge 3 to P37 edge 1; P32 edge 1 to P37 edge 1. Source frame: medium-check-a. Release checkpoint: consult the measured result before following this candidate."
       }
     ],
+    "constructionPaths": [
+      {
+        "stageId": "medium-lower",
+        "status": "unverified",
+        "paths": [],
+        "detail": "No per-part insertion sequence has been supplied."
+      },
+      {
+        "stageId": "medium-support",
+        "status": "unverified",
+        "paths": [],
+        "detail": "No per-part insertion sequence has been supplied."
+      },
+      {
+        "stageId": "medium-turn",
+        "status": "unverified",
+        "paths": [],
+        "detail": "No per-part insertion sequence has been supplied."
+      },
+      {
+        "stageId": "medium-lower-walls",
+        "status": "unverified",
+        "paths": [],
+        "detail": "No per-part insertion sequence has been supplied."
+      },
+      {
+        "stageId": "medium-lower-cover",
+        "status": "unverified",
+        "paths": [],
+        "detail": "No per-part insertion sequence has been supplied."
+      },
+      {
+        "stageId": "medium-turn-cover",
+        "status": "unverified",
+        "paths": [],
+        "detail": "No per-part insertion sequence has been supplied."
+      },
+      {
+        "stageId": "medium-upper-cover",
+        "status": "unverified",
+        "paths": [],
+        "detail": "No per-part insertion sequence has been supplied."
+      },
+      {
+        "stageId": "medium-final",
+        "status": "unverified",
+        "paths": [],
+        "detail": "No per-part insertion sequence has been supplied."
+      }
+    ],
     "carTrials": [
       {
         "laneId": "car",
         "passed": false,
         "reachedWaypoint": 2,
-        "reason": "Car left the road before completing the route.",
+        "reason": "Car stopped before the finish.",
         "samples": [
           {
             "time": 0,
@@ -3631,63 +3681,1199 @@
           {
             "time": 0.075,
             "position": {
-              "x": 8.131917953491211,
-              "y": 8.340544700622559,
-              "z": 3.790038824081421
+              "x": 8.118504524230957,
+              "y": 8.30846881866455,
+              "z": 3.8139796257019043
             }
           },
           {
             "time": 0.14166666666666666,
             "position": {
-              "x": 7.678342819213867,
-              "y": 7.909970760345459,
-              "z": 3.0843639373779297
+              "x": 7.6755828857421875,
+              "y": 7.835039138793945,
+              "z": 3.034769058227539
             }
           },
           {
             "time": 0.20833333333333334,
             "position": {
-              "x": 7.036151885986328,
-              "y": 7.38232946395874,
-              "z": 1.9170225858688354
+              "x": 6.977680206298828,
+              "y": 7.221599578857422,
+              "z": 1.8155995607376099
             }
           },
           {
             "time": 0.275,
             "position": {
-              "x": 6.371786594390869,
-              "y": 6.389406204223633,
-              "z": 0.5222455859184265
+              "x": 6.23734712600708,
+              "y": 6.291723251342773,
+              "z": 0.5159057378768921
             }
           },
           {
             "time": 0.3416666666666667,
             "position": {
-              "x": 5.886866569519043,
-              "y": 6.067728519439697,
-              "z": -0.8451261520385742
+              "x": 5.9517340660095215,
+              "y": 6.042579650878906,
+              "z": -0.41038307547569275
             }
           },
           {
             "time": 0.4083333333333333,
             "position": {
-              "x": 5.7170915603637695,
-              "y": 5.597390174865723,
-              "z": -1.8656578063964844
+              "x": 5.948521614074707,
+              "y": 5.9738945960998535,
+              "z": -0.6778965592384338
             }
           },
           {
             "time": 0.475,
             "position": {
-              "x": 5.693039894104004,
-              "y": 5.128005504608154,
-              "z": -2.2101662158966064
+              "x": 5.940818786621094,
+              "y": 5.952385902404785,
+              "z": -0.6579324007034302
+            }
+          },
+          {
+            "time": 0.5416666666666666,
+            "position": {
+              "x": 5.937288761138916,
+              "y": 5.9456562995910645,
+              "z": -0.6493589282035828
+            }
+          },
+          {
+            "time": 0.6083333333333333,
+            "position": {
+              "x": 5.936036586761475,
+              "y": 5.944589138031006,
+              "z": -0.6477300524711609
+            }
+          },
+          {
+            "time": 0.675,
+            "position": {
+              "x": 5.935488224029541,
+              "y": 5.943394660949707,
+              "z": -0.646885097026825
+            }
+          },
+          {
+            "time": 0.7416666666666667,
+            "position": {
+              "x": 5.935174465179443,
+              "y": 5.942465782165527,
+              "z": -0.646375834941864
+            }
+          },
+          {
+            "time": 0.8083333333333333,
+            "position": {
+              "x": 5.9348249435424805,
+              "y": 5.941880226135254,
+              "z": -0.6462222337722778
+            }
+          },
+          {
+            "time": 0.875,
+            "position": {
+              "x": 5.9348883628845215,
+              "y": 5.9411821365356445,
+              "z": -0.6456784605979919
+            }
+          },
+          {
+            "time": 0.9416666666666667,
+            "position": {
+              "x": 5.934746742248535,
+              "y": 5.940849304199219,
+              "z": -0.6450386047363281
+            }
+          },
+          {
+            "time": 1.0083333333333333,
+            "position": {
+              "x": 5.934493064880371,
+              "y": 5.940471649169922,
+              "z": -0.6452769637107849
+            }
+          },
+          {
+            "time": 1.075,
+            "position": {
+              "x": 5.934307098388672,
+              "y": 5.9399213790893555,
+              "z": -0.6454134583473206
+            }
+          },
+          {
+            "time": 1.1416666666666666,
+            "position": {
+              "x": 5.934088706970215,
+              "y": 5.939852714538574,
+              "z": -0.6442306637763977
+            }
+          },
+          {
+            "time": 1.2083333333333333,
+            "position": {
+              "x": 5.933722972869873,
+              "y": 5.939538955688477,
+              "z": -0.6447597742080688
+            }
+          },
+          {
+            "time": 1.275,
+            "position": {
+              "x": 5.933563232421875,
+              "y": 5.9394211769104,
+              "z": -0.6439921259880066
+            }
+          },
+          {
+            "time": 1.3416666666666666,
+            "position": {
+              "x": 5.933833122253418,
+              "y": 5.939162254333496,
+              "z": -0.6446519494056702
+            }
+          },
+          {
+            "time": 1.4083333333333332,
+            "position": {
+              "x": 5.93359375,
+              "y": 5.938886642456055,
+              "z": -0.6441811919212341
+            }
+          },
+          {
+            "time": 1.475,
+            "position": {
+              "x": 5.933845043182373,
+              "y": 5.93865442276001,
+              "z": -0.6438352465629578
+            }
+          },
+          {
+            "time": 1.5416666666666667,
+            "position": {
+              "x": 5.933656215667725,
+              "y": 5.9386515617370605,
+              "z": -0.6436451077461243
+            }
+          },
+          {
+            "time": 1.6083333333333334,
+            "position": {
+              "x": 5.933284282684326,
+              "y": 5.938604354858398,
+              "z": -0.6432488560676575
+            }
+          },
+          {
+            "time": 1.675,
+            "position": {
+              "x": 5.933682918548584,
+              "y": 5.938601970672607,
+              "z": -0.6428590416908264
+            }
+          },
+          {
+            "time": 1.7416666666666667,
+            "position": {
+              "x": 5.933459758758545,
+              "y": 5.93847131729126,
+              "z": -0.6429378986358643
+            }
+          },
+          {
+            "time": 1.8083333333333333,
+            "position": {
+              "x": 5.933488845825195,
+              "y": 5.938444137573242,
+              "z": -0.6426805257797241
+            }
+          },
+          {
+            "time": 1.875,
+            "position": {
+              "x": 5.933292865753174,
+              "y": 5.938380241394043,
+              "z": -0.6421412229537964
+            }
+          },
+          {
+            "time": 1.9416666666666667,
+            "position": {
+              "x": 5.9333696365356445,
+              "y": 5.93817138671875,
+              "z": -0.6424468755722046
+            }
+          },
+          {
+            "time": 2.0083333333333333,
+            "position": {
+              "x": 5.933023929595947,
+              "y": 5.93834114074707,
+              "z": -0.6421523690223694
+            }
+          },
+          {
+            "time": 2.075,
+            "position": {
+              "x": 5.933199405670166,
+              "y": 5.938144683837891,
+              "z": -0.642169713973999
+            }
+          },
+          {
+            "time": 2.1416666666666666,
+            "position": {
+              "x": 5.933021068572998,
+              "y": 5.938298225402832,
+              "z": -0.6416439414024353
+            }
+          },
+          {
+            "time": 2.2083333333333335,
+            "position": {
+              "x": 5.932835102081299,
+              "y": 5.938089370727539,
+              "z": -0.6419371366500854
+            }
+          },
+          {
+            "time": 2.275,
+            "position": {
+              "x": 5.932948589324951,
+              "y": 5.938167095184326,
+              "z": -0.6415678262710571
+            }
+          },
+          {
+            "time": 2.341666666666667,
+            "position": {
+              "x": 5.932821750640869,
+              "y": 5.938045501708984,
+              "z": -0.6417357921600342
+            }
+          },
+          {
+            "time": 2.408333333333333,
+            "position": {
+              "x": 5.932816505432129,
+              "y": 5.938117027282715,
+              "z": -0.6410629153251648
+            }
+          },
+          {
+            "time": 2.475,
+            "position": {
+              "x": 5.932880878448486,
+              "y": 5.937891006469727,
+              "z": -0.6410360336303711
+            }
+          },
+          {
+            "time": 2.5416666666666665,
+            "position": {
+              "x": 5.932931423187256,
+              "y": 5.937836170196533,
+              "z": -0.6408988833427429
+            }
+          },
+          {
+            "time": 2.6083333333333334,
+            "position": {
+              "x": 5.933006763458252,
+              "y": 5.9377312660217285,
+              "z": -0.641165554523468
+            }
+          },
+          {
+            "time": 2.675,
+            "position": {
+              "x": 5.933008670806885,
+              "y": 5.937817573547363,
+              "z": -0.6410090327262878
+            }
+          },
+          {
+            "time": 2.7416666666666667,
+            "position": {
+              "x": 5.932925224304199,
+              "y": 5.937821388244629,
+              "z": -0.6408634781837463
+            }
+          },
+          {
+            "time": 2.808333333333333,
+            "position": {
+              "x": 5.9331440925598145,
+              "y": 5.937733173370361,
+              "z": -0.6407299041748047
+            }
+          },
+          {
+            "time": 2.875,
+            "position": {
+              "x": 5.933171272277832,
+              "y": 5.937659740447998,
+              "z": -0.6407420039176941
+            }
+          },
+          {
+            "time": 2.9416666666666664,
+            "position": {
+              "x": 5.933032035827637,
+              "y": 5.937748432159424,
+              "z": -0.6402117609977722
+            }
+          },
+          {
+            "time": 3.0083333333333333,
+            "position": {
+              "x": 5.933039665222168,
+              "y": 5.937767028808594,
+              "z": -0.6401433944702148
+            }
+          },
+          {
+            "time": 3.075,
+            "position": {
+              "x": 5.933156967163086,
+              "y": 5.937511920928955,
+              "z": -0.640798807144165
+            }
+          },
+          {
+            "time": 3.1416666666666666,
+            "position": {
+              "x": 5.933289527893066,
+              "y": 5.93748140335083,
+              "z": -0.6409993171691895
+            }
+          },
+          {
+            "time": 3.2083333333333335,
+            "position": {
+              "x": 5.9333624839782715,
+              "y": 5.937472343444824,
+              "z": -0.6407979726791382
+            }
+          },
+          {
+            "time": 3.275,
+            "position": {
+              "x": 5.933215141296387,
+              "y": 5.937514305114746,
+              "z": -0.6403706669807434
+            }
+          },
+          {
+            "time": 3.341666666666667,
+            "position": {
+              "x": 5.933091640472412,
+              "y": 5.937426567077637,
+              "z": -0.6403610110282898
+            }
+          },
+          {
+            "time": 3.408333333333333,
+            "position": {
+              "x": 5.933016300201416,
+              "y": 5.937445640563965,
+              "z": -0.6405080556869507
+            }
+          },
+          {
+            "time": 3.475,
+            "position": {
+              "x": 5.933150291442871,
+              "y": 5.937438011169434,
+              "z": -0.6401823163032532
+            }
+          },
+          {
+            "time": 3.5416666666666665,
+            "position": {
+              "x": 5.933162212371826,
+              "y": 5.937258720397949,
+              "z": -0.6405486464500427
+            }
+          },
+          {
+            "time": 3.6083333333333334,
+            "position": {
+              "x": 5.932873725891113,
+              "y": 5.937462329864502,
+              "z": -0.6402474641799927
+            }
+          },
+          {
+            "time": 3.675,
+            "position": {
+              "x": 5.9330034255981445,
+              "y": 5.9373979568481445,
+              "z": -0.6403989195823669
+            }
+          },
+          {
+            "time": 3.7416666666666667,
+            "position": {
+              "x": 5.932937145233154,
+              "y": 5.937533855438232,
+              "z": -0.639457643032074
+            }
+          },
+          {
+            "time": 3.808333333333333,
+            "position": {
+              "x": 5.933104991912842,
+              "y": 5.9373908042907715,
+              "z": -0.639583170413971
+            }
+          },
+          {
+            "time": 3.875,
+            "position": {
+              "x": 5.933068752288818,
+              "y": 5.937490940093994,
+              "z": -0.6390929222106934
+            }
+          },
+          {
+            "time": 3.9416666666666664,
+            "position": {
+              "x": 5.933041095733643,
+              "y": 5.93749475479126,
+              "z": -0.6389852166175842
+            }
+          },
+          {
+            "time": 4.008333333333333,
+            "position": {
+              "x": 5.932882308959961,
+              "y": 5.937568187713623,
+              "z": -0.6387705206871033
+            }
+          },
+          {
+            "time": 4.075,
+            "position": {
+              "x": 5.9326653480529785,
+              "y": 5.937535285949707,
+              "z": -0.6385661959648132
+            }
+          },
+          {
+            "time": 4.141666666666667,
+            "position": {
+              "x": 5.93290376663208,
+              "y": 5.937314987182617,
+              "z": -0.6388947367668152
+            }
+          },
+          {
+            "time": 4.208333333333333,
+            "position": {
+              "x": 5.933055877685547,
+              "y": 5.937217712402344,
+              "z": -0.6390092372894287
+            }
+          },
+          {
+            "time": 4.275,
+            "position": {
+              "x": 5.932673931121826,
+              "y": 5.937180042266846,
+              "z": -0.6391047239303589
+            }
+          },
+          {
+            "time": 4.341666666666667,
+            "position": {
+              "x": 5.932636737823486,
+              "y": 5.937274932861328,
+              "z": -0.6387866139411926
+            }
+          },
+          {
+            "time": 4.408333333333333,
+            "position": {
+              "x": 5.932533264160156,
+              "y": 5.937018394470215,
+              "z": -0.6388300061225891
+            }
+          },
+          {
+            "time": 4.475,
+            "position": {
+              "x": 5.932583808898926,
+              "y": 5.937010765075684,
+              "z": -0.6386991739273071
+            }
+          },
+          {
+            "time": 4.541666666666667,
+            "position": {
+              "x": 5.9328718185424805,
+              "y": 5.936904430389404,
+              "z": -0.639013409614563
+            }
+          },
+          {
+            "time": 4.608333333333333,
+            "position": {
+              "x": 5.932933330535889,
+              "y": 5.937028884887695,
+              "z": -0.6385200023651123
+            }
+          },
+          {
+            "time": 4.675,
+            "position": {
+              "x": 5.932665824890137,
+              "y": 5.937197685241699,
+              "z": -0.638075053691864
+            }
+          },
+          {
+            "time": 4.741666666666666,
+            "position": {
+              "x": 5.93243932723999,
+              "y": 5.937081813812256,
+              "z": -0.638350784778595
+            }
+          },
+          {
+            "time": 4.808333333333334,
+            "position": {
+              "x": 5.9325270652771,
+              "y": 5.936985969543457,
+              "z": -0.6382017731666565
+            }
+          },
+          {
+            "time": 4.875,
+            "position": {
+              "x": 5.9322309494018555,
+              "y": 5.937154293060303,
+              "z": -0.6380873918533325
+            }
+          },
+          {
+            "time": 4.941666666666666,
+            "position": {
+              "x": 5.932425498962402,
+              "y": 5.937327861785889,
+              "z": -0.6375717520713806
+            }
+          },
+          {
+            "time": 5.008333333333333,
+            "position": {
+              "x": 5.932730197906494,
+              "y": 5.937049865722656,
+              "z": -0.6377326250076294
+            }
+          },
+          {
+            "time": 5.075,
+            "position": {
+              "x": 5.932568550109863,
+              "y": 5.937038898468018,
+              "z": -0.6375125646591187
+            }
+          },
+          {
+            "time": 5.141666666666667,
+            "position": {
+              "x": 5.932431697845459,
+              "y": 5.936849594116211,
+              "z": -0.6380513906478882
+            }
+          },
+          {
+            "time": 5.208333333333333,
+            "position": {
+              "x": 5.932517051696777,
+              "y": 5.9369330406188965,
+              "z": -0.6381637454032898
+            }
+          },
+          {
+            "time": 5.275,
+            "position": {
+              "x": 5.932724952697754,
+              "y": 5.936909198760986,
+              "z": -0.6377500891685486
+            }
+          },
+          {
+            "time": 5.341666666666667,
+            "position": {
+              "x": 5.9327168464660645,
+              "y": 5.936801433563232,
+              "z": -0.6380789279937744
+            }
+          },
+          {
+            "time": 5.408333333333333,
+            "position": {
+              "x": 5.932781219482422,
+              "y": 5.936740875244141,
+              "z": -0.6379684209823608
+            }
+          },
+          {
+            "time": 5.475,
+            "position": {
+              "x": 5.932452201843262,
+              "y": 5.936864852905273,
+              "z": -0.637478768825531
+            }
+          },
+          {
+            "time": 5.541666666666667,
+            "position": {
+              "x": 5.932649612426758,
+              "y": 5.936707019805908,
+              "z": -0.637445330619812
+            }
+          },
+          {
+            "time": 5.608333333333333,
+            "position": {
+              "x": 5.932518005371094,
+              "y": 5.9366068840026855,
+              "z": -0.6378097534179688
+            }
+          },
+          {
+            "time": 5.675,
+            "position": {
+              "x": 5.9323883056640625,
+              "y": 5.936829566955566,
+              "z": -0.6374338269233704
+            }
+          },
+          {
+            "time": 5.741666666666666,
+            "position": {
+              "x": 5.932287693023682,
+              "y": 5.937081336975098,
+              "z": -0.6368061900138855
+            }
+          },
+          {
+            "time": 5.808333333333334,
+            "position": {
+              "x": 5.93245792388916,
+              "y": 5.93671178817749,
+              "z": -0.6375793218612671
+            }
+          },
+          {
+            "time": 5.875,
+            "position": {
+              "x": 5.932233810424805,
+              "y": 5.936692237854004,
+              "z": -0.6375349760055542
+            }
+          },
+          {
+            "time": 5.941666666666666,
+            "position": {
+              "x": 5.93215799331665,
+              "y": 5.936763763427734,
+              "z": -0.6373885273933411
+            }
+          },
+          {
+            "time": 6.008333333333333,
+            "position": {
+              "x": 5.932266712188721,
+              "y": 5.936735153198242,
+              "z": -0.6376254558563232
+            }
+          },
+          {
+            "time": 6.075,
+            "position": {
+              "x": 5.931920528411865,
+              "y": 5.936816215515137,
+              "z": -0.6371352076530457
+            }
+          },
+          {
+            "time": 6.141666666666667,
+            "position": {
+              "x": 5.932252407073975,
+              "y": 5.936829090118408,
+              "z": -0.6369120478630066
+            }
+          },
+          {
+            "time": 6.208333333333333,
+            "position": {
+              "x": 5.9321675300598145,
+              "y": 5.936724662780762,
+              "z": -0.6371013522148132
+            }
+          },
+          {
+            "time": 6.275,
+            "position": {
+              "x": 5.932180404663086,
+              "y": 5.936755657196045,
+              "z": -0.6369657516479492
+            }
+          },
+          {
+            "time": 6.341666666666667,
+            "position": {
+              "x": 5.932051181793213,
+              "y": 5.936612129211426,
+              "z": -0.6370445489883423
+            }
+          },
+          {
+            "time": 6.408333333333333,
+            "position": {
+              "x": 5.932011127471924,
+              "y": 5.93681001663208,
+              "z": -0.6365882158279419
+            }
+          },
+          {
+            "time": 6.475,
+            "position": {
+              "x": 5.932034492492676,
+              "y": 5.9367995262146,
+              "z": -0.6365235447883606
+            }
+          },
+          {
+            "time": 6.541666666666667,
+            "position": {
+              "x": 5.931822299957275,
+              "y": 5.937081813812256,
+              "z": -0.6356416344642639
+            }
+          },
+          {
+            "time": 6.608333333333333,
+            "position": {
+              "x": 5.931717872619629,
+              "y": 5.937003135681152,
+              "z": -0.6361481547355652
+            }
+          },
+          {
+            "time": 6.675,
+            "position": {
+              "x": 5.932231903076172,
+              "y": 5.937007427215576,
+              "z": -0.635787308216095
+            }
+          },
+          {
+            "time": 6.741666666666666,
+            "position": {
+              "x": 5.9319167137146,
+              "y": 5.936829090118408,
+              "z": -0.6360726952552795
+            }
+          },
+          {
+            "time": 6.808333333333334,
+            "position": {
+              "x": 5.931953430175781,
+              "y": 5.936801910400391,
+              "z": -0.6360778212547302
+            }
+          },
+          {
+            "time": 6.875,
+            "position": {
+              "x": 5.932041645050049,
+              "y": 5.936888694763184,
+              "z": -0.6358439922332764
+            }
+          },
+          {
+            "time": 6.941666666666666,
+            "position": {
+              "x": 5.93206787109375,
+              "y": 5.936728477478027,
+              "z": -0.6356580257415771
+            }
+          },
+          {
+            "time": 7.008333333333333,
+            "position": {
+              "x": 5.931624412536621,
+              "y": 5.936847686767578,
+              "z": -0.6354908347129822
+            }
+          },
+          {
+            "time": 7.075,
+            "position": {
+              "x": 5.932015895843506,
+              "y": 5.93656587600708,
+              "z": -0.6361140608787537
+            }
+          },
+          {
+            "time": 7.141666666666667,
+            "position": {
+              "x": 5.931843280792236,
+              "y": 5.936682224273682,
+              "z": -0.6360064148902893
+            }
+          },
+          {
+            "time": 7.208333333333333,
+            "position": {
+              "x": 5.932042121887207,
+              "y": 5.936806678771973,
+              "z": -0.6356056332588196
+            }
+          },
+          {
+            "time": 7.2749999999999995,
+            "position": {
+              "x": 5.932047367095947,
+              "y": 5.936626434326172,
+              "z": -0.6359671950340271
+            }
+          },
+          {
+            "time": 7.341666666666667,
+            "position": {
+              "x": 5.931999206542969,
+              "y": 5.936633586883545,
+              "z": -0.6360223889350891
+            }
+          },
+          {
+            "time": 7.408333333333333,
+            "position": {
+              "x": 5.931983947753906,
+              "y": 5.936745643615723,
+              "z": -0.6360809803009033
+            }
+          },
+          {
+            "time": 7.475,
+            "position": {
+              "x": 5.931946754455566,
+              "y": 5.936610221862793,
+              "z": -0.6359305381774902
+            }
+          },
+          {
+            "time": 7.541666666666667,
+            "position": {
+              "x": 5.931764125823975,
+              "y": 5.936639308929443,
+              "z": -0.6358964443206787
+            }
+          },
+          {
+            "time": 7.608333333333333,
+            "position": {
+              "x": 5.931751728057861,
+              "y": 5.936524868011475,
+              "z": -0.6362294554710388
+            }
+          },
+          {
+            "time": 7.675,
+            "position": {
+              "x": 5.931667804718018,
+              "y": 5.936550617218018,
+              "z": -0.6360505223274231
+            }
+          },
+          {
+            "time": 7.741666666666666,
+            "position": {
+              "x": 5.931783199310303,
+              "y": 5.936641216278076,
+              "z": -0.6361445188522339
+            }
+          },
+          {
+            "time": 7.808333333333334,
+            "position": {
+              "x": 5.931822299957275,
+              "y": 5.936530590057373,
+              "z": -0.6361255049705505
+            }
+          },
+          {
+            "time": 7.875,
+            "position": {
+              "x": 5.931976318359375,
+              "y": 5.936577796936035,
+              "z": -0.6360032558441162
+            }
+          },
+          {
+            "time": 7.941666666666666,
+            "position": {
+              "x": 5.931838035583496,
+              "y": 5.936470031738281,
+              "z": -0.6361398100852966
+            }
+          },
+          {
+            "time": 8.008333333333333,
+            "position": {
+              "x": 5.931746006011963,
+              "y": 5.936512470245361,
+              "z": -0.6362212300300598
+            }
+          },
+          {
+            "time": 8.075,
+            "position": {
+              "x": 5.931964874267578,
+              "y": 5.9365363121032715,
+              "z": -0.6360707879066467
+            }
+          },
+          {
+            "time": 8.141666666666666,
+            "position": {
+              "x": 5.931899547576904,
+              "y": 5.9364423751831055,
+              "z": -0.636123538017273
+            }
+          },
+          {
+            "time": 8.208333333333334,
+            "position": {
+              "x": 5.931938648223877,
+              "y": 5.936542987823486,
+              "z": -0.6359560489654541
+            }
+          },
+          {
+            "time": 8.275,
+            "position": {
+              "x": 5.932125568389893,
+              "y": 5.936496734619141,
+              "z": -0.6361441612243652
+            }
+          },
+          {
+            "time": 8.341666666666667,
+            "position": {
+              "x": 5.931642532348633,
+              "y": 5.936491966247559,
+              "z": -0.6362144947052002
+            }
+          },
+          {
+            "time": 8.408333333333333,
+            "position": {
+              "x": 5.931824207305908,
+              "y": 5.936323642730713,
+              "z": -0.6363964676856995
+            }
+          },
+          {
+            "time": 8.475,
+            "position": {
+              "x": 5.932085037231445,
+              "y": 5.936441898345947,
+              "z": -0.6359201669692993
+            }
+          },
+          {
+            "time": 8.541666666666666,
+            "position": {
+              "x": 5.93162202835083,
+              "y": 5.936477184295654,
+              "z": -0.6358275413513184
+            }
+          },
+          {
+            "time": 8.608333333333333,
+            "position": {
+              "x": 5.931835174560547,
+              "y": 5.936542987823486,
+              "z": -0.6358979344367981
+            }
+          },
+          {
+            "time": 8.675,
+            "position": {
+              "x": 5.931694984436035,
+              "y": 5.9363694190979,
+              "z": -0.6362425684928894
+            }
+          },
+          {
+            "time": 8.741666666666667,
+            "position": {
+              "x": 5.931809902191162,
+              "y": 5.936421871185303,
+              "z": -0.6361486911773682
+            }
+          },
+          {
+            "time": 8.808333333333334,
+            "position": {
+              "x": 5.931848049163818,
+              "y": 5.936219692230225,
+              "z": -0.6367245316505432
+            }
+          },
+          {
+            "time": 8.875,
+            "position": {
+              "x": 5.931909084320068,
+              "y": 5.936248302459717,
+              "z": -0.6363281011581421
+            }
+          },
+          {
+            "time": 8.941666666666666,
+            "position": {
+              "x": 5.932000637054443,
+              "y": 5.93637752532959,
+              "z": -0.6356627941131592
+            }
+          },
+          {
+            "time": 9.008333333333333,
+            "position": {
+              "x": 5.931739330291748,
+              "y": 5.936385631561279,
+              "z": -0.6356396675109863
+            }
+          },
+          {
+            "time": 9.075,
+            "position": {
+              "x": 5.931723594665527,
+              "y": 5.936267375946045,
+              "z": -0.635721743106842
+            }
+          },
+          {
+            "time": 9.141666666666666,
+            "position": {
+              "x": 5.931839942932129,
+              "y": 5.9363484382629395,
+              "z": -0.63576340675354
+            }
+          },
+          {
+            "time": 9.208333333333334,
+            "position": {
+              "x": 5.931534767150879,
+              "y": 5.936553955078125,
+              "z": -0.6350662708282471
+            }
+          },
+          {
+            "time": 9.275,
+            "position": {
+              "x": 5.93164587020874,
+              "y": 5.9363932609558105,
+              "z": -0.635418176651001
+            }
+          },
+          {
+            "time": 9.341666666666667,
+            "position": {
+              "x": 5.931626319885254,
+              "y": 5.936371326446533,
+              "z": -0.6353952884674072
+            }
+          },
+          {
+            "time": 9.408333333333333,
+            "position": {
+              "x": 5.93139123916626,
+              "y": 5.9364752769470215,
+              "z": -0.635414183139801
+            }
+          },
+          {
+            "time": 9.475,
+            "position": {
+              "x": 5.931497097015381,
+              "y": 5.936585426330566,
+              "z": -0.6351389288902283
+            }
+          },
+          {
+            "time": 9.541666666666666,
+            "position": {
+              "x": 5.931637763977051,
+              "y": 5.936387062072754,
+              "z": -0.6355170607566833
+            }
+          },
+          {
+            "time": 9.608333333333333,
+            "position": {
+              "x": 5.9318013191223145,
+              "y": 5.936424732208252,
+              "z": -0.6355628967285156
+            }
+          },
+          {
+            "time": 9.675,
+            "position": {
+              "x": 5.931671619415283,
+              "y": 5.936236381530762,
+              "z": -0.6352798938751221
+            }
+          },
+          {
+            "time": 9.741666666666667,
+            "position": {
+              "x": 5.931885242462158,
+              "y": 5.93619441986084,
+              "z": -0.6356726884841919
+            }
+          },
+          {
+            "time": 9.808333333333334,
+            "position": {
+              "x": 5.931631565093994,
+              "y": 5.936245918273926,
+              "z": -0.6360177993774414
+            }
+          },
+          {
+            "time": 9.875,
+            "position": {
+              "x": 5.931639194488525,
+              "y": 5.936369895935059,
+              "z": -0.6355797648429871
+            }
+          },
+          {
+            "time": 9.941666666666666,
+            "position": {
+              "x": 5.931698799133301,
+              "y": 5.936331272125244,
+              "z": -0.6358502507209778
             }
           }
         ],
         "contactEvidence": {
-          "roadContactSteps": 45,
-          "longestContactGapSeconds": 0.041666666666666664,
+          "roadContactSteps": 1192,
+          "longestContactGapSeconds": 0.05,
           "allowedContactGapSeconds": 0.15,
           "postRunStructurePassed": true
         }

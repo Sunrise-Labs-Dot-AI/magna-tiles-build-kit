@@ -4,7 +4,7 @@
   "prompt": "Snail",
   "family": "animal",
   "inventoryPreset": "classic-100",
-  "status": "engine-valid",
+  "status": "engine-fail-pending-reauthoring",
   "createdAt": "2026-06-03T02:25:21.955Z",
   "updatedAt": "2026-06-03T02:25:21.955Z",
   "notes": "Macro-authored snail: 7x3 horizontal foot slab, 11 isosceles-triangle radialFan vertical shell, folded shell stabilizers, grounded cube head, one antenna, and an angled right-triangle neck panel.",

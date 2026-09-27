@@ -1,0 +1,7 @@
+1. **Promotion rule for `simulation-verified`: ADDRESSED**
+The final section now defines the promotion predicate: required PASS checks, target-specific functional applicability, material assumptions as separate from physical validation, unknowns blocking promotion, contradictions failing, and acceptance-input changes invalidating results. It also explicitly says increment 1 enables **no source verification promotion**.
+
+2. **Holdout freshness / enforceable provenance: ADDRESSED**
+The final section adds concrete provenance fields and rules: evidence revision, observation role, digests, reservation timestamp, baseline candidate/fit-input digests, sealed evaluation manifest, and exclusions for duplicates, near-identical views, relabeling, and historically inspected frames.
+
+**Verdict:** The two critical plan ambiguities from the review no longer remain as plan ambiguities. Implementation is still future work, but the final Review-resolved contracts section now pins down the missing contracts clearly enough for the stated immediate increment and later continuations.

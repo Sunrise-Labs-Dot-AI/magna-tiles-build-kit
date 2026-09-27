@@ -71,3 +71,5 @@ Remaining milestones: physical calibration fixtures; explicit vehicle/passenger 
 ## Source reconstruction lane
 
 `evaluateReferenceCandidate` in `lib/harness/reference.ts` evaluates externally supplied tile graphs against locked source observations and explicit construction poses. It reuses the catalog and physics engine while keeping source fidelity, sustained release, assembly and passive vehicle results separate. Structural grammar success does not grant source fidelity. See [footage reconstruction](footage-reconstruction.md) for its API, local source requirements, artifacts and current failures.
+
+The shared engine now uses exact finite-thickness contact hulls without artificial skin. `intent-harness-v2-exact-contact` invalidates earlier structural evidence fingerprints. The separate reference lane also exposes continuous insertion-path search/checking and small-ramp per-part previews; these clearance results do not certify hand support or magnetic closure.

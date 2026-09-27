@@ -48,8 +48,8 @@ export const BUILD_LIBRARY: BuildLibraryItem[] = [
     summary: "A low foot slab with a raised head and a large vertical radial triangle shell.",
     difficulty: "medium",
     estimatedMinutes: 14,
-    status: "engine-valid",
-    tags: ["snail", "animal", "radial shell", "triangle fan", "physics verified"]
+    status: "engine-fail-pending-reauthoring",
+    tags: ["snail", "animal", "radial shell", "triangle fan", "needs repair"]
   },
   {
     id: "small-car-ramp",
@@ -78,8 +78,8 @@ export const BUILD_LIBRARY: BuildLibraryItem[] = [
     summary: "A wide ramp structure with a tall rear grid and large sloped panels.",
     difficulty: "hard",
     estimatedMinutes: 18,
-    status: "engine-fail-pending-reauthoring",
-    tags: ["ramp", "large panels", "stability", "toy cars", "pending E4"]
+    status: "engine-valid",
+    tags: ["ramp", "large panels", "stability", "toy cars", "simulation passed"]
   },
   {
     id: "rocket",

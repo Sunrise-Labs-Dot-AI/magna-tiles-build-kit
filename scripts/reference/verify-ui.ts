@@ -49,6 +49,22 @@ async function main() {
     const labels = await page.locator(".design-piece-label").allTextContents();
     if (!labels.includes("P6") || labels.includes("P1"))
       throw Error(`Subassembly labels changed: ${labels}`);
+    await page.getByLabel("Construction checkpoint").selectOption("0");
+    await page.getByLabel("Part insertion preview").selectOption("0");
+    await ready();
+    const slider = page.getByRole("slider", { name: /Move into place/ });
+    await slider.focus();
+    await slider.press("Home");
+    if (await slider.inputValue() !== "0") throw Error("Insertion slider did not reach its start.");
+    const insertionLabels = await page.locator(".design-piece-label").allTextContents();
+    if (insertionLabels.length !== 1 || insertionLabels[0] !== "P3")
+      throw Error(`Unplaced parts leaked into insertion preview: ${insertionLabels}`);
+    await page.screenshot({ path: "verification/replication/ui/small-insertion.png", fullPage: true });
+    await slider.press("End");
+    if (await slider.inputValue() !== "100") throw Error("Insertion slider did not complete.");
+    await page.getByRole("button", { name: "Next", exact: true }).click();
+    if (await page.getByLabel("Part insertion preview").inputValue() !== "-1")
+      throw Error("Insertion selection did not reset at the next checkpoint.");
     await page.getByRole("button", { name: /3D snail/ }).click();
     await page.getByRole("heading", { name: /original 3D snail/ }).waitFor();
     await page.setViewportSize({ width: 390, height: 844 });
@@ -68,6 +84,7 @@ async function main() {
       downloads,
       snailEmptyState: true,
       stableModuleLabels: labels,
+      insertionPreview: { labels: insertionLabels, keyboardStartEnd: true, resetsAtNextStage: true },
       mobileOverflow: overflow,
       pageErrors: errors,
     };

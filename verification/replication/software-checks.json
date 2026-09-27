@@ -1,9 +1,9 @@
 {
   "date": "2026-09-26",
   "tests": {
-    "passed": 248,
+    "passed": 275,
     "skipped": 1,
-    "files": 19
+    "files": 21
   },
   "productionBuild": "pass",
   "lint": {
@@ -21,12 +21,17 @@
   },
   "review": {
     "initial": "BLOCK",
-    "acceptedFindingsResolved": 4,
-    "followup": "MERGE-OK",
+    "acceptedFindingsResolved": 2,
+    "followup": "both findings ADDRESSED; additional stale-card warning fixed",
     "model": "gpt-5.5",
-    "limitation": "Independent static review; executable verification performed in the implementation lane."
+    "limitation": "Independent static review; executable verification performed in implementation lane."
   },
   "browserEvidence": "ui/results.json",
   "artifactIntegrityEvidence": "artifact-integrity-regressions.json",
-  "originalLocalChangesPreserved": true
+  "originalLocalChangesPreserved": true,
+  "newEvidence": {
+    "release": "large-ramp passes all three seeds; jet and medium still fail",
+    "construction": "small ramp: five wedge paths, four launch paths, one module path; grip and closure unverified",
+    "legacyLibrary": "seven live gates pass; historical jet/snail fail, metadata synchronized"
+  }
 }

@@ -12,6 +12,7 @@ import {
   HINGE_MAX_ANGLE,
   HINGE_MIN_ANGLE,
   SIMULATION_TIMESTEP_SECONDS,
+  TILE_CONTACT_SKIN,
   TILE_FRICTION
 } from "./constants";
 import { add, distance, magnitude, quaternionToBasis, transformLocal } from "./math";
@@ -147,7 +148,7 @@ function addTileBody(world: World, model: PhysicsBodyModel): BodyRecord {
       .setMass(model.mass)
       .setFriction(TILE_FRICTION)
       .setRestitution(0.02)
-      .setContactSkin(0.006),
+      .setContactSkin(TILE_CONTACT_SKIN),
     body
   );
 

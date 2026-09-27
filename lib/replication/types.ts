@@ -18,6 +18,8 @@ export interface StagePose {
   title: string;
   instruction: string;
   tileIds: string[];
+  /** Source-stage contract: these earlier modules are already installed obstacles. */
+  installedStageIds?: string[];
   /** Each snapshot has its own pose; never combine frames across construction stages. */
   transform?: { basis: TileBasis; translation: Vec3 };
   support: "released" | "held";
@@ -37,6 +39,7 @@ export interface Replica {
     detail: string;
   }[];
   materialQuestions: string[];
+  construction?: import("./construction").ConstructionStage[];
   route?: {
     lanes: CourseLane[];
     brief: DesignBrief;
@@ -131,5 +134,6 @@ export interface ReplicaReport {
     displacement: number | null;
   }[];
   instructions: AssemblyStep[];
+  constructionPaths: import("./construction").ConstructionResult[];
   carTrials: import("@/lib/planner/types").CarTrial[];
 }

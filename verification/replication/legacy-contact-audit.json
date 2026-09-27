@@ -1,0 +1,113 @@
+{
+  "date": "2026-09-26",
+  "note": "Live gate audit before metadata corrections; source-replica evidence remains separate.",
+  "entries": [
+    {
+      "id": "jet-aircraft",
+      "draftStatus": "engine-fail-pending-reauthoring",
+      "cardStatus": "engine-fail-pending-reauthoring",
+      "passed": false,
+      "reasons": [
+        "pre-filter passed: no raw tile overlaps",
+        "pre-filter passed: 48 valid magnetic joint(s)",
+        "engine failed: build does not stand (max displacement 2.413)"
+      ]
+    },
+    {
+      "id": "house",
+      "draftStatus": "engine-valid",
+      "cardStatus": "engine-valid",
+      "passed": true,
+      "reasons": [
+        "pre-filter passed: no raw tile overlaps",
+        "pre-filter passed: 13 valid magnetic joint(s)",
+        "advisory validateBuild status: warning",
+        "engine passed: build stands (max displacement 0.024)",
+        "recognizable-object resemblance requires human signoff beyond this engine gate"
+      ]
+    },
+    {
+      "id": "castle",
+      "draftStatus": "engine-valid",
+      "cardStatus": "engine-valid",
+      "passed": true,
+      "reasons": [
+        "pre-filter passed: no raw tile overlaps",
+        "pre-filter passed: 136 valid magnetic joint(s)",
+        "engine passed: build stands (max displacement 0.029)",
+        "recognizable-object resemblance requires human signoff beyond this engine gate"
+      ]
+    },
+    {
+      "id": "dog",
+      "draftStatus": "engine-valid",
+      "cardStatus": "engine-valid",
+      "passed": true,
+      "reasons": [
+        "pre-filter passed: no raw tile overlaps",
+        "pre-filter passed: 98 valid magnetic joint(s)",
+        "engine passed: build stands (max displacement 0.102)",
+        "recognizable-object resemblance requires human signoff beyond this engine gate"
+      ]
+    },
+    {
+      "id": "snail",
+      "draftStatus": "engine-valid",
+      "cardStatus": "engine-valid",
+      "passed": false,
+      "reasons": [
+        "pre-filter passed: no raw tile overlaps",
+        "pre-filter passed: 68 valid magnetic joint(s)",
+        "engine failed: build does not stand (max displacement 2.379)"
+      ]
+    },
+    {
+      "id": "small-car-ramp",
+      "draftStatus": "engine-valid",
+      "cardStatus": "engine-valid",
+      "passed": true,
+      "reasons": [
+        "pre-filter passed: no raw tile overlaps",
+        "pre-filter passed: 9 valid magnetic joint(s)",
+        "engine passed: build stands (max displacement 0.108)",
+        "engine passed: roll test reached the bottom without falling off"
+      ]
+    },
+    {
+      "id": "medium-car-ramp",
+      "draftStatus": "engine-valid",
+      "cardStatus": "engine-valid",
+      "passed": true,
+      "reasons": [
+        "pre-filter passed: no raw tile overlaps",
+        "pre-filter passed: 12 valid magnetic joint(s)",
+        "engine passed: build stands (max displacement 0.263)",
+        "engine passed: roll test reached the bottom without falling off"
+      ]
+    },
+    {
+      "id": "large-car-ramp",
+      "draftStatus": "engine-valid",
+      "cardStatus": "engine-fail-pending-reauthoring",
+      "passed": true,
+      "reasons": [
+        "pre-filter passed: no raw tile overlaps",
+        "pre-filter passed: 11 valid magnetic joint(s)",
+        "engine passed: build stands (max displacement 0.158)",
+        "engine passed: roll test reached the bottom without falling off"
+      ]
+    },
+    {
+      "id": "rocket",
+      "draftStatus": "engine-valid",
+      "cardStatus": "engine-valid",
+      "passed": true,
+      "reasons": [
+        "pre-filter passed: no raw tile overlaps",
+        "pre-filter passed: 40 valid magnetic joint(s)",
+        "engine passed: build stands (max displacement 0.019)",
+        "recognizable-object resemblance requires human signoff beyond this engine gate"
+      ]
+    }
+  ]
+}

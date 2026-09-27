@@ -165,6 +165,22 @@ export function smallRamp(): Replica {
     build: assemble("replica-small", "Henry's small ramp", tiles, "ramp"),
     inventory: inventory(5, 0, 2, 2),
     bomFrameId: "small-bom",
+    construction: [
+      {
+        stageId: "small-wedge",
+        operations: ["small-deck-1", "small-deck-2", "small-side--1", "small-side-1", "small-back"]
+          .map(id => ({ tileIds: [id] })),
+      },
+      {
+        stageId: "small-launch",
+        operations: ["launch-roof", "launch-back", "launch-side--1", "launch-side-1"]
+          .map(id => ({ tileIds: [id] })),
+      },
+      {
+        stageId: "small-final",
+        operations: [{ tileIds: tiles.filter(t => t.step === 2).map(t => t.id), preparedStageId: "small-launch" }],
+      },
+    ],
     stages: [
       stage(
         "small-wedge",
@@ -181,13 +197,16 @@ export function smallRamp(): Replica {
         tiles.filter((t) => t.step === 2).map((t) => t.id),
         "held",
       ),
-      stage(
-        "small-final",
-        "small-check",
-        "Connect the launch to the wedge",
-        "Bring the launch roof's front edge to the wedge's high edge. Seat both magnets before releasing; do not press through an unresolved gap.",
-        prefix(tiles, 2),
-      ),
+      {
+        ...stage(
+          "small-final",
+          "small-check",
+          "Connect the launch to the wedge",
+          "Bring the launch roof's front edge to the wedge's high edge. Seat both magnets before releasing; do not press through an unresolved gap.",
+          prefix(tiles, 2),
+        ),
+        installedStageIds: ["small-wedge"],
+      },
     ],
     uncertainties: [
       {
