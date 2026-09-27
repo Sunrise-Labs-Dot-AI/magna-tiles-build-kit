@@ -1,0 +1,47 @@
+
+> magnetic-tile-builder@0.1.0 build
+> npm run reference:check-artifacts && next build
+
+
+> magnetic-tile-builder@0.1.0 reference:check-artifacts
+> tsx scripts/reference/check-artifacts.ts
+
+Four artifact/model/validator fingerprints match. This does not certify replication or recheck unavailable local media.
+▲ Next.js 16.2.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.2s
+  Running TypeScript ...
+  Finished TypeScript in 5.7s ...
+  Collecting page data using 9 workers ...
+  Generating static pages using 9 workers (0/18) ...
+  Generating static pages using 9 workers (4/18)
+  Generating static pages using 9 workers (8/18)
+  Generating static pages using 9 workers (13/18)
+✓ Generating static pages using 9 workers (18/18) in 202ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/build-drafts
+├ ƒ /api/build-drafts/[id]
+├ ƒ /api/design-build
+├ ƒ /api/draft-reference-encoding
+├ ƒ /api/evaluate-build
+├ ƒ /api/gate-build
+├ ƒ /api/generate-build
+├ ƒ /api/library-build
+├ ƒ /api/reference-file-frames
+├ ƒ /api/reference-frames
+├ ƒ /api/reference-video
+├ ƒ /api/report-bug
+├ ƒ /api/solve-build
+├ ƒ /api/test-reference-builds
+├ ○ /builder
+├ ○ /design
+└ ƒ /references
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand

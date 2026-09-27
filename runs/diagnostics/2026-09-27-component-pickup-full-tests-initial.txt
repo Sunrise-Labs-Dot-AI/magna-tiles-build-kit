@@ -1,0 +1,50 @@
+
+> magnetic-tile-builder@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+ ❯ tests/gravity-seating.test.ts (17 tests | 2 failed) 472636ms
+     × seats a roof across an independently assembled U, with every new joint absent during the fall 32851ms
+     × constructs the source modules in one workspace and requires free rest after actual transfer 399668ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/gravity-seating.test.ts > gravity seating earns contacts before any new joint exists > seats a roof across an independently assembled U, with every new joint absent during the fall
+Error: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/gravity-seating.test.ts:29:3
+     27|     expect(result.earnedJointIds).toEqual([]);
+     28|   });
+     29|   it("seats a roof across an independently assembled U, with every new…
+       |   ^
+     30|     const r = seatedRoofFixture(), results = await evaluateAssembly(r);
+     31|     expect(results[0].status, JSON.stringify(results[0].operations.map…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/gravity-seating.test.ts > gravity seating earns contacts before any new joint exists > constructs the source modules in one workspace and requires free rest after actual transfer
+AssertionError: expected [ 'small-deck-2' ] to have a length of 2 but got 1
+
+- Expected
++ Received
+
+- 2
++ 1
+
+ ❯ tests/gravity-seating.test.ts:138:42
+    136|       expect(last.lowering?.status,last.detail).toBe("pass");
+    137|       expect(last.docking?.status,last.detail).toBe("pass");
+    138|       expect(last.pickupHandoff?.previousHands).toEqual([]);
+       |                                          ^
+    139|       expect(last.trials[0].heldTileIds).toEqual(["small-deck-2"]);
+    140|       expect(last.pickup!.motion[0].tiles).toEqual(last.trials[0].moti…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 47 passed (48)
+      Tests  2 failed | 500 passed | 1 skipped (503)
+   Start at  05:15:02
+   Duration  863.35s (transform 687ms, setup 0ms, import 2.66s, tests 1719.47s, environment 2ms)

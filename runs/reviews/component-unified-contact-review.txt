@@ -1,0 +1,5 @@
+ADDRESSED
+
+Required findings: none.
+
+Read-only verification only. I did not run tests. The prior `checkClosure` endpoint guard now uses `closedMagneticConnection`, and the intended-join separated approach checks still use the conservative `findMagneticEdgeMatch` path. No concrete new regression found in the scoped files/tests.

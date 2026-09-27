@@ -1,0 +1,29 @@
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+ ❯ tests/independent-module-start.test.ts (6 tests | 1 failed | 5 skipped) 7ms
+     × allows a nearby but unclosed independent component at either endpoint 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/independent-module-start.test.ts > first held placement in an independent workspace component > allows a nearby but unclosed independent component at either endpoint
+AssertionError: expected 'fail' to be 'pass' // Object.is equality
+
+Expected: "pass"
+Received: "fail"
+
+ ❯ tests/independent-module-start.test.ts:62:52
+     60|     const build={...assemble("nearby","Separated near-edge proposals",…
+     61|     const groups=[[first.id],[second.id]],path={id:"near",movingTileId…
+     62|     expect(checkClosure(build,path,groups).status).toBe("pass");
+       |                                                    ^
+     63|     const high={...build,tiles:[first,{...nearby,position:{...nearby.p…
+     64|     expect(checkClosure(high,{...path,offsets:[v(0,-6,0),v(0,0,0)]},gr…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 skipped (6)
+   Start at  05:11:37
+   Duration  281ms (transform 129ms, setup 0ms, import 176ms, tests 7ms, environment 0ms)

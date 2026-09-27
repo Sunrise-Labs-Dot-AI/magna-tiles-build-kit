@@ -1,0 +1,12 @@
+Read-only verification complete. I did not modify files or run simulations.
+
+1. Exactly one nonmoving neighbor: ADDRESSED
+The plan now requires every desired cross edge to touch the moving group and exactly one shared nonmoving neighbor group, and rejects nominal moving-to-third edges. This directly closes the current runtime risk where `simulatePreparedTransfer` derives `cross` from every nominal moving/nonmoving edge. See [plan](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-three-component-upper-transfer-plan.md:21) and [runtime](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/prepared-transfer.ts:71).
+
+2. Temporary earned post-join graph audit before live mutation: ADDRESSED
+The revised audit is correctly phrased. Original independent groups would reject the intended earned moving-to-neighbor contact because `componentContacts` rejects closed magnetic contact across declared groups. Using a temporary graph with actual prior connections plus only exactly earned edges, under the derived post-join partition, still catches accidental fixed-to-fixed closure between retained groups because `componentContacts` checks cross-group graph edges and closed magnetic contacts. See [plan](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-three-component-upper-transfer-plan.md:28) and [componentContacts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/components.ts:11).
+
+3. Focused acceptance tests before broad gates: ADDRESSED
+The plan names the six decisive focused tests explicitly: generic three-component transfer, medium diagnostic upper transfer, stale-lineage rejection, multi-neighbor nominal-cross rejection, post-arrival undeclared-contact rejection, and persisted successor groups. See [plan](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-three-component-upper-transfer-plan.md:46).
+
+Concrete remaining blocker: no plan blocker. Implementation still must replace the current hard-coded two-component path, pass derived groups into docking and post-join validation, and persist successor groups before this can be considered runtime-complete.

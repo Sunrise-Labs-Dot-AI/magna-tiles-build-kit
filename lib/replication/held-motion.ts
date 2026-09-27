@@ -18,6 +18,8 @@ import { connectionId } from "@/lib/engine/build";
 export interface HeldWaypoint { seconds: number; position: Vec3; rotation: Quat }
 export interface HeldMotionTrial extends Check {
   completion: "incomplete" | "rested" | "contact-arrival";
+  /** Rigid measurement baseline only. Ungripped members remain dynamic. */
+  movingComponentTileIds: string[];
   heldTileIds: string[];
   dynamicTileCount: number;
   peakDeformation: number;
@@ -36,7 +38,7 @@ export interface HeldMotionTrial extends Check {
  * present. A nominal rigid transform is a measurement baseline, never a force. */
 export async function simulateHeldMotion(build: BuildGraph, state: EngineState | undefined, movingTileIds: string[], hands: HandContact[],
   waypoints: HeldWaypoint[], floorY: number, seed: number, deadline = Infinity, components?: string[][], arrival?: ContactArrivalContract): Promise<HeldMotionTrial> {
-  const result: HeldMotionTrial = { status: "fail", detail: "", completion: "incomplete",heldTileIds: hands.map(h => h.tileId), dynamicTileCount: build.tiles.length-hands.length,
+  const result: HeldMotionTrial = { status: "fail", detail: "", completion: "incomplete",movingComponentTileIds: [...movingTileIds],heldTileIds: hands.map(h => h.tileId), dynamicTileCount: build.tiles.length-hands.length,
     peakDeformation: 0, settledSteps: 0, poppedJoints: [], motion: [], settled: build };
   const fail = (detail: string): HeldMotionTrial => ({ ...result, motion: compactMotion(result.motion), detail });
   const moving = new Set(movingTileIds), held = hands.find(h => moving.has(h.tileId));

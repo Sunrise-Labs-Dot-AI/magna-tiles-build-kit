@@ -1,0 +1,9 @@
+PARTIAL
+
+Required finding:
+
+[lib/replication/assembly.ts:79](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:79) still uses `findMagneticEdgeMatch` alone for independent component endpoint checks in `checkClosure`. That means the nearby-but-not-closed case fixed in `componentContacts` can still be falsely rejected for non-gravity insertions: if an independent obstacle is within the legacy proposal range at either the final pose or `path.offsets[0]`, line 81 returns “touches a magnetic edge” without applying `contactsClosed`.
+
+The central omitted-join guard is fixed in [components.ts:20](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/components.ts:20): it now requires `contactsClosed` before declaring unearned cross-group contact, matching [contact-arrival.ts:39](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/contact-arrival.ts:39). The test coverage in [component-selection.test.ts:39](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/component-selection.test.ts:39) proves that path, but it does not cover `checkClosure`’s remaining legacy matcher-only guard.
+
+I did not run tests, per read-only and no expensive suite.

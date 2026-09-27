@@ -1,0 +1,15 @@
+Required findings:
+
+1. **BLOCKER: `movingTileIds` semantics are overloaded and the plan does not force a safe split.**
+   In [held-motion.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/held-motion.ts:37), `movingTileIds` drives component splitting, pre-attached cross-join rejection, grip fixed IDs, and the rigid deformation baseline, while only the held hand tile becomes kinematic at line 89. The plan says “pass only that component’s IDs as the moving group” and “only the gripped panel is driven,” but does not require preserving this distinction in API/evidence.
+   **Correction:** require an explicit field such as `movingComponentTileIds` in `HeldMotionTrial`, assert `heldTileIds` remains only the gripped/support hands, and assert engine body types show only the gripped tile is kinematic while every non-hand component/obstacle tile is dynamic.
+
+2. **WARNING: the component resolver needs a precise contract against the current generated partitions.**
+   Current workspace components are synthesized in [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:182) as predecessor components plus “present stage tiles.” Because `current` starts from nominal stage geometry, an implementation could accidentally resolve against unplaced future stage tiles unless it filters to the actual prefix.
+   **Correction:** specify and test that resolution happens only on the complete *present prefix* after `componentContacts`, and that the resolved group contains the pickup/lowering grip, support grip, and already-placed local component prefix, but excludes unplaced incoming/future stage tiles and all predecessor components.
+
+3. **WARNING: acceptance tests should assert old failure mode at the exact call boundary.**
+   The plan asks for a regression against the old runtime, but existing tests already spy `simulateHeldMotion` lightly and can pass while missing argument-level semantics. The risky call sites are pickup at [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:276) and lowering at [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:360).
+   **Correction:** add assertions on the actual `simulateHeldMotion` arguments: full build includes obstacle IDs, `state` is the terminal support state, `movingTileIds` equals only the resolved component, hands exclude obstacle grips, and `motion[0].tiles` exactly equals the preceding support terminal poses.
+
+I did not edit files or run suites.

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-27T11:17:36.333Z",
-  "validationCodeHash": "c34e8d1ca1556b3eda6bc4fef8fec6d9e93ac1ae568722b9d5164e22329e922e",
+  "generatedAt": "2026-09-27T12:16:32.230Z",
+  "validationCodeHash": "3f363eaec8a592f1957e384646dcb6c70dbc709556670eaa10acaa2d7213317a",
   "scope": "Generic three-wall and gravity-seated roof fixtures, independent of source replicas. The seated roof has actual bearing area on its narrower U support. Three perturbation seeds, two-finger edge proxy and explicit one-panel supports. No physical human or magnetic-force certification.",
   "replica": {
     "id": "u-fixture",
@@ -435,6 +435,9 @@
             "status": "pass",
             "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
             "completion": "rested",
+            "movingComponentTileIds": [
+              "x-0--1"
+            ],
             "heldTileIds": [
               "x-0--1"
             ],
@@ -2144,6 +2147,9 @@
             "status": "pass",
             "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
             "completion": "rested",
+            "movingComponentTileIds": [
+              "z-0--1"
+            ],
             "heldTileIds": [
               "z-0--1",
               "x-0--1"
@@ -5556,6 +5562,9 @@
             "status": "pass",
             "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
             "completion": "rested",
+            "movingComponentTileIds": [
+              "x-0-1"
+            ],
             "heldTileIds": [
               "x-0-1",
               "x-0--1"
@@ -9708,6 +9717,9 @@
             "status": "pass",
             "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
             "completion": "rested",
+            "movingComponentTileIds": [
+              "x-0--1"
+            ],
             "heldTileIds": [
               "x-0--1"
             ],
@@ -11417,6 +11429,9 @@
             "status": "pass",
             "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
             "completion": "rested",
+            "movingComponentTileIds": [
+              "z-0--1"
+            ],
             "heldTileIds": [
               "z-0--1",
               "x-0--1"
@@ -14667,6 +14682,9 @@
             "status": "pass",
             "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
             "completion": "rested",
+            "movingComponentTileIds": [
+              "x-0-1"
+            ],
             "heldTileIds": [
               "x-0-1",
               "x-0--1"
@@ -18819,6 +18837,9 @@
             "status": "pass",
             "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
             "completion": "rested",
+            "movingComponentTileIds": [
+              "x-0--1"
+            ],
             "heldTileIds": [
               "x-0--1"
             ],
@@ -20528,6 +20549,9 @@
             "status": "pass",
             "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
             "completion": "rested",
+            "movingComponentTileIds": [
+              "z-0--1"
+            ],
             "heldTileIds": [
               "z-0--1",
               "x-0--1"
@@ -23778,6 +23802,9 @@
             "status": "pass",
             "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
             "completion": "rested",
+            "movingComponentTileIds": [
+              "x-0-1"
+            ],
             "heldTileIds": [
               "x-0-1",
               "x-0--1"
@@ -29191,6 +29218,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "x-0--1"
+              ],
               "heldTileIds": [
                 "x-0--1"
               ],
@@ -30900,6 +30930,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "z-0--1"
+              ],
               "heldTileIds": [
                 "z-0--1",
                 "x-0--1"
@@ -34150,6 +34183,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "x-0-1"
+              ],
               "heldTileIds": [
                 "x-0-1",
                 "x-0--1"
@@ -39210,6 +39246,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "roof"
+              ],
               "heldTileIds": [
                 "roof"
               ],
@@ -63248,6 +63287,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "x-0--1"
+              ],
               "heldTileIds": [
                 "x-0--1"
               ],
@@ -64957,6 +64999,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "z-0--1"
+              ],
               "heldTileIds": [
                 "z-0--1",
                 "x-0--1"
@@ -68207,6 +68252,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "x-0-1"
+              ],
               "heldTileIds": [
                 "x-0-1",
                 "x-0--1"
@@ -73267,6 +73315,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "roof"
+              ],
               "heldTileIds": [
                 "roof"
               ],
@@ -97305,6 +97356,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "x-0--1"
+              ],
               "heldTileIds": [
                 "x-0--1"
               ],
@@ -99014,6 +99068,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "z-0--1"
+              ],
               "heldTileIds": [
                 "z-0--1",
                 "x-0--1"
@@ -102264,6 +102321,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "x-0-1"
+              ],
               "heldTileIds": [
                 "x-0-1",
                 "x-0--1"
@@ -107324,6 +107384,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "roof"
+              ],
               "heldTileIds": [
                 "roof"
               ],

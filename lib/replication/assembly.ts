@@ -15,7 +15,8 @@ import { dockToSupports, type DockingPolicy } from "./docking";
 import { SimulationBudgetExceeded } from "@/lib/engine/simulate";
 import { selectWorkspace, workspaceBuild, type PreparedWorkspace } from "./workspace";
 import { simulatePreparedTransfer, type TransferEvidence } from "./prepared-transfer";
-import { componentContacts } from "./components";
+import { componentContacts, movingComponent } from "./components";
+import { closedMagneticConnection } from "./contacts";
 import type { Check, Replica, StagePose } from "./types";
 
 export interface AssemblyOperationResult extends Check {
@@ -78,7 +79,7 @@ export function checkClosure(build: BuildGraph, path: InsertionPath, components?
   // omits a cross-group edge. Neither endpoint may start or finish snapped to an obstacle.
   if (component) for (const a of present.tiles.filter(t => path.movingTileIds.includes(t.id)))
     for (const b of present.tiles.filter(t => !component.includes(t.id)))
-      if (findMagneticEdgeMatch(a,b) || findMagneticEdgeMatch({ ...a,position: add(a.position,path.offsets[0]) },b))
+      if (closedMagneticConnection(present,a,b) || closedMagneticConnection(present,{ ...a,position: add(a.position,path.offsets[0]) },b))
         return { status: "fail",detail: "Independent insertion touches a magnetic edge of another workspace component." };
   const fixed = path.fixedTileIds.filter(id => !component || component.includes(id));
   const validation = validateMagneticBuild(present);
@@ -249,10 +250,16 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
           failure = row.detail = "Retained pickup requires the same grip and approach; a regrasp needs its own transition."; break;
         }
         let prefix = subset(current,placed);
+        const component = movingComponent(prefix,hand.tileId,components(prefix));
+        if (component.status !== "pass") { failure = row.detail = component.detail; break; }
+        const declared = components(current);
+        if (declared && !declared.some(group => [hand.tileId,...support,...operation.tileIds].every(id => group.includes(id)))) {
+          failure = row.detail = "Pickup and insertion must belong to the same declared component."; break;
+        }
         // A held neighbor cannot disappear from the hand contract as motion
         // starts. Check withdrawal at the actual pose and settle on the pickup
         // grip alone before lifting; the resulting state is the motion input.
-        if (heldHands.length) {
+        {
           const previousHands=structuredClone(heldHands), old=heldHands.find(h => h.tileId === hand.tileId);
           row.pickupHandoff={status:"fail",detail:"",previousHands,retainedHands:[hand]};
           if (old && !sameHandContact(old,hand)) {
@@ -264,16 +271,16 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
             offsets:[{x:0,y:0,z:0},{x:0,y:0,z:0}]},acquisition,floorY,deadline);
           row.pickupHandoff.detail=access.detail;
           if (access.status !== "pass") { failure=row.detail=access.detail; break; }
-          if (heldHands.some(h => h.tileId !== hand.tileId)) {
+          if (heldHands.length !== 1 || !sameHandContact(heldHands[0],hand)) {
             current=mergePoses(current,await record(prefix,[hand.tileId]));
             if (failure) { row.detail=row.pickupHandoff.detail=failure; break; }
             prefix=subset(current,placed);
           }
           row.pickupHandoff.status="pass";
-          row.pickupHandoff.detail="Previous hands have checked withdrawal clearance; the unchanged pickup grip supports the actual prefix before lifting.";
+          row.pickupHandoff.detail="Grip acquisition and previous-hand withdrawal clear; the single pickup grip supports the actual prefix before lifting.";
         }
         const tile = prefix.tiles.find(t => t.id === hand.tileId)!, q = tileQuaternion(tile);
-        const lifted = await simulateHeldMotion(prefix,physicalState,[...placed],[hand], [
+        const lifted = await simulateHeldMotion(prefix,physicalState,component.tileIds,[hand], [
           { seconds: 0,position: tile.position,rotation: q }, { seconds: 1,position: add(tile.position,{ x: 0,y: height,z: 0 }),rotation: q }],floorY,seed,deadline,components(prefix));
         const { settled,state,...summary } = lifted;
         row.pickup = summary;
@@ -354,10 +361,15 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
         if (!operation.releaseAfter || !hand || support.length !== 1 || !Number.isFinite(height) || height <= 0 || height > .9) {
           failure = row.detail = "Controlled descent needs one support panel, a bounded distance and a following release."; break;
         }
+        const component = movingComponent(subset(current,placed),hand.tileId,components(subset(current,placed)));
+        if (component.status !== "pass") { failure = row.detail = component.detail; break; }
+        if (operation.tileIds.some(id => !component.tileIds.includes(id))) {
+          failure = row.detail = "Lowering and insertion must belong to the same declared component."; break;
+        }
         current = mergePoses(current,await record(subset(current,placed),[hand.tileId]));
         if (failure) { row.detail = failure; break; }
         const prefix = subset(current,placed), tile = prefix.tiles.find(t => t.id === hand.tileId)!, q = tileQuaternion(tile);
-        const lowered = await simulateHeldMotion(prefix,physicalState,[...placed],[hand], [
+        const lowered = await simulateHeldMotion(prefix,physicalState,component.tileIds,[hand], [
           { seconds: 0,position: tile.position,rotation: q }, { seconds: 1,position: add(tile.position,{ x: 0,y: -height,z: 0 }),rotation: q }],floorY,seed,deadline,components(prefix));
         const { settled,state,...summary } = lowered;
         row.lowering = summary;

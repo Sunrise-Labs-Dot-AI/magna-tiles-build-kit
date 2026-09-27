@@ -3,7 +3,7 @@ import { dot } from "@/lib/engine/math";
 import { findMagneticEdgeMatch } from "@/lib/magnetic-tiles/magnet-geometry";
 import { tilePrismVertices } from "@/lib/magnetic-tiles/prism-geometry";
 import type { BuildGraph, MagneticConnection } from "@/lib/magnetic-tiles/types";
-import { contactsClosed } from "./contacts";
+import { closedMagneticConnection } from "./contacts";
 import { separatingAxes } from "./insertion";
 import type { Check } from "./types";
 
@@ -36,10 +36,8 @@ export function separatedContacts(build: BuildGraph, connections: MagneticConnec
 export function exactContactArrival(build: BuildGraph, moving: Set<string>, expected: MagneticConnection[]): Check & { physicalConnectionIds: string[] } {
   const found: string[]=[];
   for(const a of build.tiles.filter(t=>moving.has(t.id))) for(const b of build.tiles.filter(t=>!moving.has(t.id))) {
-    const match=findMagneticEdgeMatch(a,b);
-    if(!match) continue;
-    const c: MagneticConnection={kind:"edge",fromTileId:a.id,fromEdge:match.fromEdge,toTileId:b.id,toEdge:match.toEdge};
-    if(contactsClosed({...build,tiles:[a,b],connections:[c]}).status==="pass") found.push(physicalConnectionId(c));
+    const c=closedMagneticConnection(build,a,b);
+    if(c) found.push(physicalConnectionId(c));
   }
   const ids=expected.map(physicalConnectionId).sort();
   const pass=ids.length>0&&new Set(ids).size===ids.length&&JSON.stringify(found.sort())===JSON.stringify(ids);

@@ -1,0 +1,39 @@
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+ ❯ tests/component-selection.test.ts (4 tests | 1 failed) 11ms
+     × does not confuse a legacy nearby-edge proposal with a closed magnetic contact 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/component-selection.test.ts > present component resolution > does not confuse a legacy nearby-edge proposal with a closed magnetic contact
+AssertionError: expected { status: 'fail', …(2) } to match object { status: 'pass', …(1) }
+(1 matching property omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "status": "pass",
+-   "tileIds": [
+-     "x-0--1",
+-   ],
++   "status": "fail",
++   "tileIds": [],
+  }
+
+ ❯ tests/component-selection.test.ts:44:20
+     42|     expect(findMagneticEdgeMatch(tiles[0],tiles[1])).not.toBeNull();
+     43|     const result=movingComponent({...r.build,tiles,connections:[]},til…
+     44|     expect(result).toMatchObject({status:"pass",tileIds:[tiles[0].id]}…
+       |                    ^
+     45|   });
+     46| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  05:06:03
+   Duration  219ms (transform 82ms, setup 0ms, import 118ms, tests 11ms, environment 0ms)

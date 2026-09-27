@@ -1,0 +1,298 @@
+{
+  "scope": "Static exact-closure audit of unchanged candidate poses; not source fidelity or dynamic acceptance. The legacy edge finder proposes nominal near matches, while contactsClosed enforces the existing finite gap, angle and overlap requirements.",
+  "results": [
+    {
+      "id": "jet",
+      "parts": 40,
+      "nominalConnections": 84,
+      "closedConnections": 68,
+      "completeClosure": {
+        "status": "fail",
+        "detail": "Edges do not close at body-3-side--1:0->wing--1-roof:0: transverse gap 0.295 in, overlap 3.000 in."
+      },
+      "failed": [
+        {
+          "connection": {
+            "fromTileId": "body-3-side--1",
+            "fromEdge": 0,
+            "toTileId": "wing--1-roof",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at body-3-side--1:0->wing--1-roof:0: transverse gap 0.295 in, overlap 3.000 in."
+          }
+        },
+        {
+          "connection": {
+            "fromTileId": "body-3-top",
+            "fromEdge": 0,
+            "toTileId": "wing--1-roof",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at body-3-top:0->wing--1-roof:0: transverse gap 0.340 in, overlap 3.000 in."
+          }
+        },
+        {
+          "connection": {
+            "fromTileId": "body-3-top",
+            "fromEdge": 0,
+            "toTileId": "wing--1-cap-0",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at body-3-top:0->wing--1-cap-0:0: transverse gap 0.266 in, overlap 3.000 in."
+          }
+        },
+        {
+          "connection": {
+            "fromTileId": "body-3-side-1",
+            "fromEdge": 0,
+            "toTileId": "wing-1-roof",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at body-3-side-1:0->wing-1-roof:0: transverse gap 0.295 in, overlap 3.000 in."
+          }
+        },
+        {
+          "connection": {
+            "fromTileId": "body-3-top",
+            "fromEdge": 2,
+            "toTileId": "wing-1-roof",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at body-3-top:2->wing-1-roof:0: transverse gap 0.340 in, overlap 3.000 in."
+          }
+        },
+        {
+          "connection": {
+            "fromTileId": "body-3-top",
+            "fromEdge": 2,
+            "toTileId": "wing-1-cap-0",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at body-3-top:2->wing-1-cap-0:0: transverse gap 0.266 in, overlap 3.000 in."
+          }
+        },
+        {
+          "connection": {
+            "fromTileId": "body-4-side--1",
+            "fromEdge": 0,
+            "toTileId": "tail-horizontal--1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at body-4-side--1:0->tail-horizontal--1:0: transverse gap 0.225 in, overlap 3.000 in."
+          }
+        },
+        {
+          "connection": {
+            "fromTileId": "body-4-side--1",
+            "fromEdge": 0,
+            "toTileId": "tail-vertical--1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at body-4-side--1:0->tail-vertical--1:0: transverse gap 0.405 in, overlap 3.000 in."
+          }
+        },
+        {
+          "connection": {
+            "fromTileId": "body-4-top",
+            "fromEdge": 0,
+            "toTileId": "tail-vertical--1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at body-4-top:0->tail-vertical--1:0: transverse gap 0.285 in, overlap 3.000 in."
+          }
+        },
+        {
+          "connection": {
+            "fromTileId": "body-4-side-1",
+            "fromEdge": 0,
+            "toTileId": "tail-horizontal-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at body-4-side-1:0->tail-horizontal-1:0: transverse gap 0.225 in, overlap 3.000 in."
+          }
+        },
+        {
+          "connection": {
+            "fromTileId": "body-4-side-1",
+            "fromEdge": 0,
+            "toTileId": "tail-vertical-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at body-4-side-1:0->tail-vertical-1:0: transverse gap 0.405 in, overlap 3.000 in."
+          }
+        },
+        {
+          "connection": {
+            "fromTileId": "body-4-top",
+            "fromEdge": 2,
+            "toTileId": "tail-vertical-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at body-4-top:2->tail-vertical-1:0: transverse gap 0.285 in, overlap 3.000 in."
+          }
+        },
+        {
+          "connection": {
+            "fromTileId": "body-2-top",
+            "fromEdge": 3,
+            "toTileId": "cockpit-divider",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at body-2-top:3->cockpit-divider:0: transverse gap 0.585 in, overlap 3.000 in."
+          }
+        },
+        {
+          "connection": {
+            "fromTileId": "body-1-top",
+            "fromEdge": 1,
+            "toTileId": "cockpit-divider",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at body-1-top:1->cockpit-divider:0: transverse gap 0.585 in, overlap 3.000 in."
+          }
+        },
+        {
+          "connection": {
+            "fromTileId": "body-2-top",
+            "fromEdge": 3,
+            "toTileId": "cockpit-floor",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at body-2-top:3->cockpit-floor:0: transverse gap 0.521 in, overlap 3.000 in."
+          }
+        },
+        {
+          "connection": {
+            "fromTileId": "body-1-top",
+            "fromEdge": 1,
+            "toTileId": "cockpit-floor",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at body-1-top:1->cockpit-floor:0: transverse gap 0.521 in, overlap 3.000 in."
+          }
+        }
+      ]
+    },
+    {
+      "id": "small-ramp",
+      "parts": 9,
+      "nominalConnections": 15,
+      "closedConnections": 15,
+      "completeClosure": {
+        "status": "pass",
+        "detail": "Solid edge gaps, overlap and orientation close."
+      },
+      "failed": []
+    },
+    {
+      "id": "medium-ramp",
+      "parts": 37,
+      "nominalConnections": 64,
+      "closedConnections": 61,
+      "completeClosure": {
+        "status": "fail",
+        "detail": "Edges do not close at lower-side-1:0->support-side-1-0:3: transverse gap 0.415 in, overlap 2.672 in."
+      },
+      "failed": [
+        {
+          "connection": {
+            "fromTileId": "lower-side-1",
+            "fromEdge": 0,
+            "toTileId": "support-side-1-0",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at lower-side-1:0->support-side-1-0:3: transverse gap 0.415 in, overlap 2.672 in."
+          }
+        },
+        {
+          "connection": {
+            "fromTileId": "upper-cover-1",
+            "fromEdge": 3,
+            "toTileId": "turn-roof",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at upper-cover-1:3->turn-roof:1: transverse gap 0.443 in, overlap 3.000 in."
+          }
+        },
+        {
+          "connection": {
+            "fromTileId": "lower-cover-2",
+            "fromEdge": 1,
+            "toTileId": "turn-roof",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at lower-cover-2:1->turn-roof:0: transverse gap 0.328 in, overlap 3.000 in."
+          }
+        }
+      ]
+    },
+    {
+      "id": "large-ramp",
+      "parts": 51,
+      "nominalConnections": 107,
+      "closedConnections": 107,
+      "completeClosure": {
+        "status": "pass",
+        "detail": "Solid edge gaps, overlap and orientation close."
+      },
+      "failed": []
+    }
+  ]
+}

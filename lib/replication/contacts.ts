@@ -2,8 +2,15 @@ import { validateMagneticBuild } from "@/lib/engine/build";
 import { dot, subtract, magnitude, scale } from "@/lib/engine/math";
 import { TILE_THICKNESS } from "@/lib/engine/constants";
 import { findRawOverlaps } from "@/lib/engine/overlap";
-import type { BuildGraph } from "@/lib/magnetic-tiles/types";
+import type { BuildGraph, MagneticConnection, TileInstance } from "@/lib/magnetic-tiles/types";
+import { connectionWithMagneticEdges } from "@/lib/magnetic-tiles/magnet-geometry";
 import type { Check } from "./types";
+
+/** Legacy edge search proposes nearby pairs; only exact closure earns contact. */
+export function closedMagneticConnection(build: BuildGraph, first: TileInstance, second: TileInstance): MagneticConnection | null {
+  const proposed = connectionWithMagneticEdges(first,second);
+  return proposed && contactsClosed({...build,tiles:[first,second],connections:[proposed]}).status === "pass" ? proposed : null;
+}
 
 export function contactsClosed(build: BuildGraph): Check {
   const validation = validateMagneticBuild(build);
@@ -21,4 +28,3 @@ export function contactsClosed(build: BuildGraph): Check {
   }
   return { status: "pass", detail: "Solid edge gaps, overlap and orientation close." };
 }
-

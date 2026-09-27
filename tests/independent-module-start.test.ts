@@ -2,6 +2,7 @@ import { afterEach,describe,expect,it,vi } from "vitest";
 import { assemble,square,v } from "@/lib/replication/geometry";
 import { checkClosure,evaluateAssembly } from "@/lib/replication/assembly";
 import { findInsertionPath } from "@/lib/replication/insertion";
+import { findMagneticEdgeMatch } from "@/lib/magnetic-tiles/magnet-geometry";
 import { assemblyUFixture } from "./fixtures/assembly";
 import * as supports from "@/lib/replication/support";
 import * as workspaces from "@/lib/replication/workspace";
@@ -48,9 +49,19 @@ describe("first held placement in an independent workspace component",()=>{
     build.connections=[];
     const path=findInsertionPath(build,[second.id],[first.id])!;
     const groups=[[first.id],[second.id]];
-    expect(checkClosure(build,path,groups).detail).toMatch(/another workspace component/);
+    expect(checkClosure(build,path,groups)).toMatchObject({status:"fail",detail:"Independent workspace components have unearned magnetic contact."});
     const separated={...build,tiles:[first,{...second,position:{...second.position,y:second.position.y+6}}]};
     expect(checkClosure(separated,{...path,offsets:[v(0,-6,0),v(0,0,0)]},groups).detail).toMatch(/another workspace component/);
+  });
+  it("allows a nearby but unclosed independent component at either endpoint",()=>{
+    const {first,second}=fixture();
+    const nearby={...second,position:{...second.position,x:second.position.x+.4}};
+    expect(findMagneticEdgeMatch(first,nearby)).not.toBeNull();
+    const build={...assemble("nearby","Separated near-edge proposals",[first,nearby],"tower"),connections:[]};
+    const groups=[[first.id],[second.id]],path={id:"near",movingTileIds:[second.id],fixedTileIds:[first.id],offsets:[v(0,6,0),v(0,0,0)]};
+    expect(checkClosure(build,path,groups).status).toBe("pass");
+    const high={...build,tiles:[first,{...nearby,position:{...nearby.position,y:nearby.position.y+6}}]};
+    expect(checkClosure(high,{...path,offsets:[v(0,-6,0),v(0,0,0)]},groups).status).toBe("pass");
   });
   it("constructs and releases a second U without resetting or omitting the first",async()=>{
     const r=assemblyUFixture(),firstIds=r.stages[0].tileIds,second=assemblyUFixture();

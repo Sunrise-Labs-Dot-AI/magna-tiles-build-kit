@@ -2678,8 +2678,8 @@
   "report": {
     "id": "medium-ramp",
     "fingerprint": "47a65be2e2d7f8c10fa34eebf03b2f816889282c4e995560121bee71e4864132",
-    "validationCodeHash": "c34e8d1ca1556b3eda6bc4fef8fec6d9e93ac1ae568722b9d5164e22329e922e",
-    "generatedAt": "2026-09-27T11:22:17.361Z",
+    "validationCodeHash": "3f363eaec8a592f1957e384646dcb6c70dbc709556670eaa10acaa2d7213317a",
+    "generatedAt": "2026-09-27T12:21:44.152Z",
     "replication": "not-verified",
     "checks": {
       "source": {
@@ -4418,6 +4418,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "lower-side--1"
+              ],
               "heldTileIds": [
                 "lower-side--1"
               ],
@@ -6127,6 +6130,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "lower-deck-2"
+              ],
               "heldTileIds": [
                 "lower-deck-2",
                 "lower-side--1"
@@ -9711,7 +9717,7 @@
             ],
             "pickupHandoff": {
               "status": "pass",
-              "detail": "Previous hands have checked withdrawal clearance; the unchanged pickup grip supports the actual prefix before lifting.",
+              "detail": "Grip acquisition and previous-hand withdrawal clear; the single pickup grip supports the actual prefix before lifting.",
               "previousHands": [
                 {
                   "tileId": "lower-deck-2",
@@ -9817,6 +9823,10 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "lower-side--1",
+                "lower-deck-2"
+              ],
               "heldTileIds": [
                 "lower-deck-2"
               ],
@@ -11244,6 +11254,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "lower-side-1"
+              ],
               "heldTileIds": [
                 "lower-side-1",
                 "lower-deck-2"
@@ -17139,6 +17152,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "lower-deck-1"
+              ],
               "heldTileIds": [
                 "lower-deck-1",
                 "lower-deck-2"
@@ -22336,6 +22352,12 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "lower-side--1",
+                "lower-side-1",
+                "lower-deck-1",
+                "lower-deck-2"
+              ],
               "heldTileIds": [
                 "lower-deck-2"
               ],
@@ -23906,6 +23928,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "lower-side--1"
+              ],
               "heldTileIds": [
                 "lower-side--1"
               ],
@@ -25615,6 +25640,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "lower-deck-2"
+              ],
               "heldTileIds": [
                 "lower-deck-2",
                 "lower-side--1"
@@ -29199,7 +29227,7 @@
             ],
             "pickupHandoff": {
               "status": "pass",
-              "detail": "Previous hands have checked withdrawal clearance; the unchanged pickup grip supports the actual prefix before lifting.",
+              "detail": "Grip acquisition and previous-hand withdrawal clear; the single pickup grip supports the actual prefix before lifting.",
               "previousHands": [
                 {
                   "tileId": "lower-deck-2",
@@ -29305,6 +29333,10 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "lower-side--1",
+                "lower-deck-2"
+              ],
               "heldTileIds": [
                 "lower-deck-2"
               ],
@@ -30732,6 +30764,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "lower-side-1"
+              ],
               "heldTileIds": [
                 "lower-side-1",
                 "lower-deck-2"
@@ -36861,6 +36896,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "lower-deck-1"
+              ],
               "heldTileIds": [
                 "lower-deck-1",
                 "lower-deck-2"
@@ -42058,6 +42096,12 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "lower-side--1",
+                "lower-side-1",
+                "lower-deck-1",
+                "lower-deck-2"
+              ],
               "heldTileIds": [
                 "lower-deck-2"
               ],
@@ -43628,6 +43672,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "lower-side--1"
+              ],
               "heldTileIds": [
                 "lower-side--1"
               ],
@@ -45337,6 +45384,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "lower-deck-2"
+              ],
               "heldTileIds": [
                 "lower-deck-2",
                 "lower-side--1"
@@ -48921,7 +48971,7 @@
             ],
             "pickupHandoff": {
               "status": "pass",
-              "detail": "Previous hands have checked withdrawal clearance; the unchanged pickup grip supports the actual prefix before lifting.",
+              "detail": "Grip acquisition and previous-hand withdrawal clear; the single pickup grip supports the actual prefix before lifting.",
               "previousHands": [
                 {
                   "tileId": "lower-deck-2",
@@ -49027,6 +49077,10 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "lower-side--1",
+                "lower-deck-2"
+              ],
               "heldTileIds": [
                 "lower-deck-2"
               ],
@@ -50454,6 +50508,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "lower-side-1"
+              ],
               "heldTileIds": [
                 "lower-side-1",
                 "lower-deck-2"
@@ -56583,6 +56640,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "lower-deck-1"
+              ],
               "heldTileIds": [
                 "lower-deck-1",
                 "lower-deck-2"
@@ -61780,6 +61840,12 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "lower-side--1",
+                "lower-side-1",
+                "lower-deck-1",
+                "lower-deck-2"
+              ],
               "heldTileIds": [
                 "lower-deck-2"
               ],
@@ -65026,6 +65092,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "support-back"
+              ],
               "heldTileIds": [
                 "support-back"
               ],
@@ -72528,6 +72597,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "support-side--1-1"
+              ],
               "heldTileIds": [
                 "support-side--1-1",
                 "support-back"
@@ -82898,6 +82970,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "support-side-1-1"
+              ],
               "heldTileIds": [
                 "support-side-1-1",
                 "support-back"
@@ -94077,6 +94152,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "support-side--1-0"
+              ],
               "heldTileIds": [
                 "support-side--1-0",
                 "support-side--1-1"
@@ -106681,6 +106759,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "support-side-1-0"
+              ],
               "heldTileIds": [
                 "support-side-1-0",
                 "support-side-1-1"
@@ -119167,6 +119248,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "support-back"
+              ],
               "heldTileIds": [
                 "support-back"
               ],
@@ -126669,6 +126753,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "support-side--1-1"
+              ],
               "heldTileIds": [
                 "support-side--1-1",
                 "support-back"
@@ -136328,6 +136415,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "support-side-1-1"
+              ],
               "heldTileIds": [
                 "support-side-1-1",
                 "support-back"
@@ -147507,6 +147597,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "support-side--1-0"
+              ],
               "heldTileIds": [
                 "support-side--1-0",
                 "support-side--1-1"
@@ -160111,6 +160204,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "support-side-1-0"
+              ],
               "heldTileIds": [
                 "support-side-1-0",
                 "support-side-1-1"
@@ -172597,6 +172693,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "support-back"
+              ],
               "heldTileIds": [
                 "support-back"
               ],
@@ -180099,6 +180198,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "support-side--1-1"
+              ],
               "heldTileIds": [
                 "support-side--1-1",
                 "support-back"
@@ -189758,6 +189860,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "support-side-1-1"
+              ],
               "heldTileIds": [
                 "support-side-1-1",
                 "support-back"
@@ -200937,6 +201042,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "support-side--1-0"
+              ],
               "heldTileIds": [
                 "support-side--1-0",
                 "support-side--1-1"
@@ -213541,6 +213649,9 @@
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
               "completion": "rested",
+              "movingComponentTileIds": [
+                "support-side-1-0"
+              ],
               "heldTileIds": [
                 "support-side-1-0",
                 "support-side-1-1"

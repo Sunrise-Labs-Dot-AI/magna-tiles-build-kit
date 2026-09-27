@@ -1,0 +1,106 @@
+{
+  "jet": {
+    "replicaUnchanged": true,
+    "beforeChecks": {
+      "source": "pass",
+      "inventory": "pass",
+      "fidelity": "fail",
+      "materials": "unverified",
+      "geometry": "pass",
+      "release": "fail",
+      "settledShape": "fail",
+      "assembly": "fail",
+      "function": "unverified"
+    },
+    "afterChecks": {
+      "source": "pass",
+      "inventory": "pass",
+      "fidelity": "fail",
+      "materials": "unverified",
+      "geometry": "pass",
+      "release": "fail",
+      "settledShape": "fail",
+      "assembly": "fail",
+      "function": "unverified"
+    },
+    "validationHash": "3f363eaec8a592f1957e384646dcb6c70dbc709556670eaa10acaa2d7213317a"
+  },
+  "small-ramp": {
+    "replicaUnchanged": true,
+    "beforeChecks": {
+      "source": "pass",
+      "inventory": "pass",
+      "fidelity": "fail",
+      "materials": "unverified",
+      "geometry": "pass",
+      "release": "pass",
+      "settledShape": "fail",
+      "assembly": "pass",
+      "function": "pass"
+    },
+    "afterChecks": {
+      "source": "pass",
+      "inventory": "pass",
+      "fidelity": "fail",
+      "materials": "unverified",
+      "geometry": "pass",
+      "release": "pass",
+      "settledShape": "fail",
+      "assembly": "pass",
+      "function": "pass"
+    },
+    "validationHash": "3f363eaec8a592f1957e384646dcb6c70dbc709556670eaa10acaa2d7213317a"
+  },
+  "medium-ramp": {
+    "replicaUnchanged": true,
+    "beforeChecks": {
+      "source": "pass",
+      "inventory": "pass",
+      "fidelity": "fail",
+      "materials": "unverified",
+      "geometry": "pass",
+      "release": "pass",
+      "settledShape": "fail",
+      "assembly": "fail",
+      "function": "fail"
+    },
+    "afterChecks": {
+      "source": "pass",
+      "inventory": "pass",
+      "fidelity": "fail",
+      "materials": "unverified",
+      "geometry": "pass",
+      "release": "pass",
+      "settledShape": "fail",
+      "assembly": "fail",
+      "function": "fail"
+    },
+    "validationHash": "3f363eaec8a592f1957e384646dcb6c70dbc709556670eaa10acaa2d7213317a"
+  },
+  "large-ramp": {
+    "replicaUnchanged": true,
+    "beforeChecks": {
+      "source": "pass",
+      "inventory": "pass",
+      "fidelity": "unverified",
+      "materials": "unverified",
+      "geometry": "pass",
+      "release": "pass",
+      "settledShape": "unverified",
+      "assembly": "unverified",
+      "function": "unverified"
+    },
+    "afterChecks": {
+      "source": "pass",
+      "inventory": "pass",
+      "fidelity": "unverified",
+      "materials": "unverified",
+      "geometry": "pass",
+      "release": "pass",
+      "settledShape": "unverified",
+      "assembly": "unverified",
+      "function": "unverified"
+    },
+    "validationHash": "3f363eaec8a592f1957e384646dcb6c70dbc709556670eaa10acaa2d7213317a"
+  }
+}

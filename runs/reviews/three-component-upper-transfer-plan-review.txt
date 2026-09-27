@@ -1,0 +1,15 @@
+CONCERNS.
+
+1. **HIGH: The “exactly one neighbor” rule needs an explicit reject path.**
+   The plan says derive the post-join partition by merging groups touched by desired cross edges, while rejecting edges that do not involve the moving group. That still leaves an execution path where nominal target edges from the moving module to two installed groups merge all three components. Current runtime derives cross edges as every nominal moving/nonmoving edge in [prepared-transfer.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/prepared-transfer.ts:71).
+   **Required correction:** state that validated cross edges must touch the moving group and exactly one nonmoving group. Add a negative test where nominal includes a moving-to-untouched-third-component edge and prove the operation rejects it rather than merging the third component.
+
+2. **MEDIUM: Arrival contact earning is strong for moving-to-fixed contacts, but the plan should explicitly require a post-arrival component audit before merge.**
+   `exactContactArrival` enumerates all actual moving-to-nonmoving closed contacts, which corrects the old nominal-subset risk: [contact-arrival.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/contact-arrival.ts:36). But fixed-to-fixed accidental closure between the two retained components is only caught if `componentContacts` is rerun on the arrival pose with the original or derived partition. Current transfer code does not do that; it appends joins and calls whole-build closure instead: [prepared-transfer.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/prepared-transfer.ts:141).
+   **Required correction:** add an explicit acceptance step and test: after contact arrival and before appending earned joints, run `componentContacts` on the arrival state to reject any undeclared retained-component contact.
+
+3. **LOW: Verification scope includes unnecessary broad gates without naming the decisive runtime tests.**
+   “Full tests, types, lint, fixture/source regeneration, artifact integrity, production build and browser verification” is broad, but the decisive risk is runtime continuity through `simulatePreparedTransfer`, `runAssemblyStage`, `workspaceBuild`, and persisted `components`.
+   **Required correction:** keep the broad gates optional or final, but name the required focused tests: generic three-component transfer, medium diagnostic upper transfer, stale lineage, multi-neighbor nominal cross-edge rejection, post-arrival undeclared contact rejection, and persisted successor groups.
+
+No BLOCK: the plan no longer relies on the prior failed premises. It does not promote `medium-turn` as a complete source stage, and it preserves the source-contact audit boundary.

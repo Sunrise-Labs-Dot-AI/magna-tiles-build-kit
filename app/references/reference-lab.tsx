@@ -18,7 +18,7 @@ const titles: Record<string, string> = {
   inventory: "Piece inventory",
   fidelity: "Resemblance to footage",
   materials: "Physical calibration",
-  geometry: "Intersections & joins",
+  geometry: "Tile shapes & intersections",
   release: "Release from proposed pose",
   settledShape: "Shape after settling",
   assembly: "Assembly sequence",

@@ -1,0 +1,54 @@
+[
+  {
+    "connection": {
+      "fromTileId": "lower-side-1",
+      "fromEdge": 0,
+      "toTileId": "support-side-1-0",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    "closure": {
+      "status": "fail",
+      "detail": "Edges do not close at lower-side-1:0->support-side-1-0:3: transverse gap 0.415 in, overlap 2.672 in."
+    }
+  },
+  {
+    "connection": {
+      "fromTileId": "support-side--1-0",
+      "fromEdge": 2,
+      "toTileId": "upper-side--1",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    "closure": {
+      "status": "pass",
+      "detail": "Solid edge gaps, overlap and orientation close."
+    }
+  },
+  {
+    "connection": {
+      "fromTileId": "support-side-1-0",
+      "fromEdge": 2,
+      "toTileId": "upper-side-1",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    "closure": {
+      "status": "pass",
+      "detail": "Solid edge gaps, overlap and orientation close."
+    }
+  },
+  {
+    "connection": {
+      "fromTileId": "lower-wall-1-4",
+      "fromEdge": 1,
+      "toTileId": "upper-wall-1-1",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    "closure": {
+      "status": "pass",
+      "detail": "Solid edge gaps, overlap and orientation close."
+    }
+  }
+]
