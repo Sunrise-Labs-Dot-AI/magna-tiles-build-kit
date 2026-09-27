@@ -4,7 +4,7 @@ import { currentTilePose, type EngineState } from "@/lib/engine/rapier-world";
 import type { BuildGraph, Vec3 } from "@/lib/magnetic-tiles/types";
 import { samePoses } from "./rotation-clearance";
 import type { HandContact } from "./grip";
-import { RigidBodyType } from "@dimforge/rapier3d-compat";
+import { RigidBodyType } from "@/lib/engine/physics-backend";
 import { componentContacts } from "./components";
 
 /** A complete terminal world, never a nominal module pose to be merged later. */
@@ -25,6 +25,7 @@ export interface PreparedWorkspace {
 export function workspaceBuild(workspace: PreparedWorkspace, floorY: number): BuildGraph {
   const { state, build } = workspace;
   if (!Number.isFinite(floorY) || !Number.isFinite(workspace.floorY) || state.physicsModel !== PHYSICS_MODEL_VERSION ||
+      state.solidFailures.length > 0 ||
       workspace.id !== `${workspace.stageId}:${workspace.seed}` ||
       new Set(state.bodies.map(b => b.referenceTile.id)).size !== state.bodies.length ||
       state.bodies.length !== build.tiles.length || workspace.hands.length > 2 ||

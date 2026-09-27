@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import RAPIER, { ColliderDesc, RigidBodyDesc, RigidBodyType, ShapeType } from "@dimforge/rapier3d-compat";
+import RAPIER, { ColliderDesc, RigidBodyDesc, RigidBodyType, ShapeType } from "@/lib/engine/physics-backend";
 import { createEngineWorld } from "@/lib/engine/rapier-world";
 import { physicalSpecForTile, tilePrismPoints } from "@/lib/engine/build";
 import { basisToQuaternion, cross, distance, dot, magnitude, normalize, quaternionToBasis, transformLocal } from "@/lib/engine/math";
@@ -23,8 +23,10 @@ function signedBoxDepth(a: TileInstance,b: TileInstance) {
 
 describe("exact rectangular collision primitives", () => {
   it.each(["small-square","large-square","xl-square"] as const)("matches corners, mass and inertia for %s in noncommuting frames", async shape => {
-    for (const eulerOnly of [false,true]) {
+    for (const mode of ["basis","euler","reversed-normal"]) {
+      const eulerOnly=mode==="euler";
       const tile={...flatContactFixture().tiles[0],shape,position:{x:4,y:20,z:-3},rotation:{x:.3,y:-.7,z:1.1},basis:eulerOnly?undefined:basisFromEuler(.3,-.7,1.1)};
+      if(mode==="reversed-normal")tile.basis={...tile.basis!,zAxis:{x:-tile.basis!.zAxis.x,y:-tile.basis!.zAxis.y,z:-tile.basis!.zAxis.z}};
       const build=assemble("rectangle","Rectangle",[tile],"tower"), engine=await createEngineWorld(build,{drop:false,floorY:0});
       const control=new RAPIER.World({x:0,y:0,z:0});
       try {

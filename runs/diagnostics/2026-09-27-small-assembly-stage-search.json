@@ -1,0 +1,632 @@
+{
+  "scope": "Diagnostic original-wrapper SAT/cache v2 runtime; full fresh construction, not packaged acceptance or source-fidelity verification.",
+  "stages": [
+    {
+      "stage": "small-wedge",
+      "status": "pass",
+      "selectedPolicy": "support-aligned",
+      "attemptedPolicies": [
+        "clear-first",
+        "support-aligned"
+      ],
+      "rejected": [
+        {
+          "policy": "clear-first",
+          "status": "fail",
+          "detail": "Seed 0: Carried module did not settle: 0/90 rest steps. Seed 17: Carried module did not settle: 0/90 rest steps. Seed 53: Carried module did not settle: 0/90 rest steps."
+        }
+      ],
+      "operations": [
+        {
+          "seed": 0,
+          "index": 0,
+          "status": "pass",
+          "docking": null,
+          "release": {
+            "rest": 900,
+            "peak": 0,
+            "dynamic": 0
+          }
+        },
+        {
+          "seed": 0,
+          "index": 1,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": -1.505900497633661e-07,
+              "y": -2.0819408419470165e-08,
+              "z": -1.1168302502712352e-26
+            },
+            "targetPenetration": 0
+          },
+          "release": {
+            "rest": 900,
+            "peak": 0,
+            "dynamic": 0
+          }
+        },
+        {
+          "seed": 0,
+          "index": 2,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": -1.505900497633661e-07,
+              "y": -2.0819408419470165e-08,
+              "z": -1.1168302502712352e-26
+            },
+            "targetPenetration": 0
+          },
+          "release": {
+            "rest": 897,
+            "peak": 0.09722599244549861,
+            "dynamic": 3
+          }
+        },
+        {
+          "seed": 0,
+          "index": 3,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000397 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": -2.3590034096206598e-05,
+              "y": -0.09672589085808465,
+              "z": 0.021313318012592692
+            },
+            "targetPenetration": 0.000396930081906513
+          },
+          "release": {
+            "rest": 900,
+            "peak": 0.0009684727740723858,
+            "dynamic": 4
+          }
+        },
+        {
+          "seed": 0,
+          "index": 4,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000166 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": -0.00020677790020906528,
+              "y": 0.7528798343843841,
+              "z": 0.028275327136119206
+            },
+            "targetPenetration": 0.00016628635230198086
+          },
+          "release": {
+            "rest": 886,
+            "peak": 0.5403608529231038,
+            "dynamic": 5
+          }
+        },
+        {
+          "seed": 17,
+          "index": 0,
+          "status": "pass",
+          "docking": null,
+          "release": {
+            "rest": 900,
+            "peak": 0,
+            "dynamic": 0
+          }
+        },
+        {
+          "seed": 17,
+          "index": 1,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": -1.505900497633661e-07,
+              "y": -2.0819408419470165e-08,
+              "z": -1.1168302502712352e-26
+            },
+            "targetPenetration": 0
+          },
+          "release": {
+            "rest": 900,
+            "peak": 0,
+            "dynamic": 0
+          }
+        },
+        {
+          "seed": 17,
+          "index": 2,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": -1.505900497633661e-07,
+              "y": -2.0819408419470165e-08,
+              "z": -1.1168302502712352e-26
+            },
+            "targetPenetration": 0
+          },
+          "release": {
+            "rest": 897,
+            "peak": 0.09722106633582385,
+            "dynamic": 3
+          }
+        },
+        {
+          "seed": 17,
+          "index": 3,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000363 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": 0.00013114362374070745,
+              "y": -0.09672461929232945,
+              "z": 0.02136936067836359
+            },
+            "targetPenetration": 0.0003633301762154678
+          },
+          "release": {
+            "rest": 900,
+            "peak": 0.0009677665548204375,
+            "dynamic": 4
+          }
+        },
+        {
+          "seed": 17,
+          "index": 4,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000181 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": -4.3779064963297046e-05,
+              "y": 0.7528819006787364,
+              "z": 0.028339067474007607
+            },
+            "targetPenetration": 0.00018072200607743838
+          },
+          "release": {
+            "rest": 886,
+            "peak": 0.54038537027398,
+            "dynamic": 5
+          }
+        },
+        {
+          "seed": 53,
+          "index": 0,
+          "status": "pass",
+          "docking": null,
+          "release": {
+            "rest": 900,
+            "peak": 0,
+            "dynamic": 0
+          }
+        },
+        {
+          "seed": 53,
+          "index": 1,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": -1.505900497633661e-07,
+              "y": -2.0819408419470165e-08,
+              "z": -1.1168302502712352e-26
+            },
+            "targetPenetration": 0
+          },
+          "release": {
+            "rest": 900,
+            "peak": 0,
+            "dynamic": 0
+          }
+        },
+        {
+          "seed": 53,
+          "index": 2,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": -1.505900497633661e-07,
+              "y": -2.0819408419470165e-08,
+              "z": -1.1168302502712352e-26
+            },
+            "targetPenetration": 0
+          },
+          "release": {
+            "rest": 897,
+            "peak": 0.097209147475729,
+            "dynamic": 3
+          }
+        },
+        {
+          "seed": 53,
+          "index": 3,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000205 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": -0.00045735290234164927,
+              "y": -0.09672753991992344,
+              "z": 0.02128049498423934
+            },
+            "targetPenetration": 0.00020486251559037605
+          },
+          "release": {
+            "rest": 900,
+            "peak": 0.0009484500807095685,
+            "dynamic": 4
+          }
+        },
+        {
+          "seed": 53,
+          "index": 4,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000173 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": -0.0006200367706517735,
+              "y": 0.7528812648958587,
+              "z": 0.02791699580848217
+            },
+            "targetPenetration": 0.0001725635048126506
+          },
+          "release": {
+            "rest": 886,
+            "peak": 0.5402685182340977,
+            "dynamic": 5
+          }
+        }
+      ],
+      "checkpoints": [
+        {
+          "rest": 900,
+          "peak": 0,
+          "dynamic": 5,
+          "status": "pass"
+        },
+        {
+          "rest": 900,
+          "peak": 0,
+          "dynamic": 5,
+          "status": "pass"
+        },
+        {
+          "rest": 900,
+          "peak": 0,
+          "dynamic": 5,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "stage": "small-launch",
+      "status": "pass",
+      "selectedPolicy": "clear-first",
+      "attemptedPolicies": [
+        "clear-first"
+      ],
+      "rejected": [],
+      "operations": [
+        {
+          "seed": 0,
+          "index": 0,
+          "status": "pass",
+          "docking": null,
+          "release": {
+            "rest": 900,
+            "peak": 0,
+            "dynamic": 6
+          }
+        },
+        {
+          "seed": 0,
+          "index": 1,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "targetPenetration": 0
+          },
+          "release": {
+            "rest": 900,
+            "peak": 0,
+            "dynamic": 6
+          }
+        },
+        {
+          "seed": 0,
+          "index": 2,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": 0.0006119608879089355,
+              "y": -0.001095397621393171,
+              "z": -0.0002853870391845703
+            },
+            "targetPenetration": 0
+          },
+          "release": {
+            "rest": 900,
+            "peak": 0,
+            "dynamic": 6
+          }
+        },
+        {
+          "seed": 0,
+          "index": 3,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "targetPenetration": 0
+          },
+          "release": {
+            "rest": 900,
+            "peak": 0,
+            "dynamic": 7
+          }
+        },
+        {
+          "seed": 17,
+          "index": 0,
+          "status": "pass",
+          "docking": null,
+          "release": {
+            "rest": 900,
+            "peak": 0,
+            "dynamic": 6
+          }
+        },
+        {
+          "seed": 17,
+          "index": 1,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "targetPenetration": 0
+          },
+          "release": {
+            "rest": 900,
+            "peak": 0,
+            "dynamic": 6
+          }
+        },
+        {
+          "seed": 17,
+          "index": 2,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "targetPenetration": 0
+          },
+          "release": {
+            "rest": 900,
+            "peak": 0,
+            "dynamic": 6
+          }
+        },
+        {
+          "seed": 17,
+          "index": 3,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": -0.00019824504852294922,
+              "y": -0.0010955168306827218,
+              "z": 0.0005958080291748047
+            },
+            "targetPenetration": 0
+          },
+          "release": {
+            "rest": 900,
+            "peak": 0,
+            "dynamic": 7
+          }
+        },
+        {
+          "seed": 53,
+          "index": 0,
+          "status": "pass",
+          "docking": null,
+          "release": {
+            "rest": 900,
+            "peak": 0,
+            "dynamic": 6
+          }
+        },
+        {
+          "seed": 53,
+          "index": 1,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "targetPenetration": 0
+          },
+          "release": {
+            "rest": 900,
+            "peak": 0,
+            "dynamic": 6
+          }
+        },
+        {
+          "seed": 53,
+          "index": 2,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "targetPenetration": 0
+          },
+          "release": {
+            "rest": 900,
+            "peak": 0,
+            "dynamic": 6
+          }
+        },
+        {
+          "seed": 53,
+          "index": 3,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": -0.0007112622261047363,
+              "y": -0.0010954423248767525,
+              "z": 2.8848648071289062e-05
+            },
+            "targetPenetration": 0
+          },
+          "release": {
+            "rest": 900,
+            "peak": 0,
+            "dynamic": 7
+          }
+        }
+      ],
+      "checkpoints": []
+    },
+    {
+      "stage": "small-final",
+      "status": "pass",
+      "selectedPolicy": "clear-first",
+      "attemptedPolicies": [
+        "clear-first"
+      ],
+      "rejected": [],
+      "operations": [
+        {
+          "seed": 0,
+          "index": 0,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": 0.057410352225343936,
+              "y": -0.07886711945816183,
+              "z": 0.010925513095571661
+            },
+            "targetPenetration": 0
+          },
+          "release": {
+            "rest": 489,
+            "peak": 0.054043659885062496,
+            "dynamic": 9
+          }
+        },
+        {
+          "seed": 17,
+          "index": 0,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": 0.0574884343099997,
+              "y": -0.07887087455078268,
+              "z": 0.010996792756486686
+            },
+            "targetPenetration": 0
+          },
+          "release": {
+            "rest": 486,
+            "peak": 0.05399658413952346,
+            "dynamic": 9
+          }
+        },
+        {
+          "seed": 53,
+          "index": 0,
+          "status": "pass",
+          "docking": {
+            "status": "pass",
+            "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+            "offset": {
+              "x": 0.05711340188507294,
+              "y": -0.07887135138794088,
+              "z": 0.011247970629483463
+            },
+            "targetPenetration": 0
+          },
+          "release": {
+            "rest": 489,
+            "peak": 0.05403593598312598,
+            "dynamic": 9
+          }
+        }
+      ],
+      "checkpoints": [
+        {
+          "rest": 900,
+          "peak": 0,
+          "dynamic": 9,
+          "status": "pass"
+        },
+        {
+          "rest": 900,
+          "peak": 0,
+          "dynamic": 9,
+          "status": "pass"
+        },
+        {
+          "rest": 900,
+          "peak": 0,
+          "dynamic": 9,
+          "status": "pass"
+        }
+      ]
+    }
+  ]
+}

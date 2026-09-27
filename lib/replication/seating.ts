@@ -1,4 +1,4 @@
-import { RigidBodyType } from "@dimforge/rapier3d-compat";
+import { RigidBodyType } from "@/lib/engine/physics-backend";
 import { createEngineWorld, perturbFirstRelease, type EngineState } from "@/lib/engine/rapier-world";
 import { buildBounds, connectionId, validateMagneticBuild } from "@/lib/engine/build";
 import { validateEngineInput } from "@/lib/engine/input";
@@ -105,6 +105,7 @@ export async function simulateGravitySeat(target: BuildGraph, movingTileIds: str
       const actual = supportSnapshot(released, engine);
       result.elapsedSeconds = (step + 1) * SIMULATION_TIMESTEP_SECONDS / SEATING_SUBSTEPS;
       result.settled = { ...actual, connections: target.connections };
+      if(engine.invalidState||engine.solidFailures.length)return fail(engine.solidFailures[0]?.detail??"Invalid physical state.");
       result.peakTargetDisplacement = Math.max(result.peakTargetDisplacement, ...actual.tiles.flatMap(t =>
         tilePrismVertices(t).map((p, i) => distance(p, targetVertices.get(t.id)![i]))));
       const dynamic = [...engine.bodies.entries()].filter(([id]) => !result.heldTileIds.includes(id));

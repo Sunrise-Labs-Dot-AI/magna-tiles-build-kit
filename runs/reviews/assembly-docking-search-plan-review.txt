@@ -1,0 +1,26 @@
+**Verdict: BLOCK until tightened.** The plan is directionally right for a bounded two-policy whole-stage search, but it still needs a few explicit implementation constraints to prevent the exact failure modes you named.
+
+Required changes:
+
+1. **Make docking policy a required parameter, not a default.**  
+   In [docking.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/docking.ts:23), `dockToSupports` currently has one implicit policy. The plan must require a `DockingPolicy` type and require every call site to pass it, including [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:214) and [prepared-transfer.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/prepared-transfer.ts:102). No default, no module-specific branch.
+
+2. **Buffer attempts completely before touching selected result state.**  
+   Current assembly appends rows directly to `result.operations` at [assembly.ts:136](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:136) and checkpoints at [assembly.ts:296](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:296). The plan must require the extracted helper to return an isolated attempt object: `operations`, `checkpoints`, `states`, `failures`, `policy`. Only a complete passing attempt may be copied into the selected top-level result and `prepared`.
+
+3. **Protect predecessor workspaces from mutation, not just stale selection.**  
+   [workspace.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/workspace.ts:43) prevents stale branch combination, but [assembly.ts:127](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:127) reuses `predecessor.state` directly. The plan must require cloning or immutability proof for predecessor `build`, `state`, `hands`, and `components` before each policy attempt and each seed, plus before/after snapshot tests around a failed successor attempt.
+
+4. **Specify failed-state leakage rules for successful seeds inside failed policies.**  
+   Current per-stage `states` accumulates successful seed terminal workspaces at [assembly.ts:102](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:102) and [assembly.ts:306](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:306). The plan should say failed policy attempts discard all `states`, including successful seeds, and rejected-attempt reporting stores summaries only, not reusable workspaces.
+
+5. **Make deadline exception behavior mechanical.**  
+   The plan says budget exceptions remain exceptions, but it should require no catch-and-record path for `SimulationBudgetExceeded`. If the first policy throws on deadline, the second policy is not attempted. If time expires before starting the second policy, throw or propagate the same budget failure, not a normal two-attempt failure.
+
+6. **Tighten reporting shape.**  
+   Add required fields: selected `dockingPolicy`, `attemptedPolicies`, and `rejectedAttempts[]` with per-attempt `policy`, `status`, `detail`, `operations`, `checkpoints`, and docking `targetPenetration`. If both fail, selected `operations/checkpoints` should be empty or explicitly marked absent, with both rejected attempts retained.
+
+7. **Add a verification condition that proves prepared-transfer policy propagation.**  
+   The tests listed are good, but add one that fails if `simulatePreparedTransfer` reaches `dockToSupports` without the stage policy. Type-level enforcement by a required parameter is the cleanest version.
+
+Bounded clear condition: I’d clear this plan once it explicitly requires isolated stage-attempt return values, required policy threading through both docking call paths, predecessor snapshots/clones, budget exception propagation, and the reporting fields above. I did not re-review SAT/runtime fork.

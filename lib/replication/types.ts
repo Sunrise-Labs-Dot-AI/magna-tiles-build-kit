@@ -125,6 +125,8 @@ export interface ReplicaReport {
     status: Verdict;
     peakDisplacement: number;
     peakGroundPenetration: number;
+    solidFailures: import("@/lib/magnetic-tiles/swept-prisms").SolidFailure[];
+    peakSolidOverlap: number;
     finalDisplacement: number;
     finalSpeed: number;
     linearSpeed: number;
@@ -138,6 +140,8 @@ export interface ReplicaReport {
     status: Verdict;
     detail: string;
     displacement: number | null;
+    solidFailures: import("@/lib/magnetic-tiles/swept-prisms").SolidFailure[] | null;
+    peakSolidOverlap: number | null;
   }[];
   instructions: AssemblyStep[];
   constructionPaths: import("./construction").ConstructionResult[];

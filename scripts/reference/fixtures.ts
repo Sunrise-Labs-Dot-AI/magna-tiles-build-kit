@@ -1,5 +1,5 @@
 import { writeFile } from "node:fs/promises";
-import { RigidBodyType } from "@dimforge/rapier3d-compat";
+import { RigidBodyType } from "@/lib/engine/physics-backend";
 import { createEngineWorld } from "../../lib/engine/rapier-world";
 import { quaternionToBasis, transformLocal } from "../../lib/engine/math";
 import { releaseCandidate } from "../../lib/replication/release";

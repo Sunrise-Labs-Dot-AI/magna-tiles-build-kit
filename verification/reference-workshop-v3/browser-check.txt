@@ -1,0 +1,7 @@
+options [ 'Selected complete attempt', 'Rejected attempt 1' ]
+errors []
+completed Assembly with hand support Passed this check
+
+All operations passed with three perturbation seeds, at most two panel grips and mandatory free checkpoints. Fingertip-proxy simulation only; measured human grip and physical magnetic forces remain unverified.
+
+Grip and intermediate checks

@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import { RigidBodyType } from "@dimforge/rapier3d-compat";
+import { RigidBodyType } from "@/lib/engine/physics-backend";
 import { createEngineWorld, perturbFirstRelease } from "@/lib/engine/rapier-world";
 import { validateMagneticBuild } from "@/lib/engine/build";
 import { validateEngineInput } from "@/lib/engine/input";
@@ -36,6 +36,8 @@ describe("independent rigid table contact", () => {
           if ((i+1) % (hz/120) === 0) rest = engine.stepSpeeds.linear < SETTLED_LINEAR_SPEED && engine.stepSpeeds.angular < SETTLED_ANGULAR_SPEED ? rest+1 : 0;
         }
         const context = `${fixture.name}/${hz}/${solver}/${seed}`;
+        expect(engine.invalidState,context).toBe(false);
+        expect(engine.solidFailures,context).toEqual([]);
         expect(engine.peakGroundPenetration,context).toBeLessThanOrEqual(RAW_OVERLAP_TOLERANCE);
         expect(engine.peakDisplacement,context).toBeLessThan(.95);
         expect(engine.poppedJoints,context).toEqual([]);
@@ -74,10 +76,12 @@ describe("independent rigid table contact", () => {
         expect(e.peakDisplacement).toBeLessThanOrEqual(.95);
         expect(rest/hz).toBeGreaterThanOrEqual(.75);
         expect(e.poppedJoints).toEqual([]);
+        expect(e.invalidState).toBe(false);
+        expect(e.solidFailures).toEqual([]);
       } finally {e.dispose();}
     }
   });
-  it("samples every collision step even when an endpoint recovers", async () => {
+  it("stops at a failed collision step before a later endpoint could recover", async () => {
     const e = await createEngineWorld(flatContactFixture(), {drop:false,floorY:0});
     try {
       const b=[...e.bodies.values()][0].body;
@@ -85,9 +89,11 @@ describe("independent rigid table contact", () => {
       let step=0;
       vi.spyOn(e.world,"step").mockImplementation(() => { b.setTranslation({x:0,y:++step===2?-.2:.09,z:0},true); });
       e.step();
-      expect(step).toBe(8);
-      expect(b.translation().y).toBeCloseTo(.09);
+      expect(step).toBe(2);
+      expect(b.translation().y).toBeCloseTo(-.2);
       expect(e.peakGroundPenetration).toBeGreaterThan(.28);
+      expect(e.solidFailures[0].kind).toBe("table");
+      e.step();expect(step).toBe(2);
     } finally {e.dispose();}
   });
   it("rejects nonfinite body state before advancing dynamics", async () => {

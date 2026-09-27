@@ -21,7 +21,7 @@ describe("gateBuild engine source of truth", () => {
       expect(draft.status, card.id).toBe(expected);
       expect((ENGINE_VALID_LIBRARY_BUILD_IDS as readonly string[]).includes(card.id), card.id).toBe(verdict.passed);
     }
-  }, 30_000);
+  }, 120_000);
   it("rejects the historical small ramp until it sustains rest", async () => {
     const verdict = await gateBuild(draftToBuildGraph(smallCarRampDraft as AuthoredBuildDraft));
 
@@ -37,12 +37,11 @@ describe("gateBuild engine source of truth", () => {
     expect(verdict.reasons.join(" ")).toContain("roll test");
   });
 
-  it("accepts the re-authored large ramp as a wider continuous rollable wedge", async () => {
+  it("rejects the historical large ramp's uncertified platform release", async () => {
     const verdict = await gateBuild(draftToBuildGraph(largeCarRampDraft as AuthoredBuildDraft));
 
-    expect(verdict.passed).toBe(true);
-    expect(verdict.reasons.join(" ")).toContain("build stands");
-    expect(verdict.reasons.join(" ")).toContain("roll test");
+    expect(verdict.passed).toBe(false);
+    expect(verdict.reasons.join(" ")).toContain("Swept solid clearance cannot be certified");
   });
 
   it("rejects the historical jet after removing artificial contact expansion", async () => {

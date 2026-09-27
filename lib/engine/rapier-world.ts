@@ -1,12 +1,13 @@
 import RAPIER, {
   ColliderDesc,
+  assertIntegrationSettings,
   JointData,
   RigidBodyDesc,
   type ImpulseJoint,
   type RigidBody,
   RigidBodyType,
   type World
-} from "@dimforge/rapier3d-compat";
+} from "@/lib/engine/physics-backend";
 import { connectionId, physicalSpecForTile, tilePrismPoints, type EngineBuild } from "./build";
 import {
   GROUND_FRICTION,
@@ -19,7 +20,9 @@ import {
   TILE_CONTACT_SKIN,
   TILE_FRICTION
 } from "./constants";
-import { add, basisToQuaternion, distance, magnitude, quaternionToBasis, scale, slerp, transformLocal, worldToLocal, type Quat } from "./math";
+import { add, distance, magnitude, quaternionToBasis, scale, slerp, transformLocal, worldToLocal, type Quat } from "./math";
+import { checkSolidSweep, prismPose, tileQuaternion, type PrismPose, type SolidFailure } from "@/lib/magnetic-tiles/swept-prisms";
+import { RAW_OVERLAP_TOLERANCE } from "./overlap";
 import { basisFromEuler } from "@/lib/magnetic-tiles/edge-attachment";
 import {
   createMagneticPhysicsModel,
@@ -60,6 +63,9 @@ export interface EngineState {
   joints: { model: PhysicsJointModel; previousDistance: number; companionPreviousDistance: number }[];
   connections: MagneticConnection[];
   poppedJoints: string[];
+  solidFailures: SolidFailure[];
+  peakSolidOverlap: number;
+  peakSolidPair?: [string, string];
 }
 
 export interface EngineWorld {
@@ -75,6 +81,9 @@ export interface EngineWorld {
   peakDisplacement: number;
   stepSpeeds: { linear: number; angular: number };
   invalidState: boolean;
+  solidFailures: SolidFailure[];
+  peakSolidOverlap: number;
+  peakSolidPair?: [string, string];
   snapshot(): EngineState;
   step(): void;
   maxDisplacement(): number;
@@ -114,6 +123,7 @@ export async function createEngineWorld(input: EngineBuild, options: { drop?: bo
   world.integrationParameters.dt = SIMULATION_TIMESTEP_SECONDS;
   world.integrationParameters.numSolverIterations = 16;
   world.integrationParameters.contact_natural_frequency = CONTACT_NATURAL_FREQUENCY_HZ;
+  assertIntegrationSettings(world,true);
 
   addGround(world, model);
 
@@ -148,6 +158,16 @@ export async function createEngineWorld(input: EngineBuild, options: { drop?: bo
     return [record];
   });
 
+  let previousSolids: PrismPose[] | undefined;
+  const checkSolids = () => {
+    if(engine.invalidState||engine.solidFailures.length)return;
+    const actual=[...bodies.values()].map(r=>prismPose(currentTilePose(r.tile,r.body.translation(),r.body.rotation(),0)));
+    const sweep=checkSolidSweep(previousSolids??actual,actual,0,RAW_OVERLAP_TOLERANCE);
+    if(sweep.peakSolidOverlap>engine.peakSolidOverlap){engine.peakSolidOverlap=sweep.peakSolidOverlap;engine.peakSolidPair=sweep.peakSolidPair;}
+    engine.peakGroundPenetration=Math.max(engine.peakGroundPenetration,sweep.peakGroundPenetration);
+    if(sweep.failure)engine.solidFailures.push(sweep.failure);
+    previousSolids=actual;
+  };
   const engine: EngineWorld = {
     world,
     bodies,
@@ -160,12 +180,16 @@ export async function createEngineWorld(input: EngineBuild, options: { drop?: bo
     peakDisplacement: 0,
     stepSpeeds: { linear: 0, angular: 0 },
     invalidState: false,
+    solidFailures: structuredClone(state?.solidFailures??[]),
+    peakSolidOverlap: state?.peakSolidOverlap??0,
+    peakSolidPair: state?.peakSolidPair,
     snapshot() {
       return structuredClone({ physicsModel: PHYSICS_MODEL_VERSION, bodies: [...bodies.values()].map(({ tile, body, releasePerturbed }) => ({ referenceTile: tile,
         position: vector(body.translation()), rotation: { ...body.rotation() }, linearVelocity: vector(body.linvel()),
         angularVelocity: vector(body.angvel()), bodyType: body.bodyType(), ccd: body.isCcdEnabled(), sleeping: body.isSleeping(), releasePerturbed })),
       joints: engine.joints.map(j => ({ model: j.model, previousDistance: j.previousDistance, companionPreviousDistance: j.companionPreviousDistance })),
-      connections: input.connections, poppedJoints: engine.poppedJoints });
+      connections: input.connections, poppedJoints: engine.poppedJoints, solidFailures: engine.solidFailures,
+      peakSolidOverlap: engine.peakSolidOverlap, peakSolidPair: engine.peakSolidPair });
     },
     step() {
       const requestedDt = world.integrationParameters.dt;
@@ -179,16 +203,24 @@ export async function createEngineWorld(input: EngineBuild, options: { drop?: bo
       }));
       engine.stepSpeeds = { linear: 0, angular: 0 };
       sampleState(engine);
+      checkSolids();
       try {
         world.integrationParameters.dt = requestedDt / count;
-        for (let i = 1; i <= count && !engine.invalidState; i++) {
+        for (let i = 1; i <= count && !engine.invalidState && !engine.solidFailures.length; i++) {
           for (const m of moving) {
             const t = i / count;
             m.body.setNextKinematicTranslation(add(scale(m.start, 1-t), scale(m.end, t)));
             m.body.setNextKinematicRotation(slerp(m.rotation, m.nextRotation, t));
           }
+          // A shortest-arc pose sweep cannot certify a complete turn hidden
+          // between samples. Fail excessive angular travel before integration.
+          const aliased=[...bodies.values()].filter(r=>!r.body.isFixed()&&magnitude(r.body.angvel())*world.integrationParameters.dt>=Math.PI);
+          if(aliased.length){engine.solidFailures.push({kind:"uncertified-sweep",tileIds:aliased.map(r=>r.tile.id),detail:"Angular travel exceeds the collision-step certification bound."});break;}
           world.step();
           sampleState(engine);
+          const accelerated=[...bodies.values()].filter(r=>!r.body.isFixed()&&magnitude(r.body.angvel())*world.integrationParameters.dt>=Math.PI);
+          if(accelerated.length)engine.solidFailures.push({kind:"uncertified-sweep",tileIds:accelerated.map(r=>r.tile.id),detail:"Solver angular travel exceeds the collision-step certification bound."});
+          checkSolids();
           if (!engine.invalidState) updateBreakableJoints(engine);
         }
       } finally {
@@ -221,6 +253,7 @@ export async function createEngineWorld(input: EngineBuild, options: { drop?: bo
     }
   };
   sampleState(engine);
+  checkSolids();
   return engine;
 }
 
@@ -265,11 +298,10 @@ function addTileBody(world: World, model: PhysicsBodyModel): BodyRecord {
   // rectangular panels. The reference basis remains collider-local, followed by
   // the body's actual rotation. Proof/snapshot hull points remain unchanged.
   const rectangular = ["small-square", "large-square", "xl-square"].includes(model.tile.shape);
-  const basis = model.tile.basis ?? basisFromEuler(model.tile.rotation.x,model.tile.rotation.y,model.tile.rotation.z);
-  const hull = rectangular
-    ? ColliderDesc.cuboid(spec.width/2,spec.height/2,spec.thickness/2).setRotation(basisToQuaternion(basis))
+  const hull=rectangular
+    ? ColliderDesc.cuboid(spec.width/2,spec.height/2,spec.thickness/2).setRotation(tileQuaternion(model.tile))
     : ColliderDesc.convexHull(model.localHullPoints);
-  if (!hull) throw new Error(`Unable to create convex hull for tile ${model.tile.id}`);
+  if(!hull)throw new Error(`Unable to create convex hull for tile ${model.tile.id}`);
   world.createCollider(
     hull
       .setMass(model.mass)
@@ -374,9 +406,13 @@ export function currentTilePose(reference: TileInstance, position: Vec3, rotatio
 
 function validateContinuation(input: EngineBuild, state: EngineState, floorY: number): void {
   if (state.physicsModel !== PHYSICS_MODEL_VERSION) throw new Error("State continuation requires the current physics model; regenerate stale evidence");
+  if(!Array.isArray(state.solidFailures)||!Number.isFinite(state.peakSolidOverlap)||state.peakSolidOverlap<0)
+    throw new Error("State continuation requires complete physical failure history");
   const ids = new Set(input.connections.map(connectionId));
   if (state.connections.some(c => !ids.has(connectionId(c)))) throw new Error("State continuation cannot omit an existing or broken connection");
   for (const saved of state.bodies) {
+    if(![...Object.values(saved.position),...Object.values(saved.rotation),...Object.values(saved.linearVelocity),...Object.values(saved.angularVelocity)].every(Number.isFinite))
+      throw new Error("State continuation cannot restore nonfinite physical state");
     const tile = input.tiles.find(t => t.id === saved.referenceTile.id);
     const actual = currentTilePose(saved.referenceTile, saved.position, saved.rotation, floorY);
     const basis = tile?.basis ?? (tile && basisFromEuler(tile.rotation.x, tile.rotation.y, tile.rotation.z));

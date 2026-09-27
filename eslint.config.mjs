@@ -4,6 +4,7 @@ import nextTypescript from "eslint-config-next/typescript";
 const ignoredPaths = [
   ".next/**",
   "node_modules/**",
+  "vendor/rapier-contact/**",
   "verification/**/*.png",
   "verification/contact-sheet.md"
 ];

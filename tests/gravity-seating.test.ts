@@ -59,7 +59,7 @@ describe("gravity seating earns contacts before any new joint exists", () => {
     const r = seatedRoofFixture();
     r.build.tiles.find(t => t.id === "roof")!.position.z += .4;
     expect((await evaluateAssembly(r))[0].status).not.toBe("pass");
-  });
+  }, 120000);
   it("rejects a panel crossing a support fingertip between clear endpoint poses", () => {
     const fixture = assemblyUFixture(), held = fixture.build.tiles[0], hand = fixture.construction![0].operations[0].hands![0];
     const crossing = square("crossing", v(-3, 4, -1.5), v(3,0,0), v(0,0,3), "red", 2, "obstacle");
@@ -93,6 +93,7 @@ describe("gravity seating earns contacts before any new joint exists", () => {
   });
   it("constructs the source modules in one workspace and requires free rest after actual transfer", async () => {
     const r = smallRamp(), results = await evaluateAssembly(r), launch = results.find(s => s.stageId === "small-launch")!;
+    expect(results.every(stage => stage.status === "pass"),JSON.stringify(results.map(({stageId,status,detail}) => ({stageId,status,detail})))).toBe(true);
     expect(launch.status, launch.detail).toBe("pass");
     expect(launch.operations).toHaveLength(12);
     expect(launch.operations.filter(o => o.seating)).toHaveLength(3);
@@ -114,10 +115,10 @@ describe("gravity seating earns contacts before any new joint exists", () => {
       expect(free.heldTileIds).toEqual([]);
       expect(free.dynamicTileCount).toBe(9);
       expect(operation.status).toBe(free.status);
-      if(operation.status==="pass") {
-        expect(free.settledSteps).toBeGreaterThanOrEqual(90);
-        expect(free.peakGroundPenetration).toBeLessThanOrEqual(.03);
-      }
+      expect(operation.status,operation.detail).toBe("pass");
+      expect(free.settledSteps).toBeGreaterThanOrEqual(90);
+      expect(free.peakGroundPenetration).toBeLessThanOrEqual(.03);
+      expect(free.solidFailures).toEqual([]);
       const initial=assemblyOperationPreview(r.build,operation,0),terminal=assemblyOperationPreview(r.build,operation,1);
       expect(initial.tiles).toHaveLength(9);
       expect(initial.connections.some(c=>operation.transfer!.earnedCrossConnectionIds.includes(connectionId(c)))).toBe(false);
@@ -152,5 +153,5 @@ describe("gravity seating earns contacts before any new joint exists", () => {
     expect(end.tiles).toHaveLength(6);
     expect(end.tiles.filter(t=>t.id.startsWith("small-")).map(t=>t.id).sort()).toEqual([...r.stages[0].tileIds].sort());
     expect(start.tiles.find(t=>t.id==="launch-back")!.position.y - end.tiles.find(t=>t.id==="launch-back")!.position.y).toBeGreaterThan(.5);
-  }, 240_000);
+  }, 900_000);
 });

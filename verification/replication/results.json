@@ -28,7 +28,7 @@
         },
         "release": {
           "status": "fail",
-          "detail": "seed 0: fail, peak 1.372 in, table 0.012 in, linear 281.986 in/s, angular 293.452 rad/s, 0/90 rest steps; seed 17: fail, peak 0.963 in, table 0.012 in, linear 216.159 in/s, angular 213.029 rad/s, 0/90 rest steps; seed 53: fail, peak 1.001 in, table 0.012 in, linear 226.170 in/s, angular 222.463 rad/s, 0/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
+          "detail": "seed 0: fail, peak 1.288 in, table 0.012 in, linear 267.728 in/s, angular 277.569 rad/s, 0/90 rest steps.; seed 17: fail, peak 1.279 in, table 0.012 in, linear 265.703 in/s, angular 275.557 rad/s, 0/90 rest steps.; seed 53: fail, peak 1.278 in, table 0.012 in, linear 265.005 in/s, angular 274.910 rad/s, 0/90 rest steps.. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
         },
         "settledShape": {
           "status": "fail",
@@ -44,175 +44,213 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "3d9b064e93c48f4c0230aa67039b3fcaefe2cb443936cdf87d0a0dcdabff817b",
+      "fingerprint": "e01800f8878c8771acf6e4263cabf2cf8cd072423b72636041d09cf8b05748f0",
       "stages": [
         {
           "id": "body-upright-1",
           "status": "unverified",
           "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
-          "displacement": null
+          "displacement": null,
+          "solidFailures": null,
+          "peakSolidOverlap": null
         },
         {
           "id": "body-upright-2",
           "status": "unverified",
           "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
-          "displacement": null
+          "displacement": null,
+          "solidFailures": null,
+          "peakSolidOverlap": null
         },
         {
           "id": "body-upright-3",
           "status": "unverified",
           "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
-          "displacement": null
+          "displacement": null,
+          "solidFailures": null,
+          "peakSolidOverlap": null
         },
         {
           "id": "body-upright-4",
           "status": "unverified",
           "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
-          "displacement": null
+          "displacement": null,
+          "solidFailures": null,
+          "peakSolidOverlap": null
         },
         {
           "id": "body-horizontal",
           "status": "pass",
           "detail": "Released checkpoint: peak 0.280 in; table penetration 0.008 in; 0 broken/rejected joints; 888 consecutive steps at rest (90 required).",
-          "displacement": 0.279999994565958
+          "displacement": 0.279999994565958,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.000005962312206869713
         },
         {
           "id": "nose",
           "status": "pass",
-          "detail": "Released checkpoint: peak 0.281 in; table penetration 0.009 in; 0 broken/rejected joints; 655 consecutive steps at rest (90 required).",
-          "displacement": 0.2806352402691894
+          "detail": "Released checkpoint: peak 0.280 in; table penetration 0.009 in; 0 broken/rejected joints; 888 consecutive steps at rest (90 required).",
+          "displacement": 0.2799999988940639,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.000014983317562222709
         },
         {
           "id": "wing-module--1",
           "status": "unverified",
           "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
-          "displacement": null
+          "displacement": null,
+          "solidFailures": null,
+          "peakSolidOverlap": null
         },
         {
           "id": "wing-root--1",
           "status": "fail",
-          "detail": "Released checkpoint: peak 1.062 in; table penetration 0.019 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-          "displacement": 1.0619687220807181
+          "detail": "Released checkpoint: peak 1.057 in; table penetration 0.019 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 1.0573814101621108,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0003320373081394101
         },
         {
           "id": "wing-module-1",
           "status": "unverified",
           "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
-          "displacement": null
+          "displacement": null,
+          "solidFailures": null,
+          "peakSolidOverlap": null
         },
         {
           "id": "wing-root-1",
           "status": "pass",
-          "detail": "Released checkpoint: peak 0.620 in; table penetration 0.011 in; 0 broken/rejected joints; 645 consecutive steps at rest (90 required).",
-          "displacement": 0.6202817097831512
+          "detail": "Released checkpoint: peak 0.621 in; table penetration 0.011 in; 0 broken/rejected joints; 873 consecutive steps at rest (90 required).",
+          "displacement": 0.6206387592581272,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.00046905358260601604
         },
         {
           "id": "wing-roots",
           "status": "pass",
-          "detail": "Released checkpoint: peak 0.622 in; table penetration 0.011 in; 0 broken/rejected joints; 634 consecutive steps at rest (90 required).",
-          "displacement": 0.6224676690185986
+          "detail": "Released checkpoint: peak 0.621 in; table penetration 0.011 in; 0 broken/rejected joints; 872 consecutive steps at rest (90 required).",
+          "displacement": 0.6209154304371645,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0006420559189743713
         },
         {
           "id": "wingtips",
           "status": "pass",
-          "detail": "Released checkpoint: peak 0.617 in; table penetration 0.011 in; 0 broken/rejected joints; 425 consecutive steps at rest (90 required).",
-          "displacement": 0.6174953633146629
+          "detail": "Released checkpoint: peak 0.618 in; table penetration 0.011 in; 0 broken/rejected joints; 862 consecutive steps at rest (90 required).",
+          "displacement": 0.6177940201567956,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0012928003586161196
         },
         {
           "id": "tail-cone",
-          "status": "fail",
-          "detail": "Released checkpoint: peak 0.607 in; table penetration 0.011 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-          "displacement": 0.6069896722109627
+          "status": "pass",
+          "detail": "Released checkpoint: peak 0.607 in; table penetration 0.011 in; 0 broken/rejected joints; 863 consecutive steps at rest (90 required).",
+          "displacement": 0.6071197501870453,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0011280153970671947
         },
         {
           "id": "tail-horizontal",
           "status": "fail",
-          "detail": "Released checkpoint: peak 1.056 in; table penetration 0.011 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-          "displacement": 1.05601728074015
+          "detail": "Released checkpoint: peak 1.108 in; table penetration 0.011 in; 1 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 1.1079254240253538,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.002940215552603931
         },
         {
           "id": "tail-fins",
           "status": "fail",
-          "detail": "Released checkpoint: peak 1.557 in; table penetration 0.011 in; 1 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-          "displacement": 1.5568354214827933
+          "detail": "Released checkpoint: peak 1.185 in; table penetration 0.011 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 1.1854960589251298,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0024040825697326795
         },
         {
           "id": "final",
           "status": "fail",
-          "detail": "Released checkpoint: peak 1.372 in; table penetration 0.012 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-          "displacement": 1.3721709415202885
+          "detail": "Released checkpoint: peak 1.288 in; table penetration 0.012 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 1.2882909333457497,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.01445581649391503
         }
       ],
       "releaseTrials": [
         {
           "seed": 0,
           "status": "fail",
-          "peakDisplacement": 1.3721709415202885,
-          "peakGroundPenetration": 0.01179982295040305,
-          "finalDisplacement": 1.3721709415202885,
-          "finalSpeed": 293.4517194331188,
-          "linearSpeed": 281.9857366421266,
-          "angularSpeed": 293.45171943311874,
+          "peakDisplacement": 1.2882909333457497,
+          "peakGroundPenetration": 0.011644129284877902,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.01445581649391503,
+          "finalDisplacement": 1.2882909333457497,
+          "finalSpeed": 277.5692907675892,
+          "linearSpeed": 267.72802199974996,
+          "angularSpeed": 277.5692907675892,
           "settledSteps": 0,
           "poppedJoints": [],
           "settledProjectionStatuses": [
             {
               "id": "jet-side-388",
               "status": "fail",
-              "rmsPx": 23.796098032795822
+              "rmsPx": 23.66784508851123
             },
             {
               "id": "jet-quarter-397",
               "status": "fail",
-              "rmsPx": 507.9821553023198
+              "rmsPx": 505.71697126723967
             }
           ]
         },
         {
           "seed": 17,
           "status": "fail",
-          "peakDisplacement": 0.9630020550790819,
-          "peakGroundPenetration": 0.01173939418832215,
-          "finalDisplacement": 0.9630020550790819,
-          "finalSpeed": 216.15926260042045,
-          "linearSpeed": 216.1592626004204,
-          "angularSpeed": 213.0285459071025,
+          "peakDisplacement": 1.2788484493551837,
+          "peakGroundPenetration": 0.011579639028447053,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.014452540420064608,
+          "finalDisplacement": 1.2788484493551837,
+          "finalSpeed": 275.5572415234712,
+          "linearSpeed": 265.7030801597015,
+          "angularSpeed": 275.5572415234712,
           "settledSteps": 0,
           "poppedJoints": [],
           "settledProjectionStatuses": [
             {
               "id": "jet-side-388",
               "status": "fail",
-              "rmsPx": 21.93068962249148
+              "rmsPx": 23.59557848343693
             },
             {
               "id": "jet-quarter-397",
               "status": "fail",
-              "rmsPx": 511.12667385971776
+              "rmsPx": 506.36733253745354
             }
           ]
         },
         {
           "seed": 53,
           "status": "fail",
-          "peakDisplacement": 1.0005627761796922,
-          "peakGroundPenetration": 0.011754972843276423,
-          "finalDisplacement": 1.0005627761796922,
-          "finalSpeed": 226.16997475251634,
-          "linearSpeed": 226.16997475251634,
-          "angularSpeed": 222.4627896989778,
+          "peakDisplacement": 1.2775099856445276,
+          "peakGroundPenetration": 0.011580038706718865,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.014452621940140187,
+          "finalDisplacement": 1.2775099856445276,
+          "finalSpeed": 274.90988838428,
+          "linearSpeed": 265.00512206196674,
+          "angularSpeed": 274.90988838428007,
           "settledSteps": 0,
           "poppedJoints": [],
           "settledProjectionStatuses": [
             {
               "id": "jet-side-388",
               "status": "fail",
-              "rmsPx": 22.078321389992773
+              "rmsPx": 23.60296097379876
             },
             {
               "id": "jet-quarter-397",
               "status": "fail",
-              "rmsPx": 509.4766128373225
+              "rmsPx": 506.6763372709296
             }
           ]
         }
@@ -244,15 +282,15 @@
         },
         "release": {
           "status": "pass",
-          "detail": "seed 0: pass, peak 0.280 in, table 0.016 in, linear 0.000 in/s, angular 0.000 rad/s, 584/90 rest steps; seed 17: pass, peak 0.280 in, table 0.016 in, linear 0.000 in/s, angular 0.000 rad/s, 602/90 rest steps; seed 53: pass, peak 0.280 in, table 0.017 in, linear 0.000 in/s, angular 0.000 rad/s, 576/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
+          "detail": "seed 0: pass, peak 0.280 in, table 0.016 in, linear 0.000 in/s, angular 0.000 rad/s, 693/90 rest steps.; seed 17: pass, peak 0.280 in, table 0.016 in, linear 0.000 in/s, angular 0.000 rad/s, 837/90 rest steps.; seed 53: pass, peak 0.280 in, table 0.017 in, linear 0.000 in/s, angular 0.000 rad/s, 679/90 rest steps.. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
         },
         "settledShape": {
           "status": "fail",
           "detail": "3 settled point comparisons. Original camera held fixed. Sparse passing landmarks do not cover the full settled shape."
         },
         "assembly": {
-          "status": "fail",
-          "detail": "2/3 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. small-final: Seed 0: 0 individually held panels, 9 dynamic panels; peak 0.049 in, 0/90 rest steps, 0 rejected/broken joins. Seed 17: 0 individually held panels, 9 dynamic panels; peak 0.049 in, 0/90 rest steps, 0 rejected/broken joins. Seed 53: 0 individually held panels, 9 dynamic panels; peak 0.055 in, 0/90 rest steps, 0 rejected/broken joins. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
+          "status": "pass",
+          "detail": "3/3 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation.  Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
         },
         "function": {
           "status": "pass",
@@ -260,25 +298,31 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "2101d79151f83d18196cf0be030adea35ae153bbb5f1a9be21367510a30ea8af",
+      "fingerprint": "258c7ebfa2a3d670906c85ff0c650be19d27152077c968a7b5245a6002b4a634",
       "stages": [
         {
           "id": "small-wedge",
           "status": "pass",
           "detail": "Released checkpoint: peak 0.280 in; table penetration 0.010 in; 0 broken/rejected joints; 888 consecutive steps at rest (90 required).",
-          "displacement": 0.2800000281570632
+          "displacement": 0.2800000281570632,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.000008155674925625078
         },
         {
           "id": "small-launch",
           "status": "unverified",
           "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
-          "displacement": null
+          "displacement": null,
+          "solidFailures": null,
+          "peakSolidOverlap": null
         },
         {
           "id": "small-final",
           "status": "pass",
-          "detail": "Released checkpoint: peak 0.280 in; table penetration 0.016 in; 0 broken/rejected joints; 584 consecutive steps at rest (90 required).",
-          "displacement": 0.2800000281570632
+          "detail": "Released checkpoint: peak 0.280 in; table penetration 0.016 in; 0 broken/rejected joints; 693 consecutive steps at rest (90 required).",
+          "displacement": 0.2800000281570632,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.009767219580836262
         }
       ],
       "releaseTrials": [
@@ -286,18 +330,20 @@
           "seed": 0,
           "status": "pass",
           "peakDisplacement": 0.2800000281570632,
-          "peakGroundPenetration": 0.016231747288919296,
-          "finalDisplacement": 0.16363583630288803,
+          "peakGroundPenetration": 0.016098537853173722,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.009767219580836262,
+          "finalDisplacement": 0.16321149194071205,
           "finalSpeed": 0,
           "linearSpeed": 0,
           "angularSpeed": 0,
-          "settledSteps": 584,
+          "settledSteps": 693,
           "poppedJoints": [],
           "settledProjectionStatuses": [
             {
               "id": "small-final-34",
               "status": "fail",
-              "rmsPx": 26.240690819304987
+              "rmsPx": 26.21955135115102
             }
           ]
         },
@@ -305,18 +351,20 @@
           "seed": 17,
           "status": "pass",
           "peakDisplacement": 0.2800000281570632,
-          "peakGroundPenetration": 0.016277834950291448,
-          "finalDisplacement": 0.163805598272192,
+          "peakGroundPenetration": 0.01638498008245226,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.009769267493098255,
+          "finalDisplacement": 0.16339620450153206,
           "finalSpeed": 0,
           "linearSpeed": 0,
           "angularSpeed": 0,
-          "settledSteps": 602,
+          "settledSteps": 837,
           "poppedJoints": [],
           "settledProjectionStatuses": [
             {
               "id": "small-final-34",
               "status": "fail",
-              "rmsPx": 26.18077955395808
+              "rmsPx": 26.20140489304131
             }
           ]
         },
@@ -324,18 +372,20 @@
           "seed": 53,
           "status": "pass",
           "peakDisplacement": 0.2800000281570632,
-          "peakGroundPenetration": 0.016752907555465768,
-          "finalDisplacement": 0.16414760718133772,
+          "peakGroundPenetration": 0.01669478863179119,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.00976835790280628,
+          "finalDisplacement": 0.16321760064693724,
           "finalSpeed": 0,
           "linearSpeed": 0,
           "angularSpeed": 0,
-          "settledSteps": 576,
+          "settledSteps": 679,
           "poppedJoints": [],
           "settledProjectionStatuses": [
             {
               "id": "small-final-34",
               "status": "fail",
-              "rmsPx": 26.152936148953376
+              "rmsPx": 26.177679761606466
             }
           ]
         }
@@ -367,7 +417,7 @@
         },
         "release": {
           "status": "pass",
-          "detail": "seed 0: pass, peak 0.720 in, table 0.021 in, linear 0.000 in/s, angular 0.000 rad/s, 603/90 rest steps; seed 17: pass, peak 0.694 in, table 0.021 in, linear 0.000 in/s, angular 0.000 rad/s, 602/90 rest steps; seed 53: pass, peak 0.682 in, table 0.021 in, linear 0.000 in/s, angular 0.000 rad/s, 610/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
+          "detail": "seed 0: pass, peak 0.730 in, table 0.021 in, linear 0.000 in/s, angular 0.000 rad/s, 615/90 rest steps.; seed 17: pass, peak 0.730 in, table 0.021 in, linear 0.000 in/s, angular 0.000 rad/s, 613/90 rest steps.; seed 53: pass, peak 0.744 in, table 0.021 in, linear 0.000 in/s, angular 0.000 rad/s, 608/90 rest steps.. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
         },
         "settledShape": {
           "status": "fail",
@@ -383,112 +433,134 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "dc83cb1be2113fcb14ab6bab9e2be53982ad3acae262c193e3b0f3d2a088fbda",
+      "fingerprint": "1593568e3e1c55daff4430f5e3a916d604fc5c16a6a5812d2f760c62d03325fb",
       "stages": [
         {
           "id": "medium-lower",
           "status": "pass",
           "detail": "Released checkpoint: peak 0.280 in; table penetration 0.017 in; 0 broken/rejected joints; 886 consecutive steps at rest (90 required).",
-          "displacement": 0.2800000281570632
+          "displacement": 0.2800000281570632,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.00003352734835931903
         },
         {
           "id": "medium-support",
           "status": "pass",
           "detail": "Released checkpoint: peak 0.280 in; table penetration 0.008 in; 0 broken/rejected joints; 889 consecutive steps at rest (90 required).",
-          "displacement": 0.2799999713902339
+          "displacement": 0.2799999713902339,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.000005530032555434161
         },
         {
           "id": "medium-turn",
           "status": "pass",
-          "detail": "Released checkpoint: peak 0.657 in; table penetration 0.019 in; 0 broken/rejected joints; 674 consecutive steps at rest (90 required).",
-          "displacement": 0.6574851165893439
+          "detail": "Released checkpoint: peak 0.631 in; table penetration 0.012 in; 0 broken/rejected joints; 545 consecutive steps at rest (90 required).",
+          "displacement": 0.6307423160261116,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.006050985890396987
         },
         {
           "id": "medium-lower-walls",
           "status": "pass",
-          "detail": "Released checkpoint: peak 0.442 in; table penetration 0.015 in; 0 broken/rejected joints; 644 consecutive steps at rest (90 required).",
-          "displacement": 0.44159522139516255
+          "detail": "Released checkpoint: peak 0.465 in; table penetration 0.014 in; 0 broken/rejected joints; 641 consecutive steps at rest (90 required).",
+          "displacement": 0.46489113996802084,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0056610953388673835
         },
         {
           "id": "medium-lower-cover",
           "status": "pass",
-          "detail": "Released checkpoint: peak 0.420 in; table penetration 0.016 in; 0 broken/rejected joints; 641 consecutive steps at rest (90 required).",
-          "displacement": 0.4202168909449731
+          "detail": "Released checkpoint: peak 0.416 in; table penetration 0.016 in; 0 broken/rejected joints; 641 consecutive steps at rest (90 required).",
+          "displacement": 0.4159268153049639,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.005043872694702856
         },
         {
           "id": "medium-turn-cover",
           "status": "fail",
-          "detail": "Released checkpoint: peak 1.091 in; table penetration 0.015 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-          "displacement": 1.0914204915797179
+          "detail": "Released checkpoint: peak 1.093 in; table penetration 0.015 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+          "displacement": 1.0933969161832544,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.002130453024346668
         },
         {
           "id": "medium-upper-cover",
           "status": "pass",
-          "detail": "Released checkpoint: peak 0.553 in; table penetration 0.020 in; 0 broken/rejected joints; 632 consecutive steps at rest (90 required).",
-          "displacement": 0.5531956245869615
+          "detail": "Released checkpoint: peak 0.553 in; table penetration 0.020 in; 0 broken/rejected joints; 631 consecutive steps at rest (90 required).",
+          "displacement": 0.5530772467711638,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.006253588364275586
         },
         {
           "id": "medium-final",
           "status": "pass",
-          "detail": "Released checkpoint: peak 0.720 in; table penetration 0.021 in; 0 broken/rejected joints; 603 consecutive steps at rest (90 required).",
-          "displacement": 0.7199001274161032
+          "detail": "Released checkpoint: peak 0.730 in; table penetration 0.021 in; 0 broken/rejected joints; 615 consecutive steps at rest (90 required).",
+          "displacement": 0.7304167672997082,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.008716167745093983
         }
       ],
       "releaseTrials": [
         {
           "seed": 0,
           "status": "pass",
-          "peakDisplacement": 0.7199001274161032,
-          "peakGroundPenetration": 0.021262906844792928,
-          "finalDisplacement": 0.6485987666555078,
+          "peakDisplacement": 0.7304167672997082,
+          "peakGroundPenetration": 0.02122118972178629,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.008716167745093983,
+          "finalDisplacement": 0.6321633491531066,
           "finalSpeed": 0,
           "linearSpeed": 0,
           "angularSpeed": 0,
-          "settledSteps": 603,
+          "settledSteps": 615,
           "poppedJoints": [],
           "settledProjectionStatuses": [
             {
               "id": "medium-final-101",
               "status": "fail",
-              "rmsPx": 222.25727513288737
+              "rmsPx": 221.72189973297526
             }
           ]
         },
         {
           "seed": 17,
           "status": "pass",
-          "peakDisplacement": 0.6940830698777357,
-          "peakGroundPenetration": 0.021267060528218917,
-          "finalDisplacement": 0.6246129647667132,
+          "peakDisplacement": 0.7295642104764325,
+          "peakGroundPenetration": 0.021226103426797243,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.008716224102579773,
+          "finalDisplacement": 0.6321870595901135,
           "finalSpeed": 0,
           "linearSpeed": 0,
           "angularSpeed": 0,
-          "settledSteps": 602,
+          "settledSteps": 613,
           "poppedJoints": [],
           "settledProjectionStatuses": [
             {
               "id": "medium-final-101",
               "status": "fail",
-              "rmsPx": 221.43062472070136
+              "rmsPx": 221.73666236747005
             }
           ]
         },
         {
           "seed": 53,
           "status": "pass",
-          "peakDisplacement": 0.6823031370602854,
-          "peakGroundPenetration": 0.021254812982681393,
-          "finalDisplacement": 0.6194534177745471,
+          "peakDisplacement": 0.7439703240264934,
+          "peakGroundPenetration": 0.021239381350294257,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.009191471798292383,
+          "finalDisplacement": 0.6416251186822707,
           "finalSpeed": 0,
           "linearSpeed": 0,
           "angularSpeed": 0,
-          "settledSteps": 610,
+          "settledSteps": 608,
           "poppedJoints": [],
           "settledProjectionStatuses": [
             {
               "id": "medium-final-101",
               "status": "fail",
-              "rmsPx": 221.38827292276616
+              "rmsPx": 221.90043845096068
             }
           ]
         }
@@ -520,7 +592,7 @@
         },
         "release": {
           "status": "pass",
-          "detail": "seed 0: pass, peak 0.280 in, table 0.009 in, linear 0.000 in/s, angular 0.000 rad/s, 639/90 rest steps; seed 17: pass, peak 0.280 in, table 0.009 in, linear 0.000 in/s, angular 0.000 rad/s, 391/90 rest steps; seed 53: pass, peak 0.280 in, table 0.009 in, linear 0.000 in/s, angular 0.000 rad/s, 602/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
+          "detail": "seed 0: pass, peak 0.280 in, table 0.009 in, linear 0.000 in/s, angular 0.000 rad/s, 646/90 rest steps.; seed 17: pass, peak 0.280 in, table 0.009 in, linear 0.000 in/s, angular 0.000 rad/s, 603/90 rest steps.; seed 53: pass, peak 0.280 in, table 0.009 in, linear 0.000 in/s, angular 0.000 rad/s, 674/90 rest steps.. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
         },
         "settledShape": {
           "status": "unverified",
@@ -536,37 +608,47 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "7707ceeac97131cf4a3f023f4a949444eecded8bc7a84f9700f0c7d1ab069ef9",
+      "fingerprint": "60d465140d5b6d0f9eaeb05b3d2bf4d7e70903da1c7ebd7f5704c35ce457fe4d",
       "stages": [
         {
           "id": "large-bay-0",
           "status": "pass",
           "detail": "Released checkpoint: peak 0.280 in; table penetration 0.009 in; 0 broken/rejected joints; 887 consecutive steps at rest (90 required).",
-          "displacement": 0.28000020980836277
+          "displacement": 0.28000020980836277,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.000013238277702498635
         },
         {
           "id": "large-bay-1",
           "status": "pass",
           "detail": "Released checkpoint: peak 0.280 in; table penetration 0.008 in; 0 broken/rejected joints; 888 consecutive steps at rest (90 required).",
-          "displacement": 0.28000020980865475
+          "displacement": 0.28000020980865475,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.000008960716203265662
         },
         {
           "id": "large-bay-2",
           "status": "pass",
           "detail": "Released checkpoint: peak 0.280 in; table penetration 0.007 in; 0 broken/rejected joints; 888 consecutive steps at rest (90 required).",
-          "displacement": 0.27999997139136873
+          "displacement": 0.27999997139136873,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.000010957006328915497
         },
         {
           "id": "large-decks",
           "status": "pass",
           "detail": "Released checkpoint: peak 0.280 in; table penetration 0.009 in; 0 broken/rejected joints; 772 consecutive steps at rest (90 required).",
-          "displacement": 0.28000020980865475
+          "displacement": 0.28000020980865475,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0005188156806070765
         },
         {
           "id": "large-final",
           "status": "pass",
-          "detail": "Released checkpoint: peak 0.280 in; table penetration 0.009 in; 0 broken/rejected joints; 639 consecutive steps at rest (90 required).",
-          "displacement": 0.28000020980865475
+          "detail": "Released checkpoint: peak 0.280 in; table penetration 0.009 in; 0 broken/rejected joints; 646 consecutive steps at rest (90 required).",
+          "displacement": 0.28000020980865475,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.00051982569082476
         }
       ],
       "releaseTrials": [
@@ -574,12 +656,14 @@
           "seed": 0,
           "status": "pass",
           "peakDisplacement": 0.28000020980865475,
-          "peakGroundPenetration": 0.008666460707318135,
-          "finalDisplacement": 0.014786730699188882,
+          "peakGroundPenetration": 0.008642548369500513,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.00051982569082476,
+          "finalDisplacement": 0.014824813840393079,
           "finalSpeed": 0,
           "linearSpeed": 0,
           "angularSpeed": 0,
-          "settledSteps": 639,
+          "settledSteps": 646,
           "poppedJoints": [],
           "settledProjectionStatuses": []
         },
@@ -587,12 +671,14 @@
           "seed": 17,
           "status": "pass",
           "peakDisplacement": 0.28000020980865475,
-          "peakGroundPenetration": 0.008816401743273028,
-          "finalDisplacement": 0.014449429375273092,
+          "peakGroundPenetration": 0.00879699067255979,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0005245597531207125,
+          "finalDisplacement": 0.014756025529868603,
           "finalSpeed": 0,
           "linearSpeed": 0,
           "angularSpeed": 0,
-          "settledSteps": 391,
+          "settledSteps": 603,
           "poppedJoints": [],
           "settledProjectionStatuses": []
         },
@@ -600,12 +686,14 @@
           "seed": 53,
           "status": "pass",
           "peakDisplacement": 0.28000020980865475,
-          "peakGroundPenetration": 0.008684103403166166,
-          "finalDisplacement": 0.014923978291752363,
+          "peakGroundPenetration": 0.00866849090213484,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0005189007696770886,
+          "finalDisplacement": 0.014828362051197592,
           "finalSpeed": 0,
           "linearSpeed": 0,
           "angularSpeed": 0,
-          "settledSteps": 602,
+          "settledSteps": 674,
           "poppedJoints": [],
           "settledProjectionStatuses": []
         }

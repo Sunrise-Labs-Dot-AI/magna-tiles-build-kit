@@ -5,10 +5,33 @@ import { courseCandidates } from "@/lib/planner/candidates";
 import { checkCourse } from "@/lib/planner/route-checks";
 import { testCars } from "@/lib/planner/car-test";
 import { POST } from "@/app/api/design-build/route";
+import { tilePrismVertices } from "@/lib/magnetic-tiles/prism-geometry";
+import { exactPrismDepth } from "./fixtures/contact-frames";
 
 const sprint = "a downhill racecourse for two side by side cars";
 
 describe("simulation-gated design planner", () => {
+  it("seats the generated launch platform and rear walls on finite support faces", () => {
+    const { build } = courseCandidates(parseDesignBrief(sprint))[0];
+    const platform = build.tiles.find((t) => t.id === "large-top-platform-panel")!;
+    const top = (tile: typeof platform) =>
+      Math.max(...tilePrismVertices(tile).map((p) => p.y));
+    const bottom = (tile: typeof platform) =>
+      Math.min(...tilePrismVertices(tile).map((p) => p.y));
+    const supports = build.tiles.filter((t) => /platform.*wall|side-brace/.test(t.id));
+    expect(supports.length).toBeGreaterThan(0);
+    for (const support of supports) {
+      expect(exactPrismDepth(platform, support)).toBeLessThan(1e-7);
+    }
+    expect(bottom(platform)).toBeCloseTo(Math.max(...supports.map(top)), 8);
+    const walls = build.tiles.filter((t) => /upper-rear-wall/.test(t.id));
+    expect(walls).toHaveLength(2);
+    for (const wall of walls) {
+      expect(bottom(wall)).toBeCloseTo(top(platform), 8);
+      expect(exactPrismDepth(platform, wall)).toBeLessThan(1e-7);
+    }
+  });
+
   it("produces a two-car sprint with recorded free dynamics and stable assembly steps", async () => {
     const result = await designBuild(sprint);
     expect(result.status).toBe("simulation-passed");

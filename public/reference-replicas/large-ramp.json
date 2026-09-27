@@ -3050,9 +3050,9 @@
   },
   "report": {
     "id": "large-ramp",
-    "fingerprint": "7707ceeac97131cf4a3f023f4a949444eecded8bc7a84f9700f0c7d1ab069ef9",
-    "validationCodeHash": "e451d061b1843a258e6aeaf6e44d58be25e907c4015a5bb6df92bdd9bdd01b48",
-    "generatedAt": "2026-09-27T06:24:58.382Z",
+    "fingerprint": "60d465140d5b6d0f9eaeb05b3d2bf4d7e70903da1c7ebd7f5704c35ce457fe4d",
+    "validationCodeHash": "41e24f3b908a2f1a0decd144dea070c20f42241920ea81a0c723af5f9b8836f7",
+    "generatedAt": "2026-09-27T10:04:03.570Z",
     "replication": "not-verified",
     "checks": {
       "source": {
@@ -3077,7 +3077,7 @@
       },
       "release": {
         "status": "pass",
-        "detail": "seed 0: pass, peak 0.280 in, table 0.009 in, linear 0.000 in/s, angular 0.000 rad/s, 639/90 rest steps; seed 17: pass, peak 0.280 in, table 0.009 in, linear 0.000 in/s, angular 0.000 rad/s, 391/90 rest steps; seed 53: pass, peak 0.280 in, table 0.009 in, linear 0.000 in/s, angular 0.000 rad/s, 602/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
+        "detail": "seed 0: pass, peak 0.280 in, table 0.009 in, linear 0.000 in/s, angular 0.000 rad/s, 646/90 rest steps.; seed 17: pass, peak 0.280 in, table 0.009 in, linear 0.000 in/s, angular 0.000 rad/s, 603/90 rest steps.; seed 53: pass, peak 0.280 in, table 0.009 in, linear 0.000 in/s, angular 0.000 rad/s, 674/90 rest steps.. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
       },
       "settledShape": {
         "status": "unverified",
@@ -3098,12 +3098,14 @@
         "seed": 0,
         "status": "pass",
         "peakDisplacement": 0.28000020980865475,
-        "peakGroundPenetration": 0.008666460707318135,
-        "finalDisplacement": 0.014786730699188882,
+        "peakGroundPenetration": 0.008642548369500513,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.00051982569082476,
+        "finalDisplacement": 0.014824813840393079,
         "finalSpeed": 0,
         "linearSpeed": 0,
         "angularSpeed": 0,
-        "settledSteps": 639,
+        "settledSteps": 646,
         "poppedJoints": [],
         "settledProjections": []
       },
@@ -3111,12 +3113,14 @@
         "seed": 17,
         "status": "pass",
         "peakDisplacement": 0.28000020980865475,
-        "peakGroundPenetration": 0.008816401743273028,
-        "finalDisplacement": 0.014449429375273092,
+        "peakGroundPenetration": 0.00879699067255979,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.0005245597531207125,
+        "finalDisplacement": 0.014756025529868603,
         "finalSpeed": 0,
         "linearSpeed": 0,
         "angularSpeed": 0,
-        "settledSteps": 391,
+        "settledSteps": 603,
         "poppedJoints": [],
         "settledProjections": []
       },
@@ -3124,12 +3128,14 @@
         "seed": 53,
         "status": "pass",
         "peakDisplacement": 0.28000020980865475,
-        "peakGroundPenetration": 0.008684103403166166,
-        "finalDisplacement": 0.014923978291752363,
+        "peakGroundPenetration": 0.00866849090213484,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.0005189007696770886,
+        "finalDisplacement": 0.014828362051197592,
         "finalSpeed": 0,
         "linearSpeed": 0,
         "angularSpeed": 0,
-        "settledSteps": 602,
+        "settledSteps": 674,
         "poppedJoints": [],
         "settledProjections": []
       }
@@ -3139,31 +3145,41 @@
         "id": "large-bay-0",
         "status": "pass",
         "detail": "Released checkpoint: peak 0.280 in; table penetration 0.009 in; 0 broken/rejected joints; 887 consecutive steps at rest (90 required).",
-        "displacement": 0.28000020980836277
+        "displacement": 0.28000020980836277,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.000013238277702498635
       },
       {
         "id": "large-bay-1",
         "status": "pass",
         "detail": "Released checkpoint: peak 0.280 in; table penetration 0.008 in; 0 broken/rejected joints; 888 consecutive steps at rest (90 required).",
-        "displacement": 0.28000020980865475
+        "displacement": 0.28000020980865475,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.000008960716203265662
       },
       {
         "id": "large-bay-2",
         "status": "pass",
         "detail": "Released checkpoint: peak 0.280 in; table penetration 0.007 in; 0 broken/rejected joints; 888 consecutive steps at rest (90 required).",
-        "displacement": 0.27999997139136873
+        "displacement": 0.27999997139136873,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.000010957006328915497
       },
       {
         "id": "large-decks",
         "status": "pass",
         "detail": "Released checkpoint: peak 0.280 in; table penetration 0.009 in; 0 broken/rejected joints; 772 consecutive steps at rest (90 required).",
-        "displacement": 0.28000020980865475
+        "displacement": 0.28000020980865475,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.0005188156806070765
       },
       {
         "id": "large-final",
         "status": "pass",
-        "detail": "Released checkpoint: peak 0.280 in; table penetration 0.009 in; 0 broken/rejected joints; 639 consecutive steps at rest (90 required).",
-        "displacement": 0.28000020980865475
+        "detail": "Released checkpoint: peak 0.280 in; table penetration 0.009 in; 0 broken/rejected joints; 646 consecutive steps at rest (90 required).",
+        "displacement": 0.28000020980865475,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.00051982569082476
       }
     ],
     "instructions": [
@@ -3418,6 +3434,9 @@
         "stageId": "large-bay-0",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -3425,6 +3444,9 @@
         "stageId": "large-bay-1",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -3432,6 +3454,9 @@
         "stageId": "large-bay-2",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -3439,6 +3464,9 @@
         "stageId": "large-decks",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -3446,6 +3474,9 @@
         "stageId": "large-final",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       }

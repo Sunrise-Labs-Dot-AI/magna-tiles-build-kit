@@ -1,0 +1,179 @@
+--- a/src/shape/polygonal_feature_map.rs
++++ b/src/shape/polygonal_feature_map.rs
+@@ -1,3 +1,5 @@
++#[cfg(all(feature="dim3",feature="alloc"))]
++use alloc::{vec,vec::Vec};
+ use crate::math::{Real, Vector};
+ use crate::shape::{Cuboid, PolygonalFeature, Segment, SupportMap, Triangle};
+ use na::Unit;
+@@ -15,6 +17,9 @@
+ 
+ /// Trait implemented by convex shapes with features with polyhedral approximations.
+ pub trait PolygonalFeatureMap: SupportMap {
++    #[cfg(all(feature = "dim3",feature="alloc"))]
++    fn polyhedral_geometry(&self) -> Option<PolyhedralGeometry> { None }
++
+     /// Compute the support polygonal face of `self` towards the `dir`.
+     fn local_support_feature(&self, dir: &Unit<Vector<Real>>, out_feature: &mut PolygonalFeature);
+ 
+@@ -40,6 +45,17 @@
+ }
+ 
+ impl PolygonalFeatureMap for Cuboid {
++    #[cfg(all(feature = "dim3",feature="alloc"))]
++    fn polyhedral_geometry(&self) -> Option<PolyhedralGeometry> {
++        let h=self.half_extents;
++        let mut points=Vec::new();
++        for x in [-1.0,1.0] { for y in [-1.0,1.0] { for z in [-1.0,1.0] {
++            points.push(Point::new(x*h.x,y*h.y,z*h.z));
++        } } }
++        let axes=vec![Vector::x(),Vector::y(),Vector::z()];
++        Some(PolyhedralGeometry { points, normals:axes.clone(),edges:axes })
++    }
++
+     fn local_support_feature(&self, dir: &Unit<Vector<Real>>, out_feature: &mut PolygonalFeature) {
+         *out_feature = self.support_face(**dir);
+     }
+@@ -152,3 +168,46 @@
+         }
+     }
+ }
++
++#[cfg(all(feature = "dim3",feature="alloc"))]
++pub struct PolyhedralGeometry {
++    pub points: Vec<Point<Real>>,
++    pub normals: Vec<Vector<Real>>,
++    pub edges: Vec<Vector<Real>>,
++}
++
++#[cfg(all(feature = "dim3",feature="alloc"))]
++impl PolyhedralGeometry {
++    pub fn directed_gap(&self, other:&Self, axis:&Vector<Real>) -> Real {
++        let a=self.points.iter().map(|p|p.coords.dot(axis)).fold(-Real::MAX,Real::max);
++        let b=other.points.iter().map(|p|p.coords.dot(axis)).fold(Real::MAX,Real::min);
++        b-a
++    }
++    pub fn contains_point(&self, point:&Point<Real>, margin:Real) -> bool {
++        self.normals.iter().all(|n| {
++            let (lo,hi)=self.points.iter().map(|p|p.coords.dot(n)).fold((Real::MAX,-Real::MAX),|(lo,hi),x|(lo.min(x),hi.max(x)));
++            let value=point.coords.dot(n);value>=lo-margin && value<=hi+margin
++        })
++    }
++    pub fn relative(&self, pose:&crate::math::Isometry<Real>) -> Self {
++        Self { points:self.points.iter().map(|p|pose*p).collect(),
++            normals:self.normals.iter().map(|n|pose*n).collect(),
++            edges:self.edges.iter().map(|e|pose*e).collect() }
++    }
++    pub fn separation(&self, other:&Self, margin:Real) -> (Real,Unit<Vector<Real>>) {
++        let center=|p:&Self|p.points.iter().map(|p|p.coords).sum::<Vector<Real>>()/p.points.len() as Real;
++        let delta=center(other)-center(self);
++        let mut best=(-Real::MAX,Vector::x_axis());
++        let axes=self.normals.iter().chain(other.normals.iter()).copied().chain(
++            self.edges.iter().flat_map(|a|other.edges.iter().map(move |b|a.cross(b))));
++        for axis in axes {
++            // Keep near-parallel separating axes; skip only exact zero vectors.
++            let Some(n)=Unit::try_new(axis,0.0) else {continue};
++            let forward=self.directed_gap(other,&n);
++            let backward=self.directed_gap(other,&-n);
++            let (gap,n)=if backward>forward || (backward==forward && delta.dot(&n)<0.0) {(backward,-n)} else {(forward,n)};
++            if gap>best.0+margin {best=(gap,n);}
++        }
++        best
++    }
++}
+--- a/src/shape/convex_polyhedron.rs
++++ b/src/shape/convex_polyhedron.rs
+@@ -957,6 +957,13 @@
+ }
+ 
+ impl PolygonalFeatureMap for ConvexPolyhedron {
++    fn polyhedral_geometry(&self) -> Option<crate::shape::PolyhedralGeometry> {
++        if self.faces.iter().any(|f|f.num_vertices_or_edges>4) {return None;}
++        Some(crate::shape::PolyhedralGeometry { points:self.points.clone(),
++            normals:self.faces.iter().map(|f|*f.normal).collect(),
++            edges:self.edges.iter().filter(|e|!e.deleted).map(|e|*e.dir).collect() })
++    }
++
+     fn local_support_feature(&self, dir: &Unit<Vector<Real>>, out_feature: &mut PolygonalFeature) {
+         let mut best_fid = 0;
+         let mut best_dot = self.faces[0].normal.dot(dir);
+--- a/src/shape/mod.rs
++++ b/src/shape/mod.rs
+@@ -125,3 +125,6 @@
+ mod triangle_pseudo_normals;
+ #[cfg(feature = "alloc")]
+ mod voxels;
++
++#[cfg(all(feature="dim3",feature="alloc"))]
++pub use self::polygonal_feature_map::PolyhedralGeometry;
+--- a/src/query/contact_manifolds/contact_manifolds_pfm_pfm.rs
++++ b/src/query/contact_manifolds/contact_manifolds_pfm_pfm.rs
+@@ -60,8 +60,25 @@
+     // We use very small thresholds for the manifold update because something to high would
+     // cause numerical drifts with the effect of introducing bumps in
+     // what should have been smooth rolling motions.
++    #[cfg(feature="dim3")]
++    let polyhedral = if border_radius1==0.0 && border_radius2==0.0 {
++        if let (Some(a),Some(b))=(pfm1.polyhedral_geometry(),pfm2.polyhedral_geometry()) {
++            let b=b.relative(pos12);
++            let scale=a.points.iter().chain(b.points.iter()).map(|p|p.coords.amax()).fold(1.0,Real::max);
++            let margin=32.0*Real::EPSILON*scale;
++            let (gap,n)=a.separation(&b,margin);
++            Some((a,b,margin,gap,n))
++        } else {None}
++    } else {None};
+     if manifold.try_update_contacts_eps(pos12, crate::utils::COS_1_DEGREES, 1.0e-6) {
+-        return;
++        #[cfg(feature="dim3")]
++        let valid=polyhedral.as_ref().map_or(true,|(a,b,margin,gap,_)|
++            *gap<=a.directed_gap(b,&manifold.local_n1)+margin && manifold.points.iter().all(|p|
++                a.contains_point(&p.local_p1,*margin) && b.contains_point(&(pos12*p.local_p2),*margin)));
++        #[cfg(feature="dim2")]
++        let valid=true;
++        if valid {return;}
++        // Recompute an invalid cache normally; retain feature-based impulse matching.
+     }
+ 
+     let init_dir = Unit::try_new(manifold.local_n1, crate::math::DEFAULT_EPSILON);
+@@ -81,7 +98,11 @@
+     match contact {
+         GJKResult::ClosestPoints(p1, p2_1, dir) => {
+             let mut local_n1 = dir;
+-            let mut local_n2 = pos12.inverse_transform_unit_vector(&-dir);
++            #[cfg(feature="dim3")]
++            if let Some((a,b,margin,gap,n))=polyhedral.as_ref() {
++                if *gap>a.directed_gap(b,&dir)+margin {local_n1=*n;}
++            }
++            let mut local_n2 = pos12.inverse_transform_unit_vector(&-local_n1);
+             let dist = (p2_1 - p1).dot(&local_n1);
+ 
+             if !(normal_constraints1, normal_constraints2).project_local_normals(
+@@ -109,7 +130,27 @@
+                 false,
+             );
+ 
+-            if (cfg!(feature = "dim3") || cfg!(feature = "dim2") && manifold.points.is_empty())
++            // GJK may return coincident origin placeholders at exact contact.
++            // They are not additional witnesses unless they lie on both finite
++            // support surfaces. The actual clipped contacts above are untouched.
++            #[cfg(feature="dim3")]
++            let finite_gjk_witness = polyhedral.as_ref().map_or(true, |(a,b,margin,_,_)| {
++                let h1=a.points.iter().map(|p|p.coords.dot(&local_n1)).fold(-Real::MAX,Real::max);
++                let h2=b.points.iter().map(|p|p.coords.dot(&local_n1)).fold(Real::MAX,Real::min);
++                let delta=p2_1-p1;
++                let distance=delta.dot(&local_n1);
++                a.contains_point(&p1,*margin) && b.contains_point(&p2_1,*margin)
++                    && distance.is_finite()
++                    && (p1.coords.dot(&local_n1)-h1).abs()<=*margin
++                    && (p2_1.coords.dot(&local_n1)-h2).abs()<=*margin
++                    && (distance-(h2-h1)).abs()<=2.0*margin
++                    && (delta-*local_n1*distance).norm()<=*margin
++            });
++            #[cfg(feature="dim2")]
++            let finite_gjk_witness = true;
++
++            if finite_gjk_witness
++                && (cfg!(feature = "dim3") || cfg!(feature = "dim2") && manifold.points.is_empty())
+                 // If normal constraints changed the GJK direction, it is no longer valid so we cant use it for this additional contact.
+                 && local_n1 == dir
+             {

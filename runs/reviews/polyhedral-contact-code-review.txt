@@ -1,0 +1,10 @@
+**Findings**
+
+1. **Equal-depth wrong normals are not corrected.**  
+[runs/diagnostics/parry-polyhedral-normal.patch](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/diagnostics/parry-polyhedral-normal.patch:72) only replaces GJK’s normal when SAT’s gap is strictly larger than GJK’s directed gap by `margin`. That does not implement the adopted tie-axis requirement in [runs/2026-09-27-polyhedral-contact-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-polyhedral-contact-plan.md:31).  
+Concrete scenario: exact face-edge, edge-edge, or corner contact where several axes have the same zero or equal penetration gap, and GJK returns `old_dir` from the cached/simplex path. SAT may prefer a face axis within the tie band, but `gap > directed_gap + margin` is false, so the patch preserves the original unrelated normal. That can still drive `local_support_feature` and clipping with the wrong reference face.  
+Action: when GJK’s normal is not in the accepted SAT minimum-axis equivalence set, replace it according to the deterministic SAT tie rules, even if the directed gap is equal within margin.
+
+2. **The validation described can miss that defect.**  
+The reported checks prove contacts are finite and signed-depth-consistent, but they do not prove the preserved GJK normal is the deterministic SAT tie winner or a member of the allowed equivalent-axis set. A wrong equal-gap normal can produce a self-consistent single contact and pass finite-solid and signed-depth algebra, especially in exact touching/corner cases where many axes report the same interval gap.  
+Action: add fixture assertions that compare the emitted manifold normal against the independent SAT minimum-axis set, including cached-normal replay, body swap, exact corner/corner, face/edge tie, and near-parallel equal-depth cases.

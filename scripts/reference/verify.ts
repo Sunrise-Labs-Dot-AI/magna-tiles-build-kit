@@ -10,6 +10,10 @@ import { artifactHashes } from "../../lib/replication/provenance";
 const escape = (s: string) =>
   s.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll('"', "&quot;");
 async function main() {
+  // Wall-clock computation budget only; physical durations and acceptance
+  // tolerances are fixed by the verifier. Continuous solid sweeps cost more.
+  const maxMilliseconds = Number(process.argv.find(arg => arg.startsWith("--max-ms="))?.slice("--max-ms=".length) ?? 240000);
+  if (!Number.isFinite(maxMilliseconds) || maxMilliseconds <= 0) throw new Error("--max-ms must be a positive finite computation budget.");
   await mkdir("public/reference-replicas", { recursive: true });
   await mkdir("public/reference-frames/replication", { recursive: true });
   const summaries = [],
@@ -22,7 +26,7 @@ async function main() {
       replica,
       observations,
       {
-        deadline: Date.now() + 240000,
+        deadline: Date.now() + maxMilliseconds,
       },
     );
     await writeFile(

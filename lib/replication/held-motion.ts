@@ -1,4 +1,4 @@
-import { RigidBodyType } from "@dimforge/rapier3d-compat";
+import { RigidBodyType } from "@/lib/engine/physics-backend";
 import { createEngineWorld, perturbFirstRelease, type EngineState } from "@/lib/engine/rapier-world";
 import { MAX_STANDING_DISPLACEMENT, SETTLED_ANGULAR_SPEED, SETTLED_LINEAR_SPEED, SETTLED_REQUIRED_STEPS, SIMULATION_MAX_STEPS, SIMULATION_TIMESTEP_SECONDS } from "@/lib/engine/constants";
 import { add, distance, inverseQuaternion, magnitude, multiplyQuaternions, quaternionAngle, quaternionToBasis, scale, slerp, subtract, transformLocal, type Quat } from "@/lib/engine/math";
@@ -100,6 +100,7 @@ export async function simulateHeldMotion(build: BuildGraph, state: EngineState |
       engine.step();
       const actual = supportSnapshot(build, engine);
       result.settled = actual;
+      if(engine.invalidState||engine.solidFailures.length){result.state=engine.snapshot();return fail(engine.solidFailures[0]?.detail??"Invalid physical state.");}
       const rotation = multiplyQuaternions(desired.rotation, inverseQuaternion(startQ));
       const expected = build.tiles.map(t => moving.has(t.id) ? { ...t,
         position: add(desired.position, transformLocal(subtract(t.position,start.position), { x: 0,y: 0,z: 0 }, quaternionToBasis(rotation))),

@@ -1,4 +1,4 @@
-import { RigidBodyType } from "@dimforge/rapier3d-compat";
+import { RigidBodyType } from "@/lib/engine/physics-backend";
 import { createEngineWorld, currentTilePose, perturbFirstRelease, type EngineState, type EngineWorld } from "@/lib/engine/rapier-world";
 import { MAX_STANDING_DISPLACEMENT, SETTLED_ANGULAR_SPEED, SETTLED_LINEAR_SPEED, SETTLED_REQUIRED_STEPS, SIMULATION_MAX_STEPS, SIMULATION_TIMESTEP_SECONDS } from "@/lib/engine/constants";
 import { magnitude } from "@/lib/engine/math";
@@ -10,11 +10,14 @@ import { checkSweptPoses, samePoses } from "./rotation-clearance";
 import { compactMotion } from "./motion-recording";
 import { RAW_OVERLAP_TOLERANCE } from "@/lib/engine/overlap";
 import { componentContacts, disconnectedReason } from "./components";
+import type { SolidFailure } from "@/lib/magnetic-tiles/swept-prisms";
 
 export interface SupportTrial extends Check {
   heldTileIds: string[];
   peakDisplacement: number;
   peakGroundPenetration: number;
+  solidFailures: SolidFailure[];
+  peakSolidOverlap: number;
   settledSteps: number;
   poppedJoints: string[];
   dynamicTileCount: number;
@@ -60,6 +63,7 @@ export async function simulateSupport(build: BuildGraph, heldTileIds: string[], 
     for (let n = 0; n < SIMULATION_MAX_STEPS*substeps; n++) {
       if (n % 32 === 0 && Date.now() > deadline) throw new SimulationBudgetExceeded();
       engine.step();
+      if(engine.invalidState||engine.solidFailures.length)clearanceFailure=engine.solidFailures[0]?.detail??"Invalid physical state.";
       elapsed = (n+1)*SIMULATION_TIMESTEP_SECONDS/substeps;
       if (hands) {
         const actual = supportSnapshot(build,engine);
@@ -86,6 +90,7 @@ export async function simulateSupport(build: BuildGraph, heldTileIds: string[], 
     const settled = supportSnapshot(build,engine);
     motion.push({ seconds: elapsed,tiles: settled.tiles });
     return { status: passed ? "pass" : "fail", heldTileIds: [...heldTileIds], peakDisplacement: peak, peakGroundPenetration: engine.peakGroundPenetration, settledSteps, poppedJoints, dynamicTileCount,
+      solidFailures:engine.solidFailures,peakSolidOverlap:engine.peakSolidOverlap,
       detail: clearanceFailure || (dynamicTileCount ? `${heldTileIds.length} individually held panels, ${dynamicTileCount} dynamic panels; peak ${peak.toFixed(3)} in, ${settledSteps}/90 rest steps, ${poppedJoints.length} rejected/broken joins.`
         : `${heldTileIds.length} separate hand contacts support ${build.tiles.length} panels. No free-body stability is claimed; handoff/release must be checked separately.`),
       settled, state: engine.snapshot(), motion: compactMotion(motion) };

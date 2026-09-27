@@ -339,6 +339,8 @@ export async function evaluateReplica(
         status: "fail",
         detail: geometry.detail,
         displacement: null,
+        solidFailures: null,
+        peakSolidOverlap: null,
       });
       continue;
     }
@@ -349,6 +351,8 @@ export async function evaluateReplica(
         detail:
           "Explicitly held source module; hand access and unsupported stability are not tested.",
         displacement: null,
+        solidFailures: null,
+        peakSolidOverlap: null,
       });
       continue;
     }
@@ -356,8 +360,10 @@ export async function evaluateReplica(
     report.stages.push({
       id: stage.id,
       status: result.status,
-      detail: `Released checkpoint: peak ${result.peakDisplacement.toFixed(3)} in; table penetration ${result.peakGroundPenetration.toFixed(3)} in; ${result.poppedJoints.length} broken/rejected joints; ${result.settledSteps} consecutive steps at rest (90 required).`,
+      detail: `Released checkpoint: peak ${result.peakDisplacement.toFixed(3)} in; table penetration ${result.peakGroundPenetration.toFixed(3)} in; ${result.poppedJoints.length} broken/rejected joints; ${result.settledSteps} consecutive steps at rest (90 required). ${result.solidFailures.map(f => f.detail).join(" ")}`.trim(),
       displacement: result.peakDisplacement,
+      solidFailures: result.solidFailures,
+      peakSolidOverlap: result.peakSolidOverlap,
     });
   }
   report.assemblySimulation = await evaluateAssembly(replica, deadline);
@@ -388,7 +394,7 @@ export async function evaluateReplica(
       report.releases
         .map(
           (r) =>
-            `seed ${r.seed}: ${r.status}, peak ${r.peakDisplacement.toFixed(3)} in, table ${r.peakGroundPenetration.toFixed(3)} in, linear ${r.linearSpeed.toFixed(3)} in/s, angular ${r.angularSpeed.toFixed(3)} rad/s, ${r.settledSteps}/90 rest steps`,
+            `seed ${r.seed}: ${r.status}, peak ${r.peakDisplacement.toFixed(3)} in, table ${r.peakGroundPenetration.toFixed(3)} in, linear ${r.linearSpeed.toFixed(3)} in/s, angular ${r.angularSpeed.toFixed(3)} rad/s, ${r.settledSteps}/90 rest steps. ${r.solidFailures.map(f => f.detail).join(" ")}`.trim(),
         )
         .join("; ") +
         ". Settled geometry uses the original fitted camera; it is not re-aligned to hide movement.",

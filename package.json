@@ -20,6 +20,7 @@
     "reference:check-artifacts": "tsx scripts/reference/check-artifacts.ts"
   },
   "dependencies": {
+    "@magnatiles/rapier-contact": "file:vendor/rapier-contact",
     "@dimforge/rapier3d-compat": "^0.19.2",
     "@react-three/drei": "^10.7.6",
     "@react-three/fiber": "^9.4.0",

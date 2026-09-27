@@ -50,7 +50,7 @@ export async function releaseCandidate(
         engine.stepSpeeds.angular < SETTLED_ANGULAR_SPEED
           ? settledSteps + 1
           : 0;
-      if (peak > MAX_STANDING_DISPLACEMENT || engine.poppedJoints.length || engine.peakGroundPenetration > RAW_OVERLAP_TOLERANCE) break;
+      if (engine.invalidState || engine.solidFailures.length || peak > MAX_STANDING_DISPLACEMENT || engine.poppedJoints.length || engine.peakGroundPenetration > RAW_OVERLAP_TOLERANCE) break;
     }
     const settled: BuildGraph = {
       ...build,
@@ -75,6 +75,7 @@ export async function releaseCandidate(
     return {
       seed,
       status:
+        !engine.invalidState && !engine.solidFailures.length &&
         peak <= MAX_STANDING_DISPLACEMENT &&
         engine.peakGroundPenetration <= RAW_OVERLAP_TOLERANCE &&
         !engine.poppedJoints.length &&
@@ -84,6 +85,8 @@ export async function releaseCandidate(
           : ("fail" as const),
       peakDisplacement: peak,
       peakGroundPenetration: engine.peakGroundPenetration,
+      solidFailures: engine.solidFailures,
+      peakSolidOverlap: engine.peakSolidOverlap,
       finalDisplacement: engine.maxDisplacement(),
       finalSpeed: engine.maxSpeed(),
       linearSpeed,

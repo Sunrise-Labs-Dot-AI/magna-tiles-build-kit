@@ -1,7 +1,8 @@
 {
-  "validationCodeHash": "e451d061b1843a258e6aeaf6e44d58be25e907c4015a5bb6df92bdd9bdd01b48",
+  "validationCodeHash": "41e24f3b908a2f1a0decd144dea070c20f42241920ea81a0c723af5f9b8836f7",
   "scope": "Numerical rigid-contact convergence only. Independent catalog flat/base-load fixtures; no source-derived geometry or physical material calibration.",
   "versions": {
+    "backend": "js0.19.2-rust0.30.1-parry0.25.1-sat-cache3-f32-abi1-5e4c38a5ada93780-profile10e2e81b05c3c518",
     "javascript": "rapier3d-compat 0.19.2",
     "rust": "rapier3d 0.30.1"
   },
@@ -38,6 +39,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -58,6 +62,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -78,6 +85,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -98,6 +108,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -118,6 +131,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -138,6 +154,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -158,6 +177,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.009722031652927399,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -178,6 +200,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.009722031652927399,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -198,6 +223,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.009722031652927399,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -218,6 +246,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.009722031652927399,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -238,6 +269,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.009722031652927399,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -258,6 +292,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.009722031652927399,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -278,6 +315,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -298,6 +338,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -318,6 +361,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -338,6 +384,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -358,6 +407,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -378,6 +430,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -398,6 +453,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -418,6 +476,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -438,6 +499,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -458,6 +522,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -478,6 +545,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -498,6 +568,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -518,6 +591,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.0728205069899559,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -538,6 +614,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.0728205069899559,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -558,6 +637,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.0728205069899559,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -578,6 +660,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.0728205069899559,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -598,6 +683,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.0728205069899559,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -618,6 +706,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.0728205069899559,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -638,6 +729,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -658,6 +752,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -678,6 +775,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -698,6 +798,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -718,6 +821,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -738,6 +844,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -746,18 +855,30 @@
       "hz": 960,
       "solver": 16,
       "seed": 0,
-      "peakPenetration": 0.091079258220935,
-      "latePenetration": 0.091079258220935,
+      "peakPenetration": 0.030103528389126513,
+      "latePenetration": 0.030103528389126513,
       "peakDisplacement": 0.2800000381469745,
       "finalSpeeds": {
-        "linear": 0,
-        "angular": 0
+        "linear": 0.10063841047721653,
+        "angular": 0.022103602193280364
       },
-      "settledSteps": 654,
+      "settledSteps": 0,
       "poppedJoints": [],
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [
+        {
+          "kind": "table",
+          "tileIds": [
+            "roof"
+          ],
+          "penetration": 0.030103524812863262,
+          "detail": "roof intersects the fixed table by 0.030103524812863262 in during motion."
+        }
+      ],
+      "peakSolidOverlap": 0.0000010228370461717873,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -766,18 +887,30 @@
       "hz": 960,
       "solver": 16,
       "seed": 17,
-      "peakPenetration": 0.0909120788863715,
-      "latePenetration": 0.0909120788863715,
+      "peakPenetration": 0.030061014506515896,
+      "latePenetration": 0.030061014506515896,
       "peakDisplacement": 0.2800000381469745,
       "finalSpeeds": {
-        "linear": 0,
-        "angular": 0
+        "linear": 0.09844340481233306,
+        "angular": 0.022036518364505812
       },
-      "settledSteps": 655,
+      "settledSteps": 0,
       "poppedJoints": [],
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [
+        {
+          "kind": "table",
+          "tileIds": [
+            "roof"
+          ],
+          "penetration": 0.030061010930251826,
+          "detail": "roof intersects the fixed table by 0.030061010930251826 in during motion."
+        }
+      ],
+      "peakSolidOverlap": 0.000002172590531479557,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -786,18 +919,30 @@
       "hz": 960,
       "solver": 16,
       "seed": 53,
-      "peakPenetration": 0.09175462648086607,
-      "latePenetration": 0.09175462648086607,
+      "peakPenetration": 0.030076826146452226,
+      "latePenetration": 0.030076826146452226,
       "peakDisplacement": 0.2800000381469745,
       "finalSpeeds": {
-        "linear": 0,
-        "angular": 0
+        "linear": 0.10246334367336185,
+        "angular": 0.02174984365869975
       },
-      "settledSteps": 655,
+      "settledSteps": 0,
       "poppedJoints": [],
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [
+        {
+          "kind": "table",
+          "tileIds": [
+            "roof"
+          ],
+          "penetration": 0.030076822570188094,
+          "detail": "roof intersects the fixed table by 0.030076822570188094 in during motion."
+        }
+      ],
+      "peakSolidOverlap": 0.0000016392523443098383,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -806,18 +951,30 @@
       "hz": 960,
       "solver": 32,
       "seed": 0,
-      "peakPenetration": 0.08315742549547127,
-      "latePenetration": 0.08315742549547127,
+      "peakPenetration": 0.03000947734046258,
+      "latePenetration": 0.03000947734046258,
       "peakDisplacement": 0.2800000381469745,
       "finalSpeeds": {
-        "linear": 0,
-        "angular": 0
+        "linear": 0.06527515994750543,
+        "angular": 0.01334504870051053
       },
-      "settledSteps": 766,
+      "settledSteps": 0,
       "poppedJoints": [],
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [
+        {
+          "kind": "table",
+          "tileIds": [
+            "roof"
+          ],
+          "penetration": 0.030009473764202606,
+          "detail": "roof intersects the fixed table by 0.030009473764202606 in during motion."
+        }
+      ],
+      "peakSolidOverlap": 5.485352478906691e-7,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -826,18 +983,30 @@
       "hz": 960,
       "solver": 32,
       "seed": 17,
-      "peakPenetration": 0.08303239565379922,
-      "latePenetration": 0.08303239565379922,
+      "peakPenetration": 0.030029495482564353,
+      "latePenetration": 0.030029495482564353,
       "peakDisplacement": 0.2800000381469745,
       "finalSpeeds": {
-        "linear": 0,
-        "angular": 0
+        "linear": 0.06383932699439378,
+        "angular": 0.013402326657451443
       },
-      "settledSteps": 778,
+      "settledSteps": 0,
       "poppedJoints": [],
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [
+        {
+          "kind": "table",
+          "tileIds": [
+            "roof"
+          ],
+          "penetration": 0.03002949190630342,
+          "detail": "roof intersects the fixed table by 0.03002949190630342 in during motion."
+        }
+      ],
+      "peakSolidOverlap": 4.975762283310203e-7,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -846,18 +1015,30 @@
       "hz": 960,
       "solver": 32,
       "seed": 53,
-      "peakPenetration": 0.08307980592786031,
-      "latePenetration": 0.08307980592786031,
+      "peakPenetration": 0.030020055005307675,
+      "latePenetration": 0.030020055005307675,
       "peakDisplacement": 0.2800000381469745,
       "finalSpeeds": {
-        "linear": 0,
-        "angular": 0
+        "linear": 0.06347475257508656,
+        "angular": 0.013464548890304398
       },
-      "settledSteps": 773,
+      "settledSteps": 0,
       "poppedJoints": [],
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [
+        {
+          "kind": "table",
+          "tileIds": [
+            "roof"
+          ],
+          "penetration": 0.030020051429046138,
+          "detail": "roof intersects the fixed table by 0.030020051429046138 in during motion."
+        }
+      ],
+      "peakSolidOverlap": 4.2364471464217957e-7,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -866,18 +1047,30 @@
       "hz": 1920,
       "solver": 16,
       "seed": 0,
-      "peakPenetration": 0.07802432004090924,
-      "latePenetration": 0.07802432004090924,
+      "peakPenetration": 0.030018732480466284,
+      "latePenetration": 0.030018732480466284,
       "peakDisplacement": 0.2800000381469745,
       "finalSpeeds": {
-        "linear": 0,
-        "angular": 0
+        "linear": 0.05435465364811596,
+        "angular": 0.012012233068171231
       },
-      "settledSteps": 774,
+      "settledSteps": 0,
       "poppedJoints": [],
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.009722031652927399,
+      "solidFailures": [
+        {
+          "kind": "table",
+          "tileIds": [
+            "roof"
+          ],
+          "penetration": 0.03001872890421939,
+          "detail": "roof intersects the fixed table by 0.03001872890421939 in during motion."
+        }
+      ],
+      "peakSolidOverlap": 3.808260191640045e-7,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -886,18 +1079,30 @@
       "hz": 1920,
       "solver": 16,
       "seed": 17,
-      "peakPenetration": 0.07790856935931946,
-      "latePenetration": 0.07790856935931946,
+      "peakPenetration": 0.030006782662859333,
+      "latePenetration": 0.030006782662859333,
       "peakDisplacement": 0.2800000381469745,
       "finalSpeeds": {
-        "linear": 0,
-        "angular": 0
+        "linear": 0.054420402384703935,
+        "angular": 0.01143765771739657
       },
-      "settledSteps": 766,
+      "settledSteps": 0,
       "poppedJoints": [],
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.009722031652927399,
+      "solidFailures": [
+        {
+          "kind": "table",
+          "tileIds": [
+            "roof"
+          ],
+          "penetration": 0.030006779086613963,
+          "detail": "roof intersects the fixed table by 0.030006779086613963 in during motion."
+        }
+      ],
+      "peakSolidOverlap": 0.0000015504627259854686,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -906,18 +1111,30 @@
       "hz": 1920,
       "solver": 16,
       "seed": 53,
-      "peakPenetration": 0.07771620900235453,
-      "latePenetration": 0.07771620900235453,
+      "peakPenetration": 0.030026990139527004,
+      "latePenetration": 0.030026990139527004,
       "peakDisplacement": 0.2800000381469745,
       "finalSpeeds": {
-        "linear": 0,
-        "angular": 0
+        "linear": 0.054049371292380244,
+        "angular": 0.011796492023783942
       },
-      "settledSteps": 770,
+      "settledSteps": 0,
       "poppedJoints": [],
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.009722031652927399,
+      "solidFailures": [
+        {
+          "kind": "table",
+          "tileIds": [
+            "roof"
+          ],
+          "penetration": 0.03002698656328187,
+          "detail": "roof intersects the fixed table by 0.03002698656328187 in during motion."
+        }
+      ],
+      "peakSolidOverlap": 7.429931763169861e-7,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -926,18 +1143,30 @@
       "hz": 1920,
       "solver": 32,
       "seed": 0,
-      "peakPenetration": 0.06193779194456316,
-      "latePenetration": 0.06193779194456316,
+      "peakPenetration": 0.030005781598869075,
+      "latePenetration": 0.030005781598869075,
       "peakDisplacement": 0.2800000381469745,
       "finalSpeeds": {
-        "linear": 0,
-        "angular": 0
+        "linear": 0.0330091310201571,
+        "angular": 0.007213747609560451
       },
-      "settledSteps": 808,
+      "settledSteps": 813,
       "poppedJoints": [],
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.009722031652927399,
+      "solidFailures": [
+        {
+          "kind": "table",
+          "tileIds": [
+            "roof"
+          ],
+          "penetration": 0.030005778022623948,
+          "detail": "roof intersects the fixed table by 0.030005778022623948 in during motion."
+        }
+      ],
+      "peakSolidOverlap": 3.377595532150224e-7,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -946,18 +1175,30 @@
       "hz": 1920,
       "solver": 32,
       "seed": 17,
-      "peakPenetration": 0.06226996673020275,
-      "latePenetration": 0.06226996673020275,
+      "peakPenetration": 0.030012684468612744,
+      "latePenetration": 0.030012684468612744,
       "peakDisplacement": 0.2800000381469745,
       "finalSpeeds": {
-        "linear": 0,
-        "angular": 0
+        "linear": 0.034303154520906654,
+        "angular": 0.007305552890750738
       },
-      "settledSteps": 804,
+      "settledSteps": 813,
       "poppedJoints": [],
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.009722031652927399,
+      "solidFailures": [
+        {
+          "kind": "table",
+          "tileIds": [
+            "roof"
+          ],
+          "penetration": 0.030012680892367923,
+          "detail": "roof intersects the fixed table by 0.030012680892367923 in during motion."
+        }
+      ],
+      "peakSolidOverlap": 5.98243144356303e-7,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -966,18 +1207,30 @@
       "hz": 1920,
       "solver": 32,
       "seed": 53,
-      "peakPenetration": 0.062172827012265904,
-      "latePenetration": 0.062172827012265904,
+      "peakPenetration": 0.0300027821301853,
+      "latePenetration": 0.0300027821301853,
       "peakDisplacement": 0.2800000381469745,
       "finalSpeeds": {
-        "linear": 0,
-        "angular": 0
+        "linear": 0.03332804611775414,
+        "angular": 0.007038696681155728
       },
-      "settledSteps": 809,
+      "settledSteps": 811,
       "poppedJoints": [],
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.009722031652927399,
+      "solidFailures": [
+        {
+          "kind": "table",
+          "tileIds": [
+            "roof"
+          ],
+          "penetration": 0.030002778553940054,
+          "detail": "roof intersects the fixed table by 0.030002778553940054 in during motion."
+        }
+      ],
+      "peakSolidOverlap": 4.5166679063513016e-7,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -998,6 +1251,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0.0000037858165773396735,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -1018,6 +1274,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0.0000035584152504597455,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -1038,6 +1297,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0.0000037791600042691442,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -1058,6 +1320,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0.0000015286144805504165,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -1078,6 +1343,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0.000001504560976250957,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -1098,6 +1366,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0.0000014669998515959293,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -1118,6 +1389,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [],
+      "peakSolidOverlap": 0.000001207934691382917,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -1138,6 +1412,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [],
+      "peakSolidOverlap": 0.0000018297560577806848,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -1158,6 +1435,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [],
+      "peakSolidOverlap": 0.0000011353632403121594,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -1178,6 +1458,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [],
+      "peakSolidOverlap": 5.268103782096745e-7,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -1198,6 +1481,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [],
+      "peakSolidOverlap": 8.039261849557278e-7,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -1218,6 +1504,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.019256848841905594,
+      "solidFailures": [],
+      "peakSolidOverlap": 0.0000012204854951125554,
+      "invalidState": false,
       "passed": false
     },
     {
@@ -1238,6 +1527,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.0728205069899559,
+      "solidFailures": [],
+      "peakSolidOverlap": 0.000003891305127901035,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -1258,6 +1550,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.0728205069899559,
+      "solidFailures": [],
+      "peakSolidOverlap": 0.0000036551847928389947,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -1278,6 +1573,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.0728205069899559,
+      "solidFailures": [],
+      "peakSolidOverlap": 0.00000402854214520687,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -1298,6 +1596,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.0728205069899559,
+      "solidFailures": [],
+      "peakSolidOverlap": 0.0000014991871324365746,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -1318,6 +1619,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.0728205069899559,
+      "solidFailures": [],
+      "peakSolidOverlap": 0.0000015629770386826891,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -1338,6 +1642,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.0728205069899559,
+      "solidFailures": [],
+      "peakSolidOverlap": 0.0000015462269038479803,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -1358,6 +1665,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0.0000011620447690763314,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -1378,6 +1688,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0.0000018629239864065283,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -1398,6 +1711,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 0.0000013221949186625892,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -1418,6 +1734,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 5.45382466077271e-7,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -1438,6 +1757,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 5.848515924888886e-7,
+      "invalidState": false,
       "passed": true
     },
     {
@@ -1458,6 +1780,9 @@
       "lengthUnit": 1,
       "normalizedAllowedLinearError": 0.0010000000474974513,
       "contactERP": 0.037786055356264114,
+      "solidFailures": [],
+      "peakSolidOverlap": 5.652284855717227e-7,
+      "invalidState": false,
       "passed": true
     }
   ]

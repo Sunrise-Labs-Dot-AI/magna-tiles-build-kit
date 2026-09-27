@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { RigidBodyType } from "@dimforge/rapier3d-compat";
+import { RigidBodyType } from "@/lib/engine/physics-backend";
 import { createEngineWorld } from "@/lib/engine/rapier-world";
 import { add, distance, multiplyQuaternions, quaternionAngle, subtract } from "@/lib/engine/math";
 import { assemble, rigidPanel, square, v } from "@/lib/replication/geometry";
@@ -139,11 +139,11 @@ describe("one continuous prepared workspace", () => {
     try {
       for(const id of moving) engine.bodies.get(id)!.body.setBodyType(RigidBodyType.Fixed,true);
       const state=engine.snapshot(),before=structuredClone(state);
-      const single=await simulatePreparedTransfer(graph,graph,state,moving,[hands[0]],[hands[0]],6.5,0,0,Infinity,[moving,[obstacle.id]]);
+      const single=await simulatePreparedTransfer(graph,graph,state,moving,[hands[0]],[hands[0]],6.5,0,0,Infinity,[moving,[obstacle.id]],"clear-first");
       expect(single.status).toBe("fail"); expect(single.detail).toMatch(/two prior/);
-      const changed=await simulatePreparedTransfer(graph,graph,state,moving,hands,[{...hands[0],localPoint:v(99,99,0)}],6.5,0,0,Infinity,[moving,[obstacle.id]]);
+      const changed=await simulatePreparedTransfer(graph,graph,state,moving,hands,[{...hands[0],localPoint:v(99,99,0)}],6.5,0,0,Infinity,[moving,[obstacle.id]],"clear-first");
       expect(changed.status).toBe("fail"); expect(changed.handoff).toBeUndefined();
-      const collapsed=await simulatePreparedTransfer(graph,graph,state,moving,hands,[hands[0]],6.5,0,0,Infinity,[graph.tiles.map(t=>t.id)]);
+      const collapsed=await simulatePreparedTransfer(graph,graph,state,moving,hands,[hands[0]],6.5,0,0,Infinity,[graph.tiles.map(t=>t.id)],"clear-first");
       expect(collapsed.status).toBe("fail"); expect(collapsed.detail).toMatch(/component partitions/);
       expect(state).toEqual(before);
     } finally {engine.dispose();}

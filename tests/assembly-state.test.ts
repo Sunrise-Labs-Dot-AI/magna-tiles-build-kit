@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { unsupportedHingeFixture } from "./fixtures/rigid-contact";
-import { RigidBodyType } from "@dimforge/rapier3d-compat";
+import { RigidBodyType } from "@/lib/engine/physics-backend";
 import { createEngineWorld } from "@/lib/engine/rapier-world";
 import { basisToQuaternion, distance, magnitude, multiplyQuaternions, quaternionToBasis, subtract, transformLocal } from "@/lib/engine/math";
 import { simulateSupport, supportSnapshot } from "@/lib/replication/support";
@@ -102,10 +102,13 @@ describe("physical state between assembly phases", () => {
         const joint = next.joints[0], from = next.bodies.get(joint.model.fromTileId)!.body;
         for (const { body } of next.bodies.values()) body.setBodyType(RigidBodyType.Fixed,true);
         const pivot = transformLocal(joint.model.fromLocalAnchor,from.translation(),quaternionToBasis(from.rotation()));
-        const q = multiplyQuaternions({ x: Math.sin(.5),y: 0,z: 0,w: Math.cos(.5) },from.rotation());
+        // A small abrupt tear exceeds the magnetic force threshold without
+        // first intersecting the other solid (which would stop integration).
+        const q = multiplyQuaternions({ x: Math.sin(.007),y: 0,z: 0,w: Math.cos(.007) },from.rotation());
         from.setRotation(q,true);
         from.setTranslation(subtract(pivot,transformLocal(joint.model.fromLocalAnchor,{ x: 0,y: 0,z: 0 },quaternionToBasis(q))),true);
         next.step();
+        expect(next.solidFailures).toEqual([]);
         expect(joint.previousDistance).toBeLessThan(.01);
         expect(next.poppedJoints).toEqual([joint.id]);
         expect(next.joints).toHaveLength(0);

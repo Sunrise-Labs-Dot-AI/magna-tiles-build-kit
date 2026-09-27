@@ -2312,9 +2312,9 @@
   },
   "report": {
     "id": "medium-ramp",
-    "fingerprint": "dc83cb1be2113fcb14ab6bab9e2be53982ad3acae262c193e3b0f3d2a088fbda",
-    "validationCodeHash": "e451d061b1843a258e6aeaf6e44d58be25e907c4015a5bb6df92bdd9bdd01b48",
-    "generatedAt": "2026-09-27T06:24:25.122Z",
+    "fingerprint": "1593568e3e1c55daff4430f5e3a916d604fc5c16a6a5812d2f760c62d03325fb",
+    "validationCodeHash": "41e24f3b908a2f1a0decd144dea070c20f42241920ea81a0c723af5f9b8836f7",
+    "generatedAt": "2026-09-27T10:01:50.718Z",
     "replication": "not-verified",
     "checks": {
       "source": {
@@ -2339,7 +2339,7 @@
       },
       "release": {
         "status": "pass",
-        "detail": "seed 0: pass, peak 0.720 in, table 0.021 in, linear 0.000 in/s, angular 0.000 rad/s, 603/90 rest steps; seed 17: pass, peak 0.694 in, table 0.021 in, linear 0.000 in/s, angular 0.000 rad/s, 602/90 rest steps; seed 53: pass, peak 0.682 in, table 0.021 in, linear 0.000 in/s, angular 0.000 rad/s, 610/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
+        "detail": "seed 0: pass, peak 0.730 in, table 0.021 in, linear 0.000 in/s, angular 0.000 rad/s, 615/90 rest steps.; seed 17: pass, peak 0.730 in, table 0.021 in, linear 0.000 in/s, angular 0.000 rad/s, 613/90 rest steps.; seed 53: pass, peak 0.744 in, table 0.021 in, linear 0.000 in/s, angular 0.000 rad/s, 608/90 rest steps.. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
       },
       "settledShape": {
         "status": "fail",
@@ -2716,13 +2716,15 @@
       {
         "seed": 0,
         "status": "pass",
-        "peakDisplacement": 0.7199001274161032,
-        "peakGroundPenetration": 0.021262906844792928,
-        "finalDisplacement": 0.6485987666555078,
+        "peakDisplacement": 0.7304167672997082,
+        "peakGroundPenetration": 0.02122118972178629,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.008716167745093983,
+        "finalDisplacement": 0.6321633491531066,
         "finalSpeed": 0,
         "linearSpeed": 0,
         "angularSpeed": 0,
-        "settledSteps": 603,
+        "settledSteps": 615,
         "poppedJoints": [],
         "settledProjections": [
           {
@@ -2730,7 +2732,7 @@
             "frameId": "medium-check-a",
             "partition": "holdout",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 30.59 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 30.67 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": -494.6163609908715,
@@ -2757,8 +2759,8 @@
             },
             "cameraAnchors": 6,
             "checkLandmarks": 4,
-            "rmsPx": 222.25727513288737,
-            "maxPx": 307.51637443073804,
+            "rmsPx": 221.72189973297526,
+            "maxPx": 306.72890303632175,
             "sourceDiagonalPx": 954.5119171597597,
             "residuals": [
               {
@@ -2769,10 +2771,10 @@
                   235
                 ],
                 "projected": [
-                  848.4065880051728,
-                  237.64992289200183
+                  848.950720060108,
+                  237.80672723174726
                 ],
-                "errorPx": 24.550023001777426,
+                "errorPx": 25.108089319406734,
                 "uncertaintyPx": 12
               },
               {
@@ -2783,10 +2785,10 @@
                   78
                 ],
                 "projected": [
-                  902.1247417214918,
-                  110.8197449628687
+                  903.0048904882387,
+                  111.01288064422656
                 ],
-                "errorPx": 37.37192151804777,
+                "errorPx": 37.130634733959326,
                 "uncertaintyPx": 12
               },
               {
@@ -2797,10 +2799,10 @@
                   130
                 ],
                 "projected": [
-                  1055.0517082112108,
-                  127.1373815330858
+                  1055.7700341430136,
+                  127.47939040948617
                 ],
-                "errorPx": 25.111986135423173,
+                "errorPx": 24.360720804986787,
                 "uncertaintyPx": 12
               },
               {
@@ -2811,10 +2813,10 @@
                   282
                 ],
                 "projected": [
-                  1001.6345509144223,
-                  254.2360080797659
+                  1002.0147276302029,
+                  254.54319366925074
                 ],
-                "errorPx": 34.00521779018431,
+                "errorPx": 33.977426859541296,
                 "uncertaintyPx": 12
               },
               {
@@ -2825,10 +2827,10 @@
                   662
                 ],
                 "projected": [
-                  975.5647734459504,
-                  687.8951409875999
+                  975.6272344858702,
+                  688.1818751241592
                 ],
-                "errorPx": 41.50424373940813,
+                "errorPx": 41.6351598057447,
                 "uncertaintyPx": 12
               },
               {
@@ -2839,10 +2841,10 @@
                   580
                 ],
                 "projected": [
-                  1120.228887855989,
-                  578.625355991428
+                  1122.4202304364842,
+                  579.2230507722786
                 ],
-                "errorPx": 10.320842645864715,
+                "errorPx": 12.444507792509317,
                 "uncertaintyPx": 12
               },
               {
@@ -2853,10 +2855,10 @@
                   916
                 ],
                 "projected": [
-                  996.1086020630444,
-                  669.6864940986438
+                  995.2677816263756,
+                  670.041588524376
                 ],
-                "errorPx": 307.51637443073804,
+                "errorPx": 306.72890303632175,
                 "uncertaintyPx": 12
               },
               {
@@ -2867,10 +2869,10 @@
                   845
                 ],
                 "projected": [
-                  1131.3626571906643,
-                  629.1969432523911
+                  1130.7804970372106,
+                  629.6677375619912
                 ],
-                "errorPx": 237.99920642721173,
+                "errorPx": 237.3270545800969,
                 "uncertaintyPx": 12
               },
               {
@@ -2881,10 +2883,10 @@
                   524
                 ],
                 "projected": [
-                  816.7801418383618,
-                  433.6742566359065
+                  816.5369915109744,
+                  433.8364388824266
                 ],
-                "errorPx": 187.03655999528542,
+                "errorPx": 186.74532215255866,
                 "uncertaintyPx": 12
               },
               {
@@ -2895,10 +2897,10 @@
                   467
                 ],
                 "projected": [
-                  951.886830946391,
-                  393.96432799491816
+                  951.8966372111223,
+                  394.2404572815052
                 ],
-                "errorPx": 106.77344154847489,
+                "errorPx": 106.5919187621917,
                 "uncertaintyPx": 12
               }
             ]
@@ -2908,13 +2910,15 @@
       {
         "seed": 17,
         "status": "pass",
-        "peakDisplacement": 0.6940830698777357,
-        "peakGroundPenetration": 0.021267060528218917,
-        "finalDisplacement": 0.6246129647667132,
+        "peakDisplacement": 0.7295642104764325,
+        "peakGroundPenetration": 0.021226103426797243,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.008716224102579773,
+        "finalDisplacement": 0.6321870595901135,
         "finalSpeed": 0,
         "linearSpeed": 0,
         "angularSpeed": 0,
-        "settledSteps": 602,
+        "settledSteps": 613,
         "poppedJoints": [],
         "settledProjections": [
           {
@@ -2922,7 +2926,7 @@
             "frameId": "medium-check-a",
             "partition": "holdout",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 30.46 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 30.68 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": -494.6163609908715,
@@ -2949,8 +2953,8 @@
             },
             "cameraAnchors": 6,
             "checkLandmarks": 4,
-            "rmsPx": 221.43062472070136,
-            "maxPx": 306.2322631079799,
+            "rmsPx": 221.73666236747005,
+            "maxPx": 306.75233127524405,
             "sourceDiagonalPx": 954.5119171597597,
             "residuals": [
               {
@@ -2961,10 +2965,10 @@
                   235
                 ],
                 "projected": [
-                  849.5378660198592,
-                  237.77195165861787
+                  848.936889855854,
+                  237.81371647019688
                 ],
-                "errorPx": 25.68786322071168,
+                "errorPx": 25.095128532399517,
                 "uncertaintyPx": 12
               },
               {
@@ -2975,10 +2979,10 @@
                   78
                 ],
                 "projected": [
-                  903.8838865906899,
-                  111.00191032997418
+                  902.9785644419635,
+                  111.0183555523572
                 ],
-                "errorPx": 36.72676403999405,
+                "errorPx": 37.147558087151126,
                 "uncertaintyPx": 12
               },
               {
@@ -2989,10 +2993,10 @@
                   130
                 ],
                 "projected": [
-                  1056.5019865511583,
-                  127.59458236592062
+                  1055.7498228954435,
+                  127.47911498567248
                 ],
-                "errorPx": 23.620810105419423,
+                "errorPx": 24.38085213559648,
                 "uncertaintyPx": 12
               },
               {
@@ -3003,10 +3007,10 @@
                   282
                 ],
                 "projected": [
-                  1002.4528759639524,
-                  254.6359217383359
+                  1002.007091890001,
+                  254.54437735620564
                 ],
-                "errorPx": 34.16303432523665,
+                "errorPx": 33.971972869607924,
                 "uncertaintyPx": 12
               },
               {
@@ -3017,10 +3021,10 @@
                   662
                 ],
                 "projected": [
-                  975.8157777756298,
-                  688.2500624989957
+                  975.6330893580115,
+                  688.1843361368672
                 ],
-                "errorPx": 41.53179434347645,
+                "errorPx": 41.63215540222385,
                 "uncertaintyPx": 12
               },
               {
@@ -3031,10 +3035,10 @@
                   580
                 ],
                 "projected": [
-                  1120.41953056208,
-                  578.9299135536062
+                  1122.4021301035837,
+                  579.2213948625503
                 ],
-                "errorPx": 10.474335403111398,
+                "errorPx": 12.42654646578361,
                 "uncertaintyPx": 12
               },
               {
@@ -3045,10 +3049,10 @@
                   916
                 ],
                 "projected": [
-                  994.6040193356722,
-                  670.1667819624604
+                  995.3022292448215,
+                  670.0380405496087
                 ],
-                "errorPx": 306.2322631079799,
+                "errorPx": 306.75233127524405,
                 "uncertaintyPx": 12
               },
               {
@@ -3059,10 +3063,10 @@
                   845
                 ],
                 "projected": [
-                  1130.3468178593462,
-                  629.9173999130583
+                  1130.8056650584547,
+                  629.6637027774862
                 ],
-                "errorPx": 236.91837218531072,
+                "errorPx": 237.34129787979012,
                 "uncertaintyPx": 12
               },
               {
@@ -3073,10 +3077,10 @@
                   524
                 ],
                 "projected": [
-                  816.4294642605281,
-                  433.7852251204212
+                  816.5522324737054,
+                  433.8393594040903
                 ],
-                "errorPx": 186.67591005551924,
+                "errorPx": 186.757259189028,
                 "uncertaintyPx": 12
               },
               {
@@ -3087,10 +3091,10 @@
                   467
                 ],
                 "projected": [
-                  952.0139479363756,
-                  394.31230680540193
+                  951.902822033535,
+                  394.242994915851
                 ],
-                "errorPx": 106.62868664000108,
+                "errorPx": 106.5947065740298,
                 "uncertaintyPx": 12
               }
             ]
@@ -3100,13 +3104,15 @@
       {
         "seed": 53,
         "status": "pass",
-        "peakDisplacement": 0.6823031370602854,
-        "peakGroundPenetration": 0.021254812982681393,
-        "finalDisplacement": 0.6194534177745471,
+        "peakDisplacement": 0.7439703240264934,
+        "peakGroundPenetration": 0.021239381350294257,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.009191471798292383,
+        "finalDisplacement": 0.6416251186822707,
         "finalSpeed": 0,
         "linearSpeed": 0,
         "angularSpeed": 0,
-        "settledSteps": 610,
+        "settledSteps": 608,
         "poppedJoints": [],
         "settledProjections": [
           {
@@ -3114,7 +3120,7 @@
             "frameId": "medium-check-a",
             "partition": "holdout",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 30.41 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 30.75 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": -494.6163609908715,
@@ -3141,8 +3147,8 @@
             },
             "cameraAnchors": 6,
             "checkLandmarks": 4,
-            "rmsPx": 221.38827292276616,
-            "maxPx": 306.1110424000323,
+            "rmsPx": 221.90043845096068,
+            "maxPx": 307.0713428546234,
             "sourceDiagonalPx": 954.5119171597597,
             "residuals": [
               {
@@ -3153,10 +3159,10 @@
                   235
                 ],
                 "projected": [
-                  849.9077680772027,
-                  237.81198117737424
+                  848.3438078813789,
+                  237.75785266666074
                 ],
-                "errorPx": 26.059924882547747,
+                "errorPx": 24.49952516879649,
                 "uncertaintyPx": 12
               },
               {
@@ -3167,10 +3173,10 @@
                   78
                 ],
                 "projected": [
-                  904.3585248010393,
-                  111.0554088453419
+                  902.1735836024441,
+                  110.94108574492671
                 ],
-                "errorPx": 36.56932868309741,
+                "errorPx": 37.45525666223187,
                 "uncertaintyPx": 12
               },
               {
@@ -3181,10 +3187,10 @@
                   130
                 ],
                 "projected": [
-                  1056.927475949169,
-                  127.69781712851307
+                  1055.047450362488,
+                  127.30719972328876
                 ],
-                "errorPx": 23.187095808874783,
+                "errorPx": 25.097428289423522,
                 "uncertaintyPx": 12
               },
               {
@@ -3195,10 +3201,10 @@
                   282
                 ],
                 "projected": [
-                  1002.7729800617888,
-                  254.72614775810536
+                  1001.5179801913611,
+                  254.39290970429425
                 ],
-                "errorPx": 34.283811292797864,
+                "errorPx": 33.809806053061195,
                 "uncertaintyPx": 12
               },
               {
@@ -3209,10 +3215,10 @@
                   662
                 ],
                 "projected": [
-                  976.0185031528732,
-                  688.3329005260554
+                  975.3441148634055,
+                  688.0472303017056
                 ],
-                "errorPx": 41.42750041576136,
+                "errorPx": 41.77158173261509,
                 "uncertaintyPx": 12
               },
               {
@@ -3223,10 +3229,10 @@
                   580
                 ],
                 "projected": [
-                  1120.0919000316944,
-                  578.9384240486913
+                  1122.3604218867047,
+                  579.1358075359796
                 ],
-                "errorPx": 10.147580487491133,
+                "errorPx": 12.390595539851892,
                 "uncertaintyPx": 12
               },
               {
@@ -3237,10 +3243,10 @@
                   916
                 ],
                 "projected": [
-                  994.5665461941329,
-                  670.289954438204
+                  995.5814243579318,
+                  669.8482780209437
                 ],
-                "errorPx": 306.1110424000323,
+                "errorPx": 307.0713428546234,
                 "uncertaintyPx": 12
               },
               {
@@ -3251,10 +3257,10 @@
                   845
                 ],
                 "projected": [
-                  1130.3859764316867,
-                  630.0562689316395
+                  1130.9218816431714,
+                  629.4057757501525
                 ],
-                "errorPx": 236.80874104827186,
+                "errorPx": 237.62418218903034,
                 "uncertaintyPx": 12
               },
               {
@@ -3265,10 +3271,10 @@
                   524
                 ],
                 "projected": [
-                  816.558229989303,
-                  433.84842518599044
+                  816.4563858484297,
+                  433.7727258580837
                 ],
-                "errorPx": 186.7581351338669,
+                "errorPx": 186.70551966589326,
                 "uncertaintyPx": 12
               },
               {
@@ -3279,10 +3285,10 @@
                   467
                 ],
                 "projected": [
-                  952.2176729959325,
-                  394.3906753424837
+                  951.6475668870639,
+                  394.10925258872123
                 ],
-                "errorPx": 106.72449763816756,
+                "errorPx": 106.49979202635049,
                 "uncertaintyPx": 12
               }
             ]
@@ -3295,49 +3301,65 @@
         "id": "medium-lower",
         "status": "pass",
         "detail": "Released checkpoint: peak 0.280 in; table penetration 0.017 in; 0 broken/rejected joints; 886 consecutive steps at rest (90 required).",
-        "displacement": 0.2800000281570632
+        "displacement": 0.2800000281570632,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.00003352734835931903
       },
       {
         "id": "medium-support",
         "status": "pass",
         "detail": "Released checkpoint: peak 0.280 in; table penetration 0.008 in; 0 broken/rejected joints; 889 consecutive steps at rest (90 required).",
-        "displacement": 0.2799999713902339
+        "displacement": 0.2799999713902339,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.000005530032555434161
       },
       {
         "id": "medium-turn",
         "status": "pass",
-        "detail": "Released checkpoint: peak 0.657 in; table penetration 0.019 in; 0 broken/rejected joints; 674 consecutive steps at rest (90 required).",
-        "displacement": 0.6574851165893439
+        "detail": "Released checkpoint: peak 0.631 in; table penetration 0.012 in; 0 broken/rejected joints; 545 consecutive steps at rest (90 required).",
+        "displacement": 0.6307423160261116,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.006050985890396987
       },
       {
         "id": "medium-lower-walls",
         "status": "pass",
-        "detail": "Released checkpoint: peak 0.442 in; table penetration 0.015 in; 0 broken/rejected joints; 644 consecutive steps at rest (90 required).",
-        "displacement": 0.44159522139516255
+        "detail": "Released checkpoint: peak 0.465 in; table penetration 0.014 in; 0 broken/rejected joints; 641 consecutive steps at rest (90 required).",
+        "displacement": 0.46489113996802084,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.0056610953388673835
       },
       {
         "id": "medium-lower-cover",
         "status": "pass",
-        "detail": "Released checkpoint: peak 0.420 in; table penetration 0.016 in; 0 broken/rejected joints; 641 consecutive steps at rest (90 required).",
-        "displacement": 0.4202168909449731
+        "detail": "Released checkpoint: peak 0.416 in; table penetration 0.016 in; 0 broken/rejected joints; 641 consecutive steps at rest (90 required).",
+        "displacement": 0.4159268153049639,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.005043872694702856
       },
       {
         "id": "medium-turn-cover",
         "status": "fail",
-        "detail": "Released checkpoint: peak 1.091 in; table penetration 0.015 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-        "displacement": 1.0914204915797179
+        "detail": "Released checkpoint: peak 1.093 in; table penetration 0.015 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 1.0933969161832544,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.002130453024346668
       },
       {
         "id": "medium-upper-cover",
         "status": "pass",
-        "detail": "Released checkpoint: peak 0.553 in; table penetration 0.020 in; 0 broken/rejected joints; 632 consecutive steps at rest (90 required).",
-        "displacement": 0.5531956245869615
+        "detail": "Released checkpoint: peak 0.553 in; table penetration 0.020 in; 0 broken/rejected joints; 631 consecutive steps at rest (90 required).",
+        "displacement": 0.5530772467711638,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.006253588364275586
       },
       {
         "id": "medium-final",
         "status": "pass",
-        "detail": "Released checkpoint: peak 0.720 in; table penetration 0.021 in; 0 broken/rejected joints; 603 consecutive steps at rest (90 required).",
-        "displacement": 0.7199001274161032
+        "detail": "Released checkpoint: peak 0.730 in; table penetration 0.021 in; 0 broken/rejected joints; 615 consecutive steps at rest (90 required).",
+        "displacement": 0.7304167672997082,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.008716167745093983
       }
     ],
     "instructions": [
@@ -3683,6 +3705,9 @@
         "stageId": "medium-lower",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -3690,6 +3715,9 @@
         "stageId": "medium-support",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -3697,6 +3725,9 @@
         "stageId": "medium-turn",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -3704,6 +3735,9 @@
         "stageId": "medium-lower-walls",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -3711,6 +3745,9 @@
         "stageId": "medium-lower-cover",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -3718,6 +3755,9 @@
         "stageId": "medium-turn-cover",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -3725,6 +3765,9 @@
         "stageId": "medium-upper-cover",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -3732,6 +3775,9 @@
         "stageId": "medium-final",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       }
@@ -3766,1193 +3812,1193 @@
           {
             "time": 0.075,
             "position": {
-              "x": 8.11074161529541,
-              "y": 8.368474960327148,
-              "z": 3.7831060886383057
+              "x": 8.110538482666016,
+              "y": 8.369732856750488,
+              "z": 3.7827625274658203
             }
           },
           {
             "time": 0.14166666666666666,
             "position": {
-              "x": 7.572505474090576,
-              "y": 7.777080535888672,
-              "z": 2.852386236190796
+              "x": 7.574467658996582,
+              "y": 7.782243728637695,
+              "z": 2.8553359508514404
             }
           },
           {
             "time": 0.20833333333333334,
             "position": {
-              "x": 6.7095184326171875,
-              "y": 6.822012424468994,
-              "z": 1.3548768758773804
+              "x": 6.71579122543335,
+              "y": 6.834993839263916,
+              "z": 1.3706082105636597
             }
           },
           {
             "time": 0.275,
             "position": {
-              "x": 6.003419876098633,
-              "y": 6.269518852233887,
-              "z": -0.04665303975343704
+              "x": 5.989643096923828,
+              "y": 6.27228307723999,
+              "z": -0.03126756101846695
             }
           },
           {
             "time": 0.3416666666666667,
             "position": {
-              "x": 5.99334716796875,
-              "y": 6.162177562713623,
-              "z": -0.38513970375061035
+              "x": 5.9483323097229,
+              "y": 6.167542457580566,
+              "z": -0.43474510312080383
             }
           },
           {
             "time": 0.4083333333333333,
             "position": {
-              "x": 6.027022361755371,
-              "y": 6.166802406311035,
-              "z": -0.40545597672462463
+              "x": 5.984073162078857,
+              "y": 6.169569969177246,
+              "z": -0.47856804728507996
             }
           },
           {
             "time": 0.475,
             "position": {
-              "x": 6.041935443878174,
-              "y": 6.166348457336426,
-              "z": -0.4194996654987335
+              "x": 6.001699924468994,
+              "y": 6.16943883895874,
+              "z": -0.48109760880470276
             }
           },
           {
             "time": 0.5416666666666666,
             "position": {
-              "x": 6.041842460632324,
-              "y": 6.165936470031738,
-              "z": -0.41914528608322144
+              "x": 6.0053253173828125,
+              "y": 6.168606758117676,
+              "z": -0.4653431177139282
             }
           },
           {
             "time": 0.6083333333333333,
             "position": {
-              "x": 6.041967391967773,
-              "y": 6.165921211242676,
-              "z": -0.41865503787994385
+              "x": 6.01454496383667,
+              "y": 6.167838096618652,
+              "z": -0.4377546012401581
             }
           },
           {
             "time": 0.675,
             "position": {
-              "x": 6.042168140411377,
-              "y": 6.165866374969482,
-              "z": -0.4184126555919647
+              "x": 6.027405738830566,
+              "y": 6.167007923126221,
+              "z": -0.39997050166130066
             }
           },
           {
             "time": 0.7416666666666667,
             "position": {
-              "x": 6.042392730712891,
-              "y": 6.165838241577148,
-              "z": -0.4181860089302063
+              "x": 6.02768611907959,
+              "y": 6.167206764221191,
+              "z": -0.3976030945777893
             }
           },
           {
             "time": 0.8083333333333333,
             "position": {
-              "x": 6.042627334594727,
-              "y": 6.1658124923706055,
-              "z": -0.41791146993637085
+              "x": 6.030274868011475,
+              "y": 6.165855884552002,
+              "z": -0.4025382995605469
             }
           },
           {
             "time": 0.875,
             "position": {
-              "x": 6.04275369644165,
-              "y": 6.1657891273498535,
-              "z": -0.41772326827049255
+              "x": 6.03041410446167,
+              "y": 6.1658477783203125,
+              "z": -0.4025667607784271
             }
           },
           {
             "time": 0.9416666666666667,
             "position": {
-              "x": 6.042828559875488,
-              "y": 6.165791034698486,
-              "z": -0.41762521862983704
+              "x": 6.030433654785156,
+              "y": 6.165946006774902,
+              "z": -0.40226516127586365
             }
           },
           {
             "time": 1.0083333333333333,
             "position": {
-              "x": 6.042904376983643,
-              "y": 6.165799140930176,
-              "z": -0.4175238609313965
+              "x": 6.030526638031006,
+              "y": 6.165940761566162,
+              "z": -0.402212530374527
             }
           },
           {
             "time": 1.075,
             "position": {
-              "x": 6.043065547943115,
-              "y": 6.165792942047119,
-              "z": -0.41748636960983276
+              "x": 6.030560493469238,
+              "y": 6.165949821472168,
+              "z": -0.4021720290184021
             }
           },
           {
             "time": 1.1416666666666666,
             "position": {
-              "x": 6.043358325958252,
-              "y": 6.165773391723633,
-              "z": -0.4172138273715973
+              "x": 6.030595779418945,
+              "y": 6.165933132171631,
+              "z": -0.40230071544647217
             }
           },
           {
             "time": 1.2083333333333333,
             "position": {
-              "x": 6.043591022491455,
-              "y": 6.165738582611084,
-              "z": -0.41696709394454956
+              "x": 6.030704498291016,
+              "y": 6.165907859802246,
+              "z": -0.40229493379592896
             }
           },
           {
             "time": 1.275,
             "position": {
-              "x": 6.043903350830078,
-              "y": 6.165718078613281,
-              "z": -0.41665640473365784
+              "x": 6.030826568603516,
+              "y": 6.165890216827393,
+              "z": -0.4022181034088135
             }
           },
           {
             "time": 1.3416666666666666,
             "position": {
-              "x": 6.044163227081299,
-              "y": 6.165703296661377,
-              "z": -0.41635769605636597
+              "x": 6.030981540679932,
+              "y": 6.165879726409912,
+              "z": -0.4020114839076996
             }
           },
           {
             "time": 1.4083333333333332,
             "position": {
-              "x": 6.0443572998046875,
-              "y": 6.165674686431885,
-              "z": -0.4161739945411682
+              "x": 6.031061172485352,
+              "y": 6.1658549308776855,
+              "z": -0.40196746587753296
             }
           },
           {
             "time": 1.475,
             "position": {
-              "x": 6.044651985168457,
-              "y": 6.165656566619873,
-              "z": -0.41586604714393616
+              "x": 6.031181812286377,
+              "y": 6.165820598602295,
+              "z": -0.40191859006881714
             }
           },
           {
             "time": 1.5416666666666667,
             "position": {
-              "x": 6.04490327835083,
-              "y": 6.16563606262207,
-              "z": -0.41558364033699036
+              "x": 6.031304359436035,
+              "y": 6.165795803070068,
+              "z": -0.40184929966926575
             }
           },
           {
             "time": 1.6083333333333334,
             "position": {
-              "x": 6.045149803161621,
-              "y": 6.16562557220459,
-              "z": -0.41530489921569824
+              "x": 6.031452178955078,
+              "y": 6.165768623352051,
+              "z": -0.4017820954322815
             }
           },
           {
             "time": 1.675,
             "position": {
-              "x": 6.0454487800598145,
-              "y": 6.165610313415527,
-              "z": -0.4150000512599945
+              "x": 6.031623840332031,
+              "y": 6.165745735168457,
+              "z": -0.40170803666114807
             }
           },
           {
             "time": 1.7416666666666667,
             "position": {
-              "x": 6.045705318450928,
-              "y": 6.165595054626465,
-              "z": -0.4147277772426605
+              "x": 6.031734466552734,
+              "y": 6.165741443634033,
+              "z": -0.4016379415988922
             }
           },
           {
             "time": 1.8083333333333333,
             "position": {
-              "x": 6.045917987823486,
-              "y": 6.165579795837402,
-              "z": -0.41448673605918884
+              "x": 6.03184700012207,
+              "y": 6.165735244750977,
+              "z": -0.4014914333820343
             }
           },
           {
             "time": 1.875,
             "position": {
-              "x": 6.04613733291626,
-              "y": 6.165589809417725,
-              "z": -0.4142722189426422
+              "x": 6.031990051269531,
+              "y": 6.1657328605651855,
+              "z": -0.40138107538223267
             }
           },
           {
             "time": 1.9416666666666667,
             "position": {
-              "x": 6.046260356903076,
-              "y": 6.165600299835205,
-              "z": -0.41414687037467957
+              "x": 6.032158374786377,
+              "y": 6.165724754333496,
+              "z": -0.40124568343162537
             }
           },
           {
             "time": 2.0083333333333333,
             "position": {
-              "x": 6.046430587768555,
-              "y": 6.165605545043945,
-              "z": -0.41390979290008545
+              "x": 6.0323076248168945,
+              "y": 6.165715217590332,
+              "z": -0.40113067626953125
             }
           },
           {
             "time": 2.075,
             "position": {
-              "x": 6.046689033508301,
-              "y": 6.165609359741211,
-              "z": -0.4136222302913666
+              "x": 6.032434940338135,
+              "y": 6.165707588195801,
+              "z": -0.40101444721221924
             }
           },
           {
             "time": 2.1416666666666666,
             "position": {
-              "x": 6.046889781951904,
-              "y": 6.16559362411499,
-              "z": -0.4133870005607605
+              "x": 6.032559871673584,
+              "y": 6.165702819824219,
+              "z": -0.4008091986179352
             }
           },
           {
             "time": 2.2083333333333335,
             "position": {
-              "x": 6.04707145690918,
-              "y": 6.165585517883301,
-              "z": -0.4132017493247986
+              "x": 6.032664775848389,
+              "y": 6.165722370147705,
+              "z": -0.4006195366382599
             }
           },
           {
             "time": 2.275,
             "position": {
-              "x": 6.047369956970215,
-              "y": 6.165569305419922,
-              "z": -0.41288867592811584
+              "x": 6.03280782699585,
+              "y": 6.165736675262451,
+              "z": -0.4003674387931824
             }
           },
           {
             "time": 2.341666666666667,
             "position": {
-              "x": 6.0476531982421875,
-              "y": 6.165544509887695,
-              "z": -0.4126185178756714
+              "x": 6.032901763916016,
+              "y": 6.165745735168457,
+              "z": -0.40014195442199707
             }
           },
           {
             "time": 2.408333333333333,
             "position": {
-              "x": 6.047900676727295,
-              "y": 6.16552734375,
-              "z": -0.4123581051826477
+              "x": 6.033034324645996,
+              "y": 6.165768623352051,
+              "z": -0.3999427556991577
             }
           },
           {
             "time": 2.475,
             "position": {
-              "x": 6.048188209533691,
-              "y": 6.165507793426514,
-              "z": -0.4120742976665497
+              "x": 6.03316593170166,
+              "y": 6.165755271911621,
+              "z": -0.39982011914253235
             }
           },
           {
             "time": 2.5416666666666665,
             "position": {
-              "x": 6.048422336578369,
-              "y": 6.165493965148926,
-              "z": -0.4118247628211975
+              "x": 6.033318042755127,
+              "y": 6.1657328605651855,
+              "z": -0.3997136652469635
             }
           },
           {
             "time": 2.6083333333333334,
             "position": {
-              "x": 6.04863977432251,
-              "y": 6.165489196777344,
-              "z": -0.41161054372787476
+              "x": 6.033479690551758,
+              "y": 6.165712356567383,
+              "z": -0.39960652589797974
             }
           },
           {
             "time": 2.675,
             "position": {
-              "x": 6.048844814300537,
-              "y": 6.165463924407959,
-              "z": -0.41138705611228943
+              "x": 6.033632278442383,
+              "y": 6.165700435638428,
+              "z": -0.3994813859462738
             }
           },
           {
             "time": 2.7416666666666667,
             "position": {
-              "x": 6.04910945892334,
-              "y": 6.165440559387207,
-              "z": -0.4111463725566864
+              "x": 6.033809185028076,
+              "y": 6.16567850112915,
+              "z": -0.39934128522872925
             }
           },
           {
             "time": 2.808333333333333,
             "position": {
-              "x": 6.049344539642334,
-              "y": 6.165431022644043,
-              "z": -0.4109013080596924
+              "x": 6.034007549285889,
+              "y": 6.165651321411133,
+              "z": -0.39921835064888
             }
           },
           {
             "time": 2.875,
             "position": {
-              "x": 6.049625396728516,
-              "y": 6.165407180786133,
-              "z": -0.41060182452201843
+              "x": 6.034125328063965,
+              "y": 6.165633201599121,
+              "z": -0.3991544544696808
             }
           },
           {
             "time": 2.9416666666666664,
             "position": {
-              "x": 6.049841403961182,
-              "y": 6.165397644042969,
-              "z": -0.4103643596172333
+              "x": 6.034307956695557,
+              "y": 6.165611743927002,
+              "z": -0.39905235171318054
             }
           },
           {
             "time": 3.0083333333333333,
             "position": {
-              "x": 6.050079345703125,
-              "y": 6.165379047393799,
-              "z": -0.4100966155529022
+              "x": 6.034422874450684,
+              "y": 6.165589332580566,
+              "z": -0.39896059036254883
             }
           },
           {
             "time": 3.075,
             "position": {
-              "x": 6.0503411293029785,
-              "y": 6.165365219116211,
-              "z": -0.40980830788612366
+              "x": 6.034590721130371,
+              "y": 6.165574550628662,
+              "z": -0.39883509278297424
             }
           },
           {
             "time": 3.1416666666666666,
             "position": {
-              "x": 6.050579071044922,
-              "y": 6.165353298187256,
-              "z": -0.409537672996521
+              "x": 6.03472375869751,
+              "y": 6.165564060211182,
+              "z": -0.3987964689731598
             }
           },
           {
             "time": 3.2083333333333335,
             "position": {
-              "x": 6.050838470458984,
-              "y": 6.165341854095459,
-              "z": -0.4092552959918976
+              "x": 6.034894943237305,
+              "y": 6.165558338165283,
+              "z": -0.3987291753292084
             }
           },
           {
             "time": 3.275,
             "position": {
-              "x": 6.051069259643555,
-              "y": 6.165325164794922,
-              "z": -0.40902987122535706
+              "x": 6.035020351409912,
+              "y": 6.165561676025391,
+              "z": -0.3986063003540039
             }
           },
           {
             "time": 3.341666666666667,
             "position": {
-              "x": 6.051272869110107,
-              "y": 6.16530704498291,
-              "z": -0.40882742404937744
+              "x": 6.035063743591309,
+              "y": 6.165592193603516,
+              "z": -0.39845043420791626
             }
           },
           {
             "time": 3.408333333333333,
             "position": {
-              "x": 6.051504135131836,
-              "y": 6.165302276611328,
-              "z": -0.40857815742492676
+              "x": 6.035157203674316,
+              "y": 6.165614604949951,
+              "z": -0.3983477056026459
             }
           },
           {
             "time": 3.475,
             "position": {
-              "x": 6.0518035888671875,
-              "y": 6.165287017822266,
-              "z": -0.4082624018192291
+              "x": 6.035355567932129,
+              "y": 6.1656060218811035,
+              "z": -0.39822664856910706
             }
           },
           {
             "time": 3.5416666666666665,
             "position": {
-              "x": 6.052116394042969,
-              "y": 6.165283203125,
-              "z": -0.4079554080963135
+              "x": 6.035511016845703,
+              "y": 6.165584564208984,
+              "z": -0.3980819880962372
             }
           },
           {
             "time": 3.6083333333333334,
             "position": {
-              "x": 6.052316665649414,
-              "y": 6.165276527404785,
-              "z": -0.4077017307281494
+              "x": 6.035643100738525,
+              "y": 6.1655802726745605,
+              "z": -0.39797866344451904
             }
           },
           {
             "time": 3.675,
             "position": {
-              "x": 6.052520751953125,
-              "y": 6.165263652801514,
-              "z": -0.4074785113334656
+              "x": 6.035782337188721,
+              "y": 6.165573596954346,
+              "z": -0.3978392481803894
             }
           },
           {
             "time": 3.7416666666666667,
             "position": {
-              "x": 6.052801132202148,
-              "y": 6.165256977081299,
-              "z": -0.4071926474571228
+              "x": 6.035880088806152,
+              "y": 6.165564060211182,
+              "z": -0.39783304929733276
             }
           },
           {
             "time": 3.808333333333333,
             "position": {
-              "x": 6.053069591522217,
-              "y": 6.165238380432129,
-              "z": -0.4069129228591919
+              "x": 6.036011219024658,
+              "y": 6.165553092956543,
+              "z": -0.3977620601654053
             }
           },
           {
             "time": 3.875,
             "position": {
-              "x": 6.053273677825928,
-              "y": 6.165225505828857,
-              "z": -0.40668579936027527
+              "x": 6.036233901977539,
+              "y": 6.16552209854126,
+              "z": -0.39760076999664307
             }
           },
           {
             "time": 3.9416666666666664,
             "position": {
-              "x": 6.053516387939453,
-              "y": 6.165213108062744,
-              "z": -0.4064215123653412
+              "x": 6.036424160003662,
+              "y": 6.165524482727051,
+              "z": -0.39734479784965515
             }
           },
           {
             "time": 4.008333333333333,
             "position": {
-              "x": 6.053739070892334,
-              "y": 6.1652069091796875,
-              "z": -0.406159907579422
+              "x": 6.036577224731445,
+              "y": 6.165517807006836,
+              "z": -0.3971763551235199
             }
           },
           {
             "time": 4.075,
             "position": {
-              "x": 6.053990364074707,
-              "y": 6.1652021408081055,
-              "z": -0.40590712428092957
+              "x": 6.036751747131348,
+              "y": 6.165515422821045,
+              "z": -0.3969562351703644
             }
           },
           {
             "time": 4.141666666666667,
             "position": {
-              "x": 6.054210662841797,
-              "y": 6.165176868438721,
-              "z": -0.40568113327026367
+              "x": 6.03689432144165,
+              "y": 6.165502071380615,
+              "z": -0.3967704474925995
             }
           },
           {
             "time": 4.208333333333333,
             "position": {
-              "x": 6.0543718338012695,
-              "y": 6.165168762207031,
-              "z": -0.40548068284988403
+              "x": 6.03708028793335,
+              "y": 6.165493965148926,
+              "z": -0.39662599563598633
             }
           },
           {
             "time": 4.275,
             "position": {
-              "x": 6.054594039916992,
-              "y": 6.165152072906494,
-              "z": -0.40526217222213745
+              "x": 6.0371856689453125,
+              "y": 6.165493965148926,
+              "z": -0.3964548707008362
             }
           },
           {
             "time": 4.341666666666667,
             "position": {
-              "x": 6.054901123046875,
-              "y": 6.165143013000488,
-              "z": -0.40493422746658325
+              "x": 6.037384510040283,
+              "y": 6.165482044219971,
+              "z": -0.39625588059425354
             }
           },
           {
             "time": 4.408333333333333,
             "position": {
-              "x": 6.055114269256592,
-              "y": 6.1651387214660645,
-              "z": -0.40466442704200745
+              "x": 6.037602424621582,
+              "y": 6.165472030639648,
+              "z": -0.3960229158401489
             }
           },
           {
             "time": 4.475,
             "position": {
-              "x": 6.055393695831299,
-              "y": 6.165122032165527,
-              "z": -0.40435847640037537
+              "x": 6.037766456604004,
+              "y": 6.165435791015625,
+              "z": -0.39584147930145264
             }
           },
           {
             "time": 4.541666666666667,
             "position": {
-              "x": 6.055575847625732,
-              "y": 6.165102481842041,
-              "z": -0.4041557013988495
+              "x": 6.037994861602783,
+              "y": 6.165414810180664,
+              "z": -0.3955845832824707
             }
           },
           {
             "time": 4.608333333333333,
             "position": {
-              "x": 6.055800437927246,
-              "y": 6.165088176727295,
-              "z": -0.40393006801605225
+              "x": 6.038139343261719,
+              "y": 6.1653971672058105,
+              "z": -0.39543697237968445
             }
           },
           {
             "time": 4.675,
             "position": {
-              "x": 6.056097507476807,
-              "y": 6.1650896072387695,
-              "z": -0.40358349680900574
+              "x": 6.0383381843566895,
+              "y": 6.165368556976318,
+              "z": -0.3952253758907318
             }
           },
           {
             "time": 4.741666666666666,
             "position": {
-              "x": 6.056387901306152,
-              "y": 6.165078163146973,
-              "z": -0.4033065736293793
+              "x": 6.038568496704102,
+              "y": 6.165359020233154,
+              "z": -0.3949631452560425
             }
           },
           {
             "time": 4.808333333333334,
             "position": {
-              "x": 6.056596279144287,
-              "y": 6.16506290435791,
-              "z": -0.4030289947986603
+              "x": 6.038773536682129,
+              "y": 6.165350914001465,
+              "z": -0.3947100043296814
             }
           },
           {
             "time": 4.875,
             "position": {
-              "x": 6.056861400604248,
-              "y": 6.165050029754639,
-              "z": -0.4027447998523712
+              "x": 6.038974761962891,
+              "y": 6.165333271026611,
+              "z": -0.39450088143348694
             }
           },
           {
             "time": 4.941666666666666,
             "position": {
-              "x": 6.057157516479492,
-              "y": 6.165022850036621,
-              "z": -0.40245428681373596
+              "x": 6.0391364097595215,
+              "y": 6.165324687957764,
+              "z": -0.39431074261665344
             }
           },
           {
             "time": 5.008333333333333,
             "position": {
-              "x": 6.057384014129639,
-              "y": 6.165013790130615,
-              "z": -0.4021897315979004
+              "x": 6.039363861083984,
+              "y": 6.165308475494385,
+              "z": -0.39405667781829834
             }
           },
           {
             "time": 5.075,
             "position": {
-              "x": 6.057623386383057,
-              "y": 6.165003776550293,
-              "z": -0.40191105008125305
+              "x": 6.039580345153809,
+              "y": 6.165275573730469,
+              "z": -0.3938283920288086
             }
           },
           {
             "time": 5.141666666666667,
             "position": {
-              "x": 6.057888984680176,
-              "y": 6.1649932861328125,
-              "z": -0.4016302227973938
+              "x": 6.039836406707764,
+              "y": 6.165252208709717,
+              "z": -0.39358553290367126
             }
           },
           {
             "time": 5.208333333333333,
             "position": {
-              "x": 6.058156967163086,
-              "y": 6.164977550506592,
-              "z": -0.4013611972332001
+              "x": 6.04005241394043,
+              "y": 6.165231227874756,
+              "z": -0.39334312081336975
             }
           },
           {
             "time": 5.275,
             "position": {
-              "x": 6.058403491973877,
-              "y": 6.164977550506592,
-              "z": -0.40106135606765747
+              "x": 6.040246486663818,
+              "y": 6.165224552154541,
+              "z": -0.3931008279323578
             }
           },
           {
             "time": 5.341666666666667,
             "position": {
-              "x": 6.0586466789245605,
-              "y": 6.164960861206055,
-              "z": -0.40080857276916504
+              "x": 6.040514945983887,
+              "y": 6.165196895599365,
+              "z": -0.3928442597389221
             }
           },
           {
             "time": 5.408333333333333,
             "position": {
-              "x": 6.058856010437012,
-              "y": 6.164953231811523,
-              "z": -0.40057310461997986
+              "x": 6.040729522705078,
+              "y": 6.165194511413574,
+              "z": -0.3925817310810089
             }
           },
           {
             "time": 5.475,
             "position": {
-              "x": 6.059144020080566,
-              "y": 6.164950370788574,
-              "z": -0.4002276360988617
+              "x": 6.040977954864502,
+              "y": 6.1651740074157715,
+              "z": -0.3923432230949402
             }
           },
           {
             "time": 5.541666666666667,
             "position": {
-              "x": 6.059411525726318,
-              "y": 6.1649322509765625,
-              "z": -0.3999592661857605
+              "x": 6.041133880615234,
+              "y": 6.165157794952393,
+              "z": -0.39214614033699036
             }
           },
           {
             "time": 5.608333333333333,
             "position": {
-              "x": 6.059670448303223,
-              "y": 6.164916038513184,
-              "z": -0.3996812403202057
+              "x": 6.041357517242432,
+              "y": 6.165126800537109,
+              "z": -0.39193257689476013
             }
           },
           {
             "time": 5.675,
             "position": {
-              "x": 6.0599141120910645,
-              "y": 6.164897441864014,
-              "z": -0.3994405269622803
+              "x": 6.041568279266357,
+              "y": 6.165113925933838,
+              "z": -0.3916892111301422
             }
           },
           {
             "time": 5.741666666666666,
             "position": {
-              "x": 6.0601606369018555,
-              "y": 6.164874076843262,
-              "z": -0.3991737365722656
+              "x": 6.0418243408203125,
+              "y": 6.165090084075928,
+              "z": -0.3914267420768738
             }
           },
           {
             "time": 5.808333333333334,
             "position": {
-              "x": 6.060459136962891,
-              "y": 6.16485595703125,
-              "z": -0.39884090423583984
+              "x": 6.0419416427612305,
+              "y": 6.1650896072387695,
+              "z": -0.39126867055892944
             }
           },
           {
             "time": 5.875,
             "position": {
-              "x": 6.0607008934021,
-              "y": 6.1648478507995605,
-              "z": -0.39858171343803406
+              "x": 6.04214334487915,
+              "y": 6.165076732635498,
+              "z": -0.3910345137119293
             }
           },
           {
             "time": 5.941666666666666,
             "position": {
-              "x": 6.06089973449707,
-              "y": 6.1648406982421875,
-              "z": -0.3983214795589447
+              "x": 6.0423054695129395,
+              "y": 6.165075302124023,
+              "z": -0.3909619450569153
             }
           },
           {
             "time": 6.008333333333333,
             "position": {
-              "x": 6.061129093170166,
-              "y": 6.164827823638916,
-              "z": -0.39810022711753845
+              "x": 6.042478084564209,
+              "y": 6.165050506591797,
+              "z": -0.39075589179992676
             }
           },
           {
             "time": 6.075,
             "position": {
-              "x": 6.061363697052002,
-              "y": 6.164822101593018,
-              "z": -0.3978224992752075
+              "x": 6.042663097381592,
+              "y": 6.165031433105469,
+              "z": -0.39059188961982727
             }
           },
           {
             "time": 6.141666666666667,
             "position": {
-              "x": 6.061619758605957,
-              "y": 6.16480827331543,
-              "z": -0.39754006266593933
+              "x": 6.042872905731201,
+              "y": 6.1650214195251465,
+              "z": -0.3903651833534241
             }
           },
           {
             "time": 6.208333333333333,
             "position": {
-              "x": 6.061898231506348,
-              "y": 6.164792537689209,
-              "z": -0.397259920835495
+              "x": 6.043006896972656,
+              "y": 6.165004730224609,
+              "z": -0.39023056626319885
             }
           },
           {
             "time": 6.275,
             "position": {
-              "x": 6.06211519241333,
-              "y": 6.164785385131836,
-              "z": -0.39701834321022034
+              "x": 6.0432353019714355,
+              "y": 6.164967060089111,
+              "z": -0.3900080919265747
             }
           },
           {
             "time": 6.341666666666667,
             "position": {
-              "x": 6.0623955726623535,
-              "y": 6.164778709411621,
-              "z": -0.39667266607284546
+              "x": 6.043462753295898,
+              "y": 6.164932727813721,
+              "z": -0.3897758424282074
             }
           },
           {
             "time": 6.408333333333333,
             "position": {
-              "x": 6.062643527984619,
-              "y": 6.164762020111084,
-              "z": -0.3964662253856659
+              "x": 6.043699741363525,
+              "y": 6.1649017333984375,
+              "z": -0.38953980803489685
             }
           },
           {
             "time": 6.475,
             "position": {
-              "x": 6.062916278839111,
-              "y": 6.164750099182129,
-              "z": -0.39617282152175903
+              "x": 6.043827533721924,
+              "y": 6.164884567260742,
+              "z": -0.38939741253852844
             }
           },
           {
             "time": 6.541666666666667,
             "position": {
-              "x": 6.063203811645508,
-              "y": 6.164719104766846,
-              "z": -0.39587298035621643
+              "x": 6.044093608856201,
+              "y": 6.164860248565674,
+              "z": -0.38911017775535583
             }
           },
           {
             "time": 6.608333333333333,
             "position": {
-              "x": 6.063436508178711,
-              "y": 6.16469669342041,
-              "z": -0.3956465721130371
+              "x": 6.044264316558838,
+              "y": 6.164825439453125,
+              "z": -0.38896432518959045
             }
           },
           {
             "time": 6.675,
             "position": {
-              "x": 6.063714981079102,
-              "y": 6.164670944213867,
-              "z": -0.3953443467617035
+              "x": 6.044432163238525,
+              "y": 6.164792537689209,
+              "z": -0.38876795768737793
             }
           },
           {
             "time": 6.741666666666666,
             "position": {
-              "x": 6.0639495849609375,
-              "y": 6.164648532867432,
-              "z": -0.3950920104980469
+              "x": 6.0445876121521,
+              "y": 6.164774417877197,
+              "z": -0.38853368163108826
             }
           },
           {
             "time": 6.808333333333334,
             "position": {
-              "x": 6.064241409301758,
-              "y": 6.164624214172363,
-              "z": -0.39480409026145935
+              "x": 6.0446600914001465,
+              "y": 6.164764404296875,
+              "z": -0.3883669376373291
             }
           },
           {
             "time": 6.875,
             "position": {
-              "x": 6.064538478851318,
-              "y": 6.164599418640137,
-              "z": -0.3945155143737793
+              "x": 6.044748783111572,
+              "y": 6.16474723815918,
+              "z": -0.38818395137786865
             }
           },
           {
             "time": 6.941666666666666,
             "position": {
-              "x": 6.064798831939697,
-              "y": 6.164581775665283,
-              "z": -0.39421993494033813
+              "x": 6.044803619384766,
+              "y": 6.1647419929504395,
+              "z": -0.3880945146083832
             }
           },
           {
             "time": 7.008333333333333,
             "position": {
-              "x": 6.065032958984375,
-              "y": 6.1645402908325195,
-              "z": -0.3940063714981079
+              "x": 6.044841766357422,
+              "y": 6.164741516113281,
+              "z": -0.3880125880241394
             }
           },
           {
             "time": 7.075,
             "position": {
-              "x": 6.065303802490234,
-              "y": 6.164497375488281,
-              "z": -0.39375966787338257
+              "x": 6.044892311096191,
+              "y": 6.164760589599609,
+              "z": -0.3878806531429291
             }
           },
           {
             "time": 7.141666666666667,
             "position": {
-              "x": 6.065526485443115,
-              "y": 6.164458751678467,
-              "z": -0.39357638359069824
+              "x": 6.044919967651367,
+              "y": 6.1647467613220215,
+              "z": -0.38779914379119873
             }
           },
           {
             "time": 7.208333333333333,
             "position": {
-              "x": 6.065788269042969,
-              "y": 6.164422512054443,
-              "z": -0.3933134078979492
+              "x": 6.045046806335449,
+              "y": 6.164736747741699,
+              "z": -0.3876993954181671
             }
           },
           {
             "time": 7.2749999999999995,
             "position": {
-              "x": 6.0660271644592285,
-              "y": 6.164371967315674,
-              "z": -0.3930879831314087
+              "x": 6.0451531410217285,
+              "y": 6.1647138595581055,
+              "z": -0.3876276910305023
             }
           },
           {
             "time": 7.341666666666667,
             "position": {
-              "x": 6.0663018226623535,
-              "y": 6.164328098297119,
-              "z": -0.39285069704055786
+              "x": 6.045374393463135,
+              "y": 6.16469144821167,
+              "z": -0.38749393820762634
             }
           },
           {
             "time": 7.408333333333333,
             "position": {
-              "x": 6.066532135009766,
-              "y": 6.164303779602051,
-              "z": -0.3926147520542145
+              "x": 6.045512676239014,
+              "y": 6.16465950012207,
+              "z": -0.38746196031570435
             }
           },
           {
             "time": 7.475,
             "position": {
-              "x": 6.066750526428223,
-              "y": 6.164270877838135,
-              "z": -0.3924132287502289
+              "x": 6.04561185836792,
+              "y": 6.164649963378906,
+              "z": -0.3874119818210602
             }
           },
           {
             "time": 7.541666666666667,
             "position": {
-              "x": 6.066882133483887,
-              "y": 6.164254665374756,
-              "z": -0.3922455608844757
+              "x": 6.045711517333984,
+              "y": 6.164627552032471,
+              "z": -0.3873874247074127
             }
           },
           {
             "time": 7.608333333333333,
             "position": {
-              "x": 6.067111492156982,
-              "y": 6.164238929748535,
-              "z": -0.39200085401535034
+              "x": 6.045841693878174,
+              "y": 6.164616107940674,
+              "z": -0.38732895255088806
             }
           },
           {
             "time": 7.675,
             "position": {
-              "x": 6.067357063293457,
-              "y": 6.164234161376953,
-              "z": -0.3917800188064575
+              "x": 6.045989513397217,
+              "y": 6.164616107940674,
+              "z": -0.3872821629047394
             }
           },
           {
             "time": 7.741666666666666,
             "position": {
-              "x": 6.067418575286865,
-              "y": 6.164241790771484,
-              "z": -0.39169350266456604
+              "x": 6.046045780181885,
+              "y": 6.164602279663086,
+              "z": -0.38727936148643494
             }
           },
           {
             "time": 7.808333333333334,
             "position": {
-              "x": 6.067416191101074,
-              "y": 6.16424560546875,
-              "z": -0.39172181487083435
+              "x": 6.046205520629883,
+              "y": 6.164592742919922,
+              "z": -0.3871312141418457
             }
           },
           {
             "time": 7.875,
             "position": {
-              "x": 6.067446231842041,
-              "y": 6.16424560546875,
-              "z": -0.3917325735092163
+              "x": 6.046299934387207,
+              "y": 6.164609432220459,
+              "z": -0.38704752922058105
             }
           },
           {
             "time": 7.941666666666666,
             "position": {
-              "x": 6.0675048828125,
-              "y": 6.164247035980225,
-              "z": -0.3916793167591095
+              "x": 6.046402454376221,
+              "y": 6.16461706161499,
+              "z": -0.3870154917240143
             }
           },
           {
             "time": 8.008333333333333,
             "position": {
-              "x": 6.067587375640869,
-              "y": 6.164252758026123,
-              "z": -0.39162832498550415
+              "x": 6.046555519104004,
+              "y": 6.164607048034668,
+              "z": -0.3869681656360626
             }
           },
           {
             "time": 8.075,
             "position": {
-              "x": 6.067672252655029,
-              "y": 6.164229393005371,
-              "z": -0.3917710483074188
+              "x": 6.046667098999023,
+              "y": 6.164597988128662,
+              "z": -0.38695645332336426
             }
           },
           {
             "time": 8.141666666666666,
             "position": {
-              "x": 6.067855358123779,
-              "y": 6.164220333099365,
-              "z": -0.39157965779304504
+              "x": 6.046822547912598,
+              "y": 6.164603233337402,
+              "z": -0.3868016302585602
             }
           },
           {
             "time": 8.208333333333334,
             "position": {
-              "x": 6.068099498748779,
-              "y": 6.164203643798828,
-              "z": -0.391353964805603
+              "x": 6.046854496002197,
+              "y": 6.164610862731934,
+              "z": -0.3867025077342987
             }
           },
           {
             "time": 8.275,
             "position": {
-              "x": 6.068364143371582,
-              "y": 6.1641764640808105,
-              "z": -0.3911358714103699
+              "x": 6.046990394592285,
+              "y": 6.1646037101745605,
+              "z": -0.3865913450717926
             }
           },
           {
             "time": 8.341666666666667,
             "position": {
-              "x": 6.068647384643555,
-              "y": 6.164167881011963,
-              "z": -0.39083927869796753
+              "x": 6.047074317932129,
+              "y": 6.1645965576171875,
+              "z": -0.386461079120636
             }
           },
           {
             "time": 8.408333333333333,
             "position": {
-              "x": 6.068820476531982,
-              "y": 6.164174556732178,
-              "z": -0.3906705677509308
+              "x": 6.0472002029418945,
+              "y": 6.164595127105713,
+              "z": -0.3863818943500519
             }
           },
           {
             "time": 8.475,
             "position": {
-              "x": 6.0689568519592285,
-              "y": 6.164186000823975,
-              "z": -0.39059093594551086
+              "x": 6.047341346740723,
+              "y": 6.164580345153809,
+              "z": -0.3863717019557953
             }
           },
           {
             "time": 8.541666666666666,
             "position": {
-              "x": 6.069237232208252,
-              "y": 6.16417121887207,
-              "z": -0.3903319835662842
+              "x": 6.0474982261657715,
+              "y": 6.164572238922119,
+              "z": -0.3862632215023041
             }
           },
           {
             "time": 8.608333333333333,
             "position": {
-              "x": 6.069488525390625,
-              "y": 6.164158344268799,
-              "z": -0.3900807499885559
+              "x": 6.047553539276123,
+              "y": 6.164562225341797,
+              "z": -0.3863033950328827
             }
           },
           {
             "time": 8.675,
             "position": {
-              "x": 6.069682598114014,
-              "y": 6.1641526222229,
-              "z": -0.38989707827568054
+              "x": 6.047642707824707,
+              "y": 6.164576053619385,
+              "z": -0.386188805103302
             }
           },
           {
             "time": 8.741666666666667,
             "position": {
-              "x": 6.069907188415527,
-              "y": 6.164133548736572,
-              "z": -0.38969478011131287
+              "x": 6.047682285308838,
+              "y": 6.164580821990967,
+              "z": -0.38613033294677734
             }
           },
           {
             "time": 8.808333333333334,
             "position": {
-              "x": 6.070137977600098,
-              "y": 6.164127349853516,
-              "z": -0.3894275426864624
+              "x": 6.047831058502197,
+              "y": 6.1645684242248535,
+              "z": -0.38608166575431824
             }
           },
           {
             "time": 8.875,
             "position": {
-              "x": 6.070382595062256,
-              "y": 6.164117336273193,
-              "z": -0.38916894793510437
+              "x": 6.047935485839844,
+              "y": 6.1645708084106445,
+              "z": -0.3859996199607849
             }
           },
           {
             "time": 8.941666666666666,
             "position": {
-              "x": 6.070618152618408,
-              "y": 6.16411018371582,
-              "z": -0.38894104957580566
+              "x": 6.047984600067139,
+              "y": 6.164592742919922,
+              "z": -0.3859429955482483
             }
           },
           {
             "time": 9.008333333333333,
             "position": {
-              "x": 6.070751667022705,
-              "y": 6.164100646972656,
-              "z": -0.38879022002220154
+              "x": 6.048133373260498,
+              "y": 6.164578914642334,
+              "z": -0.3858438730239868
             }
           },
           {
             "time": 9.075,
             "position": {
-              "x": 6.070956707000732,
-              "y": 6.164105415344238,
-              "z": -0.38854750990867615
+              "x": 6.048266887664795,
+              "y": 6.164552211761475,
+              "z": -0.38582369685173035
             }
           },
           {
             "time": 9.141666666666666,
             "position": {
-              "x": 6.071134090423584,
-              "y": 6.16410493850708,
-              "z": -0.3884392976760864
+              "x": 6.048389911651611,
+              "y": 6.164541721343994,
+              "z": -0.38580355048179626
             }
           },
           {
             "time": 9.208333333333334,
             "position": {
-              "x": 6.07139778137207,
-              "y": 6.164077281951904,
-              "z": -0.3881755769252777
+              "x": 6.048529624938965,
+              "y": 6.16455078125,
+              "z": -0.3857156038284302
             }
           },
           {
             "time": 9.275,
             "position": {
-              "x": 6.071597099304199,
-              "y": 6.164068222045898,
-              "z": -0.3879848122596741
+              "x": 6.048628807067871,
+              "y": 6.1645684242248535,
+              "z": -0.3855512738227844
             }
           },
           {
             "time": 9.341666666666667,
             "position": {
-              "x": 6.071735382080078,
-              "y": 6.164072036743164,
-              "z": -0.3878740072250366
+              "x": 6.048683166503906,
+              "y": 6.164581775665283,
+              "z": -0.3854716718196869
             }
           },
           {
             "time": 9.408333333333333,
             "position": {
-              "x": 6.071874618530273,
-              "y": 6.164077281951904,
-              "z": -0.3878156244754791
+              "x": 6.048870086669922,
+              "y": 6.164585590362549,
+              "z": -0.38519665598869324
             }
           },
           {
             "time": 9.475,
             "position": {
-              "x": 6.072112560272217,
-              "y": 6.164061546325684,
-              "z": -0.38757041096687317
+              "x": 6.048962116241455,
+              "y": 6.164578914642334,
+              "z": -0.3850759267807007
             }
           },
           {
             "time": 9.541666666666666,
             "position": {
-              "x": 6.072360992431641,
-              "y": 6.16406774520874,
-              "z": -0.38727864623069763
+              "x": 6.049088954925537,
+              "y": 6.164571762084961,
+              "z": -0.38493719696998596
             }
           },
           {
             "time": 9.608333333333333,
             "position": {
-              "x": 6.072502136230469,
-              "y": 6.164058208465576,
-              "z": -0.3871970474720001
+              "x": 6.049213409423828,
+              "y": 6.164553165435791,
+              "z": -0.38488316535949707
             }
           },
           {
             "time": 9.675,
             "position": {
-              "x": 6.072813510894775,
-              "y": 6.164050102233887,
-              "z": -0.3869113028049469
+              "x": 6.049375057220459,
+              "y": 6.164527893066406,
+              "z": -0.3848423361778259
             }
           },
           {
             "time": 9.741666666666667,
             "position": {
-              "x": 6.073038578033447,
-              "y": 6.164046287536621,
-              "z": -0.3866429030895233
+              "x": 6.049506664276123,
+              "y": 6.164534091949463,
+              "z": -0.38470518589019775
             }
           },
           {
             "time": 9.808333333333334,
             "position": {
-              "x": 6.07327938079834,
-              "y": 6.164036273956299,
-              "z": -0.3864400386810303
+              "x": 6.0496697425842285,
+              "y": 6.164518356323242,
+              "z": -0.38451385498046875
             }
           },
           {
             "time": 9.875,
             "position": {
-              "x": 6.073426723480225,
-              "y": 6.16404390335083,
-              "z": -0.3863022029399872
+              "x": 6.0498552322387695,
+              "y": 6.164514064788818,
+              "z": -0.3842487931251526
             }
           },
           {
             "time": 9.941666666666666,
             "position": {
-              "x": 6.073671340942383,
-              "y": 6.164029598236084,
-              "z": -0.38610321283340454
+              "x": 6.049981117248535,
+              "y": 6.164511203765869,
+              "z": -0.3842080235481262
             }
           }
         ],
@@ -4962,7 +5008,9 @@
           "allowedContactGapSeconds": 0.15,
           "postRunStructurePassed": true
         },
-        "peakGroundPenetration": 0.023106754768231763
+        "peakGroundPenetration": 0.023006063945499644,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.004514456999440419
       }
     ]
   }

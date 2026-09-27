@@ -110,11 +110,15 @@ function Candidate({
   const [step, setStep] = useState(-1),
     [labels, setLabels] = useState(false),
     [path, setPath] = useState(false),
+    [attemptIndex, setAttemptIndex] = useState(-1),
     [insertionIndex, setInsertionIndex] = useState(-1),
     [insertionProgress, setInsertionProgress] = useState(100);
   const stage = replica.stages[step],
     assembly = stage ? report.assemblySimulation?.find(s => s.stageId === stage.id) : undefined,
-    operation = assembly?.operations.find(o => o.seed === 0 && o.index === insertionIndex),
+    rejected = assembly?.rejectedAttempts ?? [],
+    shownAttempt = attemptIndex >= 0 ? attemptIndex : assembly?.status === "fail" && rejected.length ? 0 : -1,
+    attempt = shownAttempt >= 0 ? rejected[shownAttempt] : assembly,
+    operation = attempt?.operations.find(o => o.seed === 0 && o.index === insertionIndex),
     construction = stage ? report.constructionPaths?.find(p => p.stageId === stage.id) : undefined,
     insertion = operation?.path ?? construction?.paths[insertionIndex],
     checkpointBuild = stage ? stageBuild(replica, stage) : replica.build,
@@ -125,7 +129,7 @@ function Candidate({
     recorded.approachTiles ?? [], ...[recorded.pickup,recorded.carry,recorded.seating,recorded.lowering,...recorded.trials].flatMap(p => p?.motion?.map(f => f.tiles) ?? [])].flat()
     : insertion ? insertion.offsets.flatMap((_, index) =>
       insertionPreview(checkpointBuild, insertion, index / (insertion.offsets.length - 1)).tiles) : undefined;
-  const selectStep = (next: number) => { setStep(next); setInsertionIndex(-1); setInsertionProgress(100); };
+  const selectStep = (next: number) => { setStep(next); setAttemptIndex(-1); setInsertionIndex(-1); setInsertionProgress(100); };
   const counts = countInventory(replica.build.tiles),
     source = sources.sources.find((s) => s.id === replica.sourceId)!;
   const frame = stage
@@ -224,9 +228,17 @@ function Candidate({
               {assembly && <div className="reference-assembly" aria-label="Complete assembly check">
                 <strong>Assembly with hand support</strong> <Status check={assembly} />
                 <p>{partDetail(assembly.detail)}</p>
-                {assembly.operations.length > 0 && <details>
+                {rejected.length > 0 && <label>
+                  Recorded attempt
+                  <select value={shownAttempt} onChange={e => { setAttemptIndex(Number(e.target.value)); setInsertionIndex(-1); setInsertionProgress(100); }}>
+                    {assembly.status === "pass" && <option value={-1}>Selected complete attempt</option>}
+                    {rejected.map((_,i) => <option key={i} value={i}>Rejected attempt {i+1}</option>)}
+                  </select>
+                </label>}
+                {shownAttempt >= 0 && attempt && <p>Viewing a rejected attempt. {partDetail(attempt.detail)}</p>}
+                {!!attempt?.operations.length && <details>
                   <summary>Grip and intermediate checks</summary>
-                  <ol>{assembly.operations.filter(o => o.seed === 0).map(o => <li key={o.index}>
+                  <ol>{attempt.operations.filter(o => o.seed === 0).map(o => <li key={o.index}>
                     Insert {o.tileIds.map(id => labelsById[id]).join(" + ")}: {partDetail(o.detail)}
                   </li>)}</ol>
                 </details>}

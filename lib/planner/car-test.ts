@@ -3,7 +3,7 @@ import {
   JointData,
   RigidBodyDesc,
   type RigidBody,
-} from "@dimforge/rapier3d-compat";
+} from "@/lib/engine/physics-backend";
 import { createEngineWorld } from "@/lib/engine/rapier-world";
 import { validateEngineInput } from "@/lib/engine/input";
 import {
@@ -68,7 +68,7 @@ export async function testCars(
   try {
     for (let i = 0; i < 240; i++) engine.step();
     if (
-      engine.rejectedReasons.length ||
+      engine.invalidState || engine.solidFailures.length || engine.rejectedReasons.length ||
       engine.poppedJoints.length ||
       engine.peakDisplacement > MAX_STANDING_DISPLACEMENT || engine.peakGroundPenetration > RAW_OVERLAP_TOLERANCE
     )
@@ -77,8 +77,10 @@ export async function testCars(
         passed: false,
         reachedWaypoint: 0,
         reason:
-          "The structure moved, penetrated the table or lost a joint before releasing the cars.",
+          engine.solidFailures[0]?.detail ?? "The structure moved, penetrated the table or lost a joint before releasing the cars.",
         peakGroundPenetration: engine.peakGroundPenetration,
+        solidFailures: engine.solidFailures,
+        peakSolidOverlap: engine.peakSolidOverlap,
         samples: [],
       }));
     const firstTile = build.tiles[0];
@@ -275,13 +277,13 @@ export async function testCars(
           car.result.reason = "Car left the road before completing the route.";
         }
         if (
-          engine.poppedJoints.length ||
+          engine.invalidState || engine.solidFailures.length || engine.poppedJoints.length ||
           engine.peakDisplacement > MAX_STANDING_DISPLACEMENT || engine.peakGroundPenetration > RAW_OVERLAP_TOLERANCE
         ) {
           car.done = true;
           car.result.passed = false;
           car.result.reason =
-            "The car load displaced the structure, penetrated the table or broke a joint.";
+            engine.solidFailures[0]?.detail ?? "The car load displaced the structure, penetrated the table or broke a joint.";
         }
         if (car.done && i % 8 !== 0)
           car.result.samples.push({
@@ -297,19 +299,21 @@ export async function testCars(
     for (let i = 0; i < 120; i++) {
       engine.step();
       if (
-        engine.poppedJoints.length ||
+        engine.invalidState || engine.solidFailures.length || engine.poppedJoints.length ||
         engine.peakDisplacement > MAX_STANDING_DISPLACEMENT || engine.peakGroundPenetration > RAW_OVERLAP_TOLERANCE
       )
         postRunStructurePassed = false;
     }
     for (const car of cars) {
       car.result.peakGroundPenetration = engine.peakGroundPenetration;
+      car.result.solidFailures = engine.solidFailures;
+      car.result.peakSolidOverlap = engine.peakSolidOverlap;
       car.result.contactEvidence!.postRunStructurePassed =
         postRunStructurePassed;
       if (!postRunStructurePassed) {
         car.result.passed = false;
         car.result.reason =
-          "The structure moved, penetrated the table or broke a joint during the post-run load check.";
+          engine.solidFailures[0]?.detail ?? "The structure moved, penetrated the table or broke a joint during the post-run load check.";
       }
     }
     return cars.map((c) => c.result);

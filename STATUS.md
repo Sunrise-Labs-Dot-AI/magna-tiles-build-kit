@@ -1,18 +1,24 @@
 # Current status
 
-Updated 2026-09-26. Development has resumed from the archived exploration.
+Updated 2026-09-27. Development has resumed from the archived exploration.
 
 ## Footage reconstruction workshop
 
 `/references` now exposes source-informed 40-piece jet and 9/37/51-piece Henry ramp candidates, stable part/edge numbers, construction snapshots, five measured camera comparisons, and independent evidence for source shape, geometry, release, assembly and cars. Forty-five extracted frames are bound to two local source hashes. The original 3D snail source remains missing.
 
-All four candidates preserve the inspected BOM and pass raw geometry checks. **None meets full replica acceptance.** The small ramp passes perturbed release and an inferred passive car route; its source-shape comparison fails, and held-module assembly remains unverified. Jet/medium source comparisons fail. The large ramp now passes all three release trials; the medium ramp still misses the sustained-rest window, and its turn does not pass. See [the reconstruction report](docs/footage-reconstruction.md) for precise boundaries and reproduction commands. Ten continuous insertion paths now cover the small ramp’s three construction stages, with an interactive part-by-part preview. Grip access and closure remain unverified. The historical jet now fails the corrected contact model; its geometry is preserved and its stale engine-valid status was removed. The same audit corrected the historical snail’s stale label and the legacy large ramp’s stale failed label; all nine cards now have live-gate consistency coverage.
+All four candidates preserve the inspected BOM and pass raw geometry checks. **None meets full replica acceptance.** The 9-piece small ramp now passes complete construction through all three source stages and all three perturbation seeds, including the launch-module rotation, docking and unsupported release. Its proposed straight car route also passes. The source-shape comparison still fails (23.3 px RMS), and real grips, magnets and vehicles remain uncalibrated. The workshop exposes both the selected complete sequence and rejected attempts with their recorded motion.
+
+The 37-piece medium and 51-piece large ramps now pass all three release trials. The medium ramp's assembly and passive turn still fail; the large ramp's assembly and route remain unverified. The 40-piece jet still fails release and source-shape checks. See [the reconstruction report](docs/footage-reconstruction.md) for source and measurement boundaries.
+
+The headless runtime retains Rapier.js 0.19.2, f32 precision, catalog solids, materials and original solver settings, with a reviewed Parry finite-polyhedron contact correction. A separate continuous solid-sweep guard rejects intersections or uncertifiable intervals. The [vendored package](vendor/rapier-contact/README.md) includes pinned sources, patch, licenses, reproducible builds and an identity that invalidates old physical states. Independent contact matrices and 72 convergence trials pass. The full suite passes 460 tests with one skipped; lint has zero errors and 38 existing warnings. The structural benchmark passes 24/25 outcomes: 19 constructive cases and all five required rejections. The five-step staircase reaches its unchanged computation budget before a complete evaluation; performance diagnosis is in progress.
+
+The historical library remains separate from source reconstruction. The current nominal gate passes house, castle, dog, historical snail, medium ramp and rocket. Historical jet, small ramp and large ramp fail; the large ramp's platform release cannot be certified. Their geometry is retained and labels follow live gates. The generated sprint seats its platform and rear walls on finite support faces as a separate variant. The historical snail's nominal pass does not identify or reproduce the missing 3D source.
 
 ## Intent-driven structural harness
 
 The new structural path handles parameterized towers, open containers, through tunnels, and staircases. It parses a reviewable contract, constructs catalog geometry, measures requirements independently, runs three release perturbations, checks settled shape and completed assembly prefixes, and repairs failed candidates without changing the contract. The Design Lab exposes unlimited pieces, the contract, and repair evidence. Agent tools can solve a contract or evaluate an externally authored tile graph.
 
-The reproducible acceptance corpus passed **20/20 constructive briefs and 5/5 required rejections**; recorded outcomes are in `verification/harness-benchmark-summary.json`. The recovered full per-tile report, including models, instructions, and measurements, is checked in at `verification/harness-benchmark.json`. Run `npm run benchmark:harness` to reproduce rather than trusting stored success labels. See [docs/intent-harness.md](docs/intent-harness.md) for precise scope, passage assumptions, and limitations.
+The current reproducible acceptance corpus passes **19/20 constructive briefs and 5/5 required rejections**; recorded outcomes are in `verification/harness-benchmark-summary.json`. The five-step staircase reaches its computation limit without an accepted candidate. The recovered full per-tile report, including models, instructions, and measurements, is checked in at `verification/harness-benchmark.json`. Run `npm run benchmark:harness` to reproduce rather than trusting stored success labels. See [docs/intent-harness.md](docs/intent-harness.md) for precise scope, passage assumptions, and limitations.
 
 ## Demonstrated in simulation
 
@@ -40,7 +46,7 @@ The existing manual editor, authored library, recognition scorer, and reference 
 - **Reliable zigzags.** The current switchback macro has geometry and support problems. It does not yet provide a valid two-turn course or guide cars through turns.
 - **Unrestricted prompt fidelity.** Four structural families now have explicit measurable contracts and constructive repair search. This is not arbitrary structure synthesis; unresolved clauses fail closed. Course requests use the earlier experimental planner, and other object families still use unverified legacy templates.
 - **Video reconstruction.** The existing target was estimated from frames, not recovered through measured multiview geometry. The earlier [diagnosis](research/diagnosis.md) still applies.
-- **Physical assembly.** Each completed instruction group is simulated; hand access and the transient process of holding and joining its individual pieces are not.
+- **Physical assembly.** The small source candidate has continuous individual-panel grip, placement, transfer and free-release checks. Other source contracts remain incomplete or fail. Grips are explicit fingertip proxies, not measured human handling.
 
 ## Next engineering milestones
 

@@ -48,8 +48,8 @@ export const BUILD_LIBRARY: BuildLibraryItem[] = [
     summary: "A low foot slab with a raised head and a large vertical radial triangle shell.",
     difficulty: "medium",
     estimatedMinutes: 14,
-    status: "engine-fail-pending-reauthoring",
-    tags: ["snail", "animal", "radial shell", "triangle fan", "needs repair"]
+    status: "engine-valid",
+    tags: ["snail", "animal", "radial shell", "triangle fan", "simulation passed", "source unverified"]
   },
   {
     id: "small-car-ramp",
@@ -78,8 +78,8 @@ export const BUILD_LIBRARY: BuildLibraryItem[] = [
     summary: "A wide ramp structure with a tall rear grid and large sloped panels.",
     difficulty: "hard",
     estimatedMinutes: 18,
-    status: "engine-valid",
-    tags: ["ramp", "large panels", "stability", "toy cars", "simulation passed"]
+    status: "engine-fail-pending-reauthoring",
+    tags: ["ramp", "large panels", "stability", "toy cars", "needs verification"]
   },
   {
     id: "rocket",
@@ -88,8 +88,8 @@ export const BUILD_LIBRARY: BuildLibraryItem[] = [
     summary: "An upright rocket with a square-panel body, triangular nose cone, and broad fin base.",
     difficulty: "medium",
     estimatedMinutes: 10,
-    status: "engine-fail-pending-reauthoring",
-    tags: ["rocket", "box", "nose cone", "fins", "needs verification"]
+    status: "engine-valid",
+    tags: ["rocket", "box", "nose cone", "fins", "simulation passed"]
   }
 ];
 

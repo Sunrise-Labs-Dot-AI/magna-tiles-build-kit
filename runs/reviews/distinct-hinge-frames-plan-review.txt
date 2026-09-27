@@ -1,0 +1,13 @@
+**Verdict:** CLEAR for an isolated `/tmp` diagnostic prototype. BLOCK for production promotion until schema, ABI, and evidence separation are mechanical.
+
+Native-frame hinge itself checks out. Current JS Rapier exposes `JointData.revolute(anchor1, anchor2, axis)` and `generic(anchor1, anchor2, axis, mask)` without independent frames, while current code falls back to two spherical constraints when local axes differ: [rapier-world.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts:333), [rapier-world.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts:385). Native Rapier supports `GenericJointBuilder.local_frame1/2`, and `LOCKED_REVOLUTE_AXES` leaves only angular X free, so the proposed wrapper is technically plausible.
+
+Concrete blockers before promotion:
+
+- Current `PhysicsJointModel` has anchors, one axis, and `secondAnchors`, but no native local frames or joint kind: [physics-model.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/physics-model.ts:30). Promotion needs explicit frame fields, a native-hinge discriminator, snapshot round-trip tests, and a `PHYSICS_MODEL_VERSION` bump plus old-state rejection.
+- Break witnesses must be separated from physical constraints. Reusing `secondAnchors` would recreate the two-spherical path and fail the whole purpose. Native joint should be one constraint, with a separate second witness sampled by the break law.
+- Angular freedom needs a hard no-stiffness proof around wrap boundaries. The current revolute path applies `setLimits(-π, π)` when available: [rapier-world.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts:337). The prototype must prove near-π and full free rotation are not converted into a limit impulse.
+- Precision-only proof must remain uncontaminated. Any hinge-wrapper run needs a distinct ABI/model label and cannot be counted as f64 precision-only evidence. The plan mostly says this, but production needs it enforced by import/package identity and rejected stale snapshots, not prose.
+- Captured migrated states remain diagnostic only. Acceptance has to come from fresh construction and unchanged solid guards, consistent with the plan’s line 16 boundary.
+
+No file edits made. I did not run tests, only read the plan, adapter code, tests, and Rapier JS/Rust joint sources.

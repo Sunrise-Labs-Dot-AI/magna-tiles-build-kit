@@ -31,13 +31,16 @@ describe("reference acceptance", () => {
 
     expect(verdicts.find((item) => item.id === "small-car-ramp")?.verdict.passed).toBe(false);
     expect(verdicts.find((item) => item.id === "medium-car-ramp")?.verdict.passed).toBe(true);
-    expect(verdicts.find((item) => item.id === "large-car-ramp")?.verdict.passed).toBe(true);
+    // The historical platform begins at the solid-overlap limit; its initial
+    // release cannot be certified. The corrected generated sprint is separate.
+    const large = verdicts.find((item) => item.id === "large-car-ramp")!.verdict;
+    expect(large.passed).toBe(false);
+    expect(large.reasons.join(" ")).toContain("Swept solid clearance cannot be certified");
     expect(verdicts.find((item) => item.id === "jet-aircraft")?.verdict.passed).toBe(false);
     expect(verdicts.filter((item) => item.verdict.passed).map((item) => item.id).sort()).toEqual([
-      "large-car-ramp",
       "medium-car-ramp"
     ]);
-    expect(verdicts.filter((item) => !item.verdict.passed).map((item) => item.id).sort()).toEqual(["jet-aircraft", "small-car-ramp"]);
+    expect(verdicts.filter((item) => !item.verdict.passed).map((item) => item.id).sort()).toEqual(["jet-aircraft", "large-car-ramp", "small-car-ramp"]);
   });
 });
 

@@ -1,4 +1,4 @@
-import { ColliderDesc, RigidBodyDesc } from "@dimforge/rapier3d-compat";
+import { ColliderDesc, RigidBodyDesc } from "@/lib/engine/physics-backend";
 import { driveSurfaceTiles, normalizeBuild, type EngineBuild } from "./build";
 import { tileWorldVertices } from "@/lib/magnetic-tiles/magnet-geometry";
 import {
@@ -17,6 +17,7 @@ import { createEngineWorld } from "./rapier-world";
 import { dot, magnitude, scale, subtract } from "./math";
 import { createRollTestPlan } from "./physics-model";
 import { RAW_OVERLAP_TOLERANCE } from "./overlap";
+import type { SolidFailure } from "@/lib/magnetic-tiles/swept-prisms";
 
 export interface SimulationResult {
   stands: boolean;
@@ -24,12 +25,15 @@ export interface SimulationResult {
   peakGroundPenetration: number;
   settledSteps: number;
   poppedJoints: string[];
+  solidFailures: SolidFailure[];
+  peakSolidOverlap: number;
 }
 
 export interface RollTestResult {
   reachedBottom: boolean;
   fellOff: boolean;
   peakGroundPenetration: number;
+  solidFailures: SolidFailure[];
 }
 
 export class SimulationBudgetExceeded extends Error {
@@ -51,7 +55,7 @@ export async function simulate(
       if (step % 32 === 0 && Date.now() > (options.deadline ?? Infinity))
         throw new SimulationBudgetExceeded();
       engine.step();
-      if (engine.peakDisplacement > COLLAPSE_DISPLACEMENT || engine.peakGroundPenetration > RAW_OVERLAP_TOLERANCE) break;
+      if (engine.invalidState || engine.solidFailures.length || engine.peakDisplacement > COLLAPSE_DISPLACEMENT || engine.peakGroundPenetration > RAW_OVERLAP_TOLERANCE) break;
       if (
         engine.stepSpeeds.linear < SETTLED_LINEAR_SPEED &&
         engine.stepSpeeds.angular < SETTLED_ANGULAR_SPEED
@@ -65,6 +69,7 @@ export async function simulate(
     const maxDisplacement = engine.peakDisplacement;
     const result = {
       stands:
+        !engine.invalidState && !engine.solidFailures.length &&
         engine.rejectedReasons.length === 0 &&
         engine.poppedJoints.length === 0 &&
         engine.peakGroundPenetration <= RAW_OVERLAP_TOLERANCE &&
@@ -73,6 +78,8 @@ export async function simulate(
       maxDisplacement,
       peakGroundPenetration: engine.peakGroundPenetration,
       settledSteps,
+      solidFailures: engine.solidFailures,
+      peakSolidOverlap: engine.peakSolidOverlap,
       poppedJoints: [...engine.rejectedReasons, ...engine.poppedJoints],
     };
     return result;
@@ -86,22 +93,24 @@ export async function rollTest(input: EngineBuild): Promise<RollTestResult> {
   const engine = await createEngineWorld(build, { drop: true });
   try {
     const path = createRollTestPlan(build);
-    if (!path || engine.rejectedReasons.length > 0) {
-      return { reachedBottom: false, fellOff: true, peakGroundPenetration: engine.peakGroundPenetration };
+    const failure=()=>({reachedBottom:false,fellOff:true,peakGroundPenetration:engine.peakGroundPenetration,solidFailures:engine.solidFailures});
+    if (!path || engine.invalidState || engine.solidFailures.length || engine.rejectedReasons.length > 0) {
+      return failure();
     }
     if (hasPathObstruction(build, path)) {
-      return { reachedBottom: false, fellOff: true, peakGroundPenetration: engine.peakGroundPenetration };
+      return failure();
     }
 
     for (let index = 0; index < ROLL_TEST_SETTLE_STEPS; index += 1) {
       engine.step();
+      if(engine.invalidState||engine.solidFailures.length)return failure();
     }
 
     if (
       engine.poppedJoints.length > 0 ||
       engine.peakDisplacement > MAX_STANDING_DISPLACEMENT || engine.peakGroundPenetration > RAW_OVERLAP_TOLERANCE
     ) {
-      return { reachedBottom: false, fellOff: true, peakGroundPenetration: engine.peakGroundPenetration };
+      return failure();
     }
 
     const ball = engine.world.createRigidBody(
@@ -130,7 +139,7 @@ export async function rollTest(input: EngineBuild): Promise<RollTestResult> {
     const requiredProgress = 1 + (path.radius + 0.35) / path.length;
     for (let step = 0; step < ROLL_TEST_MAX_STEPS; step += 1) {
       engine.step();
-      if (engine.peakGroundPenetration > RAW_OVERLAP_TOLERANCE || engine.peakDisplacement > MAX_STANDING_DISPLACEMENT || engine.poppedJoints.length) {
+      if (engine.invalidState || engine.solidFailures.length || engine.peakGroundPenetration > RAW_OVERLAP_TOLERANCE || engine.peakDisplacement > MAX_STANDING_DISPLACEMENT || engine.poppedJoints.length) {
         fellOff = true;
         break;
       }
@@ -173,6 +182,7 @@ export async function rollTest(input: EngineBuild): Promise<RollTestResult> {
       reachedBottom,
       fellOff: fellOff || !reachedBottom || engine.poppedJoints.length > 0,
       peakGroundPenetration: engine.peakGroundPenetration,
+      solidFailures: engine.solidFailures,
     };
   } finally {
     engine.dispose();

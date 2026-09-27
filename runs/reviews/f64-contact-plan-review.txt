@@ -1,0 +1,21 @@
+**Verdict:** acceptable only as a bounded `/tmp` diagnostic prototype, not yet acceptable as a production remedy. Confidence: moderate on allowing the probe, low on it becoming the selected fix until the wrapper and state-boundary evidence exists.
+
+**Blockers before promotion:**
+
+1. **The current JS boundary is structurally f32.** `tilePrismPoints` returns `Float32Array` in [build.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/build.ts:155), and Rapier 0.19.2 binding types require `Float32Array` for convex hulls, meshes, collider vertices, heightfields, and inertia matrices. The generated glue copies hull points through `passArrayF32ToWasm0`. A native f64 Parry result does not prove a JS f64 build unless the generated wrapper exposes and uses f64 paths end to end.
+
+2. **“Float precision only” is not proven by source version pins.** The plan must require a diff audit proving no changed geometry construction, mass property path, default feature set, wasm-bindgen ABI behavior, solver defaults, CCD defaults, activation/sleep defaults, or serialization semantics. Same Rapier/Parry versions are necessary but not sufficient.
+
+3. **Default numerical settings need explicit snapshot assertions, not prose.** Current engine sets `dt`, `numSolverIterations`, and `contact_natural_frequency` in [rapier-world.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts:121), while Rapier exposes `lengthUnit`, `normalizedAllowedLinearError`, `normalizedPredictionDistance`, `numInternalPgsIterations`, `minIslandSize`, and `maxCcdSubsteps`. Promotion should fail unless old and f64 worlds dump and compare every integration/contact/activation setting before each acceptance run.
+
+4. **State compatibility must be hard-versioned.** The existing stale gate checks `state.physicsModel` in [rapier-world.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts:403). A promoted f64 backend needs a new model id encoding backend, precision, Rapier/Rust/Parry versions, wrapper ABI, and settings hash. Old `EngineState`, prepared workspaces, cached harness outputs, and any Rapier binary snapshots must be rejected.
+
+5. **WASM ownership controls need tests.** The plan says not to mix pointers, but this must become an import-branding guard plus tests that old `Raw`, `ColliderDesc`, `JointData`, `RigidBody`, and `World` objects cannot enter the f64 backend. Finalization/dispose behavior also needs stress tests because the generated wrapper owns raw pointers with `FinalizationRegistry`.
+
+6. **Determinism proof is underspecified.** Require repeated clean builds from source producing identical package hashes, repeated simulation runs producing byte-identical or predeclared numeric-equivalent reports, and exact Node/toolchain/wasm-bindgen/Rust target provenance. Do not accept “works on this `/tmp` build” as reproducibility.
+
+7. **Guard scope must remain independent of Rapier.** The solid-volume guard in [swept-prisms.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/swept-prisms.ts:75) should stay mandatory even if f64 fixes manifolds. The f64 backend cannot be allowed to retire the guard or loosen durable failure propagation.
+
+8. **Backend complexity is easy to underestimate.** A second local Rapier package is effectively a forked physics backend. Before production, require a narrow adapter boundary so the app cannot import both backends accidentally, plus an explicit decision that maintaining a vendored f64 wasm runtime is cheaper than continuing diagnosis or waiting for an upstream fix.
+
+Required plan control: add a pre-promotion checklist that first proves the f64 JS/WASM wrapper is actually f64 at every numeric array boundary, then proves old f32 and new f64 differ only by scalar precision under the same settings. Until that evidence exists, the native Parry result supports a hypothesis, not a remedy.

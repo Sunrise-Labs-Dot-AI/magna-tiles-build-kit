@@ -1,10 +1,11 @@
 import { describe, expect, it } from "vitest";
-import largeCarRampDraft from "@/build-drafts/large-car-ramp.json";
 import mediumCarRampDraft from "@/build-drafts/medium-car-ramp.json";
 import smallCarRampDraft from "@/build-drafts/small-car-ramp.json";
 import { gateBuild, MAGNET_HOLD_FORCE, rollTest, simulate, TILE_FRICTION, TILE_MASS_KG, TILE_THICKNESS } from "@/lib/engine";
 import type { EngineBuild } from "@/lib/engine";
 import type { MagneticConnection, TileInstance } from "@/lib/magnetic-tiles/types";
+import { courseCandidates } from "@/lib/planner/candidates";
+import { parseDesignBrief } from "@/lib/planner/brief";
 
 describe("headless Magna-Tiles physics calibration", () => {
   it("documents the assumed and calibrated physical constants in one place", () => {
@@ -41,6 +42,7 @@ describe("headless Magna-Tiles physics calibration", () => {
     const verdict = await gateBuild(blockedRamp);
 
     expect(simulation.stands).toBe(true);
+    expect(simulation.solidFailures).toEqual([]);
     expect(roll).toMatchObject({ reachedBottom: false, fellOff: true });
     expect(verdict.passed).toBe(false);
     expect(verdict.reasons.join(" ")).toContain("roll test reachedBottom=false fellOff=true");
@@ -84,7 +86,9 @@ describe("headless Magna-Tiles physics calibration", () => {
 });
 
 function wallBlockedLargeRampFixture(): EngineBuild {
-  const blocked = structuredClone(largeCarRampDraft as EngineBuild);
+  // Use the generated variant seated on actual finite support faces. The
+  // historical center-plane draft itself has an overlapping launch platform.
+  const blocked: EngineBuild = courseCandidates(parseDesignBrief("a downhill racecourse"))[0].build;
   const verticalWallBasis: TileInstance["basis"] = {
     xAxis: { x: 0, y: 0, z: 1 },
     yAxis: { x: 0, y: 1, z: 0 },

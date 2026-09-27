@@ -1,218 +1,463 @@
 {
-  "model": "intent-harness-v1",
-  "date": "2026-09-22",
-  "provenance": "Recorded from the completed local benchmark console output. The workspace disconnected while publishing the full 816230-byte per-tile report; this is a recovered outcome summary, not that detailed report. Run npm run benchmark:harness to regenerate full geometry, instructions, and release evidence.",
-  "outcomes": {
-    "constructiveSolved": 20,
-    "constructiveTotal": 20,
-    "rejectionsCorrect": 5,
-    "rejectionsTotal": 5,
-    "elapsedMilliseconds": 416001,
-    "largestBuildPieces": 62
+  "date": "2026-09-27",
+  "model": "intent-harness-v3-rigid-contact-v7-solid-sweep-960-js0.19.2-rust0.30.1-parry0.25.1-sat-cache3-f32-abi1-5e4c38a5ada93780-profile10e2e81b05c3c518",
+  "command": "npm run benchmark:harness",
+  "artifactSha256": "ed4645dae49ba3a76cd91753ed2094cb8714d8253c021489ef5c33f9e2defeed",
+  "constructive": {
+    "correct": 19,
+    "total": 20
   },
-  "checks": {
-    "unitTestsPassed": 232,
-    "unitTestsSkipped": 1,
-    "productionBuild": "passed",
-    "lintErrors": 0,
-    "existingLintWarnings": 38,
-    "browserWebGL": "not verified for this revision"
+  "requiredRejections": {
+    "correct": 5,
+    "total": 5
   },
-  "httpSmoke": {
-    "page": "/design rendered Unlimited pieces and structural help",
-    "limited": {
-      "prompt": "an open top box with at most 4 pieces",
-      "unlimitedPieces": false,
-      "httpStatus": 200,
-      "status": "needs-repair",
-      "failedCheck": "inventory",
-      "pieces": 5
-    },
-    "unlimited": {
-      "prompt": "an open top box with at most 4 pieces",
-      "unlimitedPieces": true,
-      "httpStatus": 200,
-      "status": "simulation-passed",
-      "failedChecks": [],
-      "pieces": 5
-    },
-    "unsupported": "a tower with an elevator returned unsupported"
-  },
+  "note": "Recomputed with the finite-polyhedron contact correction and continuous solid-sweep guard. Five-step staircase exceeds the unchanged 240000 ms computation budget before a complete candidate evaluation. No partial trial is accepted. This benchmark does not certify source replication, complete hand assembly or measured magnetic forces.",
   "entries": [
     {
       "prompt": "a tower at least 6 inches tall",
       "unlimitedPieces": true,
+      "expected": "solved",
       "status": "solved",
+      "passed": true,
+      "attempts": 1,
       "pieces": 10,
-      "attempts": 1
+      "milliseconds": 15564,
+      "fingerprint": "d690a0d4a44bbd7dd3d51b0a583de6318f958ab1f6a6b6eff7cdc874e288fbe0",
+      "failures": [],
+      "program": {
+        "kind": "tower",
+        "width": 1,
+        "height": 2,
+        "depth": 1,
+        "steps": 2,
+        "reinforcement": "shell"
+      }
     },
     {
       "prompt": "a tower at least 9 inches tall",
       "unlimitedPieces": true,
+      "expected": "solved",
       "status": "solved",
-      "pieces": 15,
-      "attempts": 2
+      "passed": true,
+      "attempts": 1,
+      "pieces": 14,
+      "milliseconds": 23872,
+      "fingerprint": "b118741c03f3a0f9a3ed6ff32e250c1e0736b9f928b68678fcc334b72506766f",
+      "failures": [],
+      "program": {
+        "kind": "tower",
+        "width": 1,
+        "height": 3,
+        "depth": 1,
+        "steps": 2,
+        "reinforcement": "shell"
+      }
     },
     {
       "prompt": "a tower at least 12 inches tall",
       "unlimitedPieces": true,
+      "expected": "solved",
       "status": "solved",
-      "pieces": 11,
-      "attempts": 2
+      "passed": true,
+      "attempts": 1,
+      "pieces": 18,
+      "milliseconds": 32105,
+      "fingerprint": "bf5edd57eef4315c0274ee264e19e9bad081c43348a3d7c691624aa4d83a96be",
+      "failures": [],
+      "program": {
+        "kind": "tower",
+        "width": 1,
+        "height": 4,
+        "depth": 1,
+        "steps": 2,
+        "reinforcement": "shell"
+      }
     },
     {
       "prompt": "a tower at least 15 inches tall",
       "unlimitedPieces": true,
+      "expected": "solved",
       "status": "solved",
-      "pieces": 20,
-      "attempts": 2
+      "passed": true,
+      "attempts": 1,
+      "pieces": 22,
+      "milliseconds": 41433,
+      "fingerprint": "2733afc473a45472b597b6dbfbe158400171a93db7266c4e6534cff3ef321909",
+      "failures": [],
+      "program": {
+        "kind": "tower",
+        "width": 1,
+        "height": 5,
+        "depth": 1,
+        "steps": 2,
+        "reinforcement": "shell"
+      }
     },
     {
       "prompt": "a tower with 3 levels and at most 30 pieces",
       "unlimitedPieces": false,
+      "expected": "solved",
       "status": "solved",
+      "passed": true,
+      "attempts": 2,
       "pieces": 28,
-      "attempts": 2
+      "milliseconds": 72656,
+      "fingerprint": "3b691556af2e11ef3444bd5baaa34102a70cfbdfac4608da09c527177b9d56c8",
+      "failures": [],
+      "program": {
+        "kind": "tower",
+        "width": 2,
+        "height": 3,
+        "depth": 2,
+        "steps": 2,
+        "reinforcement": "rigid-panels"
+      }
     },
     {
       "prompt": "an open top box",
       "unlimitedPieces": true,
+      "expected": "solved",
       "status": "solved",
+      "passed": true,
+      "attempts": 1,
       "pieces": 5,
-      "attempts": 1
+      "milliseconds": 4674,
+      "fingerprint": "98fe0782c4fb0d1255fe541c2b4316c7967607e0c7b4097403687b9415f4d097",
+      "failures": [],
+      "program": {
+        "kind": "container",
+        "width": 1,
+        "height": 1,
+        "depth": 1,
+        "steps": 2,
+        "reinforcement": "shell"
+      }
     },
     {
       "prompt": "an open top box 2 tiles wide",
       "unlimitedPieces": true,
+      "expected": "solved",
       "status": "solved",
-      "pieces": 9,
-      "attempts": 2
+      "passed": true,
+      "attempts": 1,
+      "pieces": 8,
+      "milliseconds": 8916,
+      "fingerprint": "d6612b17a553ccddf1a033b7d737916cf94f732b0c9168481fffc49ebac9299e",
+      "failures": [],
+      "program": {
+        "kind": "container",
+        "width": 2,
+        "height": 1,
+        "depth": 1,
+        "steps": 2,
+        "reinforcement": "shell"
+      }
     },
     {
       "prompt": "an open top box 3 tiles wide",
       "unlimitedPieces": true,
+      "expected": "solved",
       "status": "solved",
-      "pieces": 13,
-      "attempts": 2
+      "passed": true,
+      "attempts": 1,
+      "pieces": 11,
+      "milliseconds": 14074,
+      "fingerprint": "a4157e267ff281d02b0ba57e210d07b906f92ec7aabf0d56ce0bd6dff121c59f",
+      "failures": [],
+      "program": {
+        "kind": "container",
+        "width": 3,
+        "height": 1,
+        "depth": 1,
+        "steps": 2,
+        "reinforcement": "shell"
+      }
     },
     {
       "prompt": "an open top box 2 tiles wide and 2 tiles deep",
       "unlimitedPieces": true,
+      "expected": "solved",
       "status": "solved",
-      "pieces": 9,
-      "attempts": 2
+      "passed": true,
+      "attempts": 1,
+      "pieces": 12,
+      "milliseconds": 15552,
+      "fingerprint": "fb9e57065ee2ed61f289c6a9e14badf9aecbfe1c36fd16d02ece0b57069fc45d",
+      "failures": [],
+      "program": {
+        "kind": "container",
+        "width": 2,
+        "height": 1,
+        "depth": 2,
+        "steps": 2,
+        "reinforcement": "shell"
+      }
     },
     {
       "prompt": "an open top box 3 tiles wide and 2 tiles deep",
       "unlimitedPieces": true,
+      "expected": "solved",
       "status": "solved",
-      "pieces": 13,
-      "attempts": 2
+      "passed": true,
+      "attempts": 1,
+      "pieces": 16,
+      "milliseconds": 22587,
+      "fingerprint": "8f556d555e94f64dab7f76991d60df8551bc39bc7719869fe7aaf5245e9175ab",
+      "failures": [],
+      "program": {
+        "kind": "container",
+        "width": 3,
+        "height": 1,
+        "depth": 2,
+        "steps": 2,
+        "reinforcement": "shell"
+      }
     },
     {
       "prompt": "a tunnel",
       "unlimitedPieces": true,
+      "expected": "solved",
       "status": "solved",
-      "pieces": 8,
-      "attempts": 3
+      "passed": true,
+      "attempts": 2,
+      "pieces": 6,
+      "milliseconds": 6001,
+      "fingerprint": "f73acf13eb243e79a5a5836c476bbae00a2f5199208679a106f8dfc4b9e2e458",
+      "failures": [],
+      "program": {
+        "kind": "tunnel",
+        "width": 2,
+        "height": 1,
+        "depth": 2,
+        "steps": 2,
+        "reinforcement": "rigid-panels"
+      }
     },
     {
       "prompt": "a tunnel 2 tiles long",
       "unlimitedPieces": true,
+      "expected": "solved",
       "status": "solved",
-      "pieces": 8,
-      "attempts": 3
+      "passed": true,
+      "attempts": 2,
+      "pieces": 6,
+      "milliseconds": 4809,
+      "fingerprint": "03e017af52a63a5392cf25dc8225379099c9dcdb93a1a2aead65b0ff08a3117a",
+      "failures": [],
+      "program": {
+        "kind": "tunnel",
+        "width": 2,
+        "height": 1,
+        "depth": 2,
+        "steps": 2,
+        "reinforcement": "rigid-panels"
+      }
     },
     {
       "prompt": "a tunnel 3 tiles long",
       "unlimitedPieces": true,
+      "expected": "solved",
       "status": "solved",
+      "passed": true,
+      "attempts": 2,
       "pieces": 12,
-      "attempts": 3
+      "milliseconds": 16349,
+      "fingerprint": "3dd511dd4f6bf23143dc5b38c2d2831b110de2c9bf66ab4890fa64569f0c6a1c",
+      "failures": [],
+      "program": {
+        "kind": "tunnel",
+        "width": 2,
+        "height": 1,
+        "depth": 3,
+        "steps": 2,
+        "reinforcement": "rigid-panels"
+      }
     },
     {
       "prompt": "a tunnel 4 tiles long",
       "unlimitedPieces": true,
+      "expected": "solved",
       "status": "solved",
-      "pieces": 14,
-      "attempts": 3
+      "passed": true,
+      "attempts": 2,
+      "pieces": 12,
+      "milliseconds": 16638,
+      "fingerprint": "dc20c308155c3c9b420be76ecd112c4740fb7eaecd9bf6f16be578e153ff5f00",
+      "failures": [],
+      "program": {
+        "kind": "tunnel",
+        "width": 2,
+        "height": 1,
+        "depth": 4,
+        "steps": 2,
+        "reinforcement": "rigid-panels"
+      }
     },
     {
       "prompt": "a tunnel 2 tiles wide and 2 tiles long",
       "unlimitedPieces": true,
+      "expected": "solved",
       "status": "solved",
-      "pieces": 8,
-      "attempts": 3
+      "passed": true,
+      "attempts": 2,
+      "pieces": 6,
+      "milliseconds": 4872,
+      "fingerprint": "a4c666bce80e4c34f4c8412c6ab498949fda73c6ed677d22b82c058c3a014213",
+      "failures": [],
+      "program": {
+        "kind": "tunnel",
+        "width": 2,
+        "height": 1,
+        "depth": 2,
+        "steps": 2,
+        "reinforcement": "rigid-panels"
+      }
     },
     {
       "prompt": "a staircase with 2 steps",
       "unlimitedPieces": true,
+      "expected": "solved",
       "status": "solved",
+      "passed": true,
+      "attempts": 1,
       "pieces": 16,
-      "attempts": 1
+      "milliseconds": 27421,
+      "fingerprint": "aabd8ec62ae10da6d8b86fe8b9d1233ea965067ee29deefbd084b5800667853f",
+      "failures": [],
+      "program": {
+        "kind": "staircase",
+        "width": 1,
+        "height": 1,
+        "depth": 1,
+        "steps": 2,
+        "reinforcement": "shell"
+      }
     },
     {
       "prompt": "a staircase with 3 steps",
       "unlimitedPieces": true,
+      "expected": "solved",
       "status": "solved",
+      "passed": true,
+      "attempts": 1,
       "pieces": 30,
-      "attempts": 1
+      "milliseconds": 67194,
+      "fingerprint": "583c681d4887e2b907e27e8cea89b810571ae6d2b3177563dace63873989fa11",
+      "failures": [],
+      "program": {
+        "kind": "staircase",
+        "width": 1,
+        "height": 1,
+        "depth": 1,
+        "steps": 3,
+        "reinforcement": "shell"
+      }
     },
     {
       "prompt": "a staircase with 4 steps",
       "unlimitedPieces": true,
+      "expected": "solved",
       "status": "solved",
+      "passed": true,
+      "attempts": 1,
       "pieces": 48,
-      "attempts": 1
+      "milliseconds": 144242,
+      "fingerprint": "90071305d94e5263974bd838edd39f74675fbfad477389362c7353c37e587510",
+      "failures": [],
+      "program": {
+        "kind": "staircase",
+        "width": 1,
+        "height": 1,
+        "depth": 1,
+        "steps": 4,
+        "reinforcement": "shell"
+      }
     },
     {
       "prompt": "a staircase with 5 steps",
       "unlimitedPieces": true,
-      "status": "solved",
-      "pieces": 62,
-      "attempts": 2
+      "expected": "solved",
+      "status": "budget-exhausted",
+      "passed": false,
+      "attempts": 0,
+      "pieces": 0,
+      "milliseconds": 240562,
+      "failures": []
     },
     {
       "prompt": "a staircase with 3 steps and 2 tiles deep",
       "unlimitedPieces": true,
+      "expected": "solved",
       "status": "solved",
-      "pieces": 31,
-      "attempts": 2
+      "passed": true,
+      "attempts": 1,
+      "pieces": 48,
+      "milliseconds": 127324,
+      "fingerprint": "e72cbc8077fdf33637079c342617d7af091fd636a1b99b1fb8c941859c2ac5ea",
+      "failures": [],
+      "program": {
+        "kind": "staircase",
+        "width": 1,
+        "height": 1,
+        "depth": 2,
+        "steps": 3,
+        "reinforcement": "shell"
+      }
     },
     {
       "prompt": "a tower at least 12 inches tall and at most 6 inches tall",
       "unlimitedPieces": true,
+      "expected": "rejected",
       "status": "infeasible",
+      "passed": true,
+      "attempts": 0,
       "pieces": 0,
-      "attempts": 0
+      "milliseconds": 0,
+      "failures": []
     },
     {
       "prompt": "a tower with a working elevator",
       "unlimitedPieces": true,
+      "expected": "rejected",
       "status": "unsupported",
+      "passed": true,
+      "attempts": 0,
       "pieces": 0,
-      "attempts": 0
+      "milliseconds": 0,
+      "failures": []
     },
     {
       "prompt": "an open top box with a lid",
       "unlimitedPieces": true,
+      "expected": "rejected",
       "status": "unsupported",
+      "passed": true,
+      "attempts": 0,
       "pieces": 0,
-      "attempts": 0
+      "milliseconds": 0,
+      "failures": []
     },
     {
       "prompt": "a tunnel with a door",
       "unlimitedPieces": true,
+      "expected": "rejected",
       "status": "unsupported",
+      "passed": true,
+      "attempts": 0,
       "pieces": 0,
-      "attempts": 0
+      "milliseconds": 0,
+      "failures": []
     },
     {
       "prompt": "a staircase with a slide",
       "unlimitedPieces": true,
+      "expected": "rejected",
       "status": "unsupported",
+      "passed": true,
+      "attempts": 0,
       "pieces": 0,
-      "attempts": 0
+      "milliseconds": 0,
+      "failures": []
     }
   ]
 }

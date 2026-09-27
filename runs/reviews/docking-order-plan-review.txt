@@ -1,0 +1,22 @@
+**Verdict:** Clear for bounded implementation, with explicit checks.
+
+This is defensible candidate ordering, not a bypass, if implementation treats target penetration as a ranking/diagnostic field and keeps acceptance gated by the same downstream machinery in [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:237), [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:263), [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:267), and [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:295). The current strict filter in [docking.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/docking.ts:41) would need to become classification plus ordering, not deletion of the clear-target rule.
+
+Required checks:
+
+1. Compute `targetPenetration = max(0, -prismGap(incoming, installed))` over all `movingIds x installedIds` finite prism pairs, including non-neighbors. Non-finite gap fails the candidate.
+
+2. Sort candidates by bucket first, then distance to support mean:
+   clear bucket: `targetPenetration <= 1e-7`
+   original-tolerance bucket: `targetPenetration <= RAW_OVERLAP_TOLERANCE`
+   reject: anything above `RAW_OVERLAP_TOLERANCE`.
+
+3. Evaluate every clear candidate through displacement, table, `componentContacts`, insertion path, and hand access before considering any penetrated candidate. A clear candidate failing closure/path/grip is a real failed candidate, not a reason to relax that gate.
+
+4. Preserve the prior scope from the earlier review: only docking-local incoming x installed solid checks via `prismPose/prismGap`; do not introduce a tighter whole-build overlap helper, because [componentContacts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/components.ts:14) still uses the original raw tolerance.
+
+5. Record selected `targetPenetration` on `DockingResult` and `row.docking`, including zero. Tests should assert the value, not just infer it from detail text.
+
+6. Add regressions proving: clear target beats a smaller penetrated mean; penetrated candidate above original tolerance is rejected; contained/blocker case still fails; existing within-component overlap is preserved; fallback penetrated target cannot produce assembly success unless carry, closure, support, free release, and solid failure gates all pass.
+
+No source-specific exception, no tolerance or dimension change, and no promotion based on docking alone.

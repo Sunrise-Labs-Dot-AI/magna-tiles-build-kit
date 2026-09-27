@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { readFile, readdir } from "node:fs/promises";
+import { readFile, readdir, stat } from "node:fs/promises";
 
 const sha = (bytes: string | Buffer) =>
   createHash("sha256").update(bytes).digest("hex");
@@ -54,6 +54,11 @@ export async function validationCodeHash(): Promise<string> {
       if (entry.endsWith(".ts")) files.push(`${directory}/${entry}`);
     }
   }
+  const vendor = "vendor/rapier-contact";
+  await Promise.all((await readdir(vendor,{ recursive: true })).map(async entry => {
+    const path = `${vendor}/${entry}`;
+    if ((await stat(path)).isFile()) files.push(path);
+  }));
   const hashes = await Promise.all(
     files.sort().map(async (path) => [path, sha(await readFile(path))]),
   );

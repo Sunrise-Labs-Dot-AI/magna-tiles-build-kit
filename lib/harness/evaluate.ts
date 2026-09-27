@@ -148,7 +148,7 @@ export async function evaluateCandidate(
           engine.step();
           peak = engine.peakDisplacement;
           settledSteps = engine.stepSpeeds.linear < SETTLED_LINEAR_SPEED && engine.stepSpeeds.angular < SETTLED_ANGULAR_SPEED ? settledSteps + 1 : 0;
-          if (peak > MAX_STANDING_DISPLACEMENT || engine.poppedJoints.length || engine.peakGroundPenetration > RAW_OVERLAP_TOLERANCE)
+          if (engine.invalidState || engine.solidFailures.length || peak > MAX_STANDING_DISPLACEMENT || engine.poppedJoints.length || engine.peakGroundPenetration > RAW_OVERLAP_TOLERANCE)
             break;
         }
         const final = engine.maxDisplacement();
@@ -183,9 +183,12 @@ export async function evaluateCandidate(
         const failedRequirements = intentEvidence
           .filter((e) => !e.passed)
           .map((e) => e.id);
+        failedRequirements.push(...engine.solidFailures.map(f=>f.detail));
+        if(engine.invalidState)failedRequirements.push("Invalid physical state.");
         trials.push({
           seed,
           passed:
+            !engine.invalidState && !engine.solidFailures.length && !engine.rejectedReasons.length &&
             peak <= MAX_STANDING_DISPLACEMENT &&
             engine.peakGroundPenetration <= RAW_OVERLAP_TOLERANCE &&
             settledSteps >= SETTLED_REQUIRED_STEPS &&

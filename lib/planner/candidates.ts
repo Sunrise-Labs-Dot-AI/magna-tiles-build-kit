@@ -9,6 +9,7 @@ import {
   composeMacros,
   type TileMacro,
 } from "@/lib/magnetic-tiles/macros";
+import { tilePrismVertices } from "@/lib/magnetic-tiles/prism-geometry";
 import { tileWorldVertices } from "@/lib/magnetic-tiles/magnet-geometry";
 import { hashPrompt } from "@/lib/magnetic-tiles/prompt";
 import type { BuildGraph } from "@/lib/magnetic-tiles/types";
@@ -24,6 +25,33 @@ export function courseCandidates(brief: DesignBrief): CourseCandidate[] {
     const build = draftToBuildGraph(
       structuredClone(largeRamp) as AuthoredBuildDraft,
     );
+    // The historical draft places these panels by their center planes, leaving
+    // .03-inch solid intersections. Seat this generated variant on the actual
+    // finite faces while retaining the catalog geometry and original draft.
+    const platform = build.tiles.find(
+      (tile) => tile.id === "large-top-platform-panel",
+    )!;
+    const supports = build.tiles.filter(
+      (tile) =>
+        tile.id !== platform.id &&
+        !/upper-rear/.test(tile.id) &&
+        Math.abs(tile.basis?.zAxis.y ?? 1) < 0.1 &&
+        build.connections.some(
+          (join) =>
+            [join.fromTileId, join.toTileId].includes(platform.id) &&
+            [join.fromTileId, join.toTileId].includes(tile.id),
+        ),
+    );
+    const top = (tile: typeof platform) =>
+      Math.max(...tilePrismVertices(tile).map((point) => point.y));
+    const bottom = (tile: typeof platform) =>
+      Math.min(...tilePrismVertices(tile).map((point) => point.y));
+    platform.position.y += Math.max(...supports.map(top)) - bottom(platform);
+    for (const wall of build.tiles.filter((tile) =>
+      /upper-rear-wall/.test(tile.id),
+    )) {
+      wall.position.y += top(platform) - bottom(wall);
+    }
     // Build complete, self-standing subassemblies before adding tall rear walls.
     for (const tile of build.tiles)
       tile.step = /wedge|sloped-driving/.test(tile.id)

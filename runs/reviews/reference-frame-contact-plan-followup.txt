@@ -1,0 +1,10 @@
+Verdict: **resolved at the plan level**. No remaining concrete blocker from the predecessor plan review.
+
+The updated plan in [2026-09-27-reference-frame-contact-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-reference-frame-contact-plan.md) now covers:
+
+- Frozen pre-step motion budget: allowance is velocity/radius/gravity-derived before `world.step()`, capped, and separately fails if actual motion exceeds it.
+- Non-vacuous contact proof: acceptance requires observed contact samples.
+- Isolated probes: probes stay in `/tmp`, outside acceptance artifacts, with scratch tests deleted/quarantined before full tests/CI.
+- Headless/browser boundary: headless physics remains acceptance authority; `/builder` is explicitly diagnostic, and `/references` replays recorded headless poses without browser physics.
+
+The sidecar at [2026-09-27-reference-frame-contact-plan.md.review.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-reference-frame-contact-plan.md.review.md) records all three findings as accepted and addressed. Implementation still has to produce the evidence, but the plan-review blockers are cleared.

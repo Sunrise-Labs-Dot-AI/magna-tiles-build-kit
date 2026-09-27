@@ -1,4 +1,5 @@
 export { TILE_THICKNESS } from "@/lib/magnetic-tiles/catalog";
+import { PHYSICS_BACKEND_ID } from "./backend-identity";
 
 // Catalog coordinates and UI dimensions are inches.
 export const ENGINE_UNITS_PER_METER = 1000 / 25.4;
@@ -27,7 +28,7 @@ export const SIMULATION_TIMESTEP_SECONDS = 1 / 120;
 // convergence fixtures. These are not measurements of physical plastic compliance.
 export const CONTACT_NATURAL_FREQUENCY_HZ = 120;
 export const MAX_COLLISION_TIMESTEP_SECONDS = 1 / 960;
-export const PHYSICS_MODEL_VERSION = "rigid-contact-v5-exact-box-960";
+export const PHYSICS_MODEL_VERSION = `rigid-contact-v7-solid-sweep-960-${PHYSICS_BACKEND_ID}`;
 export const SIMULATION_MAX_STEPS = 900;
 export const SETTLED_LINEAR_SPEED = 0.035;
 export const SETTLED_ANGULAR_SPEED = 0.08;

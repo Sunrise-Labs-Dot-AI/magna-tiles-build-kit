@@ -2794,9 +2794,9 @@
   },
   "report": {
     "id": "jet",
-    "fingerprint": "3d9b064e93c48f4c0230aa67039b3fcaefe2cb443936cdf87d0a0dcdabff817b",
-    "validationCodeHash": "e451d061b1843a258e6aeaf6e44d58be25e907c4015a5bb6df92bdd9bdd01b48",
-    "generatedAt": "2026-09-27T06:22:15.401Z",
+    "fingerprint": "e01800f8878c8771acf6e4263cabf2cf8cd072423b72636041d09cf8b05748f0",
+    "validationCodeHash": "41e24f3b908a2f1a0decd144dea070c20f42241920ea81a0c723af5f9b8836f7",
+    "generatedAt": "2026-09-27T09:55:42.007Z",
     "replication": "not-verified",
     "checks": {
       "source": {
@@ -2821,7 +2821,7 @@
       },
       "release": {
         "status": "fail",
-        "detail": "seed 0: fail, peak 1.372 in, table 0.012 in, linear 281.986 in/s, angular 293.452 rad/s, 0/90 rest steps; seed 17: fail, peak 0.963 in, table 0.012 in, linear 216.159 in/s, angular 213.029 rad/s, 0/90 rest steps; seed 53: fail, peak 1.001 in, table 0.012 in, linear 226.170 in/s, angular 222.463 rad/s, 0/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
+        "detail": "seed 0: fail, peak 1.288 in, table 0.012 in, linear 267.728 in/s, angular 277.569 rad/s, 0/90 rest steps.; seed 17: fail, peak 1.279 in, table 0.012 in, linear 265.703 in/s, angular 275.557 rad/s, 0/90 rest steps.; seed 53: fail, peak 1.278 in, table 0.012 in, linear 265.005 in/s, angular 274.910 rad/s, 0/90 rest steps.. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
       },
       "settledShape": {
         "status": "fail",
@@ -3226,12 +3226,14 @@
       {
         "seed": 0,
         "status": "fail",
-        "peakDisplacement": 1.3721709415202885,
-        "peakGroundPenetration": 0.01179982295040305,
-        "finalDisplacement": 1.3721709415202885,
-        "finalSpeed": 293.4517194331188,
-        "linearSpeed": 281.9857366421266,
-        "angularSpeed": 293.45171943311874,
+        "peakDisplacement": 1.2882909333457497,
+        "peakGroundPenetration": 0.011644129284877902,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.01445581649391503,
+        "finalDisplacement": 1.2882909333457497,
+        "finalSpeed": 277.5692907675892,
+        "linearSpeed": 267.72802199974996,
+        "angularSpeed": 277.5692907675892,
         "settledSteps": 0,
         "poppedJoints": [],
         "settledProjections": [
@@ -3240,7 +3242,7 @@
             "frameId": "jet-final-fit",
             "partition": "fit",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 8.32 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 8.29 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": 0.5040457847226278,
@@ -3267,8 +3269,8 @@
             },
             "cameraAnchors": 6,
             "checkLandmarks": 4,
-            "rmsPx": 23.796098032795822,
-            "maxPx": 42.37691056718485,
+            "rmsPx": 23.66784508851123,
+            "maxPx": 42.16258823777305,
             "sourceDiagonalPx": 959.0750752678332,
             "residuals": [
               {
@@ -3279,10 +3281,10 @@
                   438
                 ],
                 "projected": [
-                  392.28273664401024,
-                  449.5971134106536
+                  392.17885805567323,
+                  449.8612500017972
                 ],
-                "errorPx": 11.619273048749967,
+                "errorPx": 11.889639426739015,
                 "uncertaintyPx": 5
               },
               {
@@ -3293,10 +3295,10 @@
                   447
                 ],
                 "projected": [
-                  538.4792121700319,
-                  444.4807913672415
+                  538.3667724355864,
+                  444.7786937478192
                 ],
-                "errorPx": 2.921383367402403,
+                "errorPx": 2.608115863349699,
                 "uncertaintyPx": 6
               },
               {
@@ -3307,10 +3309,10 @@
                   549
                 ],
                 "projected": [
-                  539.739763113807,
-                  550.020029780298
+                  539.7475803148018,
+                  550.1466131325798
                 ],
-                "errorPx": 2.9234846797054614,
+                "errorPx": 2.9772334913625182,
                 "uncertaintyPx": 5
               },
               {
@@ -3321,10 +3323,10 @@
                   549
                 ],
                 "projected": [
-                  397.3101837286943,
-                  555.1818795684605
+                  397.33253346846766,
+                  555.2686978312141
                 ],
-                "errorPx": 7.536134206212834,
+                "errorPx": 7.620198078426906,
                 "uncertaintyPx": 5
               },
               {
@@ -3335,10 +3337,10 @@
                   443
                 ],
                 "projected": [
-                  974.0546800714312,
-                  429.2082577773319
+                  974.0301851368193,
+                  429.6064563348027
                 ],
-                "errorPx": 13.79185061718471,
+                "errorPx": 13.393577679396612,
                 "uncertaintyPx": 10
               },
               {
@@ -3349,10 +3351,10 @@
                   397
                 ],
                 "projected": [
-                  813.7229188956369,
-                  398.4218975766504
+                  813.8754074629326,
+                  398.53999673053454
                 ],
-                "errorPx": 3.985212393583872,
+                "errorPx": 4.170176607028837,
                 "uncertaintyPx": 12
               },
               {
@@ -3363,10 +3365,10 @@
                   473
                 ],
                 "projected": [
-                  137.3157159310503,
-                  482.3335014166912
+                  137.4014414657076,
+                  482.3863664764466
                 ],
-                "errorPx": 10.443024750233654,
+                "errorPx": 10.452301958108274,
                 "uncertaintyPx": 6
               },
               {
@@ -3377,10 +3379,10 @@
                   484
                 ],
                 "projected": [
-                  1079.9451261282702,
-                  443.9833034036314
+                  1080.0753666143567,
+                  444.25622185071666
                 ],
-                "errorPx": 42.37691056718485,
+                "errorPx": 42.16258823777305,
                 "uncertaintyPx": 8
               },
               {
@@ -3391,10 +3393,10 @@
                   292
                 ],
                 "projected": [
-                  559.3429905542623,
-                  274.54071490334684
+                  559.1757713879131,
+                  274.738402546516
                 ],
-                "errorPx": 17.53773977425481,
+                "errorPx": 17.357723257250125,
                 "uncertaintyPx": 10
               },
               {
@@ -3405,10 +3407,10 @@
                   402
                 ],
                 "projected": [
-                  794.1251003963346,
-                  399.69321647253525
+                  794.1626201687814,
+                  399.61404489314015
                 ],
-                "errorPx": 7.2515856750825005,
+                "errorPx": 7.241722497327971,
                 "uncertaintyPx": 8
               }
             ]
@@ -3418,7 +3420,7 @@
             "frameId": "jet-final-check-a",
             "partition": "holdout",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 6 scored landmarks; anchor RMS 17.32 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 6 scored landmarks; anchor RMS 17.24 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": 0.10930456772481012,
@@ -3445,8 +3447,8 @@
             },
             "cameraAnchors": 6,
             "checkLandmarks": 6,
-            "rmsPx": 507.9821553023198,
-            "maxPx": 1225.192854632689,
+            "rmsPx": 505.71697126723967,
+            "maxPx": 1219.3338627443443,
             "sourceDiagonalPx": 806.791174964129,
             "residuals": [
               {
@@ -3457,10 +3459,10 @@
                   416
                 ],
                 "projected": [
-                  692.3531108142602,
-                  421.837833119981
+                  692.4238742444587,
+                  422.1771249504139
                 ],
-                "errorPx": 19.25920486669323,
+                "errorPx": 19.43182994029782,
                 "uncertaintyPx": 12
               },
               {
@@ -3471,10 +3473,10 @@
                   384
                 ],
                 "projected": [
-                  765.4554152296491,
-                  375.54798902702316
+                  765.6592252077497,
+                  375.8250458879244
                 ],
-                "errorPx": 8.576405014807516,
+                "errorPx": 8.34163671137591,
                 "uncertaintyPx": 12
               },
               {
@@ -3485,10 +3487,10 @@
                   411
                 ],
                 "projected": [
-                  870.7787824083257,
-                  385.2663648503824
+                  870.9715730812422,
+                  385.72320685680563
                 ],
-                "errorPx": 27.689226552397365,
+                "errorPx": 27.19348484598293,
                 "uncertaintyPx": 12
               },
               {
@@ -3499,10 +3501,10 @@
                   449
                 ],
                 "projected": [
-                  812.56461488664,
-                  443.5728785480102
+                  812.5379962372715,
+                  444.1723818321485
                 ],
-                "errorPx": 10.139342947701484,
+                "errorPx": 9.808326917585488,
                 "uncertaintyPx": 12
               },
               {
@@ -3513,10 +3515,10 @@
                   531
                 ],
                 "projected": [
-                  716.6245250563169,
-                  531.0331811029516
+                  716.6480503974302,
+                  531.3034128128332
                 ],
-                "errorPx": 4.6246440924784435,
+                "errorPx": 4.657942875566694,
                 "uncertaintyPx": 12
               },
               {
@@ -3527,10 +3529,10 @@
                   557
                 ],
                 "projected": [
-                  821.1687710029271,
-                  567.5255349082087
+                  821.0915057576269,
+                  568.0319087474752
                 ],
-                "errorPx": 21.573179428265064,
+                "errorPx": 21.89141761345016,
                 "uncertaintyPx": 12
               },
               {
@@ -3541,10 +3543,10 @@
                   443
                 ],
                 "projected": [
-                  1015.5931504286094,
-                  396.8267570710258
+                  1015.9482317047722,
+                  397.1833212419147
                 ],
-                "errorPx": 52.791833757120976,
+                "errorPx": 52.65433297484765,
                 "uncertaintyPx": 12
               },
               {
@@ -3555,10 +3557,10 @@
                   610
                 ],
                 "projected": [
-                  -738.2499296198338,
-                  1311.8401597953457
+                  -733.6446581205181,
+                  1308.201708910939
                 ],
-                "errorPx": 1225.192854632689,
+                "errorPx": 1219.3338627443443,
                 "uncertaintyPx": 12
               },
               {
@@ -3569,10 +3571,10 @@
                   310
                 ],
                 "projected": [
-                  469.03294067175705,
-                  299.2908755742942
+                  469.0054062554211,
+                  299.5484944764105
                 ],
-                "errorPx": 83.65535415944059,
+                "errorPx": 83.65008403186044,
                 "uncertaintyPx": 12
               },
               {
@@ -3583,10 +3585,10 @@
                   470
                 ],
                 "projected": [
-                  320.9946768675344,
-                  551.6270534685731
+                  321.24764763658493,
+                  551.9054560034136
                 ],
-                "errorPx": 154.35469071914534,
+                "errorPx": 154.28765787221536,
                 "uncertaintyPx": 12
               },
               {
@@ -3597,10 +3599,10 @@
                   254
                 ],
                 "projected": [
-                  773.9379229311807,
-                  253.15120385367396
+                  771.4471697813335,
+                  253.64101022960887
                 ],
-                "errorPx": 116.0651807754013,
+                "errorPx": 118.55337374579943,
                 "uncertaintyPx": 12
               },
               {
@@ -3611,10 +3613,10 @@
                   371
                 ],
                 "projected": [
-                  697.6186750824073,
-                  368.17376453146414
+                  697.7835942157033,
+                  368.0810861835403
                 ],
-                "errorPx": 9.797798943285954,
+                "errorPx": 9.667584675022898,
                 "uncertaintyPx": 12
               }
             ]
@@ -3624,12 +3626,14 @@
       {
         "seed": 17,
         "status": "fail",
-        "peakDisplacement": 0.9630020550790819,
-        "peakGroundPenetration": 0.01173939418832215,
-        "finalDisplacement": 0.9630020550790819,
-        "finalSpeed": 216.15926260042045,
-        "linearSpeed": 216.1592626004204,
-        "angularSpeed": 213.0285459071025,
+        "peakDisplacement": 1.2788484493551837,
+        "peakGroundPenetration": 0.011579639028447053,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.014452540420064608,
+        "finalDisplacement": 1.2788484493551837,
+        "finalSpeed": 275.5572415234712,
+        "linearSpeed": 265.7030801597015,
+        "angularSpeed": 275.5572415234712,
         "settledSteps": 0,
         "poppedJoints": [],
         "settledProjections": [
@@ -3638,7 +3642,7 @@
             "frameId": "jet-final-fit",
             "partition": "fit",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 7.47 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 8.22 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": 0.5040457847226278,
@@ -3665,8 +3669,8 @@
             },
             "cameraAnchors": 6,
             "checkLandmarks": 4,
-            "rmsPx": 21.93068962249148,
-            "maxPx": 39.10665162653679,
+            "rmsPx": 23.59557848343693,
+            "maxPx": 42.00146196049938,
             "sourceDiagonalPx": 959.0750752678332,
             "residuals": [
               {
@@ -3677,10 +3681,10 @@
                   438
                 ],
                 "projected": [
-                  392.1443109820933,
-                  450.87768395172975
+                  392.0746039324853,
+                  449.8457957819407
                 ],
-                "errorPx": 12.906081808821922,
+                "errorPx": 11.881886869904783,
                 "uncertaintyPx": 5
               },
               {
@@ -3691,10 +3695,10 @@
                   447
                 ],
                 "projected": [
-                  538.3320091370767,
-                  446.46513867459953
+                  538.2625769991431,
+                  444.79703667414395
                 ],
-                "errorPx": 1.435383216658557,
+                "errorPx": 2.539123489283644,
                 "uncertaintyPx": 6
               },
               {
@@ -3705,10 +3709,10 @@
                   549
                 ],
                 "projected": [
-                  538.8582526254405,
-                  550.4668179095082
+                  539.6180628325446,
+                  550.1506756584672
                 ],
-                "errorPx": 2.367415806234856,
+                "errorPx": 2.8597740236145572,
                 "uncertaintyPx": 5
               },
               {
@@ -3719,10 +3723,10 @@
                   549
                 ],
                 "projected": [
-                  396.4935747335036,
-                  554.9446382055592
+                  397.20340482962195,
+                  555.2399195306886
                 ],
-                "errorPx": 6.895200346151532,
+                "errorPx": 7.5236432604927215,
                 "uncertaintyPx": 5
               },
               {
@@ -3733,10 +3737,10 @@
                   443
                 ],
                 "projected": [
-                  973.7957342032615,
-                  433.2678448316335
+                  973.9239724348064,
+                  429.7252375162184
                 ],
-                "errorPx": 9.734298574467488,
+                "errorPx": 13.274980195521389,
                 "uncertaintyPx": 10
               },
               {
@@ -3747,10 +3751,10 @@
                   397
                 ],
                 "projected": [
-                  813.4745934780321,
-                  399.5381244393176
+                  813.777882759051,
+                  398.60239723290806
                 ],
-                "errorPx": 4.302891528617093,
+                "errorPx": 4.10366604795832,
                 "uncertaintyPx": 12
               },
               {
@@ -3761,10 +3765,10 @@
                   473
                 ],
                 "projected": [
-                  136.8962514703627,
-                  481.0634155708654
+                  137.2902135521761,
+                  482.3006652225652
                 ],
-                "errorPx": 9.542898916065784,
+                "errorPx": 10.42518402553833,
                 "uncertaintyPx": 6
               },
               {
@@ -3775,10 +3779,10 @@
                   484
                 ],
                 "projected": [
-                  1079.336481828389,
-                  447.2376761632189
+                  1079.9625915037977,
+                  444.38726410209273
                 ],
-                "errorPx": 39.10665162653679,
+                "errorPx": 42.00146196049938,
                 "uncertaintyPx": 8
               },
               {
@@ -3789,10 +3793,10 @@
                   292
                 ],
                 "projected": [
-                  561.0303254081603,
-                  276.13080871810735
+                  559.1201712980527,
+                  274.757976669698
                 ],
-                "errorPx": 15.86922025720476,
+                "errorPx": 17.344195699753374,
                 "uncertaintyPx": 10
               },
               {
@@ -3803,10 +3807,10 @@
                   402
                 ],
                 "projected": [
-                  794.0156938301051,
-                  403.6765392521948
+                  794.0659889086238,
+                  399.69861068051495
                 ],
-                "errorPx": 7.182709554129427,
+                "errorPx": 7.305949809242322,
                 "uncertaintyPx": 8
               }
             ]
@@ -3816,7 +3820,7 @@
             "frameId": "jet-final-check-a",
             "partition": "holdout",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 6 scored landmarks; anchor RMS 16.98 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 6 scored landmarks; anchor RMS 17.22 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": 0.10930456772481012,
@@ -3843,8 +3847,8 @@
             },
             "cameraAnchors": 6,
             "checkLandmarks": 6,
-            "rmsPx": 511.12667385971776,
-            "maxPx": 1232.436133423103,
+            "rmsPx": 506.36733253745354,
+            "maxPx": 1220.9305707044991,
             "sourceDiagonalPx": 806.791174964129,
             "residuals": [
               {
@@ -3855,10 +3859,10 @@
                   416
                 ],
                 "projected": [
-                  692.548886901874,
-                  424.24071337268856
+                  692.3503180596481,
+                  422.2610395300331
                 ],
-                "errorPx": 20.297057968812126,
+                "errorPx": 19.38903785356261,
                 "uncertaintyPx": 12
               },
               {
@@ -3869,10 +3873,10 @@
                   384
                 ],
                 "projected": [
-                  765.4439227452012,
-                  378.14881925247914
+                  765.6084312042891,
+                  375.9151201003717
                 ],
-                "errorPx": 6.026709635801961,
+                "errorPx": 8.243320564574947,
                 "uncertaintyPx": 12
               },
               {
@@ -3883,10 +3887,10 @@
                   411
                 ],
                 "projected": [
-                  870.3490953307027,
-                  387.3657736760671
+                  870.9146206436661,
+                  385.8320838362314
                 ],
-                "errorPx": 25.92331815577134,
+                "errorPx": 27.11344464998224,
                 "uncertaintyPx": 12
               },
               {
@@ -3897,10 +3901,10 @@
                   449
                 ],
                 "projected": [
-                  812.2436936014295,
-                  445.3288424489954
+                  812.4575319371035,
+                  444.28043805249774
                 ],
-                "errorPx": 9.024183174035665,
+                "errorPx": 9.685252265348392,
                 "uncertaintyPx": 12
               },
               {
@@ -3911,10 +3915,10 @@
                   531
                 ],
                 "projected": [
-                  717.023177957914,
-                  533.3625040631587
+                  716.5662467872644,
+                  531.3968206903145
                 ],
-                "errorPx": 5.551012722496126,
+                "errorPx": 4.583456815817514,
                 "uncertaintyPx": 12
               },
               {
@@ -3925,10 +3929,10 @@
                   557
                 ],
                 "projected": [
-                  821.4844149933134,
-                  569.4643831832602
+                  821.0069801439237,
+                  568.1496176112072
                 ],
-                "errorPx": 22.320119539979565,
+                "errorPx": 22.023822922677418,
                 "uncertaintyPx": 12
               },
               {
@@ -3939,10 +3943,10 @@
                   443
                 ],
                 "projected": [
-                  1015.067429458186,
-                  396.25227589672716
+                  1015.8928985915963,
+                  397.2701694267651
                 ],
-                "errorPx": 53.04456360907164,
+                "errorPx": 52.551494762104156,
                 "uncertaintyPx": 12
               },
               {
@@ -3953,10 +3957,10 @@
                   610
                 ],
                 "projected": [
-                  -747.2019640959749,
-                  1311.6556156113534
+                  -735.1877933370184,
+                  1308.7806958937585
                 ],
-                "errorPx": 1232.436133423103,
+                "errorPx": 1220.9305707044991,
                 "uncertaintyPx": 12
               },
               {
@@ -3967,10 +3971,10 @@
                   310
                 ],
                 "projected": [
-                  473.06440635009284,
-                  300.58544187601046
+                  468.9367046443407,
+                  299.59029500224506
                 ],
-                "errorPx": 79.49504292428077,
+                "errorPx": 83.71303956661576,
                 "uncertaintyPx": 12
               },
               {
@@ -3981,10 +3985,10 @@
                   470
                 ],
                 "projected": [
-                  320.1845836136312,
-                  550.9293760248395
+                  321.0244833770871,
+                  551.9511420384449
                 ],
-                "errorPx": 154.67665596618528,
+                "errorPx": 154.50105383473704,
                 "uncertaintyPx": 12
               },
               {
@@ -3995,10 +3999,10 @@
                   254
                 ],
                 "projected": [
-                  765.6913086381403,
-                  257.62140233570994
+                  771.5020627529098,
+                  253.72965174598767
                 ],
-                "errorPx": 124.3614301259646,
+                "errorPx": 118.49824564099582,
                 "uncertaintyPx": 12
               },
               {
@@ -4009,10 +4013,10 @@
                   371
                 ],
                 "projected": [
-                  698.0445263407975,
-                  371.126996746415
+                  697.7359598349582,
+                  368.1663814068686
                 ],
-                "errorPx": 8.95637407851361,
+                "errorPx": 9.687715649772553,
                 "uncertaintyPx": 12
               }
             ]
@@ -4022,12 +4026,14 @@
       {
         "seed": 53,
         "status": "fail",
-        "peakDisplacement": 1.0005627761796922,
-        "peakGroundPenetration": 0.011754972843276423,
-        "finalDisplacement": 1.0005627761796922,
-        "finalSpeed": 226.16997475251634,
-        "linearSpeed": 226.16997475251634,
-        "angularSpeed": 222.4627896989778,
+        "peakDisplacement": 1.2775099856445276,
+        "peakGroundPenetration": 0.011580038706718865,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.014452621940140187,
+        "finalDisplacement": 1.2775099856445276,
+        "finalSpeed": 274.90988838428,
+        "linearSpeed": 265.00512206196674,
+        "angularSpeed": 274.90988838428007,
         "settledSteps": 0,
         "poppedJoints": [],
         "settledProjections": [
@@ -4036,7 +4042,7 @@
             "frameId": "jet-final-fit",
             "partition": "fit",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 7.63 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 8.23 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": 0.5040457847226278,
@@ -4063,8 +4069,8 @@
             },
             "cameraAnchors": 6,
             "checkLandmarks": 4,
-            "rmsPx": 22.078321389992773,
-            "maxPx": 39.44232044027638,
+            "rmsPx": 23.60296097379876,
+            "maxPx": 42.00033839598992,
             "sourceDiagonalPx": 959.0750752678332,
             "residuals": [
               {
@@ -4075,10 +4081,10 @@
                   438
                 ],
                 "projected": [
-                  392.289460855666,
-                  451.0779220839069
+                  392.0619964304737,
+                  449.8684309419274
                 ],
-                "errorPx": 13.09721008109632,
+                "errorPx": 11.905440089292938,
                 "uncertaintyPx": 5
               },
               {
@@ -4089,10 +4095,10 @@
                   447
                 ],
                 "projected": [
-                  538.4756457961805,
-                  446.56444695732324
+                  538.2508205178235,
+                  444.8090102294321
                 ],
-                "errorPx": 1.5385827793038014,
+                "errorPx": 2.5228928123369614,
                 "uncertaintyPx": 6
               },
               {
@@ -4103,10 +4109,10 @@
                   549
                 ],
                 "projected": [
-                  539.0929549655272,
-                  550.5412113876889
+                  539.5955199333387,
+                  550.1783431672945
                 ],
-                "errorPx": 2.599190841255558,
+                "errorPx": 2.8504765117902795,
                 "uncertaintyPx": 5
               },
               {
@@ -4117,10 +4123,10 @@
                   549
                 ],
                 "projected": [
-                  396.73091249919753,
-                  555.1162305568984
+                  397.1794460567547,
+                  555.2788430415407
                 ],
-                "errorPx": 7.164355121140043,
+                "errorPx": 7.542654657454903,
                 "uncertaintyPx": 5
               },
               {
@@ -4131,10 +4137,10 @@
                   443
                 ],
                 "projected": [
-                  973.9535263047894,
-                  433.06728603486994
+                  973.9006270591746,
+                  429.707064090362
                 ],
-                "errorPx": 9.932822686298005,
+                "errorPx": 13.293307341632925,
                 "uncertaintyPx": 10
               },
               {
@@ -4145,10 +4151,10 @@
                   397
                 ],
                 "projected": [
-                  813.6250525564514,
-                  399.4107269495431
+                  813.7310355670129,
+                  398.6166382287473
                 ],
-                "errorPx": 4.353459596951365,
+                "errorPx": 4.066220058600187,
                 "uncertaintyPx": 12
               },
               {
@@ -4159,10 +4165,10 @@
                   473
                 ],
                 "projected": [
-                  137.0848398904422,
-                  481.4168202985006
+                  137.25510739435992,
+                  482.35578347241164
                 ],
-                "errorPx": 9.746879646319657,
+                "errorPx": 10.49021878807629,
                 "uncertaintyPx": 6
               },
               {
@@ -4173,10 +4179,10 @@
                   484
                 ],
                 "projected": [
-                  1079.5265141434807,
-                  446.94962811469145
+                  1079.919761484561,
+                  444.37338437879663
                 ],
-                "errorPx": 39.44232044027638,
+                "errorPx": 42.00033839598992,
                 "uncertaintyPx": 8
               },
               {
@@ -4187,10 +4193,10 @@
                   292
                 ],
                 "projected": [
-                  560.8937919856196,
-                  276.1682275757363
+                  559.0786163731796,
+                  274.77383130898454
                 ],
-                "errorPx": 15.83212867039664,
+                "errorPx": 17.332991744437393,
                 "uncertaintyPx": 10
               },
               {
@@ -4201,10 +4207,10 @@
                   402
                 ],
                 "projected": [
-                  794.1546086549486,
-                  403.262979074674
+                  794.032442985824,
+                  399.68775049686093
                 ],
-                "errorPx": 6.960926576970159,
+                "errorPx": 7.341208927047382,
                 "uncertaintyPx": 8
               }
             ]
@@ -4214,7 +4220,7 @@
             "frameId": "jet-final-check-a",
             "partition": "holdout",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 6 scored landmarks; anchor RMS 17.00 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 6 scored landmarks; anchor RMS 17.22 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": 0.10930456772481012,
@@ -4241,8 +4247,8 @@
             },
             "cameraAnchors": 6,
             "checkLandmarks": 6,
-            "rmsPx": 509.4766128373225,
-            "maxPx": 1228.323480061592,
+            "rmsPx": 506.6763372709296,
+            "maxPx": 1221.7098533165545,
             "sourceDiagonalPx": 806.791174964129,
             "residuals": [
               {
@@ -4253,10 +4259,10 @@
                   416
                 ],
                 "projected": [
-                  692.6962283412188,
-                  424.1873475585517
+                  692.3373784523152,
+                  422.26608590062995
                 ],
-                "errorPx": 20.410331066190853,
+                "errorPx": 19.378423078710686,
                 "uncertaintyPx": 12
               },
               {
@@ -4267,10 +4273,10 @@
                   384
                 ],
                 "projected": [
-                  765.5551614037362,
-                  378.0355354553833
+                  765.5779750670283,
+                  375.91462158571306
                 ],
-                "errorPx": 6.1638757527760415,
+                "errorPx": 8.237921425601252,
                 "uncertaintyPx": 12
               },
               {
@@ -4281,10 +4287,10 @@
                   411
                 ],
                 "projected": [
-                  870.4786373178435,
-                  387.2768558706249
+                  870.8860810531631,
+                  385.82144130839345
                 ],
-                "errorPx": 25.95162114536544,
+                "errorPx": 27.13394874045909,
                 "uncertaintyPx": 12
               },
               {
@@ -4295,10 +4301,10 @@
                   449
                 ],
                 "projected": [
-                  812.4062208891053,
-                  445.3138001683852
+                  812.4581127792668,
+                  444.27045464471644
                 ],
-                "errorPx": 9.178922531268393,
+                "errorPx": 9.690628001036911,
                 "uncertaintyPx": 12
               },
               {
@@ -4309,10 +4315,10 @@
                   531
                 ],
                 "projected": [
-                  717.1711606278317,
-                  533.2480868991204
+                  716.5572977314814,
+                  531.3994186965258
                 ],
-                "errorPx": 5.638687519701127,
+                "errorPx": 4.574767525077093,
                 "uncertaintyPx": 12
               },
               {
@@ -4323,10 +4329,10 @@
                   557
                 ],
                 "projected": [
-                  821.6218279144582,
-                  569.3591049472088
+                  821.0090627694087,
+                  568.13293121315
                 ],
-                "errorPx": 22.147340343750294,
+                "errorPx": 22.013583404184477,
                 "uncertaintyPx": 12
               },
               {
@@ -4337,10 +4343,10 @@
                   443
                 ],
                 "projected": [
-                  1015.1857977762751,
-                  396.3769046867776
+                  1015.843517961395,
+                  397.2746412268654
                 ],
-                "errorPx": 52.99091833713813,
+                "errorPx": 52.523288697042034,
                 "uncertaintyPx": 12
               },
               {
@@ -4351,10 +4357,10 @@
                   610
                 ],
                 "projected": [
-                  -743.044214387979,
-                  1310.434397414038
+                  -735.6887478932214,
+                  1309.4244905884175
                 ],
-                "errorPx": 1228.323480061592,
+                "errorPx": 1221.7098533165545,
                 "uncertaintyPx": 12
               },
               {
@@ -4365,10 +4371,10 @@
                   310
                 ],
                 "projected": [
-                  472.958284997887,
-                  300.63592311624245
+                  468.8862076523719,
+                  299.6231189570681
                 ],
-                "errorPx": 79.594463666515,
+                "errorPx": 83.75907197780907,
                 "uncertaintyPx": 12
               },
               {
@@ -4379,10 +4385,10 @@
                   470
                 ],
                 "projected": [
-                  320.7659817190449,
-                  551.2042889014726
+                  321.015300397967,
+                  552.0323659033216
                 ],
-                "errorPx": 154.3259669989464,
+                "errorPx": 154.55193491357934,
                 "uncertaintyPx": 12
               },
               {
@@ -4393,10 +4399,10 @@
                   254
                 ],
                 "projected": [
-                  765.2274097060331,
-                  257.57892697522846
+                  771.6981770701598,
+                  253.705945890451
                 ],
-                "errorPx": 124.82390799426264,
+                "errorPx": 118.30218838357393,
                 "uncertaintyPx": 12
               },
               {
@@ -4407,10 +4413,10 @@
                   371
                 ],
                 "projected": [
-                  698.107955176808,
-                  370.7858325543107
+                  697.6996394315528,
+                  368.1687903224937
                 ],
-                "errorPx": 8.894623591386479,
+                "errorPx": 9.721751639552064,
                 "uncertaintyPx": 12
               }
             ]
@@ -4423,97 +4429,129 @@
         "id": "body-upright-1",
         "status": "unverified",
         "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
-        "displacement": null
+        "displacement": null,
+        "solidFailures": null,
+        "peakSolidOverlap": null
       },
       {
         "id": "body-upright-2",
         "status": "unverified",
         "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
-        "displacement": null
+        "displacement": null,
+        "solidFailures": null,
+        "peakSolidOverlap": null
       },
       {
         "id": "body-upright-3",
         "status": "unverified",
         "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
-        "displacement": null
+        "displacement": null,
+        "solidFailures": null,
+        "peakSolidOverlap": null
       },
       {
         "id": "body-upright-4",
         "status": "unverified",
         "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
-        "displacement": null
+        "displacement": null,
+        "solidFailures": null,
+        "peakSolidOverlap": null
       },
       {
         "id": "body-horizontal",
         "status": "pass",
         "detail": "Released checkpoint: peak 0.280 in; table penetration 0.008 in; 0 broken/rejected joints; 888 consecutive steps at rest (90 required).",
-        "displacement": 0.279999994565958
+        "displacement": 0.279999994565958,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.000005962312206869713
       },
       {
         "id": "nose",
         "status": "pass",
-        "detail": "Released checkpoint: peak 0.281 in; table penetration 0.009 in; 0 broken/rejected joints; 655 consecutive steps at rest (90 required).",
-        "displacement": 0.2806352402691894
+        "detail": "Released checkpoint: peak 0.280 in; table penetration 0.009 in; 0 broken/rejected joints; 888 consecutive steps at rest (90 required).",
+        "displacement": 0.2799999988940639,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.000014983317562222709
       },
       {
         "id": "wing-module--1",
         "status": "unverified",
         "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
-        "displacement": null
+        "displacement": null,
+        "solidFailures": null,
+        "peakSolidOverlap": null
       },
       {
         "id": "wing-root--1",
         "status": "fail",
-        "detail": "Released checkpoint: peak 1.062 in; table penetration 0.019 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-        "displacement": 1.0619687220807181
+        "detail": "Released checkpoint: peak 1.057 in; table penetration 0.019 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 1.0573814101621108,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.0003320373081394101
       },
       {
         "id": "wing-module-1",
         "status": "unverified",
         "detail": "Explicitly held source module; hand access and unsupported stability are not tested.",
-        "displacement": null
+        "displacement": null,
+        "solidFailures": null,
+        "peakSolidOverlap": null
       },
       {
         "id": "wing-root-1",
         "status": "pass",
-        "detail": "Released checkpoint: peak 0.620 in; table penetration 0.011 in; 0 broken/rejected joints; 645 consecutive steps at rest (90 required).",
-        "displacement": 0.6202817097831512
+        "detail": "Released checkpoint: peak 0.621 in; table penetration 0.011 in; 0 broken/rejected joints; 873 consecutive steps at rest (90 required).",
+        "displacement": 0.6206387592581272,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.00046905358260601604
       },
       {
         "id": "wing-roots",
         "status": "pass",
-        "detail": "Released checkpoint: peak 0.622 in; table penetration 0.011 in; 0 broken/rejected joints; 634 consecutive steps at rest (90 required).",
-        "displacement": 0.6224676690185986
+        "detail": "Released checkpoint: peak 0.621 in; table penetration 0.011 in; 0 broken/rejected joints; 872 consecutive steps at rest (90 required).",
+        "displacement": 0.6209154304371645,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.0006420559189743713
       },
       {
         "id": "wingtips",
         "status": "pass",
-        "detail": "Released checkpoint: peak 0.617 in; table penetration 0.011 in; 0 broken/rejected joints; 425 consecutive steps at rest (90 required).",
-        "displacement": 0.6174953633146629
+        "detail": "Released checkpoint: peak 0.618 in; table penetration 0.011 in; 0 broken/rejected joints; 862 consecutive steps at rest (90 required).",
+        "displacement": 0.6177940201567956,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.0012928003586161196
       },
       {
         "id": "tail-cone",
-        "status": "fail",
-        "detail": "Released checkpoint: peak 0.607 in; table penetration 0.011 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-        "displacement": 0.6069896722109627
+        "status": "pass",
+        "detail": "Released checkpoint: peak 0.607 in; table penetration 0.011 in; 0 broken/rejected joints; 863 consecutive steps at rest (90 required).",
+        "displacement": 0.6071197501870453,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.0011280153970671947
       },
       {
         "id": "tail-horizontal",
         "status": "fail",
-        "detail": "Released checkpoint: peak 1.056 in; table penetration 0.011 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-        "displacement": 1.05601728074015
+        "detail": "Released checkpoint: peak 1.108 in; table penetration 0.011 in; 1 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 1.1079254240253538,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.002940215552603931
       },
       {
         "id": "tail-fins",
         "status": "fail",
-        "detail": "Released checkpoint: peak 1.557 in; table penetration 0.011 in; 1 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-        "displacement": 1.5568354214827933
+        "detail": "Released checkpoint: peak 1.185 in; table penetration 0.011 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 1.1854960589251298,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.0024040825697326795
       },
       {
         "id": "final",
         "status": "fail",
-        "detail": "Released checkpoint: peak 1.372 in; table penetration 0.012 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
-        "displacement": 1.3721709415202885
+        "detail": "Released checkpoint: peak 1.288 in; table penetration 0.012 in; 0 broken/rejected joints; 0 consecutive steps at rest (90 required).",
+        "displacement": 1.2882909333457497,
+        "solidFailures": [],
+        "peakSolidOverlap": 0.01445581649391503
       }
     ],
     "instructions": [
@@ -5156,6 +5194,9 @@
         "stageId": "body-upright-1",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -5163,6 +5204,9 @@
         "stageId": "body-upright-2",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -5170,6 +5214,9 @@
         "stageId": "body-upright-3",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -5177,6 +5224,9 @@
         "stageId": "body-upright-4",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -5184,6 +5234,9 @@
         "stageId": "body-horizontal",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -5191,6 +5244,9 @@
         "stageId": "nose",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -5198,6 +5254,9 @@
         "stageId": "wing-module--1",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -5205,6 +5264,9 @@
         "stageId": "wing-root--1",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -5212,6 +5274,9 @@
         "stageId": "wing-module-1",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -5219,6 +5284,9 @@
         "stageId": "wing-root-1",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -5226,6 +5294,9 @@
         "stageId": "wing-roots",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -5233,6 +5304,9 @@
         "stageId": "wingtips",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -5240,6 +5314,9 @@
         "stageId": "tail-cone",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -5247,6 +5324,9 @@
         "stageId": "tail-horizontal",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -5254,6 +5334,9 @@
         "stageId": "tail-fins",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       },
@@ -5261,6 +5344,9 @@
         "stageId": "final",
         "status": "unverified",
         "detail": "No per-part insertion sequence has been supplied.",
+        "dockingPolicy": null,
+        "attemptedPolicies": [],
+        "rejectedAttempts": [],
         "operations": [],
         "checkpoints": []
       }

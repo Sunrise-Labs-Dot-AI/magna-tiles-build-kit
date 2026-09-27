@@ -31,6 +31,7 @@ For structural requests, review the interpreted contract and assumptions, inspec
 1. Input geometry and inventory limits.
 2. Raw tile intersections and magnetic connection geometry.
 3. A Rapier structure test using inch-scale gravity, with displacement measured at tile corners as well as centers.
+   Tile/table solid clearance is certified between collision steps; unresolved sweeps fail the check.
 4. Continuous driving surfaces, car width, lane count, separation, descent, and requested turns.
 5. Simultaneous unpowered four-wheel car proxies following free dynamics. Waypoints judge progress; they do not steer the cars.
 6. Each completed assembly step standing on its own.
@@ -63,6 +64,10 @@ npm run verify:builds
 
 The optional reference timeline drafting and vision critic require `OPENAI_API_KEY`; see `.env.example`. They do not provide measured 3D reconstruction. The original jet target was estimated from video frames, which is why matching that target did not reproduce the real build.
 
+The headless verifier uses a pinned Rapier.js 0.19.2 runtime with a narrow finite-polyhedron contact correction. Its original f32 precision, joints, materials and solver settings are retained. [Build provenance, licenses and the reproducible source patch](vendor/rapier-contact/README.md) are checked in; installation does not compile Rust. Backend identity changes invalidate saved physical states and reference evidence. The browser's interactive sandbox still uses upstream Rapier.
+
+Reference evidence regeneration accepts `--max-ms` as an explicit wall-clock computation budget. For the complete source assembly checks, run `npm run reference:report -- --max-ms=900000`. This does not change simulated duration or acceptance tolerances.
+
 ## Research history
 
 The initial public release was an archived exploration. Its useful research remains in [research/diagnosis.md](research/diagnosis.md), [research/magna_tiles_system_design.md](research/magna_tiles_system_design.md), and [docs/research/system-design/](docs/research/system-design). Earlier descriptions of an “un-gameable” gate or physically proven builds overstated the evidence. [STATUS.md](STATUS.md) describes the current boundary.
@@ -71,4 +76,4 @@ The initial public release was an archived exploration. Its useful research rema
 
 Reference videos belong to their creators. The primary jet reference is **“Magna-Tiles Idea: Jet Aircraft” by JD’s Curious Company** on YouTube; the project also studied that channel’s ramp and snail builds. Extracted frames and source videos are not redistributed here. Generated renders and original tile measurement photos are included.
 
-Magna-Tiles and Magnatiles are trademarks of their respective owner. This independent project is not affiliated with or endorsed by them. [MIT license](LICENSE).
+Magna-Tiles and Magnatiles are trademarks of their respective owner. This independent project is not affiliated with or endorsed by them. Project code uses the [MIT license](LICENSE); the vendored Rapier/Parry runtime and its dependencies retain their [upstream licenses](vendor/rapier-contact/THIRD_PARTY_LICENSES.txt).

@@ -15,6 +15,9 @@ describe("assembly with explicit individual-panel hand supports", () => {
   it("reaches a complete simulation pass for a three-wall support across three seeds", async () => {
     const result = await evaluateAssembly(fixture());
     expect(result[0].status, JSON.stringify(result, null, 2)).toBe("pass");
+    expect(result[0].attemptedPolicies).toEqual(["clear-first"]);
+    expect(result[0].dockingPolicy).toBe("clear-first");
+    expect(result[0].rejectedAttempts).toEqual([]);
     expect(result[0].operations).toHaveLength(9);
     expect(result[0].checkpoints).toHaveLength(3);
     expect(result[0].checkpoints.every(t => t.heldTileIds.length === 0)).toBe(true);
@@ -66,8 +69,12 @@ describe("assembly with explicit individual-panel hand supports", () => {
     r.build.tiles[0].position.y += 3;
     const result = (await evaluateAssembly(r))[0];
     expect(result.status).toBe("fail");
-    expect(result.operations[0].trials.at(-1)?.heldTileIds).toEqual([]);
-    expect(result.operations[0].trials.at(-1)?.peakDisplacement).toBeGreaterThan(0.95);
+    expect(result.operations).toEqual([]);
+    expect(result.rejectedAttempts).toHaveLength(2);
+    for (const attempt of result.rejectedAttempts) {
+      expect(attempt.operations[0].trials.at(-1)?.heldTileIds).toEqual([]);
+      expect(attempt.operations[0].trials.at(-1)?.peakDisplacement).toBeGreaterThan(0.95);
+    }
   });
   it("does not pretend a module can be moved through an untested rotation", async () => {
     const r = fixture();

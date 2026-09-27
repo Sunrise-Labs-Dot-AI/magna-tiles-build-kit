@@ -1,4 +1,4 @@
-export const ENGINE_VALID_LIBRARY_BUILD_IDS = ["house", "castle", "dog", "medium-car-ramp", "large-car-ramp"] as const;
+export const ENGINE_VALID_LIBRARY_BUILD_IDS = ["house", "castle", "dog", "snail", "medium-car-ramp", "rocket"] as const;
 
 // Raw non-intersection is a separate property; retain the jet as a geometry
 // regression fixture without claiming it stands.
@@ -6,7 +6,7 @@ export const RAW_GEOMETRY_LIBRARY_BUILD_IDS = ["jet-aircraft", "house", "castle"
 
 // These historical fixtures fail strict peak-contact, displacement or sustained-rest
 // checks. Their geometry is retained as diagnostic evidence, not valid anchors.
-export const ENGINE_EXPECTED_FAIL_LIBRARY_BUILD_IDS = ["jet-aircraft", "snail", "small-car-ramp", "rocket"] as const;
+export const ENGINE_EXPECTED_FAIL_LIBRARY_BUILD_IDS = ["jet-aircraft", "small-car-ramp", "large-car-ramp"] as const;
 
 export const ENGINE_EXPECTED_FAIL_PROMPT_IDS = [
   "jet-aircraft-prompt",

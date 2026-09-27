@@ -1,0 +1,55 @@
+{
+  "defaults": {
+    "dt": 0.01666666753590107,
+    "contact_erp": 0.2390572428703308,
+    "lengthUnit": 1,
+    "normalizedAllowedLinearError": 0.0010000000474974513,
+    "normalizedPredictionDistance": 0.0020000000949949026,
+    "numSolverIterations": 4,
+    "numInternalPgsIterations": 1,
+    "minIslandSize": 128,
+    "maxCcdSubsteps": 1
+  },
+  "configured": {
+    "dt": 0.008333333767950535,
+    "contact_erp": 0.385869562625885,
+    "lengthUnit": 1,
+    "normalizedAllowedLinearError": 0.0010000000474974513,
+    "normalizedPredictionDistance": 0.0020000000949949026,
+    "numSolverIterations": 16,
+    "numInternalPgsIterations": 1,
+    "minIslandSize": 128,
+    "maxCcdSubsteps": 1
+  },
+  "native": {
+    "activation": {
+      "angular_threshold": 0.5,
+      "normalized_linear_threshold": 0.4000000059604645,
+      "sleeping": false,
+      "time_since_can_sleep": 0,
+      "time_until_sleep": 2
+    },
+    "integration": {
+      "contact_damping_ratio": 5,
+      "contact_natural_frequency": 120,
+      "dt": 0.0010416667209938169,
+      "friction_model": "Simplified",
+      "joint_damping_ratio": 1,
+      "joint_natural_frequency": 1000000,
+      "length_unit": 1,
+      "max_ccd_substeps": 1,
+      "min_ccd_dt": 0.00016666667943354696,
+      "min_island_size": 128,
+      "normalized_allowed_linear_error": 0.0010000000474974513,
+      "normalized_max_corrective_velocity": 10,
+      "normalized_prediction_distance": 0.0020000000949949026,
+      "num_internal_pgs_iterations": 1,
+      "num_internal_stabilization_iterations": 1,
+      "num_solver_iterations": 16,
+      "warmstart_coefficient": 1
+    }
+  },
+  "maximumCollisionTimestepSeconds": 0.0010416666666666667,
+  "reportingTimestepSeconds": 0.008333333333333333,
+  "contactNaturalFrequencyHz": 120
+}

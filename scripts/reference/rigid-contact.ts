@@ -6,12 +6,15 @@ import { findRawOverlaps, RAW_OVERLAP_TOLERANCE } from "../../lib/engine/overlap
 import { CONTACT_NATURAL_FREQUENCY_HZ, SETTLED_ANGULAR_SPEED, SETTLED_LINEAR_SPEED } from "../../lib/engine/constants";
 import { flatContactFixture, loadedContactFixture } from "../../tests/fixtures/rigid-contact";
 import { validationCodeHash } from "../../lib/replication/provenance";
+import { PHYSICS_BACKEND_ID } from "../../lib/engine/backend-identity";
+import type { SolidFailure } from "../../lib/magnetic-tiles/swept-prisms";
 
 interface ContactTrial {
   fixture: string; frequency: number; hz: number; solver: number; seed: number;
   peakPenetration: number; latePenetration: number; peakDisplacement: number;
   finalSpeeds: {linear:number;angular:number}; settledSteps: number; poppedJoints: string[];
   lengthUnit: number; normalizedAllowedLinearError: number; contactERP: number; passed: boolean;
+  solidFailures: SolidFailure[]; peakSolidOverlap: number; invalidState: boolean;
 }
 async function main() {
   const trials: ContactTrial[] = [];
@@ -36,14 +39,15 @@ async function main() {
           peakDisplacement: engine.peakDisplacement, finalSpeeds: engine.stepSpeeds, settledSteps, poppedJoints: engine.poppedJoints,
           lengthUnit: parameters.lengthUnit, normalizedAllowedLinearError: parameters.normalizedAllowedLinearError,
           contactERP: parameters.contact_erp,
-          passed: engine.peakGroundPenetration <= RAW_OVERLAP_TOLERANCE && latePenetration <= .01 && engine.peakDisplacement <= .95 && settledSteps >= 90 && !engine.poppedJoints.length });
+          solidFailures: engine.solidFailures, peakSolidOverlap: engine.peakSolidOverlap, invalidState: engine.invalidState,
+          passed: !engine.invalidState && !engine.solidFailures.length && engine.peakGroundPenetration <= RAW_OVERLAP_TOLERANCE && latePenetration <= .01 && engine.peakDisplacement <= .95 && settledSteps >= 90 && !engine.poppedJoints.length });
       } finally { engine.dispose(); }
     }
   }
   const selected = [30,60,120].find(f => trials.filter(t => t.frequency===f).every(t => t.passed));
   const evidence = { validationCodeHash: await validationCodeHash(),
     scope: "Numerical rigid-contact convergence only. Independent catalog flat/base-load fixtures; no source-derived geometry or physical material calibration.",
-    versions: { javascript: "rapier3d-compat 0.19.2", rust: "rapier3d 0.30.1" },
+    versions: { backend: PHYSICS_BACKEND_ID, javascript: "rapier3d-compat 0.19.2", rust: "rapier3d 0.30.1" },
     sources: ["https://raw.githubusercontent.com/dimforge/rapier.js/v0.19.2/Cargo.lock", "https://raw.githubusercontent.com/dimforge/rapier/v0.30.1/src/dynamics/integration_parameters.rs"],
     criteria: { peakPenetration: RAW_OVERLAP_TOLERANCE, latePenetration: .01, peakDisplacement: .95, restReportingSteps: 90, durationSeconds: 7.5, lateStartSeconds: 6.75 },
     selectedFrequency: selected ?? null, configuredFrequency: CONTACT_NATURAL_FREQUENCY_HZ, trials };

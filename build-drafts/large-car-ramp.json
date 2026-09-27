@@ -4,10 +4,10 @@
   "prompt": "Large Car Ramp",
   "family": "ramp",
   "inventoryPreset": "classic-100",
-  "status": "engine-valid",
+  "status": "engine-fail-pending-reauthoring",
   "createdAt": "2026-05-15T18:06:12.375Z",
-  "updatedAt": "2026-06-02T23:10:00.000Z",
-  "notes": "Re-authored so the rigid large-square sloped driving panel descends from the high platform toward open ground, with no wall at the ramp/platform transition. The rear support wall is now behind the high end on the far platform edge, bracing the top while the downhill exit stays clear. Headless gateBuild passes stands plus the stricter clear-descent rollTest.",
+  "updatedAt": "2026-09-27T09:46:26.355Z",
+  "notes": "Historical geometry retained. The continuous solid-clearance gate cannot certify release of the launch platform against its upper rear walls, whose initial overlap is at the 0.03-inch allowance. This draft is not engine-valid. The generated downhill sprint seats its platform and walls on their finite support faces as a separate variant; neither establishes fidelity to Henry's 51-piece source build.",
   "expectedInventory": {
     "small-square": 6,
     "large-square": 2,

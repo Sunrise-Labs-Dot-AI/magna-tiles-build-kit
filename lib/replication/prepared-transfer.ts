@@ -4,7 +4,7 @@ import type { EngineState } from "@/lib/engine/rapier-world";
 import type { BuildGraph, Vec3 } from "@/lib/magnetic-tiles/types";
 import { findMagneticEdgeMatch } from "@/lib/magnetic-tiles/magnet-geometry";
 import { contactsClosed } from "./contacts";
-import { dockToSupports, type DockingResult } from "./docking";
+import { dockToSupports, type DockingPolicy, type DockingResult } from "./docking";
 import { checkHandAccess, type HandContact } from "./grip";
 import { simulateHeldMotion, type HeldMotionTrial, type HeldWaypoint } from "./held-motion";
 import { validateInsertionPath, type InsertionPath } from "./insertion";
@@ -66,7 +66,7 @@ export function transferWaypoints(actual: BuildGraph, target: BuildGraph, heldId
 /** Continue a prepared world through withdrawal, lift, rotation and insertion.
  * Cross-module connections only enter the returned build after actual closure. */
 export async function simulatePreparedTransfer(nominal: BuildGraph, actual: BuildGraph, state: EngineState, movingIds: string[],
-  previousHands: HandContact[], hands: HandContact[], transitHeight: number, floorY: number, seed: number, deadline: number, components: string[][]): Promise<PreparedTransferTrial> {
+  previousHands: HandContact[], hands: HandContact[], transitHeight: number, floorY: number, seed: number, deadline: number, components: string[][], policy: DockingPolicy): Promise<PreparedTransferTrial> {
   const moving = new Set(movingIds), fixed = actual.tiles.filter(t => !moving.has(t.id)).map(t => t.id);
   const cross = nominal.connections.filter(c => moving.has(c.fromTileId) !== moving.has(c.toTileId));
   const expected = cross.map(connectionId).sort();
@@ -99,7 +99,7 @@ export async function simulatePreparedTransfer(nominal: BuildGraph, actual: Buil
   if (withdrawal.status !== "pass") return fail(withdrawal.detail);
   const start = result.settled;
   const proposal = transferTarget(nominal,start,movingIds,hands[0].tileId);
-  const docking = dockToSupports(nominal,proposal,movingIds,fixed,hands,floorY,deadline);
+  const docking = dockToSupports(nominal,proposal,movingIds,fixed,hands,floorY,policy,deadline);
   result.docking = docking;
   if (docking.status !== "pass" || !docking.path) return fail(docking.detail);
   // The general insertion search starts beyond the entire build's bounding box.

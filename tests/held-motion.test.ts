@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { unsupportedHingeFixture } from "./fixtures/rigid-contact";
-import { RigidBodyType } from "@dimforge/rapier3d-compat";
+import { RigidBodyType } from "@/lib/engine/physics-backend";
 import { basisToQuaternion, multiplyQuaternions } from "@/lib/engine/math";
 import { createEngineWorld } from "@/lib/engine/rapier-world";
 import { assemble, square, v } from "@/lib/replication/geometry";
