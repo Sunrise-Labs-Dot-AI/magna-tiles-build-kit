@@ -42,7 +42,7 @@ export async function verifyArtifactManifest(paths: string[]): Promise<void> {
 
 /** Bind generated evidence to the validator, physical model and dependency lock. */
 export async function validationCodeHash(): Promise<string> {
-  const files = ["package-lock.json", "scripts/reference/verify.ts", "scripts/reference/assembly-fixtures.ts", "tests/fixtures/assembly.ts", "tests/fixtures/bridge-panel.ts", "tests/fixtures/continued-prefix.ts", "tests/fixtures/closed-shell.ts", "tests/fixtures/rigid-contact.ts", "scripts/reference/rigid-contact.ts", "verification/replication/evidence-ledger.json", "verification/replication/candidate-freezes.json"];
+  const files = ["package-lock.json", "scripts/reference/verify.ts", "scripts/reference/assembly-fixtures.ts", "tests/fixtures/assembly.ts", "tests/fixtures/bridge-panel.ts", "tests/fixtures/continued-prefix.ts", "tests/fixtures/closed-shell.ts", "tests/fixtures/rigid-contact.ts", "scripts/reference/rigid-contact.ts", "verification/replication/evidence-ledger.json", "verification/replication/candidate-freezes.json", "verification/replication/source-pieces.json"];
   for (const directory of [
     "lib/replication",
     "lib/harness",
@@ -70,7 +70,7 @@ export async function verifyObservationLock(): Promise<void> {
   const lock = JSON.parse(
     await readFile("verification/replication/observation-lock.json", "utf8"),
   ) as Record<string, string>;
-  for (const name of ["sources.json", "observations.json", "evidence-ledger.json", "candidate-freezes.json"]) {
+  for (const name of ["sources.json", "observations.json", "evidence-ledger.json", "candidate-freezes.json", "source-pieces.json"]) {
     if (
       sha(await readFile(`verification/replication/${name}`)) !== lock[name]
     ) {

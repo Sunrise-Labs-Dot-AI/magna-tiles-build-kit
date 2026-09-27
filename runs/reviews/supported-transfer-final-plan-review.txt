@@ -1,0 +1,13 @@
+**VERIFIED/CLEAN**
+
+The amended plan resolves the five prior concerns and I found no concrete contradiction with the current helpers.
+
+The key checks line up:
+
+- Role/order invariance is now explicit: derive `movingHand` from `movingIds`, derive optional `receiverHand` from the declared cross-connection neighbor group, reject everything else, and test both hand orders.
+- Mode assertions are now required against actual engine state: moving grip kinematic, receiver grip fixed during carry, connected stabilization holds only declared hands, free release returns all bodies dynamic.
+- `operation.hands` is now the explicit receiver-support contract, with no legacy implicit receiver grip.
+- The accessible second-moving-panel negative case is required and matches current helper semantics: `simulateHeldMotion` and `checkHandAccess` already enforce exactly one hand on the moving set.
+- Diagnostic publication now requires per-seed `carry.heldTileIds.length === 2`, receiver tile identity, mode assertions, and complete terminal free-release evidence.
+
+I did not run physics or inspect images, per request. This is a read-only plan/helper consistency review.

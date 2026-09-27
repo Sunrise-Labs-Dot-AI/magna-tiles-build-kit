@@ -16,6 +16,7 @@ import "./references.css";
 const titles: Record<string, string> = {
   source: "Source record",
   inventory: "Piece inventory",
+  sourceStages: "Pieces at each source stage",
   fidelity: "Resemblance to footage",
   materials: "Physical calibration",
   geometry: "Tile shapes & intersections",
@@ -116,6 +117,7 @@ function Candidate({
   const stage = replica.stages[step],
     constructionPlan = replica.construction?.find(p => p.stageId === stage?.id),
     assembly = stage ? report.assemblySimulation?.find(s => s.stageId === stage.id) : undefined,
+    sourcePieces = stage ? report.sourceStagePieces?.find(s => s.stageId === stage.id) : undefined,
     rejected = assembly?.rejectedAttempts ?? [],
     shownAttempt = attemptIndex >= 0 ? attemptIndex : assembly?.status === "fail" && rejected.length ? 0 : -1,
     attempt = shownAttempt >= 0 ? rejected[shownAttempt] : assembly,
@@ -226,6 +228,10 @@ function Candidate({
                 {(assembly ?? checkpoint) && <Status check={(assembly ?? checkpoint)!} />}
               </div>
               <p>{stage.instruction}</p>
+              {sourcePieces && <div className="reference-assembly" aria-label="Source-stage piece check">
+                <strong>Pieces shown at this stage</strong> <Status check={sourcePieces} />
+                <p>{partDetail(sourcePieces.detail)}</p>
+              </div>}
               {assembly && <div className="reference-assembly" aria-label="Complete assembly check">
                 <strong>Assembly with hand support</strong> <Status check={assembly} />
                 <p>{partDetail(assembly.detail)}</p>
@@ -382,9 +388,9 @@ function Candidate({
           )}
         </div>
         <p>
-          Camera alignment uses designated anchors. Red residual lines measure
-          other annotated corners. Withheld views are excluded from geometry
-          tuning; sparse agreement cannot establish the full shape.
+          Camera alignment uses designated anchors. Red lines measure other
+          marked corners. A previously inspected view cannot count as fresh
+          independent evidence; matching a few corners does not establish the whole shape.
         </p>
         {report.projections.length === 0 ? (
           <p>
@@ -397,7 +403,7 @@ function Candidate({
               <article key={p.id}>
                 <h3>
                   {p.frameId} ·{" "}
-                  {p.partition === "holdout" ? "withheld view" : "fitting view"}
+                  {p.partition === "holdout" ? "comparison view" : "fitting view"}
                 </h3>
                 <Status check={p} />
                 {p.camera && (

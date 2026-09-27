@@ -14,6 +14,10 @@
           "status": "pass",
           "detail": "40 parts match the independently transcribed source card. Colors and placements are separate checks."
         },
+        "sourceStages": {
+          "status": "unverified",
+          "detail": "0/16 source-stage piece sets established. body-upright-1: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. body-upright-2: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. body-upright-3: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. body-upright-4: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. body-horizontal: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. nose: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. wing-module--1: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. wing-root--1: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. wing-module-1: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. wing-root-1: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. wing-roots: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. wingtips: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. tail-cone: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. tail-horizontal: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. tail-fins: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. final: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts."
+        },
         "fidelity": {
           "status": "fail",
           "detail": "2 measured views, 1 historically withheld views, 33/40 parts lack independent scored landmarks. No frozen candidate and reservation baseline for an independent evaluation. Need complete visible/occluded part constraints and at least one useful final view reserved from fitting. Historical inspection and fresh reservation remain distinct. Pod incidence, longitudinal bay and the red leading triangle contacts are candidate hypotheses; the footage does not expose every join. Hidden cockpit floor/contact geometry and final inclination remain unresolved. The six rigid pieces are retained rather than collapsed to one fin."
@@ -268,6 +272,10 @@
           "status": "pass",
           "detail": "9 parts match the independently transcribed source card. Colors and placements are separate checks."
         },
+        "sourceStages": {
+          "status": "unverified",
+          "detail": "0/3 source-stage piece sets established. small-wedge: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. small-launch: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. small-final: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts."
+        },
         "fidelity": {
           "status": "fail",
           "detail": "1 measured views, 1 historically withheld views, 7/9 parts lack independent scored landmarks. Frame small-check is historical, unassessed, duplicated, or not reserved before candidate freeze and inspection. Need complete visible/occluded part constraints and at least one useful final view reserved from fitting. Historical inspection and fresh reservation remain distinct. The source long-edge/short-edge ratio and exact launch-to-wedge seam need measurement. The 143 mm catalog side is shorter than two squares; retained as an explicit overhang, not stretched."
@@ -402,6 +410,10 @@
         "inventory": {
           "status": "pass",
           "detail": "37 parts match the independently transcribed source card. Colors and placements are separate checks."
+        },
+        "sourceStages": {
+          "status": "unverified",
+          "detail": "0/11 source-stage piece sets established. medium-lower: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-upper-preparation: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-support: 0 mapped observed panels; coverage is partial. Visible minimums, inferred and proposed panels cannot establish an exact source-stage set. At least two bounded green square faces are visible. The roughly one-by-one-square footprint challenges the elongated candidate, but hidden face count is unresolved. Visible minima do not establish the full installed set. medium-upper-transfer: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-lower-placement: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-turn: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-lower-walls: 0 mapped observed panels; coverage is partial. Visible minimums, inferred and proposed panels cannot establish an exact source-stage set. Only the first red/orange side module has been placed at 63 seconds. At least two distinct triangular faces are established; hidden counts and correspondence remain unresolved. This is not an observed eight-wall checkpoint. medium-lower-cover: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-turn-cover: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-upper-cover: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-final: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts."
         },
         "fidelity": {
           "status": "fail",
@@ -601,6 +613,10 @@
         "inventory": {
           "status": "pass",
           "detail": "51 parts match the independently transcribed source card. Colors and placements are separate checks."
+        },
+        "sourceStages": {
+          "status": "unverified",
+          "detail": "0/5 source-stage piece sets established. large-bay-0: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. large-bay-1: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. large-bay-2: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. large-decks: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. large-final: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts."
         },
         "fidelity": {
           "status": "unverified",

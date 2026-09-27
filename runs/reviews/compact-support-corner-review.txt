@@ -1,0 +1,13 @@
+Verdict: remapping the fixed pixels `[965,505]` and `[1041,420]`, each with 12 px uncertainty, to the front and rear lower endpoints of one bounded green square face is **visually defensible**, but not proven.
+
+Visible support:
+- `[965,505]` sits on the lower/front green boundary area, near a dark green edge/corner feature.
+- `[1041,420]` sits near the rear/right green-yellow boundary where the support face is partly visible through the translucent upper wedge.
+- The visible green mass between them can read as a single receding square face, with the apparent “depth” edge rising up-right in the image.
+
+Visible limits/refutations:
+- The edge between the two points is not continuously clean; the rear point is partly obscured and color-mixed by the yellow/orange wedge.
+- I do not see a visible hard seam at `[965,505]` that forces it to be the join between two collinear green squares.
+- I also do not see enough exposed topology to prove there is only one square, or to count hidden panels.
+
+The upper wedge does appear to extend forward beyond the green support face. The green support also appears positioned near the wedge’s high/rear end, not under the forward/low end. So the compact one-square-deep interpretation is plausible from visible identity, with the caveat that hidden joins and total panel count remain unobservable here.

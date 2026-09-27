@@ -6,6 +6,11 @@
     "medium-ramp",
     "large-ramp"
   ],
+  "sourceStagePieces": {
+    "allDownloadsBound": true,
+    "partialSupportUnverified": true,
+    "partialCanopyUnverified": true
+  },
   "snailEmptyState": true,
   "stableModuleLabels": [
     "P6",

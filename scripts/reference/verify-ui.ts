@@ -24,6 +24,8 @@ async function main() {
       const response=await page.request.get(`${base}${href}`);
       const body=await response.json();
       if(!response.ok()||body.replica.id!==expectedId||!body.report.instructions.length) throw new Error(`Invalid model download: ${expectedId}`);
+      if(body.report.checks.sourceStages?.status!=="unverified"||body.report.sourceStagePieces?.length!==body.replica.stages.length)
+        throw new Error(`Missing or overstated source-stage piece evidence: ${expectedId}`);
       downloads.push(expectedId);
     };
     await checkDownload("jet");
@@ -143,6 +145,9 @@ async function main() {
     await page.getByLabel("Construction checkpoint").selectOption("2");
     if(!(await page.getByLabel("Complete assembly check").textContent())?.includes("Passed this check"))
       throw Error("Medium support assembly pass is absent.");
+    const supportPieces=await page.getByLabel("Source-stage piece check",{exact:true}).textContent();
+    if(!supportPieces?.includes("coverage is partial")||supportPieces.includes("Passed this check"))
+      throw Error("A physical support pass was mistaken for an exact source-piece set.");
     await page.getByLabel("Part insertion preview").selectOption("4");
     await mediumSlider.fill("100");
     await page.waitForFunction(()=>document.querySelectorAll(".design-piece-label").length===13);
@@ -217,6 +222,9 @@ async function main() {
     await page.getByLabel("Construction checkpoint").selectOption("6");
     if((await page.getByLabel("Complete assembly check").textContent())?.includes("Passed this check"))
       throw Error("Unverified medium lower canopy was promoted.");
+    const canopyPieces=await page.getByLabel("Source-stage piece check",{exact:true}).textContent();
+    if(!canopyPieces?.includes("not an observed eight-wall checkpoint")||canopyPieces.includes("Passed this check"))
+      throw Error("The partial canopy source view was promoted to a complete installed set.");
     await page.getByRole("button", { name: /3D snail/ }).click();
     await page.getByRole("heading", { name: /original 3D snail/ }).waitFor();
     await page.setViewportSize({ width: 390, height: 844 });
@@ -234,6 +242,7 @@ async function main() {
     const evidence = {
       builds: 4,
       downloads,
+      sourceStagePieces:{allDownloadsBound:true,partialSupportUnverified:true,partialCanopyUnverified:true},
       snailEmptyState: true,
       stableModuleLabels: labels,
       insertionPreview: { labels: insertionLabels, keyboardStartEnd: true, resetsAtNextStage: true },

@@ -1,0 +1,9 @@
+VERIFIED/CLEAN.
+
+I found no actionable defects in the re-reviewed source-stage piece accounting changes. The new gate in [source-pieces.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/source-pieces.ts:73) fails closed for malformed ledgers/manifests, enforces stable bijective `sourcePartId`/`tileId` correspondence across records, keeps inferred/proposed/minimum evidence out of exact-set passes, and requires verified local source/frame bytes before any pass.
+
+The integration also stays bounded: `sourceStages` is separate from source/fidelity/assembly status, `source-pieces.json` is locked and included in the validator hash, the current medium support/canopy records remain partial, and the reference-lab/UI checks distinguish physical assembly pass from exact source-piece credit.
+
+The three compact-support probe scripts are diagnostic-scoped and do not mutate published pixels, observations, source hashes, uncertainties, or public artifacts. They label outputs as hypotheses and avoid claiming full model, source-count, source-motion, or independent-source credit.
+
+I did not run tests or physics, per read-only review scope and the request not to run long physics. I also did not inspect heldout media.

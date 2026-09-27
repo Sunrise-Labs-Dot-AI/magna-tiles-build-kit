@@ -32,6 +32,8 @@ import sources from "../../verification/replication/sources.json";
 import lockedObservations from "../../verification/replication/observations.json";
 import evidenceLedger from "../../verification/replication/evidence-ledger.json";
 import candidateFreezes from "../../verification/replication/candidate-freezes.json";
+import sourcePieces from "../../verification/replication/source-pieces.json";
+import { checkSourcePieces, sourcePieceSummary, type SourcePieceFrame } from "./source-pieces";
 
 const MODEL = `source-replication-v2-${PHYSICS_MODEL_VERSION}`;
 const expectedInventory = {
@@ -269,6 +271,7 @@ export async function evaluateReplica(
     checks: {
       source: pending(),
       inventory: pending(),
+      sourceStages: pending(),
       fidelity: pending(),
       materials: pending(),
       geometry: pending(),
@@ -284,6 +287,7 @@ export async function evaluateReplica(
     constructionPaths: [],
     assemblySimulation: [],
     holdoutCoverage: pending(),
+    sourceStagePieces: [],
     carTrials: [],
   };
   const deadline = options.deadline ?? Infinity;
@@ -291,6 +295,16 @@ export async function evaluateReplica(
     if (Date.now() > deadline) throw new SimulationBudgetExceeded();
   };
   report.checks.source = await verifyLocalSource(replica);
+  let sourcePieceFrames: SourcePieceFrame[] = [];
+  try {
+    const manifest = JSON.parse(await readFile("verification/replication/frame-manifest.json", "utf8")) as { frames: SourcePieceFrame[] };
+    if (Array.isArray(manifest.frames)) sourcePieceFrames = manifest.frames;
+  } catch {
+    // Local media/extraction absence is evidence unavailability, not a crash.
+  }
+  report.sourceStagePieces = checkSourcePieces(replica, sourcePieces,
+    sources.sources.find(s => s.id === replica.sourceId), sourcePieceFrames, report.checks.source);
+  report.checks.sourceStages = sourcePieceSummary(report.sourceStagePieces);
   report.checks.inventory = sourceInventoryCheck(replica);
   report.checks.materials = check(
     "unverified",

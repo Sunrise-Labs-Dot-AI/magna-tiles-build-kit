@@ -223,3 +223,31 @@ All six initial medium stages pass the physical probe on seeds 0/17/53. The resu
 The next ordinary insertion uses the predecessor's actual old joints, even after a bridge has merged its components. A nominal old-to-old proposal cannot recreate a missing join. Exact body, pose, joint and failure history is checked before merging proposals. Future panels do not set insertion span or the ordinary continuation's floor; their incident joins remain proposals until their own operations. The new eight-panel fixture and detailed state/playback regression cover three seeds, mandatory withdrawal/free release, and future panels below and far from the prefix. Descriptive stored bounds are not physics input.
 
 The next source inspection found interleaved canopy construction, an upright blue panel before the blue top, and later individual upper red triangles. The 63-second fitting frame shows only the first lower side module. This contradicts treating the existing eight-wall stage as the observed completed object. Earlier construction frames also support a compact green support footprint; the current elongated support is not established by those frames. The hidden panel count remains unresolved. The 37-piece model and scored observations remain unchanged while the full part mapping is resolved. The two-panel individual-insertion diagnostic reaches 16 released bodies and 21 retained joints on all three seeds, but is a proposed method without observed-motion, exact-source-piece-set or complete-canopy credit. See `runs/2026-09-27-continued-prefix-increment.md` for the implementation and evidence boundaries, and `runs/2026-09-27-medium-topology-correction-plan.md` for the next correction's acceptance requirements.
+
+### Exact source-stage piece accounting
+
+The `sourceStages` verdict now checks a separate locked ledger, `verification/replication/source-pieces.json`. Each record binds source and extracted-frame hashes, frame role, timestamp and candidate stage. Observed source-part identities map to specific catalog panels, with a stable one-to-one correspondence across stages. Visible minima, inferred panels and proposed panels remain separate. A complete-set pass requires all installed stage panels to be covered by reviewed observed identities and locally verified media; prose frame links, missing records and partial coverage cannot pass. This gate does not establish pose, joins, motion, materials or independent final-source fidelity.
+
+The current support and lower-canopy records contain partial minima only, so neither inherits source agreement from a passing physical simulation. The workshop and downloads expose both verdicts. Previously inspected comparison views are not labeled as fresh independent verification. No production source geometry, measured pixel, uncertainty or holdout role changed in this increment.
+
+### Compact-support reconstruction probes
+
+The [bounded evidence](../runs/diagnostics/2026-09-27-compact-medium-hypotheses.json) keeps several unpromoted hypotheses and their failed attempts. A compact rear support improves camera-anchor agreement, but scored lower-ramp corners still fail. Both wedges and a four-wall support assemble on all three seeds; the subsequent upper transfer fails with either tested grip. A front-deck grip is rejected by the table-clearance check.
+
+A support/upright-only 37-piece model passes release but retains the source-contradicted square flaps. Closed six-face-support alternatives remove them and provisionally map the late red triangles onto upper wall panels. They preserve the BOM and have no raw overlap, yet fail the fixed table-penetration guard, including after a catalog-thickness roof-seating correction. Smaller closed support/wedge fixtures pass at 0 and 60 degrees yaw; coupled 15/27-panel prefixes fail. This isolates further contact/load work without proving the hidden green faces or changing the physical limits.
+
+These commands write diagnostics to `/tmp`; they do not replace public source candidates or certify complete replicas:
+
+```sh
+node --import tsx scripts/reference/probe-compact-support-fit.ts
+node --import tsx scripts/reference/probe-compact-support.ts
+node --import tsx scripts/reference/probe-compact-support.ts --closed --yaw60
+node --import tsx scripts/reference/probe-compact-support-assembly.ts
+node --import tsx scripts/reference/probe-compact-support-assembly.ts --side-grip
+node --import tsx scripts/reference/probe-compact-medium.ts
+node --import tsx scripts/reference/probe-compact-medium.ts --closed-support
+node --import tsx scripts/reference/probe-compact-medium.ts --closed-support --seat-roof
+node --import tsx scripts/reference/probe-closed-support-load.ts
+```
+
+The fit probe must run before the full-model and assembly probes; the closed full-model probe must run before the load-isolation probe. No actual engine state is reconstructed from a report's poses. Every physical assembly retry starts with fresh individual panels. See [the increment record](../runs/2026-09-27-medium-topology-correction-increment.md) for review, provenance and validation.

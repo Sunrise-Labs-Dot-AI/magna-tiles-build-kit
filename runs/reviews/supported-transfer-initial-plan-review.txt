@@ -1,0 +1,21 @@
+**Verdict: CONCERNS**
+
+No concrete feasibility blocker in the plan as written, but I would not accept it clean until these changes are made explicit:
+
+1. **Specify the new prepared-transfer role resolution algorithm.**
+   The plan says “Resolve the moving and receiving hands by component membership,” but the current API only receives `hands: HandContact[]` and `movingIds`. Current code is order-dependent at [prepared-transfer.ts:81-105](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/prepared-transfer.ts:81). Add a plan requirement that implementation derives:
+   `movingHand = hands.find(tileId in movingIds)` and `receiverHand = hands.find(tileId in partition neighbor group)`, failing if absent, duplicated, or in any other component. Then all calls to `transferTarget`, `transferWaypoints`, `checkHandAccess`, `dockToSupports`, and `simulateHeldMotion` must use the derived moving hand, never `hands[0]`.
+
+2. **Add an explicit acceptance check for body modes during carry and stabilization.**
+   `simulateHeldMotion` already makes the moving hand kinematic and the receiver hand fixed at [held-motion.ts:87-92](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/held-motion.ts:87). The plan should require tests that assert exactly those two non-dynamic bodies during carry, and that connected stabilization holds exactly the declared hands before the free checkpoint. Without this, a group-freeze regression could pass by only checking `heldTileIds`.
+
+3. **Clarify receiver support through connected stabilization.**
+   Assembly currently keeps all operation hands through connected stabilization at [assembly.ts:341-346](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:341). The plan says “only as explicitly declared,” but the schema has only `hands` plus `releaseAfter` at [construction.ts:17-20](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/construction.ts:17). Add a sentence that, for this increment, “explicitly declared” means the receiver grip appears in `operation.hands`, and it must be absent from one-hand legacy callers.
+
+4. **Tighten negative tests around receiver identity.**
+   The plan includes unrelated component and ambiguous receivers, which is good. Add one more negative: a support hand on the moving component’s ungripped neighbor must fail as “two moving grips” even if it is physically accessible. This directly protects the “one moving panel plus one receiving panel” goal.
+
+5. **Prevent acceptance inflation in source reruns.**
+   Line 21 is strong, but add that a compact-medium pass must report `carry.heldTileIds.length === 2`, the receiver tile id, and unchanged terminal free-release evidence per seed. That keeps the publication from becoming “13-panel pass” theater.
+
+So: **CONCERNS, actionable but not blocked.** The capability is feasible against the current runtime because `simulateHeldMotion`, `simulateSupport`, and `joinComponentGroups` already have most of the needed primitives; the plan just needs sharper role-resolution and evidence requirements before implementation.

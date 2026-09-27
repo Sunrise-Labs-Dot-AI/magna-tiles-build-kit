@@ -109,6 +109,7 @@ export interface ReplicaReport {
   checks: Record<
     | "source"
     | "inventory"
+    | "sourceStages"
     | "fidelity"
     | "materials"
     | "geometry"
@@ -147,5 +148,6 @@ export interface ReplicaReport {
   constructionPaths: import("./construction").ConstructionResult[];
   assemblySimulation: import("./assembly").AssemblyResult[];
   holdoutCoverage: Check;
+  sourceStagePieces: import("./source-pieces").SourcePieceResult[];
   carTrials: import("@/lib/planner/types").CarTrial[];
 }
