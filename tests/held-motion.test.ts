@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { unsupportedHingeFixture } from "./fixtures/rigid-contact";
 import { RigidBodyType } from "@dimforge/rapier3d-compat";
 import { basisToQuaternion, multiplyQuaternions } from "@/lib/engine/math";
 import { createEngineWorld } from "@/lib/engine/rapier-world";
@@ -6,7 +7,6 @@ import { assemble, square, v } from "@/lib/replication/geometry";
 import { checkHandAccess, checkMotionFingerClearance, edgeGrips } from "@/lib/replication/grip";
 import { checkSweptPoses, tileQuaternion } from "@/lib/replication/rotation-clearance";
 import { simulateHeldMotion } from "@/lib/replication/held-motion";
-import { closedShell } from "./fixtures/closed-shell";
 import { compactMotion } from "@/lib/replication/motion-recording";
 
 const quarter = { x: 0,y: 0,z: Math.SQRT1_2,w: Math.SQRT1_2 };
@@ -70,7 +70,7 @@ describe("swept rotation and actual held motion", () => {
     try { expect(resumed.snapshot()).toEqual(result.state); } finally { resumed.dispose(); }
   });
   it("does not rigidly carry an unstable two-panel hinge", async () => {
-    const shell = closedShell(1), build = assemble("hinge","Hinge",shell.tiles.filter(t => ["roof","x-0--1"].includes(t.id)).map(t => ({ ...t,position: { ...t.position,y: t.position.y+5 } })),"tower");
+    const build = unsupportedHingeFixture();
     const wall = build.tiles.find(t => t.id === "x-0--1")!, q = basisToQuaternion(wall.basis!);
     const result = await simulateHeldMotion(build,undefined,build.tiles.map(t => t.id),[edgeGrips(wall)[0]], [
       { seconds: 0,position: wall.position,rotation: q }, { seconds: 1,position: { ...wall.position,y: wall.position.y+.5 },rotation: q }],0,0);

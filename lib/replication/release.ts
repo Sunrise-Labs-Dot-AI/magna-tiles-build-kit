@@ -11,6 +11,7 @@ import { quaternionToBasis, transformLocal } from "@/lib/engine/math";
 import { basisFromEuler } from "@/lib/magnetic-tiles/edge-attachment";
 import type { BuildGraph, Vec3 } from "@/lib/magnetic-tiles/types";
 import { v } from "./geometry";
+import { RAW_OVERLAP_TOLERANCE } from "@/lib/engine/overlap";
 
 /** Free release with per-step peak motion and a sustained rest requirement. */
 export async function releaseCandidate(
@@ -36,7 +37,7 @@ export async function releaseCandidate(
       if (n % 32 === 0 && Date.now() > deadline)
         throw new SimulationBudgetExceeded();
       engine.step();
-      peak = Math.max(peak, engine.maxDisplacement());
+      peak = engine.peakDisplacement;
       const magnitude = (p: Vec3) => Math.hypot(p.x, p.y, p.z);
       linearSpeed = Math.max(
         ...[...engine.bodies.values()].map((r) => magnitude(r.body.linvel())),
@@ -45,11 +46,11 @@ export async function releaseCandidate(
         ...[...engine.bodies.values()].map((r) => magnitude(r.body.angvel())),
       );
       settledSteps =
-        linearSpeed < SETTLED_LINEAR_SPEED &&
-        angularSpeed < SETTLED_ANGULAR_SPEED
+        engine.stepSpeeds.linear < SETTLED_LINEAR_SPEED &&
+        engine.stepSpeeds.angular < SETTLED_ANGULAR_SPEED
           ? settledSteps + 1
           : 0;
-      if (peak > MAX_STANDING_DISPLACEMENT || engine.poppedJoints.length) break;
+      if (peak > MAX_STANDING_DISPLACEMENT || engine.poppedJoints.length || engine.peakGroundPenetration > RAW_OVERLAP_TOLERANCE) break;
     }
     const settled: BuildGraph = {
       ...build,
@@ -75,12 +76,14 @@ export async function releaseCandidate(
       seed,
       status:
         peak <= MAX_STANDING_DISPLACEMENT &&
+        engine.peakGroundPenetration <= RAW_OVERLAP_TOLERANCE &&
         !engine.poppedJoints.length &&
         !engine.rejectedReasons.length &&
         settledSteps >= SETTLED_REQUIRED_STEPS
           ? ("pass" as const)
           : ("fail" as const),
       peakDisplacement: peak,
+      peakGroundPenetration: engine.peakGroundPenetration,
       finalDisplacement: engine.maxDisplacement(),
       finalSpeed: engine.maxSpeed(),
       linearSpeed,

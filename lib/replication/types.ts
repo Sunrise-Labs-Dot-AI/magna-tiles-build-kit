@@ -124,6 +124,7 @@ export interface ReplicaReport {
     seed: number;
     status: Verdict;
     peakDisplacement: number;
+    peakGroundPenetration: number;
     finalDisplacement: number;
     finalSpeed: number;
     linearSpeed: number;

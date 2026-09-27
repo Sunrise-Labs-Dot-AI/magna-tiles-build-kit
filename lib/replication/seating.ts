@@ -14,9 +14,9 @@ import { findInsertionPath, type InsertionPath } from "./insertion";
 import { supportSnapshot } from "./support";
 import type { Check } from "./types";
 
-// Resolve a falling panel's contact at 480 Hz. This refines collision integration;
+// Resolve a falling panel's contact at 960 Hz. This refines collision integration;
 // duration, rest time, forces, friction and geometric tolerances stay unchanged.
-const SEATING_SUBSTEPS = 4;
+const SEATING_SUBSTEPS = 8;
 
 export interface SeatingTrial extends Check {
   placement: "table" | "magnetic";

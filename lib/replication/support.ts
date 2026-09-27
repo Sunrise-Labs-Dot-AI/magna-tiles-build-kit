@@ -8,10 +8,12 @@ import type { Check } from "./types";
 import { checkMotionFingerClearance, type HandContact } from "./grip";
 import { checkSweptPoses, samePoses } from "./rotation-clearance";
 import { compactMotion } from "./motion-recording";
+import { RAW_OVERLAP_TOLERANCE } from "@/lib/engine/overlap";
 
 export interface SupportTrial extends Check {
   heldTileIds: string[];
   peakDisplacement: number;
+  peakGroundPenetration: number;
   settledSteps: number;
   poppedJoints: string[];
   dynamicTileCount: number;
@@ -66,7 +68,8 @@ export async function simulateSupport(build: BuildGraph, heldTileIds: string[], 
         previous = actual;
         if (n % 128 === 0) motion.push({ seconds: elapsed,tiles: actual.tiles });
       }
-      peak = Math.max(peak, engine.maxDisplacement());
+      peak = engine.peakDisplacement;
+      if (engine.peakGroundPenetration > RAW_OVERLAP_TOLERANCE) clearanceFailure ||= `A panel penetrated the fixed table by ${engine.peakGroundPenetration.toFixed(3)} in (maximum ${RAW_OVERLAP_TOLERANCE} in).`;
       const dynamic = [...engine.bodies.entries()].filter(([id]) => !heldTileIds.includes(id));
       const linear = Math.max(0, ...dynamic.map(([, r]) => magnitude(r.body.linvel())));
       const angular = Math.max(0, ...dynamic.map(([, r]) => magnitude(r.body.angvel())));
@@ -79,7 +82,7 @@ export async function simulateSupport(build: BuildGraph, heldTileIds: string[], 
     const dynamicTileCount = build.tiles.length - heldTileIds.length;
     const settled = supportSnapshot(build,engine);
     motion.push({ seconds: elapsed,tiles: settled.tiles });
-    return { status: passed ? "pass" : "fail", heldTileIds: [...heldTileIds], peakDisplacement: peak, settledSteps, poppedJoints, dynamicTileCount,
+    return { status: passed ? "pass" : "fail", heldTileIds: [...heldTileIds], peakDisplacement: peak, peakGroundPenetration: engine.peakGroundPenetration, settledSteps, poppedJoints, dynamicTileCount,
       detail: clearanceFailure || (dynamicTileCount ? `${heldTileIds.length} individually held panels, ${dynamicTileCount} dynamic panels; peak ${peak.toFixed(3)} in, ${settledSteps}/90 rest steps, ${poppedJoints.length} rejected/broken joins.`
         : `${heldTileIds.length} separate hand contacts support ${build.tiles.length} panels. No free-body stability is claimed; handoff/release must be checked separately.`),
       settled, state: engine.snapshot(), motion: compactMotion(motion) };

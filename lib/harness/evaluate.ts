@@ -8,7 +8,12 @@ import { quaternionToBasis, transformLocal } from "@/lib/engine/math";
 import {
   MAX_STANDING_DISPLACEMENT,
   SIMULATION_MAX_STEPS,
+  PHYSICS_MODEL_VERSION,
+  SETTLED_ANGULAR_SPEED,
+  SETTLED_LINEAR_SPEED,
+  SETTLED_REQUIRED_STEPS,
 } from "@/lib/engine/constants";
+import { RAW_OVERLAP_TOLERANCE } from "@/lib/engine/overlap";
 import { countInventory } from "@/lib/magnetic-tiles/validation";
 import { inventoryForPreset } from "@/lib/magnetic-tiles/catalog";
 import { basisFromEuler } from "@/lib/magnetic-tiles/edge-attachment";
@@ -22,7 +27,7 @@ import type {
   ReleaseTrial,
 } from "./types";
 
-export const HARNESS_MODEL = "intent-harness-v2-exact-contact";
+export const HARNESS_MODEL = `intent-harness-v3-${PHYSICS_MODEL_VERSION}`;
 export const RELEASE_SEEDS = [0, 17, 53] as const;
 const releases = new Map<
   string,
@@ -112,7 +117,7 @@ export async function evaluateCandidate(
     if (!gate.passed) return finish();
     for (const seed of RELEASE_SEEDS) {
       const engine = await createEngineWorld(build, { drop: true });
-      let peak = 0;
+      let peak = 0, settledSteps = 0;
       try {
         // Deterministic release perturbations by geometric order, not arbitrary tile IDs.
         const ordered = [...engine.bodies.values()].sort(
@@ -141,8 +146,9 @@ export async function evaluateCandidate(
           if (step % 32 === 0 && Date.now() > (options.deadline ?? Infinity))
             throw new SimulationBudgetExceeded();
           engine.step();
-          if (step % 4 === 0) peak = Math.max(peak, engine.maxDisplacement());
-          if (peak > MAX_STANDING_DISPLACEMENT || engine.poppedJoints.length)
+          peak = engine.peakDisplacement;
+          settledSteps = engine.stepSpeeds.linear < SETTLED_LINEAR_SPEED && engine.stepSpeeds.angular < SETTLED_ANGULAR_SPEED ? settledSteps + 1 : 0;
+          if (peak > MAX_STANDING_DISPLACEMENT || engine.poppedJoints.length || engine.peakGroundPenetration > RAW_OVERLAP_TOLERANCE)
             break;
         }
         const final = engine.maxDisplacement();
@@ -181,10 +187,14 @@ export async function evaluateCandidate(
           seed,
           passed:
             peak <= MAX_STANDING_DISPLACEMENT &&
+            engine.peakGroundPenetration <= RAW_OVERLAP_TOLERANCE &&
+            settledSteps >= SETTLED_REQUIRED_STEPS &&
             !engine.poppedJoints.length &&
             failedRequirements.length === 0,
           peakDisplacement: peak,
           finalDisplacement: final,
+          peakGroundPenetration: engine.peakGroundPenetration,
+          settledSteps,
           failedRequirements,
           intentEvidence,
         });
@@ -198,11 +208,11 @@ export async function evaluateCandidate(
       label: "Release robustness",
       passed:
         trials.length === RELEASE_SEEDS.length && trials.every((t) => t.passed),
-      expected: `All ${RELEASE_SEEDS.length} releases; peak corner displacement ≤${MAX_STANDING_DISPLACEMENT} in`,
+      expected: `All ${RELEASE_SEEDS.length} releases; peak corner displacement ≤${MAX_STANDING_DISPLACEMENT} in; table penetration ≤${RAW_OVERLAP_TOLERANCE} in; ${SETTLED_REQUIRED_STEPS} consecutive rest steps`,
       actual: trials
         .map(
           (t) =>
-            `seed ${t.seed}: ${t.peakDisplacement.toFixed(3)} in; settled intent ${t.failedRequirements.length ? t.failedRequirements.join(", ") : "passed"}`,
+            `seed ${t.seed}: ${t.peakDisplacement.toFixed(3)} in; table ${t.peakGroundPenetration.toFixed(3)} in; ${t.settledSteps} rest steps; settled intent ${t.failedRequirements.length ? t.failedRequirements.join(", ") : "passed"}`,
         )
         .join("; "),
       repair: "reinforce",

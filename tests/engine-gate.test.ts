@@ -22,12 +22,11 @@ describe("gateBuild engine source of truth", () => {
       expect((ENGINE_VALID_LIBRARY_BUILD_IDS as readonly string[]).includes(card.id), card.id).toBe(verdict.passed);
     }
   }, 30_000);
-  it("accepts the authored small ramp as today's engine-valid anchor", async () => {
+  it("rejects the historical small ramp until it sustains rest", async () => {
     const verdict = await gateBuild(draftToBuildGraph(smallCarRampDraft as AuthoredBuildDraft));
 
-    expect(verdict.passed).toBe(true);
-    expect(verdict.reasons.join(" ")).toContain("build stands");
-    expect(verdict.reasons.join(" ")).toContain("roll test");
+    expect(verdict.passed).toBe(false);
+    expect(verdict.reasons.join(" ")).toContain("rest steps");
   });
 
   it("accepts the re-authored medium ramp as a continuous rollable wedge", async () => {

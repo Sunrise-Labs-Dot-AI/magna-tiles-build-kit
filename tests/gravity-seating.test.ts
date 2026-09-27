@@ -97,6 +97,7 @@ describe("gravity seating earns contacts before any new joint exists", () => {
     expect(launch.operations.filter(o => o.seating)).toHaveLength(3);
     expect(results.find(s => s.stageId === "small-final")!.status).not.toBe("pass");
     const wedge = results.find(s => s.stageId === "small-wedge")!;
+    expect(wedge.status,wedge.detail).toBe("pass");
     for (const seed of [0,17,53]) {
       const operations = wedge.operations.filter(o => o.seed === seed);
       expect(operations, wedge.detail).toHaveLength(5);
@@ -108,8 +109,10 @@ describe("gravity seating earns contacts before any new joint exists", () => {
       expect(last.trials[0].heldTileIds).toHaveLength(2);
       expect(last.trials[1].heldTileIds).toHaveLength(1);
       expect(last.trials.at(-1)!.heldTileIds).toEqual([]);
-      expect(last.status).toBe("fail");
-      expect(last.trials.at(-1)!.detail).toMatch(/fixed table/);
+      expect(last.status,last.detail).toBe("pass");
+      expect(last.trials.at(-1)!.settledSteps).toBeGreaterThanOrEqual(90);
+      expect(last.trials.at(-1)!.peakGroundPenetration).toBeLessThanOrEqual(.03);
+      expect(last.trials.at(-1)!.poppedJoints).toEqual([]);
       expect(assemblyOperationPreview(r.build,last,1).tiles).toEqual(last.trials.at(-1)!.motion.at(-1)!.tiles);
     }
     const placement = launch.operations[0], frames = placement.seating!.motion;

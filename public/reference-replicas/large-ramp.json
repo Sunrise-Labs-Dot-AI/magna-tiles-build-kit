@@ -3050,9 +3050,9 @@
   },
   "report": {
     "id": "large-ramp",
-    "fingerprint": "110aba448dc581bf21d7f33475da562a4e68ff46932aaa60746616ba231fe78b",
-    "validationCodeHash": "a26dd215aea16a524ecbcaa270f49cbaac0ba5eb05480145637515300a0a441f",
-    "generatedAt": "2026-09-27T04:39:47.413Z",
+    "fingerprint": "7707ceeac97131cf4a3f023f4a949444eecded8bc7a84f9700f0c7d1ab069ef9",
+    "validationCodeHash": "935f1ad054f9ccc6532fbf86f0f8b59375287069da7bd7165ae3a4e2b6b1a6b9",
+    "generatedAt": "2026-09-27T05:32:03.262Z",
     "replication": "not-verified",
     "checks": {
       "source": {
@@ -3077,7 +3077,7 @@
       },
       "release": {
         "status": "pass",
-        "detail": "seed 0: pass, peak 0.270 in, linear 0.000 in/s, angular 0.000 rad/s, 622/90 rest steps; seed 17: pass, peak 0.270 in, linear 0.000 in/s, angular 0.000 rad/s, 632/90 rest steps; seed 53: pass, peak 0.270 in, linear 0.000 in/s, angular 0.000 rad/s, 626/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
+        "detail": "seed 0: pass, peak 0.280 in, table 0.009 in, linear 0.000 in/s, angular 0.000 rad/s, 639/90 rest steps; seed 17: pass, peak 0.280 in, table 0.009 in, linear 0.000 in/s, angular 0.000 rad/s, 391/90 rest steps; seed 53: pass, peak 0.280 in, table 0.009 in, linear 0.000 in/s, angular 0.000 rad/s, 602/90 rest steps. Settled geometry uses the original fitted camera; it is not re-aligned to hide movement."
       },
       "settledShape": {
         "status": "unverified",
@@ -3097,36 +3097,39 @@
       {
         "seed": 0,
         "status": "pass",
-        "peakDisplacement": 0.27018991617014504,
-        "finalDisplacement": 0.14035185845611303,
+        "peakDisplacement": 0.28000020980865475,
+        "peakGroundPenetration": 0.008666460707318135,
+        "finalDisplacement": 0.014786730699188882,
         "finalSpeed": 0,
         "linearSpeed": 0,
         "angularSpeed": 0,
-        "settledSteps": 622,
+        "settledSteps": 639,
         "poppedJoints": [],
         "settledProjections": []
       },
       {
         "seed": 17,
         "status": "pass",
-        "peakDisplacement": 0.2701681324498578,
-        "finalDisplacement": 0.1405174683024754,
+        "peakDisplacement": 0.28000020980865475,
+        "peakGroundPenetration": 0.008816401743273028,
+        "finalDisplacement": 0.014449429375273092,
         "finalSpeed": 0,
         "linearSpeed": 0,
         "angularSpeed": 0,
-        "settledSteps": 632,
+        "settledSteps": 391,
         "poppedJoints": [],
         "settledProjections": []
       },
       {
         "seed": 53,
         "status": "pass",
-        "peakDisplacement": 0.270182909041293,
-        "finalDisplacement": 0.14084945741238689,
+        "peakDisplacement": 0.28000020980865475,
+        "peakGroundPenetration": 0.008684103403166166,
+        "finalDisplacement": 0.014923978291752363,
         "finalSpeed": 0,
         "linearSpeed": 0,
         "angularSpeed": 0,
-        "settledSteps": 626,
+        "settledSteps": 602,
         "poppedJoints": [],
         "settledProjections": []
       }
@@ -3135,32 +3138,32 @@
       {
         "id": "large-bay-0",
         "status": "pass",
-        "detail": "Released checkpoint: peak 0.271 in; 0 broken/rejected joints; 655 consecutive steps at rest (90 required).",
-        "displacement": 0.2705237604586917
+        "detail": "Released checkpoint: peak 0.280 in; table penetration 0.009 in; 0 broken/rejected joints; 887 consecutive steps at rest (90 required).",
+        "displacement": 0.28000020980836277
       },
       {
         "id": "large-bay-1",
         "status": "pass",
-        "detail": "Released checkpoint: peak 0.268 in; 0 broken/rejected joints; 643 consecutive steps at rest (90 required).",
-        "displacement": 0.2683117488459394
+        "detail": "Released checkpoint: peak 0.280 in; table penetration 0.008 in; 0 broken/rejected joints; 888 consecutive steps at rest (90 required).",
+        "displacement": 0.28000020980865475
       },
       {
         "id": "large-bay-2",
         "status": "pass",
-        "detail": "Released checkpoint: peak 0.267 in; 0 broken/rejected joints; 651 consecutive steps at rest (90 required).",
-        "displacement": 0.26686657755406856
+        "detail": "Released checkpoint: peak 0.280 in; table penetration 0.007 in; 0 broken/rejected joints; 888 consecutive steps at rest (90 required).",
+        "displacement": 0.27999997139136873
       },
       {
         "id": "large-decks",
         "status": "pass",
-        "detail": "Released checkpoint: peak 0.270 in; 0 broken/rejected joints; 643 consecutive steps at rest (90 required).",
-        "displacement": 0.2701892005109441
+        "detail": "Released checkpoint: peak 0.280 in; table penetration 0.009 in; 0 broken/rejected joints; 772 consecutive steps at rest (90 required).",
+        "displacement": 0.28000020980865475
       },
       {
         "id": "large-final",
         "status": "pass",
-        "detail": "Released checkpoint: peak 0.270 in; 0 broken/rejected joints; 622 consecutive steps at rest (90 required).",
-        "displacement": 0.27018991617014504
+        "detail": "Released checkpoint: peak 0.280 in; table penetration 0.009 in; 0 broken/rejected joints; 639 consecutive steps at rest (90 required).",
+        "displacement": 0.28000020980865475
       }
     ],
     "instructions": [

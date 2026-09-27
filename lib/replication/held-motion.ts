@@ -61,7 +61,7 @@ export async function simulateHeldMotion(build: BuildGraph, state: EngineState |
   const initialClearance = checkSweptPoses(build, build, floorY, deadline);
   if (initialClearance.status !== "pass") return fail(initialClearance.detail);
   const engine = await createEngineWorld(build, { drop: false, floorY, state });
-  const dt = SIMULATION_TIMESTEP_SECONDS/4, duration = waypoints.at(-1)!.seconds;
+  const dt = SIMULATION_TIMESTEP_SECONDS/8, duration = waypoints.at(-1)!.seconds;
   const heldBody = engine.bodies.get(held.tileId)!, referenceQ = tileQuaternion(heldBody.tile);
   const command = (seconds: number) => {
     const index = Math.max(1, waypoints.findIndex(p => p.seconds >= seconds));
@@ -78,7 +78,7 @@ export async function simulateHeldMotion(build: BuildGraph, state: EngineState |
     }
     let previous = build, rest = 0;
     result.motion.push({ seconds: 0, tiles: build.tiles });
-    const steps = Math.ceil(duration/dt) + SIMULATION_MAX_STEPS*4;
+    const steps = Math.ceil(duration/dt) + SIMULATION_MAX_STEPS*8;
     for (let i = 0; i < steps; i++) {
       if (i % 32 === 0 && Date.now() > deadline) throw new SimulationBudgetExceeded();
       const seconds = (i+1)*dt, desired = command(Math.min(seconds, duration));
@@ -99,11 +99,11 @@ export async function simulateHeldMotion(build: BuildGraph, state: EngineState |
       const solids = checkSweptPoses(previous, actual, floorY, deadline), fingers = checkMotionFingerClearance(previous, actual, hands, floorY);
       const dynamic = [...engine.bodies].filter(([id]) => !hands.some(h => h.tileId === id));
       rest = seconds >= duration && dynamic.every(([,r]) => magnitude(r.body.linvel()) < SETTLED_LINEAR_SPEED && magnitude(r.body.angvel()) < SETTLED_ANGULAR_SPEED) ? rest+1 : 0;
-      result.settledSteps = Math.floor(rest/4);
+      result.settledSteps = Math.floor(rest/8);
       const error = !Number.isFinite(result.peakDeformation) || result.peakDeformation > MAX_STANDING_DISPLACEMENT || result.poppedJoints.length
         ? "A dynamic panel deforms beyond the unchanged limit or breaks a magnetic join during carry."
         : solids.status !== "pass" ? solids.detail : fingers.status !== "pass" ? fingers.detail : null;
-      if (i % 32 === 0 || i === steps-1 || error) result.motion.push({ seconds, tiles: actual.tiles });
+      if (i % 64 === 0 || i === steps-1 || error) result.motion.push({ seconds, tiles: actual.tiles });
       previous = actual;
       if (error) { result.state = engine.snapshot(); return fail(error); }
     }

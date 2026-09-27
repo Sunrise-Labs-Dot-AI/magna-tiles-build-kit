@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { unsupportedHingeFixture } from "./fixtures/rigid-contact";
 import { RigidBodyType } from "@dimforge/rapier3d-compat";
 import { createEngineWorld } from "@/lib/engine/rapier-world";
 import { basisToQuaternion, distance, magnitude, multiplyQuaternions, quaternionToBasis, subtract, transformLocal } from "@/lib/engine/math";
@@ -65,7 +66,7 @@ describe("physical state between assembly phases", () => {
   });
 
   it("adds a free hinge to an already rotated body using both local axis frames", async () => {
-    const shell = closedShell(1), target = shell.tiles.find(t => t.id === "roof")!;
+    const shell = unsupportedHingeFixture(), target = shell.tiles.find(t => t.id === "roof")!;
     const unrotated = { ...target, basis: undefined, rotation: { x: 0, y: 0, z: 0 } };
     const one = assemble("roof", "Roof", [unrotated], "tower");
     const original = await createEngineWorld(one, { drop: false, floorY: 0 });

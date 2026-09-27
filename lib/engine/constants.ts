@@ -23,6 +23,11 @@ export const TILE_CONTACT_SKIN = 0;
 export const HINGE_MIN_ANGLE = -Math.PI;
 export const HINGE_MAX_ANGLE = Math.PI;
 export const SIMULATION_TIMESTEP_SECONDS = 1 / 120;
+// Numerical rigid-contact settings, selected with independent flat/loaded-base
+// convergence fixtures. These are not measurements of physical plastic compliance.
+export const CONTACT_NATURAL_FREQUENCY_HZ = 120;
+export const MAX_COLLISION_TIMESTEP_SECONDS = 1 / 960;
+export const PHYSICS_MODEL_VERSION = "rigid-contact-v5-exact-box-960";
 export const SIMULATION_MAX_STEPS = 900;
 export const SETTLED_LINEAR_SPEED = 0.035;
 export const SETTLED_ANGULAR_SPEED = 0.08;

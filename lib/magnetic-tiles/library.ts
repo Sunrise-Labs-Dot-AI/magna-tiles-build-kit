@@ -58,8 +58,8 @@ export const BUILD_LIBRARY: BuildLibraryItem[] = [
     summary: "A compact ramp for small toy cars using a low wedge and top landing.",
     difficulty: "easy",
     estimatedMinutes: 6,
-    status: "engine-valid",
-    tags: ["ramp", "toy cars", "wedge", "quick build", "physics verified"]
+    status: "engine-fail-pending-reauthoring",
+    tags: ["ramp", "toy cars", "wedge", "quick build", "needs verification"]
   },
   {
     id: "medium-car-ramp",
@@ -88,8 +88,8 @@ export const BUILD_LIBRARY: BuildLibraryItem[] = [
     summary: "An upright rocket with a square-panel body, triangular nose cone, and broad fin base.",
     difficulty: "medium",
     estimatedMinutes: 10,
-    status: "engine-valid",
-    tags: ["rocket", "box", "nose cone", "fins", "physics verified"]
+    status: "engine-fail-pending-reauthoring",
+    tags: ["rocket", "box", "nose cone", "fins", "needs verification"]
   }
 ];
 

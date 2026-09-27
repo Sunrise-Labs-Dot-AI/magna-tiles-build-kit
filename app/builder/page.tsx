@@ -512,7 +512,7 @@ export default function BuilderPage() {
             </div>
             {sandboxStatus ? (
               <p className="issue-detail">
-                Run: displacement {sandboxStatus.maxDisplacement.toFixed(2)}, speed {sandboxStatus.maxSpeed.toFixed(2)}
+                Sandbox preview (diagnostic): displacement {sandboxStatus.maxDisplacement.toFixed(2)}, speed {sandboxStatus.maxSpeed.toFixed(2)}
                 {sandboxStatus.poppedJoints.length ? `, popped joints ${sandboxStatus.poppedJoints.length}` : ""}
                 {sandboxStatus.roll ? `, roll ${sandboxStatus.roll}` : ""}
               </p>

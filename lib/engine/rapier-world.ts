@@ -4,19 +4,22 @@ import RAPIER, {
   RigidBodyDesc,
   type ImpulseJoint,
   type RigidBody,
-  type RigidBodyType,
+  RigidBodyType,
   type World
 } from "@dimforge/rapier3d-compat";
-import { connectionId, tilePrismPoints, type EngineBuild } from "./build";
+import { connectionId, physicalSpecForTile, tilePrismPoints, type EngineBuild } from "./build";
 import {
   GROUND_FRICTION,
+  CONTACT_NATURAL_FREQUENCY_HZ,
+  MAX_COLLISION_TIMESTEP_SECONDS,
+  PHYSICS_MODEL_VERSION,
   HINGE_MAX_ANGLE,
   HINGE_MIN_ANGLE,
   SIMULATION_TIMESTEP_SECONDS,
   TILE_CONTACT_SKIN,
   TILE_FRICTION
 } from "./constants";
-import { add, distance, magnitude, quaternionToBasis, scale, transformLocal, worldToLocal, type Quat } from "./math";
+import { add, basisToQuaternion, distance, magnitude, quaternionToBasis, scale, slerp, transformLocal, worldToLocal, type Quat } from "./math";
 import { basisFromEuler } from "@/lib/magnetic-tiles/edge-attachment";
 import {
   createMagneticPhysicsModel,
@@ -51,6 +54,7 @@ interface JointRecord {
  * Reference geometry is immutable: a settled pose must not become a new hull
  * frame or a new magnetic anchor. Solver warm-start caches are not serialized. */
 export interface EngineState {
+  physicsModel: string;
   bodies: { referenceTile: TileInstance; position: Vec3; rotation: Quat; linearVelocity: Vec3;
     angularVelocity: Vec3; bodyType: RigidBodyType; ccd: boolean; sleeping: boolean; releasePerturbed: boolean }[];
   joints: { model: PhysicsJointModel; previousDistance: number; companionPreviousDistance: number }[];
@@ -65,6 +69,12 @@ export interface EngineWorld {
   poppedJoints: string[];
   rejectedReasons: string[];
   floorY: number;
+  /** Collision-step peaks, retained even if later dynamics recover. */
+  peakGroundPenetration: number;
+  groundPenetration: number;
+  peakDisplacement: number;
+  stepSpeeds: { linear: number; angular: number };
+  invalidState: boolean;
   snapshot(): EngineState;
   step(): void;
   maxDisplacement(): number;
@@ -103,6 +113,7 @@ export async function createEngineWorld(input: EngineBuild, options: { drop?: bo
   const world = new RAPIER.World(gravityVector());
   world.integrationParameters.dt = SIMULATION_TIMESTEP_SECONDS;
   world.integrationParameters.numSolverIterations = 16;
+  world.integrationParameters.contact_natural_frequency = CONTACT_NATURAL_FREQUENCY_HZ;
 
   addGround(world, model);
 
@@ -144,19 +155,49 @@ export async function createEngineWorld(input: EngineBuild, options: { drop?: bo
     poppedJoints: [...(state?.poppedJoints ?? [])],
     rejectedReasons: model.rejectedReasons,
     floorY,
+    peakGroundPenetration: 0,
+    groundPenetration: 0,
+    peakDisplacement: 0,
+    stepSpeeds: { linear: 0, angular: 0 },
+    invalidState: false,
     snapshot() {
-      return structuredClone({ bodies: [...bodies.values()].map(({ tile, body, releasePerturbed }) => ({ referenceTile: tile,
+      return structuredClone({ physicsModel: PHYSICS_MODEL_VERSION, bodies: [...bodies.values()].map(({ tile, body, releasePerturbed }) => ({ referenceTile: tile,
         position: vector(body.translation()), rotation: { ...body.rotation() }, linearVelocity: vector(body.linvel()),
         angularVelocity: vector(body.angvel()), bodyType: body.bodyType(), ccd: body.isCcdEnabled(), sleeping: body.isSleeping(), releasePerturbed })),
       joints: engine.joints.map(j => ({ model: j.model, previousDistance: j.previousDistance, companionPreviousDistance: j.companionPreviousDistance })),
       connections: input.connections, poppedJoints: engine.poppedJoints });
     },
     step() {
-      world.step();
-      updateBreakableJoints(engine);
+      const requestedDt = world.integrationParameters.dt;
+      if (!Number.isFinite(requestedDt) || requestedDt <= 0 || requestedDt > 1) throw new Error("Invalid engine step duration");
+      // Rapier stores dt as float32. Do not add an extra substep when the
+      // intended reporting/collision timestep ratio is an integer.
+      const count = Math.max(1, Math.ceil(requestedDt / MAX_COLLISION_TIMESTEP_SECONDS - 1e-6));
+      const moving = [...bodies.values()].filter(r => r.body.bodyType() === RigidBodyType.KinematicPositionBased).map(({body}) => ({
+        body, start: vector(body.translation()), end: vector(body.nextTranslation()),
+        rotation: { ...body.rotation() }, nextRotation: { ...body.nextRotation() },
+      }));
+      engine.stepSpeeds = { linear: 0, angular: 0 };
+      sampleState(engine);
+      try {
+        world.integrationParameters.dt = requestedDt / count;
+        for (let i = 1; i <= count && !engine.invalidState; i++) {
+          for (const m of moving) {
+            const t = i / count;
+            m.body.setNextKinematicTranslation(add(scale(m.start, 1-t), scale(m.end, t)));
+            m.body.setNextKinematicRotation(slerp(m.rotation, m.nextRotation, t));
+          }
+          world.step();
+          sampleState(engine);
+          if (!engine.invalidState) updateBreakableJoints(engine);
+        }
+      } finally {
+        world.integrationParameters.dt = requestedDt;
+      }
     },
     dispose() { world.free(); },
     maxDisplacement() {
+      if (engine.invalidState) return Infinity;
       return Math.max(
         0,
         ...Array.from(bodies.values()).map(({ body, hull, targetPosition, targetRotation }) => {
@@ -172,13 +213,40 @@ export async function createEngineWorld(input: EngineBuild, options: { drop?: bo
       );
     },
     maxSpeed() {
+      if (engine.invalidState) return Infinity;
       return Math.max(
         0,
         ...Array.from(bodies.values()).map(({ body }) => Math.max(magnitude(vector(body.linvel())), magnitude(vector(body.angvel()))))
       );
     }
   };
+  sampleState(engine);
   return engine;
+}
+
+/** Tile prisms are in the immutable body's reference frame. Physical table y is
+ * always zero, even when authored model coordinates use a different floorY. */
+function sampleState(engine: EngineWorld): void {
+  engine.groundPenetration = 0;
+  for (const { body, hull, targetPosition, targetRotation } of engine.bodies.values()) {
+    const p = body.translation(), q = body.rotation(), linear = body.linvel(), angular = body.angvel();
+    if (![...Object.values(p), ...Object.values(q), ...Object.values(linear), ...Object.values(angular)].every(Number.isFinite)) {
+      engine.invalidState = true;
+      engine.groundPenetration = engine.peakGroundPenetration = engine.peakDisplacement = Infinity;
+      engine.stepSpeeds = { linear: Infinity, angular: Infinity };
+      return;
+    }
+    engine.stepSpeeds.linear = Math.max(engine.stepSpeeds.linear, magnitude(linear));
+    engine.stepSpeeds.angular = Math.max(engine.stepSpeeds.angular, magnitude(angular));
+    const basis = quaternionToBasis(q), targetBasis = quaternionToBasis(targetRotation);
+    for (let i = 0; i < hull.length; i += 3) {
+      const local = { x: hull[i], y: hull[i+1], z: hull[i+2] };
+      const actual = transformLocal(local, p, basis);
+      engine.groundPenetration = Math.max(engine.groundPenetration, -actual.y);
+      engine.peakGroundPenetration = Math.max(engine.peakGroundPenetration, -actual.y);
+      engine.peakDisplacement = Math.max(engine.peakDisplacement, distance(actual, transformLocal(local, targetPosition, targetBasis)));
+    }
+  }
 }
 
 function addTileBody(world: World, model: PhysicsBodyModel): BodyRecord {
@@ -188,10 +256,19 @@ function addTileBody(world: World, model: PhysicsBodyModel): BodyRecord {
       .setLinvel(model.linearVelocity.x, model.linearVelocity.y, model.linearVelocity.z)
       .setAngvel(model.angularVelocity)
       .setAdditionalSolverIterations(8)
+      .setCcdEnabled(true)
   );
   body.userData = { tileId: model.tile.id };
 
-  const hull = ColliderDesc.convexHull(model.localHullPoints);
+  const spec = physicalSpecForTile(model.tile);
+  // Exact primitive avoids degenerate convex-hull edge manifolds on rotated
+  // rectangular panels. The reference basis remains collider-local, followed by
+  // the body's actual rotation. Proof/snapshot hull points remain unchanged.
+  const rectangular = ["small-square", "large-square", "xl-square"].includes(model.tile.shape);
+  const basis = model.tile.basis ?? basisFromEuler(model.tile.rotation.x,model.tile.rotation.y,model.tile.rotation.z);
+  const hull = rectangular
+    ? ColliderDesc.cuboid(spec.width/2,spec.height/2,spec.thickness/2).setRotation(basisToQuaternion(basis))
+    : ColliderDesc.convexHull(model.localHullPoints);
   if (!hull) throw new Error(`Unable to create convex hull for tile ${model.tile.id}`);
   world.createCollider(
     hull
@@ -296,6 +373,7 @@ export function currentTilePose(reference: TileInstance, position: Vec3, rotatio
 }
 
 function validateContinuation(input: EngineBuild, state: EngineState, floorY: number): void {
+  if (state.physicsModel !== PHYSICS_MODEL_VERSION) throw new Error("State continuation requires the current physics model; regenerate stale evidence");
   const ids = new Set(input.connections.map(connectionId));
   if (state.connections.some(c => !ids.has(connectionId(c)))) throw new Error("State continuation cannot omit an existing or broken connection");
   for (const saved of state.bodies) {

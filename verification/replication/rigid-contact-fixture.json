@@ -1,0 +1,1464 @@
+{
+  "validationCodeHash": "935f1ad054f9ccc6532fbf86f0f8b59375287069da7bd7165ae3a4e2b6b1a6b9",
+  "scope": "Numerical rigid-contact convergence only. Independent catalog flat/base-load fixtures; no source-derived geometry or physical material calibration.",
+  "versions": {
+    "javascript": "rapier3d-compat 0.19.2",
+    "rust": "rapier3d 0.30.1"
+  },
+  "sources": [
+    "https://raw.githubusercontent.com/dimforge/rapier.js/v0.19.2/Cargo.lock",
+    "https://raw.githubusercontent.com/dimforge/rapier/v0.30.1/src/dynamics/integration_parameters.rs"
+  ],
+  "criteria": {
+    "peakPenetration": 0.03,
+    "latePenetration": 0.01,
+    "peakDisplacement": 0.95,
+    "restReportingSteps": 90,
+    "durationSeconds": 7.5,
+    "lateStartSeconds": 6.75
+  },
+  "selectedFrequency": 120,
+  "configuredFrequency": 120,
+  "trials": [
+    {
+      "fixture": "flat-contact",
+      "frequency": 30,
+      "hz": 960,
+      "solver": 16,
+      "seed": 0,
+      "peakPenetration": 0.01931800791104822,
+      "latePenetration": 0.01931800791104822,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": false
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 30,
+      "hz": 960,
+      "solver": 16,
+      "seed": 17,
+      "peakPenetration": 0.019310199091053762,
+      "latePenetration": 0.019310199091053762,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": false
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 30,
+      "hz": 960,
+      "solver": 16,
+      "seed": 53,
+      "peakPenetration": 0.01929927132517835,
+      "latePenetration": 0.01929927132517835,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": false
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 30,
+      "hz": 960,
+      "solver": 32,
+      "seed": 0,
+      "peakPenetration": 0.018019684431184235,
+      "latePenetration": 0.018019684431184235,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": false
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 30,
+      "hz": 960,
+      "solver": 32,
+      "seed": 17,
+      "peakPenetration": 0.018000672865862044,
+      "latePenetration": 0.018000672865862044,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": false
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 30,
+      "hz": 960,
+      "solver": 32,
+      "seed": 53,
+      "peakPenetration": 0.01794634749761939,
+      "latePenetration": 0.01794634749761939,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": false
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 30,
+      "hz": 1920,
+      "solver": 16,
+      "seed": 0,
+      "peakPenetration": 0.016129179874489863,
+      "latePenetration": 0.016129179874489863,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.009722031652927399,
+      "passed": false
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 30,
+      "hz": 1920,
+      "solver": 16,
+      "seed": 17,
+      "peakPenetration": 0.01613833177368318,
+      "latePenetration": 0.01613833177368318,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.009722031652927399,
+      "passed": false
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 30,
+      "hz": 1920,
+      "solver": 16,
+      "seed": 53,
+      "peakPenetration": 0.016112389695215126,
+      "latePenetration": 0.016112389695215126,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.009722031652927399,
+      "passed": false
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 30,
+      "hz": 1920,
+      "solver": 32,
+      "seed": 0,
+      "peakPenetration": 0.012774152200004718,
+      "latePenetration": 0.012774152200004718,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.009722031652927399,
+      "passed": false
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 30,
+      "hz": 1920,
+      "solver": 32,
+      "seed": 17,
+      "peakPenetration": 0.012799974299313663,
+      "latePenetration": 0.012799974299313663,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.009722031652927399,
+      "passed": false
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 30,
+      "hz": 1920,
+      "solver": 32,
+      "seed": 53,
+      "peakPenetration": 0.012694077823311625,
+      "latePenetration": 0.012694077823311625,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 894,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.009722031652927399,
+      "passed": false
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 60,
+      "hz": 960,
+      "solver": 16,
+      "seed": 0,
+      "peakPenetration": 0.008490880999264205,
+      "latePenetration": 0.005761921059448033,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 60,
+      "hz": 960,
+      "solver": 16,
+      "seed": 17,
+      "peakPenetration": 0.008741706339143576,
+      "latePenetration": 0.005761942435815237,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 60,
+      "hz": 960,
+      "solver": 16,
+      "seed": 53,
+      "peakPenetration": 0.00930186761227178,
+      "latePenetration": 0.0057620435628909505,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 60,
+      "hz": 960,
+      "solver": 32,
+      "seed": 0,
+      "peakPenetration": 0.008128574011242354,
+      "latePenetration": 0.005795832382516686,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 60,
+      "hz": 960,
+      "solver": 32,
+      "seed": 17,
+      "peakPenetration": 0.008357880205073498,
+      "latePenetration": 0.005795354801343328,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 60,
+      "hz": 960,
+      "solver": 32,
+      "seed": 53,
+      "peakPenetration": 0.008941465813046987,
+      "latePenetration": 0.0057952479737231055,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 60,
+      "hz": 1920,
+      "solver": 16,
+      "seed": 0,
+      "peakPenetration": 0.005714753796252275,
+      "latePenetration": 0.005697596773179478,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 60,
+      "hz": 1920,
+      "solver": 16,
+      "seed": 17,
+      "peakPenetration": 0.005714540546578842,
+      "latePenetration": 0.005697425266179973,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 60,
+      "hz": 1920,
+      "solver": 16,
+      "seed": 53,
+      "peakPenetration": 0.005714377632535905,
+      "latePenetration": 0.0056972313867265645,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 60,
+      "hz": 1920,
+      "solver": 32,
+      "seed": 0,
+      "peakPenetration": 0.005605197430246803,
+      "latePenetration": 0.005605197430246803,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 60,
+      "hz": 1920,
+      "solver": 32,
+      "seed": 17,
+      "peakPenetration": 0.005605302407367813,
+      "latePenetration": 0.005605302407367813,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 60,
+      "hz": 1920,
+      "solver": 32,
+      "seed": 53,
+      "peakPenetration": 0.005596212251994276,
+      "latePenetration": 0.005596212251994276,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 894,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 120,
+      "hz": 960,
+      "solver": 16,
+      "seed": 0,
+      "peakPenetration": 0.008429908562740618,
+      "latePenetration": 0.0021911135103282325,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.0728205069899559,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 120,
+      "hz": 960,
+      "solver": 16,
+      "seed": 17,
+      "peakPenetration": 0.008627050538166967,
+      "latePenetration": 0.0021911772287737386,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.0728205069899559,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 120,
+      "hz": 960,
+      "solver": 16,
+      "seed": 53,
+      "peakPenetration": 0.009224915159595212,
+      "latePenetration": 0.002191353380265687,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.0728205069899559,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 120,
+      "hz": 960,
+      "solver": 32,
+      "seed": 0,
+      "peakPenetration": 0.00809425708822488,
+      "latePenetration": 0.002200134443114135,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.0728205069899559,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 120,
+      "hz": 960,
+      "solver": 32,
+      "seed": 17,
+      "peakPenetration": 0.008296897033687814,
+      "latePenetration": 0.0022001659402546975,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.0728205069899559,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 120,
+      "hz": 960,
+      "solver": 32,
+      "seed": 53,
+      "peakPenetration": 0.00889590031010104,
+      "latePenetration": 0.0022003794330372056,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.0728205069899559,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 120,
+      "hz": 1920,
+      "solver": 16,
+      "seed": 0,
+      "peakPenetration": 0.0021753919350779444,
+      "latePenetration": 0.0021698092812059977,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 120,
+      "hz": 1920,
+      "solver": 16,
+      "seed": 17,
+      "peakPenetration": 0.0021753218253293127,
+      "latePenetration": 0.0021699769041641365,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 120,
+      "hz": 1920,
+      "solver": 16,
+      "seed": 53,
+      "peakPenetration": 0.0021750100232952596,
+      "latePenetration": 0.0021696230433459196,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 120,
+      "hz": 1920,
+      "solver": 32,
+      "seed": 0,
+      "peakPenetration": 0.002165199374636842,
+      "latePenetration": 0.0021477743597245608,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 120,
+      "hz": 1920,
+      "solver": 32,
+      "seed": 17,
+      "peakPenetration": 0.002164959728917129,
+      "latePenetration": 0.0021477749519726447,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 895,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": true
+    },
+    {
+      "fixture": "flat-contact",
+      "frequency": 120,
+      "hz": 1920,
+      "solver": 32,
+      "seed": 53,
+      "peakPenetration": 0.002165230262721113,
+      "latePenetration": 0.0021479831515853753,
+      "peakDisplacement": 0.2800000047683716,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 894,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": true
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 30,
+      "hz": 960,
+      "solver": 16,
+      "seed": 0,
+      "peakPenetration": 0.091079258220935,
+      "latePenetration": 0.091079258220935,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 654,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 30,
+      "hz": 960,
+      "solver": 16,
+      "seed": 17,
+      "peakPenetration": 0.0909120788863715,
+      "latePenetration": 0.0909120788863715,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 655,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 30,
+      "hz": 960,
+      "solver": 16,
+      "seed": 53,
+      "peakPenetration": 0.09175462648086607,
+      "latePenetration": 0.09175462648086607,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 655,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 30,
+      "hz": 960,
+      "solver": 32,
+      "seed": 0,
+      "peakPenetration": 0.08315742549547127,
+      "latePenetration": 0.08315742549547127,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 766,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 30,
+      "hz": 960,
+      "solver": 32,
+      "seed": 17,
+      "peakPenetration": 0.08303239565379922,
+      "latePenetration": 0.08303239565379922,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 778,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 30,
+      "hz": 960,
+      "solver": 32,
+      "seed": 53,
+      "peakPenetration": 0.08307980592786031,
+      "latePenetration": 0.08307980592786031,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 773,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 30,
+      "hz": 1920,
+      "solver": 16,
+      "seed": 0,
+      "peakPenetration": 0.07802432004090924,
+      "latePenetration": 0.07802432004090924,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 774,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.009722031652927399,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 30,
+      "hz": 1920,
+      "solver": 16,
+      "seed": 17,
+      "peakPenetration": 0.07790856935931946,
+      "latePenetration": 0.07790856935931946,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 766,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.009722031652927399,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 30,
+      "hz": 1920,
+      "solver": 16,
+      "seed": 53,
+      "peakPenetration": 0.07771620900235453,
+      "latePenetration": 0.07771620900235453,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 770,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.009722031652927399,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 30,
+      "hz": 1920,
+      "solver": 32,
+      "seed": 0,
+      "peakPenetration": 0.06193779194456316,
+      "latePenetration": 0.06193779194456316,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 808,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.009722031652927399,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 30,
+      "hz": 1920,
+      "solver": 32,
+      "seed": 17,
+      "peakPenetration": 0.06226996673020275,
+      "latePenetration": 0.06226996673020275,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 804,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.009722031652927399,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 30,
+      "hz": 1920,
+      "solver": 32,
+      "seed": 53,
+      "peakPenetration": 0.062172827012265904,
+      "latePenetration": 0.062172827012265904,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 809,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.009722031652927399,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 60,
+      "hz": 960,
+      "solver": 16,
+      "seed": 0,
+      "peakPenetration": 0.024795361487602197,
+      "latePenetration": 0.02477671175798564,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 657,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 60,
+      "hz": 960,
+      "solver": 16,
+      "seed": 17,
+      "peakPenetration": 0.024772564107059247,
+      "latePenetration": 0.024772041326025784,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 655,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 60,
+      "hz": 960,
+      "solver": 16,
+      "seed": 53,
+      "peakPenetration": 0.02479931754501434,
+      "latePenetration": 0.024798449326057917,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 655,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 60,
+      "hz": 960,
+      "solver": 32,
+      "seed": 0,
+      "peakPenetration": 0.024740375744734547,
+      "latePenetration": 0.024740375744734547,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 879,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 60,
+      "hz": 960,
+      "solver": 32,
+      "seed": 17,
+      "peakPenetration": 0.02475002694797769,
+      "latePenetration": 0.02475002694797769,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 879,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 60,
+      "hz": 960,
+      "solver": 32,
+      "seed": 53,
+      "peakPenetration": 0.02473958840436223,
+      "latePenetration": 0.02473958840436223,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 879,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 60,
+      "hz": 1920,
+      "solver": 16,
+      "seed": 0,
+      "peakPenetration": 0.024510865881735594,
+      "latePenetration": 0.024510865881735594,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 869,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 60,
+      "hz": 1920,
+      "solver": 16,
+      "seed": 17,
+      "peakPenetration": 0.02456168691437005,
+      "latePenetration": 0.02456168691437005,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 864,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 60,
+      "hz": 1920,
+      "solver": 16,
+      "seed": 53,
+      "peakPenetration": 0.02456049959583108,
+      "latePenetration": 0.02456049959583108,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 868,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 60,
+      "hz": 1920,
+      "solver": 32,
+      "seed": 0,
+      "peakPenetration": 0.02419123177456174,
+      "latePenetration": 0.02419123177456174,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 877,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 60,
+      "hz": 1920,
+      "solver": 32,
+      "seed": 17,
+      "peakPenetration": 0.02412371966325702,
+      "latePenetration": 0.02412371966325702,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 878,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 60,
+      "hz": 1920,
+      "solver": 32,
+      "seed": 53,
+      "peakPenetration": 0.024171837633007634,
+      "latePenetration": 0.024171837633007634,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 878,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.019256848841905594,
+      "passed": false
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 120,
+      "hz": 960,
+      "solver": 16,
+      "seed": 0,
+      "peakPenetration": 0.01098184248365007,
+      "latePenetration": 0.006944031933490261,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 877,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.0728205069899559,
+      "passed": true
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 120,
+      "hz": 960,
+      "solver": 16,
+      "seed": 17,
+      "peakPenetration": 0.010907955929933835,
+      "latePenetration": 0.006945905739729405,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 876,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.0728205069899559,
+      "passed": true
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 120,
+      "hz": 960,
+      "solver": 16,
+      "seed": 53,
+      "peakPenetration": 0.010760624816724323,
+      "latePenetration": 0.0069463833009312664,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 875,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.0728205069899559,
+      "passed": true
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 120,
+      "hz": 960,
+      "solver": 32,
+      "seed": 0,
+      "peakPenetration": 0.009777582877554009,
+      "latePenetration": 0.006950436052127196,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 892,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.0728205069899559,
+      "passed": true
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 120,
+      "hz": 960,
+      "solver": 32,
+      "seed": 17,
+      "peakPenetration": 0.00959639403667592,
+      "latePenetration": 0.006961704045720191,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 893,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.0728205069899559,
+      "passed": true
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 120,
+      "hz": 960,
+      "solver": 32,
+      "seed": 53,
+      "peakPenetration": 0.009415050921586343,
+      "latePenetration": 0.006948963849066722,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 893,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.0728205069899559,
+      "passed": true
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 120,
+      "hz": 1920,
+      "solver": 16,
+      "seed": 0,
+      "peakPenetration": 0.006950605761254669,
+      "latePenetration": 0.0069481591064908255,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 889,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": true
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 120,
+      "hz": 1920,
+      "solver": 16,
+      "seed": 17,
+      "peakPenetration": 0.006958384863208267,
+      "latePenetration": 0.0069482193922968255,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 885,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": true
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 120,
+      "hz": 1920,
+      "solver": 16,
+      "seed": 53,
+      "peakPenetration": 0.0069525516233745616,
+      "latePenetration": 0.006938436594730563,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 886,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": true
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 120,
+      "hz": 1920,
+      "solver": 32,
+      "seed": 0,
+      "peakPenetration": 0.006930076093801418,
+      "latePenetration": 0.006928630397819685,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 893,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": true
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 120,
+      "hz": 1920,
+      "solver": 32,
+      "seed": 17,
+      "peakPenetration": 0.006955634189141802,
+      "latePenetration": 0.006955376462612808,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 892,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": true
+    },
+    {
+      "fixture": "loaded-base-contact",
+      "frequency": 120,
+      "hz": 1920,
+      "solver": 32,
+      "seed": 53,
+      "peakPenetration": 0.0069449084747189305,
+      "latePenetration": 0.00694267573800271,
+      "peakDisplacement": 0.2800000381469745,
+      "finalSpeeds": {
+        "linear": 0,
+        "angular": 0
+      },
+      "settledSteps": 893,
+      "poppedJoints": [],
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "contactERP": 0.037786055356264114,
+      "passed": true
+    }
+  ]
+}

@@ -29,16 +29,15 @@ describe("reference acceptance", () => {
       }))
     );
 
-    expect(verdicts.find((item) => item.id === "small-car-ramp")?.verdict.passed).toBe(true);
+    expect(verdicts.find((item) => item.id === "small-car-ramp")?.verdict.passed).toBe(false);
     expect(verdicts.find((item) => item.id === "medium-car-ramp")?.verdict.passed).toBe(true);
     expect(verdicts.find((item) => item.id === "large-car-ramp")?.verdict.passed).toBe(true);
     expect(verdicts.find((item) => item.id === "jet-aircraft")?.verdict.passed).toBe(false);
     expect(verdicts.filter((item) => item.verdict.passed).map((item) => item.id).sort()).toEqual([
       "large-car-ramp",
-      "medium-car-ramp",
-      "small-car-ramp"
+      "medium-car-ramp"
     ]);
-    expect(verdicts.filter((item) => !item.verdict.passed).map((item) => item.id).sort()).toEqual(["jet-aircraft"]);
+    expect(verdicts.filter((item) => !item.verdict.passed).map((item) => item.id).sort()).toEqual(["jet-aircraft", "small-car-ramp"]);
   });
 });
 

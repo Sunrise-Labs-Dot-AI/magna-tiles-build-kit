@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { PHYSICS_MODEL_VERSION } from "@/lib/engine/constants";
 import { readFile } from "node:fs/promises";
 import { isDeepStrictEqual } from "node:util";
 import { validateEngineInput } from "@/lib/engine/input";
@@ -32,7 +33,7 @@ import lockedObservations from "../../verification/replication/observations.json
 import evidenceLedger from "../../verification/replication/evidence-ledger.json";
 import candidateFreezes from "../../verification/replication/candidate-freezes.json";
 
-const MODEL = "source-replication-v1";
+const MODEL = `source-replication-v2-${PHYSICS_MODEL_VERSION}`;
 const expectedInventory = {
   jet: {
     ...emptyInventory(),
@@ -355,7 +356,7 @@ export async function evaluateReplica(
     report.stages.push({
       id: stage.id,
       status: result.status,
-      detail: `Released checkpoint: peak ${result.peakDisplacement.toFixed(3)} in; ${result.poppedJoints.length} broken/rejected joints; ${result.settledSteps} consecutive steps at rest (90 required).`,
+      detail: `Released checkpoint: peak ${result.peakDisplacement.toFixed(3)} in; table penetration ${result.peakGroundPenetration.toFixed(3)} in; ${result.poppedJoints.length} broken/rejected joints; ${result.settledSteps} consecutive steps at rest (90 required).`,
       displacement: result.peakDisplacement,
     });
   }
@@ -387,7 +388,7 @@ export async function evaluateReplica(
       report.releases
         .map(
           (r) =>
-            `seed ${r.seed}: ${r.status}, peak ${r.peakDisplacement.toFixed(3)} in, linear ${r.linearSpeed.toFixed(3)} in/s, angular ${r.angularSpeed.toFixed(3)} rad/s, ${r.settledSteps}/90 rest steps`,
+            `seed ${r.seed}: ${r.status}, peak ${r.peakDisplacement.toFixed(3)} in, table ${r.peakGroundPenetration.toFixed(3)} in, linear ${r.linearSpeed.toFixed(3)} in/s, angular ${r.angularSpeed.toFixed(3)} rad/s, ${r.settledSteps}/90 rest steps`,
         )
         .join("; ") +
         ". Settled geometry uses the original fitted camera; it is not re-aligned to hide movement.",

@@ -1,0 +1,17 @@
+**Verdict: BLOCK until tightened.** Direction is sound, and the 0.19.2 pin is correctly identified in `package-lock.json:285`. I did not edit files, run tests, or use network.
+
+1. **Fixture selection must be peak-based, not late/final-based.**  
+The plan says select contact frequency from late flat/loaded-base penetration, but the acceptance goal is peak floor penetration at every collision step. `/tmp/magnatiles-ground-loaded-probe.json` has `worst`, `late`, and `finalPenetration`; the plan must make `worst` the selector or explicitly justify why only the release gate uses peak. Otherwise a transient table pass-through can be tuned away after recovery.
+
+2. **Central timestep refinement is underspecified.**  
+Current global engine dt is set once in [rapier-world.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts:103), support overrides to 960 Hz locally in [support.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/support.ts:40), and seating overrides to 480 Hz in [seating.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/seating.ts:17). The plan needs a shared “advance requested seconds by substeps” helper, or implementation can easily preserve tests while changing duration, rest accounting, or joint break forces. Joint breaks already depend on actual `dt` in [rapier-world.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts:255).
+
+3. **Nominal/roll lanes still need explicit ground evidence.**  
+`simulate` currently returns only `stands`, displacement, and popped joints, and it does not require the sustained rest it counts in its loop: [simulate.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/simulate.ts:62). `rollTest` settles and runs the ball with no tile ground penetration reporting: [simulate.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/simulate.ts:89). The plan says all lanes, including nominal and passive roll/car outcomes, must reject floor penetration, so tests must assert those result fields and failures.
+
+4. **Do not let `lengthUnit` or allowed linear error drift.**  
+Rapier 0.19.2 exposes `contact_natural_frequency`, `lengthUnit`, and `normalizedAllowedLinearError` in [integration_parameters.d.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/node_modules/@dimforge/rapier3d-compat/dynamics/integration_parameters.d.ts:47). The probe shows `linearError: 0.001`. If implementation “fixes units” while tuning frequency, the penetration budget changes. Add an assertion that only contact frequency changes unless deliberately justified.
+
+**Missing tests required before approval:** peak floor penetration fixture with transient recovery; nominal `simulate` requiring 90 settled steps; structural release sweep rest enforcement; kinematic subdivision interpolation reaches midpoint before endpoint; joint-break invariance across coarse/refined steps; roll/car rejects tile table penetration; source small-wedge rerun proves actual assembly state across seeds 0/17/53 without reanchoring; prepared transfer remains blocked until explicit no-teleport state merge clears.
+
+The proposal can become approvable with those conditions, but as written it can still produce a faithful-looking green primitive rather than a faithful verified build.

@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { unsupportedHingeFixture } from "./fixtures/rigid-contact";
 import { buildBounds } from "@/lib/engine/build";
 import { transformLocal } from "@/lib/engine/math";
 import { assemble, v } from "@/lib/replication/geometry";
@@ -6,7 +7,6 @@ import { evaluateAssembly, checkClosure } from "@/lib/replication/assembly";
 import { checkHandAccess, edgeGrips } from "@/lib/replication/grip";
 import { findInsertionPath } from "@/lib/replication/insertion";
 import { simulateSupport } from "@/lib/replication/support";
-import { closedShell } from "./fixtures/closed-shell";
 import { assemblyUFixture } from "./fixtures/assembly";
 
 const fixture = assemblyUFixture;
@@ -27,10 +27,7 @@ describe("assembly with explicit individual-panel hand supports", () => {
     expect(result.peakDisplacement).toBeGreaterThan(0.95);
   });
   it("keeps the held panel fixed while an unsupported hinged panel can fall", async () => {
-    // A vertical hinge can maintain two vertical suspended panels, so use the shell roof
-    // joined along a horizontal hinge; gravity must fold the unsupported wall.
-    const shell = closedShell(1), parts = shell.tiles.filter(t => ["roof", "x-0--1"].includes(t.id));
-    const hanging = assemble("hanging", "Hanging hinge", parts.map(t => ({ ...t, position: { ...t.position, y: t.position.y + 5 } })), "tower");
+    const hanging = unsupportedHingeFixture();
     const result = await simulateSupport(hanging, ["x-0--1"], 0, 0);
     expect(result.status).toBe("fail");
     expect(result.heldTileIds).toEqual(["x-0--1"]);

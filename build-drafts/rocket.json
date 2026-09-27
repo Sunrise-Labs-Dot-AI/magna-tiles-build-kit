@@ -4,7 +4,7 @@
   "prompt": "Rocket",
   "family": "rocket",
   "inventoryPreset": "classic-100",
-  "status": "engine-valid",
+  "status": "engine-fail-pending-reauthoring",
   "createdAt": "2026-06-02T22:27:56.899Z",
   "updatedAt": "2026-06-02T22:27:56.899Z",
   "notes": "Macro-authored upright rocket: four triangular fin outriggers around a square base, a two-segment vertical square-panel body, and a four-triangle pyramid nose cone on a hidden square cap.",

@@ -14,7 +14,7 @@ async function main() {
   await mkdir("public/reference-frames/replication", { recursive: true });
   const summaries = [],
     comparisons = [];
-  const artifacts = ["verification/replication/results.json", "verification/replication/assembly-fixture.json"];
+  const artifacts = ["verification/replication/results.json", "verification/replication/assembly-fixture.json", "verification/replication/rigid-contact-fixture.json"];
   for (const replica of replicas()) {
     const observations = data.observations as Observation[];
     const report = await evaluateReferenceCandidate(

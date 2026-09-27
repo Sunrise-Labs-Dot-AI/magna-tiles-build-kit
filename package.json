@@ -14,8 +14,8 @@
     "benchmark:harness": "node --import tsx scripts/benchmark-harness.ts",
     "test:watch": "vitest",
     "reference:extract": "tsx scripts/reference/extract.ts",
-    "reference:verify": "tsx scripts/reference/assembly-fixtures.ts && tsx scripts/reference/verify.ts",
-    "reference:report": "tsx scripts/reference/assembly-fixtures.ts && tsx scripts/reference/verify.ts --report-only",
+    "reference:verify": "tsx scripts/reference/rigid-contact.ts && tsx scripts/reference/assembly-fixtures.ts && tsx scripts/reference/verify.ts",
+    "reference:report": "tsx scripts/reference/rigid-contact.ts && tsx scripts/reference/assembly-fixtures.ts && tsx scripts/reference/verify.ts --report-only",
     "reference:fixtures": "tsx scripts/reference/fixtures.ts",
     "reference:check-artifacts": "tsx scripts/reference/check-artifacts.ts"
   },

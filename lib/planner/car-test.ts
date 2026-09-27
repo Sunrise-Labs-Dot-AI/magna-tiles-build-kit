@@ -21,6 +21,7 @@ import {
 } from "@/lib/engine/constants";
 import type { BuildGraph } from "@/lib/magnetic-tiles/types";
 import type { CarTrial, CourseLane, DesignBrief } from "./types";
+import { RAW_OVERLAP_TOLERANCE } from "@/lib/engine/overlap";
 
 /** Free dynamics: four unpowered axle-constrained wheels. Waypoints only judge progress. */
 export async function testCars(
@@ -69,14 +70,15 @@ export async function testCars(
     if (
       engine.rejectedReasons.length ||
       engine.poppedJoints.length ||
-      engine.maxDisplacement() > MAX_STANDING_DISPLACEMENT
+      engine.peakDisplacement > MAX_STANDING_DISPLACEMENT || engine.peakGroundPenetration > RAW_OVERLAP_TOLERANCE
     )
       return lanes.map((lane) => ({
         laneId: lane.id,
         passed: false,
         reachedWaypoint: 0,
         reason:
-          "The structure moved or lost a joint before releasing the cars.",
+          "The structure moved, penetrated the table or lost a joint before releasing the cars.",
+        peakGroundPenetration: engine.peakGroundPenetration,
         samples: [],
       }));
     const firstTile = build.tiles[0];
@@ -274,12 +276,12 @@ export async function testCars(
         }
         if (
           engine.poppedJoints.length ||
-          engine.maxDisplacement() > MAX_STANDING_DISPLACEMENT
+          engine.peakDisplacement > MAX_STANDING_DISPLACEMENT || engine.peakGroundPenetration > RAW_OVERLAP_TOLERANCE
         ) {
           car.done = true;
           car.result.passed = false;
           car.result.reason =
-            "The car load displaced the structure or broke a joint.";
+            "The car load displaced the structure, penetrated the table or broke a joint.";
         }
         if (car.done && i % 8 !== 0)
           car.result.samples.push({
@@ -296,17 +298,18 @@ export async function testCars(
       engine.step();
       if (
         engine.poppedJoints.length ||
-        engine.maxDisplacement() > MAX_STANDING_DISPLACEMENT
+        engine.peakDisplacement > MAX_STANDING_DISPLACEMENT || engine.peakGroundPenetration > RAW_OVERLAP_TOLERANCE
       )
         postRunStructurePassed = false;
     }
     for (const car of cars) {
+      car.result.peakGroundPenetration = engine.peakGroundPenetration;
       car.result.contactEvidence!.postRunStructurePassed =
         postRunStructurePassed;
       if (!postRunStructurePassed) {
         car.result.passed = false;
         car.result.reason =
-          "The structure moved or broke a joint during the post-run load check.";
+          "The structure moved, penetrated the table or broke a joint during the post-run load check.";
       }
     }
     return cars.map((c) => c.result);

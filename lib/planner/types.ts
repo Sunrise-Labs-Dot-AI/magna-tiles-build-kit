@@ -35,6 +35,8 @@ export interface CarSample {
   position: Vec3;
 }
 export interface CarTrial {
+  /** Absent when rejected before creating a physics world. */
+  peakGroundPenetration?: number;
   laneId: string;
   passed: boolean;
   reachedWaypoint: number;
