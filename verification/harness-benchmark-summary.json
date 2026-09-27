@@ -2,16 +2,16 @@
   "date": "2026-09-27",
   "model": "intent-harness-v3-rigid-contact-v7-solid-sweep-960-js0.19.2-rust0.30.1-parry0.25.1-sat-cache3-f32-abi1-5e4c38a5ada93780-profile10e2e81b05c3c518",
   "command": "npm run benchmark:harness",
-  "artifactSha256": "ed4645dae49ba3a76cd91753ed2094cb8714d8253c021489ef5c33f9e2defeed",
+  "artifactSha256": "eaa8810d1f64d93a7e121e9f1143cc841cb2238c29ac353954bbea48c2e6704a",
   "constructive": {
-    "correct": 19,
+    "correct": 20,
     "total": 20
   },
   "requiredRejections": {
     "correct": 5,
     "total": 5
   },
-  "note": "Recomputed with the finite-polyhedron contact correction and continuous solid-sweep guard. Five-step staircase exceeds the unchanged 240000 ms computation budget before a complete candidate evaluation. No partial trial is accepted. This benchmark does not certify source replication, complete hand assembly or measured magnetic forces.",
+  "note": "Recomputed with the finite-polyhedron contact correction and optimized continuous solid-sweep guard under the unchanged 240000 ms per-brief computation budget. All complete evaluations pass. Five-step staircase solves in 153688 ms. This benchmark certifies its explicit structural intent and simulation checks, not source replication, complete hand assembly or measured magnetic forces.",
   "entries": [
     {
       "prompt": "a tower at least 6 inches tall",
@@ -21,7 +21,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 10,
-      "milliseconds": 15564,
+      "milliseconds": 13959,
       "fingerprint": "d690a0d4a44bbd7dd3d51b0a583de6318f958ab1f6a6b6eff7cdc874e288fbe0",
       "failures": [],
       "program": {
@@ -41,7 +41,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 14,
-      "milliseconds": 23872,
+      "milliseconds": 20704,
       "fingerprint": "b118741c03f3a0f9a3ed6ff32e250c1e0736b9f928b68678fcc334b72506766f",
       "failures": [],
       "program": {
@@ -61,7 +61,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 18,
-      "milliseconds": 32105,
+      "milliseconds": 27522,
       "fingerprint": "bf5edd57eef4315c0274ee264e19e9bad081c43348a3d7c691624aa4d83a96be",
       "failures": [],
       "program": {
@@ -81,7 +81,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 22,
-      "milliseconds": 41433,
+      "milliseconds": 37077,
       "fingerprint": "2733afc473a45472b597b6dbfbe158400171a93db7266c4e6534cff3ef321909",
       "failures": [],
       "program": {
@@ -101,7 +101,7 @@
       "passed": true,
       "attempts": 2,
       "pieces": 28,
-      "milliseconds": 72656,
+      "milliseconds": 61291,
       "fingerprint": "3b691556af2e11ef3444bd5baaa34102a70cfbdfac4608da09c527177b9d56c8",
       "failures": [],
       "program": {
@@ -121,7 +121,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 5,
-      "milliseconds": 4674,
+      "milliseconds": 4438,
       "fingerprint": "98fe0782c4fb0d1255fe541c2b4316c7967607e0c7b4097403687b9415f4d097",
       "failures": [],
       "program": {
@@ -141,7 +141,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 8,
-      "milliseconds": 8916,
+      "milliseconds": 8141,
       "fingerprint": "d6612b17a553ccddf1a033b7d737916cf94f732b0c9168481fffc49ebac9299e",
       "failures": [],
       "program": {
@@ -161,7 +161,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 11,
-      "milliseconds": 14074,
+      "milliseconds": 11665,
       "fingerprint": "a4157e267ff281d02b0ba57e210d07b906f92ec7aabf0d56ce0bd6dff121c59f",
       "failures": [],
       "program": {
@@ -181,7 +181,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 12,
-      "milliseconds": 15552,
+      "milliseconds": 13336,
       "fingerprint": "fb9e57065ee2ed61f289c6a9e14badf9aecbfe1c36fd16d02ece0b57069fc45d",
       "failures": [],
       "program": {
@@ -201,7 +201,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 16,
-      "milliseconds": 22587,
+      "milliseconds": 20560,
       "fingerprint": "8f556d555e94f64dab7f76991d60df8551bc39bc7719869fe7aaf5245e9175ab",
       "failures": [],
       "program": {
@@ -221,7 +221,7 @@
       "passed": true,
       "attempts": 2,
       "pieces": 6,
-      "milliseconds": 6001,
+      "milliseconds": 5535,
       "fingerprint": "f73acf13eb243e79a5a5836c476bbae00a2f5199208679a106f8dfc4b9e2e458",
       "failures": [],
       "program": {
@@ -241,7 +241,7 @@
       "passed": true,
       "attempts": 2,
       "pieces": 6,
-      "milliseconds": 4809,
+      "milliseconds": 4532,
       "fingerprint": "03e017af52a63a5392cf25dc8225379099c9dcdb93a1a2aead65b0ff08a3117a",
       "failures": [],
       "program": {
@@ -261,7 +261,7 @@
       "passed": true,
       "attempts": 2,
       "pieces": 12,
-      "milliseconds": 16349,
+      "milliseconds": 13962,
       "fingerprint": "3dd511dd4f6bf23143dc5b38c2d2831b110de2c9bf66ab4890fa64569f0c6a1c",
       "failures": [],
       "program": {
@@ -281,7 +281,7 @@
       "passed": true,
       "attempts": 2,
       "pieces": 12,
-      "milliseconds": 16638,
+      "milliseconds": 14750,
       "fingerprint": "dc20c308155c3c9b420be76ecd112c4740fb7eaecd9bf6f16be578e153ff5f00",
       "failures": [],
       "program": {
@@ -301,7 +301,7 @@
       "passed": true,
       "attempts": 2,
       "pieces": 6,
-      "milliseconds": 4872,
+      "milliseconds": 4506,
       "fingerprint": "a4c666bce80e4c34f4c8412c6ab498949fda73c6ed677d22b82c058c3a014213",
       "failures": [],
       "program": {
@@ -321,7 +321,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 16,
-      "milliseconds": 27421,
+      "milliseconds": 23667,
       "fingerprint": "aabd8ec62ae10da6d8b86fe8b9d1233ea965067ee29deefbd084b5800667853f",
       "failures": [],
       "program": {
@@ -341,7 +341,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 30,
-      "milliseconds": 67194,
+      "milliseconds": 56711,
       "fingerprint": "583c681d4887e2b907e27e8cea89b810571ae6d2b3177563dace63873989fa11",
       "failures": [],
       "program": {
@@ -361,7 +361,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 48,
-      "milliseconds": 144242,
+      "milliseconds": 102803,
       "fingerprint": "90071305d94e5263974bd838edd39f74675fbfad477389362c7353c37e587510",
       "failures": [],
       "program": {
@@ -377,12 +377,21 @@
       "prompt": "a staircase with 5 steps",
       "unlimitedPieces": true,
       "expected": "solved",
-      "status": "budget-exhausted",
-      "passed": false,
-      "attempts": 0,
-      "pieces": 0,
-      "milliseconds": 240562,
-      "failures": []
+      "status": "solved",
+      "passed": true,
+      "attempts": 1,
+      "pieces": 70,
+      "milliseconds": 153688,
+      "fingerprint": "89251563b741e3af9e6161def96fd4906bb59b47bf12212856459a285e6e6f95",
+      "failures": [],
+      "program": {
+        "kind": "staircase",
+        "width": 1,
+        "height": 1,
+        "depth": 1,
+        "steps": 5,
+        "reinforcement": "shell"
+      }
     },
     {
       "prompt": "a staircase with 3 steps and 2 tiles deep",
@@ -392,7 +401,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 48,
-      "milliseconds": 127324,
+      "milliseconds": 89894,
       "fingerprint": "e72cbc8077fdf33637079c342617d7af091fd636a1b99b1fb8c941859c2ac5ea",
       "failures": [],
       "program": {
@@ -412,7 +421,7 @@
       "passed": true,
       "attempts": 0,
       "pieces": 0,
-      "milliseconds": 0,
+      "milliseconds": 1,
       "failures": []
     },
     {
@@ -423,7 +432,7 @@
       "passed": true,
       "attempts": 0,
       "pieces": 0,
-      "milliseconds": 0,
+      "milliseconds": 1,
       "failures": []
     },
     {

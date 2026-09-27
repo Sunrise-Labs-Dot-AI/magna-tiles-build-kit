@@ -10,7 +10,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 10,
-      "milliseconds": 15564,
+      "milliseconds": 13959,
       "fingerprint": "d690a0d4a44bbd7dd3d51b0a583de6318f958ab1f6a6b6eff7cdc874e288fbe0",
       "failures": [],
       "program": {
@@ -866,7 +866,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 14,
-      "milliseconds": 23872,
+      "milliseconds": 20704,
       "fingerprint": "b118741c03f3a0f9a3ed6ff32e250c1e0736b9f928b68678fcc334b72506766f",
       "failures": [],
       "program": {
@@ -1962,7 +1962,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 18,
-      "milliseconds": 32105,
+      "milliseconds": 27522,
       "fingerprint": "bf5edd57eef4315c0274ee264e19e9bad081c43348a3d7c691624aa4d83a96be",
       "failures": [],
       "program": {
@@ -3298,7 +3298,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 22,
-      "milliseconds": 41433,
+      "milliseconds": 37077,
       "fingerprint": "2733afc473a45472b597b6dbfbe158400171a93db7266c4e6534cff3ef321909",
       "failures": [],
       "program": {
@@ -4874,7 +4874,7 @@
       "passed": true,
       "attempts": 2,
       "pieces": 28,
-      "milliseconds": 72656,
+      "milliseconds": 61291,
       "fingerprint": "3b691556af2e11ef3444bd5baaa34102a70cfbdfac4608da09c527177b9d56c8",
       "failures": [],
       "program": {
@@ -6971,7 +6971,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 5,
-      "milliseconds": 4674,
+      "milliseconds": 4438,
       "fingerprint": "98fe0782c4fb0d1255fe541c2b4316c7967607e0c7b4097403687b9415f4d097",
       "failures": [],
       "program": {
@@ -7485,7 +7485,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 8,
-      "milliseconds": 8916,
+      "milliseconds": 8141,
       "fingerprint": "d6612b17a553ccddf1a033b7d737916cf94f732b0c9168481fffc49ebac9299e",
       "failures": [],
       "program": {
@@ -8166,7 +8166,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 11,
-      "milliseconds": 14074,
+      "milliseconds": 11665,
       "fingerprint": "a4157e267ff281d02b0ba57e210d07b906f92ec7aabf0d56ce0bd6dff121c59f",
       "failures": [],
       "program": {
@@ -9005,7 +9005,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 12,
-      "milliseconds": 15552,
+      "milliseconds": 13336,
       "fingerprint": "fb9e57065ee2ed61f289c6a9e14badf9aecbfe1c36fd16d02ece0b57069fc45d",
       "failures": [],
       "program": {
@@ -9907,7 +9907,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 16,
-      "milliseconds": 22587,
+      "milliseconds": 20560,
       "fingerprint": "8f556d555e94f64dab7f76991d60df8551bc39bc7719869fe7aaf5245e9175ab",
       "failures": [],
       "program": {
@@ -11022,7 +11022,7 @@
       "passed": true,
       "attempts": 2,
       "pieces": 6,
-      "milliseconds": 6001,
+      "milliseconds": 5535,
       "fingerprint": "f73acf13eb243e79a5a5836c476bbae00a2f5199208679a106f8dfc4b9e2e458",
       "failures": [],
       "program": {
@@ -11595,7 +11595,7 @@
       "passed": true,
       "attempts": 2,
       "pieces": 6,
-      "milliseconds": 4809,
+      "milliseconds": 4532,
       "fingerprint": "03e017af52a63a5392cf25dc8225379099c9dcdb93a1a2aead65b0ff08a3117a",
       "failures": [],
       "program": {
@@ -12177,7 +12177,7 @@
       "passed": true,
       "attempts": 2,
       "pieces": 12,
-      "milliseconds": 16349,
+      "milliseconds": 13962,
       "fingerprint": "3dd511dd4f6bf23143dc5b38c2d2831b110de2c9bf66ab4890fa64569f0c6a1c",
       "failures": [],
       "program": {
@@ -13109,7 +13109,7 @@
       "passed": true,
       "attempts": 2,
       "pieces": 12,
-      "milliseconds": 16638,
+      "milliseconds": 14750,
       "fingerprint": "dc20c308155c3c9b420be76ecd112c4740fb7eaecd9bf6f16be578e153ff5f00",
       "failures": [],
       "program": {
@@ -14055,7 +14055,7 @@
       "passed": true,
       "attempts": 2,
       "pieces": 6,
-      "milliseconds": 4872,
+      "milliseconds": 4506,
       "fingerprint": "a4c666bce80e4c34f4c8412c6ab498949fda73c6ed677d22b82c058c3a014213",
       "failures": [],
       "program": {
@@ -14645,7 +14645,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 16,
-      "milliseconds": 27421,
+      "milliseconds": 23667,
       "fingerprint": "aabd8ec62ae10da6d8b86fe8b9d1233ea965067ee29deefbd084b5800667853f",
       "failures": [],
       "program": {
@@ -15834,7 +15834,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 30,
-      "milliseconds": 67194,
+      "milliseconds": 56711,
       "fingerprint": "583c681d4887e2b907e27e8cea89b810571ae6d2b3177563dace63873989fa11",
       "failures": [],
       "program": {
@@ -17967,7 +17967,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 48,
-      "milliseconds": 144242,
+      "milliseconds": 102803,
       "fingerprint": "90071305d94e5263974bd838edd39f74675fbfad477389362c7353c37e587510",
       "failures": [],
       "program": {
@@ -21323,14 +21323,311 @@
       "prompt": "a staircase with 5 steps",
       "unlimitedPieces": true,
       "expected": "solved",
-      "status": "budget-exhausted",
-      "passed": false,
-      "attempts": 0,
-      "pieces": 0,
-      "milliseconds": 240562,
+      "status": "solved",
+      "passed": true,
+      "attempts": 1,
+      "pieces": 70,
+      "milliseconds": 153688,
+      "fingerprint": "89251563b741e3af9e6161def96fd4906bb59b47bf12212856459a285e6e6f95",
       "failures": [],
-      "evaluation": null,
-      "instructions": [],
+      "program": {
+        "kind": "staircase",
+        "width": 1,
+        "height": 1,
+        "depth": 1,
+        "steps": 5,
+        "reinforcement": "shell"
+      },
+      "evaluation": {
+        "passed": true,
+        "evidence": [
+          {
+            "id": "input",
+            "label": "Valid catalog geometry",
+            "passed": true,
+            "expected": "Finite rigid tiles, unique IDs and valid references",
+            "actual": "valid"
+          },
+          {
+            "id": "resolved-intent",
+            "label": "Complete intent contract",
+            "passed": true,
+            "expected": "No unresolved clauses",
+            "actual": "resolved",
+            "repair": "intent"
+          },
+          {
+            "id": "stair-treads",
+            "label": "Ascending usable treads",
+            "passed": true,
+            "expected": "5 distinct ascending 3-inch risers",
+            "actual": "5 levels: 3.1, 6.1, 9.1, 12.1, 15.1 in"
+          },
+          {
+            "id": "inventory",
+            "label": "Piece and inventory budget",
+            "passed": true,
+            "expected": "Unlimited pieces",
+            "actual": "70 pieces; inventory limits disabled",
+            "repair": "budget"
+          },
+          {
+            "id": "structure",
+            "label": "Geometry, joins and nominal structure",
+            "passed": true,
+            "expected": "No intersections or unsupported joints; stands under gravity",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 246 valid magnetic joint(s)\nadvisory validateBuild status: error\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.009 in; 886 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "repair": "reinforce"
+          },
+          {
+            "id": "release-sweep",
+            "label": "Release robustness",
+            "passed": true,
+            "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
+            "actual": "seed 0: 0.280 in; table 0.009 in; 887 rest steps; settled intent passed; seed 17: 0.280 in; table 0.009 in; 886 rest steps; settled intent passed; seed 53: 0.280 in; table 0.009 in; 886 rest steps; settled intent passed",
+            "repair": "reinforce"
+          },
+          {
+            "id": "assembly",
+            "label": "Stable completed assembly stages",
+            "passed": true,
+            "expected": "Every completed geometry-derived stage stands; hand access and within-stage stability are not modeled",
+            "actual": "step 1: 26 pieces, stands; step 2: 17 pieces, stands; step 3: 13 pieces, stands; step 4: 9 pieces, stands; step 5: 5 pieces, stands",
+            "repair": "sequence"
+          }
+        ],
+        "trials": [
+          {
+            "seed": 0,
+            "passed": true,
+            "peakDisplacement": 0.28000020980919155,
+            "finalDisplacement": 0.004245111124537253,
+            "peakGroundPenetration": 0.008984348096612527,
+            "settledSteps": 887,
+            "failedRequirements": [],
+            "intentEvidence": [
+              {
+                "id": "stair-treads",
+                "label": "Ascending usable treads",
+                "passed": true,
+                "expected": "5 distinct ascending 3-inch risers",
+                "actual": "5 levels: 3.1, 6.1, 9.1, 12.1, 15.1 in"
+              }
+            ]
+          },
+          {
+            "seed": 17,
+            "passed": true,
+            "peakDisplacement": 0.28000020980919155,
+            "finalDisplacement": 0.004221378151851181,
+            "peakGroundPenetration": 0.008984725717111619,
+            "settledSteps": 886,
+            "failedRequirements": [],
+            "intentEvidence": [
+              {
+                "id": "stair-treads",
+                "label": "Ascending usable treads",
+                "passed": true,
+                "expected": "5 distinct ascending 3-inch risers",
+                "actual": "5 levels: 3.1, 6.1, 9.1, 12.1, 15.1 in"
+              }
+            ]
+          },
+          {
+            "seed": 53,
+            "passed": true,
+            "peakDisplacement": 0.28000020980919155,
+            "finalDisplacement": 0.004169204932130309,
+            "peakGroundPenetration": 0.009005029664680197,
+            "settledSteps": 886,
+            "failedRequirements": [],
+            "intentEvidence": [
+              {
+                "id": "stair-treads",
+                "label": "Ascending usable treads",
+                "passed": true,
+                "expected": "5 distinct ascending 3-inch risers",
+                "actual": "5 levels: 3.1, 6.1, 9.1, 12.1, 15.1 in"
+              }
+            ]
+          }
+        ],
+        "stages": [
+          {
+            "step": 1,
+            "tileCount": 26,
+            "passed": true
+          },
+          {
+            "step": 2,
+            "tileCount": 17,
+            "passed": true
+          },
+          {
+            "step": 3,
+            "tileCount": 13,
+            "passed": true
+          },
+          {
+            "step": 4,
+            "tileCount": 9,
+            "passed": true
+          },
+          {
+            "step": 5,
+            "tileCount": 5,
+            "passed": true
+          }
+        ],
+        "fingerprint": "89251563b741e3af9e6161def96fd4906bb59b47bf12212856459a285e6e6f95"
+      },
+      "instructions": [
+        {
+          "step": 1,
+          "title": "Start with the base",
+          "instruction": "Hold the pieces in the highlighted orientation while connecting this group. Release them only after the whole step is assembled. Pieces: P1 (small square), P2 (small square), P3 (small square), P4 (small square), P5 (small square), P6 (small square), P7 (small square), P8 (small square), P11 (small square), P12 (small square), P15 (small square), P17 (small square), P18 (small square), P23 (small square), P24 (small square), P29 (small square), P31 (small square), P32 (small square), P39 (small square), P40 (small square), P47 (small square), P49 (small square), P50 (small square), P59 (small square), P60 (small square), P69 (small square). Joins: P2 edge 4 ↔ P3 edge 2; P1 edge 4 ↔ P3 edge 4; P2 edge 2 ↔ P4 edge 2; P1 edge 2 ↔ P4 edge 4; P4 edge 1 ↔ P5 edge 2; P3 edge 1 ↔ P5 edge 4; P2 edge 1 ↔ P5 edge 3; P1 edge 1 ↔ P5 edge 1; P4 edge 3 ↔ P6 edge 2; P3 edge 3 ↔ P6 edge 4; P2 edge 3 ↔ P6 edge 3; P1 edge 3 ↔ P6 edge 1; P4 edge 4 ↔ P7 edge 4; P1 edge 2 ↔ P7 edge 4; P4 edge 2 ↔ P8 edge 4; P2 edge 2 ↔ P8 edge 4; P8 edge 4 ↔ P11 edge 2; P7 edge 4 ↔ P11 edge 4; P6 edge 2 ↔ P11 edge 3; P5 edge 2 ↔ P11 edge 1; P4 edge 1 ↔ P11 edge 1; P2 edge 2 ↔ P11 edge 2; P1 edge 2 ↔ P11 edge 4; P8 edge 2 ↔ P12 edge 2; P7 edge 2 ↔ P12 edge 4; P12 edge 1 ↔ P15 edge 2; P11 edge 1 ↔ P15 edge 4; P8 edge 1 ↔ P15 edge 3; P7 edge 1 ↔ P15 edge 1; P5 edge 2 ↔ P15 edge 4; P4 edge 1 ↔ P15 edge 4; P12 edge 4 ↔ P17 edge 4; P7 edge 2 ↔ P17 edge 4; P12 edge 2 ↔ P18 edge 4; P8 edge 2 ↔ P18 edge 4; P18 edge 4 ↔ P23 edge 2; P17 edge 4 ↔ P23 edge 4; P15 edge 2 ↔ P23 edge 1; P12 edge 1 ↔ P23 edge 1; P8 edge 2 ↔ P23 edge 2; P7 edge 2 ↔ P23 edge 4; P18 edge 2 ↔ P24 edge 2; P17 edge 2 ↔ P24 edge 4; P24 edge 1 ↔ P29 edge 2; P23 edge 1 ↔ P29 edge 4; P18 edge 1 ↔ P29 edge 3; P17 edge 1 ↔ P29 edge 1; P15 edge 2 ↔ P29 edge 4; P12 edge 1 ↔ P29 edge 4; P24 edge 4 ↔ P31 edge 4; P17 edge 2 ↔ P31 edge 4; P24 edge 2 ↔ P32 edge 4; P18 edge 2 ↔ P32 edge 4; P32 edge 4 ↔ P39 edge 2; P31 edge 4 ↔ P39 edge 4; P29 edge 2 ↔ P39 edge 1; P24 edge 1 ↔ P39 edge 1; P18 edge 2 ↔ P39 edge 2; P17 edge 2 ↔ P39 edge 4; P32 edge 2 ↔ P40 edge 2; P31 edge 2 ↔ P40 edge 4; P40 edge 1 ↔ P47 edge 2; P39 edge 1 ↔ P47 edge 4; P32 edge 1 ↔ P47 edge 3; P31 edge 1 ↔ P47 edge 1; P29 edge 2 ↔ P47 edge 4; P24 edge 1 ↔ P47 edge 4; P40 edge 4 ↔ P49 edge 4; P31 edge 2 ↔ P49 edge 4; P40 edge 2 ↔ P50 edge 4; P32 edge 2 ↔ P50 edge 4; P50 edge 4 ↔ P59 edge 2; P49 edge 4 ↔ P59 edge 4; P47 edge 2 ↔ P59 edge 1; P40 edge 1 ↔ P59 edge 1; P32 edge 2 ↔ P59 edge 2; P31 edge 2 ↔ P59 edge 4; P50 edge 2 ↔ P60 edge 2; P49 edge 2 ↔ P60 edge 4; P60 edge 1 ↔ P69 edge 2; P59 edge 1 ↔ P69 edge 4; P50 edge 1 ↔ P69 edge 3; P49 edge 1 ↔ P69 edge 1; P47 edge 2 ↔ P69 edge 4; P40 edge 1 ↔ P69 edge 4",
+          "tileIds": [
+            "riser-1-front-1-1",
+            "riser-1-back-1-1",
+            "riser-1-left-1-1",
+            "riser-1-right-1-1",
+            "riser-1-bottom-1-1",
+            "riser-1-top-1-1",
+            "riser-2-front-1-1",
+            "riser-2-back-1-1",
+            "riser-2-left-1-1",
+            "riser-2-right-1-1",
+            "riser-2-bottom-1-1",
+            "riser-3-front-1-1",
+            "riser-3-back-1-1",
+            "riser-3-left-1-1",
+            "riser-3-right-1-1",
+            "riser-3-bottom-1-1",
+            "riser-4-front-1-1",
+            "riser-4-back-1-1",
+            "riser-4-left-1-1",
+            "riser-4-right-1-1",
+            "riser-4-bottom-1-1",
+            "riser-5-front-1-1",
+            "riser-5-back-1-1",
+            "riser-5-left-1-1",
+            "riser-5-right-1-1",
+            "riser-5-bottom-1-1"
+          ],
+          "tileCounts": {
+            "small-square": 26,
+            "large-square": 0,
+            "xl-square": 0,
+            "equilateral-triangle": 0,
+            "right-triangle": 0,
+            "isosceles-triangle": 0
+          }
+        },
+        {
+          "step": 2,
+          "title": "Build the next layer",
+          "instruction": "Hold the pieces in the highlighted orientation while connecting this group. Release them only after the whole step is assembled. Pieces: P9 (small square), P10 (small square), P13 (small square), P14 (small square), P16 (small square), P19 (small square), P20 (small square), P25 (small square), P26 (small square), P33 (small square), P34 (small square), P41 (small square), P42 (small square), P51 (small square), P52 (small square), P61 (small square), P62 (small square). Joins: P7 edge 3 ↔ P9 edge 1; P8 edge 3 ↔ P10 edge 1; P11 edge 3 ↔ P13 edge 1; P10 edge 4 ↔ P13 edge 2; P9 edge 4 ↔ P13 edge 4; P6 edge 2 ↔ P13 edge 1; P4 edge 3 ↔ P13 edge 1; P12 edge 3 ↔ P14 edge 1; P10 edge 2 ↔ P14 edge 2; P9 edge 2 ↔ P14 edge 4; P14 edge 3 ↔ P16 edge 2; P13 edge 3 ↔ P16 edge 4; P10 edge 3 ↔ P16 edge 3; P9 edge 3 ↔ P16 edge 1; P17 edge 3 ↔ P19 edge 1; P14 edge 4 ↔ P19 edge 4; P9 edge 2 ↔ P19 edge 4; P18 edge 3 ↔ P20 edge 1; P14 edge 2 ↔ P20 edge 4; P10 edge 2 ↔ P20 edge 4; P14 edge 1 ↔ P23 edge 3; P23 edge 3 ↔ P25 edge 1; P20 edge 4 ↔ P25 edge 2; P19 edge 4 ↔ P25 edge 4; P16 edge 2 ↔ P25 edge 3; P14 edge 1 ↔ P25 edge 1; P12 edge 3 ↔ P25 edge 1; P10 edge 2 ↔ P25 edge 2; P9 edge 2 ↔ P25 edge 4; P24 edge 3 ↔ P26 edge 1; P20 edge 2 ↔ P26 edge 2; P19 edge 2 ↔ P26 edge 4; P31 edge 3 ↔ P33 edge 1; P26 edge 4 ↔ P33 edge 4; P19 edge 2 ↔ P33 edge 4; P32 edge 3 ↔ P34 edge 1; P26 edge 2 ↔ P34 edge 4; P20 edge 2 ↔ P34 edge 4; P26 edge 1 ↔ P39 edge 3; P39 edge 3 ↔ P41 edge 1; P34 edge 4 ↔ P41 edge 2; P33 edge 4 ↔ P41 edge 4; P26 edge 1 ↔ P41 edge 1; P24 edge 3 ↔ P41 edge 1; P20 edge 2 ↔ P41 edge 2; P19 edge 2 ↔ P41 edge 4; P40 edge 3 ↔ P42 edge 1; P34 edge 2 ↔ P42 edge 2; P33 edge 2 ↔ P42 edge 4; P49 edge 3 ↔ P51 edge 1; P42 edge 4 ↔ P51 edge 4; P33 edge 2 ↔ P51 edge 4; P50 edge 3 ↔ P52 edge 1; P42 edge 2 ↔ P52 edge 4; P34 edge 2 ↔ P52 edge 4; P42 edge 1 ↔ P59 edge 3; P59 edge 3 ↔ P61 edge 1; P52 edge 4 ↔ P61 edge 2; P51 edge 4 ↔ P61 edge 4; P42 edge 1 ↔ P61 edge 1; P40 edge 3 ↔ P61 edge 1; P34 edge 2 ↔ P61 edge 2; P33 edge 2 ↔ P61 edge 4; P60 edge 3 ↔ P62 edge 1; P52 edge 2 ↔ P62 edge 2; P51 edge 2 ↔ P62 edge 4",
+          "tileIds": [
+            "riser-2-front-1-2",
+            "riser-2-back-1-2",
+            "riser-2-left-1-2",
+            "riser-2-right-1-2",
+            "riser-2-top-1-1",
+            "riser-3-front-1-2",
+            "riser-3-back-1-2",
+            "riser-3-left-1-2",
+            "riser-3-right-1-2",
+            "riser-4-front-1-2",
+            "riser-4-back-1-2",
+            "riser-4-left-1-2",
+            "riser-4-right-1-2",
+            "riser-5-front-1-2",
+            "riser-5-back-1-2",
+            "riser-5-left-1-2",
+            "riser-5-right-1-2"
+          ],
+          "tileCounts": {
+            "small-square": 17,
+            "large-square": 0,
+            "xl-square": 0,
+            "equilateral-triangle": 0,
+            "right-triangle": 0,
+            "isosceles-triangle": 0
+          }
+        },
+        {
+          "step": 3,
+          "title": "Build the next layer",
+          "instruction": "Hold the pieces in the highlighted orientation while connecting this group. Release them only after the whole step is assembled. Pieces: P21 (small square), P22 (small square), P27 (small square), P28 (small square), P30 (small square), P35 (small square), P36 (small square), P43 (small square), P44 (small square), P53 (small square), P54 (small square), P63 (small square), P64 (small square). Joins: P19 edge 3 ↔ P21 edge 1; P20 edge 3 ↔ P22 edge 1; P25 edge 3 ↔ P27 edge 1; P22 edge 4 ↔ P27 edge 2; P21 edge 4 ↔ P27 edge 4; P16 edge 2 ↔ P27 edge 1; P14 edge 3 ↔ P27 edge 1; P26 edge 3 ↔ P28 edge 1; P22 edge 2 ↔ P28 edge 2; P21 edge 2 ↔ P28 edge 4; P28 edge 3 ↔ P30 edge 2; P27 edge 3 ↔ P30 edge 4; P22 edge 3 ↔ P30 edge 3; P21 edge 3 ↔ P30 edge 1; P33 edge 3 ↔ P35 edge 1; P28 edge 4 ↔ P35 edge 4; P21 edge 2 ↔ P35 edge 4; P34 edge 3 ↔ P36 edge 1; P28 edge 2 ↔ P36 edge 4; P22 edge 2 ↔ P36 edge 4; P28 edge 1 ↔ P41 edge 3; P41 edge 3 ↔ P43 edge 1; P36 edge 4 ↔ P43 edge 2; P35 edge 4 ↔ P43 edge 4; P30 edge 2 ↔ P43 edge 3; P28 edge 1 ↔ P43 edge 1; P26 edge 3 ↔ P43 edge 1; P22 edge 2 ↔ P43 edge 2; P21 edge 2 ↔ P43 edge 4; P42 edge 3 ↔ P44 edge 1; P36 edge 2 ↔ P44 edge 2; P35 edge 2 ↔ P44 edge 4; P51 edge 3 ↔ P53 edge 1; P44 edge 4 ↔ P53 edge 4; P35 edge 2 ↔ P53 edge 4; P52 edge 3 ↔ P54 edge 1; P44 edge 2 ↔ P54 edge 4; P36 edge 2 ↔ P54 edge 4; P44 edge 1 ↔ P61 edge 3; P61 edge 3 ↔ P63 edge 1; P54 edge 4 ↔ P63 edge 2; P53 edge 4 ↔ P63 edge 4; P44 edge 1 ↔ P63 edge 1; P42 edge 3 ↔ P63 edge 1; P36 edge 2 ↔ P63 edge 2; P35 edge 2 ↔ P63 edge 4; P62 edge 3 ↔ P64 edge 1; P54 edge 2 ↔ P64 edge 2; P53 edge 2 ↔ P64 edge 4",
+          "tileIds": [
+            "riser-3-front-1-3",
+            "riser-3-back-1-3",
+            "riser-3-left-1-3",
+            "riser-3-right-1-3",
+            "riser-3-top-1-1",
+            "riser-4-front-1-3",
+            "riser-4-back-1-3",
+            "riser-4-left-1-3",
+            "riser-4-right-1-3",
+            "riser-5-front-1-3",
+            "riser-5-back-1-3",
+            "riser-5-left-1-3",
+            "riser-5-right-1-3"
+          ],
+          "tileCounts": {
+            "small-square": 13,
+            "large-square": 0,
+            "xl-square": 0,
+            "equilateral-triangle": 0,
+            "right-triangle": 0,
+            "isosceles-triangle": 0
+          }
+        },
+        {
+          "step": 4,
+          "title": "Build the next layer",
+          "instruction": "Hold the pieces in the highlighted orientation while connecting this group. Release them only after the whole step is assembled. Pieces: P37 (small square), P38 (small square), P45 (small square), P46 (small square), P48 (small square), P55 (small square), P56 (small square), P65 (small square), P66 (small square). Joins: P35 edge 3 ↔ P37 edge 1; P36 edge 3 ↔ P38 edge 1; P43 edge 3 ↔ P45 edge 1; P38 edge 4 ↔ P45 edge 2; P37 edge 4 ↔ P45 edge 4; P30 edge 2 ↔ P45 edge 1; P28 edge 3 ↔ P45 edge 1; P44 edge 3 ↔ P46 edge 1; P38 edge 2 ↔ P46 edge 2; P37 edge 2 ↔ P46 edge 4; P46 edge 3 ↔ P48 edge 2; P45 edge 3 ↔ P48 edge 4; P38 edge 3 ↔ P48 edge 3; P37 edge 3 ↔ P48 edge 1; P53 edge 3 ↔ P55 edge 1; P46 edge 4 ↔ P55 edge 4; P37 edge 2 ↔ P55 edge 4; P54 edge 3 ↔ P56 edge 1; P46 edge 2 ↔ P56 edge 4; P38 edge 2 ↔ P56 edge 4; P46 edge 1 ↔ P63 edge 3; P63 edge 3 ↔ P65 edge 1; P56 edge 4 ↔ P65 edge 2; P55 edge 4 ↔ P65 edge 4; P48 edge 2 ↔ P65 edge 3; P46 edge 1 ↔ P65 edge 1; P44 edge 3 ↔ P65 edge 1; P38 edge 2 ↔ P65 edge 2; P37 edge 2 ↔ P65 edge 4; P64 edge 3 ↔ P66 edge 1; P56 edge 2 ↔ P66 edge 2; P55 edge 2 ↔ P66 edge 4",
+          "tileIds": [
+            "riser-4-front-1-4",
+            "riser-4-back-1-4",
+            "riser-4-left-1-4",
+            "riser-4-right-1-4",
+            "riser-4-top-1-1",
+            "riser-5-front-1-4",
+            "riser-5-back-1-4",
+            "riser-5-left-1-4",
+            "riser-5-right-1-4"
+          ],
+          "tileCounts": {
+            "small-square": 9,
+            "large-square": 0,
+            "xl-square": 0,
+            "equilateral-triangle": 0,
+            "right-triangle": 0,
+            "isosceles-triangle": 0
+          }
+        },
+        {
+          "step": 5,
+          "title": "Build the next layer",
+          "instruction": "Hold the pieces in the highlighted orientation while connecting this group. Release them only after the whole step is assembled. Pieces: P57 (small square), P58 (small square), P67 (small square), P68 (small square), P70 (small square). Joins: P55 edge 3 ↔ P57 edge 1; P56 edge 3 ↔ P58 edge 1; P65 edge 3 ↔ P67 edge 1; P58 edge 4 ↔ P67 edge 2; P57 edge 4 ↔ P67 edge 4; P48 edge 2 ↔ P67 edge 1; P46 edge 3 ↔ P67 edge 1; P66 edge 3 ↔ P68 edge 1; P58 edge 2 ↔ P68 edge 2; P57 edge 2 ↔ P68 edge 4; P68 edge 3 ↔ P70 edge 2; P67 edge 3 ↔ P70 edge 4; P58 edge 3 ↔ P70 edge 3; P57 edge 3 ↔ P70 edge 1",
+          "tileIds": [
+            "riser-5-front-1-5",
+            "riser-5-back-1-5",
+            "riser-5-left-1-5",
+            "riser-5-right-1-5",
+            "riser-5-top-1-1"
+          ],
+          "tileCounts": {
+            "small-square": 5,
+            "large-square": 0,
+            "xl-square": 0,
+            "equilateral-triangle": 0,
+            "right-triangle": 0,
+            "isosceles-triangle": 0
+          }
+        }
+      ],
       "contract": {
         "version": 1,
         "prompt": "a staircase with 5 steps",
@@ -21359,7 +21656,4538 @@
           "Unlimited pieces: set inventory and prompt piece-count caps are disabled."
         ]
       },
-      "build": null
+      "build": {
+        "id": "harness-4210518548",
+        "title": "Staircase · 5 steps",
+        "prompt": "a staircase with 5 steps",
+        "seed": 860493143,
+        "family": "house",
+        "inventoryPreset": "classic-100",
+        "summary": "Constructed from catalog geometry and evaluated against an explicit intent contract.",
+        "tiles": [
+          {
+            "id": "riser-1-front-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 1.5,
+              "y": 1.5,
+              "z": -0.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "step": 1,
+            "role": "riser-1 front box face",
+            "subassemblyId": "riser-1",
+            "root": true
+          },
+          {
+            "id": "riser-1-back-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 1.5,
+              "y": 1.5,
+              "z": 3.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              }
+            },
+            "step": 1,
+            "role": "riser-1 back box face",
+            "subassemblyId": "riser-1",
+            "root": true
+          },
+          {
+            "id": "riser-1-left-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": -0.09,
+              "y": 1.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": -1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 1,
+            "role": "riser-1 left box face",
+            "subassemblyId": "riser-1",
+            "root": false,
+            "parentTileId": "riser-1-front-1-1",
+            "parentEdge": 3,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-1-right-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 3.09,
+              "y": 1.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 1,
+            "role": "riser-1 right box face",
+            "subassemblyId": "riser-1",
+            "root": false,
+            "parentTileId": "riser-1-front-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-1-bottom-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 1.5,
+              "y": 0.09,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "zAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              }
+            },
+            "step": 1,
+            "role": "riser-1 bottom box face",
+            "subassemblyId": "riser-1",
+            "root": false,
+            "parentTileId": "riser-1-front-1-1",
+            "parentEdge": 0,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-1-top-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 1.5,
+              "y": 3.09,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "zAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              }
+            },
+            "step": 1,
+            "role": "riser-1 top box face",
+            "subassemblyId": "riser-1",
+            "root": false,
+            "parentTileId": "riser-1-front-1-1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-2-front-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 4.859999999999999,
+              "y": 1.5,
+              "z": -0.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "step": 1,
+            "role": "riser-2 front box face",
+            "subassemblyId": "riser-2",
+            "root": false,
+            "parentTileId": "riser-1-front-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-2-back-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 4.859999999999999,
+              "y": 1.5,
+              "z": 3.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              }
+            },
+            "step": 1,
+            "role": "riser-2 back box face",
+            "subassemblyId": "riser-2",
+            "root": false,
+            "parentTileId": "riser-1-back-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-2-front-1-2",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 4.859999999999999,
+              "y": 4.5,
+              "z": -0.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "step": 2,
+            "role": "riser-2 front box face",
+            "subassemblyId": "riser-2",
+            "root": false,
+            "parentTileId": "riser-2-front-1-1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-2-back-1-2",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 4.859999999999999,
+              "y": 4.5,
+              "z": 3.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              }
+            },
+            "step": 2,
+            "role": "riser-2 back box face",
+            "subassemblyId": "riser-2",
+            "root": false,
+            "parentTileId": "riser-2-back-1-1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-2-left-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 3.27,
+              "y": 1.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": -1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 1,
+            "role": "riser-2 left box face",
+            "subassemblyId": "riser-2",
+            "root": false,
+            "parentTileId": "riser-1-front-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-2-right-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 6.449999999999999,
+              "y": 1.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 1,
+            "role": "riser-2 right box face",
+            "subassemblyId": "riser-2",
+            "root": false,
+            "parentTileId": "riser-2-front-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-2-left-1-2",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 3.27,
+              "y": 4.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": -1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 2,
+            "role": "riser-2 left box face",
+            "subassemblyId": "riser-2",
+            "root": false,
+            "parentTileId": "riser-1-right-1-1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-2-right-1-2",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 6.449999999999999,
+              "y": 4.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 2,
+            "role": "riser-2 right box face",
+            "subassemblyId": "riser-2",
+            "root": false,
+            "parentTileId": "riser-2-front-1-2",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-2-bottom-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 4.859999999999999,
+              "y": 0.09,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "zAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              }
+            },
+            "step": 1,
+            "role": "riser-2 bottom box face",
+            "subassemblyId": "riser-2",
+            "root": false,
+            "parentTileId": "riser-1-right-1-1",
+            "parentEdge": 0,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-2-top-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 4.859999999999999,
+              "y": 6.09,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "zAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              }
+            },
+            "step": 2,
+            "role": "riser-2 top box face",
+            "subassemblyId": "riser-2",
+            "root": false,
+            "parentTileId": "riser-2-front-1-2",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-3-front-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 8.219999999999999,
+              "y": 1.5,
+              "z": -0.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "step": 1,
+            "role": "riser-3 front box face",
+            "subassemblyId": "riser-3",
+            "root": false,
+            "parentTileId": "riser-2-front-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-3-back-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 8.219999999999999,
+              "y": 1.5,
+              "z": 3.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              }
+            },
+            "step": 1,
+            "role": "riser-3 back box face",
+            "subassemblyId": "riser-3",
+            "root": false,
+            "parentTileId": "riser-2-back-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-3-front-1-2",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 8.219999999999999,
+              "y": 4.5,
+              "z": -0.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "step": 2,
+            "role": "riser-3 front box face",
+            "subassemblyId": "riser-3",
+            "root": false,
+            "parentTileId": "riser-2-front-1-2",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-3-back-1-2",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 8.219999999999999,
+              "y": 4.5,
+              "z": 3.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              }
+            },
+            "step": 2,
+            "role": "riser-3 back box face",
+            "subassemblyId": "riser-3",
+            "root": false,
+            "parentTileId": "riser-2-back-1-2",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-3-front-1-3",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 8.219999999999999,
+              "y": 7.5,
+              "z": -0.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "step": 3,
+            "role": "riser-3 front box face",
+            "subassemblyId": "riser-3",
+            "root": false,
+            "parentTileId": "riser-3-front-1-2",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-3-back-1-3",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 8.219999999999999,
+              "y": 7.5,
+              "z": 3.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              }
+            },
+            "step": 3,
+            "role": "riser-3 back box face",
+            "subassemblyId": "riser-3",
+            "root": false,
+            "parentTileId": "riser-3-back-1-2",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-3-left-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 6.63,
+              "y": 1.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": -1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 1,
+            "role": "riser-3 left box face",
+            "subassemblyId": "riser-3",
+            "root": false,
+            "parentTileId": "riser-2-front-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-3-right-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 9.809999999999999,
+              "y": 1.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 1,
+            "role": "riser-3 right box face",
+            "subassemblyId": "riser-3",
+            "root": false,
+            "parentTileId": "riser-3-front-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-3-left-1-2",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 6.63,
+              "y": 4.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": -1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 2,
+            "role": "riser-3 left box face",
+            "subassemblyId": "riser-3",
+            "root": false,
+            "parentTileId": "riser-2-front-1-2",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-3-right-1-2",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 9.809999999999999,
+              "y": 4.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 2,
+            "role": "riser-3 right box face",
+            "subassemblyId": "riser-3",
+            "root": false,
+            "parentTileId": "riser-3-front-1-2",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-3-left-1-3",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 6.63,
+              "y": 7.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": -1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 3,
+            "role": "riser-3 left box face",
+            "subassemblyId": "riser-3",
+            "root": false,
+            "parentTileId": "riser-2-right-1-2",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-3-right-1-3",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 9.809999999999999,
+              "y": 7.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 3,
+            "role": "riser-3 right box face",
+            "subassemblyId": "riser-3",
+            "root": false,
+            "parentTileId": "riser-3-front-1-3",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-3-bottom-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 8.219999999999999,
+              "y": 0.09,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "zAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              }
+            },
+            "step": 1,
+            "role": "riser-3 bottom box face",
+            "subassemblyId": "riser-3",
+            "root": false,
+            "parentTileId": "riser-2-right-1-1",
+            "parentEdge": 0,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-3-top-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 8.219999999999999,
+              "y": 9.09,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "zAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              }
+            },
+            "step": 3,
+            "role": "riser-3 top box face",
+            "subassemblyId": "riser-3",
+            "root": false,
+            "parentTileId": "riser-3-front-1-3",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-4-front-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 11.58,
+              "y": 1.5,
+              "z": -0.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "step": 1,
+            "role": "riser-4 front box face",
+            "subassemblyId": "riser-4",
+            "root": false,
+            "parentTileId": "riser-3-front-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-4-back-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 11.58,
+              "y": 1.5,
+              "z": 3.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              }
+            },
+            "step": 1,
+            "role": "riser-4 back box face",
+            "subassemblyId": "riser-4",
+            "root": false,
+            "parentTileId": "riser-3-back-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-4-front-1-2",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 11.58,
+              "y": 4.5,
+              "z": -0.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "step": 2,
+            "role": "riser-4 front box face",
+            "subassemblyId": "riser-4",
+            "root": false,
+            "parentTileId": "riser-3-front-1-2",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-4-back-1-2",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 11.58,
+              "y": 4.5,
+              "z": 3.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              }
+            },
+            "step": 2,
+            "role": "riser-4 back box face",
+            "subassemblyId": "riser-4",
+            "root": false,
+            "parentTileId": "riser-3-back-1-2",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-4-front-1-3",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 11.58,
+              "y": 7.5,
+              "z": -0.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "step": 3,
+            "role": "riser-4 front box face",
+            "subassemblyId": "riser-4",
+            "root": false,
+            "parentTileId": "riser-3-front-1-3",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-4-back-1-3",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 11.58,
+              "y": 7.5,
+              "z": 3.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              }
+            },
+            "step": 3,
+            "role": "riser-4 back box face",
+            "subassemblyId": "riser-4",
+            "root": false,
+            "parentTileId": "riser-3-back-1-3",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-4-front-1-4",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 11.58,
+              "y": 10.5,
+              "z": -0.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "step": 4,
+            "role": "riser-4 front box face",
+            "subassemblyId": "riser-4",
+            "root": false,
+            "parentTileId": "riser-4-front-1-3",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-4-back-1-4",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 11.58,
+              "y": 10.5,
+              "z": 3.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              }
+            },
+            "step": 4,
+            "role": "riser-4 back box face",
+            "subassemblyId": "riser-4",
+            "root": false,
+            "parentTileId": "riser-4-back-1-3",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-4-left-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 9.99,
+              "y": 1.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": -1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 1,
+            "role": "riser-4 left box face",
+            "subassemblyId": "riser-4",
+            "root": false,
+            "parentTileId": "riser-3-front-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-4-right-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 13.17,
+              "y": 1.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 1,
+            "role": "riser-4 right box face",
+            "subassemblyId": "riser-4",
+            "root": false,
+            "parentTileId": "riser-4-front-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-4-left-1-2",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 9.99,
+              "y": 4.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": -1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 2,
+            "role": "riser-4 left box face",
+            "subassemblyId": "riser-4",
+            "root": false,
+            "parentTileId": "riser-3-front-1-2",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-4-right-1-2",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 13.17,
+              "y": 4.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 2,
+            "role": "riser-4 right box face",
+            "subassemblyId": "riser-4",
+            "root": false,
+            "parentTileId": "riser-4-front-1-2",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-4-left-1-3",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 9.99,
+              "y": 7.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": -1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 3,
+            "role": "riser-4 left box face",
+            "subassemblyId": "riser-4",
+            "root": false,
+            "parentTileId": "riser-3-front-1-3",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-4-right-1-3",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 13.17,
+              "y": 7.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 3,
+            "role": "riser-4 right box face",
+            "subassemblyId": "riser-4",
+            "root": false,
+            "parentTileId": "riser-4-front-1-3",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-4-left-1-4",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 9.99,
+              "y": 10.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": -1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 4,
+            "role": "riser-4 left box face",
+            "subassemblyId": "riser-4",
+            "root": false,
+            "parentTileId": "riser-3-right-1-3",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-4-right-1-4",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 13.17,
+              "y": 10.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 4,
+            "role": "riser-4 right box face",
+            "subassemblyId": "riser-4",
+            "root": false,
+            "parentTileId": "riser-4-front-1-4",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-4-bottom-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 11.58,
+              "y": 0.09,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "zAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              }
+            },
+            "step": 1,
+            "role": "riser-4 bottom box face",
+            "subassemblyId": "riser-4",
+            "root": false,
+            "parentTileId": "riser-3-right-1-1",
+            "parentEdge": 0,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-4-top-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 11.58,
+              "y": 12.09,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "zAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              }
+            },
+            "step": 4,
+            "role": "riser-4 top box face",
+            "subassemblyId": "riser-4",
+            "root": false,
+            "parentTileId": "riser-4-front-1-4",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-front-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 14.94,
+              "y": 1.5,
+              "z": -0.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "step": 1,
+            "role": "riser-5 front box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-4-front-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-back-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 14.94,
+              "y": 1.5,
+              "z": 3.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              }
+            },
+            "step": 1,
+            "role": "riser-5 back box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-4-back-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-front-1-2",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 14.94,
+              "y": 4.5,
+              "z": -0.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "step": 2,
+            "role": "riser-5 front box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-4-front-1-2",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-back-1-2",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 14.94,
+              "y": 4.5,
+              "z": 3.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              }
+            },
+            "step": 2,
+            "role": "riser-5 back box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-4-back-1-2",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-front-1-3",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 14.94,
+              "y": 7.5,
+              "z": -0.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "step": 3,
+            "role": "riser-5 front box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-4-front-1-3",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-back-1-3",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 14.94,
+              "y": 7.5,
+              "z": 3.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              }
+            },
+            "step": 3,
+            "role": "riser-5 back box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-4-back-1-3",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-front-1-4",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 14.94,
+              "y": 10.5,
+              "z": -0.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "step": 4,
+            "role": "riser-5 front box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-4-front-1-4",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-back-1-4",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 14.94,
+              "y": 10.5,
+              "z": 3.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              }
+            },
+            "step": 4,
+            "role": "riser-5 back box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-4-back-1-4",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-front-1-5",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 14.94,
+              "y": 13.5,
+              "z": -0.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "step": 5,
+            "role": "riser-5 front box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-5-front-1-4",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-back-1-5",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 14.94,
+              "y": 13.5,
+              "z": 3.09
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              }
+            },
+            "step": 5,
+            "role": "riser-5 back box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-5-back-1-4",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-left-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 13.35,
+              "y": 1.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": -1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 1,
+            "role": "riser-5 left box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-4-front-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-right-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 16.53,
+              "y": 1.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 1,
+            "role": "riser-5 right box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-5-front-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-left-1-2",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 13.35,
+              "y": 4.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": -1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 2,
+            "role": "riser-5 left box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-4-front-1-2",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-right-1-2",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 16.53,
+              "y": 4.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 2,
+            "role": "riser-5 right box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-5-front-1-2",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-left-1-3",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 13.35,
+              "y": 7.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": -1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 3,
+            "role": "riser-5 left box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-4-front-1-3",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-right-1-3",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 16.53,
+              "y": 7.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 3,
+            "role": "riser-5 right box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-5-front-1-3",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-left-1-4",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 13.35,
+              "y": 10.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": -1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 4,
+            "role": "riser-5 left box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-4-front-1-4",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-right-1-4",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 16.53,
+              "y": 10.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 4,
+            "role": "riser-5 right box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-5-front-1-4",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-left-1-5",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 13.35,
+              "y": 13.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": -1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 5,
+            "role": "riser-5 left box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-4-right-1-4",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-right-1-5",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 16.53,
+              "y": 13.5,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "step": 5,
+            "role": "riser-5 right box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-5-front-1-5",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-bottom-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 14.94,
+              "y": 0.09,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "zAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              }
+            },
+            "step": 1,
+            "role": "riser-5 bottom box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-4-right-1-1",
+            "parentEdge": 0,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "riser-5-top-1-1",
+            "shape": "small-square",
+            "color": "#8ecae6",
+            "position": {
+              "x": 14.94,
+              "y": 15.09,
+              "z": 1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+              },
+              "zAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              }
+            },
+            "step": 5,
+            "role": "riser-5 top box face",
+            "subassemblyId": "riser-5",
+            "root": false,
+            "parentTileId": "riser-5-front-1-5",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          }
+        ],
+        "connections": [
+          {
+            "fromTileId": "riser-1-back-1-1",
+            "fromEdge": 3,
+            "toTileId": "riser-1-left-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-front-1-1",
+            "fromEdge": 3,
+            "toTileId": "riser-1-left-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-back-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-1-right-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-front-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-1-right-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-right-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-1-bottom-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-left-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-1-bottom-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-back-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-1-bottom-1-1",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-front-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-1-bottom-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-right-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-1-top-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-left-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-1-top-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-back-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-1-top-1-1",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-front-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-1-top-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-right-1-1",
+            "fromEdge": 3,
+            "toTileId": "riser-2-front-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-front-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-2-front-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-right-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-2-back-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-back-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-2-back-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-front-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-2-front-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-back-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-2-back-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-back-1-1",
+            "fromEdge": 3,
+            "toTileId": "riser-2-left-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-front-1-1",
+            "fromEdge": 3,
+            "toTileId": "riser-2-left-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-top-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-2-left-1-1",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-bottom-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-2-left-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-right-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-2-left-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-back-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-2-left-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-front-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-2-left-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-back-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-2-right-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-front-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-2-right-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-left-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-2-left-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-back-1-2",
+            "fromEdge": 3,
+            "toTileId": "riser-2-left-1-2",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-front-1-2",
+            "fromEdge": 3,
+            "toTileId": "riser-2-left-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-top-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-2-left-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-right-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-2-left-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-right-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-2-right-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-back-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-2-right-1-2",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-front-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-2-right-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-right-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-2-bottom-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-left-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-2-bottom-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-back-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-2-bottom-1-1",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-front-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-2-bottom-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-bottom-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-2-bottom-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-1-right-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-2-bottom-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-right-1-2",
+            "fromEdge": 2,
+            "toTileId": "riser-2-top-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-left-1-2",
+            "fromEdge": 2,
+            "toTileId": "riser-2-top-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-back-1-2",
+            "fromEdge": 2,
+            "toTileId": "riser-2-top-1-1",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-front-1-2",
+            "fromEdge": 2,
+            "toTileId": "riser-2-top-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-right-1-1",
+            "fromEdge": 3,
+            "toTileId": "riser-3-front-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-front-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-3-front-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-right-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-3-back-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-back-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-3-back-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-front-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-3-front-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-right-1-2",
+            "fromEdge": 3,
+            "toTileId": "riser-3-front-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-front-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-3-front-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-back-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-3-back-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-right-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-3-back-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-back-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-3-back-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-front-1-2",
+            "fromEdge": 2,
+            "toTileId": "riser-3-front-1-3",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-back-1-2",
+            "fromEdge": 2,
+            "toTileId": "riser-3-back-1-3",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-back-1-1",
+            "fromEdge": 3,
+            "toTileId": "riser-3-left-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-front-1-1",
+            "fromEdge": 3,
+            "toTileId": "riser-3-left-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-bottom-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-3-left-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-right-1-2",
+            "fromEdge": 0,
+            "toTileId": "riser-3-left-1-1",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-right-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-3-left-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-back-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-3-left-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-front-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-3-left-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-back-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-3-right-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-front-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-3-right-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-left-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-3-left-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-back-1-2",
+            "fromEdge": 3,
+            "toTileId": "riser-3-left-1-2",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-front-1-2",
+            "fromEdge": 3,
+            "toTileId": "riser-3-left-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-top-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-3-left-1-2",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-right-1-2",
+            "fromEdge": 0,
+            "toTileId": "riser-3-left-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-right-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-3-left-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-back-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-3-left-1-2",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-front-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-3-left-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-right-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-3-right-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-back-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-3-right-1-2",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-front-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-3-right-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-left-1-2",
+            "fromEdge": 2,
+            "toTileId": "riser-3-left-1-3",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-back-1-3",
+            "fromEdge": 3,
+            "toTileId": "riser-3-left-1-3",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-front-1-3",
+            "fromEdge": 3,
+            "toTileId": "riser-3-left-1-3",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-top-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-3-left-1-3",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-right-1-2",
+            "fromEdge": 2,
+            "toTileId": "riser-3-left-1-3",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-right-1-2",
+            "fromEdge": 2,
+            "toTileId": "riser-3-right-1-3",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-back-1-3",
+            "fromEdge": 1,
+            "toTileId": "riser-3-right-1-3",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-front-1-3",
+            "fromEdge": 1,
+            "toTileId": "riser-3-right-1-3",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-right-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-3-bottom-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-left-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-3-bottom-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-back-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-3-bottom-1-1",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-front-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-3-bottom-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-bottom-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-3-bottom-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-2-right-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-3-bottom-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-right-1-3",
+            "fromEdge": 2,
+            "toTileId": "riser-3-top-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-left-1-3",
+            "fromEdge": 2,
+            "toTileId": "riser-3-top-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-back-1-3",
+            "fromEdge": 2,
+            "toTileId": "riser-3-top-1-1",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-front-1-3",
+            "fromEdge": 2,
+            "toTileId": "riser-3-top-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-right-1-1",
+            "fromEdge": 3,
+            "toTileId": "riser-4-front-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-front-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-4-front-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-right-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-4-back-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-back-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-4-back-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-4-front-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-right-1-2",
+            "fromEdge": 3,
+            "toTileId": "riser-4-front-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-front-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-4-front-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-4-back-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-right-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-4-back-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-back-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-4-back-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-2",
+            "fromEdge": 2,
+            "toTileId": "riser-4-front-1-3",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-right-1-3",
+            "fromEdge": 3,
+            "toTileId": "riser-4-front-1-3",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-front-1-3",
+            "fromEdge": 1,
+            "toTileId": "riser-4-front-1-3",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-2",
+            "fromEdge": 2,
+            "toTileId": "riser-4-back-1-3",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-right-1-3",
+            "fromEdge": 1,
+            "toTileId": "riser-4-back-1-3",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-back-1-3",
+            "fromEdge": 1,
+            "toTileId": "riser-4-back-1-3",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-3",
+            "fromEdge": 2,
+            "toTileId": "riser-4-front-1-4",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-3",
+            "fromEdge": 2,
+            "toTileId": "riser-4-back-1-4",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-1",
+            "fromEdge": 3,
+            "toTileId": "riser-4-left-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-1",
+            "fromEdge": 3,
+            "toTileId": "riser-4-left-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-bottom-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-4-left-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-right-1-2",
+            "fromEdge": 0,
+            "toTileId": "riser-4-left-1-1",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-right-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-4-left-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-back-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-4-left-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-front-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-4-left-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-4-right-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-4-right-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-left-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-4-left-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-2",
+            "fromEdge": 3,
+            "toTileId": "riser-4-left-1-2",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-2",
+            "fromEdge": 3,
+            "toTileId": "riser-4-left-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-right-1-3",
+            "fromEdge": 0,
+            "toTileId": "riser-4-left-1-2",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-right-1-2",
+            "fromEdge": 0,
+            "toTileId": "riser-4-left-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-right-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-4-left-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-back-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-4-left-1-2",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-front-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-4-left-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-4-right-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-4-right-1-2",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-4-right-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-left-1-2",
+            "fromEdge": 2,
+            "toTileId": "riser-4-left-1-3",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-3",
+            "fromEdge": 3,
+            "toTileId": "riser-4-left-1-3",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-3",
+            "fromEdge": 3,
+            "toTileId": "riser-4-left-1-3",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-top-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-4-left-1-3",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-right-1-3",
+            "fromEdge": 0,
+            "toTileId": "riser-4-left-1-3",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-right-1-2",
+            "fromEdge": 2,
+            "toTileId": "riser-4-left-1-3",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-back-1-3",
+            "fromEdge": 1,
+            "toTileId": "riser-4-left-1-3",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-front-1-3",
+            "fromEdge": 1,
+            "toTileId": "riser-4-left-1-3",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-2",
+            "fromEdge": 2,
+            "toTileId": "riser-4-right-1-3",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-3",
+            "fromEdge": 1,
+            "toTileId": "riser-4-right-1-3",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-3",
+            "fromEdge": 1,
+            "toTileId": "riser-4-right-1-3",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-left-1-3",
+            "fromEdge": 2,
+            "toTileId": "riser-4-left-1-4",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-4",
+            "fromEdge": 3,
+            "toTileId": "riser-4-left-1-4",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-4",
+            "fromEdge": 3,
+            "toTileId": "riser-4-left-1-4",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-top-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-4-left-1-4",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-right-1-3",
+            "fromEdge": 2,
+            "toTileId": "riser-4-left-1-4",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-3",
+            "fromEdge": 2,
+            "toTileId": "riser-4-right-1-4",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-4",
+            "fromEdge": 1,
+            "toTileId": "riser-4-right-1-4",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-4",
+            "fromEdge": 1,
+            "toTileId": "riser-4-right-1-4",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-4-bottom-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-left-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-4-bottom-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-4-bottom-1-1",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-4-bottom-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-bottom-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-4-bottom-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-3-right-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-4-bottom-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-4",
+            "fromEdge": 2,
+            "toTileId": "riser-4-top-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-left-1-4",
+            "fromEdge": 2,
+            "toTileId": "riser-4-top-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-4",
+            "fromEdge": 2,
+            "toTileId": "riser-4-top-1-1",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-4",
+            "fromEdge": 2,
+            "toTileId": "riser-4-top-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-1",
+            "fromEdge": 3,
+            "toTileId": "riser-5-front-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-5-front-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-5-back-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-5-back-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-front-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-5-front-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-2",
+            "fromEdge": 3,
+            "toTileId": "riser-5-front-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-5-front-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-back-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-5-back-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-5-back-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-5-back-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-front-1-2",
+            "fromEdge": 2,
+            "toTileId": "riser-5-front-1-3",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-3",
+            "fromEdge": 3,
+            "toTileId": "riser-5-front-1-3",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-3",
+            "fromEdge": 1,
+            "toTileId": "riser-5-front-1-3",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-back-1-2",
+            "fromEdge": 2,
+            "toTileId": "riser-5-back-1-3",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-3",
+            "fromEdge": 1,
+            "toTileId": "riser-5-back-1-3",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-3",
+            "fromEdge": 1,
+            "toTileId": "riser-5-back-1-3",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-front-1-3",
+            "fromEdge": 2,
+            "toTileId": "riser-5-front-1-4",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-4",
+            "fromEdge": 3,
+            "toTileId": "riser-5-front-1-4",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-4",
+            "fromEdge": 1,
+            "toTileId": "riser-5-front-1-4",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-back-1-3",
+            "fromEdge": 2,
+            "toTileId": "riser-5-back-1-4",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-4",
+            "fromEdge": 1,
+            "toTileId": "riser-5-back-1-4",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-4",
+            "fromEdge": 1,
+            "toTileId": "riser-5-back-1-4",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-front-1-4",
+            "fromEdge": 2,
+            "toTileId": "riser-5-front-1-5",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-back-1-4",
+            "fromEdge": 2,
+            "toTileId": "riser-5-back-1-5",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-back-1-1",
+            "fromEdge": 3,
+            "toTileId": "riser-5-left-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-front-1-1",
+            "fromEdge": 3,
+            "toTileId": "riser-5-left-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-bottom-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-5-left-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-2",
+            "fromEdge": 0,
+            "toTileId": "riser-5-left-1-1",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-5-left-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-5-left-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-5-left-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-back-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-5-right-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-front-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-5-right-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-left-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-5-left-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-back-1-2",
+            "fromEdge": 3,
+            "toTileId": "riser-5-left-1-2",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-front-1-2",
+            "fromEdge": 3,
+            "toTileId": "riser-5-left-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-3",
+            "fromEdge": 0,
+            "toTileId": "riser-5-left-1-2",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-2",
+            "fromEdge": 0,
+            "toTileId": "riser-5-left-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-5-left-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-5-left-1-2",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-5-left-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-right-1-1",
+            "fromEdge": 2,
+            "toTileId": "riser-5-right-1-2",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-back-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-5-right-1-2",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-front-1-2",
+            "fromEdge": 1,
+            "toTileId": "riser-5-right-1-2",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-left-1-2",
+            "fromEdge": 2,
+            "toTileId": "riser-5-left-1-3",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-back-1-3",
+            "fromEdge": 3,
+            "toTileId": "riser-5-left-1-3",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-front-1-3",
+            "fromEdge": 3,
+            "toTileId": "riser-5-left-1-3",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-4",
+            "fromEdge": 0,
+            "toTileId": "riser-5-left-1-3",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-3",
+            "fromEdge": 0,
+            "toTileId": "riser-5-left-1-3",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-2",
+            "fromEdge": 2,
+            "toTileId": "riser-5-left-1-3",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-3",
+            "fromEdge": 1,
+            "toTileId": "riser-5-left-1-3",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-3",
+            "fromEdge": 1,
+            "toTileId": "riser-5-left-1-3",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-right-1-2",
+            "fromEdge": 2,
+            "toTileId": "riser-5-right-1-3",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-back-1-3",
+            "fromEdge": 1,
+            "toTileId": "riser-5-right-1-3",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-front-1-3",
+            "fromEdge": 1,
+            "toTileId": "riser-5-right-1-3",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-left-1-3",
+            "fromEdge": 2,
+            "toTileId": "riser-5-left-1-4",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-back-1-4",
+            "fromEdge": 3,
+            "toTileId": "riser-5-left-1-4",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-front-1-4",
+            "fromEdge": 3,
+            "toTileId": "riser-5-left-1-4",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-top-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-5-left-1-4",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-4",
+            "fromEdge": 0,
+            "toTileId": "riser-5-left-1-4",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-3",
+            "fromEdge": 2,
+            "toTileId": "riser-5-left-1-4",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-back-1-4",
+            "fromEdge": 1,
+            "toTileId": "riser-5-left-1-4",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-front-1-4",
+            "fromEdge": 1,
+            "toTileId": "riser-5-left-1-4",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-right-1-3",
+            "fromEdge": 2,
+            "toTileId": "riser-5-right-1-4",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-back-1-4",
+            "fromEdge": 1,
+            "toTileId": "riser-5-right-1-4",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-front-1-4",
+            "fromEdge": 1,
+            "toTileId": "riser-5-right-1-4",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-left-1-4",
+            "fromEdge": 2,
+            "toTileId": "riser-5-left-1-5",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-back-1-5",
+            "fromEdge": 3,
+            "toTileId": "riser-5-left-1-5",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-front-1-5",
+            "fromEdge": 3,
+            "toTileId": "riser-5-left-1-5",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-top-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-5-left-1-5",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-4",
+            "fromEdge": 2,
+            "toTileId": "riser-5-left-1-5",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-right-1-4",
+            "fromEdge": 2,
+            "toTileId": "riser-5-right-1-5",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-back-1-5",
+            "fromEdge": 1,
+            "toTileId": "riser-5-right-1-5",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-front-1-5",
+            "fromEdge": 1,
+            "toTileId": "riser-5-right-1-5",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-right-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-5-bottom-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-left-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-5-bottom-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-back-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-5-bottom-1-1",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-front-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-5-bottom-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-bottom-1-1",
+            "fromEdge": 1,
+            "toTileId": "riser-5-bottom-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-4-right-1-1",
+            "fromEdge": 0,
+            "toTileId": "riser-5-bottom-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-right-1-5",
+            "fromEdge": 2,
+            "toTileId": "riser-5-top-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-left-1-5",
+            "fromEdge": 2,
+            "toTileId": "riser-5-top-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-back-1-5",
+            "fromEdge": 2,
+            "toTileId": "riser-5-top-1-1",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "riser-5-front-1-5",
+            "fromEdge": 2,
+            "toTileId": "riser-5-top-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          }
+        ],
+        "bounds": {
+          "width": 16.8,
+          "height": 15.18,
+          "depth": 3.36
+        }
+      }
     },
     {
       "prompt": "a staircase with 3 steps and 2 tiles deep",
@@ -21369,7 +26197,7 @@
       "passed": true,
       "attempts": 1,
       "pieces": 48,
-      "milliseconds": 127324,
+      "milliseconds": 89894,
       "fingerprint": "e72cbc8077fdf33637079c342617d7af091fd636a1b99b1fb8c941859c2ac5ea",
       "failures": [],
       "program": {
@@ -24661,7 +29489,7 @@
       "passed": true,
       "attempts": 0,
       "pieces": 0,
-      "milliseconds": 0,
+      "milliseconds": 1,
       "failures": [],
       "evaluation": null,
       "instructions": [],
@@ -24707,7 +29535,7 @@
       "passed": true,
       "attempts": 0,
       "pieces": 0,
-      "milliseconds": 0,
+      "milliseconds": 1,
       "failures": [],
       "evaluation": null,
       "instructions": [],

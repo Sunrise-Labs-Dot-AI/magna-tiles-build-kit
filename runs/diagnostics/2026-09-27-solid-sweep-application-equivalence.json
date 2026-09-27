@@ -1,0 +1,33 @@
+{
+  "baselineCommit": "05e3775",
+  "excludedFields": [
+    "generatedAt",
+    "validationCodeHash"
+  ],
+  "comparisons": [
+    {
+      "path": "public/reference-replicas/jet.json",
+      "physicalAndCandidatePayloadIdentical": true
+    },
+    {
+      "path": "public/reference-replicas/small-ramp.json",
+      "physicalAndCandidatePayloadIdentical": true
+    },
+    {
+      "path": "public/reference-replicas/medium-ramp.json",
+      "physicalAndCandidatePayloadIdentical": true
+    },
+    {
+      "path": "public/reference-replicas/large-ramp.json",
+      "physicalAndCandidatePayloadIdentical": true
+    },
+    {
+      "path": "verification/replication/assembly-fixture.json",
+      "physicalAndCandidatePayloadIdentical": true
+    },
+    {
+      "path": "verification/replication/rigid-contact-fixture.json",
+      "physicalAndCandidatePayloadIdentical": true
+    }
+  ]
+}

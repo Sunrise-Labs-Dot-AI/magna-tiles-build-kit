@@ -1,7 +1,9 @@
+// Frozen pre-optimization implementation from commit 05e3775.
+// Deliberately independent arithmetic/control flow for equivalence tests.
 import { add, basisToQuaternion, cross, distance, dot, normalize, normalizeQuaternion, quaternionAngle, quaternionToBasis, scale, slerp, subtract, type Quat } from "@/lib/engine/math";
-import { basisFromEuler } from "./edge-attachment";
-import { tileNormal, tilePrismVertices } from "./prism-geometry";
-import type { TileInstance, Vec3 } from "./types";
+import { basisFromEuler } from "@/lib/magnetic-tiles/edge-attachment";
+import { tileNormal, tilePrismVertices } from "@/lib/magnetic-tiles/prism-geometry";
+import type { TileInstance, Vec3 } from "@/lib/magnetic-tiles/types";
 
 export interface SolidFailure {
   kind: "overlap" | "table" | "uncertified-sweep";
@@ -58,8 +60,7 @@ function axisGap(a: PrismPose,b: PrismPose,axis: Vec3): number {
   return Math.max(amin-bmax,bmin-amax);
 }
 function boxGap(a: PrismPose,b: PrismPose): number {
-  return Math.max(a.min.x-b.max.x,b.min.x-a.max.x,
-    a.min.y-b.max.y,b.min.y-a.max.y,a.min.z-b.max.z,b.min.z-a.max.z);
+  return Math.max(...(["x","y","z"] as const).flatMap(k=>[a.min[k]-b.max[k],b.min[k]-a.max[k]]));
 }
 /** Signed separating distance. Negative is minimum translation needed to
  * separate the solid prisms, including one prism enclosed by the other. */
@@ -97,31 +98,30 @@ export function checkSolidSweep(before: PrismPose[],after: PrismPose[],floor: nu
     if(a.min.y<floor-tolerance-1e-9)result.failure={kind:"table",tileIds:[a.tile.id],penetration:floor-a.min.y,detail:`${a.tile.id} intersects the fixed table by ${floor-a.min.y} in during motion.`};
   };
   const middle=(a:PrismPose,b:PrismPose)=>prismPose(interpolateTile(a.tile,b.tile,.5));
-  // Gaps may be reused only after observePair has applied their peak/failure
-  // effects for this ordered pair. Bounds belong to these exact endpoints.
-  const pair=(a:PrismPose,b:PrismPose,c:PrismPose,d:PrismPose,depth:number,startGap:number,endGap:number,bound=motion(a,c)+motion(b,d)):void=>{
+  const pair=(a:PrismPose,b:PrismPose,c:PrismPose,d:PrismPose,depth:number):void=>{
     checkBudget();
+    const bound=motion(a,c)+motion(b,d);
     if(boxGap(a,b)-bound>=-tolerance||boxGap(c,d)-bound>=-tolerance)return;
+    const startGap=observePair(a,b),endGap=observePair(c,d);
     if(result.failure||Math.max(startGap,endGap)-bound>=-tolerance-1e-9)return;
     if(depth===12){result.failure=unresolved([a.tile.id,b.tile.id]);return;}
     const m=middle(a,c),n=middle(b,d);
-    const middleGap=observePair(m,n);if(result.failure)return;
-    pair(a,b,m,n,depth+1,startGap,middleGap);if(!result.failure)pair(m,n,c,d,depth+1,middleGap,endGap);
+    observePair(m,n);if(result.failure)return;
+    pair(a,b,m,n,depth+1);if(!result.failure)pair(m,n,c,d,depth+1);
   };
-  const ground=(a:PrismPose,b:PrismPose,depth:number,bound=motion(a,b)):void=>{
+  const ground=(a:PrismPose,b:PrismPose,depth:number):void=>{
     checkBudget();observeFloor(a);observeFloor(b);if(result.failure)return;
-    if(Math.max(a.min.y,b.min.y)-bound>=floor-tolerance-1e-9)return;
+    if(Math.max(a.min.y,b.min.y)-motion(a,b)>=floor-tolerance-1e-9)return;
     if(depth===12){result.failure=unresolved([a.tile.id]);return;}
     const m=middle(a,b);ground(a,m,depth+1);if(!result.failure)ground(m,b,depth+1);
   };
-  const bounds=before.map((pose,i)=>motion(pose,after[i]));
   for(let i=0;i<after.length&&!result.failure;i++){
-    ground(before[i],after[i],0,bounds[i]);
+    ground(before[i],after[i],0);
     for(let j=0;j<i&&!result.failure;j++){
       // Measure endpoint overlap even when the cheaper box certificate proves
       // the full interval is within the allowance.
-      const startGap=observePair(before[i],before[j]),endGap=observePair(after[i],after[j]);
-      if(!result.failure)pair(before[i],before[j],after[i],after[j],0,startGap,endGap,bounds[i]+bounds[j]);
+      observePair(before[i],before[j]);observePair(after[i],after[j]);
+      if(!result.failure)pair(before[i],before[j],after[i],after[j],0);
     }
   }
   return result;
