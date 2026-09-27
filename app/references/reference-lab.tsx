@@ -127,9 +127,14 @@ function Candidate({
   const checkpoint = stage
     ? report.stages.find((s) => s.id === stage.id)
     : undefined;
+  const assembly = stage ? report.assemblySimulation?.find(s => s.stageId === stage.id) : undefined;
   const labelsById = Object.fromEntries(
     replica.build.tiles.map((t, i) => [t.id, `P${i + 1}`]),
   );
+  const partDetail = (detail: string) => Object.keys(labelsById).sort((a, b) => b.length - a.length)
+    .reduce((text, id) => text.replaceAll(id, labelsById[id]), detail)
+    .replace(/\b(P\d+):(\d+)/g, (_, part, edge) => `${part} edge ${Number(edge) + 1}`)
+    .replaceAll("->", " to ");
   return (
     <>
       <div className="reference-banner">
@@ -207,9 +212,19 @@ function Candidate({
                 <h3>
                   {step + 1}. {stage.title}
                 </h3>
-                {checkpoint && <Status check={checkpoint} />}
+                {(assembly ?? checkpoint) && <Status check={(assembly ?? checkpoint)!} />}
               </div>
               <p>{stage.instruction}</p>
+              {assembly && <div className="reference-assembly" aria-label="Complete assembly check">
+                <strong>Assembly with hand support</strong> <Status check={assembly} />
+                <p>{partDetail(assembly.detail)}</p>
+                {assembly.operations.length > 0 && <details>
+                  <summary>Grip and intermediate checks</summary>
+                  <ol>{assembly.operations.filter(o => o.seed === 0).map(o => <li key={o.index}>
+                    Insert {o.tileIds.map(id => labelsById[id]).join(" + ")}: {partDetail(o.detail)}
+                  </li>)}</ol>
+                </details>}
+              </div>}
               {construction && construction.paths.length > 0 && (
                 <div className="reference-insertion">
                   <label>
@@ -226,7 +241,7 @@ function Candidate({
                     <input type="range" min={0} max={100} value={insertionProgress}
                       onChange={e => setInsertionProgress(Number(e.target.value))} />
                   </label>}
-                  <p>{construction.detail}</p>
+                  <p>Preview uses the proposed poses. {construction.detail}</p>
                 </div>
               )}
               <p>

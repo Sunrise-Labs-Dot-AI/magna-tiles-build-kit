@@ -4,7 +4,14 @@ import type { Replica, Verdict } from "./types";
 
 export interface ConstructionStage {
   stageId: string;
-  operations: { tileIds: string[]; preparedStageId?: string }[];
+  operations: {
+    tileIds: string[];
+    preparedStageId?: string;
+    /** Omitted means no hand evidence, never automatic support of all tiles. */
+    hands?: import("./grip").HandContact[];
+    /** All hands removed after this insertion. Stage releases are mandatory too. */
+    releaseAfter?: boolean;
+  }[];
 }
 
 export interface ConstructionResult {

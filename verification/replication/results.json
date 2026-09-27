@@ -16,7 +16,7 @@
         },
         "fidelity": {
           "status": "fail",
-          "detail": "2 measured views, 1 withheld views, 33/40 parts lack independent scored landmarks. Need complete visible/occluded part constraints and at least two distinct withheld final views. Pod incidence, longitudinal bay and the red leading triangle contacts are candidate hypotheses; the footage does not expose every join. Hidden cockpit floor/contact geometry and final inclination remain unresolved. The six rigid pieces are retained rather than collapsed to one fin."
+          "detail": "2 measured views, 1 historically withheld views, 33/40 parts lack independent scored landmarks. No frozen candidate and reservation baseline for an independent evaluation. Need complete visible/occluded part constraints and at least two distinct withheld final views. Pod incidence, longitudinal bay and the red leading triangle contacts are candidate hypotheses; the footage does not expose every join. Hidden cockpit floor/contact geometry and final inclination remain unresolved. The six rigid pieces are retained rather than collapsed to one fin."
         },
         "materials": {
           "status": "unverified",
@@ -36,7 +36,7 @@
         },
         "assembly": {
           "status": "fail",
-          "detail": "1/16 nominal checkpoints passed; 0/16 stage insertion sequences clear. Held stability, magnetic closure and hand access remain separate unverified requirements."
+          "detail": "0/16 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. body-upright-1: No per-part insertion sequence has been supplied. body-upright-2: No per-part insertion sequence has been supplied. body-upright-3: No per-part insertion sequence has been supplied. body-upright-4: No per-part insertion sequence has been supplied. body-horizontal: No per-part insertion sequence has been supplied. nose: No per-part insertion sequence has been supplied. wing-module--1: No per-part insertion sequence has been supplied. wing-root--1: No per-part insertion sequence has been supplied. wing-module-1: No per-part insertion sequence has been supplied. wing-root-1: No per-part insertion sequence has been supplied. wing-roots: No per-part insertion sequence has been supplied. wingtips: No per-part insertion sequence has been supplied. tail-cone: No per-part insertion sequence has been supplied. tail-horizontal: No per-part insertion sequence has been supplied. tail-fins: No per-part insertion sequence has been supplied. final: No per-part insertion sequence has been supplied. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
         },
         "function": {
           "status": "unverified",
@@ -44,7 +44,7 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "19d51f281d12554d9c07334f2c23e0a2d7656cb349b125a9188e7955c7f15706",
+      "fingerprint": "e5e8a86ec31da66d4a50b9a9bb38d53af2c4e96469495ff5995e5bcafed64459",
       "stages": [
         {
           "id": "body-upright-1",
@@ -221,7 +221,7 @@
       "checks": {
         "source": {
           "status": "pass",
-          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 25 extracted frame hashes. Manual annotations remain reviewable measurements."
+          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 27 extracted frame hashes. Manual annotations remain reviewable measurements."
         },
         "inventory": {
           "status": "pass",
@@ -229,7 +229,7 @@
         },
         "fidelity": {
           "status": "fail",
-          "detail": "1 measured views, 1 withheld views, 7/9 parts lack independent scored landmarks. Need complete visible/occluded part constraints and at least two distinct withheld final views. The source long-edge/short-edge ratio and exact launch-to-wedge seam need measurement. The 143 mm catalog side is shorter than two squares; retained as an explicit overhang, not stretched."
+          "detail": "1 measured views, 1 historically withheld views, 7/9 parts lack independent scored landmarks. Frame small-check is historical, unassessed, duplicated, or not reserved before candidate freeze and inspection. Need complete visible/occluded part constraints and at least two distinct withheld final views. The source long-edge/short-edge ratio and exact launch-to-wedge seam need measurement. The 143 mm catalog side is shorter than two squares; retained as an explicit overhang, not stretched."
         },
         "materials": {
           "status": "unverified",
@@ -248,8 +248,8 @@
           "detail": "3 settled point comparisons. Original camera held fixed. Sparse passing landmarks do not cover the full settled shape."
         },
         "assembly": {
-          "status": "unverified",
-          "detail": "2/3 nominal checkpoints passed; 3/3 stage insertion sequences clear. Held stability, magnetic closure and hand access remain separate unverified requirements."
+          "status": "fail",
+          "detail": "0/3 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. small-wedge: Edges do not close at small-side-1:1->small-deck-2:2: transverse gap 0.200 in, overlap 2.758 in. small-launch: Grip on launch-back is blocked by launch-roof. small-final: An earlier module has not passed its complete supported assembly. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
         },
         "function": {
           "status": "pass",
@@ -257,7 +257,7 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "e74e8c80bc6448d1f543debde30c451de86d4ce111f9e9e05d92d5825a19b79e",
+      "fingerprint": "4756b13e489e65f95cdfc1238a6ed69b95ecfa2fd470f61387ab9b16dd08f56b",
       "stages": [
         {
           "id": "small-wedge",
@@ -293,7 +293,7 @@
             {
               "id": "small-final-34",
               "status": "fail",
-              "rmsPx": 31.523509991531075
+              "rmsPx": 27.510562927792193
             }
           ]
         },
@@ -311,7 +311,7 @@
             {
               "id": "small-final-34",
               "status": "fail",
-              "rmsPx": 31.743616969340408
+              "rmsPx": 27.385824616053437
             }
           ]
         },
@@ -329,7 +329,7 @@
             {
               "id": "small-final-34",
               "status": "fail",
-              "rmsPx": 31.67800399397233
+              "rmsPx": 27.44145168167012
             }
           ]
         }
@@ -341,7 +341,7 @@
       "checks": {
         "source": {
           "status": "pass",
-          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 25 extracted frame hashes. Manual annotations remain reviewable measurements."
+          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 27 extracted frame hashes. Manual annotations remain reviewable measurements."
         },
         "inventory": {
           "status": "pass",
@@ -349,7 +349,7 @@
         },
         "fidelity": {
           "status": "fail",
-          "detail": "2 measured views, 1 withheld views, 33/37 parts lack independent scored landmarks. Need complete visible/occluded part constraints and at least two distinct withheld final views. Canopy roof pitch, triangular tessellation, end closures and red launch flap joins require additional fitting. Exact BOM alone does not validate this hypothesis. Upper wedge elevation/support alignment and the blue turn's dihedral remain unresolved."
+          "detail": "2 measured views, 1 historically withheld views, 33/37 parts lack independent scored landmarks. No frozen candidate and reservation baseline for an independent evaluation. Need complete visible/occluded part constraints and at least two distinct withheld final views. Canopy roof pitch, triangular tessellation, end closures and red launch flap joins require additional fitting. Exact BOM alone does not validate this hypothesis. Upper wedge elevation/support alignment and the blue turn's dihedral remain unresolved."
         },
         "materials": {
           "status": "unverified",
@@ -369,7 +369,7 @@
         },
         "assembly": {
           "status": "fail",
-          "detail": "5/8 nominal checkpoints passed; 0/8 stage insertion sequences clear. Held stability, magnetic closure and hand access remain separate unverified requirements."
+          "detail": "0/8 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. medium-lower: No per-part insertion sequence has been supplied. medium-support: No per-part insertion sequence has been supplied. medium-turn: No per-part insertion sequence has been supplied. medium-lower-walls: No per-part insertion sequence has been supplied. medium-lower-cover: No per-part insertion sequence has been supplied. medium-turn-cover: No per-part insertion sequence has been supplied. medium-upper-cover: No per-part insertion sequence has been supplied. medium-final: No per-part insertion sequence has been supplied. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
         },
         "function": {
           "status": "fail",
@@ -377,7 +377,7 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "d48b89265f7d5b7b5069895ced5c1366178f06f6d7e7abcf618ca84de49791fc",
+      "fingerprint": "5b1dad546173460281fb5ba6102f06c31c3d0ac47bc7d08c17a4c13cac938356",
       "stages": [
         {
           "id": "medium-lower",
@@ -491,7 +491,7 @@
       "checks": {
         "source": {
           "status": "pass",
-          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 25 extracted frame hashes. Manual annotations remain reviewable measurements."
+          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 27 extracted frame hashes. Manual annotations remain reviewable measurements."
         },
         "inventory": {
           "status": "pass",
@@ -499,7 +499,7 @@
         },
         "fidelity": {
           "status": "unverified",
-          "detail": "0 measured views, 0 withheld views, 51/51 parts lack independent scored landmarks. Need complete visible/occluded part constraints and at least two distinct withheld final views. 42-square shell allocation and exact deck seams are source-informed hypotheses; intermediate ring release checks and independent camera fitting remain incomplete."
+          "detail": "0 measured views, 0 historically withheld views, 51/51 parts lack independent scored landmarks. No frozen candidate and reservation baseline for an independent evaluation. Need complete visible/occluded part constraints and at least two distinct withheld final views. 42-square shell allocation and exact deck seams are source-informed hypotheses; intermediate ring release checks and independent camera fitting remain incomplete."
         },
         "materials": {
           "status": "unverified",
@@ -519,7 +519,7 @@
         },
         "assembly": {
           "status": "unverified",
-          "detail": "5/5 nominal checkpoints passed; 0/5 stage insertion sequences clear. Held stability, magnetic closure and hand access remain separate unverified requirements."
+          "detail": "0/5 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. large-bay-0: No per-part insertion sequence has been supplied. large-bay-1: No per-part insertion sequence has been supplied. large-bay-2: No per-part insertion sequence has been supplied. large-decks: No per-part insertion sequence has been supplied. large-final: No per-part insertion sequence has been supplied. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
         },
         "function": {
           "status": "unverified",
@@ -527,7 +527,7 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "880bbf9d3a1af6fa711e2eb0e6d4a8ab919dc9d848889d3b27bfe8530f234b82",
+      "fingerprint": "09b8738ec0c7a69eaf3ad9c77cf3573dd76f4b55df38b53d88ee81d826e70604",
       "stages": [
         {
           "id": "large-bay-0",

@@ -10,7 +10,7 @@
     "correct": 5,
     "total": 5
   },
-  "note": "Recomputed after exact-contact correction. Historical full benchmark remains preserved; current per-brief fingerprints and verdicts follow.",
+  "note": "Recomputed after adding explicit assembly-floor support. 20 constructive and 5 required rejection outcomes correct. Historical full benchmark preserved; current per-brief fingerprints and verdicts follow.",
   "entries": [
     {
       "prompt": "a tower at least 6 inches tall",
@@ -198,8 +198,7 @@
       "status": "infeasible",
       "passed": true,
       "pieces": 0,
-      "attempts": 0,
-      "fingerprint": null
+      "attempts": 0
     },
     {
       "prompt": "a tower with a working elevator",
@@ -207,8 +206,7 @@
       "status": "unsupported",
       "passed": true,
       "pieces": 0,
-      "attempts": 0,
-      "fingerprint": null
+      "attempts": 0
     },
     {
       "prompt": "an open top box with a lid",
@@ -216,8 +214,7 @@
       "status": "unsupported",
       "passed": true,
       "pieces": 0,
-      "attempts": 0,
-      "fingerprint": null
+      "attempts": 0
     },
     {
       "prompt": "a tunnel with a door",
@@ -225,8 +222,7 @@
       "status": "unsupported",
       "passed": true,
       "pieces": 0,
-      "attempts": 0,
-      "fingerprint": null
+      "attempts": 0
     },
     {
       "prompt": "a staircase with a slide",
@@ -234,8 +230,7 @@
       "status": "unsupported",
       "passed": true,
       "pieces": 0,
-      "attempts": 0,
-      "fingerprint": null
+      "attempts": 0
     }
   ]
 }

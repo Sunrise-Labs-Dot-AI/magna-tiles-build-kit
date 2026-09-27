@@ -493,28 +493,141 @@
         "operations": [
           {
             "tileIds": [
-              "small-deck-1"
-            ]
-          },
-          {
-            "tileIds": [
-              "small-deck-2"
-            ]
+              "small-back"
+            ],
+            "hands": [
+              {
+                "tileId": "small-back",
+                "localPoint": {
+                  "x": 0,
+                  "y": -1.5,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 0,
+                  "y": -1,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ],
+            "releaseAfter": false
           },
           {
             "tileIds": [
               "small-side--1"
-            ]
+            ],
+            "hands": [
+              {
+                "tileId": "small-side--1",
+                "localPoint": {
+                  "x": 0.75,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 0.9638532848299529,
+                  "y": 0.2664335664335664,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              },
+              {
+                "tileId": "small-back",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ],
+            "releaseAfter": false
           },
           {
             "tileIds": [
               "small-side-1"
-            ]
+            ],
+            "hands": [
+              {
+                "tileId": "small-side-1",
+                "localPoint": {
+                  "x": 0.75,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 0.9638532848299529,
+                  "y": 0.2664335664335664,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              },
+              {
+                "tileId": "small-back",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ],
+            "releaseAfter": true
           },
           {
             "tileIds": [
-              "small-back"
-            ]
+              "small-deck-2"
+            ],
+            "hands": [
+              {
+                "tileId": "small-deck-2",
+                "localPoint": {
+                  "x": -1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": -1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ],
+            "releaseAfter": true
+          },
+          {
+            "tileIds": [
+              "small-deck-1"
+            ],
+            "hands": [
+              {
+                "tileId": "small-deck-1",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ],
+            "releaseAfter": true
           }
         ]
       },
@@ -524,21 +637,127 @@
           {
             "tileIds": [
               "launch-roof"
+            ],
+            "hands": [
+              {
+                "tileId": "launch-roof",
+                "localPoint": {
+                  "x": 0,
+                  "y": -1.5,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 0,
+                  "y": -1,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
             ]
           },
           {
             "tileIds": [
               "launch-back"
+            ],
+            "hands": [
+              {
+                "tileId": "launch-back",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              },
+              {
+                "tileId": "launch-roof",
+                "localPoint": {
+                  "x": 0,
+                  "y": -1.5,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 0,
+                  "y": -1,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
             ]
           },
           {
             "tileIds": [
               "launch-side--1"
+            ],
+            "hands": [
+              {
+                "tileId": "launch-side--1",
+                "localPoint": {
+                  "x": 0,
+                  "y": -1.5,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 0,
+                  "y": -1,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              },
+              {
+                "tileId": "launch-roof",
+                "localPoint": {
+                  "x": 0,
+                  "y": -1.5,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 0,
+                  "y": -1,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
             ]
           },
           {
             "tileIds": [
               "launch-side-1"
+            ],
+            "hands": [
+              {
+                "tileId": "launch-side-1",
+                "localPoint": {
+                  "x": 0,
+                  "y": -1.5,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 0,
+                  "y": -1,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              },
+              {
+                "tileId": "launch-roof",
+                "localPoint": {
+                  "x": 0,
+                  "y": -1.5,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 0,
+                  "y": -1,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
             ]
           }
         ]
@@ -553,7 +772,23 @@
               "launch-side--1",
               "launch-side-1"
             ],
-            "preparedStageId": "small-launch"
+            "preparedStageId": "small-launch",
+            "hands": [
+              {
+                "tileId": "launch-roof",
+                "localPoint": {
+                  "x": 0,
+                  "y": -1.5,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 0,
+                  "y": -1,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ]
           }
         ]
       }
@@ -563,7 +798,7 @@
         "id": "small-wedge",
         "frameId": "small-fit",
         "title": "Join the five-piece wedge",
-        "instruction": "Join the two orange driving squares edge to edge. Seat their long edges along the yellow isosceles sides; close the short rear edge with the red square. Hold while closing the wedge, then place both long side edges on the table.",
+        "instruction": "Hold the red rear square and attach the two yellow sides. At 00:24.5 the three-piece U stands on the table. Add the two orange driving squares along the sloped edges; the proposed deck order and grips are checked separately.",
         "tileIds": [
           "small-side--1",
           "small-side-1",
@@ -677,14 +912,14 @@
   },
   "report": {
     "id": "small-ramp",
-    "fingerprint": "e74e8c80bc6448d1f543debde30c451de86d4ce111f9e9e05d92d5825a19b79e",
-    "validationCodeHash": "6af4d03f7df8679d83d4e24627f307ab3b27823b962dad91913e8cea0ebdff6c",
-    "generatedAt": "2026-09-27T02:25:21.097Z",
+    "fingerprint": "4756b13e489e65f95cdfc1238a6ed69b95ecfa2fd470f61387ab9b16dd08f56b",
+    "validationCodeHash": "d25326af9127972fce2819324bd1960f61d6a603a14561cbf8f75bedf5d41abd",
+    "generatedAt": "2026-09-27T03:02:38.655Z",
     "replication": "not-verified",
     "checks": {
       "source": {
         "status": "pass",
-        "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 25 extracted frame hashes. Manual annotations remain reviewable measurements."
+        "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 27 extracted frame hashes. Manual annotations remain reviewable measurements."
       },
       "inventory": {
         "status": "pass",
@@ -692,7 +927,7 @@
       },
       "fidelity": {
         "status": "fail",
-        "detail": "1 measured views, 1 withheld views, 7/9 parts lack independent scored landmarks. Need complete visible/occluded part constraints and at least two distinct withheld final views. The source long-edge/short-edge ratio and exact launch-to-wedge seam need measurement. The 143 mm catalog side is shorter than two squares; retained as an explicit overhang, not stretched."
+        "detail": "1 measured views, 1 historically withheld views, 7/9 parts lack independent scored landmarks. Frame small-check is historical, unassessed, duplicated, or not reserved before candidate freeze and inspection. Need complete visible/occluded part constraints and at least two distinct withheld final views. The source long-edge/short-edge ratio and exact launch-to-wedge seam need measurement. The 143 mm catalog side is shorter than two squares; retained as an explicit overhang, not stretched."
       },
       "materials": {
         "status": "unverified",
@@ -711,8 +946,8 @@
         "detail": "3 settled point comparisons. Original camera held fixed. Sparse passing landmarks do not cover the full settled shape."
       },
       "assembly": {
-        "status": "unverified",
-        "detail": "2/3 nominal checkpoints passed; 3/3 stage insertion sequences clear. Held stability, magnetic closure and hand access remain separate unverified requirements."
+        "status": "fail",
+        "detail": "0/3 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. small-wedge: Edges do not close at small-side-1:1->small-deck-2:2: transverse gap 0.200 in, overlap 2.758 in. small-launch: Grip on launch-back is blocked by launch-roof. small-final: An earlier module has not passed its complete supported assembly. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
       },
       "function": {
         "status": "pass",
@@ -725,12 +960,12 @@
         "frameId": "small-check",
         "partition": "holdout",
         "status": "fail",
-        "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 14.08 px. Independent point agreement only; not complete shape fidelity.",
+        "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 2.65 px. Positive focal/depth, above table and in the observed horizontal hemisphere. Independent point agreement only; not complete shape fidelity.",
         "camera": {
           "position": {
-            "x": 108.85008325921682,
-            "y": -373.3789409278324,
-            "z": -504.5372462704378
+            "x": 2.536791278552791,
+            "y": 13.889342406821331,
+            "z": -16.243544919879724
           },
           "target": {
             "x": 5.631351606439967,
@@ -738,18 +973,22 @@
             "z": 0
           },
           "up": {
-            "x": 0.1232821522304749,
-            "y": 0.8080528491540322,
-            "z": -0.5760660586386537
+            "x": 0.11898038306160248,
+            "y": 0.8131909192042276,
+            "z": 0.569705360138289
           },
-          "focal": 63620.722836396286,
-          "cx": 876.0349791029495,
-          "cy": 488.2810563117022
+          "focal": 2123.4574123517077,
+          "cx": 884.0861005484575,
+          "cy": 489.2246284920811
+        },
+        "cameraRegion": {
+          "status": "pass",
+          "detail": "Positive focal/depth, above table and in the observed horizontal hemisphere."
         },
         "cameraAnchors": 6,
         "checkLandmarks": 4,
-        "rmsPx": 29.868848448396857,
-        "maxPx": 41.682529150430746,
+        "rmsPx": 23.301854853605494,
+        "maxPx": 36.13620189319211,
         "sourceDiagonalPx": 1024.2226320483257,
         "residuals": [
           {
@@ -760,10 +999,10 @@
               500
             ],
             "projected": [
-              909.5001097121892,
-              500.64619527693617
+              925.2354465775238,
+              501.5056143161776
             ],
-            "errorPx": 16.512539109589635,
+            "errorPx": 1.6886137524309905,
             "uncertaintyPx": 9
           },
           {
@@ -774,10 +1013,10 @@
               463
             ],
             "projected": [
-              616.9588315075451,
-              463.8161519201435
+              593.5669276268221,
+              461.10984252922873
             ],
-            "errorPx": 23.972728488090205,
+            "errorPx": 1.9733479668742184,
             "uncertaintyPx": 9
           },
           {
@@ -788,10 +1027,10 @@
               291
             ],
             "projected": [
-              677.028302055817,
-              290.94100738541124
+              683.9837315900436,
+              293.87473030402134
             ],
-            "errorPx": 8.971891892473604,
+            "errorPx": 3.5113263337159055,
             "uncertaintyPx": 9
           },
           {
@@ -802,10 +1041,10 @@
               326
             ],
             "projected": [
-              970.6147633833017,
-              328.04030499670216
+              979.4946392383742,
+              325.9618610470648
             ],
-            "errorPx": 5.758786147913121,
+            "errorPx": 3.4948473480419615,
             "uncertaintyPx": 9
           },
           {
@@ -816,10 +1055,10 @@
               715
             ],
             "projected": [
-              606.1443406145213,
-              704.7791134077431
+              606.6590095783549,
+              713.1284982833822
             ],
-            "errorPx": 10.61231893874515,
+            "errorPx": 2.9971244267693162,
             "uncertaintyPx": 12
           },
           {
@@ -830,10 +1069,10 @@
               639
             ],
             "projected": [
-              1477.4264213201677,
-              641.5388568603889
+              1467.0360620751426,
+              637.6006715172906
             ],
-            "errorPx": 10.73107896267621,
+            "errorPx": 1.3997930832038576,
             "uncertaintyPx": 9
           },
           {
@@ -844,10 +1083,10 @@
               825
             ],
             "projected": [
-              1414.3319268169098,
-              813.2431881148038
+              1475.6519381143053,
+              842.43501938266
             ],
-            "errorPx": 31.912649405856065,
+            "errorPx": 36.13620189319211,
             "uncertaintyPx": 9
           },
           {
@@ -858,10 +1097,10 @@
               653
             ],
             "projected": [
-              1163.546764009571,
-              657.3660579815563
+              1209.8335566124326,
+              677.1151867693579
             ],
-            "errorPx": 41.682529150430746,
+            "errorPx": 24.5948267415448,
             "uncertaintyPx": 9
           },
           {
@@ -872,10 +1111,10 @@
               491
             ],
             "projected": [
-              913.1467142249653,
-              501.7282973233142
+              929.4617149262613,
+              502.7441531517501
             ],
-            "errorPx": 24.34465983789391,
+            "errorPx": 12.984519044221804,
             "uncertaintyPx": 9
           },
           {
@@ -886,10 +1125,10 @@
               489
             ],
             "projected": [
-              1225.6565886931917,
-              485.2123765344796
+              1230.8588640123328,
+              485.9971568793791
             ],
-            "errorPx": 14.835078005620252,
+            "errorPx": 9.621716788187285,
             "uncertaintyPx": 9
           }
         ]
@@ -912,12 +1151,12 @@
             "frameId": "small-check",
             "partition": "holdout",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 17.22 px. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 12.03 px. Positive focal/depth, above table and in the observed horizontal hemisphere. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
-                "x": 108.85008325921682,
-                "y": -373.3789409278324,
-                "z": -504.5372462704378
+                "x": 2.536791278552791,
+                "y": 13.889342406821331,
+                "z": -16.243544919879724
               },
               "target": {
                 "x": 5.631351606439967,
@@ -925,18 +1164,22 @@
                 "z": 0
               },
               "up": {
-                "x": 0.1232821522304749,
-                "y": 0.8080528491540322,
-                "z": -0.5760660586386537
+                "x": 0.11898038306160248,
+                "y": 0.8131909192042276,
+                "z": 0.569705360138289
               },
-              "focal": 63620.722836396286,
-              "cx": 876.0349791029495,
-              "cy": 488.2810563117022
+              "focal": 2123.4574123517077,
+              "cx": 884.0861005484575,
+              "cy": 489.2246284920811
+            },
+            "cameraRegion": {
+              "status": "pass",
+              "detail": "Positive focal/depth, above table and in the observed horizontal hemisphere."
             },
             "cameraAnchors": 6,
             "checkLandmarks": 4,
-            "rmsPx": 31.523509991531075,
-            "maxPx": 43.39677499623688,
+            "rmsPx": 27.510562927792193,
+            "maxPx": 38.264308026508516,
             "sourceDiagonalPx": 1024.2226320483257,
             "residuals": [
               {
@@ -947,10 +1190,10 @@
                   500
                 ],
                 "projected": [
-                  906.5536601659599,
-                  508.8271452419229
+                  921.5123786119807,
+                  510.9979469229669
                 ],
-                "errorPx": 21.35599742608569,
+                "errorPx": 11.878281956689072,
                 "uncertaintyPx": 9
               },
               {
@@ -961,10 +1204,10 @@
                   463
                 ],
                 "projected": [
-                  613.9882391511213,
-                  477.26726458600143
+                  591.7087467178799,
+                  476.3979001934765
                 ],
-                "errorPx": 25.37835734305182,
+                "errorPx": 13.459980112650392,
                 "uncertaintyPx": 9
               },
               {
@@ -975,10 +1218,10 @@
                   291
                 ],
                 "projected": [
-                  673.979628268793,
-                  304.36150393817627
+                  681.9717299541676,
+                  308.3180076175854
                 ],
-                "errorPx": 17.972732792936633,
+                "errorPx": 17.780335975591036,
                 "uncertaintyPx": 9
               },
               {
@@ -989,10 +1232,10 @@
                   326
                 ],
                 "projected": [
-                  967.5868831954285,
-                  336.1811911045354
+                  976.104578756933,
+                  334.97404149858687
                 ],
-                "errorPx": 13.207467080194963,
+                "errorPx": 8.974650830798987,
                 "uncertaintyPx": 9
               },
               {
@@ -1003,10 +1246,10 @@
                   715
                 ],
                 "projected": [
-                  609.5089927123997,
-                  719.1761129731262
+                  611.2442308434763,
+                  726.8895344611825
                 ],
-                "errorPx": 4.207017131601593,
+                "errorPx": 12.099487666114497,
                 "uncertaintyPx": 12
               },
               {
@@ -1017,10 +1260,10 @@
                   639
                 ],
                 "projected": [
-                  1478.6368709544709,
-                  644.2604222520558
+                  1467.7155061565568,
+                  640.473792688051
                 ],
-                "errorPx": 12.770622846240958,
+                "errorPx": 1.6382960499932233,
                 "uncertaintyPx": 9
               },
               {
@@ -1031,10 +1274,10 @@
                   825
                 ],
                 "projected": [
-                  1415.5944340483616,
-                  816.0218905338902
+                  1476.3535059103301,
+                  845.4305634787139
                 ],
-                "errorPx": 29.7906466297449,
+                "errorPx": 38.264308026508516,
                 "uncertaintyPx": 9
               },
               {
@@ -1045,10 +1288,10 @@
                   653
                 ],
                 "projected": [
-                  1162.726381059251,
-                  662.8092416488921
+                  1208.0270990579947,
+                  682.9921490572165
                 ],
-                "errorPx": 43.39677499623688,
+                "errorPx": 30.144524109317153,
                 "uncertaintyPx": 9
               },
               {
@@ -1059,10 +1302,10 @@
                   491
                 ],
                 "projected": [
-                  910.2094730554492,
-                  509.85054266453244
+                  925.7521063250534,
+                  512.1380229698099
                 ],
-                "errorPx": 31.14342924174952,
+                "errorPx": 23.072484749053935,
                 "uncertaintyPx": 9
               },
               {
@@ -1073,10 +1316,10 @@
                   489
                 ],
                 "projected": [
-                  1224.778820448334,
-                  490.6020393791614
+                  1229.2681044426197,
+                  491.63847553361484
                 ],
-                "errorPx": 15.305255212391513,
+                "errorPx": 11.051476616090874,
                 "uncertaintyPx": 9
               }
             ]
@@ -1099,12 +1342,12 @@
             "frameId": "small-check",
             "partition": "holdout",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 17.24 px. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 11.98 px. Positive focal/depth, above table and in the observed horizontal hemisphere. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
-                "x": 108.85008325921682,
-                "y": -373.3789409278324,
-                "z": -504.5372462704378
+                "x": 2.536791278552791,
+                "y": 13.889342406821331,
+                "z": -16.243544919879724
               },
               "target": {
                 "x": 5.631351606439967,
@@ -1112,18 +1355,22 @@
                 "z": 0
               },
               "up": {
-                "x": 0.1232821522304749,
-                "y": 0.8080528491540322,
-                "z": -0.5760660586386537
+                "x": 0.11898038306160248,
+                "y": 0.8131909192042276,
+                "z": 0.569705360138289
               },
-              "focal": 63620.722836396286,
-              "cx": 876.0349791029495,
-              "cy": 488.2810563117022
+              "focal": 2123.4574123517077,
+              "cx": 884.0861005484575,
+              "cy": 489.2246284920811
+            },
+            "cameraRegion": {
+              "status": "pass",
+              "detail": "Positive focal/depth, above table and in the observed horizontal hemisphere."
             },
             "cameraAnchors": 6,
             "checkLandmarks": 4,
-            "rmsPx": 31.743616969340408,
-            "maxPx": 43.65714963849568,
+            "rmsPx": 27.385824616053437,
+            "maxPx": 38.020698548390605,
             "sourceDiagonalPx": 1024.2226320483257,
             "residuals": [
               {
@@ -1134,10 +1381,10 @@
                   500
                 ],
                 "projected": [
-                  906.2767417362713,
-                  508.8907996415378
+                  921.3658602957944,
+                  510.91302749816583
                 ],
-                "errorPx": 21.634538007632834,
+                "errorPx": 11.85619753436229,
                 "uncertaintyPx": 9
               },
               {
@@ -1148,10 +1395,10 @@
                   463
                 ],
                 "projected": [
-                  613.7312654727014,
-                  477.2175972050703
+                  591.5477271566266,
+                  476.32361290462666
                 ],
-                "errorPx": 25.13812718531837,
+                "errorPx": 13.402528016905388,
                 "uncertaintyPx": 9
               },
               {
@@ -1162,10 +1409,10 @@
                   291
                 ],
                 "projected": [
-                  673.8243989379562,
-                  304.32069255275496
+                  681.7277537539459,
+                  308.2464665298519
                 ],
-                "errorPx": 18.04677564849367,
+                "errorPx": 17.767743124894196,
                 "uncertaintyPx": 9
               },
               {
@@ -1176,10 +1423,10 @@
                   326
                 ],
                 "projected": [
-                  967.4114169917583,
-                  336.25422746936255
+                  975.8659384957417,
+                  334.9032367771009
                 ],
-                "errorPx": 13.37583414531174,
+                "errorPx": 8.904246043099118,
                 "uncertaintyPx": 9
               },
               {
@@ -1190,10 +1437,10 @@
                   715
                 ],
                 "projected": [
-                  609.1841638943379,
-                  719.1208318524779
+                  611.0387767638076,
+                  726.8119230629515
                 ],
-                "errorPx": 4.124945029497221,
+                "errorPx": 11.986581545116449,
                 "uncertaintyPx": 12
               },
               {
@@ -1204,10 +1451,10 @@
                   639
                 ],
                 "projected": [
-                  1478.492370300398,
-                  644.3691598021444
+                  1467.558668460546,
+                  640.163800289148
                 ],
-                "errorPx": 12.684733032367495,
+                "errorPx": 1.2909459949314928,
                 "uncertaintyPx": 9
               },
               {
@@ -1218,10 +1465,10 @@
                   825
                 ],
                 "projected": [
-                  1415.36103824828,
-                  816.0905294821868
+                  1476.2727681372041,
+                  845.1007948815427
                 ],
-                "errorPx": 29.992812391042357,
+                "errorPx": 38.020698548390605,
                 "uncertaintyPx": 9
               },
               {
@@ -1232,10 +1479,10 @@
                   653
                 ],
                 "projected": [
-                  1162.474362541604,
-                  662.8750632056242
+                  1207.914541652075,
+                  682.796466147372
                 ],
-                "errorPx": 43.65714963849568,
+                "errorPx": 29.93866977527839,
                 "uncertaintyPx": 9
               },
               {
@@ -1246,10 +1493,10 @@
                   491
                 ],
                 "projected": [
-                  909.9356490979035,
-                  509.9023332618748
+                  925.6025623253377,
+                  512.0822191872329
                 ],
-                "errorPx": 31.39299107900368,
+                "errorPx": 23.081850027839938,
                 "uncertaintyPx": 9
               },
               {
@@ -1260,10 +1507,10 @@
                   489
                 ],
                 "projected": [
-                  1224.6156678892924,
-                  490.7075714109701
+                  1229.0778317508518,
+                  491.4434675389288
                 ],
-                "errorPx": 15.478807273692404,
+                "errorPx": 11.19215318321275,
                 "uncertaintyPx": 9
               }
             ]
@@ -1286,12 +1533,12 @@
             "frameId": "small-check",
             "partition": "holdout",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 17.18 px. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 12.11 px. Positive focal/depth, above table and in the observed horizontal hemisphere. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
-                "x": 108.85008325921682,
-                "y": -373.3789409278324,
-                "z": -504.5372462704378
+                "x": 2.536791278552791,
+                "y": 13.889342406821331,
+                "z": -16.243544919879724
               },
               "target": {
                 "x": 5.631351606439967,
@@ -1299,18 +1546,22 @@
                 "z": 0
               },
               "up": {
-                "x": 0.1232821522304749,
-                "y": 0.8080528491540322,
-                "z": -0.5760660586386537
+                "x": 0.11898038306160248,
+                "y": 0.8131909192042276,
+                "z": 0.569705360138289
               },
-              "focal": 63620.722836396286,
-              "cx": 876.0349791029495,
-              "cy": 488.2810563117022
+              "focal": 2123.4574123517077,
+              "cx": 884.0861005484575,
+              "cy": 489.2246284920811
+            },
+            "cameraRegion": {
+              "status": "pass",
+              "detail": "Positive focal/depth, above table and in the observed horizontal hemisphere."
             },
             "cameraAnchors": 6,
             "checkLandmarks": 4,
-            "rmsPx": 31.67800399397233,
-            "maxPx": 43.6620475443855,
+            "rmsPx": 27.44145168167012,
+            "maxPx": 38.09895196600107,
             "sourceDiagonalPx": 1024.2226320483257,
             "residuals": [
               {
@@ -1321,10 +1572,10 @@
                   500
                 ],
                 "projected": [
-                  906.3790029883338,
-                  508.73711442622096
+                  921.6915174134203,
+                  511.1941907420295
                 ],
-                "errorPx": 21.478377318333244,
+                "errorPx": 11.99470418842411,
                 "uncertaintyPx": 9
               },
               {
@@ -1335,10 +1586,10 @@
                   463
                 ],
                 "projected": [
-                  613.8777371318524,
-                  476.9207412249986
+                  591.7835147107252,
+                  476.7193894546676
                 ],
-                "errorPx": 25.093165284597024,
+                "errorPx": 13.773216162823626,
                 "uncertaintyPx": 9
               },
               {
@@ -1349,10 +1600,10 @@
                   291
                 ],
                 "projected": [
-                  674.1935536188009,
-                  304.30117865053023
+                  681.7122870322269,
+                  308.2912506857413
                 ],
-                "errorPx": 17.785205358540278,
+                "errorPx": 17.814932859013517,
                 "uncertaintyPx": 9
               },
               {
@@ -1363,10 +1614,10 @@
                   326
                 ],
                 "projected": [
-                  967.7365295992985,
-                  336.37870905386313
+                  975.9361310218624,
+                  334.85520872207206
                 ],
-                "errorPx": 13.266595067612892,
+                "errorPx": 8.85543904941079,
                 "uncertaintyPx": 9
               },
               {
@@ -1377,10 +1628,10 @@
                   715
                 ],
                 "projected": [
-                  609.2511786633834,
-                  718.992707095723
+                  611.3227886763365,
+                  726.9905027270476
                 ],
-                "errorPx": 4.000600039141059,
+                "errorPx": 12.213414873910237,
                 "uncertaintyPx": 12
               },
               {
@@ -1391,10 +1642,10 @@
                   639
                 ],
                 "projected": [
-                  1478.6304984120436,
-                  644.94922319188
+                  1467.598620003407,
+                  639.7392755631594
                 ],
-                "errorPx": 13.063757112689757,
+                "errorPx": 0.9512487933046413,
                 "uncertaintyPx": 9
               },
               {
@@ -1405,10 +1656,10 @@
                   825
                 ],
                 "projected": [
-                  1415.2749520458979,
-                  816.3844055744853
+                  1476.5134182943739,
+                  844.8597022062953
                 ],
-                "errorPx": 29.98927887213074,
+                "errorPx": 38.09895196600107,
                 "uncertaintyPx": 9
               },
               {
@@ -1419,10 +1670,10 @@
                   653
                 ],
                 "projected": [
-                  1162.4844477243555,
-                  662.9399301036335
+                  1208.2432796668577,
+                  682.8286944715568
                 ],
-                "errorPx": 43.6620475443855,
+                "errorPx": 30.004497610773875,
                 "uncertaintyPx": 9
               },
               {
@@ -1433,10 +1684,10 @@
                   491
                 ],
                 "projected": [
-                  910.0377081819925,
-                  509.7451242242751
+                  925.928256562332,
+                  512.3502280659169
                 ],
-                "errorPx": 31.21691360450088,
+                "errorPx": 23.19760262323541,
                 "uncertaintyPx": 9
               },
               {
@@ -1447,10 +1698,10 @@
                   489
                 ],
                 "projected": [
-                  1224.8498323511292,
-                  491.0565092633237
+                  1229.1697414969358,
+                  491.21580619604214
                 ],
-                "errorPx": 15.289107565159846,
+                "errorPx": 11.054605209667756,
                 "uncertaintyPx": 9
               }
             ]
@@ -1497,7 +1748,7 @@
           "right-triangle": 0,
           "isosceles-triangle": 2
         },
-        "instruction": "Join the two orange driving squares edge to edge. Seat their long edges along the yellow isosceles sides; close the short rear edge with the red square. Hold while closing the wedge, then place both long side edges on the table. New parts: P1 (Isosceles triangle), P2 (Isosceles triangle), P3 (Small square), P4 (Small square), P5 (Small square). Joins: P2 edge 2 to P3 edge 3; P1 edge 2 to P3 edge 1; P3 edge 2 to P4 edge 4; P2 edge 2 to P4 edge 3; P1 edge 2 to P4 edge 1; P4 edge 2 to P5 edge 2; P2 edge 1 to P5 edge 3; P1 edge 1 to P5 edge 1. Source frame: small-fit. Release checkpoint: consult the measured result before following this candidate."
+        "instruction": "Hold the red rear square and attach the two yellow sides. At 00:24.5 the three-piece U stands on the table. Add the two orange driving squares along the sloped edges; the proposed deck order and grips are checked separately. New parts: P1 (Isosceles triangle), P2 (Isosceles triangle), P3 (Small square), P4 (Small square), P5 (Small square). Joins: P2 edge 2 to P3 edge 3; P1 edge 2 to P3 edge 1; P3 edge 2 to P4 edge 4; P2 edge 2 to P4 edge 3; P1 edge 2 to P4 edge 1; P4 edge 2 to P5 edge 2; P2 edge 1 to P5 edge 3; P1 edge 1 to P5 edge 1. Source frame: small-fit. Release checkpoint: consult the measured result before following this candidate."
       },
       {
         "step": 2,
@@ -1549,32 +1800,11 @@
         "status": "pass",
         "paths": [
           {
-            "id": "insert-small-deck-1",
+            "id": "insert-small-back",
             "movingTileIds": [
-              "small-deck-1"
+              "small-back"
             ],
             "fixedTileIds": [],
-            "offsets": [
-              {
-                "x": 0,
-                "y": 9.054632531456486,
-                "z": 0
-              },
-              {
-                "x": 0,
-                "y": 0,
-                "z": 0
-              }
-            ]
-          },
-          {
-            "id": "insert-small-deck-2",
-            "movingTileIds": [
-              "small-deck-2"
-            ],
-            "fixedTileIds": [
-              "small-deck-1"
-            ],
             "offsets": [
               {
                 "x": 0,
@@ -1594,8 +1824,7 @@
               "small-side--1"
             ],
             "fixedTileIds": [
-              "small-deck-1",
-              "small-deck-2"
+              "small-back"
             ],
             "offsets": [
               {
@@ -1616,8 +1845,7 @@
               "small-side-1"
             ],
             "fixedTileIds": [
-              "small-deck-1",
-              "small-deck-2",
+              "small-back",
               "small-side--1"
             ],
             "offsets": [
@@ -1634,19 +1862,42 @@
             ]
           },
           {
-            "id": "insert-small-back",
+            "id": "insert-small-deck-2",
             "movingTileIds": [
-              "small-back"
+              "small-deck-2"
             ],
             "fixedTileIds": [
-              "small-deck-1",
-              "small-deck-2",
+              "small-back",
               "small-side--1",
               "small-side-1"
             ],
             "offsets": [
               {
-                "x": 9.054632531456486,
+                "x": 0,
+                "y": 9.054632531456486,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          {
+            "id": "insert-small-deck-1",
+            "movingTileIds": [
+              "small-deck-1"
+            ],
+            "fixedTileIds": [
+              "small-back",
+              "small-side--1",
+              "small-side-1",
+              "small-deck-2"
+            ],
+            "offsets": [
+              {
+                "x": -9.054632531456486,
                 "y": 0,
                 "z": 0
               },
@@ -1788,6 +2039,422 @@
         "detail": "1 continuous insertion paths clear every previously installed part. Grip access, held-pose stability and magnetic closure remain separate requirements."
       }
     ],
+    "assemblySimulation": [
+      {
+        "stageId": "small-wedge",
+        "status": "fail",
+        "detail": "Edges do not close at small-side-1:1->small-deck-2:2: transverse gap 0.200 in, overlap 2.758 in.",
+        "operations": [
+          {
+            "index": 0,
+            "seed": 0,
+            "tileIds": [
+              "small-back"
+            ],
+            "status": "pass",
+            "detail": "Clear grip and insertion, connected closure and stable supported prefix; actual settled poses retained.",
+            "trials": [
+              {
+                "status": "pass",
+                "heldTileIds": [
+                  "small-back"
+                ],
+                "peakDisplacement": 1.9697246368532397e-7,
+                "settledSteps": 900,
+                "poppedJoints": [],
+                "dynamicTileCount": 0,
+                "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+              },
+              {
+                "status": "pass",
+                "heldTileIds": [
+                  "small-back"
+                ],
+                "peakDisplacement": 1.3061030923466888e-8,
+                "settledSteps": 900,
+                "poppedJoints": [],
+                "dynamicTileCount": 0,
+                "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+              }
+            ],
+            "path": {
+              "id": "insert-small-back",
+              "movingTileIds": [
+                "small-back"
+              ],
+              "fixedTileIds": [],
+              "offsets": [
+                {
+                  "x": 0,
+                  "y": 9.054632380866437,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                }
+              ]
+            },
+            "grip": {
+              "status": "pass",
+              "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+            },
+            "closure": {
+              "status": "pass",
+              "detail": "First part/module placed; no pre-existing join required."
+            }
+          },
+          {
+            "index": 1,
+            "seed": 0,
+            "tileIds": [
+              "small-side--1"
+            ],
+            "status": "pass",
+            "detail": "Clear grip and insertion, connected closure and stable supported prefix; actual settled poses retained.",
+            "trials": [
+              {
+                "status": "pass",
+                "heldTileIds": [
+                  "small-back"
+                ],
+                "peakDisplacement": 0,
+                "settledSteps": 900,
+                "poppedJoints": [],
+                "dynamicTileCount": 0,
+                "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+              },
+              {
+                "status": "pass",
+                "heldTileIds": [
+                  "small-side--1"
+                ],
+                "peakDisplacement": 8.900081357415083e-8,
+                "settledSteps": 900,
+                "poppedJoints": [],
+                "dynamicTileCount": 0,
+                "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+              },
+              {
+                "status": "pass",
+                "heldTileIds": [
+                  "small-side--1",
+                  "small-back"
+                ],
+                "peakDisplacement": 1.516285452751731e-8,
+                "settledSteps": 900,
+                "poppedJoints": [],
+                "dynamicTileCount": 0,
+                "detail": "2 separate hand contacts support 2 panels. No free-body stability is claimed; handoff/release must be checked separately."
+              }
+            ],
+            "path": {
+              "id": "insert-small-side--1",
+              "movingTileIds": [
+                "small-side--1"
+              ],
+              "fixedTileIds": [
+                "small-back"
+              ],
+              "offsets": [
+                {
+                  "x": 0,
+                  "y": 9.054632380866437,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                }
+              ]
+            },
+            "grip": {
+              "status": "pass",
+              "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+            },
+            "closure": {
+              "status": "pass",
+              "detail": "1 new edge contacts close after a separated, clear approach. Gap ≤ thickness + 0.03 in, alignment within 5 degrees and overlap within 0.21 in of the shorter edge. Magnetic force remains a model assumption."
+            }
+          },
+          {
+            "index": 2,
+            "seed": 0,
+            "tileIds": [
+              "small-side-1"
+            ],
+            "status": "pass",
+            "detail": "Clear grip and insertion, connected closure and stable supported prefix; actual settled poses retained.",
+            "trials": [
+              {
+                "status": "pass",
+                "heldTileIds": [
+                  "small-back"
+                ],
+                "peakDisplacement": 0.16034565821589836,
+                "settledSteps": 767,
+                "poppedJoints": [],
+                "dynamicTileCount": 1,
+                "detail": "1 individually held panels, 1 dynamic panels; peak 0.160 in, 767/90 rest steps, 0 rejected/broken joins."
+              },
+              {
+                "status": "pass",
+                "heldTileIds": [
+                  "small-side-1"
+                ],
+                "peakDisplacement": 8.900081357415083e-8,
+                "settledSteps": 900,
+                "poppedJoints": [],
+                "dynamicTileCount": 0,
+                "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+              },
+              {
+                "status": "pass",
+                "heldTileIds": [
+                  "small-side-1",
+                  "small-back"
+                ],
+                "peakDisplacement": 0.004010586437431645,
+                "settledSteps": 900,
+                "poppedJoints": [],
+                "dynamicTileCount": 1,
+                "detail": "2 individually held panels, 1 dynamic panels; peak 0.004 in, 900/90 rest steps, 0 rejected/broken joins."
+              },
+              {
+                "status": "pass",
+                "heldTileIds": [],
+                "peakDisplacement": 0.12354288270431128,
+                "settledSteps": 894,
+                "poppedJoints": [],
+                "dynamicTileCount": 3,
+                "detail": "0 individually held panels, 3 dynamic panels; peak 0.124 in, 894/90 rest steps, 0 rejected/broken joins."
+              }
+            ],
+            "path": {
+              "id": "insert-small-side-1",
+              "movingTileIds": [
+                "small-side-1"
+              ],
+              "fixedTileIds": [
+                "small-back",
+                "small-side--1"
+              ],
+              "offsets": [
+                {
+                  "x": 0,
+                  "y": 9.054632380866437,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                }
+              ]
+            },
+            "grip": {
+              "status": "pass",
+              "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+            },
+            "closure": {
+              "status": "pass",
+              "detail": "1 new edge contacts close after a separated, clear approach. Gap ≤ thickness + 0.03 in, alignment within 5 degrees and overlap within 0.21 in of the shorter edge. Magnetic force remains a model assumption."
+            }
+          },
+          {
+            "index": 3,
+            "seed": 0,
+            "tileIds": [
+              "small-deck-2"
+            ],
+            "status": "fail",
+            "detail": "Edges do not close at small-side-1:1->small-deck-2:2: transverse gap 0.200 in, overlap 2.758 in.",
+            "trials": [
+              {
+                "status": "pass",
+                "heldTileIds": [],
+                "peakDisplacement": 0.007730041481185422,
+                "settledSteps": 900,
+                "poppedJoints": [],
+                "dynamicTileCount": 3,
+                "detail": "0 individually held panels, 3 dynamic panels; peak 0.008 in, 900/90 rest steps, 0 rejected/broken joins."
+              },
+              {
+                "status": "pass",
+                "heldTileIds": [
+                  "small-deck-2"
+                ],
+                "peakDisplacement": 8.936079858987505e-8,
+                "settledSteps": 900,
+                "poppedJoints": [],
+                "dynamicTileCount": 0,
+                "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+              }
+            ],
+            "path": {
+              "id": "insert-small-deck-2",
+              "movingTileIds": [
+                "small-deck-2"
+              ],
+              "fixedTileIds": [
+                "small-back",
+                "small-side--1",
+                "small-side-1"
+              ],
+              "offsets": [
+                {
+                  "x": 0,
+                  "y": 9.055177310189961,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                }
+              ]
+            },
+            "grip": {
+              "status": "pass",
+              "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+            },
+            "closure": {
+              "status": "fail",
+              "detail": "Edges do not close at small-side-1:1->small-deck-2:2: transverse gap 0.200 in, overlap 2.758 in."
+            }
+          }
+        ],
+        "checkpoints": []
+      },
+      {
+        "stageId": "small-launch",
+        "status": "fail",
+        "detail": "Grip on launch-back is blocked by launch-roof.",
+        "operations": [
+          {
+            "index": 0,
+            "seed": 0,
+            "tileIds": [
+              "launch-roof"
+            ],
+            "status": "pass",
+            "detail": "Clear grip and insertion, connected closure and stable supported prefix; actual settled poses retained.",
+            "trials": [
+              {
+                "status": "pass",
+                "heldTileIds": [
+                  "launch-roof"
+                ],
+                "peakDisplacement": 3.8595492030412537e-7,
+                "settledSteps": 900,
+                "poppedJoints": [],
+                "dynamicTileCount": 0,
+                "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+              },
+              {
+                "status": "pass",
+                "heldTileIds": [
+                  "launch-roof"
+                ],
+                "peakDisplacement": 1.0490417556852094e-7,
+                "settledSteps": 900,
+                "poppedJoints": [],
+                "dynamicTileCount": 0,
+                "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+              }
+            ],
+            "path": {
+              "id": "insert-launch-roof",
+              "movingTileIds": [
+                "launch-roof"
+              ],
+              "fixedTileIds": [],
+              "offsets": [
+                {
+                  "x": 0,
+                  "y": 6.36,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                }
+              ]
+            },
+            "grip": {
+              "status": "pass",
+              "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+            },
+            "closure": {
+              "status": "pass",
+              "detail": "First part/module placed; no pre-existing join required."
+            }
+          },
+          {
+            "index": 1,
+            "seed": 0,
+            "tileIds": [
+              "launch-back"
+            ],
+            "status": "fail",
+            "detail": "Grip on launch-back is blocked by launch-roof.",
+            "trials": [
+              {
+                "status": "pass",
+                "heldTileIds": [
+                  "launch-roof"
+                ],
+                "peakDisplacement": 0,
+                "settledSteps": 900,
+                "poppedJoints": [],
+                "dynamicTileCount": 0,
+                "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+              }
+            ],
+            "path": {
+              "id": "insert-launch-back",
+              "movingTileIds": [
+                "launch-back"
+              ],
+              "fixedTileIds": [
+                "launch-roof"
+              ],
+              "offsets": [
+                {
+                  "x": 0,
+                  "y": 6.36,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                }
+              ]
+            },
+            "grip": {
+              "status": "fail",
+              "detail": "Grip on launch-back is blocked by launch-roof."
+            }
+          }
+        ],
+        "checkpoints": []
+      },
+      {
+        "stageId": "small-final",
+        "status": "unverified",
+        "detail": "An earlier module has not passed its complete supported assembly.",
+        "operations": [],
+        "checkpoints": []
+      }
+    ],
+    "holdoutCoverage": {
+      "status": "fail",
+      "detail": "Frame small-check is historical, unassessed, duplicated, or not reserved before candidate freeze and inspection."
+    },
     "carTrials": [
       {
         "laneId": "car",

@@ -3050,14 +3050,14 @@
   },
   "report": {
     "id": "large-ramp",
-    "fingerprint": "880bbf9d3a1af6fa711e2eb0e6d4a8ab919dc9d848889d3b27bfe8530f234b82",
-    "validationCodeHash": "6af4d03f7df8679d83d4e24627f307ab3b27823b962dad91913e8cea0ebdff6c",
-    "generatedAt": "2026-09-27T02:25:28.088Z",
+    "fingerprint": "09b8738ec0c7a69eaf3ad9c77cf3573dd76f4b55df38b53d88ee81d826e70604",
+    "validationCodeHash": "d25326af9127972fce2819324bd1960f61d6a603a14561cbf8f75bedf5d41abd",
+    "generatedAt": "2026-09-27T03:02:45.369Z",
     "replication": "not-verified",
     "checks": {
       "source": {
         "status": "pass",
-        "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 25 extracted frame hashes. Manual annotations remain reviewable measurements."
+        "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 27 extracted frame hashes. Manual annotations remain reviewable measurements."
       },
       "inventory": {
         "status": "pass",
@@ -3065,7 +3065,7 @@
       },
       "fidelity": {
         "status": "unverified",
-        "detail": "0 measured views, 0 withheld views, 51/51 parts lack independent scored landmarks. Need complete visible/occluded part constraints and at least two distinct withheld final views. 42-square shell allocation and exact deck seams are source-informed hypotheses; intermediate ring release checks and independent camera fitting remain incomplete."
+        "detail": "0 measured views, 0 historically withheld views, 51/51 parts lack independent scored landmarks. No frozen candidate and reservation baseline for an independent evaluation. Need complete visible/occluded part constraints and at least two distinct withheld final views. 42-square shell allocation and exact deck seams are source-informed hypotheses; intermediate ring release checks and independent camera fitting remain incomplete."
       },
       "materials": {
         "status": "unverified",
@@ -3085,7 +3085,7 @@
       },
       "assembly": {
         "status": "unverified",
-        "detail": "5/5 nominal checkpoints passed; 0/5 stage insertion sequences clear. Held stability, magnetic closure and hand access remain separate unverified requirements."
+        "detail": "0/5 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. large-bay-0: No per-part insertion sequence has been supplied. large-bay-1: No per-part insertion sequence has been supplied. large-bay-2: No per-part insertion sequence has been supplied. large-decks: No per-part insertion sequence has been supplied. large-final: No per-part insertion sequence has been supplied. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
       },
       "function": {
         "status": "unverified",
@@ -3410,6 +3410,47 @@
         "detail": "No per-part insertion sequence has been supplied."
       }
     ],
+    "assemblySimulation": [
+      {
+        "stageId": "large-bay-0",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      },
+      {
+        "stageId": "large-bay-1",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      },
+      {
+        "stageId": "large-bay-2",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      },
+      {
+        "stageId": "large-decks",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      },
+      {
+        "stageId": "large-final",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      }
+    ],
+    "holdoutCoverage": {
+      "status": "unverified",
+      "detail": "No frozen candidate and reservation baseline for an independent evaluation."
+    },
     "carTrials": []
   }
 }

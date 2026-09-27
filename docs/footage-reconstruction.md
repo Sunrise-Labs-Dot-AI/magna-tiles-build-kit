@@ -16,8 +16,8 @@ Updated 2026-09-26. `/references` contains four inspectable reconstruction candi
 
 | Target | Source and inventory | Source shape | Release simulation | Assembly | Car function |
 |---|---|---|---|---|---|
-| Jet, 40 | Verified local hashes and BOM | Fails withheld view; sparse side-view corners pass | Fails three perturbations | Released checkpoints fail; upright rings and separate pods are explicitly held | No flight test or claim |
-| Small ramp, 9 | Verified local hashes and BOM | Fails withheld view | Passes all three perturbations | Wedge/final release and ten insertion paths pass; held launch, grip access and magnetic closure remain unverified | One assumed car completes the inferred deck route with wheel contact |
+| Jet, 40 | Verified local hashes and BOM | Fails withheld view; historical views need independent camera-region constraints | Fails three perturbations | Released checkpoints fail; upright rings and separate pods are explicitly held | No flight test or claim |
+| Small ramp, 9 | Verified local hashes and BOM | Fails withheld view | Passes all three perturbations | Wedge/final release and ten nominal paths pass; intermediate deck closure and launch grip fail | One assumed car completes the inferred deck route with wheel contact |
 | Medium ramp, 37 | Verified local hashes and BOM | Fitting and withheld views fail | Does not reach sustained rest | Four-piece wedge and five-square support pass; combined stages fail | Fails; no successful passive turn demonstrated |
 | Large ramp, 51 | Verified local hashes and BOM | No scored camera fit yet | Passes all three perturbations | Released checkpoints pass; insertion and grip checks remain unverified | Not reconstructed/tested |
 | 3D snail | Exact source absent | Not assessed | Not assessed | Not assessed | Not assessed |
@@ -33,6 +33,22 @@ The goal is reliable generation of verified builds. The earlier candidate PR is 
 `planConstructionPaths` performs bounded direction search in a supplied per-part order, validates each path independently, and retains all installed parts as obstacles. Multi-part moves require a previously planned matching module. Missing parts, duplicate insertions, future module references, and a single arbitrary whole-model insertion fail. These are clearance checks, not hand or stability checks.
 
 The small ramp has five wedge insertions, four separately held launch-module insertions, and one module-joining path. The per-part order is a candidate sequence within the source stages; the generated paths are not measurements of Henry’s hand motions. Select a construction checkpoint and an insertion in the workshop, then move the slider to inspect it. Downloads contain the same coordinates used by the validator.
+
+### Supported assembly and independent source evidence
+
+`evaluateAssembly` now simulates every operation across seeds 0, 17 and 53. A maximum of two hand contacts each controls exactly one panel. A hand cannot fix an entire multi-part module. When one or two panels are each directly grasped, their zero-dynamic-body record explicitly makes no free-stability claim. Before the next insertion, the previous insertion hand is removed. Carried modules have one held panel, with the remaining parts dynamic. Every released stage runs a mandatory free checkpoint, including stages that add no parts.
+
+The fingertip proxy pinches an actual catalog edge with two 0.22-inch-radius spheres, checked along a 1.5-inch approach and the full translation. It checks table clearance, present panels, support-hand clearance and withdrawal. This is a stated proxy, not a measurement of human dexterity, palm clearance or grip force. Rotating transfers remain unverified. The table stays at the complete stage's height; a floating prefix cannot invent support by regrounding itself. Settled geometry is carried into the next insertion and closure rather than restored to the authored pose.
+
+Closure adds stricter contact requirements than the legacy broad magnetic search: transverse edge gap at most tile thickness plus 0.03 inches, alignment within 5 degrees, and longitudinal overlap within 0.21 inches of the shorter edge. A disconnected or merely nearby module cannot pass. All original raw-overlap, peak-motion and rest limits remain unchanged.
+
+A source-independent three-wall U now passes its complete assembly in all three seeds, including final free releases. Reproducible evidence is `verification/replication/assembly-fixture.json`; the build also rejects a stale or edited fixture artifact. Negative tests cover missing/excess grips, blocked approach, unsupported hanging modules, absent joins, premature floating-panel release and omitted operations. The small candidate passes assembly of its three-piece base but its first deck insertion fails strict edge overlap after settling. Its launch-module proposal fails grip clearance. The detailed checks are visible in the workshop and downloads.
+
+The fitting footage at 24.5 seconds shows the small ramp's rear square and two isosceles sides standing before either deck panel is installed. Its instructions now follow that observed sequence. The 34-second historical annotation had lateral corner IDs mirrored; only those IDs were corrected, preserving all pixels and roles. Prior observations and locks remain in `verification/replication/observation-history/`. Correcting this transcription makes the camera physically plausible, but scored RMS remains about 23.3 pixels, above the unchanged threshold. The candidate geometry has not changed.
+
+Camera acceptance now separately requires an observed hemisphere, position above the table, finite positive focal length, nondegenerate axes and positive depth. A perfect pixel residual cannot override an impossible camera. Historical views with no recorded region cannot pass this gate.
+
+The locked evidence-use ledger and candidate-freeze record track source/frame hashes, reservation and inspection order, prior inspection, baseline/current candidate digests and reviewed view families. The actual evaluator uses those records; changing a candidate after freeze fails, and reservation hashes must match verified local extraction records. The newly reserved 36.25- and 40.2-second frames were inspected only after candidate freeze. They match already inspected fitting view families, so neither supplies new independent coverage. The first shows the yellow car descending the orange deck, but does not by itself measure a complete trajectory. The second is a wide shot with the completed small ramp on the left. Source insufficiency is recorded explicitly; no favorable frame replaces a failed heldout measurement.
 
 ### Numerical contact correction
 
@@ -51,7 +67,7 @@ The original local jet cache was recovered. After searching the project, Documen
 | [Jet](https://www.youtube.com/watch?v=WDtC_9se3ds), 1280×720 | `.video-cache/WDtC_9se3ds/source.mp4` | `7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7` |
 | [Henry's ramps](https://www.youtube.com/watch?v=vxwBYubszZ8), 1920×1080 | `.video-cache/vxwBYubszZ8/source.mp4` | `2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0` |
 
-`sources.json` records 45 BOM, construction, comparison and functional-inspection timestamps. `frame-manifest.json` binds each PNG to its source hash, timestamp, construction stage and partition. Videos and extracted creator frames stay ignored locally. The PR contains our geometry renders and numeric annotations only. Restoring media on another machine requires the same bytes; a changed download fails the hash check.
+`sources.json` records 47 BOM, construction, comparison and functional-inspection timestamps. `frame-manifest.json` binds each PNG to its source hash, timestamp, construction stage and partition. Videos and extracted creator frames stay ignored locally. The PR contains our geometry renders and numeric annotations only. Restoring media on another machine requires the same bytes; a changed download fails the hash check.
 
 Five sparse camera observations contain six camera anchors and at least four scored corners each. RMS tolerance is **2%** and maximum corner error **4%** of the source annotation bounding-box diagonal. Camera fitting has seven parameters and rejects insufficient or degenerate depth anchors. Its optimization and initialization use only camera anchors. Changing check pixels cannot change the fitted camera. Runtime labels, stage membership and exact locked observation content are validated.
 

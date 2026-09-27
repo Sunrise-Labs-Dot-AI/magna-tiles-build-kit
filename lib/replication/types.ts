@@ -66,6 +66,8 @@ export interface Observation {
   landmarks: Landmark[];
   /** Initial camera search orientation; geometry cannot be changed by camera fitting. */
   viewDirection: Vec3;
+  /** Independently observed camera region, expressed in this stage's coordinates. */
+  cameraRegion?: { tableY: number; horizontalDirection: Vec3 };
 }
 export interface Camera {
   position: Vec3;
@@ -82,6 +84,7 @@ export interface ProjectionResult {
   status: Verdict;
   detail: string;
   camera: Camera | null;
+  cameraRegion: Check;
   cameraAnchors: number;
   checkLandmarks: number;
   rmsPx: number | null;
@@ -135,5 +138,7 @@ export interface ReplicaReport {
   }[];
   instructions: AssemblyStep[];
   constructionPaths: import("./construction").ConstructionResult[];
+  assemblySimulation: import("./assembly").AssemblyResult[];
+  holdoutCoverage: Check;
   carTrials: import("@/lib/planner/types").CarTrial[];
 }

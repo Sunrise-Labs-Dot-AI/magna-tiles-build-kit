@@ -2794,9 +2794,9 @@
   },
   "report": {
     "id": "jet",
-    "fingerprint": "19d51f281d12554d9c07334f2c23e0a2d7656cb349b125a9188e7955c7f15706",
-    "validationCodeHash": "6af4d03f7df8679d83d4e24627f307ab3b27823b962dad91913e8cea0ebdff6c",
-    "generatedAt": "2026-09-27T02:25:17.256Z",
+    "fingerprint": "e5e8a86ec31da66d4a50b9a9bb38d53af2c4e96469495ff5995e5bcafed64459",
+    "validationCodeHash": "d25326af9127972fce2819324bd1960f61d6a603a14561cbf8f75bedf5d41abd",
+    "generatedAt": "2026-09-27T03:02:35.042Z",
     "replication": "not-verified",
     "checks": {
       "source": {
@@ -2809,7 +2809,7 @@
       },
       "fidelity": {
         "status": "fail",
-        "detail": "2 measured views, 1 withheld views, 33/40 parts lack independent scored landmarks. Need complete visible/occluded part constraints and at least two distinct withheld final views. Pod incidence, longitudinal bay and the red leading triangle contacts are candidate hypotheses; the footage does not expose every join. Hidden cockpit floor/contact geometry and final inclination remain unresolved. The six rigid pieces are retained rather than collapsed to one fin."
+        "detail": "2 measured views, 1 historically withheld views, 33/40 parts lack independent scored landmarks. No frozen candidate and reservation baseline for an independent evaluation. Need complete visible/occluded part constraints and at least two distinct withheld final views. Pod incidence, longitudinal bay and the red leading triangle contacts are candidate hypotheses; the footage does not expose every join. Hidden cockpit floor/contact geometry and final inclination remain unresolved. The six rigid pieces are retained rather than collapsed to one fin."
       },
       "materials": {
         "status": "unverified",
@@ -2829,7 +2829,7 @@
       },
       "assembly": {
         "status": "fail",
-        "detail": "1/16 nominal checkpoints passed; 0/16 stage insertion sequences clear. Held stability, magnetic closure and hand access remain separate unverified requirements."
+        "detail": "0/16 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. body-upright-1: No per-part insertion sequence has been supplied. body-upright-2: No per-part insertion sequence has been supplied. body-upright-3: No per-part insertion sequence has been supplied. body-upright-4: No per-part insertion sequence has been supplied. body-horizontal: No per-part insertion sequence has been supplied. nose: No per-part insertion sequence has been supplied. wing-module--1: No per-part insertion sequence has been supplied. wing-root--1: No per-part insertion sequence has been supplied. wing-module-1: No per-part insertion sequence has been supplied. wing-root-1: No per-part insertion sequence has been supplied. wing-roots: No per-part insertion sequence has been supplied. wingtips: No per-part insertion sequence has been supplied. tail-cone: No per-part insertion sequence has been supplied. tail-horizontal: No per-part insertion sequence has been supplied. tail-fins: No per-part insertion sequence has been supplied. final: No per-part insertion sequence has been supplied. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
       },
       "function": {
         "status": "unverified",
@@ -2841,8 +2841,8 @@
         "id": "jet-side-388",
         "frameId": "jet-final-fit",
         "partition": "fit",
-        "status": "pass",
-        "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 4.93 px. Independent point agreement only; not complete shape fidelity.",
+        "status": "unverified",
+        "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 4.93 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
         "camera": {
           "position": {
             "x": 0.5040457847226278,
@@ -2862,6 +2862,10 @@
           "focal": 3742.5571661404424,
           "cx": 608.6948068068475,
           "cy": 471.5091326261269
+        },
+        "cameraRegion": {
+          "status": "unverified",
+          "detail": "No independently observed camera region."
         },
         "cameraAnchors": 6,
         "checkLandmarks": 4,
@@ -3016,7 +3020,7 @@
         "frameId": "jet-final-check-a",
         "partition": "holdout",
         "status": "fail",
-        "detail": "6 camera anchors / 7 camera parameters; 6 scored landmarks; anchor RMS 16.79 px. Independent point agreement only; not complete shape fidelity.",
+        "detail": "6 camera anchors / 7 camera parameters; 6 scored landmarks; anchor RMS 16.79 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
         "camera": {
           "position": {
             "x": 0.10930456772481012,
@@ -3036,6 +3040,10 @@
           "focal": 407.5260339097957,
           "cx": 777.1450961076156,
           "cy": 456.2874609700916
+        },
+        "cameraRegion": {
+          "status": "unverified",
+          "detail": "No independently observed camera region."
         },
         "cameraAnchors": 6,
         "checkLandmarks": 6,
@@ -3231,7 +3239,7 @@
             "frameId": "jet-final-fit",
             "partition": "fit",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 11.75 px. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 11.75 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": 0.5040457847226278,
@@ -3251,6 +3259,10 @@
               "focal": 3742.5571661404424,
               "cx": 608.6948068068475,
               "cy": 471.5091326261269
+            },
+            "cameraRegion": {
+              "status": "unverified",
+              "detail": "No independently observed camera region."
             },
             "cameraAnchors": 6,
             "checkLandmarks": 4,
@@ -3405,7 +3417,7 @@
             "frameId": "jet-final-check-a",
             "partition": "holdout",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 6 scored landmarks; anchor RMS 17.12 px. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 6 scored landmarks; anchor RMS 17.12 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": 0.10930456772481012,
@@ -3425,6 +3437,10 @@
               "focal": 407.5260339097957,
               "cx": 777.1450961076156,
               "cy": 456.2874609700916
+            },
+            "cameraRegion": {
+              "status": "unverified",
+              "detail": "No independently observed camera region."
             },
             "cameraAnchors": 6,
             "checkLandmarks": 6,
@@ -3620,7 +3636,7 @@
             "frameId": "jet-final-fit",
             "partition": "fit",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 11.86 px. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 11.86 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": 0.5040457847226278,
@@ -3640,6 +3656,10 @@
               "focal": 3742.5571661404424,
               "cx": 608.6948068068475,
               "cy": 471.5091326261269
+            },
+            "cameraRegion": {
+              "status": "unverified",
+              "detail": "No independently observed camera region."
             },
             "cameraAnchors": 6,
             "checkLandmarks": 4,
@@ -3794,7 +3814,7 @@
             "frameId": "jet-final-check-a",
             "partition": "holdout",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 6 scored landmarks; anchor RMS 17.14 px. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 6 scored landmarks; anchor RMS 17.14 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": 0.10930456772481012,
@@ -3814,6 +3834,10 @@
               "focal": 407.5260339097957,
               "cx": 777.1450961076156,
               "cy": 456.2874609700916
+            },
+            "cameraRegion": {
+              "status": "unverified",
+              "detail": "No independently observed camera region."
             },
             "cameraAnchors": 6,
             "checkLandmarks": 6,
@@ -4009,7 +4033,7 @@
             "frameId": "jet-final-fit",
             "partition": "fit",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 11.72 px. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 11.72 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": 0.5040457847226278,
@@ -4029,6 +4053,10 @@
               "focal": 3742.5571661404424,
               "cx": 608.6948068068475,
               "cy": 471.5091326261269
+            },
+            "cameraRegion": {
+              "status": "unverified",
+              "detail": "No independently observed camera region."
             },
             "cameraAnchors": 6,
             "checkLandmarks": 4,
@@ -4183,7 +4211,7 @@
             "frameId": "jet-final-check-a",
             "partition": "holdout",
             "status": "fail",
-            "detail": "6 camera anchors / 7 camera parameters; 6 scored landmarks; anchor RMS 17.11 px. Independent point agreement only; not complete shape fidelity.",
+            "detail": "6 camera anchors / 7 camera parameters; 6 scored landmarks; anchor RMS 17.11 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
             "camera": {
               "position": {
                 "x": 0.10930456772481012,
@@ -4203,6 +4231,10 @@
               "focal": 407.5260339097957,
               "cx": 777.1450961076156,
               "cy": 456.2874609700916
+            },
+            "cameraRegion": {
+              "status": "unverified",
+              "detail": "No independently observed camera region."
             },
             "cameraAnchors": 6,
             "checkLandmarks": 6,
@@ -5116,6 +5148,124 @@
         "detail": "No per-part insertion sequence has been supplied."
       }
     ],
+    "assemblySimulation": [
+      {
+        "stageId": "body-upright-1",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      },
+      {
+        "stageId": "body-upright-2",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      },
+      {
+        "stageId": "body-upright-3",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      },
+      {
+        "stageId": "body-upright-4",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      },
+      {
+        "stageId": "body-horizontal",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      },
+      {
+        "stageId": "nose",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      },
+      {
+        "stageId": "wing-module--1",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      },
+      {
+        "stageId": "wing-root--1",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      },
+      {
+        "stageId": "wing-module-1",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      },
+      {
+        "stageId": "wing-root-1",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      },
+      {
+        "stageId": "wing-roots",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      },
+      {
+        "stageId": "wingtips",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      },
+      {
+        "stageId": "tail-cone",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      },
+      {
+        "stageId": "tail-horizontal",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      },
+      {
+        "stageId": "tail-fins",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      },
+      {
+        "stageId": "final",
+        "status": "unverified",
+        "detail": "No per-part insertion sequence has been supplied.",
+        "operations": [],
+        "checkpoints": []
+      }
+    ],
+    "holdoutCoverage": {
+      "status": "unverified",
+      "detail": "No frozen candidate and reservation baseline for an independent evaluation."
+    },
     "carTrials": []
   }
 }

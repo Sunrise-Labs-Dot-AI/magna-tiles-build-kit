@@ -1,0 +1,946 @@
+{
+  "generatedAt": "2026-09-27T03:02:34.837Z",
+  "validationCodeHash": "d25326af9127972fce2819324bd1960f61d6a603a14561cbf8f75bedf5d41abd",
+  "scope": "Generic three-wall assembly fixture, independent of source replicas. Three perturbation seeds, two-finger edge proxy and explicit one-panel supports. No physical human or magnetic-force certification.",
+  "replica": {
+    "id": "u-fixture",
+    "sourceId": "fixture",
+    "title": "Three-sided support",
+    "build": {
+      "id": "u-fixture",
+      "title": "Three-sided support",
+      "prompt": "Three-sided support",
+      "summary": "Source-constrained reconstruction candidate. Read the independent evidence before building.",
+      "seed": 0,
+      "family": "tower",
+      "inventoryPreset": "builder-xl",
+      "tiles": [
+        {
+          "id": "x-0--1",
+          "shape": "small-square",
+          "color": "blue",
+          "position": {
+            "x": -1.59,
+            "y": 1.5,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "shell",
+          "subassemblyId": "shell",
+          "root": true
+        },
+        {
+          "id": "z-0--1",
+          "shape": "small-square",
+          "color": "red",
+          "position": {
+            "x": 0,
+            "y": 1.5,
+            "z": -1.59
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "shell",
+          "subassemblyId": "shell",
+          "root": false,
+          "parentTileId": "x-0--1",
+          "parentEdge": 0,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "x-0-1",
+          "shape": "small-square",
+          "color": "blue",
+          "position": {
+            "x": 1.59,
+            "y": 1.5,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "shell",
+          "subassemblyId": "shell",
+          "root": false,
+          "parentTileId": "z-0--1",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        }
+      ],
+      "connections": [
+        {
+          "fromTileId": "x-0--1",
+          "fromEdge": 0,
+          "toTileId": "z-0--1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "z-0--1",
+          "fromEdge": 1,
+          "toTileId": "x-0-1",
+          "toEdge": 0,
+          "kind": "edge"
+        }
+      ],
+      "bounds": {
+        "width": 3.3600000000000003,
+        "height": 3,
+        "depth": 3.18
+      }
+    },
+    "bomFrameId": "fixture",
+    "inventory": {
+      "small-square": 0,
+      "large-square": 0,
+      "xl-square": 0,
+      "equilateral-triangle": 0,
+      "right-triangle": 0,
+      "isosceles-triangle": 0
+    },
+    "uncertainties": [],
+    "materialQuestions": [],
+    "stages": [
+      {
+        "id": "u",
+        "frameId": "fixture",
+        "title": "U",
+        "instruction": "Support the first wall until the other two are joined.",
+        "tileIds": [
+          "x-0--1",
+          "z-0--1",
+          "x-0-1"
+        ],
+        "support": "released"
+      }
+    ],
+    "construction": [
+      {
+        "stageId": "u",
+        "operations": [
+          {
+            "tileIds": [
+              "x-0--1"
+            ],
+            "hands": [
+              {
+                "tileId": "x-0--1",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ]
+          },
+          {
+            "tileIds": [
+              "z-0--1"
+            ],
+            "hands": [
+              {
+                "tileId": "z-0--1",
+                "localPoint": {
+                  "x": 0,
+                  "y": 1.5,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              },
+              {
+                "tileId": "x-0--1",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ]
+          },
+          {
+            "tileIds": [
+              "x-0-1"
+            ],
+            "hands": [
+              {
+                "tileId": "x-0-1",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              },
+              {
+                "tileId": "x-0--1",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "result": [
+    {
+      "stageId": "u",
+      "status": "pass",
+      "detail": "All operations passed with three perturbation seeds, at most two panel grips and mandatory free checkpoints. Quasi-static fingertip-proxy simulation only; measured human grip and physical magnetic forces remain unverified.",
+      "operations": [
+        {
+          "index": 0,
+          "seed": 0,
+          "tileIds": [
+            "x-0--1"
+          ],
+          "status": "pass",
+          "detail": "Clear grip and insertion, connected closure and stable supported prefix; actual settled poses retained.",
+          "trials": [
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "x-0--1"
+              ],
+              "peakDisplacement": 1.3762349839643383e-7,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 0,
+              "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+            },
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "x-0--1"
+              ],
+              "peakDisplacement": 1.4305114426349519e-8,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 0,
+              "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+            }
+          ],
+          "path": {
+            "id": "insert-x-0--1",
+            "movingTileIds": [
+              "x-0--1"
+            ],
+            "fixedTileIds": [],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 6.3600000333786015,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          "grip": {
+            "status": "pass",
+            "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+          },
+          "closure": {
+            "status": "pass",
+            "detail": "First part/module placed; no pre-existing join required."
+          }
+        },
+        {
+          "index": 1,
+          "seed": 0,
+          "tileIds": [
+            "z-0--1"
+          ],
+          "status": "pass",
+          "detail": "Clear grip and insertion, connected closure and stable supported prefix; actual settled poses retained.",
+          "trials": [
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "x-0--1"
+              ],
+              "peakDisplacement": 0,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 0,
+              "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+            },
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "z-0--1"
+              ],
+              "peakDisplacement": 1.0555240488384423e-7,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 0,
+              "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+            },
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "z-0--1",
+                "x-0--1"
+              ],
+              "peakDisplacement": 1.9073486789977778e-8,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 0,
+              "detail": "2 separate hand contacts support 2 panels. No free-body stability is claimed; handoff/release must be checked separately."
+            }
+          ],
+          "path": {
+            "id": "insert-z-0--1",
+            "movingTileIds": [
+              "z-0--1"
+            ],
+            "fixedTileIds": [
+              "x-0--1"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 6.3600000333786015,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          "grip": {
+            "status": "pass",
+            "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+          },
+          "closure": {
+            "status": "pass",
+            "detail": "1 new edge contacts close after a separated, clear approach. Gap ≤ thickness + 0.03 in, alignment within 5 degrees and overlap within 0.21 in of the shorter edge. Magnetic force remains a model assumption."
+          }
+        },
+        {
+          "index": 2,
+          "seed": 0,
+          "tileIds": [
+            "x-0-1"
+          ],
+          "status": "pass",
+          "detail": "Clear grip and insertion, connected closure and stable supported prefix; actual settled poses retained.",
+          "trials": [
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "x-0--1"
+              ],
+              "peakDisplacement": 0.058769124316320906,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 1,
+              "detail": "1 individually held panels, 1 dynamic panels; peak 0.059 in, 900/90 rest steps, 0 rejected/broken joins."
+            },
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "x-0-1"
+              ],
+              "peakDisplacement": 1.0555240488384423e-7,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 0,
+              "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+            },
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "x-0-1",
+                "x-0--1"
+              ],
+              "peakDisplacement": 1.3687850049534064e-7,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 1,
+              "detail": "2 individually held panels, 1 dynamic panels; peak 0.000 in, 900/90 rest steps, 0 rejected/broken joins."
+            }
+          ],
+          "path": {
+            "id": "insert-x-0-1",
+            "movingTileIds": [
+              "x-0-1"
+            ],
+            "fixedTileIds": [
+              "x-0--1",
+              "z-0--1"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 6.360000066757202,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          "grip": {
+            "status": "pass",
+            "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+          },
+          "closure": {
+            "status": "pass",
+            "detail": "1 new edge contacts close after a separated, clear approach. Gap ≤ thickness + 0.03 in, alignment within 5 degrees and overlap within 0.21 in of the shorter edge. Magnetic force remains a model assumption."
+          }
+        },
+        {
+          "index": 0,
+          "seed": 17,
+          "tileIds": [
+            "x-0--1"
+          ],
+          "status": "pass",
+          "detail": "Clear grip and insertion, connected closure and stable supported prefix; actual settled poses retained.",
+          "trials": [
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "x-0--1"
+              ],
+              "peakDisplacement": 1.3762349839643383e-7,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 0,
+              "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+            },
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "x-0--1"
+              ],
+              "peakDisplacement": 1.4305114426349519e-8,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 0,
+              "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+            }
+          ],
+          "path": {
+            "id": "insert-x-0--1",
+            "movingTileIds": [
+              "x-0--1"
+            ],
+            "fixedTileIds": [],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 6.3600000333786015,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          "grip": {
+            "status": "pass",
+            "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+          },
+          "closure": {
+            "status": "pass",
+            "detail": "First part/module placed; no pre-existing join required."
+          }
+        },
+        {
+          "index": 1,
+          "seed": 17,
+          "tileIds": [
+            "z-0--1"
+          ],
+          "status": "pass",
+          "detail": "Clear grip and insertion, connected closure and stable supported prefix; actual settled poses retained.",
+          "trials": [
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "x-0--1"
+              ],
+              "peakDisplacement": 0,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 0,
+              "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+            },
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "z-0--1"
+              ],
+              "peakDisplacement": 1.0555240488384423e-7,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 0,
+              "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+            },
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "z-0--1",
+                "x-0--1"
+              ],
+              "peakDisplacement": 1.9073486789977778e-8,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 0,
+              "detail": "2 separate hand contacts support 2 panels. No free-body stability is claimed; handoff/release must be checked separately."
+            }
+          ],
+          "path": {
+            "id": "insert-z-0--1",
+            "movingTileIds": [
+              "z-0--1"
+            ],
+            "fixedTileIds": [
+              "x-0--1"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 6.3600000333786015,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          "grip": {
+            "status": "pass",
+            "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+          },
+          "closure": {
+            "status": "pass",
+            "detail": "1 new edge contacts close after a separated, clear approach. Gap ≤ thickness + 0.03 in, alignment within 5 degrees and overlap within 0.21 in of the shorter edge. Magnetic force remains a model assumption."
+          }
+        },
+        {
+          "index": 2,
+          "seed": 17,
+          "tileIds": [
+            "x-0-1"
+          ],
+          "status": "pass",
+          "detail": "Clear grip and insertion, connected closure and stable supported prefix; actual settled poses retained.",
+          "trials": [
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "x-0--1"
+              ],
+              "peakDisplacement": 0.0020423990870765763,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 1,
+              "detail": "1 individually held panels, 1 dynamic panels; peak 0.002 in, 900/90 rest steps, 0 rejected/broken joins."
+            },
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "x-0-1"
+              ],
+              "peakDisplacement": 1.0555240488384423e-7,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 0,
+              "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+            },
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "x-0-1",
+                "x-0--1"
+              ],
+              "peakDisplacement": 1.9073486789977778e-8,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 1,
+              "detail": "2 individually held panels, 1 dynamic panels; peak 0.000 in, 900/90 rest steps, 0 rejected/broken joins."
+            }
+          ],
+          "path": {
+            "id": "insert-x-0-1",
+            "movingTileIds": [
+              "x-0-1"
+            ],
+            "fixedTileIds": [
+              "x-0--1",
+              "z-0--1"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 6.360000066757202,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          "grip": {
+            "status": "pass",
+            "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+          },
+          "closure": {
+            "status": "pass",
+            "detail": "1 new edge contacts close after a separated, clear approach. Gap ≤ thickness + 0.03 in, alignment within 5 degrees and overlap within 0.21 in of the shorter edge. Magnetic force remains a model assumption."
+          }
+        },
+        {
+          "index": 0,
+          "seed": 53,
+          "tileIds": [
+            "x-0--1"
+          ],
+          "status": "pass",
+          "detail": "Clear grip and insertion, connected closure and stable supported prefix; actual settled poses retained.",
+          "trials": [
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "x-0--1"
+              ],
+              "peakDisplacement": 1.3762349839643383e-7,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 0,
+              "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+            },
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "x-0--1"
+              ],
+              "peakDisplacement": 1.4305114426349519e-8,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 0,
+              "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+            }
+          ],
+          "path": {
+            "id": "insert-x-0--1",
+            "movingTileIds": [
+              "x-0--1"
+            ],
+            "fixedTileIds": [],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 6.3600000333786015,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          "grip": {
+            "status": "pass",
+            "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+          },
+          "closure": {
+            "status": "pass",
+            "detail": "First part/module placed; no pre-existing join required."
+          }
+        },
+        {
+          "index": 1,
+          "seed": 53,
+          "tileIds": [
+            "z-0--1"
+          ],
+          "status": "pass",
+          "detail": "Clear grip and insertion, connected closure and stable supported prefix; actual settled poses retained.",
+          "trials": [
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "x-0--1"
+              ],
+              "peakDisplacement": 0,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 0,
+              "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+            },
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "z-0--1"
+              ],
+              "peakDisplacement": 1.0555240488384423e-7,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 0,
+              "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+            },
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "z-0--1",
+                "x-0--1"
+              ],
+              "peakDisplacement": 1.9073486789977778e-8,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 0,
+              "detail": "2 separate hand contacts support 2 panels. No free-body stability is claimed; handoff/release must be checked separately."
+            }
+          ],
+          "path": {
+            "id": "insert-z-0--1",
+            "movingTileIds": [
+              "z-0--1"
+            ],
+            "fixedTileIds": [
+              "x-0--1"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 6.3600000333786015,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          "grip": {
+            "status": "pass",
+            "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+          },
+          "closure": {
+            "status": "pass",
+            "detail": "1 new edge contacts close after a separated, clear approach. Gap ≤ thickness + 0.03 in, alignment within 5 degrees and overlap within 0.21 in of the shorter edge. Magnetic force remains a model assumption."
+          }
+        },
+        {
+          "index": 2,
+          "seed": 53,
+          "tileIds": [
+            "x-0-1"
+          ],
+          "status": "pass",
+          "detail": "Clear grip and insertion, connected closure and stable supported prefix; actual settled poses retained.",
+          "trials": [
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "x-0--1"
+              ],
+              "peakDisplacement": 0.013228776823091972,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 1,
+              "detail": "1 individually held panels, 1 dynamic panels; peak 0.013 in, 900/90 rest steps, 0 rejected/broken joins."
+            },
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "x-0-1"
+              ],
+              "peakDisplacement": 1.0555240488384423e-7,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 0,
+              "detail": "1 separate hand contacts support 1 panels. No free-body stability is claimed; handoff/release must be checked separately."
+            },
+            {
+              "status": "pass",
+              "heldTileIds": [
+                "x-0-1",
+                "x-0--1"
+              ],
+              "peakDisplacement": 1.383650237299081e-7,
+              "settledSteps": 900,
+              "poppedJoints": [],
+              "dynamicTileCount": 1,
+              "detail": "2 individually held panels, 1 dynamic panels; peak 0.000 in, 900/90 rest steps, 0 rejected/broken joins."
+            }
+          ],
+          "path": {
+            "id": "insert-x-0-1",
+            "movingTileIds": [
+              "x-0-1"
+            ],
+            "fixedTileIds": [
+              "x-0--1",
+              "z-0--1"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 6.360000066757202,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          "grip": {
+            "status": "pass",
+            "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+          },
+          "closure": {
+            "status": "pass",
+            "detail": "1 new edge contacts close after a separated, clear approach. Gap ≤ thickness + 0.03 in, alignment within 5 degrees and overlap within 0.21 in of the shorter edge. Magnetic force remains a model assumption."
+          }
+        }
+      ],
+      "checkpoints": [
+        {
+          "status": "pass",
+          "heldTileIds": [],
+          "peakDisplacement": 0.008555148923430697,
+          "settledSteps": 899,
+          "poppedJoints": [],
+          "dynamicTileCount": 3,
+          "detail": "0 individually held panels, 3 dynamic panels; peak 0.009 in, 899/90 rest steps, 0 rejected/broken joins."
+        },
+        {
+          "status": "pass",
+          "heldTileIds": [],
+          "peakDisplacement": 0.008517043616668718,
+          "settledSteps": 900,
+          "poppedJoints": [],
+          "dynamicTileCount": 3,
+          "detail": "0 individually held panels, 3 dynamic panels; peak 0.009 in, 900/90 rest steps, 0 rejected/broken joins."
+        },
+        {
+          "status": "pass",
+          "heldTileIds": [],
+          "peakDisplacement": 0.008503897957144377,
+          "settledSteps": 899,
+          "poppedJoints": [],
+          "dynamicTileCount": 3,
+          "detail": "0 individually held panels, 3 dynamic panels; peak 0.009 in, 899/90 rest steps, 0 rejected/broken joins."
+        }
+      ]
+    }
+  ]
+}

@@ -451,6 +451,26 @@
       "partition": "construction",
       "path": "public/reference-frames/replication/henry/large-lowbox-finished.png",
       "sha256": "5dd99c835ecf5ff2dc4eeef02ec8b69c13dd845617154d71b33ebd7c9b3ef063"
+    },
+    {
+      "id": "small-reserved-36.25",
+      "sourceId": "henry",
+      "seconds": 36.25,
+      "stage": "small-final",
+      "partition": "holdout",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "sha256": "d76fd5dfe0bfcaec24bca6265da0b60ac50f52f1fe13d3db5b7ec5b50f96fc30",
+      "path": "public/reference-frames/replication/henry/small-reserved-36.25.png"
+    },
+    {
+      "id": "small-reserved-40.2",
+      "sourceId": "henry",
+      "seconds": 40.2,
+      "stage": "small-final",
+      "partition": "holdout",
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "sha256": "4ecc6a8c36d25f8f0cdf3bf14c8694e8bc804bfefdd13764f81c5350f418d839",
+      "path": "public/reference-frames/replication/henry/small-reserved-40.2.png"
     }
   ]
 }

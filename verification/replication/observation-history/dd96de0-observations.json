@@ -1,6 +1,5 @@
 {
   "schema": 1,
-  "revision": "2026-09-26: corrected small-final-34 mirrored lateral vertex identities, keeping every pixel and role unchanged. Verified topology using fitting construction frames 24.5 and 32 seconds. Historical observation remains ineligible for fresh coverage; prior JSON/lock preserved under observation-history/dd96de0-*. No geometry was fitted to this correction.",
   "provenance": "Manual pixel annotations from the hashed source footage, 2026-09-26. Points target outer tile corners, not rivet centres. This initial sparse observation set is insufficient for full reconstruction signoff. Holdout points are excluded from geometry tuning; only separately labeled camera anchors fit their camera. Initial topology hypotheses predate these annotations, so this is not a blind recognition study.",
   "observations": [
     {
@@ -108,16 +107,15 @@
       "width": 1920,
       "height": 1080,
       "viewDirection": {
-        "x": 0.8,
+        "x": -0.8,
         "y": 0.8,
-        "z": -1.5
+        "z": 1.5
       },
-      "cameraRegion": { "tableY": -0.2, "horizontalDirection": { "x": 0.8, "y": 0, "z": -1.5 } },
       "landmarks": [
         {
           "id": "s-launch-front-near",
           "tileId": "launch-roof",
-          "vertex": 0,
+          "vertex": 3,
           "pixel": [926, 500],
           "uncertaintyPx": 9,
           "use": "camera"
@@ -125,7 +123,7 @@
         {
           "id": "s-launch-back-near",
           "tileId": "launch-roof",
-          "vertex": 1,
+          "vertex": 2,
           "pixel": [593, 463],
           "uncertaintyPx": 9,
           "use": "camera"
@@ -133,7 +131,7 @@
         {
           "id": "s-launch-back-far",
           "tileId": "launch-roof",
-          "vertex": 2,
+          "vertex": 1,
           "pixel": [686, 291],
           "uncertaintyPx": 9,
           "use": "camera"
@@ -141,7 +139,7 @@
         {
           "id": "s-launch-front-far",
           "tileId": "launch-roof",
-          "vertex": 3,
+          "vertex": 0,
           "pixel": [976, 326],
           "uncertaintyPx": 9,
           "use": "camera"
@@ -149,7 +147,7 @@
         {
           "id": "s-launch-bottom-near",
           "tileId": "launch-back",
-          "vertex": 0,
+          "vertex": 3,
           "pixel": [609, 715],
           "uncertaintyPx": 12,
           "use": "camera"
@@ -157,7 +155,7 @@
         {
           "id": "s-slope-low-far",
           "tileId": "small-deck-1",
-          "vertex": 3,
+          "vertex": 0,
           "pixel": [1467, 639],
           "uncertaintyPx": 9,
           "use": "camera"
@@ -165,7 +163,7 @@
         {
           "id": "s-slope-low-near",
           "tileId": "small-deck-1",
-          "vertex": 0,
+          "vertex": 3,
           "pixel": [1444, 825],
           "uncertaintyPx": 9,
           "use": "check"
@@ -173,7 +171,7 @@
         {
           "id": "s-slope-mid-near",
           "tileId": "small-deck-1",
-          "vertex": 1,
+          "vertex": 2,
           "pixel": [1205, 653],
           "uncertaintyPx": 9,
           "use": "check"
@@ -181,7 +179,7 @@
         {
           "id": "s-slope-high-near",
           "tileId": "small-deck-2",
-          "vertex": 1,
+          "vertex": 2,
           "pixel": [935, 491],
           "uncertaintyPx": 9,
           "use": "check"
@@ -189,7 +187,7 @@
         {
           "id": "s-slope-mid-far",
           "tileId": "small-deck-1",
-          "vertex": 2,
+          "vertex": 1,
           "pixel": [1240, 489],
           "uncertaintyPx": 9,
           "use": "check"

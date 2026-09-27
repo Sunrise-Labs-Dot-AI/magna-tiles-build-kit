@@ -57,8 +57,11 @@ async function main() {
     await slider.press("Home");
     if (await slider.inputValue() !== "0") throw Error("Insertion slider did not reach its start.");
     const insertionLabels = await page.locator(".design-piece-label").allTextContents();
-    if (insertionLabels.length !== 1 || insertionLabels[0] !== "P3")
+    if (insertionLabels.length !== 1 || insertionLabels[0] !== "P5")
       throw Error(`Unplaced parts leaked into insertion preview: ${insertionLabels}`);
+    await page.getByLabel("Complete assembly check").waitFor();
+    if (!(await page.getByLabel("Complete assembly check").textContent())?.includes("Assembly with hand support"))
+      throw Error("Supported assembly evidence is missing.");
     await page.screenshot({ path: "verification/replication/ui/small-insertion.png", fullPage: true });
     await slider.press("End");
     if (await slider.inputValue() !== "100") throw Error("Insertion slider did not complete.");

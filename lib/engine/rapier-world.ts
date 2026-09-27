@@ -73,7 +73,7 @@ async function withRapierInitWarningSuppressed(): Promise<void> {
   }
 }
 
-export async function createEngineWorld(input: EngineBuild, options: { drop?: boolean } = {}): Promise<EngineWorld> {
+export async function createEngineWorld(input: EngineBuild, options: { drop?: boolean; floorY?: number } = {}): Promise<EngineWorld> {
   await initRapier();
 
   const model = createMagneticPhysicsModel(input, options);

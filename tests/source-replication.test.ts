@@ -55,6 +55,7 @@ function projectionFixture() {
     width: 1280,
     height: 720,
     viewDirection: v(11.5, 11, 23),
+    cameraRegion: { tableY: -0.09, horizontalDirection: v(11.5, 0, 23) },
     landmarks: tiles.flatMap((t) =>
       tileWorldVertices(t).map((point, vertex) => ({
         id: `${t.id}-${vertex}`,

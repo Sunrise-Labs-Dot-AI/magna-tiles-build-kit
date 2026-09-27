@@ -1,7 +1,7 @@
 import { add, cross, dot, normalize, scale, subtract } from "@/lib/engine/math";
 import { tileWorldVertices } from "@/lib/magnetic-tiles/magnet-geometry";
 import type { BuildGraph, Vec3 } from "@/lib/magnetic-tiles/types";
-import type { Camera, Observation, ProjectionResult } from "./types";
+import type { Camera, Check, Observation, ProjectionResult } from "./types";
 import { v } from "./geometry";
 
 export const PROJECTION_TOLERANCE = { rms: 0.02, maximum: 0.04 };
@@ -49,6 +49,25 @@ export function projectPoint(point: Vec3, camera: Camera): [number, number] {
   ];
 }
 
+/** Observed camera region is an independent acceptance constraint, never a fit parameter. */
+export function checkCameraRegion(build: BuildGraph, observation: Observation, camera: Camera): Check {
+  const values = [...Object.values(camera.position), ...Object.values(camera.target), ...Object.values(camera.up), camera.focal, camera.cx, camera.cy];
+  const forward = subtract(camera.target, camera.position);
+  if (!values.every(Number.isFinite) || camera.focal <= 0 || dot(forward, forward) < 1e-8 ||
+      dot(cross(forward, camera.up), cross(forward, camera.up)) < 1e-8)
+    return { status: "fail", detail: "Invalid camera focal length or axes." };
+  if (build.tiles.flatMap(tileWorldVertices).some(p => dot(subtract(p, camera.position), normalize(forward)) <= 0))
+    return { status: "fail", detail: "Candidate geometry lies behind the camera." };
+  const region = observation.cameraRegion;
+  if (!region) return { status: "unverified", detail: "No independently observed camera region." };
+  const d = region.horizontalDirection;
+  if (!Number.isFinite(region.tableY) || ![d.x, d.y, d.z].every(Number.isFinite) || Math.hypot(d.x, d.z) < 1e-6 || d.y !== 0)
+    return { status: "fail", detail: "Invalid camera region constraint." };
+  if (camera.position.y <= region.tableY || dot(subtract(camera.position, camera.target), d) <= 0)
+    return { status: "fail", detail: "Camera is below the table or in the wrong observed hemisphere." };
+  return { status: "pass", detail: "Positive focal/depth, above table and in the observed horizontal hemisphere." };
+}
+
 /** Seven camera parameters, fitted ONLY to camera anchors. Scored landmarks never
  * enter optimization. Geometry, scale ratios and individual tile poses are immutable.
  */
@@ -77,6 +96,7 @@ export function compareObservation(
       status: "unverified",
       detail: "",
       camera: null,
+      cameraRegion: { status: "unverified", detail: "Camera not fitted." },
       cameraAnchors: 0,
       checkLandmarks: 0,
       rmsPx: null,
@@ -290,7 +310,9 @@ export function compareObservation(
         .filter((r) => r.use === "camera")
         .reduce((s, r) => s + r.errorPx ** 2, 0) / anchors.length,
     );
+  const cameraRegion = checkCameraRegion(build, observation, camera);
   const passed =
+    cameraRegion.status === "pass" &&
     finite &&
     rms <= diagonal * PROJECTION_TOLERANCE.rms &&
     max <= diagonal * PROJECTION_TOLERANCE.maximum &&
@@ -298,11 +320,12 @@ export function compareObservation(
   return {
     ...empty,
     camera,
+    cameraRegion,
     residuals,
     sourceDiagonalPx: diagonal,
     rmsPx: finite ? rms : null,
     maxPx: finite ? max : null,
-    status: passed ? "pass" : "fail",
-    detail: `${anchors.length} camera anchors / 7 camera parameters; ${checks.length} scored landmarks; anchor RMS ${anchorRms.toFixed(2)} px. Independent point agreement only; not complete shape fidelity.`,
+    status: passed ? "pass" : cameraRegion.status === "unverified" && finite && rms <= diagonal * PROJECTION_TOLERANCE.rms && max <= diagonal * PROJECTION_TOLERANCE.maximum && anchorRms <= diagonal * PROJECTION_TOLERANCE.rms ? "unverified" : "fail",
+    detail: `${anchors.length} camera anchors / 7 camera parameters; ${checks.length} scored landmarks; anchor RMS ${anchorRms.toFixed(2)} px. ${cameraRegion.detail} Independent point agreement only; not complete shape fidelity.`,
   };
 }

@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "note": "Freeze for evaluation of the two reserved small-ramp frames. Geometry is unchanged from reservation; construction/grip proposals have changed. This is not a fresh claim for historical measurements.",
+  "freezes": {
+    "small-ramp": {
+      "at": "2026-09-27T02:54:47.518459+00:00",
+      "candidateSha256": "576b51983908dd12ccd1ff0c5b59bef696488404fe45dd9746244c24f3a9c3c3",
+      "baselineCandidateSha256": "576b51983908dd12ccd1ff0c5b59bef696488404fe45dd9746244c24f3a9c3c3"
+    }
+  }
+}

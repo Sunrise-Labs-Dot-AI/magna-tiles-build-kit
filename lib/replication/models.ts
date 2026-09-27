@@ -3,11 +3,14 @@ import {
   ISOSCELES_EQUAL_SIDE as L,
   emptyInventory,
 } from "@/lib/magnetic-tiles/catalog";
-import { add, scale, cross, normalize } from "@/lib/engine/math";
+import { add, scale, cross, normalize, transformLocal } from "@/lib/engine/math";
 import { tileWorldVertices } from "@/lib/magnetic-tiles/magnet-geometry";
 import type { Inventory, TileInstance, Vec3 } from "@/lib/magnetic-tiles/types";
-import { assemble, outside, rigidPanel, square, v } from "./geometry";
+import { assemble, outside, rigidPanel, square, stageBuild, v } from "./geometry";
 import type { Replica, StagePose } from "./types";
+import { edgeGrips, findHandContacts } from "./grip";
+import { planConstructionPaths } from "./construction";
+import { buildBounds } from "@/lib/engine/build";
 
 const blue = "#168db3",
   red = "#d93747",
@@ -158,7 +161,14 @@ export function smallRamp(): Replica {
         "launch",
       ),
     );
-  return {
+  // Proposed top-edge pinches, checked independently against every present panel.
+  // Footage establishes the rear-and-sides-first order; detailed hand placements
+  // and the reorientation of the launch module remain explicit hypotheses.
+  const grip = (id: string) => {
+    const tile = tiles.find(t => t.id === id)!;
+    return edgeGrips(tile).sort((a, b) => transformLocal(b.localPoint, tile.position, tile.basis!).y - transformLocal(a.localPoint, tile.position, tile.basis!).y)[0];
+  };
+  const replica: Replica = {
     id: "small-ramp",
     sourceId: "henry",
     title: "Henry's small ramp · 9-piece candidate",
@@ -168,17 +178,17 @@ export function smallRamp(): Replica {
     construction: [
       {
         stageId: "small-wedge",
-        operations: ["small-deck-1", "small-deck-2", "small-side--1", "small-side-1", "small-back"]
-          .map(id => ({ tileIds: [id] })),
+        operations: ["small-back", "small-side--1", "small-side-1", "small-deck-2", "small-deck-1"]
+          .map((id, i) => ({ tileIds: [id], hands: i > 0 && i < 3 ? [grip(id), grip("small-back")] : [grip(id)], releaseAfter: i >= 2 })),
       },
       {
         stageId: "small-launch",
         operations: ["launch-roof", "launch-back", "launch-side--1", "launch-side-1"]
-          .map(id => ({ tileIds: [id] })),
+          .map((id, i) => ({ tileIds: [id], hands: i ? [grip(id), grip("launch-roof")] : [grip(id)] })),
       },
       {
         stageId: "small-final",
-        operations: [{ tileIds: tiles.filter(t => t.step === 2).map(t => t.id), preparedStageId: "small-launch" }],
+        operations: [{ tileIds: tiles.filter(t => t.step === 2).map(t => t.id), preparedStageId: "small-launch", hands: [grip("launch-roof")] }],
       },
     ],
     stages: [
@@ -186,7 +196,7 @@ export function smallRamp(): Replica {
         "small-wedge",
         "small-fit",
         "Join the five-piece wedge",
-        "Join the two orange driving squares edge to edge. Seat their long edges along the yellow isosceles sides; close the short rear edge with the red square. Hold while closing the wedge, then place both long side edges on the table.",
+        "Hold the red rear square and attach the two yellow sides. At 00:24.5 the three-piece U stands on the table. Add the two orange driving squares along the sloped edges; the proposed deck order and grips are checked separately.",
         prefix(tiles, 1),
       ),
       stage(
@@ -245,6 +255,16 @@ export function smallRamp(): Replica {
       ],
     },
   };
+  for (const result of planConstructionPaths(replica)) {
+    const snapshot = stageBuild(replica, replica.stages.find(s => s.id === result.stageId)!);
+    const operations = replica.construction!.find(s => s.stageId === result.stageId)!.operations;
+    for (const [i, path] of result.paths.entries()) {
+      const operation = operations[i];
+      operation.hands = findHandContacts(snapshot, path, operation.hands![0].tileId,
+        operation.hands![1]?.tileId, buildBounds(snapshot.tiles).min.y) ?? operation.hands;
+    }
+  }
+  return replica;
 }
 
 export function jet(): Replica {
