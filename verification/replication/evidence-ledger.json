@@ -52,7 +52,23 @@
       "firstInspectedAt": null,
       "viewFamily": "medium-ramp-historical",
       "independenceReviewed": false,
-      "recordedAt": "2026-09-27T02:35:52.663794+00:00"
+      "recordedAt": "2026-09-27T02:35:52.663794+00:00",
+      "annotationCorrections": [
+        {
+          "recordedAt": "2026-09-27T13:19:24.817981+00:00",
+          "landmarkId": "medium-stage-63-camera-5",
+          "oldBinding": {
+            "tileId": "support-side-1-0",
+            "vertex": 0
+          },
+          "newBinding": {
+            "tileId": "support-side-1-0",
+            "vertex": 1
+          },
+          "reason": "Independent visual review identifies the lower shared junction between the two visible green side squares; the old index names the lower free endpoint. Correction is based on physical corner identity, not residual improvement.",
+          "artifact": "runs/diagnostics/2026-09-27-medium-anchor-correction.json"
+        }
+      ]
     },
     {
       "frameId": "medium-check-a",

@@ -1,0 +1,41 @@
+**Visual Conclusion**
+
+Pixel `(965,505)` in `medium-fit.png` appears to mark the lower shared junction between the two green support-side squares on the visible `sign=1` side. It does not visually read as the free lower corner of `support-side-1-0`.
+
+That supports the plan’s hypothesis: change from `support-side-1-0` vertex `0` to `support-side-1-0` vertex `1`.
+
+**Model-Index Rationale**
+
+From [models.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/models.ts:764), support side squares are:
+
+`support-side-${sign}-${n}` with:
+
+- `origin = p(0.18 + n * 3, -3, sign * 1.5)`
+- `u = upperDirection * 3`
+- `w = (0, 3, 0)`
+
+From [geometry.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/geometry.ts:72), square vertices are:
+
+- vertex `0`: `origin`
+- vertex `1`: `origin + u`
+- vertex `2`: `origin + u + w`
+- vertex `3`: `origin + w`
+
+So for `support-side-1-0`:
+
+- vertex `0` = lower free endpoint of the front support square
+- vertex `1` = lower shared junction with `support-side-1-1`
+- vertex `2` = upper shared junction with `support-side-1-1`
+- vertex `3` = upper free endpoint
+
+Equivalent mapping: `support-side-1-0:1` is the same physical point as `support-side-1-1:0`.
+
+**Confidence Boundary**
+
+Sufficiently unambiguous for the narrow correction from vertex `0` to vertex `1`. Confidence is not absolute because the point sits in translucent overlapping green/yellow material rather than on a clean screw-hole corner, but the competing vertex `0` is the wrong physical endpoint. I did not use residual files or heldout frames.
+
+**Plan Review Verdict: CONCERNS**
+
+Saboteur finding: the plan is rightly resistant to false acceptance by saying residual improvement is irrelevant, but the implementation must preserve that as a hard gate. If the reviewer conclusion is recorded as anything weaker than “lower shared junction, `support-side-1-0:1` / `support-side-1-1:0`,” the data change should not proceed.
+
+New Hire finding: “the first square” is ambiguous. The plan should name the exact model identity: `support-side-1-0` vertex `1`, equivalent to `support-side-1-1` vertex `0`; current `support-side-1-0` vertex `0` is the lower free endpoint and should be rejected.

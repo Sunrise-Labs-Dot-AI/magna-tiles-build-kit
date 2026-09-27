@@ -1,0 +1,12 @@
+CLEAN.
+
+I could not refute the claim. Read-only review found exactly one parsed observation delta against `9a6cd2f`: [observations.json](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/verification/replication/observations.json:358) changes `medium-stage-63-camera-5` from `support-side-1-0` vertex `0` to vertex `1`; pixel `[965,505]`, uncertainty `12`, role `camera`, partition `fit`, and all other observations remain unchanged.
+
+Provenance checks passed:
+- [evidence-ledger.json](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/verification/replication/evidence-ledger.json:45) only adds `annotationCorrections`; the entry stays `historical`, `inspectedBeforeReservation: true`, `firstInspectedAt: null`, and `independenceReviewed: false`.
+- [observation-lock.json](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/verification/replication/observation-lock.json:2) matches current SHA-256 bytes for sources, observations, ledger, and candidate freezes.
+- Diagnostic before/after observation hashes match `9a6cd2f` and the working tree, respectively, in [2026-09-27-medium-anchor-correction.json](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/diagnostics/2026-09-27-medium-anchor-correction.json:41).
+
+Model mapping checks out from [models.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/models.ts:760) and [geometry.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/geometry.ts:84): `support-side-1-0:1` is physically equivalent to `support-side-1-1:0` within floating precision, while old vertex `0` is 3 inches away at the lower free endpoint.
+
+Accepted plan findings are implemented in [the plan](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-medium-anchor-correction-plan.md:10) and documented in [the review sidecar](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-medium-anchor-correction-plan.md.review.md:7). I did not open images, spawn subagents, edit files, or run expensive tests.

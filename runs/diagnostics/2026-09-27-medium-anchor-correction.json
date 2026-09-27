@@ -1,0 +1,43 @@
+{
+  "recordedAt": "2026-09-27T13:19:24.817981+00:00",
+  "baselineCommit": "9a6cd2f7c744a840e857beebf3806252350167ad",
+  "observationId": "medium-stage-63",
+  "landmarkId": "medium-stage-63-camera-5",
+  "oldBinding": {
+    "tileId": "support-side-1-0",
+    "vertex": 0
+  },
+  "newBinding": {
+    "tileId": "support-side-1-0",
+    "vertex": 1
+  },
+  "equivalentBinding": {
+    "tileId": "support-side-1-1",
+    "vertex": 0
+  },
+  "pixel": [
+    965,
+    505
+  ],
+  "uncertaintyPx": 12,
+  "use": "camera",
+  "partition": "fit",
+  "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+  "frames": [
+    {
+      "id": "medium-fit",
+      "path": "public/reference-frames/replication/henry/medium-fit.png",
+      "sha256": "df8b14e7d435c8c831e683b81a81771167e5f7d42d7aadedafe468616cc124a0"
+    },
+    {
+      "id": "medium-support",
+      "path": "public/reference-frames/replication/henry/medium-support.png",
+      "sha256": "d94c667ef9034622d853e425c4cbaa2f7fe9f7f9669783fd9b6ca56bae7554b5"
+    }
+  ],
+  "reason": "Independent visual review identifies the lower shared junction between the two visible green side squares; the old index names the lower free endpoint. Correction is based on physical corner identity, not residual improvement.",
+  "confidenceBoundary": "Translucent overlap limits exact pixel precision; unchanged 12-pixel uncertainty. This is a previously inspected fitting image, with no new independence credit.",
+  "review": "runs/reviews/medium-anchor-correction-plan-review.txt",
+  "beforeObservationSha256": "f17e79acc388311d660d83a483a67aed335d45ff4ccee896ba3d179de55f554d",
+  "afterObservationSha256": "499da9f22fceeaf6485ed36aca3be85965d2c1eab72932ab028186194931c02e"
+}

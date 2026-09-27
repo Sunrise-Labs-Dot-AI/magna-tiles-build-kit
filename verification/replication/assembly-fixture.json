@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-27T13:01:45.092Z",
-  "validationCodeHash": "37b6438188c35f1dc9afa740f1426e8683a2568749bae2decbbc5c47eecd30a1",
+  "generatedAt": "2026-09-27T13:20:40.445Z",
+  "validationCodeHash": "17a1ca3fbb39df2fb4fcda1b55e32099db3beff6506b7c190c08f3a77bb696a9",
   "scope": "Generic three-wall and gravity-seated roof fixtures, independent of source replicas. The seated roof has actual bearing area on its narrower U support. Three perturbation seeds, two-finger edge proxy and explicit one-panel supports. No physical human or magnetic-force certification.",
   "replica": {
     "id": "u-fixture",

@@ -1,14 +1,14 @@
 {
   "public/reference-replicas/jet-quarter-397.svg": "c8b7cb0583c7824c53359829a6b690319b4aae27361c56a19a98f556f8204821",
   "public/reference-replicas/jet-side-388.svg": "2b28ec1130e1127ab495119d082ba97832850f89969497453eb8edf1319ece71",
-  "public/reference-replicas/jet.json": "f1fa126f42472d6ba19fe9478a4aac05e937fabaf31785510e94104aebdd5e3c",
-  "public/reference-replicas/large-ramp.json": "5a7b6357263ecbc5fd63952724d18c6eec92ce529b7c982c7fe781b4d57bf90c",
+  "public/reference-replicas/jet.json": "04bd2ac0c09746e634d20f7ce4fa23878c2feab9e991a13a19e061bc2f7cb192",
+  "public/reference-replicas/large-ramp.json": "422892aad5aaa39f1c607059c34ec966b01da8ee34d042e1df206297bdb8423f",
   "public/reference-replicas/medium-final-101.svg": "ee619c95813fb8bfd0262a89531338248f7ae0e7121b601e6c9049d9b8acc840",
-  "public/reference-replicas/medium-ramp.json": "4bdb00ed266d7f1c0d95035fe986d42913ce2ff0cc2b888c14611af7b8a2a4a7",
-  "public/reference-replicas/medium-stage-63.svg": "b6d7ca97b7ec4c9ee291f676679b3207a640648235ccdda344d1533377a9b88b",
+  "public/reference-replicas/medium-ramp.json": "46481c1a5ca9aad0d6c51d7571616c9b45ade7c3d504cf896e67451a94f8b913",
+  "public/reference-replicas/medium-stage-63.svg": "936082396e8f60a1719621531d067e7a17ca304f16a5e4428a2bd00742273f93",
   "public/reference-replicas/small-final-34.svg": "4e23ebbdf6b74bd8db6bbdeb820c1b9cfee5ee8ab7f02eeefbe647a37519a6f1",
-  "public/reference-replicas/small-ramp.json": "21a1882f95b582c37beadff03c5a3ad2636f7945c8842f16a455df2b2512137f",
-  "verification/replication/assembly-fixture.json": "7cb92f9cfce30c8ecdba05b7ffb8e2ca12779beb4c4e79cfe2299e3b672a2428",
-  "verification/replication/results.json": "c0cb5c45345d5675f863e4c9701a491e774e4e116b861d2111f9ea48ec0f0d3d",
-  "verification/replication/rigid-contact-fixture.json": "437acaa0016843a80c89d81ad4c298d59df0f23222d9b6fff839ccc5c1813b98"
+  "public/reference-replicas/small-ramp.json": "3a612735fc238807994fdcb9b8d84774c3db8fc27e78b25eb7fca702ad2474f8",
+  "verification/replication/assembly-fixture.json": "6b596d773d116673f5a91d2612a8f203301f1cbebc53ef5f22efb977a8201ca4",
+  "verification/replication/results.json": "11764e53d54eeaa5a5304d7f556a2634950b7634ef0185ac38d68d6da93c2a00",
+  "verification/replication/rigid-contact-fixture.json": "b45eedbdcec1a097066ecf91cd8cb43d94e44222d291f5298cd7cde1863943f0"
 }

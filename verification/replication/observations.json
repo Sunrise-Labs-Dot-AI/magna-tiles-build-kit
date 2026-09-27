@@ -357,7 +357,7 @@
         {
           "id": "medium-stage-63-camera-5",
           "tileId": "support-side-1-0",
-          "vertex": 0,
+          "vertex": 1,
           "pixel": [965, 505],
           "uncertaintyPx": 12,
           "use": "camera"
