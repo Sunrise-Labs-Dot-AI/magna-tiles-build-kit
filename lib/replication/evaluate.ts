@@ -17,7 +17,7 @@ import { releaseCandidate } from "./release";
 import { compareObservation } from "./projection";
 import { planConstructionPaths } from "./construction";
 import { evaluateAssembly } from "./assembly";
-import { independentHoldoutCoverage, reservedFrameBinding, type CandidateFreeze, type EvidenceUse } from "./evidence";
+import { constructionFrameBinding, independentHoldoutCoverage, reservedFrameBinding, type CandidateFreeze, type EvidenceUse } from "./evidence";
 import { validationCodeHash, verifyObservationLock } from "./provenance";
 import type {
   Check,
@@ -209,6 +209,16 @@ export async function verifyLocalSource(replica: Replica): Promise<Check> {
       const binding = reservedFrameBinding(entry, source.sha256, source.frames.find(f => f.id === entry.frameId), manifest.frames.find(f => f.id === entry.frameId));
       if (binding.status !== "pass") return binding;
     }
+    for (const stage of replica.stages) for (const claim of stage.constructionEvidence ?? []) {
+      if (!claim.claim || !claim.frameIds.length) return check("fail", "Construction claim lacks a specific source frame.");
+      for (const id of claim.frameIds) {
+        const entries = (evidenceLedger.entries as EvidenceUse[]).filter(e => e.frameId === id), entry = entries[0];
+        if (entries.length !== 1) return check("fail", `Construction claim has missing or duplicate fitting evidence: ${id}`);
+        const binding = constructionFrameBinding(entry, replica.id, stage.id, source.id, source.sha256,
+          source.frames.find(f => f.id === id), manifest.frames.find(f => f.id === id));
+        if (binding.status !== "pass") return binding;
+      }
+    }
     return check(
       "pass",
       `Verified original video SHA-256 ${source.sha256} and ${source.frames.length} extracted frame hashes. Manual annotations remain reviewable measurements.`,
@@ -315,7 +325,7 @@ export async function evaluateReplica(
     : check("unverified", "Holdout history cannot pass without locally verified source/frame bytes.");
   report.checks.fidelity = check(
     report.projections.some((p) => p.status === "fail") || report.holdoutCoverage.status === "fail" ? "fail" : "unverified",
-    `${report.projections.length} measured views, ${held.length} historically withheld views, ${missing}/${replica.build.tiles.length} parts lack independent scored landmarks. ${report.holdoutCoverage.detail} Need complete visible/occluded part constraints and at least two distinct withheld final views. ${replica.uncertainties.map((u) => u.detail).join(" ")}`,
+    `${report.projections.length} measured views, ${held.length} historically withheld views, ${missing}/${replica.build.tiles.length} parts lack independent scored landmarks. ${report.holdoutCoverage.detail} Need complete visible/occluded part constraints and at least one useful final view reserved from fitting. Historical inspection and fresh reservation remain distinct. ${replica.uncertainties.map((u) => u.detail).join(" ")}`,
   );
   // Stage failures are evaluated even when the final model fails. Nothing is regrouped.
   for (const stage of replica.stages) {

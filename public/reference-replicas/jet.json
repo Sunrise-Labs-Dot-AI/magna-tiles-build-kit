@@ -2794,9 +2794,9 @@
   },
   "report": {
     "id": "jet",
-    "fingerprint": "e5e8a86ec31da66d4a50b9a9bb38d53af2c4e96469495ff5995e5bcafed64459",
-    "validationCodeHash": "d25326af9127972fce2819324bd1960f61d6a603a14561cbf8f75bedf5d41abd",
-    "generatedAt": "2026-09-27T03:02:35.042Z",
+    "fingerprint": "ee327d40a10f3891d8a95460a8b4e5d2d3aaf913b7971f5ada1207228407b5ef",
+    "validationCodeHash": "948e0811f1800bea4db313e67504f004184e3e8e2d82f862f7952da879834631",
+    "generatedAt": "2026-09-27T03:45:41.026Z",
     "replication": "not-verified",
     "checks": {
       "source": {
@@ -2809,7 +2809,7 @@
       },
       "fidelity": {
         "status": "fail",
-        "detail": "2 measured views, 1 historically withheld views, 33/40 parts lack independent scored landmarks. No frozen candidate and reservation baseline for an independent evaluation. Need complete visible/occluded part constraints and at least two distinct withheld final views. Pod incidence, longitudinal bay and the red leading triangle contacts are candidate hypotheses; the footage does not expose every join. Hidden cockpit floor/contact geometry and final inclination remain unresolved. The six rigid pieces are retained rather than collapsed to one fin."
+        "detail": "2 measured views, 1 historically withheld views, 33/40 parts lack independent scored landmarks. No frozen candidate and reservation baseline for an independent evaluation. Need complete visible/occluded part constraints and at least one useful final view reserved from fitting. Historical inspection and fresh reservation remain distinct. Pod incidence, longitudinal bay and the red leading triangle contacts are candidate hypotheses; the footage does not expose every join. Hidden cockpit floor/contact geometry and final inclination remain unresolved. The six rigid pieces are retained rather than collapsed to one fin."
       },
       "materials": {
         "status": "unverified",

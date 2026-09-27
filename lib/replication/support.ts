@@ -17,7 +17,7 @@ export interface SupportTrial extends Check {
   settled: BuildGraph;
 }
 
-function snapshot(build: BuildGraph, engine: EngineWorld): BuildGraph {
+export function supportSnapshot(build: BuildGraph, engine: EngineWorld): BuildGraph {
   return { ...build, tiles: build.tiles.map(tile => {
     const r = engine.bodies.get(tile.id)!, rotation = quaternionToBasis(r.body.rotation()), p = r.body.translation();
     const basis = tile.basis ?? basisFromEuler(tile.rotation.x, tile.rotation.y, tile.rotation.z);
@@ -60,6 +60,6 @@ export async function simulateSupport(build: BuildGraph, heldTileIds: string[], 
     return { status: passed ? "pass" : "fail", heldTileIds: [...heldTileIds], peakDisplacement: peak, settledSteps, poppedJoints, dynamicTileCount,
       detail: dynamicTileCount ? `${heldTileIds.length} individually held panels, ${dynamicTileCount} dynamic panels; peak ${peak.toFixed(3)} in, ${settledSteps}/90 rest steps, ${poppedJoints.length} rejected/broken joins.`
         : `${heldTileIds.length} separate hand contacts support ${build.tiles.length} panels. No free-body stability is claimed; handoff/release must be checked separately.`,
-      settled: snapshot(build, engine) };
+      settled: supportSnapshot(build, engine) };
   } finally { engine.dispose(); }
 }

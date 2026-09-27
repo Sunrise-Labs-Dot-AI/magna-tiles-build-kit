@@ -10,6 +10,7 @@ import { assemble, outside, rigidPanel, square, stageBuild, v } from "./geometry
 import type { Replica, StagePose } from "./types";
 import { edgeGrips, findHandContacts } from "./grip";
 import { planConstructionPaths } from "./construction";
+import { findInsertionPath } from "./insertion";
 import { buildBounds } from "@/lib/engine/build";
 
 const blue = "#168db3",
@@ -183,8 +184,9 @@ export function smallRamp(): Replica {
       },
       {
         stageId: "small-launch",
-        operations: ["launch-roof", "launch-back", "launch-side--1", "launch-side-1"]
-          .map((id, i) => ({ tileIds: [id], hands: i ? [grip(id), grip("launch-roof")] : [grip(id)] })),
+        operations: ["launch-back", "launch-roof", "launch-side--1", "launch-side-1"]
+          .map((id, i) => ({ tileIds: [id], hands: i >= 2 ? [grip(id), grip("launch-roof")] : [grip(id)],
+            ...(i === 0 ? { gravitySeat: { releaseHeight: 0.55 }, releaseAfter: true } : {}) })),
       },
       {
         stageId: "small-final",
@@ -199,14 +201,21 @@ export function smallRamp(): Replica {
         "Hold the red rear square and attach the two yellow sides. At 00:24.5 the three-piece U stands on the table. Add the two orange driving squares along the sloped edges; the proposed deck order and grips are checked separately.",
         prefix(tiles, 1),
       ),
-      stage(
-        "small-launch",
-        "small-launch",
-        "Make the launch module separately",
-        "Join the red roof and back at a right angle. Close both ends with green right triangles. Henry holds this four-piece module while bringing it to the wedge; it is not released alone in the footage.",
-        tiles.filter((t) => t.step === 2).map((t) => t.id),
-        "held",
-      ),
+      {
+        ...stage(
+          "small-launch",
+          "small-launch",
+          "Make the launch module on its side",
+          "Place the red back square flat on the table. Hold the red roof upright at its far edge, then attach both green sides. Henry turns this completed module before joining it to the ramp; that transfer needs its own motion check.",
+          tiles.filter((t) => t.step === 2).map((t) => t.id),
+          "held",
+        ),
+        transform: { basis: { xAxis: v(0,-1,0), yAxis: v(1,0,0), zAxis: v(0,0,1) }, translation: v(3-y, x+3.18, 0) },
+        constructionEvidence: [
+          { claim: "Final back panel lies on the table while the final roof is held upright.", frameIds: ["small-construction-seat-28.75", "small-construction-seat-30.25"] },
+          { claim: "The completed launch rotates before joining the wedge; this transfer is not yet validated.", frameIds: ["small-construction-seat-32.5", "small-fit-33"] },
+        ],
+      },
       {
         ...stage(
           "small-final",
@@ -260,7 +269,10 @@ export function smallRamp(): Replica {
     const operations = replica.construction!.find(s => s.stageId === result.stageId)!.operations;
     for (const [i, path] of result.paths.entries()) {
       const operation = operations[i];
-      operation.hands = findHandContacts(snapshot, path, operation.hands![0].tileId,
+      const release = { ...snapshot, tiles: snapshot.tiles.map(t => operation.gravitySeat && operation.tileIds.includes(t.id)
+        ? { ...t, position: add(t.position, v(0, operation.gravitySeat.releaseHeight, 0)) } : t) };
+      const approach = operation.gravitySeat ? findInsertionPath(release, path.movingTileIds, path.fixedTileIds) : path;
+      if (approach) operation.hands = findHandContacts(release, approach, operation.hands![0].tileId,
         operation.hands![1]?.tileId, buildBounds(snapshot.tiles).min.y) ?? operation.hands;
     }
   }

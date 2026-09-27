@@ -20,6 +20,13 @@
     "keyboardStartEnd": true,
     "resetsAtNextStage": true
   },
+  "gravityPreview": {
+    "labels": [
+      "P7"
+    ],
+    "recordedFramesDiffer": true,
+    "launchAssemblyPassed": true
+  },
   "mobileOverflow": false,
   "pageErrors": []
 }

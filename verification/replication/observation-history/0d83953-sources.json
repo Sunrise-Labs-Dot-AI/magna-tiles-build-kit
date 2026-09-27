@@ -307,30 +307,6 @@
           "seconds": 40.2,
           "stage": "small-final",
           "use": "holdout"
-        },
-        {
-          "id": "small-construction-seat-28.75",
-          "seconds": 28.75,
-          "stage": "small-launch",
-          "use": "fit"
-        },
-        {
-          "id": "small-construction-seat-30.25",
-          "seconds": 30.25,
-          "stage": "small-launch",
-          "use": "fit"
-        },
-        {
-          "id": "small-construction-seat-32.5",
-          "seconds": 32.5,
-          "stage": "small-launch",
-          "use": "fit"
-        },
-        {
-          "id": "small-fit-33",
-          "seconds": 33,
-          "stage": "small-launch",
-          "use": "fit"
         }
       ]
     }

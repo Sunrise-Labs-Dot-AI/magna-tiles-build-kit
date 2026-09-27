@@ -16,7 +16,7 @@
         },
         "fidelity": {
           "status": "fail",
-          "detail": "2 measured views, 1 historically withheld views, 33/40 parts lack independent scored landmarks. No frozen candidate and reservation baseline for an independent evaluation. Need complete visible/occluded part constraints and at least two distinct withheld final views. Pod incidence, longitudinal bay and the red leading triangle contacts are candidate hypotheses; the footage does not expose every join. Hidden cockpit floor/contact geometry and final inclination remain unresolved. The six rigid pieces are retained rather than collapsed to one fin."
+          "detail": "2 measured views, 1 historically withheld views, 33/40 parts lack independent scored landmarks. No frozen candidate and reservation baseline for an independent evaluation. Need complete visible/occluded part constraints and at least one useful final view reserved from fitting. Historical inspection and fresh reservation remain distinct. Pod incidence, longitudinal bay and the red leading triangle contacts are candidate hypotheses; the footage does not expose every join. Hidden cockpit floor/contact geometry and final inclination remain unresolved. The six rigid pieces are retained rather than collapsed to one fin."
         },
         "materials": {
           "status": "unverified",
@@ -44,7 +44,7 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "e5e8a86ec31da66d4a50b9a9bb38d53af2c4e96469495ff5995e5bcafed64459",
+      "fingerprint": "ee327d40a10f3891d8a95460a8b4e5d2d3aaf913b7971f5ada1207228407b5ef",
       "stages": [
         {
           "id": "body-upright-1",
@@ -221,7 +221,7 @@
       "checks": {
         "source": {
           "status": "pass",
-          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 27 extracted frame hashes. Manual annotations remain reviewable measurements."
+          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 31 extracted frame hashes. Manual annotations remain reviewable measurements."
         },
         "inventory": {
           "status": "pass",
@@ -229,7 +229,7 @@
         },
         "fidelity": {
           "status": "fail",
-          "detail": "1 measured views, 1 historically withheld views, 7/9 parts lack independent scored landmarks. Frame small-check is historical, unassessed, duplicated, or not reserved before candidate freeze and inspection. Need complete visible/occluded part constraints and at least two distinct withheld final views. The source long-edge/short-edge ratio and exact launch-to-wedge seam need measurement. The 143 mm catalog side is shorter than two squares; retained as an explicit overhang, not stretched."
+          "detail": "1 measured views, 1 historically withheld views, 7/9 parts lack independent scored landmarks. Frame small-check is historical, unassessed, duplicated, or not reserved before candidate freeze and inspection. Need complete visible/occluded part constraints and at least one useful final view reserved from fitting. Historical inspection and fresh reservation remain distinct. The source long-edge/short-edge ratio and exact launch-to-wedge seam need measurement. The 143 mm catalog side is shorter than two squares; retained as an explicit overhang, not stretched."
         },
         "materials": {
           "status": "unverified",
@@ -249,7 +249,7 @@
         },
         "assembly": {
           "status": "fail",
-          "detail": "0/3 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. small-wedge: Edges do not close at small-side-1:1->small-deck-2:2: transverse gap 0.200 in, overlap 2.758 in. small-launch: Grip on launch-back is blocked by launch-roof. small-final: An earlier module has not passed its complete supported assembly. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
+          "detail": "1/3 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. small-wedge: Edges do not close at small-side-1:1->small-deck-2:2: transverse gap 0.200 in, overlap 2.758 in. small-final: An earlier module has not passed its complete supported assembly. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
         },
         "function": {
           "status": "pass",
@@ -257,7 +257,7 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "4756b13e489e65f95cdfc1238a6ed69b95ecfa2fd470f61387ab9b16dd08f56b",
+      "fingerprint": "86bce5bed4710a98836a808da8b304cfabfcac4d51b84cd3e4f91b60fc90f006",
       "stages": [
         {
           "id": "small-wedge",
@@ -341,7 +341,7 @@
       "checks": {
         "source": {
           "status": "pass",
-          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 27 extracted frame hashes. Manual annotations remain reviewable measurements."
+          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 31 extracted frame hashes. Manual annotations remain reviewable measurements."
         },
         "inventory": {
           "status": "pass",
@@ -349,7 +349,7 @@
         },
         "fidelity": {
           "status": "fail",
-          "detail": "2 measured views, 1 historically withheld views, 33/37 parts lack independent scored landmarks. No frozen candidate and reservation baseline for an independent evaluation. Need complete visible/occluded part constraints and at least two distinct withheld final views. Canopy roof pitch, triangular tessellation, end closures and red launch flap joins require additional fitting. Exact BOM alone does not validate this hypothesis. Upper wedge elevation/support alignment and the blue turn's dihedral remain unresolved."
+          "detail": "2 measured views, 1 historically withheld views, 33/37 parts lack independent scored landmarks. No frozen candidate and reservation baseline for an independent evaluation. Need complete visible/occluded part constraints and at least one useful final view reserved from fitting. Historical inspection and fresh reservation remain distinct. Canopy roof pitch, triangular tessellation, end closures and red launch flap joins require additional fitting. Exact BOM alone does not validate this hypothesis. Upper wedge elevation/support alignment and the blue turn's dihedral remain unresolved."
         },
         "materials": {
           "status": "unverified",
@@ -377,7 +377,7 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "5b1dad546173460281fb5ba6102f06c31c3d0ac47bc7d08c17a4c13cac938356",
+      "fingerprint": "af48f5df3f3cd4e3afa0887bb255337b65de0d26fa729c4f80e546d6829280f2",
       "stages": [
         {
           "id": "medium-lower",
@@ -491,7 +491,7 @@
       "checks": {
         "source": {
           "status": "pass",
-          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 27 extracted frame hashes. Manual annotations remain reviewable measurements."
+          "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 31 extracted frame hashes. Manual annotations remain reviewable measurements."
         },
         "inventory": {
           "status": "pass",
@@ -499,7 +499,7 @@
         },
         "fidelity": {
           "status": "unverified",
-          "detail": "0 measured views, 0 historically withheld views, 51/51 parts lack independent scored landmarks. No frozen candidate and reservation baseline for an independent evaluation. Need complete visible/occluded part constraints and at least two distinct withheld final views. 42-square shell allocation and exact deck seams are source-informed hypotheses; intermediate ring release checks and independent camera fitting remain incomplete."
+          "detail": "0 measured views, 0 historically withheld views, 51/51 parts lack independent scored landmarks. No frozen candidate and reservation baseline for an independent evaluation. Need complete visible/occluded part constraints and at least one useful final view reserved from fitting. Historical inspection and fresh reservation remain distinct. 42-square shell allocation and exact deck seams are source-informed hypotheses; intermediate ring release checks and independent camera fitting remain incomplete."
         },
         "materials": {
           "status": "unverified",
@@ -527,7 +527,7 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "09b8738ec0c7a69eaf3ad9c77cf3573dd76f4b55df38b53d88ee81d826e70604",
+      "fingerprint": "110aba448dc581bf21d7f33475da562a4e68ff46932aaa60746616ba231fe78b",
       "stages": [
         {
           "id": "large-bay-0",

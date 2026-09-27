@@ -6,6 +6,7 @@ import { useState } from "react";
 import { TileViewer } from "@/app/components/TileViewer";
 import { stageBuild } from "@/lib/replication/geometry";
 import { insertionPreview } from "@/lib/replication/insertion";
+import { assemblyOperationPreview } from "@/lib/replication/assembly-preview";
 import { countInventory } from "@/lib/magnetic-tiles/validation";
 import { SHAPE_ORDER, TILE_SPECS } from "@/lib/magnetic-tiles/catalog";
 import type { Check, Replica, ReplicaReport } from "@/lib/replication/types";
@@ -112,12 +113,18 @@ function Candidate({
     [insertionIndex, setInsertionIndex] = useState(-1),
     [insertionProgress, setInsertionProgress] = useState(100);
   const stage = replica.stages[step],
+    assembly = stage ? report.assemblySimulation?.find(s => s.stageId === stage.id) : undefined,
+    operation = assembly?.operations.find(o => o.seed === 0 && o.index === insertionIndex),
     construction = stage ? report.constructionPaths?.find(p => p.stageId === stage.id) : undefined,
-    insertion = construction?.paths[insertionIndex],
+    insertion = operation?.path ?? construction?.paths[insertionIndex],
     checkpointBuild = stage ? stageBuild(replica, stage) : replica.build,
-    build = insertion ? insertionPreview(checkpointBuild, insertion, insertionProgress / 100) : checkpointBuild;
-  const framingTiles = insertion ? insertion.offsets.flatMap((_, index) =>
-    insertionPreview(checkpointBuild, insertion, index / (insertion.offsets.length - 1)).tiles) : undefined;
+    recorded = operation?.approachTiles && operation.path ? operation : undefined,
+    build = recorded ? assemblyOperationPreview(checkpointBuild, recorded, insertionProgress / 100)
+      : insertion ? insertionPreview(checkpointBuild, insertion, insertionProgress / 100) : checkpointBuild;
+  const framingTiles = recorded ? [assemblyOperationPreview(checkpointBuild, recorded, 0).tiles,
+    recorded.approachTiles!, ...(recorded.seating?.motion.map(f => f.tiles) ?? [])].flat()
+    : insertion ? insertion.offsets.flatMap((_, index) =>
+      insertionPreview(checkpointBuild, insertion, index / (insertion.offsets.length - 1)).tiles) : undefined;
   const selectStep = (next: number) => { setStep(next); setInsertionIndex(-1); setInsertionProgress(100); };
   const counts = countInventory(replica.build.tiles),
     source = sources.sources.find((s) => s.id === replica.sourceId)!;
@@ -127,7 +134,6 @@ function Candidate({
   const checkpoint = stage
     ? report.stages.find((s) => s.id === stage.id)
     : undefined;
-  const assembly = stage ? report.assemblySimulation?.find(s => s.stageId === stage.id) : undefined;
   const labelsById = Object.fromEntries(
     replica.build.tiles.map((t, i) => [t.id, `P${i + 1}`]),
   );
@@ -237,11 +243,14 @@ function Candidate({
                     </select>
                   </label>
                   {insertion && <label>
-                    Move into place · {insertionProgress}%
+                    {recorded?.seating?.motion.length ? "Approach and recorded release" : "Move into place"} · {insertionProgress}%
                     <input type="range" min={0} max={100} value={insertionProgress}
                       onChange={e => setInsertionProgress(Number(e.target.value))} />
                   </label>}
-                  <p>Preview uses the proposed poses. {construction.detail}</p>
+                  <p>{recorded ? recorded.seating?.motion.length
+                    ? "First half: checked approach. Second half: recorded gravity motion from the first perturbation run. New joins remain absent during this fall."
+                    : "Preview uses the checked approach and actual settled predecessor positions."
+                    : `Preview uses the proposed poses. ${construction.detail}`}</p>
                 </div>
               )}
               <p>
@@ -251,7 +260,9 @@ function Candidate({
                     : "Release checkpoint"}
                   .
                 </strong>{" "}
-                {checkpoint?.detail}
+                {stage.support === "held" && assembly?.status === "pass"
+                  ? "The assembly check includes grip access and supported intermediate steps. Unattended release of this held checkpoint is not certified."
+                  : checkpoint?.detail}
               </p>
               {frame && (
                 <a

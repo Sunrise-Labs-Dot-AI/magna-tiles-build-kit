@@ -18,3 +18,16 @@ export function assemblyUFixture(): Replica {
     stages: [{ id: "u", frameId: "fixture", title: "U", instruction: "Support the first wall until the other two are joined.", tileIds: ids, support: "released" }],
     construction: [{ stageId: "u", operations: ids.map((id, i) => ({ tileIds: [id], hands: i ? [grip(id), grip(ids[0])] : [grip(id)] })) }] };
 }
+
+export function seatedRoofFixture(): Replica {
+  const replica = assemblyUFixture(), roof = closedShell(1).tiles.find(t => t.id === "roof")!;
+  replica.id = "seated-roof-fixture";
+  // Move the side walls inward so the roof has actual bearing area. The original
+  // exact-width shell has only edge contact and needs magnetic capture while
+  // falling, which a rest-before-attachment operation must not claim to model.
+  for (const tile of replica.build.tiles) if (tile.id.startsWith("x-")) tile.position.x *= 1.45 / 1.59;
+  replica.build = assemble(replica.id, "Gravity-seated roof", [...replica.build.tiles, roof], "tower");
+  replica.stages[0].tileIds.push(roof.id);
+  replica.construction![0].operations.push({ tileIds: [roof.id], hands: [edgeGrips(roof)[0]], gravitySeat: { releaseHeight: 0.55 }, releaseAfter: true });
+  return replica;
+}

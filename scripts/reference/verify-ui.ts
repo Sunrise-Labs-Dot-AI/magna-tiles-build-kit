@@ -68,6 +68,21 @@ async function main() {
     await page.getByRole("button", { name: "Next", exact: true }).click();
     if (await page.getByLabel("Part insertion preview").inputValue() !== "-1")
       throw Error("Insertion selection did not reset at the next checkpoint.");
+    if (!(await page.getByLabel("Complete assembly check").textContent())?.includes("Passed this check"))
+      throw Error("Corrected launch assembly did not display its passing check.");
+    await page.getByLabel("Part insertion preview").selectOption("0");
+    const releaseSlider = page.getByRole("slider", { name: /Approach and recorded release/ });
+    await releaseSlider.fill("50");
+    await ready();
+    await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
+    const raisedFrame = await page.locator("canvas").screenshot();
+    await releaseSlider.fill("100");
+    await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
+    const seatedFrame = await page.locator("canvas").screenshot();
+    if (raisedFrame.equals(seatedFrame)) throw Error("Recorded gravity motion did not change the rendered pose.");
+    const seatedLabels = await page.locator(".design-piece-label").allTextContents();
+    if (seatedLabels.length !== 1 || seatedLabels[0] !== "P7") throw Error(`Gravity placement shows future parts: ${seatedLabels}`);
+    await page.screenshot({ path: "verification/replication/ui/small-launch-placement.png", fullPage: true });
     await page.getByRole("button", { name: /3D snail/ }).click();
     await page.getByRole("heading", { name: /original 3D snail/ }).waitFor();
     await page.setViewportSize({ width: 390, height: 844 });
@@ -88,6 +103,7 @@ async function main() {
       snailEmptyState: true,
       stableModuleLabels: labels,
       insertionPreview: { labels: insertionLabels, keyboardStartEnd: true, resetsAtNextStage: true },
+      gravityPreview: { labels: seatedLabels, recordedFramesDiffer: true, launchAssemblyPassed: true },
       mobileOverflow: overflow,
       pageErrors: errors,
     };

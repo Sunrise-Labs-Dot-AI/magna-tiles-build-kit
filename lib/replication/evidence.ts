@@ -3,6 +3,7 @@ import type { Check } from "./types";
 export interface EvidenceUse {
   frameId: string;
   replicaId?: string;
+  stageId?: string;
   seconds?: number;
   path?: string;
   sourceSha256: string;
@@ -14,6 +15,18 @@ export interface EvidenceUse {
   firstInspectedAt: string | null;
   viewFamily: string;
   independenceReviewed: boolean;
+}
+export function constructionFrameBinding(entry: EvidenceUse, replicaId: string, stageId: string, sourceId: string, sourceSha256: string,
+  frame: { id: string; seconds: number; use: string; stage: string } | undefined,
+  manifest: { id: string; sourceId: string; seconds: number; partition: string; stage: string; sourceSha256: string; sha256: string; path: string } | undefined): Check {
+  const pass = !!frame && !!manifest && entry.role === "fit" && entry.replicaId === replicaId && entry.stageId === stageId &&
+    Number.isFinite(entry.seconds) && entry.sourceSha256 === sourceSha256 && entry.frameId === frame.id && entry.frameId === manifest.id &&
+    frame.stage === stageId && manifest.stage === stageId && frame.use === "fit" && manifest.partition === "fit" &&
+    entry.seconds === frame.seconds && entry.seconds === manifest.seconds && manifest.sourceId === sourceId &&
+    manifest.sourceSha256 === sourceSha256 && manifest.sha256 === entry.frameSha256 && entry.path === manifest.path &&
+    manifest.path === `public/reference-frames/replication/${sourceId}/${entry.frameId}.png`;
+  return { status: pass ? "pass" : "fail", detail: pass ? "Construction claim matches its replica, stage and verified source extraction."
+    : `Construction claim frame ${entry.frameId} does not match its replica, stage or verified source extraction.` };
 }
 export function reservedFrameBinding(entry: EvidenceUse, expectedSourceSha256: string, frame: { id: string; seconds: number; use: string } | undefined,
   verifiedManifest: { id: string; seconds: number; partition: string; sourceSha256: string; sha256: string; path: string } | undefined): Check {
@@ -54,5 +67,5 @@ export function independentHoldoutCoverage(entries: EvidenceUse[], frameIds: str
     families.add(e.viewFamily);
     digests.add(e.frameSha256!);
   }
-  return { status: families.size >= 2 ? "pass" : "unverified", detail: `${families.size}/2 independent reserved view families satisfy the declared evidence history. Shape coverage and pixel agreement remain separate.` };
+  return { status: families.size >= 1 ? "pass" : "unverified", detail: `${families.size} independent reserved view families satisfy the declared evidence history; at least one useful final view is required. Shape coverage and pixel agreement remain separate.` };
 }

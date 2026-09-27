@@ -2312,14 +2312,14 @@
   },
   "report": {
     "id": "medium-ramp",
-    "fingerprint": "5b1dad546173460281fb5ba6102f06c31c3d0ac47bc7d08c17a4c13cac938356",
-    "validationCodeHash": "d25326af9127972fce2819324bd1960f61d6a603a14561cbf8f75bedf5d41abd",
-    "generatedAt": "2026-09-27T03:02:39.288Z",
+    "fingerprint": "af48f5df3f3cd4e3afa0887bb255337b65de0d26fa729c4f80e546d6829280f2",
+    "validationCodeHash": "948e0811f1800bea4db313e67504f004184e3e8e2d82f862f7952da879834631",
+    "generatedAt": "2026-09-27T03:45:45.578Z",
     "replication": "not-verified",
     "checks": {
       "source": {
         "status": "pass",
-        "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 27 extracted frame hashes. Manual annotations remain reviewable measurements."
+        "detail": "Verified original video SHA-256 2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0 and 31 extracted frame hashes. Manual annotations remain reviewable measurements."
       },
       "inventory": {
         "status": "pass",
@@ -2327,7 +2327,7 @@
       },
       "fidelity": {
         "status": "fail",
-        "detail": "2 measured views, 1 historically withheld views, 33/37 parts lack independent scored landmarks. No frozen candidate and reservation baseline for an independent evaluation. Need complete visible/occluded part constraints and at least two distinct withheld final views. Canopy roof pitch, triangular tessellation, end closures and red launch flap joins require additional fitting. Exact BOM alone does not validate this hypothesis. Upper wedge elevation/support alignment and the blue turn's dihedral remain unresolved."
+        "detail": "2 measured views, 1 historically withheld views, 33/37 parts lack independent scored landmarks. No frozen candidate and reservation baseline for an independent evaluation. Need complete visible/occluded part constraints and at least one useful final view reserved from fitting. Historical inspection and fresh reservation remain distinct. Canopy roof pitch, triangular tessellation, end closures and red launch flap joins require additional fitting. Exact BOM alone does not validate this hypothesis. Upper wedge elevation/support alignment and the blue turn's dihedral remain unresolved."
       },
       "materials": {
         "status": "unverified",

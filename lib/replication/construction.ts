@@ -11,6 +11,8 @@ export interface ConstructionStage {
     hands?: import("./grip").HandContact[];
     /** All hands removed after this insertion. Stage releases are mandatory too. */
     releaseAfter?: boolean;
+    /** Release above the target, then earn every new contact under gravity. */
+    gravitySeat?: { releaseHeight: number };
   }[];
 }
 

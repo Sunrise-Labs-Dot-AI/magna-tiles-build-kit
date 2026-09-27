@@ -1,0 +1,8 @@
+One actionable remaining defect:
+
+**WARNING: construction evidence is still byte-locked, but not source-extraction or claim-bound.**  
+[lib/replication/evaluate.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/evaluate.ts:212) accepts construction claim frames if there is exactly one ledger entry with `role === "fit"`, matching `sourceSha256`, finite seconds, and a local PNG hash match. It does not require the frame to exist in `sources.json` or `frame-manifest.json`, does not verify `sourceId`/stage/use/path through the extraction manifest, and does not require `entry.replicaId === replica.id`. One current claimed frame, `small-fit-33`, is accepted from the ledger without a `replicaId`. A wrong same-source fit PNG, or a ledger-only PNG never extracted from the hashed video, could therefore certify the small-launch rotation claim.
+
+Suggested fix: construction evidence should use the same manifest/source binding shape as reserved holdouts, plus replica/stage binding for the claim.
+
+Resolution status: findings 1-5 look resolved in code and tests. Finding 6 is only partially resolved because the evaluator now checks local bytes, but still does not prove those bytes are the intended extracted source frame for the operation claim. I did not run tests, per read-only review.

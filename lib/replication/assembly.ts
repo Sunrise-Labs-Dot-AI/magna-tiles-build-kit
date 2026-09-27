@@ -1,14 +1,14 @@
 import { buildBounds, validateMagneticBuild } from "@/lib/engine/build";
-import { add, scale, dot, subtract, magnitude } from "@/lib/engine/math";
-import { TILE_THICKNESS } from "@/lib/engine/constants";
-import { findRawOverlaps } from "@/lib/engine/overlap";
+import { add, scale } from "@/lib/engine/math";
 import { findMagneticEdgeMatch } from "@/lib/magnetic-tiles/magnet-geometry";
-import type { BuildGraph } from "@/lib/magnetic-tiles/types";
+import type { BuildGraph, TileInstance } from "@/lib/magnetic-tiles/types";
 import { stageBuild } from "./geometry";
 import { planConstructionPaths } from "./construction";
 import { findInsertionPath, type InsertionPath } from "./insertion";
 import { checkHandAccess } from "./grip";
 import { simulateSupport, type SupportTrial } from "./support";
+import { contactsClosed } from "./contacts";
+import { simulateGravitySeat, type SeatingTrial } from "./seating";
 import type { Check, Replica } from "./types";
 
 export interface AssemblyOperationResult extends Check {
@@ -16,8 +16,10 @@ export interface AssemblyOperationResult extends Check {
   seed: number;
   tileIds: string[];
   path?: InsertionPath;
+  approachTiles?: TileInstance[];
   grip?: Check;
   closure?: Check;
+  seating?: Omit<SeatingTrial, "settled">;
   trials: Omit<SupportTrial, "settled">[];
 }
 export interface AssemblyResult extends Check {
@@ -30,23 +32,6 @@ const subset = (build: BuildGraph, ids: Set<string>): BuildGraph => ({ ...build,
   connections: build.connections.filter(c => ids.has(c.fromTileId) && ids.has(c.toTileId)) });
 const mergePoses = (build: BuildGraph, state: BuildGraph): BuildGraph => ({ ...build,
   tiles: build.tiles.map(t => state.tiles.find(actual => actual.id === t.id) ?? t) });
-
-function contactsClosed(build: BuildGraph): Check {
-  const validation = validateMagneticBuild(build);
-  if (validation.rejectedReasons.length || findRawOverlaps(build.tiles).length)
-    return { status: "fail", detail: `Contact closure rejected: ${validation.rejectedReasons.join("; ") || "intersecting solid parts"}.` };
-  // The legacy magnetic search allows distant near-matches. A closure certificate
-  // additionally requires actual finite-thickness edge proximity and alignment.
-  for (const c of validation.validConnections) {
-    const a = c.fromEdge, b = c.toEdge, delta = subtract(b.midpoint, a.midpoint);
-    const gap = magnitude(subtract(delta, scale(a.direction, dot(delta, a.direction))));
-    const aa = [a.start, a.end].map(p => dot(p, a.direction)), bb = [b.start, b.end].map(p => dot(p, a.direction));
-    const overlap = Math.min(Math.max(...aa), Math.max(...bb)) - Math.max(Math.min(...aa), Math.min(...bb));
-    if (gap > TILE_THICKNESS + 0.03 || Math.abs(dot(a.direction, b.direction)) < Math.cos(Math.PI / 36) || overlap < Math.min(a.length, b.length) - 0.21)
-      return { status: "fail", detail: `Edges do not close at ${c.id}: transverse gap ${gap.toFixed(3)} in, overlap ${overlap.toFixed(3)} in.` };
-  }
-  return { status: "pass", detail: "Solid edge gaps, overlap and orientation close." };
-}
 
 /** A path with empty air at both ends is not a magnetic assembly operation. */
 export function checkClosure(build: BuildGraph, path: InsertionPath): Check {
@@ -81,7 +66,7 @@ export async function evaluateAssembly(replica: Replica, deadline = Infinity): P
     if (plan.operations.some(op => !op.hands?.length)) continue;
     const dependencies = [...(stage.installedStageIds ?? []), ...plan.operations.flatMap(op => op.preparedStageId ? [op.preparedStageId] : [])];
     if (dependencies.some(id => !prepared.has(id))) { result.detail = "An earlier module has not passed its complete supported assembly."; continue; }
-    if (stage.transform || dependencies.some(id => replica.stages.find(s => s.id === id)?.transform)) {
+    if (dependencies.length && (stage.transform || dependencies.some(id => replica.stages.find(s => s.id === id)?.transform))) {
       result.detail = "A stage rotation/transfer needs a continuous validated orientation trajectory."; continue;
     }
     const nominal = stageBuild(replica, stage), floorY = buildBounds(nominal.tiles).min.y;
@@ -123,35 +108,53 @@ export async function evaluateAssembly(replica: Replica, deadline = Infinity): P
           if (failure) { row.detail = failure; break; }
         }
         if (operation.preparedStageId) current = mergePoses(current, prepared.get(operation.preparedStageId)!.get(seed)!.build);
-        let path = findInsertionPath(current, operation.tileIds, [...placed], deadline);
+        const releaseOffset = { x: 0, y: operation.gravitySeat?.releaseHeight ?? 0, z: 0 };
+        const approachPose = () => ({ ...current, tiles: current.tiles.map(t => moving.has(t.id)
+          ? { ...t, position: add(t.position, releaseOffset) } : t) });
+        let approach = approachPose();
+        let path = findInsertionPath(approach, operation.tileIds, [...placed], deadline);
         if (!path) { failure = row.detail = "Settled predecessors block insertion."; break; }
         row.path = path;
-        row.grip = checkHandAccess(current, path, hands, floorY);
+        row.grip = checkHandAccess(approach, path, hands, floorY);
         if (row.grip.status !== "pass") { failure = row.detail = row.grip.detail; break; }
         // Carry the prepared module away from floor support, holding only its named panel.
-        const airborne = subset(current, moving);
+        const airborne = subset(approach, moving);
         airborne.tiles = airborne.tiles.map(t => ({ ...t, position: add(t.position, path!.offsets[0]) }));
         const held = hands.filter(h => moving.has(h.tileId)).map(h => h.tileId);
         const carried = await record(airborne, held);
         if (failure) { row.detail = failure; break; }
-        carried.tiles = carried.tiles.map(t => ({ ...t, position: add(t.position, scale(path!.offsets[0], -1)) }));
+        carried.tiles = carried.tiles.map(t => ({ ...t, position: add(t.position, scale(add(path!.offsets[0], releaseOffset), -1)) }));
         current = mergePoses(current, carried);
         // Actual carried shape may move; search and check again rather than reset it.
-        path = findInsertionPath(current, operation.tileIds, [...placed], deadline);
+        approach = approachPose();
+        path = findInsertionPath(approach, operation.tileIds, [...placed], deadline);
         if (!path) { failure = row.detail = "Carried module deformation blocks insertion."; break; }
         row.path = path;
-        row.grip = checkHandAccess(current, path, hands, floorY);
-        row.closure = checkClosure(current, path);
-        if (row.grip.status !== "pass" || row.closure.status !== "pass") {
-          failure = row.detail = row.grip.status !== "pass" ? row.grip.detail : row.closure.detail; break;
+        row.grip = checkHandAccess(approach, path, hands, floorY);
+        row.approachTiles = approach.tiles.filter(t => moving.has(t.id) || placed.has(t.id));
+        if (row.grip.status !== "pass") { failure = row.detail = row.grip.detail; break; }
+        if (operation.gravitySeat) {
+          const seated = await simulateGravitySeat(subset(current, new Set([...placed, ...moving])), operation.tileIds, hands,
+            operation.gravitySeat.releaseHeight, floorY, seed, deadline);
+          const { settled, ...summary } = seated;
+          row.seating = summary;
+          if (seated.path) row.path = seated.path;
+          if (seated.motion.length) row.approachTiles = seated.motion[0].tiles;
+          row.closure = { status: seated.status, detail: seated.detail };
+          if (seated.status !== "pass") { failure = row.detail = seated.detail; break; }
+          current = mergePoses(current, settled);
+        } else {
+          row.closure = checkClosure(current, path);
+          if (row.closure.status !== "pass") { failure = row.detail = row.closure.detail; break; }
         }
         moving.forEach(id => placed.add(id));
-        current = mergePoses(current, await record(subset(current, placed), hands.map(h => h.tileId)));
+        current = mergePoses(current, await record(subset(current, placed), operation.gravitySeat ? support : hands.map(h => h.tileId)));
         if (!failure && operation.releaseAfter)
           current = mergePoses(current, await record(subset(current, placed), []));
         if (failure) { row.detail = failure; break; }
         row.status = "pass";
-        row.detail = "Clear grip and insertion, connected closure and stable supported prefix; actual settled poses retained.";
+        row.detail = operation.gravitySeat ? "Clear release grip, gravity-seated contacts and stable connected prefix; actual motion retained."
+          : "Clear grip and insertion, connected closure and stable supported prefix; actual settled poses retained.";
       }
       if (failure) break;
       // Includes release-only checkpoints which add no new parts. Reusing a held

@@ -1,4 +1,4 @@
-import { add, cross, dot, normalize, scale, subtract, transformLocal } from "@/lib/engine/math";
+import { add, cross, dot, normalize, scale, subtract, transformLocal, magnitude } from "@/lib/engine/math";
 import { TILE_THICKNESS } from "@/lib/engine/constants";
 import { basisFromEuler } from "@/lib/magnetic-tiles/edge-attachment";
 import { tileLocalVertices, tileWorldVertices } from "@/lib/magnetic-tiles/magnet-geometry";
@@ -134,4 +134,34 @@ export function checkHandAccess(build: BuildGraph, path: InsertionPath, hands: H
       }
   }
   return { status: "pass", detail: "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated." };
+}
+
+/** A supporting fingertip remains an obstacle while the released part falls.
+ * Unlike insertion access, no moving hand remains attached to that part. */
+export function checkSupportFingerClearance(build: BuildGraph, hands: HandContact[], floorY: number, previous?: BuildGraph): Check {
+  for (const hand of hands) {
+    const tile = build.tiles.find(t => t.id === hand.tileId), geometry = tile && contactGeometry(tile, hand);
+    if (!geometry) return { status: "fail", detail: "Invalid stationary support grip." };
+    for (const finger of geometry.fingers) {
+      if (finger.y - GRIP_PROXY.radius < floorY - 1e-6)
+        return { status: "fail", detail: "Support fingertip crosses the table during seating." };
+      if (build.tiles.some(t => {
+        if (t.id === hand.tileId) return false;
+        const before = previous?.tiles.find(p => p.id === t.id);
+        let sweep = 0;
+        if (before) {
+          const a = before.basis ?? basisFromEuler(before.rotation.x, before.rotation.y, before.rotation.z);
+          const b = t.basis ?? basisFromEuler(t.rotation.x, t.rotation.y, t.rotation.z);
+          const angle = Math.acos(Math.max(-1, Math.min(1, (dot(a.xAxis,b.xAxis) + dot(a.yAxis,b.yAxis) + dot(a.zAxis,b.zAxis) - 1) / 2)));
+          const radius = Math.max(...tileWorldVertices(t).map(p => magnitude(subtract(p, t.position)))) + TILE_THICKNESS / 2;
+          // Every point of the interpolated rigid step is within this bound of
+          // the endpoint prism. Inflation catches crossings between snapshots.
+          sweep = magnitude(subtract(t.position, before.position)) + radius * angle;
+        }
+        return blocked(t, finger, finger, GRIP_PROXY.radius + sweep);
+      }))
+        return { status: "fail", detail: "A falling panel strikes a support fingertip." };
+    }
+  }
+  return { status: "pass", detail: "Supporting fingertips remain clear." };
 }

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { independentHoldoutCoverage, reservedFrameBinding, type CandidateFreeze, type EvidenceUse } from "@/lib/replication/evidence";
+import { constructionFrameBinding, independentHoldoutCoverage, reservedFrameBinding, type CandidateFreeze, type EvidenceUse } from "@/lib/replication/evidence";
 import { compareObservation, projectPoint, checkCameraRegion } from "@/lib/replication/projection";
 import { assemble, square, v } from "@/lib/replication/geometry";
 import { tileWorldVertices } from "@/lib/magnetic-tiles/magnet-geometry";
@@ -31,9 +31,10 @@ describe("heldout evidence history", () => {
   it("rejects a candidate changed after heldout evaluation", () => {
     expect(independentHoldoutCoverage(evidence(), ["front", "back"], freeze, "e".repeat(64)).status).toBe("fail");
   });
-  it("requires both a frozen candidate and two independent views", () => {
+  it("requires a frozen candidate and accepts one independently reserved useful view per the source definition", () => {
     expect(independentHoldoutCoverage(evidence(), ["front", "back"]).status).toBe("unverified");
-    expect(independentHoldoutCoverage(evidence(), ["front"], freeze, freeze.candidateSha256).status).toBe("unverified");
+    expect(independentHoldoutCoverage(evidence(), [], freeze, freeze.candidateSha256).status).toBe("unverified");
+    expect(independentHoldoutCoverage(evidence(), ["front"], freeze, freeze.candidateSha256).status).toBe("pass");
   });
   it("binds reservations to a verified frame's source, time, role, hash and path", () => {
     const entry = { ...evidence()[0], seconds: 36.25, path: "frame.png" };
@@ -43,6 +44,22 @@ describe("heldout evidence history", () => {
     for (const changed of [{ sha256: "f".repeat(64) }, { seconds: 36.5 }, { sourceSha256: "e".repeat(64) }, { partition: "fit" }, { path: "elsewhere.png" }])
       expect(reservedFrameBinding(entry, entry.sourceSha256, frame, { ...manifest, ...changed }).status).toBe("fail");
     expect(reservedFrameBinding(entry, entry.sourceSha256, undefined, manifest).status).toBe("fail");
+  });
+  it("binds construction claims to the specific replica, stage and extracted fitting frame", () => {
+    const entry: EvidenceUse = { ...evidence()[0], role: "fit", replicaId: "small-ramp", stageId: "small-launch", seconds: 28.75,
+      path: "public/reference-frames/replication/henry/front.png" };
+    const frame = { id: "front", seconds: 28.75, use: "fit", stage: "small-launch" };
+    const manifest = { id: "front", sourceId: "henry", sourceSha256: entry.sourceSha256, sha256: entry.frameSha256!,
+      seconds: 28.75, partition: "fit", stage: "small-launch", path: entry.path! };
+    const check = (e = entry, f: typeof frame | undefined = frame, m: typeof manifest | undefined = manifest) =>
+      constructionFrameBinding(e, "small-ramp", "small-launch", "henry", entry.sourceSha256, f, m);
+    expect(check().status).toBe("pass");
+    for (const changed of [{ replicaId: undefined }, { replicaId: "medium-ramp" }, { stageId: "small-final" }, { seconds: 29 }, { role: "historical" as const }, { frameSha256: "f".repeat(64) }])
+      expect(check({ ...entry, ...changed }).status).toBe("fail");
+    for (const changed of [{ sourceId: "jet" }, { stage: "small-final" }, { partition: "holdout" }, { path: "unregistered.png" }, { seconds: 29 }])
+      expect(check(entry, frame, { ...manifest, ...changed }).status).toBe("fail");
+    expect(constructionFrameBinding(entry, "small-ramp", "small-launch", "henry", entry.sourceSha256, undefined, manifest).status).toBe("fail");
+    expect(constructionFrameBinding(entry, "small-ramp", "small-launch", "henry", entry.sourceSha256, frame, undefined).status).toBe("fail");
   });
 });
 

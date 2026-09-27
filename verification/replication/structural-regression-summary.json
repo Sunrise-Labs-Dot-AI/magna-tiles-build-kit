@@ -10,7 +10,7 @@
     "correct": 5,
     "total": 5
   },
-  "note": "Recomputed after adding explicit assembly-floor support. 20 constructive and 5 required rejection outcomes correct. Historical full benchmark preserved; current per-brief fingerprints and verdicts follow.",
+  "note": "Recomputed after adding gravity seating and using the actual integration timestep for joint-break damping. All 25 structural outcomes remain correct. This benchmark does not certify source replication, human assembly or calibrated magnetic forces.",
   "entries": [
     {
       "prompt": "a tower at least 6 inches tall",

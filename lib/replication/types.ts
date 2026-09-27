@@ -20,6 +20,8 @@ export interface StagePose {
   tileIds: string[];
   /** Source-stage contract: these earlier modules are already installed obstacles. */
   installedStageIds?: string[];
+  /** Reviewed construction claims linked to immutable fitting-frame bytes. */
+  constructionEvidence?: { claim: string; frameIds: string[] }[];
   /** Each snapshot has its own pose; never combine frames across construction stages. */
   transform?: { basis: TileBasis; translation: Vec3 };
   support: "released" | "held";

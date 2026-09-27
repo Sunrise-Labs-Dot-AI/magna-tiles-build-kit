@@ -471,46 +471,6 @@
       "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
       "sha256": "4ecc6a8c36d25f8f0cdf3bf14c8694e8bc804bfefdd13764f81c5350f418d839",
       "path": "public/reference-frames/replication/henry/small-reserved-40.2.png"
-    },
-    {
-      "id": "small-construction-seat-28.75",
-      "sourceId": "henry",
-      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
-      "seconds": 28.75,
-      "stage": "small-launch",
-      "partition": "fit",
-      "path": "public/reference-frames/replication/henry/small-construction-seat-28.75.png",
-      "sha256": "80be5dd3728cc7f354d1f8353272bbc95f6185f02b1f68f57ab5c70a88e05206"
-    },
-    {
-      "id": "small-construction-seat-30.25",
-      "sourceId": "henry",
-      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
-      "seconds": 30.25,
-      "stage": "small-launch",
-      "partition": "fit",
-      "path": "public/reference-frames/replication/henry/small-construction-seat-30.25.png",
-      "sha256": "3fa5938764c850701d10cbc621138aac66a829f0caea8668c2a16c6d43ddf846"
-    },
-    {
-      "id": "small-construction-seat-32.5",
-      "sourceId": "henry",
-      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
-      "seconds": 32.5,
-      "stage": "small-launch",
-      "partition": "fit",
-      "path": "public/reference-frames/replication/henry/small-construction-seat-32.5.png",
-      "sha256": "e30c53b4b7c612efae4b13eae31b7e0b80e16f2de66ec5ad57ba368bb0e10d20"
-    },
-    {
-      "id": "small-fit-33",
-      "sourceId": "henry",
-      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
-      "seconds": 33,
-      "stage": "small-launch",
-      "partition": "fit",
-      "path": "public/reference-frames/replication/henry/small-fit-33.png",
-      "sha256": "9595d6e202d8b246aaaaae839e028a31cfd212c4775dd2cb44ff9867c8d34fff"
     }
   ]
 }

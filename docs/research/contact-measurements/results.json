@@ -1,0 +1,41 @@
+[
+  {
+    "image": "IMG_8240.JPG",
+    "sourceSha256": "a1a06ab77245ebf6f73294aab7ab288f235d233e59b75201c191b6f12ea97635",
+    "sidesMm": [
+      77.86,
+      148.33,
+      147.35
+    ],
+    "independentChecks": [
+      {
+        "expectedMm": 100,
+        "measuredMm": 99.96
+      },
+      {
+        "expectedMm": 50,
+        "measuredMm": 50.07
+      }
+    ]
+  },
+  {
+    "image": "IMG_8230.JPG",
+    "sourceSha256": "9de01aace4679901802d530f0dc090336210ce4caa6868dcec8c9a9ea634f4cc",
+    "sidesMm": [
+      77.42,
+      76.14,
+      77.37,
+      76.68
+    ],
+    "independentChecks": [
+      {
+        "expectedMm": 100,
+        "measuredMm": 100.18
+      },
+      {
+        "expectedMm": 50,
+        "measuredMm": 49.8
+      }
+    ]
+  }
+]

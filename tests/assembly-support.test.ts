@@ -75,7 +75,9 @@ describe("assembly with explicit individual-panel hand supports", () => {
   it("does not pretend a module can be moved through an untested rotation", async () => {
     const r = fixture();
     r.stages[0].transform = { basis: { xAxis: v(1,0,0), yAxis: v(0,0,1), zAxis: v(0,-1,0) }, translation: v(0,3,0) };
-    expect((await evaluateAssembly(r))[0].status).not.toBe("pass");
+    r.stages.push({ ...r.stages[0], id: "transfer", installedStageIds: ["u"] });
+    r.construction!.push({ stageId: "transfer", operations: [] });
+    expect((await evaluateAssembly(r))[1].status).not.toBe("pass");
   });
   it("runs a free checkpoint even when a later stage reuses all parts without inserting any", async () => {
     const r = fixture(); r.stages[0].support = "held";

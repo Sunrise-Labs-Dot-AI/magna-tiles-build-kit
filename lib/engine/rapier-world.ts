@@ -185,7 +185,7 @@ function updateBreakableJoints(engine: EngineWorld): void {
 
     const fromEdge = currentWorldEdgeFromBody(vector(fromBody.translation()), fromBody.rotation(), record.model.fromLocal);
     const toEdge = currentWorldEdgeFromBody(vector(toBody.translation()), toBody.rotation(), record.model.toLocal);
-    const sample = sampleJointBreak(fromEdge, toEdge, record.previousDistance, SIMULATION_TIMESTEP_SECONDS);
+    const sample = sampleJointBreak(fromEdge, toEdge, record.previousDistance, engine.world.integrationParameters.dt);
     record.previousDistance = sample.midpointDistance;
 
     if (sample.shouldBreak) {
