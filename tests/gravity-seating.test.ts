@@ -137,6 +137,8 @@ describe("gravity seating earns contacts before any new joint exists", () => {
       expect(last.docking?.status,last.detail).toBe("pass");
       expect(last.trials[0].heldTileIds).toHaveLength(2);
       expect(last.trials[1].heldTileIds).toHaveLength(1);
+      expect(last.trials.at(-2)!.heldTileIds).toEqual(["small-side-1"]);
+      expect(last.lowering!.motion[0].tiles).toEqual(last.trials.at(-2)!.motion.at(-1)!.tiles);
       expect(last.trials.at(-1)!.heldTileIds).toEqual([]);
       expect(last.status,last.detail).toBe("pass");
       expect(last.trials.at(-1)!.settledSteps).toBeGreaterThanOrEqual(90);

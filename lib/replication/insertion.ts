@@ -116,14 +116,17 @@ export function validateInsertionPath(build: BuildGraph, path: InsertionPath, de
  * checked; no failure is repaired by omitting an obstacle. Rotating insertions are
  * intentionally outside this solver and require a different validated trajectory.
  */
-export function findInsertionPath(build: BuildGraph, movingTileIds: string[], fixedTileIds: string[], deadline = Infinity, floorY?: number): InsertionPath | null {
-  if (validateEngineInput(build).length) return null;
+export function insertionPathProposals(build: BuildGraph, movingTileIds: string[], fixedTileIds: string[]): InsertionPath[] {
+  if (validateEngineInput(build).length) return [];
   const bounds = buildBounds(build.tiles), span = Math.max(bounds.max.x - bounds.min.x, bounds.max.y - bounds.min.y, bounds.max.z - bounds.min.z) + 3;
   const directions: Vec3[] = [{ x: 0, y: 1, z: 0 }, { x: 1, y: 0, z: 0 }, { x: -1, y: 0, z: 0 },
     { x: 0, y: 0, z: 1 }, { x: 0, y: 0, z: -1 }];
-  for (const direction of directions) {
-    const path = { id: `insert-${movingTileIds.join("+")}`, movingTileIds, fixedTileIds,
-      offsets: [scale(direction, span), { x: 0, y: 0, z: 0 }] };
+  return directions.map(direction => ({ id: `insert-${movingTileIds.join("+")}`, movingTileIds, fixedTileIds,
+    offsets: [scale(direction, span), { x: 0, y: 0, z: 0 }] }));
+}
+
+export function findInsertionPath(build: BuildGraph, movingTileIds: string[], fixedTileIds: string[], deadline = Infinity, floorY?: number): InsertionPath | null {
+  for (const path of insertionPathProposals(build,movingTileIds,fixedTileIds)) {
     if (validateInsertionPath(build, path, deadline, floorY).status === "pass") return path;
   }
   return null;

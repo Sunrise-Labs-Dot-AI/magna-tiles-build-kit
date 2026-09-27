@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-27T10:13:49.282Z",
-  "validationCodeHash": "b19b208015ddb2dd2997ba6b60185d92d5a8d8cb8d59f49a36a4e264f872d1ac",
+  "generatedAt": "2026-09-27T11:17:36.333Z",
+  "validationCodeHash": "c34e8d1ca1556b3eda6bc4fef8fec6d9e93ac1ae568722b9d5164e22329e922e",
   "scope": "Generic three-wall and gravity-seated roof fixtures, independent of source replicas. The seated roof has actual bearing area on its narrower U support. Three perturbation seeds, two-finger edge proxy and explicit one-panel supports. No physical human or magnetic-force certification.",
   "replica": {
     "id": "u-fixture",
@@ -1797,7 +1797,7 @@
           ],
           "closure": {
             "status": "pass",
-            "detail": "First part/module placed; no pre-existing join required."
+            "detail": "First part/module placed in its component; no pre-existing join required."
           }
         },
         {
@@ -5460,6 +5460,60 @@
                 "x-0--1:0->z-0--1:3",
                 "z-0--1:1->x-0-1:0"
               ]
+            }
+          ],
+          "handTransitions": [
+            {
+              "status": "pass",
+              "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+              "changed": true,
+              "previousHands": [
+                {
+                  "tileId": "z-0--1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": 1.5,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "x-0--1",
+                  "localPoint": {
+                    "x": 1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "nextHands": [
+                {
+                  "tileId": "x-0--1",
+                  "localPoint": {
+                    "x": 1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "beforeTrial": 0
             }
           ],
           "docking": {
@@ -11016,7 +11070,7 @@
           ],
           "closure": {
             "status": "pass",
-            "detail": "First part/module placed; no pre-existing join required."
+            "detail": "First part/module placed in its component; no pre-existing join required."
           }
         },
         {
@@ -14517,6 +14571,60 @@
                 "x-0--1:0->z-0--1:3",
                 "z-0--1:1->x-0-1:0"
               ]
+            }
+          ],
+          "handTransitions": [
+            {
+              "status": "pass",
+              "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+              "changed": true,
+              "previousHands": [
+                {
+                  "tileId": "z-0--1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": 1.5,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "x-0--1",
+                  "localPoint": {
+                    "x": 1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "nextHands": [
+                {
+                  "tileId": "x-0--1",
+                  "localPoint": {
+                    "x": 1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "beforeTrial": 0
             }
           ],
           "docking": {
@@ -20073,7 +20181,7 @@
           ],
           "closure": {
             "status": "pass",
-            "detail": "First part/module placed; no pre-existing join required."
+            "detail": "First part/module placed in its component; no pre-existing join required."
           }
         },
         {
@@ -23574,6 +23682,60 @@
                 "x-0--1:0->z-0--1:3",
                 "z-0--1:1->x-0-1:0"
               ]
+            }
+          ],
+          "handTransitions": [
+            {
+              "status": "pass",
+              "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+              "changed": true,
+              "previousHands": [
+                {
+                  "tileId": "z-0--1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": 1.5,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "x-0--1",
+                  "localPoint": {
+                    "x": 1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "nextHands": [
+                {
+                  "tileId": "x-0--1",
+                  "localPoint": {
+                    "x": 1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "beforeTrial": 0
             }
           ],
           "docking": {
@@ -28392,6 +28554,119 @@
             }
           ]
         }
+      ],
+      "checkpointHandTransitions": [
+        {
+          "status": "pass",
+          "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+          "changed": true,
+          "previousHands": [
+            {
+              "tileId": "x-0-1",
+              "localPoint": {
+                "x": 1.5,
+                "y": 0,
+                "z": 0
+              },
+              "localOutward": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "proxy": "edge-pinch-v1"
+            },
+            {
+              "tileId": "x-0--1",
+              "localPoint": {
+                "x": 1.5,
+                "y": 0,
+                "z": 0
+              },
+              "localOutward": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "proxy": "edge-pinch-v1"
+            }
+          ],
+          "nextHands": [],
+          "seed": 0
+        },
+        {
+          "status": "pass",
+          "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+          "changed": true,
+          "previousHands": [
+            {
+              "tileId": "x-0-1",
+              "localPoint": {
+                "x": 1.5,
+                "y": 0,
+                "z": 0
+              },
+              "localOutward": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "proxy": "edge-pinch-v1"
+            },
+            {
+              "tileId": "x-0--1",
+              "localPoint": {
+                "x": 1.5,
+                "y": 0,
+                "z": 0
+              },
+              "localOutward": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "proxy": "edge-pinch-v1"
+            }
+          ],
+          "nextHands": [],
+          "seed": 17
+        },
+        {
+          "status": "pass",
+          "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+          "changed": true,
+          "previousHands": [
+            {
+              "tileId": "x-0-1",
+              "localPoint": {
+                "x": 1.5,
+                "y": 0,
+                "z": 0
+              },
+              "localOutward": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "proxy": "edge-pinch-v1"
+            },
+            {
+              "tileId": "x-0--1",
+              "localPoint": {
+                "x": 1.5,
+                "y": 0,
+                "z": 0
+              },
+              "localOutward": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "proxy": "edge-pinch-v1"
+            }
+          ],
+          "nextHands": [],
+          "seed": 53
+        }
       ]
     }
   ],
@@ -30278,7 +30553,7 @@
             ],
             "closure": {
               "status": "pass",
-              "detail": "First part/module placed; no pre-existing join required."
+              "detail": "First part/module placed in its component; no pre-existing join required."
             }
           },
           {
@@ -33779,6 +34054,60 @@
                   "x-0--1:0->z-0--1:3",
                   "z-0--1:1->x-0-1:0"
                 ]
+              }
+            ],
+            "handTransitions": [
+              {
+                "status": "pass",
+                "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+                "changed": true,
+                "previousHands": [
+                  {
+                    "tileId": "z-0--1",
+                    "localPoint": {
+                      "x": 0,
+                      "y": 1.5,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 0,
+                      "y": 1,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1"
+                  },
+                  {
+                    "tileId": "x-0--1",
+                    "localPoint": {
+                      "x": 1.5,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 1,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1"
+                  }
+                ],
+                "nextHands": [
+                  {
+                    "tileId": "x-0--1",
+                    "localPoint": {
+                      "x": 1.5,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 1,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1"
+                  }
+                ],
+                "beforeTrial": 0
               }
             ],
             "docking": {
@@ -38809,6 +39138,45 @@
                   "z-0--1:2->roof:0",
                   "x-0--1:1->roof:3"
                 ]
+              }
+            ],
+            "handTransitions": [
+              {
+                "status": "pass",
+                "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+                "changed": true,
+                "previousHands": [
+                  {
+                    "tileId": "x-0-1",
+                    "localPoint": {
+                      "x": 1.5,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 1,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1"
+                  },
+                  {
+                    "tileId": "x-0--1",
+                    "localPoint": {
+                      "x": 1.5,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 1,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1"
+                  }
+                ],
+                "nextHands": [],
+                "beforeTrial": 0
               }
             ],
             "path": {
@@ -64242,7 +64610,7 @@
             ],
             "closure": {
               "status": "pass",
-              "detail": "First part/module placed; no pre-existing join required."
+              "detail": "First part/module placed in its component; no pre-existing join required."
             }
           },
           {
@@ -67743,6 +68111,60 @@
                   "x-0--1:0->z-0--1:3",
                   "z-0--1:1->x-0-1:0"
                 ]
+              }
+            ],
+            "handTransitions": [
+              {
+                "status": "pass",
+                "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+                "changed": true,
+                "previousHands": [
+                  {
+                    "tileId": "z-0--1",
+                    "localPoint": {
+                      "x": 0,
+                      "y": 1.5,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 0,
+                      "y": 1,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1"
+                  },
+                  {
+                    "tileId": "x-0--1",
+                    "localPoint": {
+                      "x": 1.5,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 1,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1"
+                  }
+                ],
+                "nextHands": [
+                  {
+                    "tileId": "x-0--1",
+                    "localPoint": {
+                      "x": 1.5,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 1,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1"
+                  }
+                ],
+                "beforeTrial": 0
               }
             ],
             "docking": {
@@ -72773,6 +73195,45 @@
                   "z-0--1:2->roof:0",
                   "x-0--1:1->roof:3"
                 ]
+              }
+            ],
+            "handTransitions": [
+              {
+                "status": "pass",
+                "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+                "changed": true,
+                "previousHands": [
+                  {
+                    "tileId": "x-0-1",
+                    "localPoint": {
+                      "x": 1.5,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 1,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1"
+                  },
+                  {
+                    "tileId": "x-0--1",
+                    "localPoint": {
+                      "x": 1.5,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 1,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1"
+                  }
+                ],
+                "nextHands": [],
+                "beforeTrial": 0
               }
             ],
             "path": {
@@ -98206,7 +98667,7 @@
             ],
             "closure": {
               "status": "pass",
-              "detail": "First part/module placed; no pre-existing join required."
+              "detail": "First part/module placed in its component; no pre-existing join required."
             }
           },
           {
@@ -101707,6 +102168,60 @@
                   "x-0--1:0->z-0--1:3",
                   "z-0--1:1->x-0-1:0"
                 ]
+              }
+            ],
+            "handTransitions": [
+              {
+                "status": "pass",
+                "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+                "changed": true,
+                "previousHands": [
+                  {
+                    "tileId": "z-0--1",
+                    "localPoint": {
+                      "x": 0,
+                      "y": 1.5,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 0,
+                      "y": 1,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1"
+                  },
+                  {
+                    "tileId": "x-0--1",
+                    "localPoint": {
+                      "x": 1.5,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 1,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1"
+                  }
+                ],
+                "nextHands": [
+                  {
+                    "tileId": "x-0--1",
+                    "localPoint": {
+                      "x": 1.5,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 1,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1"
+                  }
+                ],
+                "beforeTrial": 0
               }
             ],
             "docking": {
@@ -106737,6 +107252,45 @@
                   "z-0--1:2->roof:0",
                   "x-0--1:1->roof:3"
                 ]
+              }
+            ],
+            "handTransitions": [
+              {
+                "status": "pass",
+                "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+                "changed": true,
+                "previousHands": [
+                  {
+                    "tileId": "x-0-1",
+                    "localPoint": {
+                      "x": 1.5,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 1,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1"
+                  },
+                  {
+                    "tileId": "x-0--1",
+                    "localPoint": {
+                      "x": 1.5,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 1,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1"
+                  }
+                ],
+                "nextHands": [],
+                "beforeTrial": 0
               }
             ],
             "path": {

@@ -1,0 +1,11 @@
+Required findings:
+
+1. **Budget is not preserved through the proposed grip-aware search.**
+   The plan requires deadline propagation, but `checkHandAccess` has no deadline parameter and no `Date.now()` checks while walking fingers, path segments, fixed obstacles, moving panels, and hand-hand checks. See [grip.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/grip.ts:108). `validateInsertionPath` does enforce the deadline during collision work, so a grip-aware wrapper that only passes the deadline there can still overrun inside grip checking. See [insertion.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/insertion.ts:71).
+   Required change: the plan must require deadline checks in the grip-aware path, either by adding a deadline to `checkHandAccess` or by bounding every proposal’s grip-access work. Add a test where `validateInsertionPath` passes but expired budget during grip checking throws `SimulationBudgetExceeded`.
+
+2. **The plan leaves room for unchecked fallback through existing direct `findInsertionPath` call sites.**
+   The current grip-required call sites all call `findInsertionPath` directly: docking at [docking.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/docking.ts:54), normal assembly at [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:290), and gravity seating at [seating.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/seating.ts:74). The plan says to use the new search there, but does not require a structural guard that prevents one of these paths from accidentally retaining the clearance-only function and then checking only the first solid-clear proposal.
+   Required change: require a distinct grip-aware API and explicit replacement at all three grip-required call sites, plus a regression that fails if any of those paths carries a path that did not pass both `validateInsertionPath` and `checkHandAccess`.
+
+No other required findings from the requested files. I did not edit files or run simulations.

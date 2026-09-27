@@ -280,11 +280,17 @@ export function smallRamp(): Replica {
   // Keep the final side-panel grip through the module transfer. Withdraw fingers
   // sideways before moving away from the edge, clearing the installed wedge.
   const launchLast = replica.construction![1].operations.at(-1)!;
+  // Keep one roof edge grip through placement and both end panels. Independent
+  // per-operation grip proposals otherwise introduce an unverified regrasp.
+  const roofHold = launchLast.hands!.find(h => h.tileId === "launch-roof")!;
+  replica.construction![1].operations[1].hands = [structuredClone(roofHold)];
+  replica.construction![1].operations[2].hands![1] = structuredClone(roofHold);
   const sideCarry = launchLast.hands!.find(h => h.tileId === "launch-side-1")!;
   const edgeClearance = scale(sideCarry.localOutward,.5);
   sideCarry.approachOffsets = [add(edgeClearance,v(0,0,2.4)),edgeClearance,v(0,0,0)];
   replica.construction![2].operations[0].hands = [structuredClone(sideCarry)];
   const wedgeOps = replica.construction![0].operations;
+  wedgeOps[0].hands = [structuredClone(wedgeOps[1].hands!.find(h => h.tileId === "small-back")!)];
   const upper = tiles.find(t => t.id === "small-deck-2")!, lower = tiles.find(t => t.id === "small-deck-1")!;
   const side = tiles.find(t => t.id === "small-side-1")!;
   const lowestGrip = (tile: TileInstance) => edgeGrips(tile).sort((a,b) => transformLocal(a.localPoint,tile.position,tile.basis!).y-transformLocal(b.localPoint,tile.position,tile.basis!).y)[0];
@@ -862,19 +868,38 @@ export function mediumRamp(): Replica {
       w = scale(normal, 3);
     tiles.push(square(`launch-flap-${sign}`, o, u, w, red, 10, "launch flaps"));
   }
+  // Proposed hand sequence, not an observed source motion. Keep the same roof
+  // pinch through pickup and both remaining insertions; every neighbor stays dynamic.
+  const lowerSide = lower.find(t => t.id === "lower-side-1")!;
+  const lowerDeck = lower.find(t => t.id === "lower-deck-1")!;
+  const firstHand = edgeGrips(lower.find(t => t.id === "lower-side--1")!)[0];
+  const roofHand = edgeGrips(lower.find(t => t.id === "lower-deck-2")!)[1];
+  const lowestGrip = (tile: TileInstance) => edgeGrips(tile).sort((a,b) =>
+    transformLocal(a.localPoint,tile.position,tile.basis!).y-transformLocal(b.localPoint,tile.position,tile.basis!).y)[0];
+  const localVector = (tile: TileInstance, point: Vec3) =>
+    v(dot(point,tile.basis!.xAxis),dot(point,tile.basis!.yAxis),dot(point,tile.basis!.zAxis));
+  const under = localVector(lowerSide,v(0,-.25,0)), sideApproach = localVector(lowerSide,v(0,0,2.4));
+  const deckHand = lowestGrip(lowerDeck), deckClearance = scale(deckHand.localOutward,.25);
+  const supportOrder = ["support-back","support-side--1-1","support-side-1-1","support-side--1-0","support-side-1-0"];
+  const supportHolds = [null,"support-back","support-back","support-side--1-1","support-side-1-1"];
+  const supportGrip = (id: string) => {
+    const tile = tiles.find(t => t.id === id)!;
+    return edgeGrips(tile).sort((a,b) =>
+      transformLocal(b.localPoint,tile.position,tile.basis!).y-transformLocal(a.localPoint,tile.position,tile.basis!).y)[0];
+  };
   const stages = [
     stage(
       "medium-lower",
       "medium-lower",
       "Build the lower wedge",
-      "Join two long isosceles sides and two square deck tiles. The medium flight has four pieces; it omits the small ramp's rear square.",
+      "Proposed sequence: hold the first long side and attach the upper deck. Keep that deck grip, withdraw the side hand and lift 0.85 in. Insert the opposite side sideways, then the lower deck. Lower 0.32 in before releasing the four-piece wedge. This hand sequence remains a simulation proposal, not a measured source motion.",
       prefix(tiles, 1),
     ),
     stage(
       "medium-support",
       "medium-support",
       "Make the five-square support",
-      "Join two green squares along each long side and one across the back to make the elongated U beside the lower wedge.",
+      "Proposed sequence: beside the released lower wedge, hold the green back square and attach one square to each side. Release this three-sided support, then hold each rear side while attaching its front extension. Release after each extension before changing your support grip. The workspace placement and grips remain simulation proposals.",
       tiles.filter((t) => t.step === 2).map((t) => t.id),
     ),
     stage(
@@ -919,6 +944,17 @@ export function mediumRamp(): Replica {
     inventory: inventory(15, 18, 0, 4),
     bomFrameId: "medium-bom",
     stages,
+    construction: [{ stageId: "medium-lower", operations: [
+      { tileIds: ["lower-side--1"],hands: [firstHand] },
+      { tileIds: ["lower-deck-2"],hands: [roofHand,structuredClone(firstHand)] },
+      { tileIds: ["lower-side-1"],pickup: { height: .85,hand: structuredClone(roofHand) },
+        hands: [{ ...lowestGrip(lowerSide),approachOffsets: [add(under,sideApproach),under,v(0,0,0)] },structuredClone(roofHand)] },
+      { tileIds: ["lower-deck-1"],lowerBeforeRelease: .32,releaseAfter: true,
+        hands: [{ ...deckHand,approachOffsets: [add(localVector(lowerDeck,v(-2,0,0)),deckClearance),deckClearance,v(0,0,0)] },structuredClone(roofHand)] },
+    ] },{ stageId: "medium-support",workspace: { afterStageId: "medium-lower",offset: v(0,0,6) },
+      operations: supportOrder.map((id,i) => ({ tileIds: [id],
+        hands: supportHolds[i] ? [supportGrip(id),supportGrip(supportHolds[i]!)] : [supportGrip(id)],
+        releaseAfter: i >= 2 })) }],
     materialQuestions: [
       "Source isosceles dimensions and magnets are uncalibrated; the simulated vehicle is an assumed proxy.",
     ],

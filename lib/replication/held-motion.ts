@@ -68,7 +68,7 @@ export async function simulateHeldMotion(build: BuildGraph, state: EngineState |
   const groups = splitComponents(components ?? [build.tiles.map(t => t.id)],moving);
   if (componentContacts(build,groups).status !== "pass") return fail("A carried or installed component has missing/invalid internal contacts.");
   const access = (actual: BuildGraph) => checkHandAccess(actual, { id: "pickup", movingTileIds, fixedTileIds: build.tiles.filter(t => !moving.has(t.id)).map(t => t.id),
-    offsets: [{ x: 0, y: 0, z: 0 }, { x: 0, y: 0, z: 0 }] }, hands, floorY);
+    offsets: [{ x: 0, y: 0, z: 0 }, { x: 0, y: 0, z: 0 }] }, hands, floorY,deadline);
   const grip = access(build);
   if (grip.status !== "pass") return fail(grip.detail);
   const initialClearance = checkSweptPoses(build, build, floorY, deadline);

@@ -5,7 +5,7 @@ import type { BuildGraph, Vec3 } from "@/lib/magnetic-tiles/types";
 import { findMagneticEdgeMatch } from "@/lib/magnetic-tiles/magnet-geometry";
 import { contactsClosed } from "./contacts";
 import { dockToSupports, type DockingPolicy, type DockingResult } from "./docking";
-import { checkHandAccess, type HandContact } from "./grip";
+import { checkHandAccess, sameHandContact, type HandContact } from "./grip";
 import { simulateHeldMotion, type HeldMotionTrial, type HeldWaypoint } from "./held-motion";
 import { validateInsertionPath, type InsertionPath } from "./insertion";
 import { tileQuaternion } from "./rotation-clearance";
@@ -73,7 +73,7 @@ export async function simulatePreparedTransfer(nominal: BuildGraph, actual: Buil
   const result: PreparedTransferTrial = { status: "fail",detail: "",settled: actual,state,
     withheldCrossConnectionIds: expected,physicalCrossConnectionIds:cross.map(physicalConnectionId).sort(),activeJointIdsBeforeClosure: state.joints.map(j => j.model.id),earnedCrossConnectionIds: [],previousHands,retainedHands: hands };
   const fail = (detail: string) => ({ ...result,detail });
-  const retained = hands.length === 1 && previousHands.some(h => JSON.stringify(h) === JSON.stringify(hands[0]));
+  const retained = hands.length === 1 && previousHands.some(h => sameHandContact(h,hands[0]));
   if (hands.length !== 1 || !moving.has(hands[0].tileId) || !retained ||
       previousHands.length !== 2 || previousHands.some(h => !moving.has(h.tileId)) || new Set(previousHands.map(h => h.tileId)).size !== previousHands.length)
     return fail("Transfer requires two prior module hands and one unchanged retained grip after explicit withdrawal of the other hand.");
@@ -87,7 +87,7 @@ export async function simulatePreparedTransfer(nominal: BuildGraph, actual: Buil
   // Treat the retained pickup panel alone as 'moving' for the stationary two-hand
   // access check so the old side grip is checked as a removable support hand.
   const accessFor = (build: BuildGraph, contacts: HandContact[]) => checkHandAccess(build,{ id: "prepared-handoff",movingTileIds: [contacts[0].tileId],
-    fixedTileIds: build.tiles.filter(t => t.id !== contacts[0].tileId).map(t => t.id),offsets: [{ x: 0,y: 0,z: 0 },{ x: 0,y: 0,z: 0 }] },contacts,floorY);
+    fixedTileIds: build.tiles.filter(t => t.id !== contacts[0].tileId).map(t => t.id),offsets: [{ x: 0,y: 0,z: 0 },{ x: 0,y: 0,z: 0 }] },contacts,floorY,deadline);
   const access = accessFor(actual,previousHands);
   if (access.status !== "pass") return fail(access.detail);
   const acquisition = accessFor(actual,hands);
@@ -116,7 +116,7 @@ export async function simulatePreparedTransfer(nominal: BuildGraph, actual: Buil
       });
       return !findMagneticEdgeMatch(pair[0],pair[1]);
     });
-    if (separated && validateInsertionPath(docking.build,candidate,deadline,floorY).status === "pass" && checkHandAccess(docking.build,candidate,hands,floorY).status === "pass") {
+    if (separated && validateInsertionPath(docking.build,candidate,deadline,floorY).status === "pass" && checkHandAccess(docking.build,candidate,hands,floorY,deadline).status === "pass") {
       path = candidate; break;
     }
   }

@@ -1,0 +1,21 @@
+# Search insertion directions with fingertip clearance
+
+The retained-hand implementation passes its independent three-panel fixture across all seeds. It also gets the medium wedge through the actual withdrawal, one-hand support and lift. Docking then fails because the current search returns the first tile-clear path, usually vertical, before checking fingers. A side panel's fingers can cross an installed deck during that vertical descent even when a lateral approach may be clear. Rejecting that one path currently prevents consideration of the other four already-bounded directions.
+
+Proposal: expose the existing deterministic five translation proposals from insertion.ts without changing their extent or order. Keep validateInsertionPath as the independent tile/table checker and the existing findInsertionPath semantics for clearance-only callers. Add a concrete grip-aware search in grip.ts that examines each proposal, requiring both validateInsertionPath and checkHandAccess to pass with unchanged parts, floor, hands, tolerances and deadline. Return the exact accepted path. Avoid a generic arbitrary acceptance callback.
+
+Use this search in docking, normal assembly approach and gravity seating. Normal assembly must not discard a grip-valid docking path and then choose an unchecked first path again. It may recompute deterministically against the same current target/hands or retain that validated path. Prepared transfer still validates its shortened approach and full continuous motion independently. Construction planning remains only a clearance contract; source observations and candidate geometry do not change.
+
+Acceptance: a source-independent wall/roof fixture where vertical motion clears solids but crosses the roof with fingertips, while a lateral approach passes both checks; a blocked-every-direction case; unchanged first accepted path when the original path also clears fingers; fixed floor/obstacle preservation; and exception/deadline propagation with no failed proposal accepted. The actual carried path must match the selected path in integration evidence. Rerun existing insertion/grip, gravity seating, small-ramp and retained-pickup tests. Reject medium construction unless its complete seed trials pass, even if this clears one obstruction.
+
+Full loop applies because this changes construction search. Require alternative-model plan/code review, focused and full tests, fresh source artifacts and playback. Do not change collision axes, grip sizes, closure tolerance or physical release limits. This builds on the retained-pickup increment before final evidence regeneration.
+
+## Plan review disposition
+
+The fresh GPT-5.5 review required explicit budget enforcement inside hand-access checks and guards against leaving a clearance-only fallback at any of the three runtime call sites. Both are accepted: checkHandAccess will accept a deadline, poll it throughout fingertip/segment/obstacle work and throw SimulationBudgetExceeded. The new concrete findHandInsertionPath API will replace clearance-only search in docking, normal assembly and seating; no fallback is allowed. Tests will cover expiry after tile validation and rejected/selected paths through the runtime call sites. Geometry-only construction planning retains its existing separate semantics.
+
+## Implementation and focused verification
+
+The distinct API now searches the existing five directions with both independent checks and a shared deadline. Docking, normal assembly and seating use it; prepared-transfer and held-motion hand checks also receive the existing deadline. The wall/roof fixture proves the vertical tile-only pass is insufficient and the lateral approach clears both tiles and fingertips. Actual assembly playback starts at the selected lateral offset on all three seeds. Rejection tests cover no grip-compatible direction and deadline expiry after tile validation.
+
+The combined grip-insertion, retained-pickup, prepared-workspace and assembly-support run passes 44 tests. Fresh GPT-5.5 adversarial review reports no required findings (`runs/reviews/retained-grip-code-review.txt`). Full-suite and regenerated-source evidence will follow the independent-component closure correction before the draft checkpoint is committed.

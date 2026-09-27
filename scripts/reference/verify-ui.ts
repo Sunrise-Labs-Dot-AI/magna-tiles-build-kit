@@ -113,9 +113,34 @@ async function main() {
     await transferSlider.fill("100");
     await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
     if(transferStart.equals(await page.locator("canvas").screenshot())) throw Error("Prepared transfer did not replay actual movement.");
-    if(!(await page.getByLabel("Complete assembly check").textContent())?.includes("0/90"))
-      throw Error("The failed final free release is not visible.");
+    if(!(await page.getByLabel("Complete assembly check").textContent())?.includes("Passed this check"))
+      throw Error("The complete small-ramp assembly pass is not visible.");
     await page.screenshot({path:"verification/replication/ui/small-transfer-release.png",fullPage:true});
+    await page.getByRole("button",{name:/Henry.s medium ramp/}).click();
+    await page.getByLabel("Number parts & edges").check();
+    await page.getByLabel("Construction checkpoint").selectOption("0");
+    await page.getByLabel("Part insertion preview").selectOption("2");
+    const mediumSlider=page.getByRole("slider",{name:/Recorded assembly motion/});
+    await mediumSlider.fill("0");
+    await page.waitForFunction(()=>document.querySelectorAll(".design-piece-label").length===2);
+    const mediumPickup=await page.locator(".design-piece-label").allTextContents();
+    if(!["P1","P4"].every(id=>mediumPickup.includes(id))) throw Error(`Medium pickup includes unplaced panels: ${mediumPickup}`);
+    await mediumSlider.fill("100");
+    await page.waitForFunction(()=>document.querySelectorAll(".design-piece-label").length===3);
+    await page.screenshot({path:"verification/replication/ui/medium-retained-pickup.png",fullPage:true});
+    await page.getByLabel("Construction checkpoint").selectOption("1");
+    if(!(await page.getByLabel("Complete assembly check").textContent())?.includes("Passed this check"))
+      throw Error("Medium support assembly pass is absent.");
+    await page.getByLabel("Part insertion preview").selectOption("4");
+    await mediumSlider.fill("100");
+    await page.waitForFunction(()=>document.querySelectorAll(".design-piece-label").length===9);
+    const mediumWorkspace=await page.locator(".design-piece-label").allTextContents();
+    if(!Array.from({length:9},(_,i)=>`P${i+1}`).every(id=>mediumWorkspace.includes(id)))
+      throw Error(`Medium workspace omits predecessors or includes future parts: ${mediumWorkspace}`);
+    await page.screenshot({path:"verification/replication/ui/medium-support-release.png",fullPage:true});
+    await page.getByLabel("Construction checkpoint").selectOption("2");
+    if((await page.getByLabel("Complete assembly check").textContent())?.includes("Passed this check"))
+      throw Error("Unverified medium upper assembly was promoted.");
     await page.getByRole("button", { name: /3D snail/ }).click();
     await page.getByRole("heading", { name: /original 3D snail/ }).waitFor();
     await page.setViewportSize({ width: 390, height: 844 });
@@ -138,7 +163,8 @@ async function main() {
       insertionPreview: { labels: insertionLabels, keyboardStartEnd: true, resetsAtNextStage: true },
       gravityPreview: { labels: seatedLabels, recordedFramesDiffer: true, launchAssemblyPassed: true },
       pickupPreview: { labels: pickupLabels, terminalLabels: wedgeEndLabels, recordedFramesDiffer: true },
-      transferPreview: {labels:transferLabels,recordedFramesDiffer:true,failedFreeReleaseVisible:true},
+      transferPreview: {labels:transferLabels,recordedFramesDiffer:true,completeAssemblyPassed:true},
+      mediumPreview: {pickupLabels:mediumPickup,workspaceLabels:mediumWorkspace,firstTwoStagesPassed:true,laterStageUnverified:true},
       mobileOverflow: overflow,
       pageErrors: errors,
     };

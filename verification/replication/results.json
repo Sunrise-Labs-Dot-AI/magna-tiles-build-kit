@@ -298,7 +298,7 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "258c7ebfa2a3d670906c85ff0c650be19d27152077c968a7b5245a6002b4a634",
+      "fingerprint": "607581ab0ec67cd752840dea821c9611e778ec3f6008f9f47baec448a2aa903e",
       "stages": [
         {
           "id": "small-wedge",
@@ -425,7 +425,7 @@
         },
         "assembly": {
           "status": "fail",
-          "detail": "0/8 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. medium-lower: No per-part insertion sequence has been supplied. medium-support: No per-part insertion sequence has been supplied. medium-turn: No per-part insertion sequence has been supplied. medium-lower-walls: No per-part insertion sequence has been supplied. medium-lower-cover: No per-part insertion sequence has been supplied. medium-turn-cover: No per-part insertion sequence has been supplied. medium-upper-cover: No per-part insertion sequence has been supplied. medium-final: No per-part insertion sequence has been supplied. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
+          "detail": "2/8 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. medium-turn: No per-part insertion sequence has been supplied. medium-lower-walls: No per-part insertion sequence has been supplied. medium-lower-cover: No per-part insertion sequence has been supplied. medium-turn-cover: No per-part insertion sequence has been supplied. medium-upper-cover: No per-part insertion sequence has been supplied. medium-final: No per-part insertion sequence has been supplied. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
         },
         "function": {
           "status": "fail",
@@ -433,7 +433,7 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "1593568e3e1c55daff4430f5e3a916d604fc5c16a6a5812d2f760c62d03325fb",
+      "fingerprint": "47a65be2e2d7f8c10fa34eebf03b2f816889282c4e995560121bee71e4864132",
       "stages": [
         {
           "id": "medium-lower",

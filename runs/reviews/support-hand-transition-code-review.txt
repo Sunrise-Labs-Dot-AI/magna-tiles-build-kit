@@ -1,0 +1,12 @@
+No required findings.
+
+I reviewed the scoped interaction between:
+
+- `checkHandTransition` in [grip.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/grip.ts:47)
+- `record`, controlled lowering, prepared-transfer follow-on release, and mandatory stage checkpoint paths in [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:188)
+- the focused regressions in [support-hand-transition.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/support-hand-transition.test.ts:19)
+- the acceptance plan in [2026-09-27-support-hand-transition-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-support-hand-transition-plan.md:1)
+
+The transition guard runs before support simulation, records failure evidence before the new trial, caps old/new union to two hands, rejects same-panel regrasp, checks final checkpoint withdrawal, and inserts the one-hand support settle before controlled lowering. The medium-support source text remains framed as a proposed simulation sequence, not measured source evidence.
+
+Specific limits: read-only review only. I did not edit files, run tests, run long simulations, regenerate artifacts, or re-audit the earlier retained-grip and independent-module changes except where they interact with this hand-transition change. Git inspection emitted sandbox cache warnings, so I treated it as best-effort read output.

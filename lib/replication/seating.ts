@@ -9,8 +9,8 @@ import { SimulationBudgetExceeded } from "@/lib/engine/simulate";
 import { tilePrismVertices } from "@/lib/magnetic-tiles/prism-geometry";
 import type { BuildGraph, TileInstance } from "@/lib/magnetic-tiles/types";
 import { contactsClosed } from "./contacts";
-import { checkHandAccess, checkSupportFingerClearance, type HandContact } from "./grip";
-import { findInsertionPath, type InsertionPath } from "./insertion";
+import { checkHandAccess, checkSupportFingerClearance, findHandInsertionPath, type HandContact } from "./grip";
+import type { InsertionPath } from "./insertion";
 import { supportSnapshot } from "./support";
 import type { Check } from "./types";
 import { componentContacts, splitComponents } from "./components";
@@ -71,10 +71,10 @@ export async function simulateGravitySeat(target: BuildGraph, movingTileIds: str
     const pair = { ...released, tiles: released.tiles.filter(t => t.id === c.fromTileId || t.id === c.toTileId), connections: [c] };
     if (contactsClosed(pair).status === "pass") return fail("Release begins already connected; seating must earn separated contacts.");
   }
-  const path = findInsertionPath(released, movingTileIds, fixed, deadline, floorY);
+  const path = findHandInsertionPath(released, movingTileIds, fixed, hands, floorY, deadline);
   result.path = path;
-  if (!path) return fail("No clear approach to the release pose.");
-  const grip = checkHandAccess(released, path, hands, floorY);
+  if (!path) return fail("No approach clears solids and fingertips at the release pose.");
+  const grip = checkHandAccess(released, path, hands, floorY,deadline);
   if (grip.status !== "pass") return fail(grip.detail);
   const supportHands = hands.filter(h => !moving.has(h.tileId));
   result.heldTileIds = supportHands.map(h => h.tileId);

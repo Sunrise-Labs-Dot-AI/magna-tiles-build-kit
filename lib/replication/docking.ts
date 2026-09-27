@@ -5,8 +5,8 @@ import { RAW_OVERLAP_TOLERANCE } from "@/lib/engine/overlap";
 import type { BuildGraph, Vec3 } from "@/lib/magnetic-tiles/types";
 import { prismGap, prismPose } from "@/lib/magnetic-tiles/swept-prisms";
 import { componentContacts } from "./components";
-import { checkHandAccess, type HandContact } from "./grip";
-import { findInsertionPath, type InsertionPath } from "./insertion";
+import { findHandInsertionPath, type HandContact } from "./grip";
+import type { InsertionPath } from "./insertion";
 import type { Check } from "./types";
 
 export interface DockingResult extends Check {
@@ -51,10 +51,8 @@ export function dockToSupports(nominal: BuildGraph, actual: BuildGraph, movingId
     if (buildBounds(placed.tiles).min.y < floorY-RAW_OVERLAP_TOLERANCE) { detail = "Docked parts intersect the fixed table; an actual support lift is required."; continue; }
     const closure = componentContacts(placed,components);
     if (closure.status !== "pass") { detail = closure.detail; continue; }
-    const path = findInsertionPath(build,movingIds,installedIds,deadline,floorY);
-    if (!path) { detail = "Docked pose has no clear insertion."; continue; }
-    const grip = checkHandAccess(build,path,hands,floorY);
-    if (grip.status !== "pass") { detail = grip.detail; continue; }
+    const path = findHandInsertionPath(build,movingIds,installedIds,hands,floorY,deadline);
+    if (!path) { detail = "Docked pose has no insertion that clears both solids and fingertips."; continue; }
     return { status: "pass", detail: `Incoming target passes closure, grip and insertion checks with ${targetPenetration.toFixed(6)} in cross-solid penetration. Connected stabilization and free release remain mandatory.`, offset,targetPenetration,build,path };
   }
   return { status: "fail", detail: [...reasons,detail].filter(d => !d.startsWith("No bounded")).join(" "), offset: mean,targetPenetration: null,build: actual };
