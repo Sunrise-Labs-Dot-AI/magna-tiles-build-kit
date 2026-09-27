@@ -19,7 +19,7 @@ const titles: Record<string, string> = {
   fidelity: "Resemblance to footage",
   materials: "Physical calibration",
   geometry: "Intersections & joins",
-  release: "Released model",
+  release: "Release from proposed pose",
   settledShape: "Shape after settling",
   assembly: "Assembly sequence",
   function: "Car route",
@@ -118,11 +118,11 @@ function Candidate({
     construction = stage ? report.constructionPaths?.find(p => p.stageId === stage.id) : undefined,
     insertion = operation?.path ?? construction?.paths[insertionIndex],
     checkpointBuild = stage ? stageBuild(replica, stage) : replica.build,
-    recorded = operation?.approachTiles && operation.path ? operation : undefined,
+    recorded = operation && (operation.timeline?.length || operation.pickup?.motion.length || operation.carry?.motion.length || (operation.approachTiles && operation.path)) ? operation : undefined,
     build = recorded ? assemblyOperationPreview(checkpointBuild, recorded, insertionProgress / 100)
       : insertion ? insertionPreview(checkpointBuild, insertion, insertionProgress / 100) : checkpointBuild;
   const framingTiles = recorded ? [assemblyOperationPreview(checkpointBuild, recorded, 0).tiles,
-    recorded.approachTiles!, ...(recorded.seating?.motion.map(f => f.tiles) ?? [])].flat()
+    recorded.approachTiles ?? [], ...[recorded.pickup,recorded.carry,recorded.seating,recorded.lowering,...recorded.trials].flatMap(p => p?.motion?.map(f => f.tiles) ?? [])].flat()
     : insertion ? insertion.offsets.flatMap((_, index) =>
       insertionPreview(checkpointBuild, insertion, index / (insertion.offsets.length - 1)).tiles) : undefined;
   const selectStep = (next: number) => { setStep(next); setInsertionIndex(-1); setInsertionProgress(100); };
@@ -243,11 +243,13 @@ function Candidate({
                     </select>
                   </label>
                   {insertion && <label>
-                    {recorded?.seating?.motion.length ? "Approach and recorded release" : "Move into place"} · {insertionProgress}%
+                    {recorded?.carry?.motion.length || recorded?.pickup?.motion.length ? "Recorded assembly motion" : recorded?.seating?.motion.length ? "Approach and recorded release" : "Move into place"} · {insertionProgress}%
                     <input type="range" min={0} max={100} value={insertionProgress}
                       onChange={e => setInsertionProgress(Number(e.target.value))} />
                   </label>}
-                  <p>{recorded ? recorded.seating?.motion.length
+                  <p>{recorded ? recorded.carry?.motion.length || recorded.pickup?.motion.length
+                    ? "Recorded motion from the first perturbation run. Only the gripped panel is driven; surrounding parts stay dynamic. A failed run stops at its actual failure pose."
+                    : recorded.seating?.motion.length
                     ? "First half: checked approach. Second half: recorded gravity motion from the first perturbation run. New joins remain absent during this fall."
                     : "Preview uses the checked approach and actual settled predecessor positions."
                     : `Preview uses the proposed poses. ${construction.detail}`}</p>
@@ -257,7 +259,7 @@ function Candidate({
                 <strong>
                   {stage.support === "held"
                     ? "Held module"
-                    : "Release checkpoint"}
+                    : "Release from proposed pose"}
                   .
                 </strong>{" "}
                 {stage.support === "held" && assembly?.status === "pass"

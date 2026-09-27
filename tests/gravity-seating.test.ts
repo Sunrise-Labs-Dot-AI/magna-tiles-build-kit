@@ -96,12 +96,29 @@ describe("gravity seating earns contacts before any new joint exists", () => {
     expect(launch.operations).toHaveLength(12);
     expect(launch.operations.filter(o => o.seating)).toHaveLength(3);
     expect(results.find(s => s.stageId === "small-final")!.status).not.toBe("pass");
+    const wedge = results.find(s => s.stageId === "small-wedge")!;
+    for (const seed of [0,17,53]) {
+      const operations = wedge.operations.filter(o => o.seed === seed);
+      expect(operations, wedge.detail).toHaveLength(5);
+      expect(operations.slice(0,4).every(o => o.status === "pass"),wedge.detail).toBe(true);
+      const last = operations[4];
+      expect(last.pickup?.status,last.detail).toBe("pass");
+      expect(last.lowering?.status,last.detail).toBe("pass");
+      expect(last.docking?.status,last.detail).toBe("pass");
+      expect(last.trials[0].heldTileIds).toHaveLength(2);
+      expect(last.trials[1].heldTileIds).toHaveLength(1);
+      expect(last.trials.at(-1)!.heldTileIds).toEqual([]);
+      expect(last.status).toBe("fail");
+      expect(last.trials.at(-1)!.detail).toMatch(/fixed table/);
+      expect(assemblyOperationPreview(r.build,last,1).tiles).toEqual(last.trials.at(-1)!.motion.at(-1)!.tiles);
+    }
     const placement = launch.operations[0], frames = placement.seating!.motion;
-    const start = assemblyOperationPreview(r.build, placement, .5), end = assemblyOperationPreview(r.build, placement, 1);
+    const seatingProgress = placement.timeline!.findIndex(p => p.phase === "seating")/placement.timeline!.length;
+    const start = assemblyOperationPreview(r.build, placement, seatingProgress), end = assemblyOperationPreview(r.build, placement, 1);
     expect(start.tiles).toEqual(frames[0].tiles);
-    expect(end.tiles).toEqual(frames.at(-1)!.tiles);
+    expect(end.tiles).toEqual(placement.trials.at(-1)!.motion.at(-1)!.tiles);
     expect(end.tiles).not.toEqual(r.build.tiles);
     expect(end.tiles).toHaveLength(1);
     expect(start.tiles[0].position.y - end.tiles[0].position.y).toBeGreaterThan(.5);
-  });
+  }, 120_000);
 });

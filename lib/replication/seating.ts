@@ -1,5 +1,5 @@
 import { RigidBodyType } from "@dimforge/rapier3d-compat";
-import { createEngineWorld } from "@/lib/engine/rapier-world";
+import { createEngineWorld, perturbFirstRelease, type EngineState } from "@/lib/engine/rapier-world";
 import { buildBounds, connectionId, validateMagneticBuild } from "@/lib/engine/build";
 import { validateEngineInput } from "@/lib/engine/input";
 import { MAX_STANDING_DISPLACEMENT, SETTLED_ANGULAR_SPEED, SETTLED_LINEAR_SPEED, SETTLED_REQUIRED_STEPS, SIMULATION_MAX_STEPS, SIMULATION_TIMESTEP_SECONDS } from "@/lib/engine/constants";
@@ -35,13 +35,14 @@ export interface SeatingTrial extends Check {
   /** Actual physics snapshots, never authored poses interpolated toward a target. */
   motion: { seconds: number; tiles: TileInstance[] }[];
   settled: BuildGraph;
+  state?: EngineState;
 }
 
 /** An intentionally bounded operation, not a generic drop-to-fit solver. New
  * hinges are absent for the entire run. Only actual rested contacts may earn a
  * subsequent connected trial. A miss, slide or unstable impact must fail. */
 export async function simulateGravitySeat(target: BuildGraph, movingTileIds: string[], hands: HandContact[], releaseHeight: number,
-  floorY: number, seed: number, deadline = Infinity): Promise<SeatingTrial> {
+  floorY: number, seed: number, deadline = Infinity, state?: EngineState): Promise<SeatingTrial> {
   const moving = new Set(movingTileIds), fixed = target.tiles.filter(t => !moving.has(t.id)).map(t => t.id);
   const cross = target.connections.filter(c => moving.has(c.fromTileId) !== moving.has(c.toTileId));
   const result: SeatingTrial = { status: "fail", detail: "", placement: fixed.length ? "magnetic" : "table", seed, path: null, releaseHeight, heldTileIds: [],
@@ -71,14 +72,14 @@ export async function simulateGravitySeat(target: BuildGraph, movingTileIds: str
     const pair = { ...released, tiles: released.tiles.filter(t => t.id === c.fromTileId || t.id === c.toTileId), connections: [c] };
     if (contactsClosed(pair).status === "pass") return fail("Release begins already connected; seating must earn separated contacts.");
   }
-  const path = findInsertionPath(released, movingTileIds, fixed, deadline);
+  const path = findInsertionPath(released, movingTileIds, fixed, deadline, floorY);
   result.path = path;
   if (!path) return fail("No clear approach to the release pose.");
   const grip = checkHandAccess(released, path, hands, floorY);
   if (grip.status !== "pass") return fail(grip.detail);
   const supportHands = hands.filter(h => !moving.has(h.tileId));
   result.heldTileIds = supportHands.map(h => h.tileId);
-  const engine = await createEngineWorld(released, { drop: false, floorY });
+  const engine = await createEngineWorld(released, { drop: false, floorY, state });
   try {
     engine.world.integrationParameters.dt = SIMULATION_TIMESTEP_SECONDS / SEATING_SUBSTEPS;
     // Graph disconnection is expected only between the two independently validated
@@ -91,9 +92,8 @@ export async function simulateGravitySeat(target: BuildGraph, movingTileIds: str
       body.enableCcd(true);
       if (result.heldTileIds.includes(id)) body.setBodyType(RigidBodyType.Fixed, true);
       else {
-        const noise = (n: number) => Math.sin((i + 1) * 13.13 + (seed + 1) * n);
-        body.setLinvel({ x: noise(1.7)*0.03, y: 0, z: noise(2.9)*0.03 }, true);
-        body.setAngvel({ x: noise(3.1)*0.015, y: noise(4.7)*0.015, z: noise(6.3)*0.015 }, true);
+        body.setBodyType(RigidBodyType.Dynamic, true);
+        perturbFirstRelease(engine.bodies.get(id)!, i, seed);
       }
     }
     const targetVertices = new Map(target.tiles.map(t => [t.id, tilePrismVertices(t)]));
@@ -147,6 +147,7 @@ export async function simulateGravitySeat(target: BuildGraph, movingTileIds: str
       }
       if (!result.tableBearingTileIds.length) return fail("First placement has no actual supporting contact with the fixed table.");
     }
+    result.state = engine.snapshot();
     return { ...result, status: "pass", detail: result.placement === "table"
       ? `Placed on the fixed table with ${result.tableBearingTileIds.length} measured bearing contact(s) and ${result.settledSteps} rest steps. No new magnetic contact is claimed.`
       : `Gravity seating earned all ${cross.length} named cross-module contacts after ${result.settledSteps} rest steps; all new joints were absent throughout the fall. Connected support/release is checked separately.` };

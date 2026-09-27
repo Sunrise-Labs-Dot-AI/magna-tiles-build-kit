@@ -144,7 +144,7 @@ export function quaternionToBasis(rotation: Quat): TileBasis {
   };
 }
 
-function normalizeQuaternion(rotation: Quat): Quat {
+export function normalizeQuaternion(rotation: Quat): Quat {
   const length = Math.hypot(rotation.x, rotation.y, rotation.z, rotation.w);
   if (length <= 0.000001) return { x: 0, y: 0, z: 0, w: 1 };
   return {
@@ -153,4 +153,26 @@ function normalizeQuaternion(rotation: Quat): Quat {
     z: rotation.z / length,
     w: rotation.w / length
   };
+}
+
+export function multiplyQuaternions(a: Quat, b: Quat): Quat {
+  return normalizeQuaternion({ w: a.w*b.w-a.x*b.x-a.y*b.y-a.z*b.z,
+    x: a.w*b.x+a.x*b.w+a.y*b.z-a.z*b.y,
+    y: a.w*b.y-a.x*b.z+a.y*b.w+a.z*b.x,
+    z: a.w*b.z+a.x*b.y-a.y*b.x+a.z*b.w });
+}
+
+export function inverseQuaternion(q: Quat): Quat { return { x: -q.x, y: -q.y, z: -q.z, w: q.w }; }
+
+export function quaternionAngle(a: Quat, b: Quat): number {
+  return 2 * Math.acos(Math.min(1, Math.abs(a.x*b.x+a.y*b.y+a.z*b.z+a.w*b.w)));
+}
+
+export function slerp(a: Quat, b: Quat, fraction: number): Quat {
+  let dot = a.x*b.x+a.y*b.y+a.z*b.z+a.w*b.w;
+  if (dot < 0) { b = { x: -b.x, y: -b.y, z: -b.z, w: -b.w }; dot = -dot; }
+  const angle = Math.acos(Math.min(1, dot)), sine = Math.sin(angle);
+  const x = sine < 1e-6 ? 1-fraction : Math.sin((1-fraction)*angle)/sine;
+  const y = sine < 1e-6 ? fraction : Math.sin(fraction*angle)/sine;
+  return normalizeQuaternion({ x: x*a.x+y*b.x, y: x*a.y+y*b.y, z: x*a.z+y*b.z, w: x*a.w+y*b.w });
 }

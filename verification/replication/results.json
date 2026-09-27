@@ -249,7 +249,7 @@
         },
         "assembly": {
           "status": "fail",
-          "detail": "1/3 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. small-wedge: Edges do not close at small-side-1:1->small-deck-2:2: transverse gap 0.200 in, overlap 2.758 in. small-final: An earlier module has not passed its complete supported assembly. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
+          "detail": "1/3 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. small-wedge: Seed 0: small-deck-1 intersects the fixed table during rotation/translation. Seed 17: small-deck-1 intersects the fixed table during rotation/translation. Seed 53: small-deck-1 intersects the fixed table during rotation/translation. small-final: An earlier module has not passed its complete supported assembly. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
         },
         "function": {
           "status": "pass",
@@ -257,7 +257,7 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "86bce5bed4710a98836a808da8b304cfabfcac4d51b84cd3e4f91b60fc90f006",
+      "fingerprint": "aa97ef7ddc3bf7682e3be11460e89b1030361ddfd05a5530933cf4c3be6e1515",
       "stages": [
         {
           "id": "small-wedge",

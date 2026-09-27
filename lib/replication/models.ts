@@ -3,7 +3,7 @@ import {
   ISOSCELES_EQUAL_SIDE as L,
   emptyInventory,
 } from "@/lib/magnetic-tiles/catalog";
-import { add, scale, cross, normalize, transformLocal } from "@/lib/engine/math";
+import { add, scale, cross, dot, normalize, transformLocal } from "@/lib/engine/math";
 import { tileWorldVertices } from "@/lib/magnetic-tiles/magnet-geometry";
 import type { Inventory, TileInstance, Vec3 } from "@/lib/magnetic-tiles/types";
 import { assemble, outside, rigidPanel, square, stageBuild, v } from "./geometry";
@@ -276,6 +276,17 @@ export function smallRamp(): Replica {
         operation.hands![1]?.tileId, buildBounds(snapshot.tiles).min.y) ?? operation.hands;
     }
   }
+  const wedgeOps = replica.construction![0].operations;
+  const upper = tiles.find(t => t.id === "small-deck-2")!, lower = tiles.find(t => t.id === "small-deck-1")!;
+  const side = tiles.find(t => t.id === "small-side-1")!;
+  const lowestGrip = (tile: TileInstance) => edgeGrips(tile).sort((a,b) => transformLocal(a.localPoint,tile.position,tile.basis!).y-transformLocal(b.localPoint,tile.position,tile.basis!).y)[0];
+  const localVector = (tile: TileInstance, point: Vec3) => v(dot(point,tile.basis!.xAxis),dot(point,tile.basis!.yAxis),dot(point,tile.basis!.zAxis));
+  const under = localVector(side,v(0,-.25,0)), outside = localVector(side,v(0,0,2.4));
+  wedgeOps[4].pickup = { height: .85,hand: lowestGrip(upper) };
+  wedgeOps[4].lowerBeforeRelease = .32;
+  const lowerGrip = lowestGrip(lower), lowerClearance = scale(lowerGrip.localOutward,.25);
+  wedgeOps[4].hands = [ { ...lowerGrip,approachOffsets: [add(localVector(lower,v(-2,0,0)),lowerClearance),lowerClearance,v(0,0,0)] },
+    { ...lowestGrip(side),approachOffsets: [add(under,outside),under,v(0,0,0)] } ];
   return replica;
 }
 

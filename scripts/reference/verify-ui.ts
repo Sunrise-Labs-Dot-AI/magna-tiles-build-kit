@@ -52,7 +52,7 @@ async function main() {
     await page.getByLabel("Construction checkpoint").selectOption("0");
     await page.getByLabel("Part insertion preview").selectOption("0");
     await ready();
-    const slider = page.getByRole("slider", { name: /Move into place/ });
+    const slider = page.getByRole("slider", { name: /Recorded assembly motion|Move into place/ });
     await slider.focus();
     await slider.press("Home");
     if (await slider.inputValue() !== "0") throw Error("Insertion slider did not reach its start.");
@@ -65,14 +65,30 @@ async function main() {
     await page.screenshot({ path: "verification/replication/ui/small-insertion.png", fullPage: true });
     await slider.press("End");
     if (await slider.inputValue() !== "100") throw Error("Insertion slider did not complete.");
+    await page.getByLabel("Part insertion preview").selectOption("4");
+    const liftSlider = page.getByRole("slider", { name: /Recorded assembly motion/ });
+    await liftSlider.fill("0");
+    await ready();
+    const pickupLabels = await page.locator(".design-piece-label").allTextContents();
+    if (pickupLabels.length !== 4 || pickupLabels.includes("P3")) throw Error(`Pickup includes future panels: ${pickupLabels}`);
+    await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
+    const pickupStart = await page.locator("canvas").screenshot();
+    await liftSlider.fill("15");
+    await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
+    if (pickupStart.equals(await page.locator("canvas").screenshot())) throw Error("Recorded support lift did not move.");
+    await page.screenshot({ path: "verification/replication/ui/small-support-lift.png", fullPage: true });
+    await liftSlider.fill("100");
+    await page.waitForFunction(() => document.querySelectorAll(".design-piece-label").length === 5);
+    const wedgeEndLabels = await page.locator(".design-piece-label").allTextContents();
+    if (wedgeEndLabels.length !== 5 || wedgeEndLabels.includes("P6")) throw Error(`Wedge release shows future module: ${wedgeEndLabels}`);
     await page.getByRole("button", { name: "Next", exact: true }).click();
     if (await page.getByLabel("Part insertion preview").inputValue() !== "-1")
       throw Error("Insertion selection did not reset at the next checkpoint.");
     if (!(await page.getByLabel("Complete assembly check").textContent())?.includes("Passed this check"))
       throw Error("Corrected launch assembly did not display its passing check.");
     await page.getByLabel("Part insertion preview").selectOption("0");
-    const releaseSlider = page.getByRole("slider", { name: /Approach and recorded release/ });
-    await releaseSlider.fill("50");
+    const releaseSlider = page.getByRole("slider", { name: /Recorded assembly motion|Approach and recorded release/ });
+    await releaseSlider.fill("25");
     await ready();
     await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
     const raisedFrame = await page.locator("canvas").screenshot();
@@ -104,6 +120,7 @@ async function main() {
       stableModuleLabels: labels,
       insertionPreview: { labels: insertionLabels, keyboardStartEnd: true, resetsAtNextStage: true },
       gravityPreview: { labels: seatedLabels, recordedFramesDiffer: true, launchAssemblyPassed: true },
+      pickupPreview: { labels: pickupLabels, terminalLabels: wedgeEndLabels, recordedFramesDiffer: true },
       mobileOverflow: overflow,
       pageErrors: errors,
     };

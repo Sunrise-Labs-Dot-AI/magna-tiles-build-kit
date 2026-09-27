@@ -27,6 +27,22 @@
     "recordedFramesDiffer": true,
     "launchAssemblyPassed": true
   },
+  "pickupPreview": {
+    "labels": [
+      "P1",
+      "P2",
+      "P4",
+      "P5"
+    ],
+    "terminalLabels": [
+      "P1",
+      "P2",
+      "P4",
+      "P5",
+      "P3"
+    ],
+    "recordedFramesDiffer": true
+  },
   "mobileOverflow": false,
   "pageErrors": []
 }

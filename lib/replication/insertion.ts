@@ -28,7 +28,7 @@ function edges(tile: TileInstance): Vec3[] {
   return [tileNormal(tile), ...vertices.map((p, i) => normalize(subtract(vertices[(i + 1) % vertices.length], p)))];
 }
 
-function separatingAxes(a: TileInstance, b: TileInstance): Vec3[] {
+export function separatingAxes(a: TileInstance, b: TileInstance): Vec3[] {
   const an = tileNormal(a), bn = tileNormal(b), ae = edges(a), be = edges(b);
   const candidates = [an, bn, ...ae.map(e => cross(e, an)), ...be.map(e => cross(e, bn)),
     ...ae.flatMap(e => be.map(f => cross(e, f)))];
@@ -68,10 +68,11 @@ function sweptCollision(a: TileInstance, b: TileInstance, start: Vec3, end: Vec3
 /** Validates only tile/ground clearance of a supplied translation path. Hand access,
  * stability, subassembly construction and attachment are separate requirements.
  */
-export function validateInsertionPath(build: BuildGraph, path: InsertionPath, deadline = Infinity): InsertionResult {
+export function validateInsertionPath(build: BuildGraph, path: InsertionPath, deadline = Infinity, floorY?: number): InsertionResult {
   const fail = (detail: string): InsertionResult => ({ id: path?.id ?? "invalid", status: "fail", detail });
   const errors = validateEngineInput(build);
   if (errors.length) return fail(errors.join("; "));
+  if (floorY !== undefined && !Number.isFinite(floorY)) return fail("Invalid fixed assembly floor.");
   if (!path || !Array.isArray(path.movingTileIds) || !Array.isArray(path.fixedTileIds) ||
       !Array.isArray(path.offsets) || !path.movingTileIds.length || path.offsets.length < 2 || path.offsets.length > 64 ||
       path.movingTileIds.length + path.fixedTileIds.length > build.tiles.length)
@@ -92,7 +93,7 @@ export function validateInsertionPath(build: BuildGraph, path: InsertionPath, de
     if (sweptCollision(moving[i], moving[j], zero, zero) !== null)
       return fail(`Moving module contains intersecting parts: ${moving[i].id}, ${moving[j].id}.`);
   }
-  const floor = buildBounds(build.tiles).min.y;
+  const floor = floorY ?? buildBounds(build.tiles).min.y;
   for (const tile of moving) {
     if (Date.now() > deadline) throw new SimulationBudgetExceeded();
     const minY = Math.min(...tilePrismVertices(tile).map(p => p.y));
@@ -115,7 +116,7 @@ export function validateInsertionPath(build: BuildGraph, path: InsertionPath, de
  * checked; no failure is repaired by omitting an obstacle. Rotating insertions are
  * intentionally outside this solver and require a different validated trajectory.
  */
-export function findInsertionPath(build: BuildGraph, movingTileIds: string[], fixedTileIds: string[], deadline = Infinity): InsertionPath | null {
+export function findInsertionPath(build: BuildGraph, movingTileIds: string[], fixedTileIds: string[], deadline = Infinity, floorY?: number): InsertionPath | null {
   if (validateEngineInput(build).length) return null;
   const bounds = buildBounds(build.tiles), span = Math.max(bounds.max.x - bounds.min.x, bounds.max.y - bounds.min.y, bounds.max.z - bounds.min.z) + 3;
   const directions: Vec3[] = [{ x: 0, y: 1, z: 0 }, { x: 1, y: 0, z: 0 }, { x: -1, y: 0, z: 0 },
@@ -123,7 +124,7 @@ export function findInsertionPath(build: BuildGraph, movingTileIds: string[], fi
   for (const direction of directions) {
     const path = { id: `insert-${movingTileIds.join("+")}`, movingTileIds, fixedTileIds,
       offsets: [scale(direction, span), { x: 0, y: 0, z: 0 }] };
-    if (validateInsertionPath(build, path, deadline).status === "pass") return path;
+    if (validateInsertionPath(build, path, deadline, floorY).status === "pass") return path;
   }
   return null;
 }

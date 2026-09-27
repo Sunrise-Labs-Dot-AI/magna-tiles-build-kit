@@ -66,7 +66,7 @@ export function physicalSpecForTile(tile: TileInstance): TilePhysicalSpec {
   };
 }
 
-export function validateMagneticBuild(build: EngineBuild): BuildValidation {
+export function validateMagneticBuild(build: EngineBuild, existingConnections: ReadonlyMap<string, ValidatedConnection> = new Map()): BuildValidation {
   const byId = new Map(build.tiles.map((tile) => [tile.id, tile]));
   const connectionKeys = new Set<string>();
   const validConnections: ValidatedConnection[] = [];
@@ -80,13 +80,14 @@ export function validateMagneticBuild(build: EngineBuild): BuildValidation {
       continue;
     }
 
-    const match = findMagneticEdgeMatch(fromTile, toTile);
-    if (!match || match.fromEdge !== connection.fromEdge || match.toEdge !== connection.toEdge) {
+    const id = connectionId(connection);
+    const existing = existingConnections.get(id);
+    const match = existing ? null : findMagneticEdgeMatch(fromTile, toTile);
+    if (!existing && (!match || match.fromEdge !== connection.fromEdge || match.toEdge !== connection.toEdge)) {
       rejectedReasons.push(`invalid-edge:${connection.fromTileId}:${connection.fromEdge}->${connection.toTileId}:${connection.toEdge}`);
       continue;
     }
 
-    const id = connectionId(connection);
     if (connectionKeys.has(id)) continue;
     connectionKeys.add(id);
     validConnections.push({

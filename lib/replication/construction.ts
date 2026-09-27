@@ -13,6 +13,10 @@ export interface ConstructionStage {
     releaseAfter?: boolean;
     /** Release above the target, then earn every new contact under gravity. */
     gravitySeat?: { releaseHeight: number };
+    /** Lift the existing prefix before collecting the incoming panel. */
+    pickup?: { height: number; hand: import("./grip").HandContact };
+    /** Controlled descent with the support hand before its checked withdrawal. */
+    lowerBeforeRelease?: number;
   }[];
 }
 

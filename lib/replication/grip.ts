@@ -7,6 +7,8 @@ import type { BuildGraph, TileInstance, Vec3 } from "@/lib/magnetic-tiles/types"
 import type { Check } from "./types";
 import type { InsertionPath } from "./insertion";
 import { v } from "./geometry";
+import { pointMotionBound, tileQuaternion } from "./rotation-clearance";
+import { distance, quaternionAngle } from "@/lib/engine/math";
 
 /** Two fingertip spheres pinch one accessible edge. These fixed dimensions are an
  * explicit accessibility proxy, not measured hand size or grip-force validation. */
@@ -16,6 +18,8 @@ export interface HandContact {
   localPoint: Vec3;
   localOutward: Vec3;
   proxy: typeof GRIP_PROXY.id;
+  /** Tile-local offsets from the final pinch, ending at zero. */
+  approachOffsets?: Vec3[];
 }
 
 // Continuous segment against the prism's inflated half-spaces. Conservative at
@@ -56,10 +60,14 @@ function contactGeometry(tile: TileInstance, hand: HandContact) {
         dot(normal, hand.localOutward) > 0.99) onEdge = true;
   }
   if (!onEdge) return null;
+  const offsets = hand.approachOffsets ?? [scale(hand.localOutward,GRIP_PROXY.approachLength),v(0,0,0)];
+  if (offsets.length < 2 || offsets.length > 8 || offsets.some(p => !p || ![p.x,p.y,p.z].every(n => Number.isFinite(n) && Math.abs(n) <= 6)) ||
+    magnitude(offsets.at(-1)!) > 1e-6 || magnitude(offsets[0]) < GRIP_PROXY.approachLength ||
+    offsets.slice(1).reduce((sum,p,i) => sum+distance(p,offsets[i]),0) > 12) return null;
   const basis = tile.basis ?? basisFromEuler(tile.rotation.x, tile.rotation.y, tile.rotation.z);
   const point = transformLocal(hand.localPoint, tile.position, basis);
   const outward = transformLocal(hand.localOutward, v(0, 0, 0), basis);
-  return { outward, fingers: [-1, 1].map(sign => add(point, scale(basis.zAxis, sign * (TILE_THICKNESS / 2 + GRIP_PROXY.radius)))) };
+  return { outward, approach: offsets.map(p => transformLocal(p,v(0,0,0),basis)), fingers: [-1, 1].map(sign => add(point, scale(basis.zAxis, sign * (TILE_THICKNESS / 2 + GRIP_PROXY.radius)))) };
 }
 
 export function edgeGrips(tile: TileInstance): HandContact[] {
@@ -99,8 +107,11 @@ export function checkHandAccess(build: BuildGraph, path: InsertionPath, hands: H
       const translations = moving ? path.offsets : [v(0, 0, 0)];
       const segments: [Vec3, Vec3][] = translations.flatMap(offset => {
         const end = add(finger, offset);
-        return [[add(end, scale(geometry!.outward, GRIP_PROXY.approachLength)), end] as [Vec3, Vec3]];
+        return geometry!.approach.slice(1).map((p,i) => [add(end,geometry!.approach[i]),add(end,p)] as [Vec3,Vec3]);
       });
+      const acquisition = geometry!.approach.slice(1).map((p,i) => [add(finger,geometry!.approach[i]),add(finger,p)] as [Vec3,Vec3]);
+      const own = build.tiles.find(t => t.id === hand.tileId)!;
+      if (acquisition.some(([a,b]) => blocked(own,a,b,GRIP_PROXY.radius))) return fail(`Grip approach crosses its own panel ${hand.tileId}.`);
       if (moving) for (let i = 1; i < path.offsets.length; i++) segments.push([add(finger, path.offsets[i - 1]), add(finger, path.offsets[i])]);
       for (const [from, to] of segments) {
         if (Math.min(from.y, to.y) - GRIP_PROXY.radius < floorY - 1e-6) return fail(`Grip on ${hand.tileId} crosses the table.`);
@@ -109,14 +120,14 @@ export function checkHandAccess(build: BuildGraph, path: InsertionPath, hands: H
       }
       for (const tile of build.tiles.filter(t => path.movingTileIds.includes(t.id) && t.id !== hand.tileId)) {
         if (moving) {
-          if (blocked(tile, add(finger, scale(geometry!.outward, GRIP_PROXY.approachLength)), finger, GRIP_PROXY.radius))
+          if (acquisition.some(([a,b]) => blocked(tile,a,b,GRIP_PROXY.radius)))
             return fail(`Grip on ${hand.tileId} is blocked by moving module panel ${tile.id}.`);
         } else {
           for (let i = 1; i < path.offsets.length; i++)
             if (blocked(tile, subtract(finger, path.offsets[i - 1]), subtract(finger, path.offsets[i]), GRIP_PROXY.radius))
               return fail(`Inserted ${tile.id} collides with the support hand.`);
           // The support hand must be removable after closure.
-          if (blocked(tile, finger, add(finger, scale(geometry!.outward, GRIP_PROXY.approachLength)), GRIP_PROXY.radius))
+          if (acquisition.some(([a,b]) => blocked(tile,a,b,GRIP_PROXY.radius)))
             return fail(`Support grip on ${hand.tileId} is trapped after closure.`);
         }
       }
@@ -132,6 +143,17 @@ export function checkHandAccess(build: BuildGraph, path: InsertionPath, hands: H
         if (Math.hypot(...Object.values(subtract(add(start, scale(d, t)), b))) < 2 * GRIP_PROXY.radius)
           return fail("The insertion and support fingertips collide.");
       }
+    // Either hand must be able to approach/withdraw while the other stays put.
+    for (const offset of [path.offsets[0],path.offsets.at(-1)!]) for (const g of geometries) {
+      const other = geometries.find(h => h !== g)!;
+      for (const a of g.geometry!.fingers) for (const b of other.geometry!.fingers) for (let i = 1; i < g.geometry!.approach.length; i++) {
+        const from = add(add(a,g.moving ? offset : v(0,0,0)),g.geometry!.approach[i-1]);
+        const target = add(b,other.moving ? offset : v(0,0,0));
+        const d = subtract(g.geometry!.approach[i],g.geometry!.approach[i-1]);
+        const t = dot(d,d) ? Math.max(0,Math.min(1,dot(subtract(target,from),d)/dot(d,d))) : 0;
+        if (distance(add(from,scale(d,t)),target) < 2*GRIP_PROXY.radius) return fail("A grip approach collides with the other hand.");
+      }
+    }
   }
   return { status: "pass", detail: "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated." };
 }
@@ -164,4 +186,38 @@ export function checkSupportFingerClearance(build: BuildGraph, hands: HandContac
     }
   }
   return { status: "pass", detail: "Supporting fingertips remain clear." };
+}
+
+/** Both gripped panels may move. Bound fingertip arcs and obstacle motion, then
+ * check the entire relative segment, including the two hands against each other. */
+export function checkMotionFingerClearance(before: BuildGraph, after: BuildGraph, hands: HandContact[], floorY: number): Check {
+  const fail = (detail: string): Check => ({ status: "fail", detail });
+  const paths: { hand: HandContact; start: Vec3; end: Vec3; arc: number }[] = [];
+  for (const hand of hands) {
+    const a = before.tiles.find(t => t.id === hand.tileId), b = after.tiles.find(t => t.id === hand.tileId);
+    const ag = a && contactGeometry(a, hand), bg = b && contactGeometry(b, hand);
+    if (!a || !b || !ag || !bg) return fail("Invalid moving grip.");
+    const angle = quaternionAngle(tileQuaternion(a), tileQuaternion(b));
+    for (const [i, start] of ag.fingers.entries()) {
+      const end = bg.fingers[i];
+      // Sagitta of the circular arc relative to its endpoint chord.
+      const arc = distance(start, a.position) * (1 - Math.cos(angle / 2));
+      if (Math.min(start.y, end.y) - arc - GRIP_PROXY.radius < floorY - 1e-6) return fail("Moving fingertip crosses the fixed table.");
+      for (const obstacle of after.tiles) {
+        if (obstacle.id === hand.tileId) continue;
+        const previous = before.tiles.find(t => t.id === obstacle.id);
+        if (!previous) return fail("A present obstacle is missing its previous pose.");
+        if (blocked(obstacle, start, end, GRIP_PROXY.radius + arc + pointMotionBound(previous, obstacle))) return fail(`Moving grip on ${hand.tileId} hits ${obstacle.id}.`);
+      }
+      paths.push({ hand, start, end, arc });
+    }
+  }
+  for (let i = 0; i < paths.length; i++) for (let j = 0; j < i; j++) {
+    const a = paths[i], b = paths[j];
+    if (a.hand.tileId === b.hand.tileId) continue;
+    const start = subtract(a.start, b.start), d = subtract(subtract(a.end, b.end), start);
+    const t = dot(d,d) ? Math.max(0, Math.min(1, -dot(start,d)/dot(d,d))) : 0;
+    if (magnitude(add(start, scale(d,t))) < 2*GRIP_PROXY.radius + a.arc + b.arc) return fail("Moving fingertip proxies collide.");
+  }
+  return { status: "pass", detail: "Swept fingertip proxies remain clear." };
 }

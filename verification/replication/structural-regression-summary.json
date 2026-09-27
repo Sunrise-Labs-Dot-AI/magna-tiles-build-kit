@@ -10,7 +10,7 @@
     "correct": 5,
     "total": 5
   },
-  "note": "Recomputed after adding gravity seating and using the actual integration timestep for joint-break damping. All 25 structural outcomes remain correct. This benchmark does not certify source replication, human assembly or calibrated magnetic forces.",
+  "note": "Recomputed after adding physical state continuation, frame-aware hinges, swept held motion and support handoffs. All 25 structural outcomes remain correct. This benchmark does not certify source replication, human assembly or calibrated magnetic forces.",
   "entries": [
     {
       "prompt": "a tower at least 6 inches tall",
