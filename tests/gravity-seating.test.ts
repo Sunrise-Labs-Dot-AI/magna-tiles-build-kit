@@ -8,6 +8,7 @@ import { assemblyUFixture, seatedRoofFixture } from "./fixtures/assembly";
 import { closedShell } from "./fixtures/closed-shell";
 import { smallRamp } from "@/lib/replication/models";
 import { assemblyOperationPreview } from "@/lib/replication/assembly-preview";
+import { connectionId } from "@/lib/engine/build";
 
 const flat = () => assemble("flat", "Flat foundation", [square("floor", v(-1.5, .09, -1.5), v(3,0,0), v(0,0,3), "red", 1, "foundation")], "tower");
 
@@ -90,12 +91,39 @@ describe("gravity seating earns contacts before any new joint exists", () => {
     expect(result.motion.at(-1)!.seconds).toBe(result.elapsedSeconds);
     expect(result.motion.at(-1)!.tiles).toEqual(result.settled.tiles);
   });
-  it("constructs the source launch on its side across all three seeds, without granting the later rotation", async () => {
+  it("constructs the source modules in one workspace and requires free rest after actual transfer", async () => {
     const r = smallRamp(), results = await evaluateAssembly(r), launch = results.find(s => s.stageId === "small-launch")!;
     expect(launch.status, launch.detail).toBe("pass");
     expect(launch.operations).toHaveLength(12);
     expect(launch.operations.filter(o => o.seating)).toHaveLength(3);
-    expect(results.find(s => s.stageId === "small-final")!.status).not.toBe("pass");
+    const final=results.find(s=>s.stageId==="small-final")!;
+    expect(final.operations).toHaveLength(3);
+    for(const operation of final.operations) {
+      expect(operation.transfer?.status,operation.detail).toBe("pass");
+      expect(operation.transfer!.previousHands).toHaveLength(2);
+      expect(operation.transfer!.retainedHands.map(h=>h.tileId)).toEqual(["launch-side-1"]);
+      expect(operation.carry?.completion,operation.detail).toBe("contact-arrival");
+      expect(operation.carry!.separationCheckpoint!.tiles).toHaveLength(9);
+      expect(operation.carry!.separationCheckpoint!.separations.every(s=>s.gap>0)).toBe(true);
+      expect(operation.transfer!.earnedCrossConnectionIds).toEqual(operation.transfer!.withheldCrossConnectionIds);
+      expect(operation.transfer!.activeJointIdsBeforeClosure.some(id=>operation.transfer!.earnedCrossConnectionIds.includes(id))).toBe(false);
+      expect(operation.carry!.arrivalContacts!.physicalConnectionIds).toEqual(operation.transfer!.physicalCrossConnectionIds);
+      const free=operation.trials.at(-1)!;
+      expect(operation.trials[0].heldTileIds).toEqual(["launch-side-1"]);
+      expect(operation.trials[1].status,operation.detail).toBe("pass");
+      expect(free.heldTileIds).toEqual([]);
+      expect(free.dynamicTileCount).toBe(9);
+      expect(operation.status).toBe(free.status);
+      if(operation.status==="pass") {
+        expect(free.settledSteps).toBeGreaterThanOrEqual(90);
+        expect(free.peakGroundPenetration).toBeLessThanOrEqual(.03);
+      }
+      const initial=assemblyOperationPreview(r.build,operation,0),terminal=assemblyOperationPreview(r.build,operation,1);
+      expect(initial.tiles).toHaveLength(9);
+      expect(initial.connections.some(c=>operation.transfer!.earnedCrossConnectionIds.includes(connectionId(c)))).toBe(false);
+      expect(operation.transfer!.earnedCrossConnectionIds.every(id=>terminal.connections.some(c=>connectionId(c)===id))).toBe(true);
+      expect(terminal.tiles).toEqual(free.motion.at(-1)!.tiles);
+    }
     const wedge = results.find(s => s.stageId === "small-wedge")!;
     expect(wedge.status,wedge.detail).toBe("pass");
     for (const seed of [0,17,53]) {
@@ -121,7 +149,8 @@ describe("gravity seating earns contacts before any new joint exists", () => {
     expect(start.tiles).toEqual(frames[0].tiles);
     expect(end.tiles).toEqual(placement.trials.at(-1)!.motion.at(-1)!.tiles);
     expect(end.tiles).not.toEqual(r.build.tiles);
-    expect(end.tiles).toHaveLength(1);
-    expect(start.tiles[0].position.y - end.tiles[0].position.y).toBeGreaterThan(.5);
-  }, 120_000);
+    expect(end.tiles).toHaveLength(6);
+    expect(end.tiles.filter(t=>t.id.startsWith("small-")).map(t=>t.id).sort()).toEqual([...r.stages[0].tileIds].sort());
+    expect(start.tiles.find(t=>t.id==="launch-back")!.position.y - end.tiles.find(t=>t.id==="launch-back")!.position.y).toBeGreaterThan(.5);
+  }, 240_000);
 });

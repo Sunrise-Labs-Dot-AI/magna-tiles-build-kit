@@ -4,15 +4,19 @@ import type { Replica, Verdict } from "./types";
 
 export interface ConstructionStage {
   stageId: string;
+  /** Construction placement only; source observations retain their stage pose. */
+  workspace?: { afterStageId: string; offset: import("@/lib/magnetic-tiles/types").Vec3 };
   operations: {
     tileIds: string[];
     preparedStageId?: string;
+    /** Explicit table-relative transit height for a previously constructed module. */
+    transfer?: { transitHeight: number };
     /** Omitted means no hand evidence, never automatic support of all tiles. */
     hands?: import("./grip").HandContact[];
     /** All hands removed after this insertion. Stage releases are mandatory too. */
     releaseAfter?: boolean;
     /** Release above the target, then earn every new contact under gravity. */
-    gravitySeat?: { releaseHeight: number };
+    gravitySeat?: { releaseHeight: number; placement?: "table" | "magnetic" };
     /** Lift the existing prefix before collecting the incoming panel. */
     pickup?: { height: number; hand: import("./grip").HandContact };
     /** Controlled descent with the support hand before its checked withdrawal. */

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-27T05:30:29.120Z",
-  "validationCodeHash": "935f1ad054f9ccc6532fbf86f0f8b59375287069da7bd7165ae3a4e2b6b1a6b9",
+  "generatedAt": "2026-09-27T06:22:15.137Z",
+  "validationCodeHash": "e451d061b1843a258e6aeaf6e44d58be25e907c4015a5bb6df92bdd9bdd01b48",
   "scope": "Generic three-wall and gravity-seated roof fixtures, independent of source replicas. The seated roof has actual bearing area on its narrower U support. Three perturbation seeds, two-finger edge proxy and explicit one-panel supports. No physical human or magnetic-force certification.",
   "replica": {
     "id": "u-fixture",
@@ -392,11 +392,13 @@
           ],
           "timeline": [
             {
-              "phase": "carry"
+              "phase": "carry",
+              "activeConnectionIds": []
             },
             {
               "phase": "support",
-              "index": 0
+              "index": 0,
+              "activeConnectionIds": []
             }
           ],
           "path": {
@@ -425,6 +427,7 @@
           "carry": {
             "status": "pass",
             "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+            "completion": "rested",
             "heldTileIds": [
               "x-0--1"
             ],
@@ -2076,14 +2079,19 @@
           "timeline": [
             {
               "phase": "support",
-              "index": 0
+              "index": 0,
+              "activeConnectionIds": []
             },
             {
-              "phase": "carry"
+              "phase": "carry",
+              "activeConnectionIds": []
             },
             {
               "phase": "support",
-              "index": 1
+              "index": 1,
+              "activeConnectionIds": [
+                "x-0--1:0->z-0--1:3"
+              ]
             }
           ],
           "docking": {
@@ -2123,6 +2131,7 @@
           "carry": {
             "status": "pass",
             "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+            "completion": "rested",
             "heldTileIds": [
               "z-0--1",
               "x-0--1"
@@ -5417,14 +5426,24 @@
           "timeline": [
             {
               "phase": "support",
-              "index": 0
+              "index": 0,
+              "activeConnectionIds": [
+                "x-0--1:0->z-0--1:3"
+              ]
             },
             {
-              "phase": "carry"
+              "phase": "carry",
+              "activeConnectionIds": [
+                "x-0--1:0->z-0--1:3"
+              ]
             },
             {
               "phase": "support",
-              "index": 1
+              "index": 1,
+              "activeConnectionIds": [
+                "x-0--1:0->z-0--1:3",
+                "z-0--1:1->x-0-1:0"
+              ]
             }
           ],
           "docking": {
@@ -5465,6 +5484,7 @@
           "carry": {
             "status": "pass",
             "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+            "completion": "rested",
             "heldTileIds": [
               "x-0-1",
               "x-0--1"
@@ -9579,11 +9599,13 @@
           ],
           "timeline": [
             {
-              "phase": "carry"
+              "phase": "carry",
+              "activeConnectionIds": []
             },
             {
               "phase": "support",
-              "index": 0
+              "index": 0,
+              "activeConnectionIds": []
             }
           ],
           "path": {
@@ -9612,6 +9634,7 @@
           "carry": {
             "status": "pass",
             "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+            "completion": "rested",
             "heldTileIds": [
               "x-0--1"
             ],
@@ -11263,14 +11286,19 @@
           "timeline": [
             {
               "phase": "support",
-              "index": 0
+              "index": 0,
+              "activeConnectionIds": []
             },
             {
-              "phase": "carry"
+              "phase": "carry",
+              "activeConnectionIds": []
             },
             {
               "phase": "support",
-              "index": 1
+              "index": 1,
+              "activeConnectionIds": [
+                "x-0--1:0->z-0--1:3"
+              ]
             }
           ],
           "docking": {
@@ -11310,6 +11338,7 @@
           "carry": {
             "status": "pass",
             "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+            "completion": "rested",
             "heldTileIds": [
               "z-0--1",
               "x-0--1"
@@ -14442,14 +14471,24 @@
           "timeline": [
             {
               "phase": "support",
-              "index": 0
+              "index": 0,
+              "activeConnectionIds": [
+                "x-0--1:0->z-0--1:3"
+              ]
             },
             {
-              "phase": "carry"
+              "phase": "carry",
+              "activeConnectionIds": [
+                "x-0--1:0->z-0--1:3"
+              ]
             },
             {
               "phase": "support",
-              "index": 1
+              "index": 1,
+              "activeConnectionIds": [
+                "x-0--1:0->z-0--1:3",
+                "z-0--1:1->x-0-1:0"
+              ]
             }
           ],
           "docking": {
@@ -14490,6 +14529,7 @@
           "carry": {
             "status": "pass",
             "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+            "completion": "rested",
             "heldTileIds": [
               "x-0-1",
               "x-0--1"
@@ -18604,11 +18644,13 @@
           ],
           "timeline": [
             {
-              "phase": "carry"
+              "phase": "carry",
+              "activeConnectionIds": []
             },
             {
               "phase": "support",
-              "index": 0
+              "index": 0,
+              "activeConnectionIds": []
             }
           ],
           "path": {
@@ -18637,6 +18679,7 @@
           "carry": {
             "status": "pass",
             "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+            "completion": "rested",
             "heldTileIds": [
               "x-0--1"
             ],
@@ -20288,14 +20331,19 @@
           "timeline": [
             {
               "phase": "support",
-              "index": 0
+              "index": 0,
+              "activeConnectionIds": []
             },
             {
-              "phase": "carry"
+              "phase": "carry",
+              "activeConnectionIds": []
             },
             {
               "phase": "support",
-              "index": 1
+              "index": 1,
+              "activeConnectionIds": [
+                "x-0--1:0->z-0--1:3"
+              ]
             }
           ],
           "docking": {
@@ -20335,6 +20383,7 @@
           "carry": {
             "status": "pass",
             "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+            "completion": "rested",
             "heldTileIds": [
               "z-0--1",
               "x-0--1"
@@ -23467,14 +23516,24 @@
           "timeline": [
             {
               "phase": "support",
-              "index": 0
+              "index": 0,
+              "activeConnectionIds": [
+                "x-0--1:0->z-0--1:3"
+              ]
             },
             {
-              "phase": "carry"
+              "phase": "carry",
+              "activeConnectionIds": [
+                "x-0--1:0->z-0--1:3"
+              ]
             },
             {
               "phase": "support",
-              "index": 1
+              "index": 1,
+              "activeConnectionIds": [
+                "x-0--1:0->z-0--1:3",
+                "z-0--1:1->x-0-1:0"
+              ]
             }
           ],
           "docking": {
@@ -23515,6 +23574,7 @@
           "carry": {
             "status": "pass",
             "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+            "completion": "rested",
             "heldTileIds": [
               "x-0-1",
               "x-0--1"
@@ -28766,11 +28826,13 @@
             ],
             "timeline": [
               {
-                "phase": "carry"
+                "phase": "carry",
+                "activeConnectionIds": []
               },
               {
                 "phase": "support",
-                "index": 0
+                "index": 0,
+                "activeConnectionIds": []
               }
             ],
             "path": {
@@ -28799,6 +28861,7 @@
             "carry": {
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+              "completion": "rested",
               "heldTileIds": [
                 "x-0--1"
               ],
@@ -30450,14 +30513,19 @@
             "timeline": [
               {
                 "phase": "support",
-                "index": 0
+                "index": 0,
+                "activeConnectionIds": []
               },
               {
-                "phase": "carry"
+                "phase": "carry",
+                "activeConnectionIds": []
               },
               {
                 "phase": "support",
-                "index": 1
+                "index": 1,
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3"
+                ]
               }
             ],
             "docking": {
@@ -30497,6 +30565,7 @@
             "carry": {
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+              "completion": "rested",
               "heldTileIds": [
                 "z-0--1",
                 "x-0--1"
@@ -33629,14 +33698,24 @@
             "timeline": [
               {
                 "phase": "support",
-                "index": 0
+                "index": 0,
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3"
+                ]
               },
               {
-                "phase": "carry"
+                "phase": "carry",
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3"
+                ]
               },
               {
                 "phase": "support",
-                "index": 1
+                "index": 1,
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3",
+                  "z-0--1:1->x-0-1:0"
+                ]
               }
             ],
             "docking": {
@@ -33677,6 +33756,7 @@
             "carry": {
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+              "completion": "rested",
               "heldTileIds": [
                 "x-0-1",
                 "x-0--1"
@@ -38618,21 +38698,47 @@
             "timeline": [
               {
                 "phase": "support",
-                "index": 0
+                "index": 0,
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3",
+                  "z-0--1:1->x-0-1:0"
+                ]
               },
               {
-                "phase": "carry"
+                "phase": "carry",
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3",
+                  "z-0--1:1->x-0-1:0"
+                ]
               },
               {
-                "phase": "seating"
+                "phase": "seating",
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3",
+                  "z-0--1:1->x-0-1:0"
+                ]
               },
               {
                 "phase": "support",
-                "index": 1
+                "index": 1,
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3",
+                  "z-0--1:1->x-0-1:0",
+                  "x-0-1:1->roof:1",
+                  "z-0--1:2->roof:0",
+                  "x-0--1:1->roof:3"
+                ]
               },
               {
                 "phase": "support",
-                "index": 2
+                "index": 2,
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3",
+                  "z-0--1:1->x-0-1:0",
+                  "x-0-1:1->roof:1",
+                  "z-0--1:2->roof:0",
+                  "x-0--1:1->roof:3"
+                ]
               }
             ],
             "path": {
@@ -38665,6 +38771,7 @@
             "carry": {
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+              "completion": "rested",
               "heldTileIds": [
                 "roof"
               ],
@@ -62665,11 +62772,13 @@
             ],
             "timeline": [
               {
-                "phase": "carry"
+                "phase": "carry",
+                "activeConnectionIds": []
               },
               {
                 "phase": "support",
-                "index": 0
+                "index": 0,
+                "activeConnectionIds": []
               }
             ],
             "path": {
@@ -62698,6 +62807,7 @@
             "carry": {
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+              "completion": "rested",
               "heldTileIds": [
                 "x-0--1"
               ],
@@ -64349,14 +64459,19 @@
             "timeline": [
               {
                 "phase": "support",
-                "index": 0
+                "index": 0,
+                "activeConnectionIds": []
               },
               {
-                "phase": "carry"
+                "phase": "carry",
+                "activeConnectionIds": []
               },
               {
                 "phase": "support",
-                "index": 1
+                "index": 1,
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3"
+                ]
               }
             ],
             "docking": {
@@ -64396,6 +64511,7 @@
             "carry": {
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+              "completion": "rested",
               "heldTileIds": [
                 "z-0--1",
                 "x-0--1"
@@ -67528,14 +67644,24 @@
             "timeline": [
               {
                 "phase": "support",
-                "index": 0
+                "index": 0,
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3"
+                ]
               },
               {
-                "phase": "carry"
+                "phase": "carry",
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3"
+                ]
               },
               {
                 "phase": "support",
-                "index": 1
+                "index": 1,
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3",
+                  "z-0--1:1->x-0-1:0"
+                ]
               }
             ],
             "docking": {
@@ -67576,6 +67702,7 @@
             "carry": {
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+              "completion": "rested",
               "heldTileIds": [
                 "x-0-1",
                 "x-0--1"
@@ -72517,21 +72644,47 @@
             "timeline": [
               {
                 "phase": "support",
-                "index": 0
+                "index": 0,
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3",
+                  "z-0--1:1->x-0-1:0"
+                ]
               },
               {
-                "phase": "carry"
+                "phase": "carry",
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3",
+                  "z-0--1:1->x-0-1:0"
+                ]
               },
               {
-                "phase": "seating"
+                "phase": "seating",
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3",
+                  "z-0--1:1->x-0-1:0"
+                ]
               },
               {
                 "phase": "support",
-                "index": 1
+                "index": 1,
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3",
+                  "z-0--1:1->x-0-1:0",
+                  "x-0-1:1->roof:1",
+                  "z-0--1:2->roof:0",
+                  "x-0--1:1->roof:3"
+                ]
               },
               {
                 "phase": "support",
-                "index": 2
+                "index": 2,
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3",
+                  "z-0--1:1->x-0-1:0",
+                  "x-0-1:1->roof:1",
+                  "z-0--1:2->roof:0",
+                  "x-0--1:1->roof:3"
+                ]
               }
             ],
             "path": {
@@ -72564,6 +72717,7 @@
             "carry": {
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+              "completion": "rested",
               "heldTileIds": [
                 "roof"
               ],
@@ -96564,11 +96718,13 @@
             ],
             "timeline": [
               {
-                "phase": "carry"
+                "phase": "carry",
+                "activeConnectionIds": []
               },
               {
                 "phase": "support",
-                "index": 0
+                "index": 0,
+                "activeConnectionIds": []
               }
             ],
             "path": {
@@ -96597,6 +96753,7 @@
             "carry": {
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+              "completion": "rested",
               "heldTileIds": [
                 "x-0--1"
               ],
@@ -98248,14 +98405,19 @@
             "timeline": [
               {
                 "phase": "support",
-                "index": 0
+                "index": 0,
+                "activeConnectionIds": []
               },
               {
-                "phase": "carry"
+                "phase": "carry",
+                "activeConnectionIds": []
               },
               {
                 "phase": "support",
-                "index": 1
+                "index": 1,
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3"
+                ]
               }
             ],
             "docking": {
@@ -98295,6 +98457,7 @@
             "carry": {
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+              "completion": "rested",
               "heldTileIds": [
                 "z-0--1",
                 "x-0--1"
@@ -101427,14 +101590,24 @@
             "timeline": [
               {
                 "phase": "support",
-                "index": 0
+                "index": 0,
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3"
+                ]
               },
               {
-                "phase": "carry"
+                "phase": "carry",
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3"
+                ]
               },
               {
                 "phase": "support",
-                "index": 1
+                "index": 1,
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3",
+                  "z-0--1:1->x-0-1:0"
+                ]
               }
             ],
             "docking": {
@@ -101475,6 +101648,7 @@
             "carry": {
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+              "completion": "rested",
               "heldTileIds": [
                 "x-0-1",
                 "x-0--1"
@@ -106416,21 +106590,47 @@
             "timeline": [
               {
                 "phase": "support",
-                "index": 0
+                "index": 0,
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3",
+                  "z-0--1:1->x-0-1:0"
+                ]
               },
               {
-                "phase": "carry"
+                "phase": "carry",
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3",
+                  "z-0--1:1->x-0-1:0"
+                ]
               },
               {
-                "phase": "seating"
+                "phase": "seating",
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3",
+                  "z-0--1:1->x-0-1:0"
+                ]
               },
               {
                 "phase": "support",
-                "index": 1
+                "index": 1,
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3",
+                  "z-0--1:1->x-0-1:0",
+                  "x-0-1:1->roof:1",
+                  "z-0--1:2->roof:0",
+                  "x-0--1:1->roof:3"
+                ]
               },
               {
                 "phase": "support",
-                "index": 2
+                "index": 2,
+                "activeConnectionIds": [
+                  "x-0--1:0->z-0--1:3",
+                  "z-0--1:1->x-0-1:0",
+                  "x-0-1:1->roof:1",
+                  "z-0--1:2->roof:0",
+                  "x-0--1:1->roof:3"
+                ]
               }
             ],
             "path": {
@@ -106463,6 +106663,7 @@
             "carry": {
               "status": "pass",
               "detail": "One pickup panel completed the continuous held trajectory; every other panel remained dynamic, with swept solid/fingertip clearance and sustained rest.",
+              "completion": "rested",
               "heldTileIds": [
                 "roof"
               ],

@@ -13,6 +13,7 @@ import { checkHandAccess, checkSupportFingerClearance, type HandContact } from "
 import { findInsertionPath, type InsertionPath } from "./insertion";
 import { supportSnapshot } from "./support";
 import type { Check } from "./types";
+import { componentContacts, splitComponents } from "./components";
 
 // Resolve a falling panel's contact at 960 Hz. This refines collision integration;
 // duration, rest time, forces, friction and geometric tolerances stay unchanged.
@@ -42,10 +43,10 @@ export interface SeatingTrial extends Check {
  * hinges are absent for the entire run. Only actual rested contacts may earn a
  * subsequent connected trial. A miss, slide or unstable impact must fail. */
 export async function simulateGravitySeat(target: BuildGraph, movingTileIds: string[], hands: HandContact[], releaseHeight: number,
-  floorY: number, seed: number, deadline = Infinity, state?: EngineState): Promise<SeatingTrial> {
+  floorY: number, seed: number, deadline = Infinity, state?: EngineState, placement?: "table" | "magnetic", components?: string[][]): Promise<SeatingTrial> {
   const moving = new Set(movingTileIds), fixed = target.tiles.filter(t => !moving.has(t.id)).map(t => t.id);
   const cross = target.connections.filter(c => moving.has(c.fromTileId) !== moving.has(c.toTileId));
-  const result: SeatingTrial = { status: "fail", detail: "", placement: fixed.length ? "magnetic" : "table", seed, path: null, releaseHeight, heldTileIds: [],
+  const result: SeatingTrial = { status: "fail", detail: "", placement: placement ?? (fixed.length ? "magnetic" : "table"), seed, path: null, releaseHeight, heldTileIds: [],
     withheldJointIds: cross.map(connectionId), activeJointIds: [], earnedJointIds: [], tableBearingTileIds: [], peakTargetDisplacement: 0, settledSteps: 0, elapsedSeconds: 0, poppedJoints: [], motion: [], settled: target };
   const fail = (detail: string) => {
     if (result.motion.length && result.motion.at(-1)!.seconds !== result.elapsedSeconds)
@@ -56,16 +57,14 @@ export async function simulateGravitySeat(target: BuildGraph, movingTileIds: str
       movingTileIds.some(id => !target.tiles.some(t => t.id === id)) || !Number.isFinite(floorY) ||
       !Number.isFinite(releaseHeight) || releaseHeight < 0.05 || releaseHeight > 0.75)
     return fail("Invalid seating contract: release height must be 0.05–0.75 in, with known distinct moving parts.");
-  if (fixed.length && !cross.length) return fail("No intended moving-to-installed magnetic contact.");
+  if (result.placement === "magnetic" && !cross.length) return fail("No intended moving-to-installed magnetic contact.");
+  if (result.placement === "table" && cross.length) return fail("Table placement cannot discard intended magnetic contacts.");
   const released = { ...target, tiles: target.tiles.map(t => moving.has(t.id) ? { ...t, position: add(t.position, { x: 0, y: releaseHeight, z: 0 }) } : t),
     connections: target.connections.filter(c => moving.has(c.fromTileId) === moving.has(c.toTileId)) };
   // Validate both components independently. Only this deliberate split is allowed;
   // absent internal joins and malformed references are never ignored.
-  for (const isMoving of [false, true]) {
-    const part = { ...released, tiles: released.tiles.filter(t => moving.has(t.id) === isMoving),
-      connections: released.connections.filter(c => moving.has(c.fromTileId) === isMoving) };
-    if (part.tiles.length && contactsClosed(part).status !== "pass") return fail("Installed or moving component has invalid internal contacts.");
-  }
+  if (componentContacts(released,splitComponents(components ?? [released.tiles.map(t => t.id)],moving)).status !== "pass")
+    return fail("Installed or moving component has invalid internal contacts.");
   if (findRawOverlaps(released.tiles).length || buildBounds(released.tiles).min.y < floorY - RAW_OVERLAP_TOLERANCE)
     return fail("Release pose intersects a present solid or the fixed table.");
   for (const c of cross) {
@@ -126,7 +125,7 @@ export async function simulateGravitySeat(target: BuildGraph, movingTileIds: str
       if (clearance.status !== "pass") return fail(clearance.detail);
     }
     if (result.settledSteps < SETTLED_REQUIRED_STEPS) return fail(`Seating did not reach sustained rest: ${result.settledSteps}/90 steps.`);
-    const closure = contactsClosed(result.settled);
+    const closure = componentContacts(result.settled,components);
     if (closure.status !== "pass") return fail(`Rested seating did not earn the intended contacts: ${closure.detail}`);
     const valid = validateMagneticBuild(result.settled).validConnections;
     result.earnedJointIds = valid.filter(c => moving.has(c.fromTile.id) !== moving.has(c.toTile.id)).map(c => c.id);
@@ -136,6 +135,7 @@ export async function simulateGravitySeat(target: BuildGraph, movingTileIds: str
     if (result.placement === "table") {
       const tileBodies = new Set([...engine.bodies.values()].map(r => r.body.handle));
       for (const [id, { body }] of engine.bodies) {
+        if (!moving.has(id)) continue;
         const collider = body.collider(0);
         engine.world.contactPairsWith(collider, other => {
           if (other.parent() && tileBodies.has(other.parent()!.handle)) return;

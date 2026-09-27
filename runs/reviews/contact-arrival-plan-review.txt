@@ -1,0 +1,18 @@
+**Verdict: CONCERNS, but the boundary is sound if tightened.** Replacing pre-attachment sustained rest with named actual contact arrival is physically defensible because the plan keeps joints withheld, preserves actual state, and still requires connected stabilization plus free release. I would not implement until these conditions are explicit:
+
+1. **Separation checkpoint timing is still too soft.**  
+   In [runs/2026-09-26-shared-workspace-transfer-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-26-shared-workspace-transfer-plan.md:53), “first actual physics sample at/after” the approach time can already be one integration step into the closing segment. Fix: make the approach waypoint a held/stationary checkpoint, capture an actual post-step sample while the commanded pose is still the separated approach pose, then start the final contact segment. Record waypoint index, requested time, sampled time, actual poses, and positive separation for every named cross pair.
+
+2. **Exact connection identity must be equality, not just validity.**  
+   The arrival set in [line 47](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-26-shared-workspace-transfer-plan.md:47) should equal the source-derived `withheldCrossConnectionIds`, using the same canonical `connectionId` identity as [prepared-transfer.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/prepared-transfer.ts:63). Also enumerate all actual moving-to-installed magnetic edge matches at arrival and require exact equality: no missing, extra, reversed/canonicalized-wrong, preexisting, or unintended late contacts.
+
+3. **State continuity needs a hard non-reconstruction rule.**  
+   The plan says state continuation, but the risky path is accidentally rebuilding from `settled` geometry or `docking.build`. Fix: require the arrival certificate to return the immediate actual `EngineState` snapshot with joins still absent, body velocities/modes preserved, and then append exactly the earned joints into that state. No pose replacement from proposal geometry and no velocity/rest reset.
+
+4. **Acceptance must not treat contact-arrival as assembly success.**  
+   Since current held motion’s pass means `rested` in [held-motion.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/held-motion.ts:108), `contact-arrival` must be a distinct completion kind that downstream code cannot count as final acceptance. The build only passes after connected stabilization and all-hands-free release satisfy the existing 90-rest, penetration, force, duration, and seed checks.
+
+5. **Unsupported component escape is addressed only under the two-component condition.**  
+   [Line 57](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-26-shared-workspace-transfer-plan.md:57) is the right scope limit: exactly one carried module and one installed target component. Keep that as a fail-closed precondition before simulation, and reject extra independent components rather than folding them into the installed group.
+
+With those fixes, the physics boundary is acceptable: arrival proves only actual named contact, not rest or magnetic capture; the joined/free-release phases remain the real acceptance gate.

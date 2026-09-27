@@ -22,7 +22,12 @@
   },
   "gravityPreview": {
     "labels": [
-      "P7"
+      "P7",
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5"
     ],
     "recordedFramesDiffer": true,
     "launchAssemblyPassed": true
@@ -42,6 +47,21 @@
       "P3"
     ],
     "recordedFramesDiffer": true
+  },
+  "transferPreview": {
+    "labels": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "P8",
+      "P9"
+    ],
+    "recordedFramesDiffer": true,
+    "failedFreeReleaseVisible": true
   },
   "mobileOverflow": false,
   "pageErrors": []

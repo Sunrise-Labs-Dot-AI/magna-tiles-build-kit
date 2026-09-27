@@ -9,6 +9,7 @@ import { checkMotionFingerClearance, type HandContact } from "./grip";
 import { checkSweptPoses, samePoses } from "./rotation-clearance";
 import { compactMotion } from "./motion-recording";
 import { RAW_OVERLAP_TOLERANCE } from "@/lib/engine/overlap";
+import { componentContacts, disconnectedReason } from "./components";
 
 export interface SupportTrial extends Check {
   heldTileIds: string[];
@@ -32,16 +33,17 @@ export function supportSnapshot(build: BuildGraph, engine: EngineWorld): BuildGr
 
 /** Holds only named single-panel bodies. The table never moves to the lowest part
  * of a prefix: otherwise a floating piece would gain an invented support. */
-export async function simulateSupport(build: BuildGraph, heldTileIds: string[], floorY: number, seed: number, deadline = Infinity, state?: EngineState, hands?: HandContact[]): Promise<SupportTrial> {
+export async function simulateSupport(build: BuildGraph, heldTileIds: string[], floorY: number, seed: number, deadline = Infinity, state?: EngineState, hands?: HandContact[], components?: string[][]): Promise<SupportTrial> {
   if (!Number.isFinite(floorY) || heldTileIds.length > 2 || new Set(heldTileIds).size !== heldTileIds.length ||
       heldTileIds.some(id => !build.tiles.some(t => t.id === id))) throw new Error("Invalid individual-panel support contract");
   const engine = await createEngineWorld(build, { drop: false, floorY, state });
+  const componentCheck = components && componentContacts(build,components);
   // Assembly handoffs may release a lifted prefix. Resolve impacts at the same
   // 960 Hz without changing duration or rest requirements. CCD alone leaves an impact
   // step that exceeds the existing 0.03-inch penetration tolerance at 480 Hz.
   const substeps = 8;
   engine.world.integrationParameters.dt = SIMULATION_TIMESTEP_SECONDS/substeps;
-  let peak = 0, settledSteps = 0, clearanceFailure = "";
+  let peak = 0, settledSteps = 0, clearanceFailure = componentCheck?.status === "fail" ? componentCheck.detail : "";
   let previous = build;
   const motion = [{ seconds: 0,tiles: build.tiles }];
   let elapsed = 0;
@@ -76,7 +78,8 @@ export async function simulateSupport(build: BuildGraph, heldTileIds: string[], 
       settledSteps = linear < SETTLED_LINEAR_SPEED && angular < SETTLED_ANGULAR_SPEED ? settledSteps + 1 : 0;
       if (peak > MAX_STANDING_DISPLACEMENT || engine.poppedJoints.length || clearanceFailure) break;
     }
-    const poppedJoints = [...engine.rejectedReasons, ...engine.poppedJoints];
+    const poppedJoints = [...engine.rejectedReasons.filter(reason => !components || componentCheck?.status !== "pass" || !disconnectedReason(reason)), ...engine.poppedJoints];
+    if (componentCheck?.status === "fail") clearanceFailure ||= componentCheck.detail;
     settledSteps = Math.floor(settledSteps/substeps);
     const passed = !clearanceFailure && Number.isFinite(peak) && peak <= MAX_STANDING_DISPLACEMENT && !poppedJoints.length && settledSteps >= SETTLED_REQUIRED_STEPS;
     const dynamicTileCount = build.tiles.length - heldTileIds.length;

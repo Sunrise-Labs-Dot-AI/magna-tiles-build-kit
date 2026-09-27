@@ -25,7 +25,10 @@ export interface HandContact {
 // Continuous segment against the prism's inflated half-spaces. Conservative at
 // corners: it may reject a feasible sphere path, but cannot skip a thin obstacle.
 function blocked(tile: TileInstance, from: Vec3, to: Vec3, radius: number): boolean {
-  const vertices = tileWorldVertices(tile), normal = tileNormal(tile), center = tile.position;
+  const vertices = tileWorldVertices(tile), normal = tileNormal(tile);
+  // The catalog origin of a right triangle lies on its hypotenuse. It cannot
+  // orient an interior half-space: rounding can flip the collision boundary.
+  const center = scale(vertices.reduce(add,v(0,0,0)),1/vertices.length);
   const planes = [{ n: normal, p: add(center, scale(normal, TILE_THICKNESS / 2)) },
     { n: scale(normal, -1), p: add(center, scale(normal, -TILE_THICKNESS / 2)) }];
   for (let i = 0; i < vertices.length; i++) {

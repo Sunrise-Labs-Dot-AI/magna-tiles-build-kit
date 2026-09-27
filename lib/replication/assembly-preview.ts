@@ -1,6 +1,7 @@
 import type { BuildGraph } from "@/lib/magnetic-tiles/types";
 import type { AssemblyOperationResult } from "./assembly";
 import { insertionPreview } from "./insertion";
+import { connectionId } from "@/lib/engine/build";
 
 /** Playback uses saved physics poses. It does not interpolate a falling panel
  * toward its goal or replace a failed final frame with the authored geometry. */
@@ -17,7 +18,9 @@ export function assemblyOperationPreview(checkpoint: BuildGraph, operation: Asse
   const phaseIndex = Math.min(phases.length-1,Math.floor(phaseTime)), motion = phases[phaseIndex]!;
   const frame = motion[Math.min(motion.length-1,Math.floor((phaseTime-phaseIndex)*motion.length))];
   const present = new Set(frame.tiles.map(tile => tile.id)), moving = new Set(operation.tileIds);
+  const timeline = operation.timeline?.filter(p => (p.phase === "support" ? operation.trials[p.index]?.motion : operation[p.phase]?.motion)?.length);
+  const recordedIds = timeline?.[phaseIndex]?.activeConnectionIds;
   return { ...checkpoint, tiles: frame.tiles,
     connections: checkpoint.connections.filter(c => present.has(c.fromTileId) && present.has(c.toTileId) &&
-      moving.has(c.fromTileId) === moving.has(c.toTileId)) };
+      (recordedIds ? recordedIds.includes(connectionId(c)) : moving.has(c.fromTileId) === moving.has(c.toTileId))) };
 }

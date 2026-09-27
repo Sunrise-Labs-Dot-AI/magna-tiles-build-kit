@@ -251,8 +251,8 @@
           "detail": "3 settled point comparisons. Original camera held fixed. Sparse passing landmarks do not cover the full settled shape."
         },
         "assembly": {
-          "status": "unverified",
-          "detail": "2/3 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. small-final: A stage rotation/transfer needs a continuous validated orientation trajectory. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
+          "status": "fail",
+          "detail": "2/3 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. small-final: Seed 0: 0 individually held panels, 9 dynamic panels; peak 0.049 in, 0/90 rest steps, 0 rejected/broken joins. Seed 17: 0 individually held panels, 9 dynamic panels; peak 0.049 in, 0/90 rest steps, 0 rejected/broken joins. Seed 53: 0 individually held panels, 9 dynamic panels; peak 0.055 in, 0/90 rest steps, 0 rejected/broken joins. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
         },
         "function": {
           "status": "pass",
@@ -260,7 +260,7 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "ca8d43a0c41059aac5f197c5aa5aec82b6801e9c3d1fb6965c5dc49307ba42d5",
+      "fingerprint": "2101d79151f83d18196cf0be030adea35ae153bbb5f1a9be21367510a30ea8af",
       "stages": [
         {
           "id": "small-wedge",

@@ -1,4 +1,4 @@
-import { buildBounds, validateMagneticBuild } from "@/lib/engine/build";
+import { buildBounds, connectionId, validateMagneticBuild } from "@/lib/engine/build";
 import { add, magnitude, scale } from "@/lib/engine/math";
 import type { EngineState } from "@/lib/engine/rapier-world";
 import { findMagneticEdgeMatch } from "@/lib/magnetic-tiles/magnet-geometry";
@@ -6,13 +6,15 @@ import type { BuildGraph, TileInstance } from "@/lib/magnetic-tiles/types";
 import { stageBuild } from "./geometry";
 import { planConstructionPaths } from "./construction";
 import { findInsertionPath, type InsertionPath } from "./insertion";
-import { checkHandAccess } from "./grip";
+import { checkHandAccess, type HandContact } from "./grip";
 import { simulateSupport, type SupportTrial } from "./support";
-import { contactsClosed } from "./contacts";
 import { simulateGravitySeat, type SeatingTrial } from "./seating";
 import { simulateHeldMotion, type HeldMotionTrial } from "./held-motion";
 import { tileQuaternion } from "./rotation-clearance";
 import { dockToSupports } from "./docking";
+import { selectWorkspace, workspaceBuild, type PreparedWorkspace } from "./workspace";
+import { simulatePreparedTransfer, type TransferEvidence } from "./prepared-transfer";
+import { componentContacts } from "./components";
 import type { Check, Replica } from "./types";
 
 export interface AssemblyOperationResult extends Check {
@@ -28,7 +30,8 @@ export interface AssemblyOperationResult extends Check {
   pickup?: Omit<HeldMotionTrial, "settled" | "state">;
   lowering?: Omit<HeldMotionTrial, "settled" | "state">;
   docking?: Check & { offset: { x: number; y: number; z: number } };
-  timeline?: ({ phase: "pickup" | "carry" | "seating" | "lowering" } | { phase: "support"; index: number })[];
+  transfer?: TransferEvidence;
+  timeline?: (({ phase: "pickup" | "carry" | "seating" | "lowering" } | { phase: "support"; index: number }) & { activeConnectionIds?: string[] })[];
   trials: Omit<SupportTrial, "settled" | "state">[];
 }
 export interface AssemblyResult extends Check {
@@ -41,11 +44,19 @@ const subset = (build: BuildGraph, ids: Set<string>): BuildGraph => ({ ...build,
   connections: build.connections.filter(c => ids.has(c.fromTileId) && ids.has(c.toTileId)) });
 const mergePoses = (build: BuildGraph, state: BuildGraph): BuildGraph => ({ ...build,
   tiles: build.tiles.map(t => state.tiles.find(actual => actual.id === t.id) ?? t) });
+const supportSummary = (trial: SupportTrial): Omit<SupportTrial,"settled"|"state"> => {
+  const result: Partial<SupportTrial> = { ...trial }; delete result.settled; delete result.state;
+  return result as Omit<SupportTrial,"settled"|"state">;
+};
+const motionSummary = (trial: HeldMotionTrial): Omit<HeldMotionTrial,"settled"|"state"> => {
+  const result: Partial<HeldMotionTrial> = { ...trial }; delete result.settled; delete result.state;
+  return result as Omit<HeldMotionTrial,"settled"|"state">;
+};
 
 /** A path with empty air at both ends is not a magnetic assembly operation. */
-export function checkClosure(build: BuildGraph, path: InsertionPath): Check {
+export function checkClosure(build: BuildGraph, path: InsertionPath, components?: string[][]): Check {
   const present = subset(build, new Set([...path.movingTileIds, ...path.fixedTileIds]));
-  const closure = contactsClosed(present);
+  const closure = componentContacts(present,components);
   if (closure.status !== "pass") return closure;
   const validation = validateMagneticBuild(present);
   if (!path.fixedTileIds.length) return { status: "pass", detail: "First part/module placed; no pre-existing join required." };
@@ -64,7 +75,7 @@ export function checkClosure(build: BuildGraph, path: InsertionPath): Check {
  * break history across support, insertion, seating and release. */
 export async function evaluateAssembly(replica: Replica, deadline = Infinity): Promise<AssemblyResult[]> {
   const coverage = planConstructionPaths(replica, deadline), results: AssemblyResult[] = [];
-  const prepared = new Map<string, Map<number, { build: BuildGraph; floorY: number; state?: EngineState }>>();
+  const prepared: PreparedWorkspace[] = [];
   for (const stage of replica.stages) {
     const result: AssemblyResult = { stageId: stage.id, status: "unverified", detail: "No complete supported construction contract.", operations: [], checkpoints: [] };
     results.push(result);
@@ -72,44 +83,69 @@ export async function evaluateAssembly(replica: Replica, deadline = Infinity): P
     if (paths.status !== "pass") { result.status = paths.status; result.detail = paths.detail; continue; }
     const plan = replica.construction!.find(p => p.stageId === stage.id)!;
     if (plan.operations.some(op => !op.hands?.length)) continue;
-    const dependencies = [...(stage.installedStageIds ?? []), ...plan.operations.flatMap(op => op.preparedStageId ? [op.preparedStageId] : [])];
-    if (dependencies.some(id => !prepared.has(id))) { result.detail = "An earlier module has not passed its complete supported assembly."; continue; }
-    if (dependencies.length && (stage.transform || dependencies.some(id => replica.stages.find(s => s.id === id)?.transform))) {
+    const transfers = plan.operations.filter(op => op.preparedStageId);
+    const dependency = transfers[0]?.preparedStageId ?? plan.workspace?.afterStageId ?? stage.installedStageIds?.[0];
+    const installedIds = (stage.installedStageIds ?? []).flatMap(id => replica.stages.find(s => s.id === id)?.tileIds ?? []);
+    if (dependency && !prepared.some(w => w.stageId === dependency)) { result.detail = "An earlier module has not passed its complete supported assembly."; continue; }
+    if (!plan.workspace && !transfers.length && dependency && (stage.transform || replica.stages.find(s => s.id === dependency)?.transform)) {
       result.detail = "A stage rotation/transfer needs a continuous validated orientation trajectory."; continue;
     }
-    if ((stage.installedStageIds?.length ?? 0) > 1 || plan.operations.some(op => op.preparedStageId)) {
-      result.detail = "Prepared worlds require an explicit continuous transfer before they can be combined."; continue;
+    if ((stage.installedStageIds?.length ?? 0) > 1 || plan.operations.some(op => op.transfer && !op.preparedStageId) ||
+        transfers.length && (transfers.length !== 1 || plan.operations.length !== 1 || !transfers[0].transfer || !transfers[0].releaseAfter || plan.workspace || stage.transform || transfers[0].gravitySeat || transfers[0].pickup || transfers[0].lowerBeforeRelease !== undefined) ||
+        plan.workspace && (stage.installedStageIds?.length || !Object.values(plan.workspace.offset).every(n => Number.isFinite(n) && Math.abs(n) <= 12) || plan.workspace.offset.y !== 0)) {
+      result.detail = "Prepared worlds need one explicit predecessor, workspace placement and continuous transfer contract."; continue;
     }
-    const nominal = stageBuild(replica, stage), floorY = buildBounds(nominal.tiles).min.y;
-    const states = new Map<number, { build: BuildGraph; floorY: number; state?: EngineState }>();
+    const offset = plan.workspace?.offset ?? { x: 0,y: 0,z: 0 };
+    const nominal = stageBuild(replica, stage);
+    nominal.tiles = nominal.tiles.map(t => ({ ...t,position: add(t.position,offset) }));
+    const floorY = buildBounds(nominal.tiles).min.y;
+    const states: PreparedWorkspace[] = [];
     const failures: string[] = [];
     for (const seed of [0, 17, 53]) {
       let failure = "";
       let current = structuredClone(nominal);
       let physicalState: EngineState | undefined;
+      let heldHands: HandContact[] = [];
+      let predecessor: PreparedWorkspace | undefined;
       const placed = new Set<string>();
-      for (const id of stage.installedStageIds ?? []) {
-        const previous = prepared.get(id)!.get(seed)!;
-        const aligned = { ...previous.build, tiles: previous.build.tiles.map(t => ({ ...t,
-          position: { ...t.position, y: t.position.y + floorY - previous.floorY } })) };
+      if (dependency) {
+        try {
+          predecessor = selectWorkspace(prepared,dependency,seed,stage.installedStageIds ?? []);
+        } catch (error) { failures.push(`Seed ${seed}: ${error instanceof Error ? error.message : String(error)}`); continue; }
+        const aligned = workspaceBuild(predecessor,floorY), previousIds = aligned.tiles.map(t => t.id);
+        if (plan.workspace && predecessor.hands.length) { failures.push(`Seed ${seed}: New workspace construction requires an already released obstacle module.`); continue; }
+        const expected = transfers.length ? stage.tileIds : plan.workspace ? previousIds : installedIds;
+        if (previousIds.length !== expected.length || previousIds.some(id => !expected.includes(id)) ||
+            plan.workspace && previousIds.some(id => stage.tileIds.includes(id)) ||
+            transfers.length && (transfers[0].tileIds.some(id => installedIds.includes(id)) || stage.tileIds.some(id => ![...installedIds,...transfers[0].tileIds].includes(id)))) {
+          failures.push(`Seed ${seed}: Prepared workspace has missing, extra or duplicated stage parts.`); continue;
+        }
+        const inherited = aligned.tiles.filter(t => !current.tiles.some(n => n.id === t.id));
+        current.tiles.push(...inherited);
+        for (const c of aligned.connections) if (!current.connections.some(n => connectionId(n) === connectionId(c))) current.connections.push(c);
         current = mergePoses(current, aligned);
-        physicalState = previous.state;
-        aligned.tiles.forEach(t => placed.add(t.id));
+        physicalState = predecessor.state;
+        heldHands = predecessor.hands;
+        aligned.tiles.filter(t => !transfers.length || installedIds.includes(t.id)).forEach(t => placed.add(t.id));
       }
+      const components = (build: BuildGraph) => plan.workspace ? [
+        ...(predecessor?.components ?? []),build.tiles.filter(t => stage.tileIds.includes(t.id)).map(t => t.id),
+      ].filter(g => g.length) : undefined;
       for (const [index, operation] of plan.operations.entries()) {
         const row: AssemblyOperationResult = { index, seed, tileIds: operation.tileIds, status: "fail", detail: "", trials: [], timeline: [] };
         result.operations.push(row);
         const record = async (build: BuildGraph, holds: string[]) => {
           const gripDefinitions = [...(operation.hands ?? []), ...(operation.pickup ? [operation.pickup.hand] : [])];
           const supportHands = holds.map(id => gripDefinitions.find(h => h.tileId === id)!);
-          const trial = await simulateSupport(build, holds, floorY, seed, deadline, physicalState, supportHands);
+          const trial = await simulateSupport(build, holds, floorY, seed, deadline, physicalState, supportHands,components(build));
           const { settled, state, ...summary } = trial;
           physicalState = state;
+          heldHands = supportHands;
           row.trials.push(summary);
-          row.timeline!.push({ phase: "support",index: row.trials.length-1 });
+          row.timeline!.push({ phase: "support",index: row.trials.length-1,activeConnectionIds: state.joints.map(j=>j.model.id) });
           if (trial.status !== "pass") failure = trial.detail;
           if (!failure) {
-            const closure = contactsClosed(settled);
+            const closure = componentContacts(settled,components(settled));
             if (closure.status !== "pass") failure = closure.detail;
           }
           return settled;
@@ -120,6 +156,35 @@ export async function evaluateAssembly(replica: Replica, deadline = Infinity): P
           failure = row.detail = "Need one insertion hand and at most one distinct installed-panel support hand."; break;
         }
         const support = hands.filter(h => placed.has(h.tileId)).map(h => h.tileId);
+        if (operation.preparedStageId) {
+          if (!physicalState || !operation.transfer) { failure = row.detail = "Missing actual prepared transfer state."; break; }
+          const unjoined = { ...current,connections: current.connections.filter(c => moving.has(c.fromTileId) === moving.has(c.toTileId)) };
+          const transfer = await simulatePreparedTransfer(nominal,unjoined,physicalState,operation.tileIds,heldHands,hands,operation.transfer.transitHeight,floorY,seed,deadline,predecessor!.components);
+          const { settled,state,handoff,carry,docking,path,...evidence } = transfer;
+          row.transfer = evidence;
+          if (handoff) {
+            const summary = supportSummary(handoff);
+            row.trials.push(summary); row.timeline!.push({ phase: "support",index: row.trials.length-1,activeConnectionIds: handoff.state.joints.map(j=>j.model.id) });
+          }
+          if (carry) { row.carry = motionSummary(carry); row.timeline!.push({ phase: "carry",activeConnectionIds: carry.state?.joints.map(j=>j.model.id) }); }
+          if (docking) row.docking = { status: docking.status,detail: docking.detail,offset: docking.offset };
+          row.path = path;
+          row.approachTiles = handoff?.motion[0]?.tiles ?? carry?.motion[0]?.tiles;
+          row.closure = { status: transfer.status,detail: transfer.detail };
+          if (transfer.status !== "pass") { failure = row.detail = transfer.detail; break; }
+          // The arrival result is internally consistent and still unjoined.
+          // Only the validated authored definitions enter the next live world.
+          current = {...settled,connections:[...settled.connections,...nominal.connections.filter(c=>transfer.earnedCrossConnectionIds.includes(connectionId(c)))]};
+          physicalState = state; heldHands = hands;
+          moving.forEach(id => placed.add(id));
+          current = mergePoses(current,await record(current,hands.map(h => h.tileId)));
+          const attached = physicalState.joints.filter(j => moving.has(j.model.fromTileId) !== moving.has(j.model.toTileId)).map(j => j.model.id).sort();
+          if (JSON.stringify(attached) !== JSON.stringify(transfer.earnedCrossConnectionIds)) failure ||= "Connected stabilization did not retain exactly the earned cross connections.";
+          if (!failure) current = mergePoses(current,await record(current,[]));
+          if (failure) { row.detail = failure; break; }
+          row.status = "pass"; row.detail = transfer.detail;
+          continue;
+        }
         if (operation.pickup) {
           const { height, hand } = operation.pickup;
           if (!Number.isFinite(height) || height <= 0 || height > .9 || !placed.has(hand.tileId) || support.length !== 1 || support[0] === hand.tileId) {
@@ -127,10 +192,10 @@ export async function evaluateAssembly(replica: Replica, deadline = Infinity): P
           }
           const prefix = subset(current,placed), tile = prefix.tiles.find(t => t.id === hand.tileId)!, q = tileQuaternion(tile);
           const lifted = await simulateHeldMotion(prefix,physicalState,[...placed],[hand], [
-            { seconds: 0,position: tile.position,rotation: q }, { seconds: 1,position: add(tile.position,{ x: 0,y: height,z: 0 }),rotation: q }],floorY,seed,deadline);
+            { seconds: 0,position: tile.position,rotation: q }, { seconds: 1,position: add(tile.position,{ x: 0,y: height,z: 0 }),rotation: q }],floorY,seed,deadline,components(prefix));
           const { settled,state,...summary } = lifted;
           row.pickup = summary;
-          row.timeline!.push({ phase: "pickup" });
+          row.timeline!.push({ phase: "pickup",activeConnectionIds: state?.joints.map(j=>j.model.id) });
           if (lifted.status !== "pass") { failure = row.detail = lifted.detail; break; }
           current = mergePoses(current,settled); physicalState = state;
           const handoff = checkHandAccess(subset(current,placed), { id: "handoff", movingTileIds: [hand.tileId], fixedTileIds: [...placed].filter(id => id !== hand.tileId),
@@ -145,7 +210,8 @@ export async function evaluateAssembly(replica: Replica, deadline = Infinity): P
           if (failure) { row.detail = failure; break; }
         }
         if (!operation.gravitySeat && placed.size) {
-          const docking = dockToSupports(nominal, current, operation.tileIds, [...placed], hands, floorY, deadline);
+          const present = subset(current,new Set([...operation.tileIds,...placed]));
+          const docking = dockToSupports(nominal, current, operation.tileIds, [...placed], hands, floorY, deadline,components(present));
           row.docking = { status: docking.status, detail: docking.detail, offset: docking.offset };
           if (docking.status !== "pass") { failure = row.detail = docking.detail; break; }
           current = docking.build;
@@ -168,30 +234,33 @@ export async function evaluateAssembly(replica: Replica, deadline = Infinity): P
           if (i) seconds += Math.max(.1, magnitude(add(offset, scale(path!.offsets[i-1],-1))) / 1.5);
           return { seconds, position: add(pickup.position, offset), rotation: tileQuaternion(pickup) };
         });
-        const carried = await simulateHeldMotion(airborne, physicalState, operation.tileIds, hands, waypoints, floorY, seed, deadline);
+        const carried = await simulateHeldMotion(airborne, physicalState, operation.tileIds, hands, waypoints, floorY, seed, deadline,components(airborne));
         const { settled: carriedPose, state: carriedState, ...carrySummary } = carried;
         row.carry = carrySummary;
-        row.timeline!.push({ phase: "carry" });
+        row.timeline!.push({ phase: "carry",activeConnectionIds: carriedState?.joints.map(j=>j.model.id) });
         if (carried.status !== "pass") { failure = row.detail = carried.detail; break; }
         physicalState = carriedState;
+        heldHands = hands;
         approach = mergePoses(approach, carriedPose);
         row.approachTiles = approach.tiles.filter(t => moving.has(t.id) || placed.has(t.id));
         current = mergePoses(current, { ...carriedPose, tiles: carriedPose.tiles.map(t => moving.has(t.id)
           ? { ...t, position: add(t.position, scale(releaseOffset,-1)) } : t) });
         if (operation.gravitySeat) {
-          const seated = await simulateGravitySeat(subset(current, new Set([...placed, ...moving])), operation.tileIds, hands,
-            operation.gravitySeat.releaseHeight, floorY, seed, deadline, physicalState);
+          const present = subset(current,new Set([...placed,...moving]));
+          const seated = await simulateGravitySeat(present, operation.tileIds, hands,
+            operation.gravitySeat.releaseHeight, floorY, seed, deadline, physicalState,operation.gravitySeat.placement,components(present));
           const { settled, state, ...summary } = seated;
           row.seating = summary;
-          row.timeline!.push({ phase: "seating" });
+          row.timeline!.push({ phase: "seating",activeConnectionIds: seated.activeJointIds.filter(id=>!seated.poppedJoints.includes(id)) });
           if (seated.path) row.path = seated.path;
           if (seated.motion.length) row.approachTiles = seated.motion[0].tiles;
           row.closure = { status: seated.status, detail: seated.detail };
           if (seated.status !== "pass") { failure = row.detail = seated.detail; break; }
           current = mergePoses(current, settled);
           physicalState = state;
+          heldHands = hands.filter(h => support.includes(h.tileId));
         } else {
-          row.closure = checkClosure(current, path);
+          row.closure = checkClosure(current, path,components(subset(current,new Set([...placed,...moving]))));
           if (row.closure.status !== "pass") { failure = row.detail = row.closure.detail; break; }
         }
         moving.forEach(id => placed.add(id));
@@ -203,12 +272,13 @@ export async function evaluateAssembly(replica: Replica, deadline = Infinity): P
           }
           const prefix = subset(current,placed), tile = prefix.tiles.find(t => t.id === hand.tileId)!, q = tileQuaternion(tile);
           const lowered = await simulateHeldMotion(prefix,physicalState,[...placed],[hand], [
-            { seconds: 0,position: tile.position,rotation: q }, { seconds: 1,position: add(tile.position,{ x: 0,y: -height,z: 0 }),rotation: q }],floorY,seed,deadline);
+            { seconds: 0,position: tile.position,rotation: q }, { seconds: 1,position: add(tile.position,{ x: 0,y: -height,z: 0 }),rotation: q }],floorY,seed,deadline,components(prefix));
           const { settled,state,...summary } = lowered;
           row.lowering = summary;
-          row.timeline!.push({ phase: "lowering" });
+          row.timeline!.push({ phase: "lowering",activeConnectionIds: state?.joints.map(j=>j.model.id) });
           if (lowered.status !== "pass") { failure = row.detail = lowered.detail; break; }
           current = mergePoses(current,settled); physicalState = state;
+          heldHands = [hand];
         }
         if (!failure && operation.releaseAfter)
           current = mergePoses(current, await record(subset(current, placed), []));
@@ -221,20 +291,25 @@ export async function evaluateAssembly(replica: Replica, deadline = Infinity): P
       // Includes release-only checkpoints which add no new parts. Reusing a held
       // module must never skip its first unsupported release.
       if (stage.support === "released") {
-        const { settled, state, ...checkpoint } = await simulateSupport(subset(current, placed), [], floorY, seed, deadline, physicalState, []);
+        const present = subset(current,placed);
+        const { settled, state, ...checkpoint } = await simulateSupport(present, [], floorY, seed, deadline, physicalState, [],components(present));
         result.checkpoints.push(checkpoint);
-        const closure = contactsClosed(settled);
+        const closure = componentContacts(settled,components(settled));
         if (checkpoint.status !== "pass" || closure.status !== "pass") {
           failures.push(`Seed ${seed}: ${checkpoint.status !== "pass" ? checkpoint.detail : closure.detail}`); continue;
         }
         current = mergePoses(current, settled);
         physicalState = state;
+        heldHands = [];
       }
-      states.set(seed, { build: subset(current, placed), floorY, state: physicalState });
+      if (!physicalState) { failures.push(`Seed ${seed}: No terminal physical state.`); continue; }
+      states.push({ id: `${stage.id}:${seed}`,stageId: stage.id,seed,predecessorId: predecessor?.id,
+        lineage: predecessor ? [...predecessor.lineage,predecessor.id] : [],floorY,constructionOffset: offset,
+        build: subset(current,placed),state: physicalState,hands: heldHands,components: components(subset(current,placed)) ?? [[...placed]] });
     }
     result.status = failures.length ? "fail" : "pass";
     result.detail = failures.join(" ") || "All operations passed with three perturbation seeds, at most two panel grips and mandatory free checkpoints. Fingertip-proxy simulation only; measured human grip and physical magnetic forces remain unverified.";
-    if (!failures.length) prepared.set(stage.id, states);
+    if (!failures.length) prepared.push(...states);
   }
   return results;
 }

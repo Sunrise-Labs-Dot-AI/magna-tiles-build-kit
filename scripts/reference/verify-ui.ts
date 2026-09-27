@@ -97,8 +97,25 @@ async function main() {
     const seatedFrame = await page.locator("canvas").screenshot();
     if (raisedFrame.equals(seatedFrame)) throw Error("Recorded gravity motion did not change the rendered pose.");
     const seatedLabels = await page.locator(".design-piece-label").allTextContents();
-    if (seatedLabels.length !== 1 || seatedLabels[0] !== "P7") throw Error(`Gravity placement shows future parts: ${seatedLabels}`);
+    if (seatedLabels.length !== 6 || !["P1","P2","P3","P4","P5","P7"].every(id=>seatedLabels.includes(id)))
+      throw Error(`Gravity placement lost its existing workspace or shows future parts: ${seatedLabels}`);
     await page.screenshot({ path: "verification/replication/ui/small-launch-placement.png", fullPage: true });
+    await page.getByLabel("Construction checkpoint").selectOption("2");
+    await page.getByLabel("Part insertion preview").selectOption("0");
+    const transferSlider=page.getByRole("slider",{name:/Recorded assembly motion/});
+    await transferSlider.fill("0");
+    await ready();
+    await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
+    const transferStart=await page.locator("canvas").screenshot();
+    const transferLabels=await page.locator(".design-piece-label").allTextContents();
+    if(transferLabels.length!==9) throw Error(`Prepared workspace lost parts: ${transferLabels}`);
+    await page.screenshot({path:"verification/replication/ui/small-transfer-start.png",fullPage:true});
+    await transferSlider.fill("100");
+    await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
+    if(transferStart.equals(await page.locator("canvas").screenshot())) throw Error("Prepared transfer did not replay actual movement.");
+    if(!(await page.getByLabel("Complete assembly check").textContent())?.includes("0/90"))
+      throw Error("The failed final free release is not visible.");
+    await page.screenshot({path:"verification/replication/ui/small-transfer-release.png",fullPage:true});
     await page.getByRole("button", { name: /3D snail/ }).click();
     await page.getByRole("heading", { name: /original 3D snail/ }).waitFor();
     await page.setViewportSize({ width: 390, height: 844 });
@@ -121,6 +138,7 @@ async function main() {
       insertionPreview: { labels: insertionLabels, keyboardStartEnd: true, resetsAtNextStage: true },
       gravityPreview: { labels: seatedLabels, recordedFramesDiffer: true, launchAssemblyPassed: true },
       pickupPreview: { labels: pickupLabels, terminalLabels: wedgeEndLabels, recordedFramesDiffer: true },
+      transferPreview: {labels:transferLabels,recordedFramesDiffer:true,failedFreeReleaseVisible:true},
       mobileOverflow: overflow,
       pageErrors: errors,
     };

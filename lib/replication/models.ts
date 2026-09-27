@@ -184,13 +184,14 @@ export function smallRamp(): Replica {
       },
       {
         stageId: "small-launch",
+        workspace: { afterStageId: "small-wedge", offset: v(0,0,6) },
         operations: ["launch-back", "launch-roof", "launch-side--1", "launch-side-1"]
           .map((id, i) => ({ tileIds: [id], hands: i >= 2 ? [grip(id), grip("launch-roof")] : [grip(id)],
-            ...(i === 0 ? { gravitySeat: { releaseHeight: 0.55 }, releaseAfter: true } : {}) })),
+            ...(i === 0 ? { gravitySeat: { releaseHeight: 0.55, placement: "table" as const }, releaseAfter: true } : {}) })),
       },
       {
         stageId: "small-final",
-        operations: [{ tileIds: tiles.filter(t => t.step === 2).map(t => t.id), preparedStageId: "small-launch", hands: [grip("launch-roof")] }],
+        operations: [{ tileIds: tiles.filter(t => t.step === 2).map(t => t.id), preparedStageId: "small-launch", transfer: { transitHeight: 6.5 }, hands: [grip("launch-side-1")], releaseAfter: true }],
       },
     ],
     stages: [
@@ -276,6 +277,13 @@ export function smallRamp(): Replica {
         operation.hands![1]?.tileId, buildBounds(snapshot.tiles).min.y) ?? operation.hands;
     }
   }
+  // Keep the final side-panel grip through the module transfer. Withdraw fingers
+  // sideways before moving away from the edge, clearing the installed wedge.
+  const launchLast = replica.construction![1].operations.at(-1)!;
+  const sideCarry = launchLast.hands!.find(h => h.tileId === "launch-side-1")!;
+  const edgeClearance = scale(sideCarry.localOutward,.5);
+  sideCarry.approachOffsets = [add(edgeClearance,v(0,0,2.4)),edgeClearance,v(0,0,0)];
+  replica.construction![2].operations[0].hands = [structuredClone(sideCarry)];
   const wedgeOps = replica.construction![0].operations;
   const upper = tiles.find(t => t.id === "small-deck-2")!, lower = tiles.find(t => t.id === "small-deck-1")!;
   const side = tiles.find(t => t.id === "small-side-1")!;

@@ -3,7 +3,7 @@ import { MAX_STANDING_DISPLACEMENT } from "@/lib/engine/constants";
 import { buildBounds } from "@/lib/engine/build";
 import { RAW_OVERLAP_TOLERANCE } from "@/lib/engine/overlap";
 import type { BuildGraph, Vec3 } from "@/lib/magnetic-tiles/types";
-import { contactsClosed } from "./contacts";
+import { componentContacts } from "./components";
 import { checkHandAccess, type HandContact } from "./grip";
 import { findInsertionPath, type InsertionPath } from "./insertion";
 import type { Check } from "./types";
@@ -13,7 +13,7 @@ export interface DockingResult extends Check { offset: Vec3; build: BuildGraph; 
 /** Align only the incoming part to its actual installed neighbors. This is a
  * bounded physical pose proposal, independent of source pixels. Every candidate
  * must pass the existing solid, contact, insertion, grip and fixed-floor checks. */
-export function dockToSupports(nominal: BuildGraph, actual: BuildGraph, movingIds: string[], installedIds: string[], hands: HandContact[], floorY: number, deadline = Infinity): DockingResult {
+export function dockToSupports(nominal: BuildGraph, actual: BuildGraph, movingIds: string[], installedIds: string[], hands: HandContact[], floorY: number, deadline = Infinity, components?: string[][]): DockingResult {
   const moving = new Set(movingIds), installed = new Set(installedIds), present = new Set([...movingIds,...installedIds]);
   const neighbors = new Set(actual.connections.flatMap(c => moving.has(c.fromTileId) && installed.has(c.toTileId) ? [c.toTileId]
     : moving.has(c.toTileId) && installed.has(c.fromTileId) ? [c.fromTileId] : []));
@@ -28,7 +28,7 @@ export function dockToSupports(nominal: BuildGraph, actual: BuildGraph, movingId
     const build = { ...actual, tiles: actual.tiles.map(t => moving.has(t.id) ? { ...t, position: add(t.position,offset) } : t) };
     const placed = { ...build, tiles: build.tiles.filter(t => present.has(t.id)), connections: build.connections.filter(c => present.has(c.fromTileId) && present.has(c.toTileId)) };
     if (buildBounds(placed.tiles).min.y < floorY-RAW_OVERLAP_TOLERANCE) { detail = "Docked parts intersect the fixed table; an actual support lift is required."; continue; }
-    const closure = contactsClosed(placed);
+    const closure = componentContacts(placed,components);
     if (closure.status !== "pass") { detail = closure.detail; continue; }
     const path = findInsertionPath(build,movingIds,installedIds,deadline,floorY);
     if (!path) { detail = "Docked pose has no clear insertion."; continue; }

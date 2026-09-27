@@ -119,7 +119,7 @@ function Candidate({
     insertion = operation?.path ?? construction?.paths[insertionIndex],
     checkpointBuild = stage ? stageBuild(replica, stage) : replica.build,
     recorded = operation && (operation.timeline?.length || operation.pickup?.motion.length || operation.carry?.motion.length || (operation.approachTiles && operation.path)) ? operation : undefined,
-    build = recorded ? assemblyOperationPreview(checkpointBuild, recorded, insertionProgress / 100)
+    build = recorded ? assemblyOperationPreview(replica.build, recorded, insertionProgress / 100)
       : insertion ? insertionPreview(checkpointBuild, insertion, insertionProgress / 100) : checkpointBuild;
   const framingTiles = recorded ? [assemblyOperationPreview(checkpointBuild, recorded, 0).tiles,
     recorded.approachTiles ?? [], ...[recorded.pickup,recorded.carry,recorded.seating,recorded.lowering,...recorded.trials].flatMap(p => p?.motion?.map(f => f.tiles) ?? [])].flat()

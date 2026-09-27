@@ -1,5 +1,5 @@
 {
-  "validationCodeHash": "935f1ad054f9ccc6532fbf86f0f8b59375287069da7bd7165ae3a4e2b6b1a6b9",
+  "validationCodeHash": "e451d061b1843a258e6aeaf6e44d58be25e907c4015a5bb6df92bdd9bdd01b48",
   "scope": "Numerical rigid-contact convergence only. Independent catalog flat/base-load fixtures; no source-derived geometry or physical material calibration.",
   "versions": {
     "javascript": "rapier3d-compat 0.19.2",
