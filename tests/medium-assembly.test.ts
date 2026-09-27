@@ -5,9 +5,9 @@ import { sameHandContact } from "@/lib/replication/grip";
 import { MAX_STANDING_DISPLACEMENT } from "@/lib/engine/constants";
 
 describe("medium ramp construction",()=>{
-  it("constructs both wedges and support, transfers the upper and relocates the lower in one workspace",async()=>{
+  it("constructs both wedges and support, places them and joins the blue turn in one workspace",async()=>{
     const replica=mediumRamp(),before=structuredClone(replica);
-    const [lower,upper,support,transfer,placement,...remaining]=await evaluateAssembly(replica);
+    const [lower,upper,support,transfer,placement,bridge,...remaining]=await evaluateAssembly(replica);
     expect([lower,upper,support,transfer].map(stage=>stage.stageId)).toEqual([
       "medium-lower","medium-upper-preparation","medium-support","medium-upper-transfer",
     ]);
@@ -139,12 +139,33 @@ describe("medium ramp construction",()=>{
         expect(Math.hypot(delta.x-mean.x,delta.z-mean.z)).toBeLessThan(MAX_STANDING_DISPLACEMENT);
       }
     }
-    expect(remaining).toHaveLength(6);
+    expect(bridge.stageId).toBe("medium-turn");expect(bridge.status,bridge.detail).toBe("pass");
+    expect(bridge.rejectedAttempts).toEqual([]);expect(bridge.operations).toHaveLength(3);expect(bridge.checkpoints).toHaveLength(3);
+    for(const [index,row] of bridge.operations.entries()){
+      expect(row.status,row.detail).toBe("pass");expect(row.tileIds).toEqual(["turn-floor"]);
+      expect(row.bridge!.introduction!.bodyIdsBefore).toHaveLength(13);
+      expect(row.bridge!.introduction!.bodyIdsAfter).toHaveLength(14);
+      expect(row.bridge!.activeJointIdsBeforeClosure).toEqual([...placement.terminalConnections![index].connectionIds].sort());
+      expect(row.bridge!.earnedConnectionIds).toHaveLength(2);
+      expect(row.bridge!.earnedConnectionIds.every(id=>id.includes("turn-floor")&&(id.includes("upper-deck-1")||id.includes("lower-deck-2")))).toBe(true);
+      expect(row.bridge!.earnedComponentGroups.map(g=>g.length)).toEqual([14]);
+      expect(row.carry!.completion).toBe("contact-arrival");
+      expect(row.carry!.motion.every(frame=>frame.tiles.length===14)).toBe(true);
+      expect(row.carry!.separationCheckpoint!.separations.every(pair=>pair.gap>0)).toBe(true);
+      expect(row.trials.at(-1)!.heldTileIds).toEqual([]);
+      const checkpoint=bridge.checkpoints[index];
+      expect(checkpoint.status,checkpoint.detail).toBe("pass");expect(checkpoint.dynamicTileCount).toBe(14);
+      expect(checkpoint.heldTileIds).toEqual([]);expect(checkpoint.poppedJoints).toEqual([]);expect(checkpoint.solidFailures).toEqual([]);
+      expect(bridge.terminalConnections![index].connectionIds.sort()).toEqual([
+        ...placement.terminalConnections![index].connectionIds,...row.bridge!.earnedConnectionIds,
+      ].sort());
+    }
+    expect(remaining).toHaveLength(5);
     expect(remaining.every(stage=>stage.status==="unverified")).toBe(true);
     expect(replica).toEqual(before);
     expect(replica.build.tiles).toHaveLength(37);
     expect(replica.stages[0].constructionEvidence).toBeUndefined();
-  // Five stages include continuous upper transfer and lower table relocation.
+  // Six stages include continuous upper transfer, lower relocation and one bridge.
   // A measured full run takes 951 seconds; allow 20 minutes of computation.
   // Simulated durations, rest thresholds and physical limits are unchanged.
   },1200000);

@@ -930,13 +930,13 @@ export function mediumRamp(): Replica {
       installedStageIds:["medium-support","medium-upper-preparation"],
       constructionEvidence:[{claim:"The lower wedge is repositioned after upper placement and before blue-turn attachment; the exact grip, path and preparation position are proposed, not observed.",frameIds:["medium-lower-placement"]}],
     },
-    stage(
+    {...stage(
       "medium-turn",
       "medium-turn",
       "Join the triangular turn",
-      "After the lower wedge has been positioned, join the blue equilateral turn between the upper exit and lower entrance. This insertion and its joins still need their own continuous assembly check; the preceding upper transfer does not verify this step.",
+      "Proposed procedure: grip the free blue edge and approach both the upper exit and lower entrance with the installed pieces left in their actual released positions. Join only after both named edges reach contact, then withdraw the hand and check free rest. This checks the 14-panel construction stage; the complete 37-panel source shape and remaining assembly require separate verification. The grip and approach are simulation proposals.",
       prefix(tiles, 4),
-    ),
+    ),installedStageIds:["medium-lower-placement"]},
   ];
   for (const [n, id, frame, title] of [
     [5, "medium-lower-walls", "medium-fit", "Add the lower triangular walls"],
@@ -964,11 +964,12 @@ export function mediumRamp(): Replica {
         prefix(tiles, n),
       ),
     );
+  const build=assemble("replica-medium", "Henry's medium ramp", tiles, "ramp");
   return {
     id: "medium-ramp",
     sourceId: "henry",
     title: "Henry's medium ramp · 37-piece candidate",
-    build: assemble("replica-medium", "Henry's medium ramp", tiles, "ramp"),
+    build,
     inventory: inventory(15, 18, 0, 4),
     bomFrameId: "medium-bom",
     stages,
@@ -982,7 +983,9 @@ export function mediumRamp(): Replica {
         transfer:{afterStageId:"medium-support",transitHeight:9},hands:[structuredClone(upperOperations.at(-1)!.hands![1])],releaseAfter:true}]},
       {stageId:"medium-lower-placement",operations:[{tileIds:lower.map(t=>t.id),preparedStageId:"medium-lower",
         transfer:{placement:"table",afterStageId:"medium-upper-transfer",transitHeight:3,releaseHeight:.3},
-        hands:[structuredClone(lowerOperations.at(-1)!.hands![1])],releaseAfter:true}]}],
+        hands:[structuredClone(lowerOperations.at(-1)!.hands![1])],releaseAfter:true}]},
+      {stageId:"medium-turn",operations:[{tileIds:["turn-floor"],hands:[edgeGrips(tiles.find(t=>t.id==="turn-floor")!)[2]],releaseAfter:true,
+        bridgeInsertion:{afterStageId:"medium-lower-placement",connections:build.connections.filter(c=>c.fromTileId==="turn-floor"||c.toTileId==="turn-floor")}}]}],
     materialQuestions: [
       "Source isosceles dimensions and magnets are uncalibrated; the simulated vehicle is an assumed proxy.",
     ],

@@ -425,7 +425,7 @@
         },
         "assembly": {
           "status": "fail",
-          "detail": "5/11 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. medium-turn: No per-part insertion sequence has been supplied. medium-lower-walls: No per-part insertion sequence has been supplied. medium-lower-cover: No per-part insertion sequence has been supplied. medium-turn-cover: No per-part insertion sequence has been supplied. medium-upper-cover: No per-part insertion sequence has been supplied. medium-final: No per-part insertion sequence has been supplied. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
+          "detail": "6/11 complete stage assemblies pass the grip, insertion, closure and intermediate support simulation. medium-lower-walls: No per-part insertion sequence has been supplied. medium-lower-cover: No per-part insertion sequence has been supplied. medium-turn-cover: No per-part insertion sequence has been supplied. medium-upper-cover: No per-part insertion sequence has been supplied. medium-final: No per-part insertion sequence has been supplied. Fingertip geometry and individual-panel clamps are explicit proxies; physical grip and force validation remain separate."
         },
         "function": {
           "status": "fail",
@@ -433,7 +433,7 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "782a346a2d4a662a05b28ea67d7cea10744c10c29bba45b06adec9d94d89b108",
+      "fingerprint": "28c8ceacc4934921f61e2b97de299e02594faf812e011fbab6d2f36ca97e4284",
       "stages": [
         {
           "id": "medium-lower",

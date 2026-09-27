@@ -12,6 +12,8 @@ export interface ConstructionStage {
     /** Explicit table-relative transit height for a previously constructed module. */
     transfer?: { transitHeight: number; /** Latest complete workspace, distinct from module identity. */ afterStageId?: string } &
       ({ placement?: "magnetic"; releaseHeight?: never } | { placement: "table"; releaseHeight: number });
+    /** One new panel closes named edges to multiple existing components. */
+    bridgeInsertion?: { afterStageId: string; connections: import("@/lib/magnetic-tiles/types").MagneticConnection[] };
     /** Omitted means no hand evidence, never automatic support of all tiles. */
     hands?: import("./grip").HandContact[];
     /** All hands removed after this insertion. Stage releases are mandatory too. */

@@ -1,0 +1,23 @@
+**Verdict:** VALIDATE, not CLEAN. The old-to-old nominal joint injection risk is real, and the plan’s preservation rule is the right direction, but it needs two sharper acceptance points before implementation.
+
+**Findings**
+
+1. **CRITICAL: ordinary one-component continuation can resurrect nominal old-to-old joints.**
+   In [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:185), `current` starts from nominal. The predecessor poses and connections are merged at [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:195), but `current.connections = aligned.connections` only happens for transfers, bridges, or multi-component predecessors at [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:212). For an ordinary connected prefix, nominal extra old-to-old edges survive. `validateContinuation` rejects omitted saved connections but not extra graph connections at [rapier-world.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts:407), and `createEngineWorld` will add non-saved valid model joints at [rapier-world.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts:149).
+   **Action:** make every dependency continuation start from actual predecessor connections for all old-old edges, not only bridge/transfer paths. Add a regression where a connected released prefix has one unearned nominal old-old edge and the next ordinary one-panel insertion proves introduction, carry, support, free release, and terminal connections retain only actual old joints plus earned incident new joints.
+
+2. **WARNING: the preservation rule should explicitly cover future-future and future-old graph filtering at each operation boundary.**
+   The plan says future-panel nominal connections stay proposals until accounted for, which is correct. The current runner still often uses full `nominal/current` as a target, while motion/support generally subset to `placed + moving` at [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:411). Docking filters to present for closure but calls `findHandInsertionPath(build, ...)` on the full build at [docking.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/docking.ts:50).
+   **Action:** add a negative fixture with extra future wall/roof panels and future nominal connections in the stage graph. The test should fail if unplaced panels affect pathing, physics input, active joints, terminal connections, or previews.
+
+3. **WARNING: source-stage alignment is correctly cautious, but acceptance should require operation boundaries to match observed stage boundaries.**
+   The actual model has `medium-lower-walls` as eight wall triangles and `medium-lower-cover` as two roof squares at [models.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/models.ts:941), with no construction operations yet beyond `medium-turn` at [models.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/models.ts:976).
+   **Action:** if wall and roof motions must interleave for stability, change stage definitions/evidence wording instead of forcing an all-walls checkpoint. Do not call an interleaved build the observed `medium-fit` object without source evidence.
+
+**Validated Points**
+
+- Grip/support physics language matches the current runtime: at most two held panels, one moving grip, ungripped bodies dynamic in support and held motion at [support.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/support.ts:39) and [held-motion.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/held-motion.ts:39).
+- The static canopy preflight is properly scoped as static only, no dynamic or source-fidelity credit.
+- Existing medium tests already prove the 14-panel bridge terminal has 18 actual joints and keeps the lower/support nominal proposal unearned, but they do not cover the next ordinary connected-prefix injection case.
+
+I did not run tests or modify files, per the no-writes and frozen-runtime constraint.

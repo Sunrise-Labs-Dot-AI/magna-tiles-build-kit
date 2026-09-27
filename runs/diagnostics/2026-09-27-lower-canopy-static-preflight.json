@@ -1,0 +1,2072 @@
+{
+  "scope": "Static first-lower-canopy-panel proposals against the actual 14-panel released bridge states. No panel or joint introduced, no support or assembly pass, no new source fidelity credit.",
+  "seeds": [
+    {
+      "seed": 0,
+      "panels": [
+        {
+          "tileId": "lower-wall--1-1",
+          "edges": [
+            {
+              "fromTileId": "lower-deck-1",
+              "fromEdge": 0,
+              "toTileId": "lower-wall--1-1",
+              "toEdge": 0,
+              "kind": "edge"
+            },
+            {
+              "fromTileId": "lower-side--1",
+              "fromEdge": 1,
+              "toTileId": "lower-wall--1-1",
+              "toEdge": 0,
+              "kind": "edge"
+            }
+          ],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Docked parts intersect the fixed table; an actual support lift is required. Docked pose has no insertion that clears both solids and fingertips. Docking target has invalid or excessive incoming-versus-installed solid penetration. Docking target has invalid or excessive incoming-versus-installed solid penetration.",
+              "offset": {
+                "x": -0.0064463286366518435,
+                "y": -0.04181259821882283,
+                "z": 0.03445437477050295
+              }
+            },
+            {
+              "index": 1,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.0064463286366518435,
+                "y": -0.011812598218822828,
+                "z": 0.00445437477050295
+              },
+              "path": {
+                "id": "insert-lower-wall--1-1",
+                "movingTileIds": [
+                  "lower-wall--1-1"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.360485955831754,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-1:0->lower-wall--1-1:0",
+                  "lower-side--1:1->lower-wall--1-1:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            },
+            {
+              "index": 2,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.0064463286366518435,
+                "y": -0.011812598218822828,
+                "z": 0.00445437477050295
+              },
+              "path": {
+                "id": "insert-lower-wall--1-1",
+                "movingTileIds": [
+                  "lower-wall--1-1"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.360485955831754,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-1:0->lower-wall--1-1:0",
+                  "lower-side--1:1->lower-wall--1-1:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall--1-2",
+          "edges": [],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall--1-2. Contact closure rejected: disconnected-tile:lower-wall--1-2.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 1,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall--1-2. Contact closure rejected: disconnected-tile:lower-wall--1-2.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 2,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall--1-2. Contact closure rejected: disconnected-tile:lower-wall--1-2.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall--1-3",
+          "edges": [
+            {
+              "fromTileId": "lower-deck-2",
+              "fromEdge": 0,
+              "toTileId": "lower-wall--1-3",
+              "toEdge": 0,
+              "kind": "edge"
+            },
+            {
+              "fromTileId": "lower-side--1",
+              "fromEdge": 1,
+              "toTileId": "lower-wall--1-3",
+              "toEdge": 0,
+              "kind": "edge"
+            }
+          ],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Docked pose has no insertion that clears both solids and fingertips. Edges do not close at lower-side--1:1->lower-wall--1-3:0: transverse gap 0.028 in, overlap 2.777 in. Docking target has invalid or excessive incoming-versus-installed solid penetration. Edges do not close at lower-side--1:1->lower-wall--1-3:0: transverse gap 0.030 in, overlap 2.777 in. Docking target has invalid or excessive incoming-versus-installed solid penetration.",
+              "offset": {
+                "x": 0.01568260571115676,
+                "y": -0.0692778265039613,
+                "z": 0.03442989317038159
+              }
+            },
+            {
+              "index": 1,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.014317394288843238,
+                "y": -0.0692778265039613,
+                "z": 0.004429893170381588
+              },
+              "path": {
+                "id": "insert-lower-wall--1-3",
+                "movingTileIds": [
+                  "lower-wall--1-3"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.360485955831754,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-2:0->lower-wall--1-3:0",
+                  "lower-side--1:1->lower-wall--1-3:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            },
+            {
+              "index": 2,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.014317394288843238,
+                "y": -0.0692778265039613,
+                "z": 0.004429893170381588
+              },
+              "path": {
+                "id": "insert-lower-wall--1-3",
+                "movingTileIds": [
+                  "lower-wall--1-3"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.360485955831754,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-2:0->lower-wall--1-3:0",
+                  "lower-side--1:1->lower-wall--1-3:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall--1-4",
+          "edges": [],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall--1-4. Contact closure rejected: disconnected-tile:lower-wall--1-4.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 1,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall--1-4. Contact closure rejected: disconnected-tile:lower-wall--1-4.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 2,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall--1-4. Contact closure rejected: disconnected-tile:lower-wall--1-4.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall-1-1",
+          "edges": [
+            {
+              "fromTileId": "lower-deck-1",
+              "fromEdge": 2,
+              "toTileId": "lower-wall-1-1",
+              "toEdge": 0,
+              "kind": "edge"
+            },
+            {
+              "fromTileId": "lower-side-1",
+              "fromEdge": 1,
+              "toTileId": "lower-wall-1-1",
+              "toEdge": 0,
+              "kind": "edge"
+            }
+          ],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Docked parts intersect the fixed table; an actual support lift is required. Docked pose has no insertion that clears both solids and fingertips. Docking target has invalid or excessive incoming-versus-installed solid penetration. Docking target has invalid or excessive incoming-versus-installed solid penetration.",
+              "offset": {
+                "x": -0.006416168686395496,
+                "y": -0.041795938720608106,
+                "z": -0.034443554421086486
+              }
+            },
+            {
+              "index": 1,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.006416168686395496,
+                "y": -0.011795938720608107,
+                "z": -0.0044435544210864875
+              },
+              "path": {
+                "id": "insert-lower-wall-1-1",
+                "movingTileIds": [
+                  "lower-wall-1-1"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.360485955831754,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-1:2->lower-wall-1-1:0",
+                  "lower-side-1:1->lower-wall-1-1:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            },
+            {
+              "index": 2,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.006416168686395496,
+                "y": -0.011795938720608107,
+                "z": -0.0044435544210864875
+              },
+              "path": {
+                "id": "insert-lower-wall-1-1",
+                "movingTileIds": [
+                  "lower-wall-1-1"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.360485955831754,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-1:2->lower-wall-1-1:0",
+                  "lower-side-1:1->lower-wall-1-1:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall-1-2",
+          "edges": [],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall-1-2. Contact closure rejected: disconnected-tile:lower-wall-1-2.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 1,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall-1-2. Contact closure rejected: disconnected-tile:lower-wall-1-2.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 2,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall-1-2. Contact closure rejected: disconnected-tile:lower-wall-1-2.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall-1-3",
+          "edges": [
+            {
+              "fromTileId": "lower-deck-2",
+              "fromEdge": 2,
+              "toTileId": "lower-wall-1-3",
+              "toEdge": 0,
+              "kind": "edge"
+            },
+            {
+              "fromTileId": "lower-side-1",
+              "fromEdge": 1,
+              "toTileId": "lower-wall-1-3",
+              "toEdge": 0,
+              "kind": "edge"
+            }
+          ],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Docked pose has no insertion that clears both solids and fingertips. Edges do not close at lower-side-1:1->lower-wall-1-3:0: transverse gap 0.028 in, overlap 2.777 in. Docking target has invalid or excessive incoming-versus-installed solid penetration. Edges do not close at lower-side-1:1->lower-wall-1-3:0: transverse gap 0.030 in, overlap 2.777 in. Docking target has invalid or excessive incoming-versus-installed solid penetration.",
+              "offset": {
+                "x": 0.01571276566141311,
+                "y": -0.06926116700574658,
+                "z": -0.03446803602120785
+              }
+            },
+            {
+              "index": 1,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.01428723433858689,
+                "y": -0.06926116700574658,
+                "z": -0.00446803602120785
+              },
+              "path": {
+                "id": "insert-lower-wall-1-3",
+                "movingTileIds": [
+                  "lower-wall-1-3"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.360485955831754,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-2:2->lower-wall-1-3:0",
+                  "lower-side-1:1->lower-wall-1-3:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            },
+            {
+              "index": 2,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.01428723433858689,
+                "y": -0.06926116700574658,
+                "z": -0.00446803602120785
+              },
+              "path": {
+                "id": "insert-lower-wall-1-3",
+                "movingTileIds": [
+                  "lower-wall-1-3"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.360485955831754,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-2:2->lower-wall-1-3:0",
+                  "lower-side-1:1->lower-wall-1-3:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall-1-4",
+          "edges": [],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall-1-4. Contact closure rejected: disconnected-tile:lower-wall-1-4.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 1,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall-1-4. Contact closure rejected: disconnected-tile:lower-wall-1-4.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 2,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall-1-4. Contact closure rejected: disconnected-tile:lower-wall-1-4.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 17,
+      "panels": [
+        {
+          "tileId": "lower-wall--1-1",
+          "edges": [
+            {
+              "fromTileId": "lower-deck-1",
+              "fromEdge": 0,
+              "toTileId": "lower-wall--1-1",
+              "toEdge": 0,
+              "kind": "edge"
+            },
+            {
+              "fromTileId": "lower-side--1",
+              "fromEdge": 1,
+              "toTileId": "lower-wall--1-1",
+              "toEdge": 0,
+              "kind": "edge"
+            }
+          ],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Docked parts intersect the fixed table; an actual support lift is required. Docked pose has no insertion that clears both solids and fingertips. Docking target has invalid or excessive incoming-versus-installed solid penetration. Docking target has invalid or excessive incoming-versus-installed solid penetration.",
+              "offset": {
+                "x": -0.0064376263585146365,
+                "y": -0.04168760727872883,
+                "z": 0.03442867160349128
+              }
+            },
+            {
+              "index": 1,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.0064376263585146365,
+                "y": -0.011687607278728834,
+                "z": 0.00442867160349128
+              },
+              "path": {
+                "id": "insert-lower-wall--1-1",
+                "movingTileIds": [
+                  "lower-wall--1-1"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.357070512283478,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-1:0->lower-wall--1-1:0",
+                  "lower-side--1:1->lower-wall--1-1:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            },
+            {
+              "index": 2,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.0064376263585146365,
+                "y": -0.011687607278728834,
+                "z": 0.00442867160349128
+              },
+              "path": {
+                "id": "insert-lower-wall--1-1",
+                "movingTileIds": [
+                  "lower-wall--1-1"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.357070512283478,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-1:0->lower-wall--1-1:0",
+                  "lower-side--1:1->lower-wall--1-1:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall--1-2",
+          "edges": [],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall--1-2. Contact closure rejected: disconnected-tile:lower-wall--1-2.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 1,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall--1-2. Contact closure rejected: disconnected-tile:lower-wall--1-2.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 2,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall--1-2. Contact closure rejected: disconnected-tile:lower-wall--1-2.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall--1-3",
+          "edges": [
+            {
+              "fromTileId": "lower-deck-2",
+              "fromEdge": 0,
+              "toTileId": "lower-wall--1-3",
+              "toEdge": 0,
+              "kind": "edge"
+            },
+            {
+              "fromTileId": "lower-side--1",
+              "fromEdge": 1,
+              "toTileId": "lower-wall--1-3",
+              "toEdge": 0,
+              "kind": "edge"
+            }
+          ],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Docked pose has no insertion that clears both solids and fingertips. Edges do not close at lower-side--1:1->lower-wall--1-3:0: transverse gap 0.028 in, overlap 2.777 in. Docking target has invalid or excessive incoming-versus-installed solid penetration. Edges do not close at lower-side--1:1->lower-wall--1-3:0: transverse gap 0.030 in, overlap 2.777 in. Docking target has invalid or excessive incoming-versus-installed solid penetration.",
+              "offset": {
+                "x": 0.01569762608164016,
+                "y": -0.0691637730161836,
+                "z": 0.034412361998802266
+              }
+            },
+            {
+              "index": 1,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.01430237391835984,
+                "y": -0.0691637730161836,
+                "z": 0.004412361998802267
+              },
+              "path": {
+                "id": "insert-lower-wall--1-3",
+                "movingTileIds": [
+                  "lower-wall--1-3"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.357070512283478,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-2:0->lower-wall--1-3:0",
+                  "lower-side--1:1->lower-wall--1-3:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            },
+            {
+              "index": 2,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.01430237391835984,
+                "y": -0.0691637730161836,
+                "z": 0.004412361998802267
+              },
+              "path": {
+                "id": "insert-lower-wall--1-3",
+                "movingTileIds": [
+                  "lower-wall--1-3"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.357070512283478,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-2:0->lower-wall--1-3:0",
+                  "lower-side--1:1->lower-wall--1-3:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall--1-4",
+          "edges": [],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall--1-4. Contact closure rejected: disconnected-tile:lower-wall--1-4.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 1,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall--1-4. Contact closure rejected: disconnected-tile:lower-wall--1-4.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 2,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall--1-4. Contact closure rejected: disconnected-tile:lower-wall--1-4.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall-1-1",
+          "edges": [
+            {
+              "fromTileId": "lower-deck-1",
+              "fromEdge": 2,
+              "toTileId": "lower-wall-1-1",
+              "toEdge": 0,
+              "kind": "edge"
+            },
+            {
+              "fromTileId": "lower-side-1",
+              "fromEdge": 1,
+              "toTileId": "lower-wall-1-1",
+              "toEdge": 0,
+              "kind": "edge"
+            }
+          ],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Docked parts intersect the fixed table; an actual support lift is required. Docked pose has no insertion that clears both solids and fingertips. Docking target has invalid or excessive incoming-versus-installed solid penetration. Docking target has invalid or excessive incoming-versus-installed solid penetration.",
+              "offset": {
+                "x": -0.0064261822667177615,
+                "y": -0.04165613602628743,
+                "z": -0.034461151356408704
+              }
+            },
+            {
+              "index": 1,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.0064261822667177615,
+                "y": -0.011656136026287428,
+                "z": -0.004461151356408705
+              },
+              "path": {
+                "id": "insert-lower-wall-1-1",
+                "movingTileIds": [
+                  "lower-wall-1-1"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.357070512283478,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-1:2->lower-wall-1-1:0",
+                  "lower-side-1:1->lower-wall-1-1:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            },
+            {
+              "index": 2,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.0064261822667177615,
+                "y": -0.011656136026287428,
+                "z": -0.004461151356408705
+              },
+              "path": {
+                "id": "insert-lower-wall-1-1",
+                "movingTileIds": [
+                  "lower-wall-1-1"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.357070512283478,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-1:2->lower-wall-1-1:0",
+                  "lower-side-1:1->lower-wall-1-1:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall-1-2",
+          "edges": [],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall-1-2. Contact closure rejected: disconnected-tile:lower-wall-1-2.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 1,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall-1-2. Contact closure rejected: disconnected-tile:lower-wall-1-2.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 2,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall-1-2. Contact closure rejected: disconnected-tile:lower-wall-1-2.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall-1-3",
+          "edges": [
+            {
+              "fromTileId": "lower-deck-2",
+              "fromEdge": 2,
+              "toTileId": "lower-wall-1-3",
+              "toEdge": 0,
+              "kind": "edge"
+            },
+            {
+              "fromTileId": "lower-side-1",
+              "fromEdge": 1,
+              "toTileId": "lower-wall-1-3",
+              "toEdge": 0,
+              "kind": "edge"
+            }
+          ],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Docked pose has no insertion that clears both solids and fingertips. Edges do not close at lower-side-1:1->lower-wall-1-3:0: transverse gap 0.028 in, overlap 2.777 in. Docking target has invalid or excessive incoming-versus-installed solid penetration. Edges do not close at lower-side-1:1->lower-wall-1-3:0: transverse gap 0.030 in, overlap 2.777 in. Docking target has invalid or excessive incoming-versus-installed solid penetration.",
+              "offset": {
+                "x": 0.015709070173437034,
+                "y": -0.06913230176374219,
+                "z": -0.03447746096109772
+              }
+            },
+            {
+              "index": 1,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.014290929826562965,
+                "y": -0.06913230176374219,
+                "z": -0.004477460961097718
+              },
+              "path": {
+                "id": "insert-lower-wall-1-3",
+                "movingTileIds": [
+                  "lower-wall-1-3"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.357070512283478,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-2:2->lower-wall-1-3:0",
+                  "lower-side-1:1->lower-wall-1-3:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            },
+            {
+              "index": 2,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.014290929826562965,
+                "y": -0.06913230176374219,
+                "z": -0.004477460961097718
+              },
+              "path": {
+                "id": "insert-lower-wall-1-3",
+                "movingTileIds": [
+                  "lower-wall-1-3"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.357070512283478,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-2:2->lower-wall-1-3:0",
+                  "lower-side-1:1->lower-wall-1-3:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall-1-4",
+          "edges": [],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall-1-4. Contact closure rejected: disconnected-tile:lower-wall-1-4.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 1,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall-1-4. Contact closure rejected: disconnected-tile:lower-wall-1-4.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 2,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall-1-4. Contact closure rejected: disconnected-tile:lower-wall-1-4.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 53,
+      "panels": [
+        {
+          "tileId": "lower-wall--1-1",
+          "edges": [
+            {
+              "fromTileId": "lower-deck-1",
+              "fromEdge": 0,
+              "toTileId": "lower-wall--1-1",
+              "toEdge": 0,
+              "kind": "edge"
+            },
+            {
+              "fromTileId": "lower-side--1",
+              "fromEdge": 1,
+              "toTileId": "lower-wall--1-1",
+              "toEdge": 0,
+              "kind": "edge"
+            }
+          ],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Docked parts intersect the fixed table; an actual support lift is required. Docked pose has no insertion that clears both solids and fingertips. Docking target has invalid or excessive incoming-versus-installed solid penetration. Docking target has invalid or excessive incoming-versus-installed solid penetration.",
+              "offset": {
+                "x": -0.006430414196496814,
+                "y": -0.041694163789654126,
+                "z": 0.03460981420168541
+              }
+            },
+            {
+              "index": 1,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.006430414196496814,
+                "y": -0.011694163789654127,
+                "z": 0.004609814201685408
+              },
+              "path": {
+                "id": "insert-lower-wall--1-1",
+                "movingTileIds": [
+                  "lower-wall--1-1"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.358094342698847,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-1:0->lower-wall--1-1:0",
+                  "lower-side--1:1->lower-wall--1-1:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            },
+            {
+              "index": 2,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.006430414196496814,
+                "y": -0.011694163789654127,
+                "z": 0.004609814201685408
+              },
+              "path": {
+                "id": "insert-lower-wall--1-1",
+                "movingTileIds": [
+                  "lower-wall--1-1"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.358094342698847,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-1:0->lower-wall--1-1:0",
+                  "lower-side--1:1->lower-wall--1-1:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall--1-2",
+          "edges": [],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall--1-2. Contact closure rejected: disconnected-tile:lower-wall--1-2.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 1,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall--1-2. Contact closure rejected: disconnected-tile:lower-wall--1-2.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 2,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall--1-2. Contact closure rejected: disconnected-tile:lower-wall--1-2.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall--1-3",
+          "edges": [
+            {
+              "fromTileId": "lower-deck-2",
+              "fromEdge": 0,
+              "toTileId": "lower-wall--1-3",
+              "toEdge": 0,
+              "kind": "edge"
+            },
+            {
+              "fromTileId": "lower-side--1",
+              "fromEdge": 1,
+              "toTileId": "lower-wall--1-3",
+              "toEdge": 0,
+              "kind": "edge"
+            }
+          ],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Docked pose has no insertion that clears both solids and fingertips. Edges do not close at lower-side--1:1->lower-wall--1-3:0: transverse gap 0.028 in, overlap 2.777 in. Docking target has invalid or excessive incoming-versus-installed solid penetration. Edges do not close at lower-side--1:1->lower-wall--1-3:0: transverse gap 0.030 in, overlap 2.777 in. Docking target has invalid or excessive incoming-versus-installed solid penetration.",
+              "offset": {
+                "x": 0.015700129476720726,
+                "y": -0.06916216369077466,
+                "z": 0.034576845155170344
+              }
+            },
+            {
+              "index": 1,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.014299870523279273,
+                "y": -0.06916216369077466,
+                "z": 0.004576845155170345
+              },
+              "path": {
+                "id": "insert-lower-wall--1-3",
+                "movingTileIds": [
+                  "lower-wall--1-3"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.358094342698847,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-2:0->lower-wall--1-3:0",
+                  "lower-side--1:1->lower-wall--1-3:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            },
+            {
+              "index": 2,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.014299870523279273,
+                "y": -0.06916216369077466,
+                "z": 0.004576845155170345
+              },
+              "path": {
+                "id": "insert-lower-wall--1-3",
+                "movingTileIds": [
+                  "lower-wall--1-3"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.358094342698847,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-2:0->lower-wall--1-3:0",
+                  "lower-side--1:1->lower-wall--1-3:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall--1-4",
+          "edges": [],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall--1-4. Contact closure rejected: disconnected-tile:lower-wall--1-4.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 1,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall--1-4. Contact closure rejected: disconnected-tile:lower-wall--1-4.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 2,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall--1-4. Contact closure rejected: disconnected-tile:lower-wall--1-4.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall-1-1",
+          "edges": [
+            {
+              "fromTileId": "lower-deck-1",
+              "fromEdge": 2,
+              "toTileId": "lower-wall-1-1",
+              "toEdge": 0,
+              "kind": "edge"
+            },
+            {
+              "fromTileId": "lower-side-1",
+              "fromEdge": 1,
+              "toTileId": "lower-wall-1-1",
+              "toEdge": 0,
+              "kind": "edge"
+            }
+          ],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Docked parts intersect the fixed table; an actual support lift is required. Docked pose has no insertion that clears both solids and fingertips. Docking target has invalid or excessive incoming-versus-installed solid penetration. Docking target has invalid or excessive incoming-versus-installed solid penetration.",
+              "offset": {
+                "x": -0.006439474102502674,
+                "y": -0.04167628239622151,
+                "z": -0.03439164825787888
+              }
+            },
+            {
+              "index": 1,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.006439474102502674,
+                "y": -0.01167628239622151,
+                "z": -0.004391648257878883
+              },
+              "path": {
+                "id": "insert-lower-wall-1-1",
+                "movingTileIds": [
+                  "lower-wall-1-1"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.358094342698847,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-1:2->lower-wall-1-1:0",
+                  "lower-side-1:1->lower-wall-1-1:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            },
+            {
+              "index": 2,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.006439474102502674,
+                "y": -0.01167628239622151,
+                "z": -0.004391648257878883
+              },
+              "path": {
+                "id": "insert-lower-wall-1-1",
+                "movingTileIds": [
+                  "lower-wall-1-1"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.358094342698847,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-1:2->lower-wall-1-1:0",
+                  "lower-side-1:1->lower-wall-1-1:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall-1-2",
+          "edges": [],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall-1-2. Contact closure rejected: disconnected-tile:lower-wall-1-2.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 1,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall-1-2. Contact closure rejected: disconnected-tile:lower-wall-1-2.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 2,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall-1-2. Contact closure rejected: disconnected-tile:lower-wall-1-2.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall-1-3",
+          "edges": [
+            {
+              "fromTileId": "lower-deck-2",
+              "fromEdge": 2,
+              "toTileId": "lower-wall-1-3",
+              "toEdge": 0,
+              "kind": "edge"
+            },
+            {
+              "fromTileId": "lower-side-1",
+              "fromEdge": 1,
+              "toTileId": "lower-wall-1-3",
+              "toEdge": 0,
+              "kind": "edge"
+            }
+          ],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Docked pose has no insertion that clears both solids and fingertips. Edges do not close at lower-side-1:1->lower-wall-1-3:0: transverse gap 0.028 in, overlap 2.777 in. Docking target has invalid or excessive incoming-versus-installed solid penetration. Edges do not close at lower-side-1:1->lower-wall-1-3:0: transverse gap 0.030 in, overlap 2.777 in. Docking target has invalid or excessive incoming-versus-installed solid penetration.",
+              "offset": {
+                "x": 0.015691069570714866,
+                "y": -0.06914428229734204,
+                "z": -0.034424617304393945
+              }
+            },
+            {
+              "index": 1,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.014308930429285133,
+                "y": -0.06914428229734204,
+                "z": -0.004424617304393946
+              },
+              "path": {
+                "id": "insert-lower-wall-1-3",
+                "movingTileIds": [
+                  "lower-wall-1-3"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.358094342698847,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-2:2->lower-wall-1-3:0",
+                  "lower-side-1:1->lower-wall-1-3:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            },
+            {
+              "index": 2,
+              "status": "pass",
+              "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+              "offset": {
+                "x": -0.014308930429285133,
+                "y": -0.06914428229734204,
+                "z": -0.004424617304393946
+              },
+              "path": {
+                "id": "insert-lower-wall-1-3",
+                "movingTileIds": [
+                  "lower-wall-1-3"
+                ],
+                "fixedTileIds": [
+                  "lower-side--1",
+                  "lower-side-1",
+                  "lower-deck-1",
+                  "lower-deck-2",
+                  "support-side--1-0",
+                  "support-side--1-1",
+                  "support-side-1-0",
+                  "support-side-1-1",
+                  "support-back",
+                  "upper-side--1",
+                  "upper-side-1",
+                  "upper-deck-1",
+                  "upper-deck-2",
+                  "turn-floor"
+                ],
+                "offsets": [
+                  {
+                    "x": 0,
+                    "y": 14.358094342698847,
+                    "z": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  }
+                ]
+              },
+              "arrival": {
+                "status": "pass",
+                "physicalConnectionIds": [
+                  "lower-deck-2:2->lower-wall-1-3:0",
+                  "lower-side-1:1->lower-wall-1-3:0"
+                ],
+                "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+              }
+            }
+          ]
+        },
+        {
+          "tileId": "lower-wall-1-4",
+          "edges": [],
+          "candidates": [
+            {
+              "index": 0,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall-1-4. Contact closure rejected: disconnected-tile:lower-wall-1-4.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 1,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall-1-4. Contact closure rejected: disconnected-tile:lower-wall-1-4.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "index": 2,
+              "status": "fail",
+              "detail": "Contact closure rejected: disconnected-tile:lower-wall-1-4. Contact closure rejected: disconnected-tile:lower-wall-1-4.",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

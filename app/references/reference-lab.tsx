@@ -274,6 +274,18 @@ function Candidate({
                       {" "}The existing magnetic joins were retained; no new join was added.
                     </p>}
                   </div>}
+                  {recorded?.bridge && <div aria-label="Bridge panel insertion">
+                    <strong>Bridge panel contact and support</strong> <Status check={recorded.bridge} />
+                    {recorded.bridge.introduction && <p>
+                      Added {labelsById[recorded.bridge.introducedTileId]} to the {recorded.bridge.introduction.bodyIdsBefore.length} existing pieces.
+                      {" "}{recorded.bridge.earnedConnectionIds.length} new joins earned after contact; {recorded.bridge.activeJointIdsBeforeClosure.length} earlier joins retained.
+                    </p>}
+                    <p>{assembly?.status === "pass"
+                      ? `Hand withdrawal and free rest passed in all three runs for this ${stage.tileIds.length}-piece construction stage.`
+                      : "Hand withdrawal and free rest must also pass for this construction stage to be checked."}
+                      {" "}The complete replica has separate source, assembly and car-path checks.
+                    </p>
+                  </div>}
                 </div>
               )}
               <p>

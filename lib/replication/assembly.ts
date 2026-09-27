@@ -16,6 +16,7 @@ import { SimulationBudgetExceeded } from "@/lib/engine/simulate";
 import { checkPreparedContinuation, selectWorkspace, workspaceBuild, type PreparedWorkspace } from "./workspace";
 import { simulatePreparedTransfer, type TransferEvidence } from "./prepared-transfer";
 import { simulatePreparedTablePlacement, type TablePlacementEvidence } from "./prepared-placement";
+import { simulateBridgeInsertion, type BridgeEvidence } from "./bridge-insertion";
 import { componentContacts, movingComponent } from "./components";
 import { closedMagneticConnection } from "./contacts";
 import type { Check, Replica, StagePose } from "./types";
@@ -37,6 +38,7 @@ export interface AssemblyOperationResult extends Check {
   docking?: Check & { offset: { x: number; y: number; z: number }; targetPenetration: number | null };
   transfer?: TransferEvidence;
   tablePlacement?: TablePlacementEvidence;
+  bridge?: BridgeEvidence;
   timeline?: (({ phase: "pickup" | "carry" | "seating" | "lowering" } | { phase: "support"; index: number }) & { activeConnectionIds?: string[] })[];
   trials: Omit<SupportTrial, "settled" | "state">[];
 }
@@ -116,15 +118,20 @@ export async function evaluateAssembly(replica: Replica, deadline = Infinity): P
     const plan = replica.construction!.find(p => p.stageId === stage.id)!;
     if (plan.operations.some(op => !op.hands?.length)) continue;
     const transfers = plan.operations.filter(op => op.preparedStageId);
+    const bridges = plan.operations.filter(op => op.bridgeInsertion);
     if (plan.workspace && plan.workspace.afterStageId === undefined && (prepared.length || stage !== replica.stages[0])) {
       result.detail = "Initial construction placement is allowed only before any other workspace or source stage."; continue;
     }
-    const dependency = transfers[0]?.transfer?.afterStageId ?? transfers[0]?.preparedStageId ?? plan.workspace?.afterStageId ?? stage.installedStageIds?.[0];
+    const dependency = bridges[0]?.bridgeInsertion?.afterStageId ?? transfers[0]?.transfer?.afterStageId ?? transfers[0]?.preparedStageId ?? plan.workspace?.afterStageId ?? stage.installedStageIds?.[0];
     if (dependency && !prepared.some(w => w.stageId === dependency)) { result.detail = "An earlier module has not passed its complete supported assembly."; continue; }
     if (!plan.workspace && !transfers.length && dependency && (stage.transform || replica.stages.find(s => s.id === dependency)?.transform)) {
       result.detail = "A stage rotation/transfer needs a continuous validated orientation trajectory."; continue;
     }
-    if (((stage.installedStageIds?.length ?? 0) > 1 && !transfers.length) || plan.operations.some(op => op.transfer && !op.preparedStageId) ||
+    if (((stage.installedStageIds?.length ?? 0) > 1 && !transfers.length && !bridges.length) || plan.operations.some(op => op.transfer && !op.preparedStageId) ||
+        bridges.length && (bridges.length !== 1 || plan.operations.length !== 1 || plan.workspace || stage.transform || stage.support !== "released" ||
+          bridges[0].tileIds.length !== 1 || !bridges[0].releaseAfter || bridges[0].preparedStageId || bridges[0].transfer || bridges[0].gravitySeat || bridges[0].pickup || bridges[0].lowerBeforeRelease !== undefined ||
+          typeof bridges[0].bridgeInsertion!.afterStageId !== "string" || !bridges[0].bridgeInsertion!.afterStageId.trim() ||
+          !Array.isArray(bridges[0].bridgeInsertion!.connections) || bridges[0].bridgeInsertion!.connections.length < 2 || bridges[0].bridgeInsertion!.connections.length > 6) ||
         plan.operations.some(op => op.transfer?.afterStageId !== undefined && (typeof op.transfer.afterStageId !== "string" || !op.transfer.afterStageId.trim())) ||
         plan.operations.some(op => op.transfer && (op.transfer.placement !== undefined && !["table","magnetic"].includes(op.transfer.placement) ||
           op.transfer.placement !== "table" && op.transfer.releaseHeight !== undefined || op.transfer.placement === "table" && stage.support !== "released")) ||
@@ -161,8 +168,9 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
   policy: DockingPolicy, deadline: number): Promise<AssemblyAttempt & { states: PreparedWorkspace[]; terminalConnections?: AssemblyResult["terminalConnections"] }> {
   const plan = replica.construction!.find(p => p.stageId === stage.id)!;
   const transfers = plan.operations.filter(op => op.preparedStageId);
+  const bridges = plan.operations.filter(op => op.bridgeInsertion);
   const tablePlacement = transfers[0]?.transfer?.placement === "table";
-  const dependency = transfers[0]?.transfer?.afterStageId ?? transfers[0]?.preparedStageId ?? plan.workspace?.afterStageId ?? stage.installedStageIds?.[0];
+  const dependency = bridges[0]?.bridgeInsertion?.afterStageId ?? transfers[0]?.transfer?.afterStageId ?? transfers[0]?.preparedStageId ?? plan.workspace?.afterStageId ?? stage.installedStageIds?.[0];
   const installedIds = (stage.installedStageIds ?? []).flatMap(id => replica.stages.find(s => s.id === id)?.tileIds ?? []);
   const offset = plan.workspace?.offset ?? { x: 0,y: 0,z: 0 };
   const nominal = stageBuild(replica, stage);
@@ -192,12 +200,17 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
           transfers.length && (transfers[0].tileIds.some(id => installedIds.includes(id)) || stage.tileIds.some(id => ![...installedIds,...transfers[0].tileIds].includes(id)))) {
         failures.push(`Seed ${seed}: Prepared workspace has missing, extra or duplicated stage parts.`); continue;
       }
+      if (bridges.length && (stage.tileIds.length !== previousIds.length+1 ||
+        stage.tileIds.some(id=>!previousIds.includes(id)&&id!==bridges[0].tileIds[0]) ||
+        prepared.some(w=>[...predecessor!.lineage,predecessor!.id].includes(w.id)&&w.build.tiles.some(t=>t.id===bridges[0].tileIds[0])))) {
+        failures.push(`Seed ${seed}: Bridge insertion must add exactly one panel absent from its entire predecessor history.`); continue;
+      }
       const inherited = aligned.tiles.filter(t => !current.tiles.some(n => n.id === t.id));
       current.tiles.push(...inherited);
       for (const c of aligned.connections) if (!current.connections.some(n => connectionId(n) === connectionId(c))) current.connections.push(c);
       current = mergePoses(current, aligned);
-      if (transfers.length || (!plan.workspace && predecessor.components.length > 1)) {
-        if (!transfers.length && plan.operations.length) {
+      if (transfers.length || bridges.length || (!plan.workspace && predecessor.components.length > 1)) {
+        if (!transfers.length && !bridges.length && plan.operations.length) {
           failures.push(`Seed ${seed}: Joining independent predecessor components needs an explicit transfer contract.`); continue;
         }
         // Existing physical connections own the world. A nominal target must
@@ -216,7 +229,7 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
       const row: AssemblyOperationResult = { index, seed, tileIds: operation.tileIds, status: "fail", detail: "", trials: [], timeline: [] };
       result.operations.push(row);
       const record = async (build: BuildGraph, holds: string[]) => {
-        if (tablePlacement && physicalState) {
+        if ((tablePlacement || bridges.length) && physicalState) {
           const continuity = checkPreparedContinuation(build,physicalState,floorY);
           if (continuity.status !== "pass") { failure=continuity.detail; return build; }
         }
@@ -244,6 +257,26 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
         failure = row.detail = "Need one insertion hand and at most one distinct installed-panel support hand."; break;
       }
       const support = hands.filter(h => placed.has(h.tileId)).map(h => h.tileId);
+      if (operation.bridgeInsertion) {
+        if (!physicalState || !predecessor) { failure=row.detail="Bridge insertion has no actual predecessor workspace."; break; }
+        const bridge=await simulateBridgeInsertion(nominal,subset(current,placed),physicalState,operation.tileIds[0],
+          operation.bridgeInsertion.connections,heldHands,hands,floorY,seed,deadline,predecessor.components,policy);
+        const {settled,state,handoff,carry,connected,docking,path,...evidence}=bridge;
+        row.bridge=evidence;
+        if(handoff){row.trials.push(supportSummary(handoff));row.timeline!.push({phase:"support",index:row.trials.length-1,activeConnectionIds:handoff.state.joints.map(j=>j.model.id)});}
+        if(carry){row.carry=motionSummary(carry);row.timeline!.push({phase:"carry",activeConnectionIds:carry.state?.joints.map(j=>j.model.id)});}
+        if(connected){row.trials.push(supportSummary(connected));row.timeline!.push({phase:"support",index:row.trials.length-1,activeConnectionIds:connected.state.joints.map(j=>j.model.id)});}
+        if(docking)row.docking={status:docking.status,detail:docking.detail,offset:docking.offset,targetPenetration:docking.targetPenetration};
+        row.path=path;row.approachTiles=handoff?.motion[0]?.tiles??carry?.motion[0]?.tiles;
+        row.closure={status:bridge.status,detail:bridge.detail};
+        if(bridge.status!=="pass"){failure=row.detail=bridge.detail;break;}
+        current=settled;physicalState=state;heldHands=hands;inheritedComponents=structuredClone(bridge.earnedComponentGroups);
+        moving.forEach(id=>placed.add(id));
+        current=mergePoses(current,await record(current,[]));
+        if(failure){row.detail=failure;break;}
+        row.status="pass";row.detail=bridge.detail;
+        continue;
+      }
       if (operation.preparedStageId) {
         if (!physicalState || !operation.transfer) { failure = row.detail = "Missing actual prepared transfer state."; break; }
         if (operation.transfer.placement === "table") {
@@ -449,7 +482,7 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
     // module must never skip its first unsupported release.
     if (stage.support === "released") {
       const present = subset(current,placed);
-      if (tablePlacement && physicalState) {
+      if ((tablePlacement || bridges.length) && physicalState) {
         const continuity=checkPreparedContinuation(present,physicalState,floorY);
         if (continuity.status !== "pass") { failures.push(`Seed ${seed}: ${continuity.detail}`); continue; }
       }

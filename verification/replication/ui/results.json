@@ -123,13 +123,32 @@
       "P12",
       "P13"
     ],
-    "firstFiveStagesPassed": true,
+    "bridgeLabels": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "P8",
+      "P9",
+      "P10",
+      "P11",
+      "P12",
+      "P13",
+      "P14"
+    ],
+    "firstSixStagesPassed": true,
     "transferPlaybackMoves": true,
     "checkedJoinInstructions": true,
     "lowerPlacementPlaybackMoves": true,
     "tableBearingChecked": true,
     "noNewPlacementJoins": true,
-    "blueTurnUnverified": true
+    "bridgePlaybackMoves": true,
+    "exactNewBridgeJoins": true,
+    "bridgeReleaseChecked": true,
+    "lowerCanopyUnverified": true
   },
   "mobileOverflow": false,
   "pageErrors": []

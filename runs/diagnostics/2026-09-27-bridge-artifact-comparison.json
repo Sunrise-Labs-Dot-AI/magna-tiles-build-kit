@@ -1,0 +1,73 @@
+{
+  "baseline": "37094bd",
+  "scope": "Geometry and independent physical/source outputs retained; blue insertion changes only construction evidence.",
+  "builds": [
+    {
+      "id": "jet",
+      "validator": "7730b5d8d5ac9ae44e37c76a3858cad9f42b12a48e271fcd33dc87e83503f0fb",
+      "checks": {
+        "sameBuild": true,
+        "projections": true,
+        "releases": true,
+        "holdoutCoverage": true,
+        "carTrials": true,
+        "stages": true,
+        "assemblyUnchanged": true
+      },
+      "replication": "not-verified"
+    },
+    {
+      "id": "small-ramp",
+      "validator": "7730b5d8d5ac9ae44e37c76a3858cad9f42b12a48e271fcd33dc87e83503f0fb",
+      "checks": {
+        "sameBuild": true,
+        "projections": true,
+        "releases": true,
+        "holdoutCoverage": true,
+        "carTrials": true,
+        "stages": true,
+        "assemblyUnchanged": true
+      },
+      "replication": "not-verified"
+    },
+    {
+      "id": "medium-ramp",
+      "validator": "7730b5d8d5ac9ae44e37c76a3858cad9f42b12a48e271fcd33dc87e83503f0fb",
+      "checks": {
+        "sameBuild": true,
+        "projections": true,
+        "releases": true,
+        "holdoutCoverage": true,
+        "carTrials": true,
+        "stages": true,
+        "firstFiveAssemblyStagesUnchanged": true,
+        "sixPassFiveUnverified": true,
+        "allSeeds": true,
+        "exactIntroductionsAndJoins": true
+      },
+      "replication": "not-verified"
+    },
+    {
+      "id": "large-ramp",
+      "validator": "7730b5d8d5ac9ae44e37c76a3858cad9f42b12a48e271fcd33dc87e83503f0fb",
+      "checks": {
+        "sameBuild": true,
+        "projections": true,
+        "releases": true,
+        "holdoutCoverage": true,
+        "carTrials": true,
+        "stages": true,
+        "assemblyUnchanged": true
+      },
+      "replication": "not-verified"
+    }
+  ],
+  "verification/replication/rigid-contact-fixture.json": true,
+  "genericBridgeStages": [
+    "pass",
+    "pass",
+    "pass",
+    "pass"
+  ],
+  "verification/replication/assembly-fixture.json": true
+}

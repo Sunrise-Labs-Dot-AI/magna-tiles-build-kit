@@ -1,0 +1,26 @@
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+ ❯ tests/gravity-seating.test.ts (17 tests | 1 failed) 491583ms
+     × seats a roof across an independently assembled U, with every new joint absent during the fall 32339ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/gravity-seating.test.ts > gravity seating earns contacts before any new joint exists > seats a roof across an independently assembled U, with every new joint absent during the fall
+Error: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/gravity-seating.test.ts:29:3
+     27|     expect(result.earnedJointIds).toEqual([]);
+     28|   });
+     29|   it("seats a roof across an independently assembled U, with every new…
+       |   ^
+     30|     const r = seatedRoofFixture(), results = await evaluateAssembly(r);
+     31|     expect(results[0].status, JSON.stringify(results[0].operations.map…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 50 passed (51)
+      Tests  1 failed | 570 passed | 1 skipped (572)
+   Start at  08:56:09
+   Duration  1046.19s (transform 926ms, setup 0ms, import 3.40s, tests 2083.60s, environment 3ms)

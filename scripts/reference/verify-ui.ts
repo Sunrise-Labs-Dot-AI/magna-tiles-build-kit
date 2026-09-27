@@ -192,8 +192,31 @@ async function main() {
       throw Error("Table relocation instructions claimed a new magnetic join.");
     await page.screenshot({path:"verification/replication/ui/medium-lower-placement-release.png",fullPage:true});
     await page.getByLabel("Construction checkpoint").selectOption("5");
+    if(!(await page.getByLabel("Complete assembly check").textContent())?.includes("Passed this check"))
+      throw Error("Medium blue bridge assembly pass is absent.");
+    await page.getByLabel("Part insertion preview").selectOption("0");
+    await mediumSlider.fill("0");
+    await ready();
+    await page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));
+    const bridgeStart=await page.locator("canvas").screenshot();
+    await page.screenshot({path:"verification/replication/ui/medium-blue-bridge-start.png",fullPage:true});
+    await mediumSlider.fill("100");
+    await page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));
+    if(bridgeStart.equals(await page.locator("canvas").screenshot()))throw Error("Blue bridge did not replay actual approach and release.");
+    const bridgeLabels=await page.locator(".design-piece-label").allTextContents();
+    if(bridgeLabels.length!==14||!Array.from({length:14},(_,i)=>`P${i+1}`).every(id=>bridgeLabels.includes(id)))
+      throw Error(`Blue insertion lost existing bodies or added future canopy: ${bridgeLabels}`);
+    const bridgeText=await page.getByLabel("Bridge panel insertion",{exact:true}).textContent();
+    if(!bridgeText?.includes("2 new joins earned after contact; 16 earlier joins retained")||
+      !bridgeText.includes("free rest passed in all three runs for this 14-piece construction stage"))
+      throw Error("Bridge contact evidence and full construction-stage release are not distinguished.");
+    const bridgeInstructions=await page.locator(".reference-instruction").textContent();
+    if(!bridgeInstructions?.includes("P4 edge 2 to P14 edge 1")||!bridgeInstructions.includes("P12 edge 4 to P14 edge 2")||
+      bridgeInstructions.includes("P2 edge 1 to P7 edge 4"))throw Error("Blue instructions do not show exactly the new checked joins.");
+    await page.screenshot({path:"verification/replication/ui/medium-blue-bridge-release.png",fullPage:true});
+    await page.getByLabel("Construction checkpoint").selectOption("6");
     if((await page.getByLabel("Complete assembly check").textContent())?.includes("Passed this check"))
-      throw Error("Unverified medium blue turn was promoted.");
+      throw Error("Unverified medium lower canopy was promoted.");
     await page.getByRole("button", { name: /3D snail/ }).click();
     await page.getByRole("heading", { name: /original 3D snail/ }).waitFor();
     await page.setViewportSize({ width: 390, height: 844 });
@@ -217,8 +240,9 @@ async function main() {
       gravityPreview: { labels: seatedLabels, recordedFramesDiffer: true, launchAssemblyPassed: true },
       pickupPreview: { labels: pickupLabels, terminalLabels: wedgeEndLabels, recordedFramesDiffer: true },
       transferPreview: {labels:transferLabels,recordedFramesDiffer:true,completeAssemblyPassed:true},
-      mediumPreview: {pickupLabels:mediumPickup,preparedLabels:mediumPrepared,workspaceLabels:mediumWorkspace,transferLabels:mediumTransferred,relocatedLabels,
-        firstFiveStagesPassed:true,transferPlaybackMoves:true,checkedJoinInstructions:true,lowerPlacementPlaybackMoves:true,tableBearingChecked:true,noNewPlacementJoins:true,blueTurnUnverified:true},
+      mediumPreview: {pickupLabels:mediumPickup,preparedLabels:mediumPrepared,workspaceLabels:mediumWorkspace,transferLabels:mediumTransferred,relocatedLabels,bridgeLabels,
+        firstSixStagesPassed:true,transferPlaybackMoves:true,checkedJoinInstructions:true,lowerPlacementPlaybackMoves:true,tableBearingChecked:true,noNewPlacementJoins:true,
+        bridgePlaybackMoves:true,exactNewBridgeJoins:true,bridgeReleaseChecked:true,lowerCanopyUnverified:true},
       mobileOverflow: overflow,
       pageErrors: errors,
     };
