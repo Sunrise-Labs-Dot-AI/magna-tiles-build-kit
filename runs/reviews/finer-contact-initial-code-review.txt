@@ -1,0 +1,13 @@
+VERIFIED/CLEAN. I found no concrete blocking counterexample in the finer-contact increment.
+
+Evidence checked:
+- Finer matrix is exactly 216 distinct cells: 2 frequencies x 3 rates x 2 solvers x 3 seeds x 6 fixtures, excluding 120 Hz and 960 Hz in the finer experiment.
+- Selection requires full-matrix coverage before any profile can pass, then evaluates the four 72-cell adjacent-rate profiles in declared order: 240/1920, 240/3840, 480/1920, 480/3840.
+- Failed coarse profiles remain visible because each profile object is retained even when a higher-rate profile wins.
+- `passesContactTrial` revalidates effective `dt`, inferred contact frequency, solver count, terminal dynamic bodies, exact reference tiles, connections, joints, failures, late/rest windows, and ordinary gates.
+- Runtime constants remain unchanged in [constants.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/constants.ts:29). This increment only adds diagnostic/reference code and tests.
+- Old loaded-contact default behavior appears equivalent: default `contactMatrixCells()`, `simulateContactCell()`, `runContactCell()`, and `assessContactMatrix()` still target the historical matrix, and the new focused test re-assesses the archived loaded matrix against its saved verdict.
+
+Limitations: I did not rerun the matrix, full suite, lint, or typecheck. I inspected `/tmp/magnatiles-finer-contact-tests.log`, which reports 17 focused tests passing. I also did not validate future production integration work from the audit, since no production parameter is changed here.
+
+Verdict: ready to run the diagnostic experiment, within the stated boundary. This does not prove source replica fidelity, physical material calibration, complete assembly viability, or any production profile promotion.

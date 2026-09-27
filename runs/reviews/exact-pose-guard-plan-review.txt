@@ -1,0 +1,7 @@
+VERIFIED/CLEAN.
+
+I found no concrete blocking concern in [runs/2026-09-27-exact-pose-guard-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-exact-pose-guard-plan.md:1) against the current call site in [lib/engine/rapier-world.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts:161) and checker contract in [lib/magnetic-tiles/swept-prisms.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/swept-prisms.ts:84).
+
+I could not refute the exact-unchanged-pose certificate as written because the plan limits reuse to the immediately preceding successful endpoint, requires exact ordered solid identity across the checker inputs, keeps floor and tolerance in identity or immutable, rejects failed or uncertified sweeps as cache sources, and explicitly preserves native integration, finite checks, angular alias checks, failure propagation, and peak tracking.
+
+Read-only limitations: I did not edit files, run tests, run simulations, benchmark, spawn agents, or touch the running physics matrix. This review does not establish any physical result, performance result, or numerical profile.

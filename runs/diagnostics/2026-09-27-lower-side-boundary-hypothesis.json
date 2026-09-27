@@ -1,0 +1,130 @@
+{
+  "scope": "Bounded review of previously inspected construction images. No new source gate, candidate change, hidden-face inference, holdout credit or simulation acceptance.",
+  "sourceId": "henry",
+  "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+  "images": [
+    {
+      "seconds": 65.25,
+      "path": "/tmp/magnatiles-canopy-interval/detail-65.25.png",
+      "sha256": "9b7d081f732ee3dbb67d1ea2fa65ed702f908642f8f4503528df21678e5b304d",
+      "previouslyDeclaredInspection": "runs/diagnostics/2026-09-27-lower-canopy-inspection.json"
+    },
+    {
+      "seconds": 67.5,
+      "path": "/tmp/magnatiles-canopy-interval/detail-67.5.png",
+      "sha256": "9c81a027d5b3ff5d1ca758f96213ce98dc3aaa4ce3af3b4e9496049efc039f46",
+      "previouslyDeclaredInspection": "runs/diagnostics/2026-09-27-lower-canopy-inspection.json"
+    }
+  ],
+  "imageSize": [
+    1920,
+    1080
+  ],
+  "hypothesis": {
+    "seconds": 67.5,
+    "region": "image-right installed lower side module before first yellow roof",
+    "proposedFaces": [
+      {
+        "label": "upper orange",
+        "approximatePixelVertices": [
+          [
+            887,
+            477
+          ],
+          [
+            983,
+            477
+          ],
+          [
+            987,
+            628
+          ]
+        ]
+      },
+      {
+        "label": "central red",
+        "approximatePixelVertices": [
+          [
+            983,
+            477
+          ],
+          [
+            1107,
+            649
+          ],
+          [
+            993,
+            631
+          ]
+        ]
+      },
+      {
+        "label": "lower orange",
+        "approximatePixelVertices": [
+          [
+            997,
+            644
+          ],
+          [
+            1114,
+            655
+          ],
+          [
+            1111,
+            797
+          ]
+        ]
+      }
+    ],
+    "provenance": "Implementing-agent visual proposal. Coordinates are rough boundary locators, not new scored landmarks. The existing two-face minimum remains unchanged pending independent review.",
+    "doNotInfer": [
+      "symmetry",
+      "hidden faces",
+      "complete stage membership",
+      "full BOM mapping",
+      "exact 3D panel pose"
+    ]
+  },
+  "independentReview": "runs/reviews/lower-side-boundaries-review.txt",
+  "reviewStatus": "complete; no stronger count established",
+  "reviewOutcome": {
+    "establishedVisibleMinimum": 2,
+    "exactModuleCount": null,
+    "upperOrangeProposal": "Not established; perimeter may be part of the deck or background through transparency.",
+    "centralRedFace": {
+      "approximatePixelVertices": [
+        [
+          984,
+          477
+        ],
+        [
+          1106,
+          649
+        ],
+        [
+          994,
+          631
+        ]
+      ],
+      "status": "distinct triangular face supported"
+    },
+    "lowerOrangeFace": {
+      "approximatePixelVertices": [
+        [
+          994,
+          631
+        ],
+        [
+          1106,
+          649
+        ],
+        [
+          1110,
+          795
+        ]
+      ],
+      "status": "distinct triangular face supported"
+    },
+    "disposition": "Retain the existing visible minimum. Do not promote the three-face hypothesis or claim a complete installed set from these images."
+  }
+}

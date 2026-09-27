@@ -8,14 +8,22 @@ import { createMagneticPhysicsModel } from "../../lib/engine/physics-model";
 import { RigidBodyType } from "../../lib/engine/physics-backend";
 
 // Declared before any run in runs/2026-09-27-loaded-contact-plan.md.
-export const CONTACT_MATRIX = {
-  frequencies: [120, 240, 480], eligibleFrequencies: [120, 240],
-  rates: [960, 1920], solvers: [16, 32], seeds: [0, 17, 53],
+export const CONTACT_CRITERIA = {
   durationSeconds: 7.5, lateStartSeconds: 6.75,
   peakLimit: RAW_OVERLAP_TOLERANCE, lateLimit: .01, displacementLimit: MAX_STANDING_DISPLACEMENT,
   restReportingSteps: 90, selectionPeak: .025, selectionLate: .008,
   peakSpread: .005, lateSpread: .002,
 } as const;
+export const CONTACT_MATRIX = {
+  frequencies: [120, 240, 480], eligibleFrequencies: [120, 240],
+  rates: [960, 1920], solvers: [16, 32], seeds: [0, 17, 53], ...CONTACT_CRITERIA,
+} as const;
+// Separately reviewed before running in runs/2026-09-27-finer-contact-plan.md.
+export const FINER_CONTACT_MATRIX = {
+  frequencies: [240, 480], rates: [1920, 3840, 7680], candidateCollisionRates: [1920, 3840],
+  solvers: [16, 32], seeds: [0, 17, 53], ...CONTACT_CRITERIA,
+} as const;
+export type ContactExperiment = "loaded" | "finer";
 
 export interface ContactCell { fixture: string; frequency: number; hz: number; solver: number; seed: number }
 export interface ContactMatrixTrial extends ContactCell {
@@ -33,10 +41,12 @@ const expectedFixtures = new Map(contactMatrixFixtures().map(build => [build.id,
   build, joints: createMagneticPhysicsModel(build, { drop: true, floorY: 0 }).joints,
 }]));
 
-export function contactMatrixCells(): ContactCell[] {
-  return CONTACT_MATRIX.frequencies.flatMap(frequency => contactMatrixFixtures().flatMap(build =>
-    CONTACT_MATRIX.rates.flatMap(hz => CONTACT_MATRIX.solvers.flatMap(solver =>
-      CONTACT_MATRIX.seeds.map(seed => ({ fixture: build.id, frequency, hz, solver, seed }))))));
+export function contactMatrixCells(experiment: ContactExperiment = "loaded"): ContactCell[] {
+  if (experiment !== "loaded" && experiment !== "finer") throw new Error("Unknown contact experiment");
+  const matrix = experiment === "loaded" ? CONTACT_MATRIX : FINER_CONTACT_MATRIX;
+  return matrix.frequencies.flatMap(frequency => contactMatrixFixtures().flatMap(build =>
+    matrix.rates.flatMap(hz => matrix.solvers.flatMap(solver =>
+      matrix.seeds.map(seed => ({ fixture: build.id, frequency, hz, solver, seed }))))));
 }
 
 export function assertContactFixture(build: EngineBuild): void {
@@ -44,7 +54,7 @@ export function assertContactFixture(build: EngineBuild): void {
   if (errors.length || findRawOverlaps(build.tiles).length) throw new Error(`Invalid independent contact fixture ${build.id}: ${errors.join(", ")}`);
 }
 
-function passesTrial(trial: ContactMatrixTrial): boolean {
+export function passesContactTrial(trial: ContactMatrixTrial): boolean {
   const expected = expectedFixtures.get(trial.fixture), p = trial.parameters;
   if (!expected || !p || p.dt !== Math.fround(1 / trial.hz) || p.solver !== trial.solver ||
     p.lengthUnit !== 1 || p.normalizedAllowedLinearError !== Math.fround(.001)) return false;
@@ -78,8 +88,8 @@ function passesTrial(trial: ContactMatrixTrial): boolean {
 /** One requested step equals one native integration step at these declared rates.
  * Count actual native calls, including a pre-integration rejection at zero time.
  * Never call step again after failure; incomplete late/rest windows are null. */
-export function simulateContactCell(engine: EngineWorld, cell: ContactCell): ContactMatrixTrial {
-  if (!contactMatrixCells().some(c => contactCellKey(c) === contactCellKey(cell))) throw new Error("Undeclared matrix cell");
+export function simulateContactCell(engine: EngineWorld, cell: ContactCell, experiment: ContactExperiment = "loaded"): ContactMatrixTrial {
+  if (!contactMatrixCells(experiment).some(c => contactCellKey(c) === contactCellKey(cell))) throw new Error("Undeclared matrix cell");
   const p = engine.world.integrationParameters;
   p.dt = 1 / cell.hz; p.numSolverIterations = cell.solver; p.contact_natural_frequency = cell.frequency;
   // Rapier exposes a frequency setter, not a getter. Infer the effective value
@@ -121,15 +131,15 @@ export function simulateContactCell(engine: EngineWorld, cell: ContactCell): Con
     restReportingSteps: completed ? Math.floor(rest / cell.hz * 120) : null,
     finalSpeeds: { ...engine.stepSpeeds }, firstFailure, invalidState: engine.invalidState,
     terminal: engine.snapshot(), parameters, passed: false };
-  trial.passed = passesTrial(trial);
+  trial.passed = passesContactTrial(trial);
   return trial;
 }
 
-export async function runContactCell(build: EngineBuild, cell: ContactCell): Promise<ContactMatrixTrial> {
+export async function runContactCell(build: EngineBuild, cell: ContactCell, experiment: ContactExperiment = "loaded"): Promise<ContactMatrixTrial> {
   if (build.id !== cell.fixture) throw new Error("Fixture identity mismatch");
   assertContactFixture(build);
   const engine = await createEngineWorld(build, { drop: true, floorY: 0 });
-  try { return simulateContactCell(engine, cell); } finally { engine.dispose(); }
+  try { return simulateContactCell(engine, cell, experiment); } finally { engine.dispose(); }
 }
 
 /** No missing, duplicate, extra or failed cell can win through an empty every().
@@ -147,16 +157,16 @@ export function assessContactMatrix(trials: ContactMatrixTrial[]) {
     const groups = contactMatrixFixtures().flatMap(build => CONTACT_MATRIX.seeds.map(seed => {
       const cells = rows.filter(t => t.fixture === build.id && t.seed === seed);
       const complete = cells.length === 4 && new Set(cells.map(contactCellKey)).size === 4 &&
-        cells.every(t => expectedKeys.has(contactCellKey(t)) && passesTrial(t));
+        cells.every(t => expectedKeys.has(contactCellKey(t)) && passesContactTrial(t));
       const peakSpread = complete ? Math.max(...cells.map(t => t.peakPenetration)) - Math.min(...cells.map(t => t.peakPenetration)) : null;
       const lateSpread = complete ? Math.max(...cells.map(t => t.latePenetration!)) - Math.min(...cells.map(t => t.latePenetration!)) : null;
       return { fixture: build.id, seed, complete, peakSpread, lateSpread,
         passed: complete && peakSpread! <= CONTACT_MATRIX.peakSpread && lateSpread! <= CONTACT_MATRIX.lateSpread };
     }));
     const eligible = (CONTACT_MATRIX.eligibleFrequencies as readonly number[]).includes(frequency);
-    const passed = !coverageErrors.length && rows.every(t => passesTrial(t) &&
+    const passed = !coverageErrors.length && rows.every(t => passesContactTrial(t) &&
       t.peakPenetration <= CONTACT_MATRIX.selectionPeak && t.latePenetration! <= CONTACT_MATRIX.selectionLate) && groups.every(g => g.passed);
-    return { frequency, eligible, passed, passedTrials: rows.filter(passesTrial).length, totalTrials: rows.length, groups };
+    return { frequency, eligible, passed, passedTrials: rows.filter(passesContactTrial).length, totalTrials: rows.length, groups };
   });
   return { coverageErrors, frequencies, selectedFrequency: frequencies.find(f => f.eligible && f.passed)?.frequency ?? null };
 }
