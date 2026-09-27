@@ -1,0 +1,383 @@
+{
+  "scope": "Static incoming-panel fit diagnosis against actual fifth-stage released poses. This does not introduce any body into a physical world, earn joins, merge components, or certify bridge assembly/source fidelity.",
+  "validator": "bb14b7850cbc51c4fcdb8efcbd281f430652c3e926f32aa920cd850b278963d2",
+  "sourceFrame": "medium-turn",
+  "intendedEdges": [
+    {
+      "fromTileId": "upper-deck-1",
+      "fromEdge": 3,
+      "toTileId": "turn-floor",
+      "toEdge": 1,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "lower-deck-2",
+      "fromEdge": 1,
+      "toTileId": "turn-floor",
+      "toEdge": 0,
+      "kind": "edge"
+    }
+  ],
+  "seeds": [
+    {
+      "seed": 0,
+      "initialMetrics": [
+        {
+          "id": "upper-deck-1:3->turn-floor:1",
+          "gap": 0.2904285657000618,
+          "angleDegrees": 0.0031226575908286872,
+          "overlap": 2.9735944719375054,
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at upper-deck-1:3->turn-floor:1: transverse gap 0.290 in, overlap 2.974 in."
+          }
+        },
+        {
+          "id": "lower-deck-2:1->turn-floor:0",
+          "gap": 0.22467010781356772,
+          "angleDegrees": 0.0007449535890425501,
+          "overlap": 2.9999724149699167,
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at lower-deck-2:1->turn-floor:0: transverse gap 0.225 in, overlap 3.000 in."
+          }
+        }
+      ],
+      "grips": [
+        {
+          "index": 0,
+          "status": "fail",
+          "detail": "Docked pose has no insertion that clears both solids and fingertips. Edges do not close at upper-deck-1:3->turn-floor:1: transverse gap 0.290 in, overlap 2.974 in.",
+          "offset": {
+            "x": 0.015033298273079199,
+            "y": -0.18793854976816182,
+            "z": -0.02007411020080185
+          }
+        },
+        {
+          "index": 1,
+          "status": "fail",
+          "detail": "Docked pose has no insertion that clears both solids and fingertips. Edges do not close at upper-deck-1:3->turn-floor:1: transverse gap 0.290 in, overlap 2.974 in.",
+          "offset": {
+            "x": 0.015033298273079199,
+            "y": -0.18793854976816182,
+            "z": -0.02007411020080185
+          }
+        },
+        {
+          "index": 2,
+          "status": "pass",
+          "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+          "offset": {
+            "x": 0.015033298273079199,
+            "y": -0.18793854976816182,
+            "z": -0.02007411020080185
+          },
+          "metrics": [
+            {
+              "id": "upper-deck-1:3->turn-floor:1",
+              "gap": 0.14097615340275593,
+              "angleDegrees": 0.0031226575908286872,
+              "overlap": 2.9966405099034903,
+              "closure": {
+                "status": "pass",
+                "detail": "Solid edge gaps, overlap and orientation close."
+              }
+            },
+            {
+              "id": "lower-deck-2:1->turn-floor:0",
+              "gap": 0.1057359775497851,
+              "angleDegrees": 0.0007449535890425501,
+              "overlap": 2.9798987698020456,
+              "closure": {
+                "status": "pass",
+                "detail": "Solid edge gaps, overlap and orientation close."
+              }
+            }
+          ],
+          "arrival": {
+            "status": "pass",
+            "physicalConnectionIds": [
+              "lower-deck-2:1->turn-floor:0",
+              "turn-floor:1->upper-deck-1:3"
+            ],
+            "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+          },
+          "path": {
+            "id": "insert-turn-floor",
+            "movingTileIds": [
+              "turn-floor"
+            ],
+            "fixedTileIds": [
+              "lower-side--1",
+              "lower-side-1",
+              "lower-deck-1",
+              "lower-deck-2",
+              "support-side--1-0",
+              "support-side--1-1",
+              "support-side-1-0",
+              "support-side-1-1",
+              "support-back",
+              "upper-side--1",
+              "upper-side-1",
+              "upper-deck-1",
+              "upper-deck-2"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 14.360476928535512,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "seed": 17,
+      "initialMetrics": [
+        {
+          "id": "upper-deck-1:3->turn-floor:1",
+          "gap": 0.2876510374357087,
+          "angleDegrees": 0.0001213830744016419,
+          "overlap": 2.9888783316555556,
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at upper-deck-1:3->turn-floor:1: transverse gap 0.288 in, overlap 2.989 in."
+          }
+        },
+        {
+          "id": "lower-deck-2:1->turn-floor:0",
+          "gap": 0.224670370701779,
+          "angleDegrees": 0.0006519946857607696,
+          "overlap": 2.999991043324982,
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at lower-deck-2:1->turn-floor:0: transverse gap 0.225 in, overlap 3.000 in."
+          }
+        }
+      ],
+      "grips": [
+        {
+          "index": 0,
+          "status": "fail",
+          "detail": "Docked pose has no insertion that clears both solids and fingertips. Edges do not close at upper-deck-1:3->turn-floor:1: transverse gap 0.288 in, overlap 2.989 in.",
+          "offset": {
+            "x": -0.0033026401805951178,
+            "y": -0.18802140022439962,
+            "z": -0.014340657116043485
+          }
+        },
+        {
+          "index": 1,
+          "status": "fail",
+          "detail": "Docked pose has no insertion that clears both solids and fingertips. Edges do not close at upper-deck-1:3->turn-floor:1: transverse gap 0.288 in, overlap 2.989 in.",
+          "offset": {
+            "x": -0.0033026401805951178,
+            "y": -0.18802140022439962,
+            "z": -0.014340657116043485
+          }
+        },
+        {
+          "index": 2,
+          "status": "pass",
+          "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+          "offset": {
+            "x": -0.0033026401805951178,
+            "y": -0.18802140022439962,
+            "z": -0.014340657116043485
+          },
+          "metrics": [
+            {
+              "id": "upper-deck-1:3->turn-floor:1",
+              "gap": 0.1376353035736,
+              "angleDegrees": 0.0001213830744016419,
+              "overlap": 2.9845679269325944,
+              "closure": {
+                "status": "pass",
+                "detail": "Solid edge gaps, overlap and orientation close."
+              }
+            },
+            {
+              "id": "lower-deck-2:1->turn-floor:0",
+              "gap": 0.08771774297807067,
+              "angleDegrees": 0.0006519946857607696,
+              "overlap": 2.9856507228321965,
+              "closure": {
+                "status": "pass",
+                "detail": "Solid edge gaps, overlap and orientation close."
+              }
+            }
+          ],
+          "arrival": {
+            "status": "pass",
+            "physicalConnectionIds": [
+              "lower-deck-2:1->turn-floor:0",
+              "turn-floor:1->upper-deck-1:3"
+            ],
+            "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+          },
+          "path": {
+            "id": "insert-turn-floor",
+            "movingTileIds": [
+              "turn-floor"
+            ],
+            "fixedTileIds": [
+              "lower-side--1",
+              "lower-side-1",
+              "lower-deck-1",
+              "lower-deck-2",
+              "support-side--1-0",
+              "support-side--1-1",
+              "support-side-1-0",
+              "support-side-1-1",
+              "support-back",
+              "upper-side--1",
+              "upper-side-1",
+              "upper-deck-1",
+              "upper-deck-2"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 14.357089359158781,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "seed": 53,
+      "initialMetrics": [
+        {
+          "id": "upper-deck-1:3->turn-floor:1",
+          "gap": 0.2901236161115424,
+          "angleDegrees": 0.0031951133579815093,
+          "overlap": 2.990797618883712,
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at upper-deck-1:3->turn-floor:1: transverse gap 0.290 in, overlap 2.991 in."
+          }
+        },
+        {
+          "id": "lower-deck-2:1->turn-floor:0",
+          "gap": 0.22467578063608137,
+          "angleDegrees": 0.0005315143817820342,
+          "overlap": 2.999896297649541,
+          "closure": {
+            "status": "fail",
+            "detail": "Edges do not close at lower-deck-2:1->turn-floor:0: transverse gap 0.225 in, overlap 3.000 in."
+          }
+        }
+      ],
+      "grips": [
+        {
+          "index": 0,
+          "status": "fail",
+          "detail": "Docked pose has no insertion that clears both solids and fingertips. Edges do not close at upper-deck-1:3->turn-floor:1: transverse gap 0.290 in, overlap 2.991 in.",
+          "offset": {
+            "x": 0.0073663528156207025,
+            "y": -0.18794045711679463,
+            "z": -0.016118206708632395
+          }
+        },
+        {
+          "index": 1,
+          "status": "fail",
+          "detail": "Docked pose has no insertion that clears both solids and fingertips. Edges do not close at upper-deck-1:3->turn-floor:1: transverse gap 0.290 in, overlap 2.991 in.",
+          "offset": {
+            "x": 0.0073663528156207025,
+            "y": -0.18794045711679463,
+            "z": -0.016118206708632395
+          }
+        },
+        {
+          "index": 2,
+          "status": "pass",
+          "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+          "offset": {
+            "x": 0.0073663528156207025,
+            "y": -0.18794045711679463,
+            "z": -0.016118206708632395
+          },
+          "metrics": [
+            {
+              "id": "upper-deck-1:3->turn-floor:1",
+              "gap": 0.14061352423058845,
+              "angleDegrees": 0.0031951133579815093,
+              "overlap": 2.9947743191155336,
+              "closure": {
+                "status": "pass",
+                "detail": "Solid edge gaps, overlap and orientation close."
+              }
+            },
+            {
+              "id": "lower-deck-2:1->turn-floor:0",
+              "gap": 0.09819355540879725,
+              "angleDegrees": 0.0005315143817820342,
+              "overlap": 2.983777614366642,
+              "closure": {
+                "status": "pass",
+                "detail": "Solid edge gaps, overlap and orientation close."
+              }
+            }
+          ],
+          "arrival": {
+            "status": "pass",
+            "physicalConnectionIds": [
+              "lower-deck-2:1->turn-floor:0",
+              "turn-floor:1->upper-deck-1:3"
+            ],
+            "detail": "Actual arrival earns exactly the named cross contacts; joins remain absent until connected stabilization."
+          },
+          "path": {
+            "id": "insert-turn-floor",
+            "movingTileIds": [
+              "turn-floor"
+            ],
+            "fixedTileIds": [
+              "lower-side--1",
+              "lower-side-1",
+              "lower-deck-1",
+              "lower-deck-2",
+              "support-side--1-0",
+              "support-side--1-1",
+              "support-side-1-0",
+              "support-side-1-1",
+              "support-back",
+              "upper-side--1",
+              "upper-side-1",
+              "upper-deck-1",
+              "upper-deck-2"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 14.358107533941874,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

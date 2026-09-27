@@ -2,11 +2,12 @@ import { describe,expect,it } from "vitest";
 import { mediumRamp } from "@/lib/replication/models";
 import { evaluateAssembly } from "@/lib/replication/assembly";
 import { sameHandContact } from "@/lib/replication/grip";
+import { MAX_STANDING_DISPLACEMENT } from "@/lib/engine/constants";
 
 describe("medium ramp construction",()=>{
-  it("constructs both wedges and the support, then transfers the upper wedge in one occupied workspace",async()=>{
+  it("constructs both wedges and support, transfers the upper and relocates the lower in one workspace",async()=>{
     const replica=mediumRamp(),before=structuredClone(replica);
-    const [lower,upper,support,transfer,...remaining]=await evaluateAssembly(replica);
+    const [lower,upper,support,transfer,placement,...remaining]=await evaluateAssembly(replica);
     expect([lower,upper,support,transfer].map(stage=>stage.stageId)).toEqual([
       "medium-lower","medium-upper-preparation","medium-support","medium-upper-transfer",
     ]);
@@ -102,12 +103,49 @@ describe("medium ramp construction",()=>{
       expect(stage.terminalConnections!.every(record=>JSON.stringify(record.connectionIds)===JSON.stringify(stage.terminalConnections![0].connectionIds))).toBe(true);
     }
     expect(transfer.terminalConnections!.every(record=>record.connectionIds.length===16)).toBe(true);
-    expect(remaining).toHaveLength(7);
+    expect(placement.status,placement.detail).toBe("pass");
+    expect(placement.operations).toHaveLength(3);expect(placement.checkpoints).toHaveLength(3);
+    expect(placement.terminalConnections).toEqual(transfer.terminalConnections);
+    // The source model retains an unclosed lower/support proposal. Explicit
+    // table mode must neither request that join nor publish it as checked.
+    const nominalLowerSupport=replica.build.connections.filter(c=>
+      c.fromTileId.startsWith("lower-")&&c.toTileId.startsWith("support-"));
+    expect(nominalLowerSupport).toHaveLength(1);
+    expect(placement.terminalConnections!.every(record=>record.connectionIds.every(id=>
+      !(id.includes("lower-")&&id.includes("support-"))))).toBe(true);
+    expect(placement.operations.map(row=>row.seed)).toEqual([0,17,53]);
+    for(const [index,row] of placement.operations.entries()){
+      expect(row.status,row.detail).toBe("pass");
+      expect(row.tablePlacement!.horizontalDisplacement).toBeGreaterThanOrEqual(3);
+      expect(row.tablePlacement!.componentGroups.map(g=>g.length).sort((a,b)=>a-b)).toEqual([4,9]);
+      expect([...row.carry!.movingComponentTileIds].sort()).toEqual([...lowerIds].sort());
+      expect(row.carry!.motion.every(frame=>frame.tiles.length===13)).toBe(true);
+      expect(row.seating!.motion.every(frame=>frame.tiles.length===13)).toBe(true);
+      expect(row.seating!.earnedJointIds).toEqual([]);
+      expect(row.seating!.tableBearingTileIds.length).toBeGreaterThan(0);
+      expect(row.seating!.tableBearingTileIds.every(id=>lowerIds.includes(id))).toBe(true);
+      const prepared=lower.checkpoints[index].motion.at(-1)!.tiles;
+      const final=placement.checkpoints[index];
+      expect(final.status,final.detail).toBe("pass");expect(final.dynamicTileCount).toBe(13);
+      expect(final.heldTileIds).toEqual([]);expect(final.poppedJoints).toEqual([]);expect(final.solidFailures).toEqual([]);
+      const deltas=lowerIds.map(id=>{
+        const before=prepared.find(t=>t.id===id)!.position,after=final.motion.at(-1)!.tiles.find(t=>t.id===id)!.position;
+        return {x:after.x-before.x,z:after.z-before.z};
+      });
+      const mean=deltas.reduce((sum,d)=>({x:sum.x+d.x/4,z:sum.z+d.z/4}),{x:0,z:0});
+      expect(Math.hypot(mean.x,mean.z)).toBeGreaterThanOrEqual(3);
+      for(const delta of deltas){
+        expect(Math.hypot(delta.x,delta.z)).toBeGreaterThanOrEqual(3);
+        expect(Math.hypot(delta.x-mean.x,delta.z-mean.z)).toBeLessThan(MAX_STANDING_DISPLACEMENT);
+      }
+    }
+    expect(remaining).toHaveLength(6);
     expect(remaining.every(stage=>stage.status==="unverified")).toBe(true);
     expect(replica).toEqual(before);
     expect(replica.build.tiles).toHaveLength(37);
     expect(replica.stages[0].constructionEvidence).toBeUndefined();
-  // Four stages now include 42 operation trials and a continuous prepared
-  // transfer. This is a computation allowance; physical limits are unchanged.
-  },900000);
+  // Five stages include continuous upper transfer and lower table relocation.
+  // A measured full run takes 951 seconds; allow 20 minutes of computation.
+  // Simulated durations, rest thresholds and physical limits are unchanged.
+  },1200000);
 });

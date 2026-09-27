@@ -9,11 +9,12 @@ import { SimulationBudgetExceeded } from "@/lib/engine/simulate";
 import { tilePrismVertices } from "@/lib/magnetic-tiles/prism-geometry";
 import type { BuildGraph, TileInstance } from "@/lib/magnetic-tiles/types";
 import { contactsClosed } from "./contacts";
-import { checkHandAccess, checkSupportFingerClearance, findHandInsertionPath, type HandContact } from "./grip";
+import { checkHandAccess, checkHandTransition, checkSupportFingerClearance, findHandInsertionPath, type HandContact } from "./grip";
 import type { InsertionPath } from "./insertion";
 import { supportSnapshot } from "./support";
 import type { Check } from "./types";
 import { componentContacts, splitComponents } from "./components";
+import { checkPreparedContinuation } from "./workspace";
 
 // Resolve a falling panel's contact at 960 Hz. This refines collision integration;
 // duration, rest time, forces, friction and geometric tolerances stay unchanged.
@@ -44,10 +45,24 @@ export interface SeatingTrial extends Check {
  * subsequent connected trial. A miss, slide or unstable impact must fail. */
 export async function simulateGravitySeat(target: BuildGraph, movingTileIds: string[], hands: HandContact[], releaseHeight: number,
   floorY: number, seed: number, deadline = Infinity, state?: EngineState, placement?: "table" | "magnetic", components?: string[][]): Promise<SeatingTrial> {
+  return runGravitySeat(target,movingTileIds,hands,releaseHeight,floorY,seed,deadline,state,placement,components);
+}
+
+/** Release an already-carried component. The first fall pose is the actual
+ * arrival, not a fresh insertion or a reconstruction from nominal geometry. */
+export async function simulatePreparedTableRelease(actual: BuildGraph, movingTileIds: string[], hands: HandContact[], releaseHeight: number,
+  floorY: number, seed: number, deadline: number, state: EngineState, components: string[][]): Promise<SeatingTrial> {
+  const target = { ...actual,tiles: actual.tiles.map(t => movingTileIds.includes(t.id)
+    ? { ...t,position: add(t.position,{ x: 0,y: -releaseHeight,z: 0 }) } : t) };
+  return runGravitySeat(target,movingTileIds,hands,releaseHeight,floorY,seed,deadline,state,"table",components,actual);
+}
+
+async function runGravitySeat(target: BuildGraph, movingTileIds: string[], hands: HandContact[], releaseHeight: number,
+  floorY: number, seed: number, deadline: number, state?: EngineState, placement?: "table" | "magnetic", components?: string[][], arrived?: BuildGraph): Promise<SeatingTrial> {
   const moving = new Set(movingTileIds), fixed = target.tiles.filter(t => !moving.has(t.id)).map(t => t.id);
   const cross = target.connections.filter(c => moving.has(c.fromTileId) !== moving.has(c.toTileId));
   const result: SeatingTrial = { status: "fail", detail: "", placement: placement ?? (fixed.length ? "magnetic" : "table"), seed, path: null, releaseHeight, heldTileIds: [],
-    withheldJointIds: cross.map(connectionId), activeJointIds: [], earnedJointIds: [], tableBearingTileIds: [], peakTargetDisplacement: 0, settledSteps: 0, elapsedSeconds: 0, poppedJoints: [], motion: [], settled: target };
+    withheldJointIds: cross.map(connectionId), activeJointIds: [], earnedJointIds: [], tableBearingTileIds: [], peakTargetDisplacement: 0, settledSteps: 0, elapsedSeconds: 0, poppedJoints: [], motion: [], settled: arrived ?? target };
   const fail = (detail: string) => {
     if (result.motion.length && result.motion.at(-1)!.seconds !== result.elapsedSeconds)
       result.motion.push({ seconds: result.elapsedSeconds, tiles: result.settled.tiles });
@@ -59,8 +74,21 @@ export async function simulateGravitySeat(target: BuildGraph, movingTileIds: str
     return fail("Invalid seating contract: release height must be 0.05–0.75 in, with known distinct moving parts.");
   if (result.placement === "magnetic" && !cross.length) return fail("No intended moving-to-installed magnetic contact.");
   if (result.placement === "table" && cross.length) return fail("Table placement cannot discard intended magnetic contacts.");
-  const released = { ...target, tiles: target.tiles.map(t => moving.has(t.id) ? { ...t, position: add(t.position, { x: 0, y: releaseHeight, z: 0 }) } : t),
+  const released = arrived ?? { ...target, tiles: target.tiles.map(t => moving.has(t.id) ? { ...t, position: add(t.position, { x: 0, y: releaseHeight, z: 0 }) } : t),
     connections: target.connections.filter(c => moving.has(c.fromTileId) === moving.has(c.toTileId)) };
+  if (arrived) {
+    if (!state || hands.length !== 1 || !moving.has(hands[0].tileId) || !components?.some(g => g.length === moving.size && g.every(id => moving.has(id))))
+      return fail("Prepared table release needs one held panel and one complete existing component.");
+    const continuity = checkPreparedContinuation(arrived,state,floorY);
+    if (continuity.status !== "pass") return fail(continuity.detail);
+    if (state.bodies.some(b => b.referenceTile.id === hands[0].tileId
+      ? b.bodyType !== RigidBodyType.KinematicPositionBased && b.bodyType !== RigidBodyType.Fixed : b.bodyType !== RigidBodyType.Dynamic))
+      return fail("Prepared table release must begin with exactly its pickup panel held and all other bodies dynamic.");
+    const clearance = buildBounds(arrived.tiles.filter(t => moving.has(t.id))).min.y-floorY;
+    if (clearance < .05 || clearance > .75) return fail("Actual prepared release must be 0.05–0.75 in above the fixed table.");
+    const withdrawal = checkHandTransition(arrived,hands,[],floorY,deadline);
+    if (withdrawal.status !== "pass") return fail(withdrawal.detail);
+  }
   // Validate both components independently. Only this deliberate split is allowed;
   // absent internal joins and malformed references are never ignored.
   if (componentContacts(released,splitComponents(components ?? [released.tiles.map(t => t.id)],moving)).status !== "pass")
@@ -71,7 +99,8 @@ export async function simulateGravitySeat(target: BuildGraph, movingTileIds: str
     const pair = { ...released, tiles: released.tiles.filter(t => t.id === c.fromTileId || t.id === c.toTileId), connections: [c] };
     if (contactsClosed(pair).status === "pass") return fail("Release begins already connected; seating must earn separated contacts.");
   }
-  const path = findHandInsertionPath(released, movingTileIds, fixed, hands, floorY, deadline);
+  const path = arrived ? { id: "prepared-table-release",movingTileIds,fixedTileIds: fixed,
+    offsets: [{ x: 0,y: 0,z: 0 },{ x: 0,y: 0,z: 0 }] } : findHandInsertionPath(released, movingTileIds, fixed, hands, floorY, deadline);
   result.path = path;
   if (!path) return fail("No approach clears solids and fingertips at the release pose.");
   const grip = checkHandAccess(released, path, hands, floorY,deadline);

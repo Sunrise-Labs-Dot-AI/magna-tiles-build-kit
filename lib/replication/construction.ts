@@ -5,12 +5,13 @@ import type { Replica, Verdict } from "./types";
 export interface ConstructionStage {
   stageId: string;
   /** Construction placement only; source observations retain their stage pose. */
-  workspace?: { afterStageId: string; offset: import("@/lib/magnetic-tiles/types").Vec3 };
+  workspace?: { afterStageId?: string; offset: import("@/lib/magnetic-tiles/types").Vec3 };
   operations: {
     tileIds: string[];
     preparedStageId?: string;
     /** Explicit table-relative transit height for a previously constructed module. */
-    transfer?: { transitHeight: number; /** Latest complete workspace, distinct from module identity. */ afterStageId?: string };
+    transfer?: { transitHeight: number; /** Latest complete workspace, distinct from module identity. */ afterStageId?: string } &
+      ({ placement?: "magnetic"; releaseHeight?: never } | { placement: "table"; releaseHeight: number });
     /** Omitted means no hand evidence, never automatic support of all tiles. */
     hands?: import("./grip").HandContact[];
     /** All hands removed after this insertion. Stage releases are mandatory too. */

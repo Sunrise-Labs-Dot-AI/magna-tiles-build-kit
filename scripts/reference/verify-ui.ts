@@ -172,8 +172,25 @@ async function main() {
       throw Error("Medium transfer instructions did not use actual checked joins.");
     await page.screenshot({path:"verification/replication/ui/medium-upper-transfer-release.png",fullPage:true});
     await page.getByLabel("Construction checkpoint").selectOption("4");
-    if((await page.getByLabel("Complete assembly check").textContent())?.includes("Passed this check"))
-      throw Error("Unverified medium lower placement was promoted.");
+    if(!(await page.getByLabel("Complete assembly check").textContent())?.includes("Passed this check"))
+      throw Error("Medium lower table placement pass is absent.");
+    await page.getByLabel("Part insertion preview").selectOption("0");
+    await mediumSlider.fill("0");
+    await ready();
+    await page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));
+    const lowerPlacementStart=await page.locator("canvas").screenshot();
+    await mediumSlider.fill("100");
+    await page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));
+    if(lowerPlacementStart.equals(await page.locator("canvas").screenshot()))throw Error("Lower placement did not replay recorded movement.");
+    const relocatedLabels=await page.locator(".design-piece-label").allTextContents();
+    if(relocatedLabels.length!==13||!Array.from({length:13},(_,i)=>`P${i+1}`).every(id=>relocatedLabels.includes(id)))
+      throw Error(`Lower placement lost workspace panels: ${relocatedLabels}`);
+    const tablePlacementText=await page.getByLabel("Prepared table placement",{exact:true}).textContent();
+    if(!tablePlacementText?.includes("Passed this check")||!tablePlacementText.includes("Table contact checked")||!tablePlacementText.includes("no new join was added"))
+      throw Error("Actual table-bearing and no-new-join evidence is absent.");
+    if(!(await page.locator(".reference-instruction").textContent())?.includes("No new checked magnetic joins in this step"))
+      throw Error("Table relocation instructions claimed a new magnetic join.");
+    await page.screenshot({path:"verification/replication/ui/medium-lower-placement-release.png",fullPage:true});
     await page.getByLabel("Construction checkpoint").selectOption("5");
     if((await page.getByLabel("Complete assembly check").textContent())?.includes("Passed this check"))
       throw Error("Unverified medium blue turn was promoted.");
@@ -200,8 +217,8 @@ async function main() {
       gravityPreview: { labels: seatedLabels, recordedFramesDiffer: true, launchAssemblyPassed: true },
       pickupPreview: { labels: pickupLabels, terminalLabels: wedgeEndLabels, recordedFramesDiffer: true },
       transferPreview: {labels:transferLabels,recordedFramesDiffer:true,completeAssemblyPassed:true},
-      mediumPreview: {pickupLabels:mediumPickup,preparedLabels:mediumPrepared,workspaceLabels:mediumWorkspace,transferLabels:mediumTransferred,
-        firstFourStagesPassed:true,transferPlaybackMoves:true,checkedJoinInstructions:true,lowerPlacementUnverified:true,blueTurnUnverified:true},
+      mediumPreview: {pickupLabels:mediumPickup,preparedLabels:mediumPrepared,workspaceLabels:mediumWorkspace,transferLabels:mediumTransferred,relocatedLabels,
+        firstFiveStagesPassed:true,transferPlaybackMoves:true,checkedJoinInstructions:true,lowerPlacementPlaybackMoves:true,tableBearingChecked:true,noNewPlacementJoins:true,blueTurnUnverified:true},
       mobileOverflow: overflow,
       pageErrors: errors,
     };

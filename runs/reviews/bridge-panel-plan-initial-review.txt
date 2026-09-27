@@ -1,0 +1,18 @@
+Not CLEAN.
+
+**CRITICAL: The plan names a distinct bridge operation, but does not define the assembly contract needed to route it.**  
+Current `evaluateAssembly` rejects multi-installed stages unless they are prepared transfers, and `simulatePreparedTransfer` can only merge one neighboring component via `joinComponentGroups`; see [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:127) and [components.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/components.ts:58). That conflicts with this plan’s “new panel joins at least two declared existing components.”  
+Suggested fix: add an explicit `bridgeInsertion` or equivalent construction operation type and acceptance text requiring `evaluateAssembly` to allow exactly one new non-prepared tile against a selected predecessor workspace, while preserving the existing prepared-transfer one-neighbor rejection with a regression test.
+
+**WARNING: “Exactly one introduced body” needs a sharper state-boundary invariant.**  
+`createEngineWorld` permits state continuation with saved bodies plus additional input bodies, while `checkPreparedContinuation` deliberately rejects extra bodies for prepared relocation. The bridge operation needs the wider engine path, but the plan should require exact body-set proofs at every subphase: predecessor `state.bodies` is exactly the saved 13, bridge input is exactly saved 13 plus the named incoming panel, and post-introduction state is exactly that 14-body set with old bodies, velocities, body modes, reference tiles, joints, popped-joint history and solid-failure history unchanged until explicit motion.  
+Suggested fix: add negative tests for extra actual body, missing saved body, reused incoming id, incoming id already in predecessor lineage, and body-pose reset of any saved panel before motion.
+
+**WARNING: Edge identity uniqueness is underspecified for one panel touching multiple components.**  
+Existing physical IDs canonicalize full tile-edge pairs in [contact-arrival.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/contact-arrival.ts:18), and current transfer duplicate checks reject duplicate pairs. A bridge can still request two different pairs that reuse the same incoming-panel edge endpoint, which is physically unearned even if pair IDs differ.  
+Suggested fix: require uniqueness of each physical edge endpoint on the incoming panel, and probably on installed panels too, in addition to canonical pair uniqueness. Add a negative case where `blue:edgeN` is declared against both lower and upper.
+
+**NOTE: Source-fidelity language is mostly guarded, but the acceptance should keep “blue turn fit” separate from source promotion.**  
+The plan correctly says the 56-second frame is not fresh independent coverage. Keep the implementation from turning a 14-body physical pass into a 37-panel source-fidelity claim by requiring the medium stage/report text to label the bridge as a construction-frame physical increment only, with later canopy and shape acceptance still unverified.
+
+Confidence limits: read-only, no tests run. I inspected the plan plus the relevant assembly, component, contact-arrival, held-motion, prepared-transfer, workspace and current medium source-stage definitions. I did not review unrelated code or generated reference JSON.

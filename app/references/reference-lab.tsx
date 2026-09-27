@@ -114,6 +114,7 @@ function Candidate({
     [insertionIndex, setInsertionIndex] = useState(-1),
     [insertionProgress, setInsertionProgress] = useState(100);
   const stage = replica.stages[step],
+    constructionPlan = replica.construction?.find(p => p.stageId === stage?.id),
     assembly = stage ? report.assemblySimulation?.find(s => s.stageId === stage.id) : undefined,
     rejected = assembly?.rejectedAttempts ?? [],
     shownAttempt = attemptIndex >= 0 ? attemptIndex : assembly?.status === "fail" && rejected.length ? 0 : -1,
@@ -239,7 +240,7 @@ function Candidate({
                 {!!attempt?.operations.length && <details>
                   <summary>Grip and intermediate checks</summary>
                   <ol>{attempt.operations.filter(o => o.seed === 0).map(o => <li key={o.index}>
-                    Insert {o.tileIds.map(id => labelsById[id]).join(" + ")}: {partDetail(o.detail)}
+                    {o.tablePlacement ? "Move" : "Insert"} {o.tileIds.map(id => labelsById[id]).join(" + ")}: {partDetail(o.detail)}
                   </li>)}</ol>
                 </details>}
               </div>}
@@ -250,7 +251,7 @@ function Candidate({
                     <select value={insertionIndex} onChange={e => { setInsertionIndex(Number(e.target.value)); setInsertionProgress(100); }}>
                       <option value={-1}>Show complete checkpoint</option>
                       {construction.paths.map((p, index) => <option key={p.id} value={index}>
-                        {index + 1}. Insert {p.movingTileIds.map(id => labelsById[id]).join(" + ")}
+                        {index + 1}. {constructionPlan?.operations[index]?.transfer?.placement === "table" ? "Move" : "Insert"} {p.movingTileIds.map(id => labelsById[id]).join(" + ")}
                       </option>)}
                     </select>
                   </label>
@@ -265,6 +266,14 @@ function Candidate({
                     ? "First half: checked approach. Second half: recorded gravity motion from the first perturbation run. New joins remain absent during this fall."
                     : "Preview uses the checked approach and actual settled predecessor positions."
                     : `Preview uses the proposed poses. ${construction.detail}`}</p>
+                  {recorded?.tablePlacement && <div aria-label="Prepared table placement">
+                    <strong>Table placement</strong> <Status check={recorded.tablePlacement} />
+                    {recorded.tablePlacement.status === "pass" && recorded.seating && <p>
+                      Moved {recorded.tablePlacement.horizontalDisplacement.toFixed(2)} in across the table.
+                      Table contact checked on {recorded.seating.tableBearingTileIds.map(id => labelsById[id]).join(", ")}.
+                      {" "}The existing magnetic joins were retained; no new join was added.
+                    </p>}
+                  </div>}
                 </div>
               )}
               <p>

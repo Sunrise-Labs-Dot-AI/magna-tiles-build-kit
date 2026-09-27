@@ -1,0 +1,14 @@
+CLEAN.
+
+I did a fresh read-only adversarial review against HEAD `59d4fa7`, including the plan and the CLEAN review sidecar found at [runs/2026-09-27-prepared-table-relocation-plan.md.review.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-prepared-table-relocation-plan.md.review.md). The literal `.CLEAN.md` path did not exist.
+
+No actionable correctness, public-contract, continuity, missing-acceptance, or reliability findings.
+
+Key checks that held up:
+- Prepared continuation enforces exact body/joint/pose continuity before live-world continuation: [workspace.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/workspace.ts:16).
+- Table relocation is a separate mode with one complete moving component, no cross joins, bounded release, and dynamic-only starting state: [prepared-placement.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/prepared-placement.ts:47).
+- Fall starts from actual carried arrival and requires one held panel, all others dynamic, table contact, rest, and no earned magnetic joins: [seating.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/seating.ts:79).
+- Failed full stages do not publish terminal evidence, and final free checkpoint remains mandatory: [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:446) and [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:472).
+- The new untracked tests cover injected future bodies, boundary mismatches, sensor faults, colliding destination, stale/late initial offsets, and medium displacement/component invariants: [prepared-table-placement.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/prepared-table-placement.test.ts:117), [medium-assembly.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/medium-assembly.test.ts:106).
+
+I did not run the long physical simulations or inspect media, per your constraints.

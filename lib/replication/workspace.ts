@@ -6,6 +6,35 @@ import { samePoses } from "./rotation-clearance";
 import type { HandContact } from "./grip";
 import { RigidBodyType } from "@/lib/engine/physics-backend";
 import { componentContacts } from "./components";
+import type { Check } from "./types";
+import { distance } from "@/lib/engine/math";
+import { basisFromEuler } from "@/lib/magnetic-tiles/edge-attachment";
+import { validateEngineInput } from "@/lib/engine/input";
+
+/** Prepared motion may neither insert a future body nor recreate a missing joint.
+ * Ordinary, separately accounted-for panel insertion uses the engine's wider contract. */
+export function checkPreparedContinuation(build: BuildGraph, state: EngineState, floorY: number): Check {
+  const ids = build.tiles.map(t => t.id).sort(), saved = state.bodies.map(b => b.referenceTile.id).sort();
+  const joints = build.connections.map(connectionId).sort();
+  if (validateEngineInput(build).length || !Number.isFinite(floorY) || state.physicsModel !== PHYSICS_MODEL_VERSION ||
+      state.bodies.some(b => ![...Object.values(b.position),...Object.values(b.rotation),...Object.values(b.linearVelocity),...Object.values(b.angularVelocity)].every(Number.isFinite)) ||
+      new Set(ids).size !== ids.length || JSON.stringify(ids) !== JSON.stringify(saved) ||
+      new Set(joints).size !== joints.length || JSON.stringify(joints) !== JSON.stringify(state.connections.map(connectionId).sort()) ||
+      JSON.stringify(joints) !== JSON.stringify(state.joints.map(j => j.model.id).sort()) ||
+      state.poppedJoints.length || state.solidFailures.length)
+    return { status: "fail",detail: "Prepared continuation requires exactly the existing bodies and active joints, with no prior physical failure." };
+  // Match the engine's existing continuation tolerance, including roundoff when
+  // a retained workspace is expressed in the next stage's table coordinates.
+  if (build.tiles.some(t => {
+    const saved = state.bodies.find(b => b.referenceTile.id === t.id)!;
+    const actual = currentTilePose(saved.referenceTile,saved.position,saved.rotation,floorY);
+    const basis = t.basis ?? basisFromEuler(t.rotation.x,t.rotation.y,t.rotation.z);
+    return t.shape !== actual.shape || distance(t.position,actual.position) > 1e-5 ||
+      (['xAxis','yAxis','zAxis'] as const).some(axis => distance(basis[axis],actual.basis![axis]) > 1e-5);
+  }))
+    return { status: "fail",detail: "Prepared continuation would replace the actual carried pose or tile geometry." };
+  return { status: "pass",detail: "Prepared continuation retains the exact existing body, pose and active-joint set." };
+}
 
 /** A complete terminal world, never a nominal module pose to be merged later. */
 export interface PreparedWorkspace {

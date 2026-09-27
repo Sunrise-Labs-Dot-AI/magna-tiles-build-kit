@@ -1,0 +1,4 @@
+jet: full geometry, independent source projections/coverage, release, settled shape and cars unchanged; assembly unchanged
+small-ramp: full geometry, independent source projections/coverage, release, settled shape and cars unchanged; assembly unchanged
+medium-ramp: full geometry, independent source projections/coverage, release, settled shape and cars unchanged
+large-ramp: full geometry, independent source projections/coverage, release, settled shape and cars unchanged; assembly unchanged

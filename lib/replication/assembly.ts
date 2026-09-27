@@ -13,8 +13,9 @@ import { simulateHeldMotion, type HeldMotionTrial } from "./held-motion";
 import { tileQuaternion } from "./rotation-clearance";
 import { dockToSupports, type DockingPolicy } from "./docking";
 import { SimulationBudgetExceeded } from "@/lib/engine/simulate";
-import { selectWorkspace, workspaceBuild, type PreparedWorkspace } from "./workspace";
+import { checkPreparedContinuation, selectWorkspace, workspaceBuild, type PreparedWorkspace } from "./workspace";
 import { simulatePreparedTransfer, type TransferEvidence } from "./prepared-transfer";
+import { simulatePreparedTablePlacement, type TablePlacementEvidence } from "./prepared-placement";
 import { componentContacts, movingComponent } from "./components";
 import { closedMagneticConnection } from "./contacts";
 import type { Check, Replica, StagePose } from "./types";
@@ -35,6 +36,7 @@ export interface AssemblyOperationResult extends Check {
   lowering?: Omit<HeldMotionTrial, "settled" | "state">;
   docking?: Check & { offset: { x: number; y: number; z: number }; targetPenetration: number | null };
   transfer?: TransferEvidence;
+  tablePlacement?: TablePlacementEvidence;
   timeline?: (({ phase: "pickup" | "carry" | "seating" | "lowering" } | { phase: "support"; index: number }) & { activeConnectionIds?: string[] })[];
   trials: Omit<SupportTrial, "settled" | "state">[];
 }
@@ -67,6 +69,10 @@ const supportSummary = (trial: SupportTrial): Omit<SupportTrial,"settled"|"state
 const motionSummary = (trial: HeldMotionTrial): Omit<HeldMotionTrial,"settled"|"state"> => {
   const result: Partial<HeldMotionTrial> = { ...trial }; delete result.settled; delete result.state;
   return result as Omit<HeldMotionTrial,"settled"|"state">;
+};
+const seatingSummary = (trial: SeatingTrial): Omit<SeatingTrial,"settled"|"state"> => {
+  const result: Partial<SeatingTrial> = {...trial}; delete result.settled; delete result.state;
+  return result as Omit<SeatingTrial,"settled"|"state">;
 };
 
 /** A path with empty air at both ends is not a magnetic assembly operation. */
@@ -110,6 +116,9 @@ export async function evaluateAssembly(replica: Replica, deadline = Infinity): P
     const plan = replica.construction!.find(p => p.stageId === stage.id)!;
     if (plan.operations.some(op => !op.hands?.length)) continue;
     const transfers = plan.operations.filter(op => op.preparedStageId);
+    if (plan.workspace && plan.workspace.afterStageId === undefined && (prepared.length || stage !== replica.stages[0])) {
+      result.detail = "Initial construction placement is allowed only before any other workspace or source stage."; continue;
+    }
     const dependency = transfers[0]?.transfer?.afterStageId ?? transfers[0]?.preparedStageId ?? plan.workspace?.afterStageId ?? stage.installedStageIds?.[0];
     if (dependency && !prepared.some(w => w.stageId === dependency)) { result.detail = "An earlier module has not passed its complete supported assembly."; continue; }
     if (!plan.workspace && !transfers.length && dependency && (stage.transform || replica.stages.find(s => s.id === dependency)?.transform)) {
@@ -117,8 +126,12 @@ export async function evaluateAssembly(replica: Replica, deadline = Infinity): P
     }
     if (((stage.installedStageIds?.length ?? 0) > 1 && !transfers.length) || plan.operations.some(op => op.transfer && !op.preparedStageId) ||
         plan.operations.some(op => op.transfer?.afterStageId !== undefined && (typeof op.transfer.afterStageId !== "string" || !op.transfer.afterStageId.trim())) ||
+        plan.operations.some(op => op.transfer && (op.transfer.placement !== undefined && !["table","magnetic"].includes(op.transfer.placement) ||
+          op.transfer.placement !== "table" && op.transfer.releaseHeight !== undefined || op.transfer.placement === "table" && stage.support !== "released")) ||
         transfers.length && (transfers.length !== 1 || plan.operations.length !== 1 || !transfers[0].transfer || !transfers[0].releaseAfter || plan.workspace || stage.transform || transfers[0].gravitySeat || transfers[0].pickup || transfers[0].lowerBeforeRelease !== undefined) ||
-        plan.workspace && (stage.installedStageIds?.length || !Object.values(plan.workspace.offset).every(n => Number.isFinite(n) && Math.abs(n) <= 12) || plan.workspace.offset.y !== 0)) {
+        plan.workspace && (stage.installedStageIds?.length ||
+          plan.workspace.afterStageId !== undefined && (typeof plan.workspace.afterStageId !== "string" || !plan.workspace.afterStageId.trim()) ||
+          !["x","y","z"].every(axis => Number.isFinite(plan.workspace!.offset[axis as "x"|"y"|"z"]) && Math.abs(plan.workspace!.offset[axis as "x"|"y"|"z"]) <= 12) || plan.workspace.offset.y !== 0)) {
       result.detail = "Prepared worlds need one explicit predecessor, workspace placement and continuous transfer contract."; continue;
     }
     for (const policy of ["clear-first","support-aligned"] as const) {
@@ -148,6 +161,7 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
   policy: DockingPolicy, deadline: number): Promise<AssemblyAttempt & { states: PreparedWorkspace[]; terminalConnections?: AssemblyResult["terminalConnections"] }> {
   const plan = replica.construction!.find(p => p.stageId === stage.id)!;
   const transfers = plan.operations.filter(op => op.preparedStageId);
+  const tablePlacement = transfers[0]?.transfer?.placement === "table";
   const dependency = transfers[0]?.transfer?.afterStageId ?? transfers[0]?.preparedStageId ?? plan.workspace?.afterStageId ?? stage.installedStageIds?.[0];
   const installedIds = (stage.installedStageIds ?? []).flatMap(id => replica.stages.find(s => s.id === id)?.tileIds ?? []);
   const offset = plan.workspace?.offset ?? { x: 0,y: 0,z: 0 };
@@ -202,6 +216,10 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
       const row: AssemblyOperationResult = { index, seed, tileIds: operation.tileIds, status: "fail", detail: "", trials: [], timeline: [] };
       result.operations.push(row);
       const record = async (build: BuildGraph, holds: string[]) => {
+        if (tablePlacement && physicalState) {
+          const continuity = checkPreparedContinuation(build,physicalState,floorY);
+          if (continuity.status !== "pass") { failure=continuity.detail; return build; }
+        }
         const gripDefinitions = [...(operation.hands ?? []), ...(operation.pickup ? [operation.pickup.hand] : [])];
         const supportHands = holds.map(id => gripDefinitions.find(h => h.tileId === id)!);
         const transition = checkHandTransition(build,heldHands,supportHands,floorY,deadline);
@@ -228,6 +246,32 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
       const support = hands.filter(h => placed.has(h.tileId)).map(h => h.tileId);
       if (operation.preparedStageId) {
         if (!physicalState || !operation.transfer) { failure = row.detail = "Missing actual prepared transfer state."; break; }
+        if (operation.transfer.placement === "table") {
+          // Table mode requests destination poses and no new joins. The source
+          // graph can still contain unearned proposals for later reconstruction.
+          const target = {...nominal,connections:current.connections};
+          const placement = await simulatePreparedTablePlacement(target,current,physicalState,operation.tileIds,heldHands,hands,
+            operation.transfer.transitHeight,operation.transfer.releaseHeight,floorY,seed,deadline,predecessor!.components);
+          const {settled,state,handoff,carry,seating,...evidence}=placement;
+          row.tablePlacement=evidence;
+          if (handoff) {
+            row.trials.push(supportSummary(handoff));
+            row.timeline!.push({phase:"support",index:row.trials.length-1,activeConnectionIds:handoff.state.joints.map(j=>j.model.id)});
+          }
+          if (carry) { row.carry=motionSummary(carry); row.timeline!.push({phase:"carry",activeConnectionIds:carry.state?.joints.map(j=>j.model.id)}); }
+          if (seating) {
+            row.seating=seatingSummary(seating); row.timeline!.push({phase:"seating",activeConnectionIds:seating.activeJointIds.filter(id=>!seating.poppedJoints.includes(id))});
+          }
+          row.approachTiles=handoff?.motion[0]?.tiles ?? carry?.motion[0]?.tiles;
+          row.closure={status:placement.status,detail:placement.detail};
+          if (placement.status !== "pass") { failure=row.detail=placement.detail; break; }
+          current=settled; physicalState=state; heldHands=[]; inheritedComponents=structuredClone(placement.componentGroups);
+          moving.forEach(id=>placed.add(id));
+          current=mergePoses(current,await record(current,[]));
+          if (failure) { row.detail=failure; break; }
+          row.status="pass";row.detail=placement.detail;
+          continue;
+        }
         const transfer = await simulatePreparedTransfer(nominal,current,physicalState,operation.tileIds,heldHands,hands,operation.transfer.transitHeight,floorY,seed,deadline,predecessor!.components,policy);
         const { settled,state,handoff,carry,docking,path,...evidence } = transfer;
         row.transfer = evidence;
@@ -405,6 +449,10 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
     // module must never skip its first unsupported release.
     if (stage.support === "released") {
       const present = subset(current,placed);
+      if (tablePlacement && physicalState) {
+        const continuity=checkPreparedContinuation(present,physicalState,floorY);
+        if (continuity.status !== "pass") { failures.push(`Seed ${seed}: ${continuity.detail}`); continue; }
+      }
       const transition = checkHandTransition(present,heldHands,[],floorY,deadline);
       if (transition.changed) (result.checkpointHandTransitions ??= []).push({ ...transition,seed });
       if (transition.status !== "pass") { failures.push(`Seed ${seed}: ${transition.detail}`); continue; }
