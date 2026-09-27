@@ -1,0 +1,9 @@
+**VERIFIED/CLEAN**
+
+No remaining concrete issues found in the bounded evidence layer and tests I reviewed.
+
+The first high finding is resolved in [contact-matrix.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/contact-matrix.ts:47): `passesTrial()` now validates actual `dt`, solver, length unit, allowed linear error, `contactERP`, and `frequencyFromERP` against the cell’s declared `hz` and frequency. The Rapier setter-only frequency issue is handled safely for this contract: the code records the readable ERP effect after setting frequency, infers frequency using the vendored damping ratio of 5, and checks both ERP and inferred frequency. That establishes the numerical setting at the level this evidence layer depends on.
+
+The second high finding is resolved in [contact-matrix.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/contact-matrix.ts:54): terminal bodies, reference geometry, dynamic mode, finite body state, connections, joint counts, unique joint IDs, and exact joint models are checked against independently generated fixtures. The corruption tests in [contact-matrix.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/contact-matrix.test.ts:137) cover the original copied-flat-snapshot path plus missing, duplicate, altered, fixed, and missing-connection cases.
+
+I did not edit files, run tests or simulations, inspect media, push, touch credentials, or interrupt processes.

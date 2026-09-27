@@ -1,0 +1,464 @@
+{
+  "scope": "Exact unchanged baseline physics comparison; partial matrix has no selection credit.",
+  "baselineSha256": "c0332ece864783213e6d36560e3213c12b522e538b016ada92068c1cd23781cc",
+  "eventSha256": "a0a40266cef7ad1e7b40be15bcb799d8231ea7d7c9bc2e07633153933b3a0869",
+  "eventReplayExact": true,
+  "comparisons": [
+    {
+      "cell": "flat-contact/120/960/16/0",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "flat-contact/120/960/16/17",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "flat-contact/120/960/16/53",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "flat-contact/120/960/32/0",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "flat-contact/120/960/32/17",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "flat-contact/120/960/32/53",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "flat-contact/120/1920/16/0",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "flat-contact/120/1920/16/17",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "flat-contact/120/1920/16/53",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "flat-contact/120/1920/32/0",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "flat-contact/120/1920/32/17",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "flat-contact/120/1920/32/53",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "loaded-base-contact/120/960/16/0",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "loaded-base-contact/120/960/16/17",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "loaded-base-contact/120/960/16/53",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "loaded-base-contact/120/960/32/0",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "loaded-base-contact/120/960/32/17",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "loaded-base-contact/120/960/32/53",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "loaded-base-contact/120/1920/16/0",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "loaded-base-contact/120/1920/16/17",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "loaded-base-contact/120/1920/16/53",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "loaded-base-contact/120/1920/32/0",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "loaded-base-contact/120/1920/32/17",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    },
+    {
+      "cell": "loaded-base-contact/120/1920/32/53",
+      "fields": [
+        "peakPenetration",
+        "latePenetration",
+        "peakDisplacement",
+        "finalSpeeds",
+        "settledSteps",
+        "poppedJoints",
+        "lengthUnit",
+        "normalizedAllowedLinearError",
+        "contactERP",
+        "passed",
+        "solidFailures",
+        "peakSolidOverlap",
+        "invalidState"
+      ],
+      "differences": []
+    }
+  ]
+}
