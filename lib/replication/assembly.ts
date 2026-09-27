@@ -108,12 +108,13 @@ export async function evaluateAssembly(replica: Replica, deadline = Infinity): P
     const plan = replica.construction!.find(p => p.stageId === stage.id)!;
     if (plan.operations.some(op => !op.hands?.length)) continue;
     const transfers = plan.operations.filter(op => op.preparedStageId);
-    const dependency = transfers[0]?.preparedStageId ?? plan.workspace?.afterStageId ?? stage.installedStageIds?.[0];
+    const dependency = transfers[0]?.transfer?.afterStageId ?? transfers[0]?.preparedStageId ?? plan.workspace?.afterStageId ?? stage.installedStageIds?.[0];
     if (dependency && !prepared.some(w => w.stageId === dependency)) { result.detail = "An earlier module has not passed its complete supported assembly."; continue; }
     if (!plan.workspace && !transfers.length && dependency && (stage.transform || replica.stages.find(s => s.id === dependency)?.transform)) {
       result.detail = "A stage rotation/transfer needs a continuous validated orientation trajectory."; continue;
     }
-    if ((stage.installedStageIds?.length ?? 0) > 1 || plan.operations.some(op => op.transfer && !op.preparedStageId) ||
+    if (((stage.installedStageIds?.length ?? 0) > 1 && !transfers.length) || plan.operations.some(op => op.transfer && !op.preparedStageId) ||
+        plan.operations.some(op => op.transfer?.afterStageId !== undefined && (typeof op.transfer.afterStageId !== "string" || !op.transfer.afterStageId.trim())) ||
         transfers.length && (transfers.length !== 1 || plan.operations.length !== 1 || !transfers[0].transfer || !transfers[0].releaseAfter || plan.workspace || stage.transform || transfers[0].gravitySeat || transfers[0].pickup || transfers[0].lowerBeforeRelease !== undefined) ||
         plan.workspace && (stage.installedStageIds?.length || !Object.values(plan.workspace.offset).every(n => Number.isFinite(n) && Math.abs(n) <= 12) || plan.workspace.offset.y !== 0)) {
       result.detail = "Prepared worlds need one explicit predecessor, workspace placement and continuous transfer contract."; continue;
@@ -144,7 +145,7 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
   policy: DockingPolicy, deadline: number): Promise<AssemblyAttempt & { states: PreparedWorkspace[] }> {
   const plan = replica.construction!.find(p => p.stageId === stage.id)!;
   const transfers = plan.operations.filter(op => op.preparedStageId);
-  const dependency = transfers[0]?.preparedStageId ?? plan.workspace?.afterStageId ?? stage.installedStageIds?.[0];
+  const dependency = transfers[0]?.transfer?.afterStageId ?? transfers[0]?.preparedStageId ?? plan.workspace?.afterStageId ?? stage.installedStageIds?.[0];
   const installedIds = (stage.installedStageIds ?? []).flatMap(id => replica.stages.find(s => s.id === id)?.tileIds ?? []);
   const offset = plan.workspace?.offset ?? { x: 0,y: 0,z: 0 };
   const nominal = stageBuild(replica, stage);
@@ -159,15 +160,16 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
     let physicalState: EngineState | undefined;
     let heldHands: HandContact[] = [];
     let predecessor: PreparedWorkspace | undefined;
+    let inheritedComponents: string[][] | undefined;
     const placed = new Set<string>();
     if (dependency) {
       try {
-        predecessor = structuredClone(selectWorkspace(prepared,dependency,seed,stage.installedStageIds ?? []));
+        predecessor = structuredClone(selectWorkspace(prepared,dependency,seed,[...(stage.installedStageIds ?? []),...transfers.map(op => op.preparedStageId!)]));
       } catch (error) { failures.push(`Seed ${seed}: ${error instanceof Error ? error.message : String(error)}`); continue; }
       const aligned = workspaceBuild(predecessor,floorY), previousIds = aligned.tiles.map(t => t.id);
       if (plan.workspace && predecessor.hands.length) { failures.push(`Seed ${seed}: New workspace construction requires an already released obstacle module.`); continue; }
       const expected = transfers.length ? stage.tileIds : plan.workspace ? previousIds : installedIds;
-      if (previousIds.length !== expected.length || previousIds.some(id => !expected.includes(id)) ||
+      if (previousIds.length !== expected.length || previousIds.some(id => !expected.includes(id)) || new Set(installedIds).size !== installedIds.length ||
           plan.workspace && previousIds.some(id => stage.tileIds.includes(id)) ||
           transfers.length && (transfers[0].tileIds.some(id => installedIds.includes(id)) || stage.tileIds.some(id => ![...installedIds,...transfers[0].tileIds].includes(id)))) {
         failures.push(`Seed ${seed}: Prepared workspace has missing, extra or duplicated stage parts.`); continue;
@@ -176,13 +178,22 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
       current.tiles.push(...inherited);
       for (const c of aligned.connections) if (!current.connections.some(n => connectionId(n) === connectionId(c))) current.connections.push(c);
       current = mergePoses(current, aligned);
+      if (transfers.length || (!plan.workspace && predecessor.components.length > 1)) {
+        if (!transfers.length && plan.operations.length) {
+          failures.push(`Seed ${seed}: Joining independent predecessor components needs an explicit transfer contract.`); continue;
+        }
+        // Existing physical connections own the world. A nominal target must
+        // never inject a future fixed-to-fixed join before its actual arrival.
+        current.connections = structuredClone(aligned.connections);
+        inheritedComponents = structuredClone(predecessor.components);
+      }
       physicalState = predecessor.state;
       heldHands = predecessor.hands;
       aligned.tiles.filter(t => !transfers.length || installedIds.includes(t.id)).forEach(t => placed.add(t.id));
     }
     const components = (build: BuildGraph) => plan.workspace ? [
       ...(predecessor?.components ?? []),build.tiles.filter(t => stage.tileIds.includes(t.id)).map(t => t.id),
-    ].filter(g => g.length) : undefined;
+    ].filter(g => g.length) : inheritedComponents;
     for (const [index, operation] of plan.operations.entries()) {
       const row: AssemblyOperationResult = { index, seed, tileIds: operation.tileIds, status: "fail", detail: "", trials: [], timeline: [] };
       result.operations.push(row);
@@ -213,8 +224,7 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
       const support = hands.filter(h => placed.has(h.tileId)).map(h => h.tileId);
       if (operation.preparedStageId) {
         if (!physicalState || !operation.transfer) { failure = row.detail = "Missing actual prepared transfer state."; break; }
-        const unjoined = { ...current,connections: current.connections.filter(c => moving.has(c.fromTileId) === moving.has(c.toTileId)) };
-        const transfer = await simulatePreparedTransfer(nominal,unjoined,physicalState,operation.tileIds,heldHands,hands,operation.transfer.transitHeight,floorY,seed,deadline,predecessor!.components,policy);
+        const transfer = await simulatePreparedTransfer(nominal,current,physicalState,operation.tileIds,heldHands,hands,operation.transfer.transitHeight,floorY,seed,deadline,predecessor!.components,policy);
         const { settled,state,handoff,carry,docking,path,...evidence } = transfer;
         row.transfer = evidence;
         if (handoff) {
@@ -230,6 +240,7 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
         // The arrival result is internally consistent and still unjoined.
         // Only the validated authored definitions enter the next live world.
         current = {...settled,connections:[...settled.connections,...nominal.connections.filter(c=>transfer.earnedCrossConnectionIds.includes(connectionId(c)))]};
+        inheritedComponents = structuredClone(transfer.earnedComponentGroups);
         physicalState = state; heldHands = hands;
         moving.forEach(id => placed.add(id));
         current = mergePoses(current,await record(current,hands.map(h => h.tileId)));

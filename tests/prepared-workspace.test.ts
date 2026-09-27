@@ -132,7 +132,7 @@ describe("one continuous prepared workspace", () => {
     const resumed=await createEngineWorld(trial.settled,{drop:false,floorY:0,state:trial.state});
     try { expect(resumed.snapshot()).toEqual(trial.state); } finally { resumed.dispose(); }
   });
-  it("cannot skip the two-to-one handoff or collapse different declared workspace components",async()=>{
+  it("requires new cross edges, unchanged grips and complete independent component groups",async()=>{
     const pair=unsupportedHingeFixture(),obstacle=square("obstacle",v(8,.09,8),v(3,0,0),v(0,0,3),"blue",1,"obstacle");
     const graph={...pair,tiles:[...pair.tiles,obstacle]},moving=pair.tiles.map(t=>t.id),hands=pair.tiles.map(t=>edgeGrips(t)[0]);
     const engine=await createEngineWorld(graph,{drop:false,floorY:0});
@@ -140,11 +140,11 @@ describe("one continuous prepared workspace", () => {
       for(const id of moving) engine.bodies.get(id)!.body.setBodyType(RigidBodyType.Fixed,true);
       const state=engine.snapshot(),before=structuredClone(state);
       const single=await simulatePreparedTransfer(graph,graph,state,moving,[hands[0]],[hands[0]],6.5,0,0,Infinity,[moving,[obstacle.id]],"clear-first");
-      expect(single.status).toBe("fail"); expect(single.detail).toMatch(/two prior/);
+      expect(single.status).toBe("fail"); expect(single.detail).toMatch(/cross edges/); expect(single.handoff).toBeUndefined();
       const changed=await simulatePreparedTransfer(graph,graph,state,moving,hands,[{...hands[0],localPoint:v(99,99,0)}],6.5,0,0,Infinity,[moving,[obstacle.id]],"clear-first");
       expect(changed.status).toBe("fail"); expect(changed.handoff).toBeUndefined();
       const collapsed=await simulatePreparedTransfer(graph,graph,state,moving,hands,[hands[0]],6.5,0,0,Infinity,[graph.tiles.map(t=>t.id)],"clear-first");
-      expect(collapsed.status).toBe("fail"); expect(collapsed.detail).toMatch(/component partitions/);
+      expect(collapsed.status).toBe("fail"); expect(collapsed.detail).toMatch(/Contact closure rejected/); expect(collapsed.handoff).toBeUndefined();
       expect(state).toEqual(before);
     } finally {engine.dispose();}
   });

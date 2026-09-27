@@ -3,15 +3,14 @@ import { add, distance, inverseQuaternion, magnitude, multiplyQuaternions, quate
 import type { EngineState } from "@/lib/engine/rapier-world";
 import type { BuildGraph, Vec3 } from "@/lib/magnetic-tiles/types";
 import { findMagneticEdgeMatch } from "@/lib/magnetic-tiles/magnet-geometry";
-import { contactsClosed } from "./contacts";
 import { dockToSupports, type DockingPolicy, type DockingResult } from "./docking";
-import { checkHandAccess, sameHandContact, type HandContact } from "./grip";
+import { checkHandAccess, checkHandTransition, sameHandContact, type HandContact, type HandTransition } from "./grip";
 import { simulateHeldMotion, type HeldMotionTrial, type HeldWaypoint } from "./held-motion";
 import { validateInsertionPath, type InsertionPath } from "./insertion";
 import { tileQuaternion } from "./rotation-clearance";
 import { simulateSupport, type SupportTrial } from "./support";
 import type { Check } from "./types";
-import { componentContacts } from "./components";
+import { componentContacts, joinComponentGroups } from "./components";
 import { physicalConnectionId } from "./contact-arrival";
 
 export interface TransferEvidence extends Check {
@@ -23,6 +22,10 @@ export interface TransferEvidence extends Check {
   physicalCrossConnectionIds: string[];
   previousHands: HandContact[];
   retainedHands: HandContact[];
+  acquiredHands: HandContact[];
+  handTransition?: HandTransition;
+  componentGroupsBefore: string[][];
+  earnedComponentGroups: string[][];
 }
 export interface PreparedTransferTrial extends TransferEvidence {
   settled: BuildGraph;
@@ -71,25 +74,25 @@ export async function simulatePreparedTransfer(nominal: BuildGraph, actual: Buil
   const cross = nominal.connections.filter(c => moving.has(c.fromTileId) !== moving.has(c.toTileId));
   const expected = cross.map(connectionId).sort();
   const result: PreparedTransferTrial = { status: "fail",detail: "",settled: actual,state,
-    withheldCrossConnectionIds: expected,physicalCrossConnectionIds:cross.map(physicalConnectionId).sort(),activeJointIdsBeforeClosure: state.joints.map(j => j.model.id),earnedCrossConnectionIds: [],previousHands,retainedHands: hands };
+    withheldCrossConnectionIds: expected,physicalCrossConnectionIds:cross.map(physicalConnectionId).sort(),activeJointIdsBeforeClosure: state.joints.map(j => j.model.id),earnedCrossConnectionIds: [],
+    previousHands: structuredClone(previousHands),retainedHands: hands.filter(h => previousHands.some(old => sameHandContact(old,h))),
+    acquiredHands: hands.filter(h => !previousHands.some(old => sameHandContact(old,h))),componentGroupsBefore: structuredClone(components),earnedComponentGroups: [] };
   const fail = (detail: string) => ({ ...result,detail });
   const retained = hands.length === 1 && previousHands.some(h => sameHandContact(h,hands[0]));
-  if (hands.length !== 1 || !moving.has(hands[0].tileId) || !retained ||
-      previousHands.length !== 2 || previousHands.some(h => !moving.has(h.tileId)) || new Set(previousHands.map(h => h.tileId)).size !== previousHands.length)
-    return fail("Transfer requires two prior module hands and one unchanged retained grip after explicit withdrawal of the other hand.");
-  if (components.length !== 2 || componentContacts(actual,components).status !== "pass" ||
-      !components.some(group => group.length === movingIds.length && group.every(id => moving.has(id))))
-    return fail("Prepared transfer supports exactly the declared carried module and one installed component; other component partitions require a separate contract.");
+  if (hands.length !== 1 || !moving.has(hands[0].tileId) || (previousHands.length > 0 && !retained) ||
+      previousHands.length > 2 || previousHands.some(h => !moving.has(h.tileId)) || new Set(previousHands.map(h => h.tileId)).size !== previousHands.length)
+    return fail("Transfer needs one acquired grip on a released module or one unchanged retained module grip, with at most two prior module hands.");
+  const partition = joinComponentGroups(actual,components,movingIds,cross);
+  if (partition.status !== "pass") return fail(partition.detail);
   if (!expected.length || new Set(expected).size !== expected.length || actual.connections.some(c => moving.has(c.fromTileId) !== moving.has(c.toTileId)) ||
       state.connections.some(c => moving.has(c.fromTileId) !== moving.has(c.toTileId)) || state.poppedJoints.length ||
       state.joints.some(j => moving.has(j.model.fromTileId) !== moving.has(j.model.toTileId)))
     return fail("Prepared transfer has missing, duplicated, broken or pre-attached cross connections.");
-  // Treat the retained pickup panel alone as 'moving' for the stationary two-hand
-  // access check so the old side grip is checked as a removable support hand.
+  // Stationary grip access remains required even for an unchanged retained hand.
   const accessFor = (build: BuildGraph, contacts: HandContact[]) => checkHandAccess(build,{ id: "prepared-handoff",movingTileIds: [contacts[0].tileId],
     fixedTileIds: build.tiles.filter(t => t.id !== contacts[0].tileId).map(t => t.id),offsets: [{ x: 0,y: 0,z: 0 },{ x: 0,y: 0,z: 0 }] },contacts,floorY,deadline);
-  const access = accessFor(actual,previousHands);
-  if (access.status !== "pass") return fail(access.detail);
+  result.handTransition = checkHandTransition(actual,previousHands,hands,floorY,deadline);
+  if (result.handTransition.status !== "pass") return fail(result.handTransition.detail);
   const acquisition = accessFor(actual,hands);
   if (acquisition.status !== "pass") return fail(acquisition.detail);
   result.handoff = await simulateSupport(actual,hands.map(h => h.tileId),floorY,seed,deadline,state,hands,components);
@@ -98,8 +101,9 @@ export async function simulatePreparedTransfer(nominal: BuildGraph, actual: Buil
   const withdrawal = accessFor(result.settled,hands);
   if (withdrawal.status !== "pass") return fail(withdrawal.detail);
   const start = result.settled;
-  const proposal = transferTarget(nominal,start,movingIds,hands[0].tileId);
-  const docking = dockToSupports(nominal,proposal,movingIds,fixed,hands,floorY,policy,deadline);
+  const target = {...nominal,connections: [...start.connections,...cross]};
+  const proposal = transferTarget(target,start,movingIds,hands[0].tileId);
+  const docking = dockToSupports(target,proposal,movingIds,fixed,hands,floorY,policy,deadline,partition.groups);
   result.docking = docking;
   if (docking.status !== "pass" || !docking.path) return fail(docking.detail);
   // The general insertion search starts beyond the entire build's bounding box.
@@ -139,10 +143,11 @@ export async function simulatePreparedTransfer(nominal: BuildGraph, actual: Buil
     if (findMagneticEdgeMatch(a,b)) return fail("Prepared transfer starts already attached to the installed module.");
   }
   const joined = { ...result.settled,connections: [...result.settled.connections,...cross] };
-  const closure = contactsClosed(joined);
+  const closure = componentContacts(joined,partition.groups);
   if (closure.status !== "pass") return fail(closure.detail);
   const earned = validateMagneticBuild(joined).validConnections.filter(c => moving.has(c.fromTile.id) !== moving.has(c.toTile.id)).map(c => c.id).sort();
   if (JSON.stringify(earned) !== JSON.stringify(expected)) return fail("Actual terminal contacts do not earn the exact required cross connections.");
   result.earnedCrossConnectionIds = earned;
-  return { ...result,status: "pass",detail: "Prepared grip withdrawal and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections. Returned build/state still withhold those joins; connected rest and free release remain mandatory." };
+  result.earnedComponentGroups = partition.groups;
+  return { ...result,status: "pass",detail: "Checked pickup support and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections while untouched components remain independent. Returned build/state still withhold those joins; connected rest and free release remain mandatory." };
 }

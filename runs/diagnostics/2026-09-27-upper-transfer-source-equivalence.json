@@ -1,0 +1,29 @@
+{
+  "baselineCommit": "0afd97437ec14eb06818d4105a7a832ed92f1aee",
+  "comparisons": [
+    {
+      "id": "jet",
+      "replicaUnchanged": true,
+      "checksUnchanged": true,
+      "validationCodeHash": "37b6438188c35f1dc9afa740f1426e8683a2568749bae2decbbc5c47eecd30a1"
+    },
+    {
+      "id": "small-ramp",
+      "replicaUnchanged": true,
+      "checksUnchanged": true,
+      "validationCodeHash": "37b6438188c35f1dc9afa740f1426e8683a2568749bae2decbbc5c47eecd30a1"
+    },
+    {
+      "id": "medium-ramp",
+      "replicaUnchanged": true,
+      "checksUnchanged": true,
+      "validationCodeHash": "37b6438188c35f1dc9afa740f1426e8683a2568749bae2decbbc5c47eecd30a1"
+    },
+    {
+      "id": "large-ramp",
+      "replicaUnchanged": true,
+      "checksUnchanged": true,
+      "validationCodeHash": "37b6438188c35f1dc9afa740f1426e8683a2568749bae2decbbc5c47eecd30a1"
+    }
+  ]
+}

@@ -10,7 +10,7 @@ export interface ConstructionStage {
     tileIds: string[];
     preparedStageId?: string;
     /** Explicit table-relative transit height for a previously constructed module. */
-    transfer?: { transitHeight: number };
+    transfer?: { transitHeight: number; /** Latest complete workspace, distinct from module identity. */ afterStageId?: string };
     /** Omitted means no hand evidence, never automatic support of all tiles. */
     hands?: import("./grip").HandContact[];
     /** All hands removed after this insertion. Stage releases are mandatory too. */

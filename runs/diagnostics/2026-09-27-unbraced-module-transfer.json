@@ -1,0 +1,958 @@
+{
+  "purpose": "Negative diagnostic: an unbraced three-wall U cannot satisfy one-panel carry. Rejected without changing the displacement threshold. Replaced only the generic positive fixture with a separately constructed roof-braced module; medium source geometry unchanged.",
+  "replica": {
+    "id": "component-transfer",
+    "sourceId": "fixture",
+    "title": "Stack one prepared U beside another independent U",
+    "build": {
+      "id": "component-transfer",
+      "title": "Stack one prepared U beside another independent U",
+      "prompt": "Stack one prepared U beside another independent U",
+      "summary": "Source-constrained reconstruction candidate. Read the independent evidence before building.",
+      "seed": 0,
+      "family": "tower",
+      "inventoryPreset": "builder-xl",
+      "tiles": [
+        {
+          "id": "x-0--1",
+          "shape": "small-square",
+          "color": "blue",
+          "position": {
+            "x": -1.59,
+            "y": 1.5,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "shell",
+          "subassemblyId": "shell",
+          "root": true
+        },
+        {
+          "id": "z-0--1",
+          "shape": "small-square",
+          "color": "red",
+          "position": {
+            "x": 0,
+            "y": 1.5,
+            "z": -1.59
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "shell",
+          "subassemblyId": "shell",
+          "root": false,
+          "parentTileId": "x-0--1",
+          "parentEdge": 0,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "x-0-1",
+          "shape": "small-square",
+          "color": "blue",
+          "position": {
+            "x": 1.59,
+            "y": 1.5,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "shell",
+          "subassemblyId": "shell",
+          "root": false,
+          "parentTileId": "z-0--1",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "x-1--1",
+          "shape": "small-square",
+          "color": "blue",
+          "position": {
+            "x": -1.59,
+            "y": 4.5,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "shell",
+          "subassemblyId": "shell",
+          "root": false,
+          "parentTileId": "x-0--1",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "z-1--1",
+          "shape": "small-square",
+          "color": "red",
+          "position": {
+            "x": 0,
+            "y": 4.5,
+            "z": -1.59
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "shell",
+          "subassemblyId": "shell",
+          "root": false,
+          "parentTileId": "z-0--1",
+          "parentEdge": 2,
+          "childEdge": 0,
+          "foldAngle": 0
+        },
+        {
+          "id": "x-1-1",
+          "shape": "small-square",
+          "color": "blue",
+          "position": {
+            "x": 1.59,
+            "y": 4.5,
+            "z": 0
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 2,
+          "role": "shell",
+          "subassemblyId": "shell",
+          "root": false,
+          "parentTileId": "x-0-1",
+          "parentEdge": 1,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "third-x-0--1",
+          "shape": "small-square",
+          "color": "blue",
+          "position": {
+            "x": -10.59,
+            "y": 1.5,
+            "z": 9
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "shell",
+          "subassemblyId": "shell",
+          "root": true
+        },
+        {
+          "id": "third-z-0--1",
+          "shape": "small-square",
+          "color": "red",
+          "position": {
+            "x": -9,
+            "y": 1.5,
+            "z": 7.41
+          },
+          "basis": {
+            "xAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "zAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "shell",
+          "subassemblyId": "shell",
+          "root": false,
+          "parentTileId": "x-0--1",
+          "parentEdge": 0,
+          "childEdge": 3,
+          "foldAngle": 0
+        },
+        {
+          "id": "third-x-0-1",
+          "shape": "small-square",
+          "color": "blue",
+          "position": {
+            "x": -7.41,
+            "y": 1.5,
+            "z": 9
+          },
+          "basis": {
+            "xAxis": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            },
+            "yAxis": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "zAxis": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "step": 1,
+          "role": "shell",
+          "subassemblyId": "shell",
+          "root": false,
+          "parentTileId": "z-0--1",
+          "parentEdge": 1,
+          "childEdge": 0,
+          "foldAngle": 0
+        }
+      ],
+      "connections": [
+        {
+          "fromTileId": "x-0--1",
+          "fromEdge": 0,
+          "toTileId": "z-0--1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "z-0--1",
+          "fromEdge": 1,
+          "toTileId": "x-0-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "x-0--1",
+          "fromEdge": 1,
+          "toTileId": "x-1--1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "x-1--1",
+          "fromEdge": 0,
+          "toTileId": "z-1--1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "z-0--1",
+          "fromEdge": 2,
+          "toTileId": "z-1--1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "z-1--1",
+          "fromEdge": 1,
+          "toTileId": "x-1-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "x-0-1",
+          "fromEdge": 1,
+          "toTileId": "x-1-1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "third-x-0--1",
+          "fromEdge": 0,
+          "toTileId": "third-z-0--1",
+          "toEdge": 3,
+          "kind": "edge"
+        },
+        {
+          "fromTileId": "third-z-0--1",
+          "fromEdge": 1,
+          "toTileId": "third-x-0-1",
+          "toEdge": 0,
+          "kind": "edge"
+        },
+        {
+          "kind": "edge",
+          "fromTileId": "z-0--1",
+          "fromEdge": 0,
+          "toTileId": "third-x-0-1",
+          "toEdge": 2
+        }
+      ],
+      "bounds": {
+        "width": 12.36,
+        "height": 6,
+        "depth": 12.18
+      }
+    },
+    "inventory": {
+      "small-square": 0,
+      "large-square": 0,
+      "xl-square": 0,
+      "equilateral-triangle": 0,
+      "right-triangle": 0,
+      "isosceles-triangle": 0
+    },
+    "bomFrameId": "fixture",
+    "uncertainties": [],
+    "materialQuestions": [],
+    "stages": [
+      {
+        "id": "base",
+        "frameId": "fixture",
+        "title": "Base U",
+        "instruction": "Assemble three panels and release.",
+        "tileIds": [
+          "x-0--1",
+          "z-0--1",
+          "x-0-1"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "moving",
+        "frameId": "fixture",
+        "title": "Moving U",
+        "instruction": "Assemble independently beside the base and release.",
+        "tileIds": [
+          "x-1--1",
+          "z-1--1",
+          "x-1-1"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "third",
+        "frameId": "fixture",
+        "title": "Third U",
+        "instruction": "Assemble the third component and release all nine panels.",
+        "tileIds": [
+          "third-x-0--1",
+          "third-z-0--1",
+          "third-x-0-1"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "transfer",
+        "frameId": "fixture",
+        "title": "Stack the moving U",
+        "instruction": "Acquire one top grip, lift, align and join the base, then release.",
+        "tileIds": [
+          "x-0--1",
+          "z-0--1",
+          "x-0-1",
+          "x-1--1",
+          "z-1--1",
+          "x-1-1",
+          "third-x-0--1",
+          "third-z-0--1",
+          "third-x-0-1"
+        ],
+        "installedStageIds": [
+          "base",
+          "third"
+        ],
+        "support": "released"
+      },
+      {
+        "id": "after-transfer",
+        "frameId": "fixture",
+        "title": "Continue released workspace",
+        "instruction": "Retain both actual component groups at rest.",
+        "tileIds": [
+          "x-0--1",
+          "z-0--1",
+          "x-0-1",
+          "x-1--1",
+          "z-1--1",
+          "x-1-1",
+          "third-x-0--1",
+          "third-z-0--1",
+          "third-x-0-1"
+        ],
+        "installedStageIds": [
+          "transfer"
+        ],
+        "support": "released"
+      }
+    ],
+    "construction": [
+      {
+        "stageId": "base",
+        "operations": [
+          {
+            "tileIds": [
+              "x-0--1"
+            ],
+            "hands": [
+              {
+                "tileId": "x-0--1",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ]
+          },
+          {
+            "tileIds": [
+              "z-0--1"
+            ],
+            "hands": [
+              {
+                "tileId": "z-0--1",
+                "localPoint": {
+                  "x": 0,
+                  "y": 1.5,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              },
+              {
+                "tileId": "x-0--1",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ]
+          },
+          {
+            "tileIds": [
+              "x-0-1"
+            ],
+            "hands": [
+              {
+                "tileId": "x-0-1",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              },
+              {
+                "tileId": "x-0--1",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "stageId": "moving",
+        "workspace": {
+          "afterStageId": "base",
+          "offset": {
+            "x": 6,
+            "y": 0,
+            "z": 0
+          }
+        },
+        "operations": [
+          {
+            "tileIds": [
+              "x-1--1"
+            ],
+            "hands": [
+              {
+                "tileId": "x-1--1",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ]
+          },
+          {
+            "tileIds": [
+              "z-1--1"
+            ],
+            "hands": [
+              {
+                "tileId": "z-1--1",
+                "localPoint": {
+                  "x": 0,
+                  "y": 1.5,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              },
+              {
+                "tileId": "x-1--1",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ]
+          },
+          {
+            "tileIds": [
+              "x-1-1"
+            ],
+            "hands": [
+              {
+                "tileId": "x-1-1",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              },
+              {
+                "tileId": "x-1--1",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "stageId": "third",
+        "workspace": {
+          "afterStageId": "moving",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        "operations": [
+          {
+            "tileIds": [
+              "third-x-0--1"
+            ],
+            "hands": [
+              {
+                "tileId": "third-x-0--1",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ]
+          },
+          {
+            "tileIds": [
+              "third-z-0--1"
+            ],
+            "hands": [
+              {
+                "tileId": "third-z-0--1",
+                "localPoint": {
+                  "x": 0,
+                  "y": 1.5,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              },
+              {
+                "tileId": "third-x-0--1",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ]
+          },
+          {
+            "tileIds": [
+              "third-x-0-1"
+            ],
+            "hands": [
+              {
+                "tileId": "third-x-0-1",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              },
+              {
+                "tileId": "third-x-0--1",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "stageId": "transfer",
+        "operations": [
+          {
+            "tileIds": [
+              "x-1--1",
+              "z-1--1",
+              "x-1-1"
+            ],
+            "preparedStageId": "moving",
+            "transfer": {
+              "afterStageId": "third",
+              "transitHeight": 8
+            },
+            "hands": [
+              {
+                "tileId": "x-1--1",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ],
+            "releaseAfter": true
+          }
+        ]
+      },
+      {
+        "stageId": "after-transfer",
+        "operations": []
+      }
+    ]
+  },
+  "results": [
+    {
+      "policy": "clear-first",
+      "seed": 0,
+      "status": "fail",
+      "detail": "A dynamic panel deforms beyond the unchanged limit or breaks a magnetic join during carry.",
+      "peakDeformation": 0.9518779520732278,
+      "poppedJoints": [],
+      "seconds": 4.859375,
+      "grip": [
+        "x-1--1"
+      ]
+    },
+    {
+      "policy": "clear-first",
+      "seed": 17,
+      "status": "fail",
+      "detail": "A dynamic panel deforms beyond the unchanged limit or breaks a magnetic join during carry.",
+      "peakDeformation": 0.9506434473468173,
+      "poppedJoints": [],
+      "seconds": 4.813541666666667,
+      "grip": [
+        "x-1--1"
+      ]
+    },
+    {
+      "policy": "clear-first",
+      "seed": 53,
+      "status": "fail",
+      "detail": "A dynamic panel deforms beyond the unchanged limit or breaks a magnetic join during carry.",
+      "peakDeformation": 0.9502439487756155,
+      "poppedJoints": [],
+      "seconds": 4.814583333333333,
+      "grip": [
+        "x-1--1"
+      ]
+    },
+    {
+      "policy": "support-aligned",
+      "seed": 0,
+      "status": "fail",
+      "detail": "A dynamic panel deforms beyond the unchanged limit or breaks a magnetic join during carry.",
+      "peakDeformation": 0.9512930287515935,
+      "poppedJoints": [],
+      "seconds": 4.859375,
+      "grip": [
+        "x-1--1"
+      ]
+    },
+    {
+      "policy": "support-aligned",
+      "seed": 17,
+      "status": "fail",
+      "detail": "A dynamic panel deforms beyond the unchanged limit or breaks a magnetic join during carry.",
+      "peakDeformation": 0.9502895158606227,
+      "poppedJoints": [],
+      "seconds": 4.813541666666667,
+      "grip": [
+        "x-1--1"
+      ]
+    },
+    {
+      "policy": "support-aligned",
+      "seed": 53,
+      "status": "fail",
+      "detail": "A dynamic panel deforms beyond the unchanged limit or breaks a magnetic join during carry.",
+      "peakDeformation": 0.952269034255837,
+      "poppedJoints": [],
+      "seconds": 4.815625,
+      "grip": [
+        "x-1--1"
+      ]
+    }
+  ]
+}

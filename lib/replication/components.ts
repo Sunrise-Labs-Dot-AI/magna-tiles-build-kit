@@ -1,6 +1,7 @@
 import { findRawOverlaps } from "@/lib/engine/overlap";
-import type { BuildGraph } from "@/lib/magnetic-tiles/types";
+import type { BuildGraph, MagneticConnection } from "@/lib/magnetic-tiles/types";
 import { closedMagneticConnection, contactsClosed } from "./contacts";
+import { physicalConnectionId } from "./contact-arrival";
 import type { Check } from "./types";
 
 /** Only declared independent modules may remain disconnected in one workspace.
@@ -34,6 +35,30 @@ export function movingComponent(build: BuildGraph, gripTileId: string, groups?: 
   const group = groups?.find(g => g.includes(gripTileId)) ?? (!groups ? build.tiles.map(t => t.id) : []);
   if (!group.includes(gripTileId)) return { status: "fail",detail: "The pickup grip has no present declared component.",tileIds: [] };
   return { status: "pass",detail: "Resolved the gripped panel's complete present component; other components remain dynamic obstacles.",tileIds: [...group] };
+}
+
+/** Propose one moving-to-neighbor merge. It earns no contact and changes no
+ * live partition; actual arrival must independently validate these edges. */
+export function joinComponentGroups(build: BuildGraph, groups: string[][], movingIds: string[], edges: MagneticConnection[]): Check & { groups: string[][] } {
+  const fail = (detail: string) => ({status: "fail" as const,detail,groups: []});
+  const check = componentContacts(build,groups);
+  if (check.status !== "pass") return fail(check.detail);
+  const moving = new Set(movingIds), index = groups.findIndex(g => g.length === movingIds.length && g.every(id => moving.has(id)));
+  if (!movingIds.length || moving.size !== movingIds.length || index < 0)
+    return fail("Transfer must move exactly one complete declared component.");
+  if (!edges.length || new Set(edges.map(physicalConnectionId)).size !== edges.length)
+    return fail("Transfer needs nonduplicated physical cross edges.");
+  const byTile = new Map(groups.flatMap((g,i) => g.map(id => [id,i] as const))), neighbors = new Set<number>();
+  for (const edge of edges) {
+    const from = byTile.get(edge.fromTileId), to = byTile.get(edge.toTileId);
+    if (from === undefined || to === undefined || from === to || (from !== index && to !== index))
+      return fail("Every transfer edge must join the moving component to a present independent neighbor.");
+    neighbors.add(from === index ? to : from);
+  }
+  if (neighbors.size !== 1) return fail("One transfer may join exactly one neighboring component.");
+  const neighbor = [...neighbors][0];
+  return {status: "pass",detail: "Proposed merge retains every untouched component; actual contact remains unearned.",
+    groups: groups.flatMap((group,i) => i === index ? [[...group,...groups[neighbor]]] : i === neighbor ? [] : [[...group]])};
 }
 
 export const splitComponents = (groups: string[][], moving: Set<string>) => groups.flatMap(g => [g.filter(id => moving.has(id)),g.filter(id => !moving.has(id))]).filter(g => g.length);

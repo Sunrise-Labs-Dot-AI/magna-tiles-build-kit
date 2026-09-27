@@ -1056,8 +1056,8 @@
   "report": {
     "id": "small-ramp",
     "fingerprint": "607581ab0ec67cd752840dea821c9611e778ec3f6008f9f47baec448a2aa903e",
-    "validationCodeHash": "3f363eaec8a592f1957e384646dcb6c70dbc709556670eaa10acaa2d7213317a",
-    "generatedAt": "2026-09-27T12:17:05.225Z",
+    "validationCodeHash": "37b6438188c35f1dc9afa740f1426e8683a2568749bae2decbbc5c47eecd30a1",
+    "generatedAt": "2026-09-27T13:02:17.288Z",
     "replication": "not-verified",
     "checks": {
       "source": {
@@ -397481,7 +397481,7 @@
               "launch-side-1"
             ],
             "status": "pass",
-            "detail": "Prepared grip withdrawal and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections. Returned build/state still withhold those joins; connected rest and free release remain mandatory.",
+            "detail": "Checked pickup support and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections while untouched components remain independent. Returned build/state still withhold those joins; connected rest and free release remain mandatory.",
             "trials": [
               {
                 "status": "pass",
@@ -400112,7 +400112,7 @@
             ],
             "transfer": {
               "status": "pass",
-              "detail": "Prepared grip withdrawal and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections. Returned build/state still withhold those joins; connected rest and free release remain mandatory.",
+              "detail": "Checked pickup support and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections while untouched components remain independent. Returned build/state still withhold those joins; connected rest and free release remain mandatory.",
               "withheldCrossConnectionIds": [
                 "small-back:1->launch-roof:3",
                 "small-deck-2:1->launch-roof:3"
@@ -400219,7 +400219,121 @@
                     }
                   ]
                 }
-              ]
+              ],
+              "acquiredHands": [],
+              "componentGroupsBefore": [
+                [
+                  "small-back",
+                  "small-side--1",
+                  "small-side-1",
+                  "small-deck-2",
+                  "small-deck-1"
+                ],
+                [
+                  "launch-roof",
+                  "launch-back",
+                  "launch-side--1",
+                  "launch-side-1"
+                ]
+              ],
+              "earnedComponentGroups": [
+                [
+                  "launch-roof",
+                  "launch-back",
+                  "launch-side--1",
+                  "launch-side-1",
+                  "small-back",
+                  "small-side--1",
+                  "small-side-1",
+                  "small-deck-2",
+                  "small-deck-1"
+                ]
+              ],
+              "handTransition": {
+                "status": "pass",
+                "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+                "changed": true,
+                "previousHands": [
+                  {
+                    "tileId": "launch-side-1",
+                    "localPoint": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 0.7071067811865476,
+                      "y": 0.7071067811865476,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1",
+                    "approachOffsets": [
+                      {
+                        "x": 0.3535533905932738,
+                        "y": 0.3535533905932738,
+                        "z": 2.4
+                      },
+                      {
+                        "x": 0.3535533905932738,
+                        "y": 0.3535533905932738,
+                        "z": 0
+                      },
+                      {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                      }
+                    ]
+                  },
+                  {
+                    "tileId": "launch-roof",
+                    "localPoint": {
+                      "x": -1.5,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": -1,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1"
+                  }
+                ],
+                "nextHands": [
+                  {
+                    "tileId": "launch-side-1",
+                    "localPoint": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 0.7071067811865476,
+                      "y": 0.7071067811865476,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1",
+                    "approachOffsets": [
+                      {
+                        "x": 0.3535533905932738,
+                        "y": 0.3535533905932738,
+                        "z": 2.4
+                      },
+                      {
+                        "x": 0.3535533905932738,
+                        "y": 0.3535533905932738,
+                        "z": 0
+                      },
+                      {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                      }
+                    ]
+                  }
+                ]
+              }
             },
             "carry": {
               "status": "pass",
@@ -412438,7 +412552,7 @@
             ],
             "closure": {
               "status": "pass",
-              "detail": "Prepared grip withdrawal and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections. Returned build/state still withhold those joins; connected rest and free release remain mandatory."
+              "detail": "Checked pickup support and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections while untouched components remain independent. Returned build/state still withhold those joins; connected rest and free release remain mandatory."
             },
             "handTransitions": [
               {
@@ -412493,7 +412607,7 @@
               "launch-side-1"
             ],
             "status": "pass",
-            "detail": "Prepared grip withdrawal and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections. Returned build/state still withhold those joins; connected rest and free release remain mandatory.",
+            "detail": "Checked pickup support and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections while untouched components remain independent. Returned build/state still withhold those joins; connected rest and free release remain mandatory.",
             "trials": [
               {
                 "status": "pass",
@@ -415124,7 +415238,7 @@
             ],
             "transfer": {
               "status": "pass",
-              "detail": "Prepared grip withdrawal and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections. Returned build/state still withhold those joins; connected rest and free release remain mandatory.",
+              "detail": "Checked pickup support and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections while untouched components remain independent. Returned build/state still withhold those joins; connected rest and free release remain mandatory.",
               "withheldCrossConnectionIds": [
                 "small-back:1->launch-roof:3",
                 "small-deck-2:1->launch-roof:3"
@@ -415231,7 +415345,121 @@
                     }
                   ]
                 }
-              ]
+              ],
+              "acquiredHands": [],
+              "componentGroupsBefore": [
+                [
+                  "small-back",
+                  "small-side--1",
+                  "small-side-1",
+                  "small-deck-2",
+                  "small-deck-1"
+                ],
+                [
+                  "launch-roof",
+                  "launch-back",
+                  "launch-side--1",
+                  "launch-side-1"
+                ]
+              ],
+              "earnedComponentGroups": [
+                [
+                  "launch-roof",
+                  "launch-back",
+                  "launch-side--1",
+                  "launch-side-1",
+                  "small-back",
+                  "small-side--1",
+                  "small-side-1",
+                  "small-deck-2",
+                  "small-deck-1"
+                ]
+              ],
+              "handTransition": {
+                "status": "pass",
+                "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+                "changed": true,
+                "previousHands": [
+                  {
+                    "tileId": "launch-side-1",
+                    "localPoint": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 0.7071067811865476,
+                      "y": 0.7071067811865476,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1",
+                    "approachOffsets": [
+                      {
+                        "x": 0.3535533905932738,
+                        "y": 0.3535533905932738,
+                        "z": 2.4
+                      },
+                      {
+                        "x": 0.3535533905932738,
+                        "y": 0.3535533905932738,
+                        "z": 0
+                      },
+                      {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                      }
+                    ]
+                  },
+                  {
+                    "tileId": "launch-roof",
+                    "localPoint": {
+                      "x": -1.5,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": -1,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1"
+                  }
+                ],
+                "nextHands": [
+                  {
+                    "tileId": "launch-side-1",
+                    "localPoint": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 0.7071067811865476,
+                      "y": 0.7071067811865476,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1",
+                    "approachOffsets": [
+                      {
+                        "x": 0.3535533905932738,
+                        "y": 0.3535533905932738,
+                        "z": 2.4
+                      },
+                      {
+                        "x": 0.3535533905932738,
+                        "y": 0.3535533905932738,
+                        "z": 0
+                      },
+                      {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                      }
+                    ]
+                  }
+                ]
+              }
             },
             "carry": {
               "status": "pass",
@@ -427450,7 +427678,7 @@
             ],
             "closure": {
               "status": "pass",
-              "detail": "Prepared grip withdrawal and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections. Returned build/state still withhold those joins; connected rest and free release remain mandatory."
+              "detail": "Checked pickup support and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections while untouched components remain independent. Returned build/state still withhold those joins; connected rest and free release remain mandatory."
             },
             "handTransitions": [
               {
@@ -427505,7 +427733,7 @@
               "launch-side-1"
             ],
             "status": "pass",
-            "detail": "Prepared grip withdrawal and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections. Returned build/state still withhold those joins; connected rest and free release remain mandatory.",
+            "detail": "Checked pickup support and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections while untouched components remain independent. Returned build/state still withhold those joins; connected rest and free release remain mandatory.",
             "trials": [
               {
                 "status": "pass",
@@ -430136,7 +430364,7 @@
             ],
             "transfer": {
               "status": "pass",
-              "detail": "Prepared grip withdrawal and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections. Returned build/state still withhold those joins; connected rest and free release remain mandatory.",
+              "detail": "Checked pickup support and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections while untouched components remain independent. Returned build/state still withhold those joins; connected rest and free release remain mandatory.",
               "withheldCrossConnectionIds": [
                 "small-back:1->launch-roof:3",
                 "small-deck-2:1->launch-roof:3"
@@ -430243,7 +430471,121 @@
                     }
                   ]
                 }
-              ]
+              ],
+              "acquiredHands": [],
+              "componentGroupsBefore": [
+                [
+                  "small-back",
+                  "small-side--1",
+                  "small-side-1",
+                  "small-deck-2",
+                  "small-deck-1"
+                ],
+                [
+                  "launch-roof",
+                  "launch-back",
+                  "launch-side--1",
+                  "launch-side-1"
+                ]
+              ],
+              "earnedComponentGroups": [
+                [
+                  "launch-roof",
+                  "launch-back",
+                  "launch-side--1",
+                  "launch-side-1",
+                  "small-back",
+                  "small-side--1",
+                  "small-side-1",
+                  "small-deck-2",
+                  "small-deck-1"
+                ]
+              ],
+              "handTransition": {
+                "status": "pass",
+                "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+                "changed": true,
+                "previousHands": [
+                  {
+                    "tileId": "launch-side-1",
+                    "localPoint": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 0.7071067811865476,
+                      "y": 0.7071067811865476,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1",
+                    "approachOffsets": [
+                      {
+                        "x": 0.3535533905932738,
+                        "y": 0.3535533905932738,
+                        "z": 2.4
+                      },
+                      {
+                        "x": 0.3535533905932738,
+                        "y": 0.3535533905932738,
+                        "z": 0
+                      },
+                      {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                      }
+                    ]
+                  },
+                  {
+                    "tileId": "launch-roof",
+                    "localPoint": {
+                      "x": -1.5,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": -1,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1"
+                  }
+                ],
+                "nextHands": [
+                  {
+                    "tileId": "launch-side-1",
+                    "localPoint": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "localOutward": {
+                      "x": 0.7071067811865476,
+                      "y": 0.7071067811865476,
+                      "z": 0
+                    },
+                    "proxy": "edge-pinch-v1",
+                    "approachOffsets": [
+                      {
+                        "x": 0.3535533905932738,
+                        "y": 0.3535533905932738,
+                        "z": 2.4
+                      },
+                      {
+                        "x": 0.3535533905932738,
+                        "y": 0.3535533905932738,
+                        "z": 0
+                      },
+                      {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                      }
+                    ]
+                  }
+                ]
+              }
             },
             "carry": {
               "status": "pass",
@@ -442462,7 +442804,7 @@
             ],
             "closure": {
               "status": "pass",
-              "detail": "Prepared grip withdrawal and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections. Returned build/state still withhold those joins; connected rest and free release remain mandatory."
+              "detail": "Checked pickup support and continuous rotation/translation passed; actual terminal edges earn exactly the withheld cross connections while untouched components remain independent. Returned build/state still withhold those joins; connected rest and free release remain mandatory."
             },
             "handTransitions": [
               {
