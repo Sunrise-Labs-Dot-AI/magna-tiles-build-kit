@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { assemble, square, v } from "@/lib/replication/geometry";
-import { findInsertionPath, validateInsertionPath, type InsertionPath } from "@/lib/replication/insertion";
+import { findInsertionPath, insertionPathProposals, validateInsertionPath, type InsertionPath } from "@/lib/replication/insertion";
 import { SimulationBudgetExceeded } from "@/lib/engine/simulate";
 import { closedShell } from "./fixtures/closed-shell";
 import { planConstructionPaths } from "@/lib/replication/construction";
@@ -92,6 +92,22 @@ describe("continuous insertion clearance", () => {
     expect(preview.tiles[1].position.y).toBeCloseTo(build.tiles[1].position.y + 2);
     expect(preview.tiles[0]).toEqual(build.tiles[0]);
     expect(insertionPreview(build, path(), 1).tiles[1]).toEqual(build.tiles[1]);
+  });
+
+  it("ignores unplaced bounds for both path length and the inferred table", () => {
+    const before=fixture(),future=fixture();
+    future.tiles.push(square("future",v(45,-9,0),v(3,0,0),v(0,0,3),"red",9,"fixture"));
+    expect(insertionPathProposals(future,["wall"],["floor"])).toEqual(insertionPathProposals(before,["wall"],["floor"]));
+    expect(findInsertionPath(future,["wall"],["floor"])).toEqual(findInsertionPath(before,["wall"],["floor"]));
+    const underground=path([v(0,-4,0),v(0,0,0)]);
+    expect(validateInsertionPath(future,underground)).toEqual(validateInsertionPath(before,underground));
+    expect(validateInsertionPath(future,underground).status).toBe("fail");
+  });
+
+  it.each(["empty","unknown","duplicate","fixed-moving"])("does not propose paths for %s body sets",mode=>{
+    const moving=mode==="empty"?[]:[mode==="unknown"?"missing":"wall"];
+    const fixed=mode==="duplicate"?["floor","floor"]:mode==="fixed-moving"?["floor","wall"]:["floor"];
+    expect(insertionPathProposals(fixture(),moving,fixed)).toEqual([]);
   });
 });
 

@@ -1,5 +1,5 @@
 {
-  "validationCodeHash": "7730b5d8d5ac9ae44e37c76a3858cad9f42b12a48e271fcd33dc87e83503f0fb",
+  "validationCodeHash": "65d7b152ea6c41cacad09df57ebca82679e9ef5691bcfc1f22c4345923ba64fb",
   "scope": "Numerical rigid-contact convergence only. Independent catalog flat/base-load fixtures; no source-derived geometry or physical material calibration.",
   "versions": {
     "backend": "js0.19.2-rust0.30.1-parry0.25.1-sat-cache3-f32-abi1-5e4c38a5ada93780-profile10e2e81b05c3c518",

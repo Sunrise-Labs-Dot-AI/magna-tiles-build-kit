@@ -1,0 +1,132 @@
+{
+  "scope": "Selected for fitting/construction inspection before opening. No reserved or independent holdout credit; source shape tolerances remain fixed.",
+  "source": "henry",
+  "sha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+  "seconds": [
+    58,
+    59.5,
+    61,
+    62.5,
+    64,
+    65.5,
+    67,
+    68.5,
+    70,
+    71.5,
+    73,
+    74.5,
+    76,
+    77.5
+  ],
+  "supplementarySeconds": [
+    59,
+    60,
+    60.5,
+    64.5,
+    65,
+    66,
+    67.5,
+    72,
+    72.5,
+    74,
+    76.5
+  ],
+  "followupSeconds": [
+    60.75,
+    61.5,
+    62,
+    63.5,
+    65.25,
+    78.5,
+    79.5,
+    80.5,
+    81.5,
+    83,
+    85,
+    86.5,
+    88,
+    89.5,
+    91,
+    92.5,
+    94.5
+  ],
+  "followupScope": "Selected before opening for fitting/construction inspection: resolve count and orientation of triangle modules and canopy sequence. No heldout or new independent source credit.",
+  "launchConstructionSeconds": [
+    95,
+    96,
+    97,
+    98,
+    99,
+    100
+  ],
+  "launchConstructionScope": "Declared before viewing, construction/fitting only, to reconcile final upper triangles and red flaps. Stop before the reserved 101-second view.",
+  "observations": [
+    {
+      "seconds": [
+        60,
+        60.5,
+        61.5,
+        62,
+        63.5,
+        65.25,
+        66,
+        67.5
+      ],
+      "finding": "Red/orange triangular modules are assembled in hands then placed on each lower side. Two clearly bounded triangles per module; possible extra faces in transparent/occluded areas must not be counted as additional pieces without better evidence. The 63-second fitting stage shows only the first side module."
+    },
+    {
+      "seconds": [
+        68.5,
+        70
+      ],
+      "finding": "First yellow square spans the lower side modules before subsequent yellow side triangles."
+    },
+    {
+      "seconds": [
+        72,
+        72.5,
+        73,
+        74,
+        74.5,
+        76
+      ],
+      "finding": "One yellow side triangle is placed on each side, followed by the second yellow square; one side is manually supported during roof placement."
+    },
+    {
+      "seconds": [
+        76.5,
+        77.5,
+        78.5,
+        79.5,
+        80.5,
+        81.5
+      ],
+      "finding": "At least one blue upright panel is installed before the blue triangular top/turn panel. Its edge-on face is not sufficient by itself to settle complete blue side tessellation. The current model has only a blue floor and blue roof and does not explicitly represent this observed upright panel."
+    },
+    {
+      "seconds": [
+        83,
+        85,
+        86.5,
+        88,
+        89.5,
+        91,
+        92.5
+      ],
+      "finding": "Prepared green/orange triangular side modules are placed on the upper ramp before the first yellow upper roof. Exact occluded triangle counts are unresolved by this review."
+    },
+    {
+      "seconds": [
+        94.5,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "finding": "Four red triangular pieces are added one at a time in two side pairs above the upper ramp, before the final yellow square. These are not the two red square flaps already present in the existing candidate model. Their exact mapping to the proposed eight upper wall triangles needs correction from source geometry."
+    }
+  ],
+  "conclusion": "The original all-eight-lower-walls-before-roofs stage is contradicted by the construction interval. Preserve the 37-piece total and verified BOM, but do not assert that eight lower triangles are complete at 63 or 75 seconds. No geometry, scored observation, tolerance or heldout pixel changed in this inspection. The complete source-to-part mapping remains unresolved; investigate alongside the source-independent continuation fix."
+}

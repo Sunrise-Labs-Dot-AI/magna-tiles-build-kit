@@ -93,7 +93,7 @@ export function validateInsertionPath(build: BuildGraph, path: InsertionPath, de
     if (sweptCollision(moving[i], moving[j], zero, zero) !== null)
       return fail(`Moving module contains intersecting parts: ${moving[i].id}, ${moving[j].id}.`);
   }
-  const floor = floorY ?? buildBounds(build.tiles).min.y;
+  const floor = floorY ?? buildBounds([...moving,...fixed]).min.y;
   for (const tile of moving) {
     if (Date.now() > deadline) throw new SimulationBudgetExceeded();
     const minY = Math.min(...tilePrismVertices(tile).map(p => p.y));
@@ -118,7 +118,9 @@ export function validateInsertionPath(build: BuildGraph, path: InsertionPath, de
  */
 export function insertionPathProposals(build: BuildGraph, movingTileIds: string[], fixedTileIds: string[]): InsertionPath[] {
   if (validateEngineInput(build).length) return [];
-  const bounds = buildBounds(build.tiles), span = Math.max(bounds.max.x - bounds.min.x, bounds.max.y - bounds.min.y, bounds.max.z - bounds.min.z) + 3;
+  const ids = [...movingTileIds,...fixedTileIds];
+  if (!movingTileIds.length || new Set(ids).size !== ids.length || ids.some(id => !build.tiles.some(t => t.id === id))) return [];
+  const bounds = buildBounds(build.tiles.filter(t => ids.includes(t.id))), span = Math.max(bounds.max.x - bounds.min.x, bounds.max.y - bounds.min.y, bounds.max.z - bounds.min.z) + 3;
   const directions: Vec3[] = [{ x: 0, y: 1, z: 0 }, { x: 1, y: 0, z: 0 }, { x: -1, y: 0, z: 0 },
     { x: 0, y: 0, z: 1 }, { x: 0, y: 0, z: -1 }];
   return directions.map(direction => ({ id: `insert-${movingTileIds.join("+")}`, movingTileIds, fixedTileIds,

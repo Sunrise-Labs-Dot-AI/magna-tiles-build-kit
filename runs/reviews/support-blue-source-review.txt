@@ -1,0 +1,22 @@
+**Findings**
+
+1. **Green support panels / footprint**
+   - I can establish **two separately bounded green square panels** in the support.
+   - Best evidence:
+     - **48.5s**: two green squares are side-by-side while being joined.
+     - **50.5s and 51s**: the assembled green unit shows a visible front square face and a second square face receding/angled behind it.
+     - **52.5s**: the orange panel is placed against/over a green support that appears **one tile edge deep**.
+   - I do **not** see a clearly exposed **horizontal green floor panel**. Any floor/base inside the support is only inferable from stability and translucency, not visibly bounded as a separate square.
+   - Support footprint that can be supported from the images: **approximately 1 tile edge wide by 1 tile edge deep**. A longer footprint is not established.
+
+2. **Upright blue panels before blue triangular roof**
+   - Before the blue triangular roof is installed, I can establish **one upright blue rectangular panel**.
+   - Best evidence:
+     - **76.8s**: a narrow blue upright panel is being fitted vertically along the left side of the yellow/orange structure.
+     - **78.5s**: that same blue upright remains visible as a vertical blue edge/panel just before the blue triangular roof piece is handled.
+   - I do **not** see a second upright blue panel. If another exists, it is hidden by hands or the orange/yellow shell and should be treated as inference only.
+   - The blue triangular roof is visible as a **triangle**, first clearly placed at **81.5s**, sitting on/near the previously visible blue upright.
+
+3. **Uncertainty / resolving view**
+   - The main unresolved question is whether the green support includes a hidden horizontal floor/base or additional green square panels obscured by the orange/yellow body.
+   - The needed resolving view would be a **top-down or underside construction view of the green support before the orange roof/body is placed**, ideally after the two green squares are joined and before 52.5s.

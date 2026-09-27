@@ -1,0 +1,7 @@
+VERIFIED/CLEAN.
+
+The prior floor defect appears resolved for ordinary continuation. [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:180) now derives `floorY` from nominal installed tiles only when this is ordinary continuation, while workspace, transfer, and bridge paths keep full nominal floor behavior.
+
+I did not find a remaining concrete defect in the increment. The new regression covers predecessor joint ownership, future wall/roof isolation, normalized engine inputs, saved state continuity, operation row equality, preview bodies/joins, and negative malformed predecessor cases. The fixture now places both future wall and roof below and far away from the prefix.
+
+I did not run expensive physical tests or change files.

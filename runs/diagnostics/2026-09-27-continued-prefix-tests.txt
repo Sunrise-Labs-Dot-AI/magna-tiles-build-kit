@@ -1,0 +1,33 @@
+Detailed continuation
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+
+ Test Files  1 passed (1)
+      Tests  9 passed (9)
+   Start at  09:50:02
+   Duration  236.72s (transform 148ms, setup 0ms, import 197ms, tests 236.42s, environment 0ms)
+
+
+
+Final medium regression
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  10:07:12
+   Duration  959.39s (transform 182ms, setup 0ms, import 240ms, tests 959.03s, environment 0ms)
+
+
+
+Broad suite excluding the preceding two files
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+
+ Test Files  52 passed (52)
+      Tests  610 passed | 1 skipped (611)
+   Start at  09:54:22
+   Duration  1244.92s (transform 865ms, setup 0ms, import 3.41s, tests 2480.94s, environment 3ms)

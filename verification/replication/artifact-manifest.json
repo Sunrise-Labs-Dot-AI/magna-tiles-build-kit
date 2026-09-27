@@ -1,14 +1,14 @@
 {
   "public/reference-replicas/jet-quarter-397.svg": "c8b7cb0583c7824c53359829a6b690319b4aae27361c56a19a98f556f8204821",
   "public/reference-replicas/jet-side-388.svg": "2b28ec1130e1127ab495119d082ba97832850f89969497453eb8edf1319ece71",
-  "public/reference-replicas/jet.json": "53b6eedfc63a4b6fd77c63ee73adf030a08627d2a91c720231f36fb015c00f4d",
-  "public/reference-replicas/large-ramp.json": "d34a0587372f3c43d181c1f050eb1eac02634e7212e837449b0bc87c9367d3e2",
+  "public/reference-replicas/jet.json": "a752394d4cdb3cb1adde78ff97b3759cce82d022f13634350472e229423b950b",
+  "public/reference-replicas/large-ramp.json": "c8dd09c3f1f417a87cc4bf999a8f317adb3341842a73ae2d80794cadea7c6532",
   "public/reference-replicas/medium-final-101.svg": "ee619c95813fb8bfd0262a89531338248f7ae0e7121b601e6c9049d9b8acc840",
-  "public/reference-replicas/medium-ramp.json": "515d349b3ca5a8e0b679056c9f97ade96bc420b5a4fef3ec3dc913f6ba031b1d",
+  "public/reference-replicas/medium-ramp.json": "584be1ea32e79519667b6d7f40828768f2e298ca71262c36fabe405682b16c77",
   "public/reference-replicas/medium-stage-63.svg": "936082396e8f60a1719621531d067e7a17ca304f16a5e4428a2bd00742273f93",
   "public/reference-replicas/small-final-34.svg": "4e23ebbdf6b74bd8db6bbdeb820c1b9cfee5ee8ab7f02eeefbe647a37519a6f1",
-  "public/reference-replicas/small-ramp.json": "156e03d007f54a14068b77edd59b36e9178cbbb9d57fb3d30836677dcd8e3bd5",
-  "verification/replication/assembly-fixture.json": "3d862ceb04c8de6b65dba0e08d9010ead3b91d2612549b82dcf2eeac0dd4bab6",
+  "public/reference-replicas/small-ramp.json": "f51d9d95073f5493f7a3b0d0f0b25156dcf0ac2a54214b6a76ba19732e500e3c",
+  "verification/replication/assembly-fixture.json": "6f2a40cfc73bdcea0864375066241101f87e7834210db3fdbedc4524a22332ad",
   "verification/replication/results.json": "328dfddb5dfb5fb0f451517d8f145e2582aa64c56e2e6d470077844e17cc49f3",
-  "verification/replication/rigid-contact-fixture.json": "b60e7660787471300e64543f00480e0b85a8b36fa7bb21b93412e91ae008b95a"
+  "verification/replication/rigid-contact-fixture.json": "7a149516afca1871e342094d11295c724a83340db721f5a148567656549e502c"
 }

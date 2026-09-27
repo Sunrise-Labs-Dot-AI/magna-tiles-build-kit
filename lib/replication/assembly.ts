@@ -175,7 +175,11 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
   const offset = plan.workspace?.offset ?? { x: 0,y: 0,z: 0 };
   const nominal = stageBuild(replica, stage);
   nominal.tiles = nominal.tiles.map(t => ({ ...t,position: add(t.position,offset) }));
-  const floorY = buildBounds(nominal.tiles).min.y;
+  // Ordinary continuation keeps its installed workspace's table coordinate.
+  // An unplaced future panel below it cannot shift the whole prefix upward.
+  const floorTiles = dependency && !plan.workspace && !transfers.length && !bridges.length
+    ? nominal.tiles.filter(t => installedIds.includes(t.id)) : nominal.tiles;
+  const floorY = buildBounds(floorTiles).min.y;
   const result: AssemblyAttempt = { policy,status: "fail",detail: "",operations: [],checkpoints: [] };
   const states: PreparedWorkspace[] = [];
   const terminalConnections: NonNullable<AssemblyResult["terminalConnections"]> = [];
@@ -189,10 +193,14 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
     let inheritedComponents: string[][] | undefined;
     const placed = new Set<string>();
     if (dependency) {
+      let aligned: BuildGraph;
       try {
         predecessor = structuredClone(selectWorkspace(prepared,dependency,seed,[...(stage.installedStageIds ?? []),...transfers.map(op => op.preparedStageId!)]));
+        aligned = workspaceBuild(predecessor,floorY);
       } catch (error) { failures.push(`Seed ${seed}: ${error instanceof Error ? error.message : String(error)}`); continue; }
-      const aligned = workspaceBuild(predecessor,floorY), previousIds = aligned.tiles.map(t => t.id);
+      const previousIds = aligned.tiles.map(t => t.id);
+      const continuity = checkPreparedContinuation(aligned,predecessor.state,floorY);
+      if (continuity.status !== "pass") { failures.push(`Seed ${seed}: ${continuity.detail}`); continue; }
       if (plan.workspace && predecessor.hands.length) { failures.push(`Seed ${seed}: New workspace construction requires an already released obstacle module.`); continue; }
       const expected = transfers.length ? stage.tileIds : plan.workspace ? previousIds : installedIds;
       if (previousIds.length !== expected.length || previousIds.some(id => !expected.includes(id)) || new Set(installedIds).size !== installedIds.length ||
@@ -207,6 +215,14 @@ async function runAssemblyStage(replica: Replica, stage: StagePose, prepared: Pr
       }
       const inherited = aligned.tiles.filter(t => !current.tiles.some(n => n.id === t.id));
       current.tiles.push(...inherited);
+      // The predecessor owns every existing join, even when its components
+      // have become connected. Future incident edges remain proposals only.
+      const actualConnections = new Map(aligned.connections.map(c => [connectionId(c),c]));
+      current.connections = current.connections.flatMap(c => {
+        if (!previousIds.includes(c.fromTileId) || !previousIds.includes(c.toTileId)) return [c];
+        const actual = actualConnections.get(connectionId(c));
+        return actual ? [actual] : [];
+      });
       for (const c of aligned.connections) if (!current.connections.some(n => connectionId(n) === connectionId(c))) current.connections.push(c);
       current = mergePoses(current, aligned);
       if (transfers.length || bridges.length || (!plan.workspace && predecessor.components.length > 1)) {
