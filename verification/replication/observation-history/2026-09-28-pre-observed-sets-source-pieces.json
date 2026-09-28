@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "scope": "Reviewed manual source-stage accounting, separate from geometry and simulation. Partial coverage is not an exact piece-set certificate. Construction-context links without records remain unverified.",
+  "records": [
+    {
+      "replicaId": "medium-ramp",
+      "stageId": "medium-support",
+      "sourceId": "henry",
+      "frameId": "medium-support",
+      "seconds": 50,
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "frameSha256": "d94c667ef9034622d853e425c4cbaa2f7fe9f7f9669783fd9b6ca56bae7554b5",
+      "coverage": "partial",
+      "observed": [],
+      "minimumVisible": [
+        {
+          "shape": "small-square",
+          "count": 2
+        }
+      ],
+      "inferred": [],
+      "proposed": [],
+      "basis": "At least two bounded green square faces are visible. The roughly one-by-one-square footprint challenges the elongated candidate, but hidden face count is unresolved. Visible minima do not establish the full installed set.",
+      "review": "runs/reviews/support-blue-source-review.txt"
+    },
+    {
+      "replicaId": "medium-ramp",
+      "stageId": "medium-lower-walls",
+      "sourceId": "henry",
+      "frameId": "medium-fit",
+      "seconds": 63,
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "frameSha256": "df8b14e7d435c8c831e683b81a81771167e5f7d42d7aadedafe468616cc124a0",
+      "coverage": "partial",
+      "observed": [],
+      "minimumVisible": [
+        {
+          "shape": "equilateral-triangle",
+          "count": 2
+        }
+      ],
+      "inferred": [],
+      "proposed": [],
+      "basis": "Only the first red/orange side module has been placed at 63 seconds. At least two distinct triangular faces are established; hidden counts and correspondence remain unresolved. This is not an observed eight-wall checkpoint.",
+      "review": "runs/reviews/lower-canopy-source-count-review.txt"
+    }
+  ]
+}

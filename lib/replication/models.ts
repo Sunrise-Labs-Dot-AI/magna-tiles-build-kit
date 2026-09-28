@@ -205,9 +205,9 @@ export function smallRamp(): Replica {
       {
         ...stage(
           "small-launch",
-          "small-launch",
+          "small-construction-seat-32.5",
           "Make the launch module on its side",
-          "Place the red back square flat on the table. Hold the red roof upright at its far edge, then attach both green sides. Henry turns this completed module before joining it to the ramp; that transfer needs its own motion check.",
+          "Place the red back square flat on the table. Hold the red roof upright at its far edge, then attach both green sides. The 31-second source view shows assembly in progress; the 32.5-second view shows all four panels attached. Henry turns this completed module before joining it to the ramp; that transfer needs its own motion check.",
           tiles.filter((t) => t.step === 2).map((t) => t.id),
           "held",
         ),
