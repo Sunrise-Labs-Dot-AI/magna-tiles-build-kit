@@ -1,6 +1,5 @@
 {
-  "schema": 1,
-  "scope": "Reviewed manual source-stage accounting, separate from geometry and simulation. Partial coverage is not an exact piece-set certificate. Construction-context links without records remain unverified.",
+  "schema": 2,
   "records": [
     {
       "replicaId": "medium-ramp",
@@ -21,7 +20,8 @@
       "inferred": [],
       "proposed": [],
       "basis": "At least two bounded green square faces are visible. The roughly one-by-one-square footprint challenges the elongated candidate, but hidden face count is unresolved. Visible minima do not establish the full installed set.",
-      "review": "runs/reviews/support-blue-source-review.txt"
+      "review": "runs/reviews/support-blue-source-review.txt",
+      "observedSets": []
     },
     {
       "replicaId": "medium-ramp",
@@ -42,7 +42,107 @@
       "inferred": [],
       "proposed": [],
       "basis": "Only the first red/orange side module has been placed at 63 seconds. At least two distinct triangular faces are established; hidden counts and correspondence remain unresolved. This is not an observed eight-wall checkpoint.",
-      "review": "runs/reviews/lower-canopy-source-count-review.txt"
+      "review": "runs/reviews/lower-canopy-source-count-review.txt",
+      "observedSets": []
+    },
+    {
+      "replicaId": "small-ramp",
+      "stageId": "small-wedge",
+      "sourceId": "henry",
+      "frameId": "small-fit",
+      "seconds": 27,
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "frameSha256": "cd6657bc0191307bdb6408a9b8416882c5a4ec358f6e9041c4131e3c21141fbd",
+      "coverage": "complete",
+      "observed": [
+        {
+          "sourcePartId": "henry-small-wedge-rear-square",
+          "tileId": "small-back",
+          "shape": "small-square"
+        },
+        {
+          "sourcePartId": "henry-small-wedge-upper-deck",
+          "tileId": "small-deck-2",
+          "shape": "small-square"
+        },
+        {
+          "sourcePartId": "henry-small-wedge-lower-deck",
+          "tileId": "small-deck-1",
+          "shape": "small-square"
+        }
+      ],
+      "minimumVisible": [
+        {
+          "shape": "small-square",
+          "count": 3
+        },
+        {
+          "shape": "isosceles-triangle",
+          "count": 2
+        }
+      ],
+      "inferred": [],
+      "basis": "Reviewed sequence proposal: the open-bottom rear-and-two-sides structure is visible at25.5s; the two orange squares are then installed and both appear at27s. This proposes an exact five-panel source set from observed placement, not BOM subtraction. Hand-occluded pose and seam geometry remain separate. The two identical side panels form a complete observed set; their individual serial identities are unresolved.",
+      "review": "runs/2026-09-28-observed-piece-sets-source.review.md: installed count and component membership established as a complete set; side-panel serial identities unresolved. Pose, joins and fidelity remain separate.",
+      "proposed": [],
+      "observedSets": [
+        {
+          "sourceSetId": "small-wedge-observed-side-pair",
+          "shape": "isosceles-triangle",
+          "count": 2,
+          "tileIds": [
+            "small-side--1",
+            "small-side-1"
+          ]
+        }
+      ]
+    },
+    {
+      "replicaId": "small-ramp",
+      "stageId": "small-launch",
+      "sourceId": "henry",
+      "frameId": "small-construction-seat-32.5",
+      "seconds": 32.5,
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "frameSha256": "e30c53b4b7c612efae4b13eae31b7e0b80e16f2de66ec5ad57ba368bb0e10d20",
+      "coverage": "complete",
+      "observed": [
+        {
+          "sourcePartId": "henry-small-launch-final-back",
+          "tileId": "launch-back",
+          "shape": "small-square"
+        },
+        {
+          "sourcePartId": "henry-small-launch-final-roof",
+          "tileId": "launch-roof",
+          "shape": "small-square"
+        }
+      ],
+      "minimumVisible": [
+        {
+          "shape": "small-square",
+          "count": 2
+        },
+        {
+          "shape": "right-triangle",
+          "count": 2
+        }
+      ],
+      "inferred": [],
+      "basis": "Reviewed sequence proposal:31s shows two red squares and one attached green right triangle, with the remaining green triangle separate;32.5s shows both green ends attached. The red square that was flat becomes the final back, and the formerly upright square becomes the roof. This proposes the complete four-part set, not a frozen pose or final placement. The two identical side panels form a complete observed set; their individual serial identities are unresolved.",
+      "review": "runs/2026-09-28-observed-piece-sets-source.review.md: installed count and component membership established as a complete set; side-panel serial identities unresolved. Pose, joins and fidelity remain separate.",
+      "proposed": [],
+      "observedSets": [
+        {
+          "sourceSetId": "small-launch-observed-side-pair",
+          "shape": "right-triangle",
+          "count": 2,
+          "tileIds": [
+            "launch-side--1",
+            "launch-side-1"
+          ]
+        }
+      ]
     }
   ]
 }
