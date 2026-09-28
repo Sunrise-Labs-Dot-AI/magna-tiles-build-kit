@@ -1,0 +1,25 @@
+{
+  "scope": "Unreviewed numeric proposal and measurement plot subsequently reviewed; six rejected lines remain preserved, no fitting performed.",
+  "proposal": "runs/diagnostics/2026-09-28-small-wedge-edge-proposal.json",
+  "proposalSha256": "2ded7c89d7bbafcabec2342e523d5d1bf5e1d203682a023d28aaaa5a729d74f4",
+  "scriptArchive": "runs/diagnostics/2026-09-28-small-wedge-edge-proposal.plot-script.py.gz",
+  "scriptRawSha256": "acbc87becbd8dca25002b780e3178e239f35fe481ac5994caa08702d9ef488f1",
+  "scriptGzipSha256": "0d090373e9443c9cd83a53a95af066a84920e64522205b5cb77fba254533f662",
+  "localOnlyPlot": "public/reference-frames/replication/henry/small-wedge-edge-proposal.png",
+  "plotSha256": "9902be6511aee381dca9039fd2b99e78459f2349952dc7c152a5246ad55a7907",
+  "review": "runs/reviews/small-wedge-edge-proposal-review.txt",
+  "acceptedSegments": [
+    "upper-far",
+    "lower-far"
+  ],
+  "rejectedSegments": [
+    "upper-back",
+    "upper-front",
+    "upper-near",
+    "lower-back",
+    "lower-front",
+    "lower-near"
+  ],
+  "homographyPerformed": false,
+  "sourceOrRuntimeChanged": false
+}

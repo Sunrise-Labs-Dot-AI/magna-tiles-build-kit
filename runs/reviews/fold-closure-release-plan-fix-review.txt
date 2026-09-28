@@ -1,0 +1,9 @@
+1. **Active-joint / pop contract: ADDRESSED**
+
+The revised plan now matches the engine behavior in [rapier-world.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts:383): broken joints are removed from `engine.joints` and appended to `engine.poppedJoints`. The plan explicitly requires active IDs to be `expected - popped`, records pop events as physics failures, and only requires all three joins retained for a final pass. No remaining flaw found for this finding.
+
+2. **Explicit hand-stop velocity contract: ADDRESSED**
+
+The revised plan resolves the ambiguity in the review. It explicitly allows fixed-hand stopping to dissipate captured command momentum, requires velocity evidence before and after mode changes, after stabilization, and before the first native dynamic step, and requires held-panel speeds below the existing rest thresholds before withdrawal. That closes the gap caused by [support.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/support.ts:78) ignoring held bodies in rest accounting. No remaining flaw found for this finding.
+
+I did not edit files, run simulations, broad tests, or use network.

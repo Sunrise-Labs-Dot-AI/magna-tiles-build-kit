@@ -1,0 +1,33 @@
+Verified original frame hash: `9595d6e202d8b246aaaaae839e028a31cfd212c4775dd2cb44ff9867c8d34fff` matches.
+
+**Per-Segment Verdicts**
+
+| # | Segment | Verdict | Reason |
+|---|---|---|---|
+| 1 | `upper-back` | Reject | Segment appears to ride the edge/magnet/rim structure rather than an unambiguous exterior top-face orange-plastic boundary; lower portion is also visually entangled near yellow/overlap. |
+| 2 | `upper-far` | Accept | Entire segment follows a visible straight exterior orange boundary of the upper deck square, away from rounded corners and not primarily a magnet/rib. |
+| 3 | `upper-front` | Reject | This is a shared/occluded seam area between orange panels and edge hardware; not a clean visible exterior boundary of the upper square. |
+| 4 | `upper-near` | Reject | Runs through/along magnet-strip and overlap/yellow-adjacent structure; the full segment is not clearly the exterior top-face orange boundary. |
+| 5 | `lower-back` | Reject | Same seam/occlusion region as #3; it is not independently identifiable as the lower square’s exterior boundary. |
+| 6 | `lower-far` | Accept | Follows the visible straight exterior orange boundary of the lower deck square sufficiently for a draft measurement. |
+| 7 | `lower-front` | Reject | The right edge is visibly affected by thickness/side-face geometry; the proposed line is not clearly the top-face exterior boundary with no offset assumption. |
+| 8 | `lower-near` | Reject | Tracks through magnet/overlap/yellow-adjacent features rather than a clean exterior orange top-face boundary for the full segment. |
+
+**Panel Sufficiency**
+
+Neither panel has all four exterior straight boundaries sufficiently identified.
+
+Upper deck: only `upper-far` is accepted.  
+Lower deck: only `lower-far` is accepted.
+
+So there is not enough reviewed evidence to extrapolate virtual sharp corners for either square in the fitting-only planar diagnostic.
+
+**Unreviewed Correction Suggestions**
+
+Possible revised candidates would need to shorten or relocate rejected lines onto visible outer orange plastic only, especially avoiding magnet strips, yellow plastic overlap, and side/thickness faces. The seam between the two orange squares looks especially unsuitable for both `upper-front` and `lower-back`; I would not try to rescue those without a clearer frame. The right edge of the lower square may need a different criterion or a better view because the visible feature is likely thickness-biased.
+
+**Permitted Next Computation**
+
+Blocked phase: do not run the homography / square-consistency diagnostic from this proposal.
+
+Permitted next step is a revised read-only measurement proposal or alternate frame review, still with no source, geometry, assembly, or production acceptance.

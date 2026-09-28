@@ -3051,8 +3051,8 @@
   "report": {
     "id": "large-ramp",
     "fingerprint": "91d2c3255fea63ddee79cb0a60022f962d0f417e08f0f2de5caf774e8977c664",
-    "validationCodeHash": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
-    "generatedAt": "2026-09-28T03:24:25.082Z",
+    "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+    "generatedAt": "2026-09-28T21:09:57.832Z",
     "replication": "not-verified",
     "checks": {
       "source": {
@@ -3496,6 +3496,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [
@@ -3527,6 +3528,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [
@@ -3552,6 +3554,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [
@@ -3571,6 +3574,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [
@@ -3627,6 +3631,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [

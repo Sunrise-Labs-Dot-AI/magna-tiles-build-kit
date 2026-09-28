@@ -1,0 +1,199 @@
+{
+  "scope": "Built production workshop verification of source-set accounting and retained physical/motion UI; not replica acceptance.",
+  "completedAt": "2026-09-28T21:15:45.671542+00:00",
+  "session": 66127,
+  "exitCode": 0,
+  "command": "REFERENCE_PREVIEW_URL=http://127.0.0.1:3013 npx tsx scripts/reference/verify-ui.ts",
+  "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+  "buildId": "5Zix3IEfrizta--zFautA",
+  "scriptSha256": "a454f61f8109b50a52eb27754ff61bbdddb03e310884e6ded80a3949107217bd",
+  "log": "runs/diagnostics/2026-09-28-source-sets-ui.log.txt",
+  "logSha256": "6c126e73fd723e084cabcd6e7a177b9193050fc3068dfe32d8eefda24d48cc7c",
+  "outputs": {
+    "verification/replication/ui/jet-workshop.png": "4417ef467469d42c31a7b1e8ef8af37998fd51a192217abb0d0b15fe6886e965",
+    "verification/replication/ui/large-workshop.png": "f1527c0f378465dc7564a4cb81edd3fb7b32601d7095aac2bba0c28eb6703a87",
+    "verification/replication/ui/medium-blue-bridge-release.png": "0d6e22b88269093691e13c6a02677dc316b05999985ae873f0b8242e0a4a4464",
+    "verification/replication/ui/medium-blue-bridge-start.png": "eec55e997c9e45bca7bfe4f6901193f0a31a0838a1960021895cce34ec1a3d6f",
+    "verification/replication/ui/medium-lower-placement-release.png": "d138d9dba968feccf7dc3bfa7ea3608956c6189e0eea99c6a44c760445f9386a",
+    "verification/replication/ui/medium-retained-pickup.png": "c358fe38596799a96effbeffef82ff19dbe523dbf28e742ab40515bdd1f36f86",
+    "verification/replication/ui/medium-support-release.png": "4d959183984d3bc842e4bace6d5f3a537bf033440bd46834e74fedc9311e660b",
+    "verification/replication/ui/medium-upper-preparation.png": "610f5438871d09910604cad5c509bd51fcf783dbd616235594d3e4b42217d6dd",
+    "verification/replication/ui/medium-upper-transfer-release.png": "9a806385e0b420cbf1cd1c27fdd638a911ecd357e02958cc2f01adef5f294c13",
+    "verification/replication/ui/medium-workshop.png": "97c4c9d50136c57352bbd6161a8efd4c944e14b28af9749923432aa0030f6df6",
+    "verification/replication/ui/mobile-workshop.png": "b014b820c989188ef6228764fd12cf6fc36578e1159c8042398ef1b2a3ef1306",
+    "verification/replication/ui/results.json": "0e2a0370107ec7e405f74823cba4368d3566f25d54af9c3be65d725b47598a3c",
+    "verification/replication/ui/small-insertion.png": "9edef4fddc732b9ac3b82eb72dda4ed00b97192fb6488aef99fd615292da8cce",
+    "verification/replication/ui/small-launch-placement.png": "bea870b525350ce053ab5b13ed5b148b7aa5d229dc8533b865fba254d99817f7",
+    "verification/replication/ui/small-support-lift.png": "7798157c67ca43bf31928542a42f8feb6a7c1881153059bb1707de2ac719b788",
+    "verification/replication/ui/small-transfer-release.png": "8476280cc74ae9f44bbd2424b3f98ded47ba3c991a2a5a32c5f9230559fc3520",
+    "verification/replication/ui/small-transfer-start.png": "e8a89ebc004253f765b8093e8fbc4fdfff26722415a7101c5a4569a6feea2886",
+    "verification/replication/ui/small-workshop.png": "25352d6f29f129b4767f21419d217d55ce0aa9d1c28c3a05a61b1e05a2932725"
+  },
+  "visualInspection": [
+    "small-launch-placement.png",
+    "mobile-workshop.png"
+  ],
+  "checks": {
+    "builds": 4,
+    "downloads": [
+      "jet",
+      "small-ramp",
+      "medium-ramp",
+      "large-ramp"
+    ],
+    "sourceStagePieces": {
+      "allDownloadsBound": true,
+      "observedWedgeAndLaunchSets": true,
+      "memberIdentitiesUnresolved": true,
+      "finalSmallSetUnverified": true,
+      "partialSupportUnverified": true,
+      "partialCanopyUnverified": true
+    },
+    "snailEmptyState": true,
+    "stableModuleLabels": [
+      "P6",
+      "P7",
+      "P8",
+      "P9"
+    ],
+    "insertionPreview": {
+      "labels": [
+        "P5"
+      ],
+      "keyboardStartEnd": true,
+      "resetsAtNextStage": true
+    },
+    "gravityPreview": {
+      "labels": [
+        "P7",
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5"
+      ],
+      "recordedFramesDiffer": true,
+      "launchAssemblyPassed": true
+    },
+    "pickupPreview": {
+      "labels": [
+        "P1",
+        "P2",
+        "P4",
+        "P5"
+      ],
+      "terminalLabels": [
+        "P1",
+        "P2",
+        "P4",
+        "P5",
+        "P3"
+      ],
+      "recordedFramesDiffer": true
+    },
+    "transferPreview": {
+      "labels": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "P9"
+      ],
+      "recordedFramesDiffer": true,
+      "completeAssemblyPassed": true
+    },
+    "mediumPreview": {
+      "pickupLabels": [
+        "P1",
+        "P4"
+      ],
+      "preparedLabels": [
+        "P10",
+        "P11",
+        "P12",
+        "P13",
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "workspaceLabels": [
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "P9",
+        "P10",
+        "P11",
+        "P12",
+        "P13",
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "transferLabels": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "P9",
+        "P10",
+        "P11",
+        "P12",
+        "P13"
+      ],
+      "relocatedLabels": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "P9",
+        "P10",
+        "P11",
+        "P12",
+        "P13"
+      ],
+      "bridgeLabels": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "P9",
+        "P10",
+        "P11",
+        "P12",
+        "P13",
+        "P14"
+      ],
+      "firstSixStagesPassed": true,
+      "transferPlaybackMoves": true,
+      "checkedJoinInstructions": true,
+      "lowerPlacementPlaybackMoves": true,
+      "tableBearingChecked": true,
+      "noNewPlacementJoins": true,
+      "bridgePlaybackMoves": true,
+      "exactNewBridgeJoins": true,
+      "bridgeReleaseChecked": true,
+      "lowerCanopyUnverified": true
+    },
+    "mobileOverflow": false,
+    "pageErrors": []
+  }
+}

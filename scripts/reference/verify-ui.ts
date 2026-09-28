@@ -46,12 +46,20 @@ async function main() {
     }
     await page.getByRole("button", { name: /Henry.s small ramp/ }).click();
     await page.getByLabel("Construction checkpoint").selectOption("1");
+    const launchSourcePieces = await page.getByLabel("Source-stage piece check", { exact: true }).textContent();
+    if (!launchSourcePieces?.includes("Passed this check") || !launchSourcePieces.includes("4 installed panels") ||
+      !launchSourcePieces.includes("individual member identities remain unresolved"))
+      throw Error("The complete observed launch set or its identity ambiguity is missing.");
     await page.getByLabel("Number parts & edges").check();
     await page.locator(".design-piece-label").first().waitFor();
     const labels = await page.locator(".design-piece-label").allTextContents();
     if (!labels.includes("P6") || labels.includes("P1"))
       throw Error(`Subassembly labels changed: ${labels}`);
     await page.getByLabel("Construction checkpoint").selectOption("0");
+    const wedgeSourcePieces = await page.getByLabel("Source-stage piece check", { exact: true }).textContent();
+    if (!wedgeSourcePieces?.includes("Passed this check") || !wedgeSourcePieces.includes("5 installed panels") ||
+      !wedgeSourcePieces.includes("individual member identities remain unresolved"))
+      throw Error("The complete observed wedge set or its identity ambiguity is missing.");
     await page.getByLabel("Part insertion preview").selectOption("0");
     await ready();
     const slider = page.getByRole("slider", { name: /Recorded assembly motion|Move into place/ });
@@ -103,6 +111,8 @@ async function main() {
       throw Error(`Gravity placement lost its existing workspace or shows future parts: ${seatedLabels}`);
     await page.screenshot({ path: "verification/replication/ui/small-launch-placement.png", fullPage: true });
     await page.getByLabel("Construction checkpoint").selectOption("2");
+    if ((await page.getByLabel("Source-stage piece check", { exact: true }).textContent())?.includes("Passed this check"))
+      throw Error("Earlier module piece sets were incorrectly promoted to final source coverage.");
     await page.getByLabel("Part insertion preview").selectOption("0");
     const transferSlider=page.getByRole("slider",{name:/Recorded assembly motion/});
     await transferSlider.fill("0");
@@ -242,7 +252,8 @@ async function main() {
     const evidence = {
       builds: 4,
       downloads,
-      sourceStagePieces:{allDownloadsBound:true,partialSupportUnverified:true,partialCanopyUnverified:true},
+      sourceStagePieces:{allDownloadsBound:true,observedWedgeAndLaunchSets:true,memberIdentitiesUnresolved:true,
+        finalSmallSetUnverified:true,partialSupportUnverified:true,partialCanopyUnverified:true},
       snailEmptyState: true,
       stableModuleLabels: labels,
       insertionPreview: { labels: insertionLabels, keyboardStartEnd: true, resetsAtNextStage: true },

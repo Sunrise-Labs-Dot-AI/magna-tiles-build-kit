@@ -1,0 +1,14 @@
+[
+  {
+    "source": "/tmp/magnatiles-source-sets-compare.cjs",
+    "archive": "runs/diagnostics/2026-09-28-source-sets-source-equivalence.script.cjs.gz",
+    "rawSha256": "b0848d28b5c8cfe278b0783f2968583bae814a38d647e03a47189bc57add2b3a",
+    "gzipSha256": "ff7652d7421781fe135feccb58ddc7661b7eb66a4483f236bfefb9de51dd4fd6"
+  },
+  {
+    "source": "/tmp/magnatiles-fold-closure-run.cjs",
+    "archive": "runs/diagnostics/2026-09-28-fold-closure-release.runner.cjs.gz",
+    "rawSha256": "291102e4fb66199c1d1179cb7ca4787612873cad4414de746f6e8fed703210af",
+    "gzipSha256": "2b6531728e8bb377b1d866e2526ac8fc194e84c195aaa6556bfaa521d09ab35d"
+  }
+]

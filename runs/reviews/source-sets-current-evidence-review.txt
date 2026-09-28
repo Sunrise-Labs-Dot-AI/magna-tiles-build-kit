@@ -1,0 +1,14 @@
+VERIFIED/CLEAN.
+
+I found no actionable findings in the final read-only review. Evidence checked:
+
+- HEAD is `2adc2a4`; uncommitted changes are regenerated reports/docs/UI assertions/screenshots/fixtures only. No unstaged `lib/replication/*` or source-piece test delta beyond HEAD.
+- The partial qualification manifest correctly remains `completed:false`; focused96/configured72/generic passed, source-reports failed with `SimulationBudgetExceeded`, and host-sleep evidence preserves that failure.
+- The separate source retry manifest is current `b354`, `completed:true`, and contains only source reports plus artifact gate. All manifest log/output/archive hashes checked clean.
+- Artifact manifest entries, UI output hashes, UI script hash, UI log hash, web-check logs, and source input digests all match current files.
+- Source equivalence proves 44/44 compared payload sections identical against qualified `245e440`: geometry, physical trajectory, releases, assembly, projections, coverage, route, build/inventory/construction all unchanged. Differences are limited to source accounting, 32.5s launch binding/instruction text, metadata, and the derived small fingerprint.
+- UI assertions cover wedge 5-panel pass, launch 4-panel pass, unresolved member identities, final small-stage non-promotion, partial medium support/canopy non-promotion, downloads, motion, joins, page errors, and mobile overflow.
+- Screenshot spot checks matched the assertions: desktop small launch preserves source-stage aggregate `Not verified` while showing the 4-panel installed-set pass and ambiguity; mobile medium keeps aggregate source-stage unverified and no visible overflow.
+- `STATUS.md` and `docs/footage-reconstruction.md` do not claim complete replicas, nor do they relabel full739/structural25 as fresh `b354` runs. The captured-fold result is referenced as a bounded, independently reviewed claim without redoing that review.
+
+Scope limitation: git emitted macOS `xcrun` cache warnings in the read-only sandbox, but commands returned data successfully. zsh here-doc creation was blocked by the same read-only profile, so I reran the archive/hash checks as `node -e` one-liners.

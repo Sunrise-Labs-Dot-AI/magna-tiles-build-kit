@@ -913,9 +913,9 @@
       },
       {
         "id": "small-launch",
-        "frameId": "small-launch",
+        "frameId": "small-construction-seat-32.5",
         "title": "Make the launch module on its side",
-        "instruction": "Place the red back square flat on the table. Hold the red roof upright at its far edge, then attach both green sides. Henry turns this completed module before joining it to the ramp; that transfer needs its own motion check.",
+        "instruction": "Place the red back square flat on the table. Hold the red roof upright at its far edge, then attach both green sides. The 31-second source view shows assembly in progress; the 32.5-second view shows all four panels attached. Henry turns this completed module before joining it to the ramp; that transfer needs its own motion check.",
         "tileIds": [
           "launch-roof",
           "launch-back",
@@ -1055,9 +1055,9 @@
   },
   "report": {
     "id": "small-ramp",
-    "fingerprint": "e3a6803496aec8e47a23abbc7fd60688fc02ab055c818a96cf0ced9a60459bd2",
-    "validationCodeHash": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
-    "generatedAt": "2026-09-28T03:08:12.756Z",
+    "fingerprint": "b12f8b6298e3eb9b4736b4fbb9d838a3580da85db5c71c83f361dcea9ecff885",
+    "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+    "generatedAt": "2026-09-28T20:53:33.887Z",
     "replication": "not-verified",
     "checks": {
       "source": {
@@ -1070,7 +1070,7 @@
       },
       "sourceStages": {
         "status": "unverified",
-        "detail": "0/3 source-stage piece sets established. small-wedge: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. small-launch: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. small-final: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts."
+        "detail": "2/3 source-stage piece sets established. small-final: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts."
       },
       "fidelity": {
         "status": "fail",
@@ -1929,7 +1929,7 @@
           "right-triangle": 2,
           "isosceles-triangle": 0
         },
-        "instruction": "Place the red back square flat on the table. Hold the red roof upright at its far edge, then attach both green sides. Henry turns this completed module before joining it to the ramp; that transfer needs its own motion check. New parts: P6 (Small square), P7 (Small square), P8 (Right triangle), P9 (Right triangle). Joins present after assembly checks: P6 edge 2 to P7 edge 2; P7 edge 1 to P8 edge 3; P6 edge 1 to P8 edge 1; P7 edge 3 to P9 edge 3; P6 edge 3 to P9 edge 1. Source frame: small-launch. Keep this module in your hand; no unattended release is asserted."
+        "instruction": "Place the red back square flat on the table. Hold the red roof upright at its far edge, then attach both green sides. The 31-second source view shows assembly in progress; the 32.5-second view shows all four panels attached. Henry turns this completed module before joining it to the ramp; that transfer needs its own motion check. New parts: P6 (Small square), P7 (Small square), P8 (Right triangle), P9 (Right triangle). Joins present after assembly checks: P6 edge 2 to P7 edge 2; P7 edge 1 to P8 edge 3; P6 edge 1 to P8 edge 1; P7 edge 3 to P9 edge 3; P6 edge 3 to P9 edge 1. Source frame: small-construction-seat-32.5. Keep this module in your hand; no unattended release is asserted."
       },
       {
         "step": 3,
@@ -434133,33 +434133,51 @@
       {
         "stageId": "small-wedge",
         "frameId": "small-fit",
-        "status": "unverified",
-        "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
-        "observedTileIds": [],
+        "status": "pass",
+        "detail": "5 installed panels match the complete reviewed source-stage accounting. 2 panels belong to observed interchangeable sets; individual member identities remain unresolved. Pose, joins, motion and independent final-view fidelity remain separate checks.",
+        "observedTileIds": [
+          "small-back",
+          "small-deck-2",
+          "small-deck-1"
+        ],
+        "observedSets": [
+          {
+            "sourceSetId": "small-wedge-observed-side-pair",
+            "shape": "isosceles-triangle",
+            "count": 2,
+            "tileIds": [
+              "small-side--1",
+              "small-side-1"
+            ]
+          }
+        ],
         "inferredTileIds": [],
         "proposedTileIds": [],
-        "unaccountedTileIds": [
-          "small-side--1",
-          "small-side-1",
-          "small-deck-1",
-          "small-deck-2",
-          "small-back"
-        ]
+        "unaccountedTileIds": []
       },
       {
         "stageId": "small-launch",
-        "frameId": "small-launch",
-        "status": "unverified",
-        "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
-        "observedTileIds": [],
+        "frameId": "small-construction-seat-32.5",
+        "status": "pass",
+        "detail": "4 installed panels match the complete reviewed source-stage accounting. 2 panels belong to observed interchangeable sets; individual member identities remain unresolved. Pose, joins, motion and independent final-view fidelity remain separate checks.",
+        "observedTileIds": [
+          "launch-back",
+          "launch-roof"
+        ],
+        "observedSets": [
+          {
+            "sourceSetId": "small-launch-observed-side-pair",
+            "shape": "right-triangle",
+            "count": 2,
+            "tileIds": [
+              "launch-side--1",
+              "launch-side-1"
+            ]
+          }
+        ],
         "inferredTileIds": [],
         "proposedTileIds": [],
-        "unaccountedTileIds": [
-          "launch-roof",
-          "launch-back",
-          "launch-side--1",
-          "launch-side-1"
-        ]
+        "unaccountedTileIds": []
       },
       {
         "stageId": "small-final",
@@ -434167,6 +434185,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [

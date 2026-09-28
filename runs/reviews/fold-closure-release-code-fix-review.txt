@@ -1,0 +1,13 @@
+1. **Critical `completed:true` ordering: ADDRESSED**  
+No remaining issue. Instrumentation failures are asserted before `save(true)`, and `save(true)` also independently refuses to write completed output if failures exist. Captured state restoration changes fail closed.
+
+2. **Wake/sleeping evidence and support mode coverage: ADDRESSED**  
+No remaining issue. `sleeping` is captured, `wake` is recorded and asserted `true`, released dynamics are asserted awake before the first native step, and mode checks run around native stepping.
+
+3. **Pop event identity: ADDRESSED**  
+No remaining issue. Pop events now record `newIds` via `slice(oldPops)` plus `cumulativeIds`.
+
+4. **Separated third-contact control specificity: ADDRESSED**  
+No remaining issue. The control now pins the candidate to `root:3->end:1`, records/asserts separated geometry, and excludes the main confounds called out in the review: wrong edge selection, missing/disconnected setup via exact tiles/connections, and solid overlap.
+
+I did not run the physical release, simulations, broad builds/tests, or network.

@@ -1,7 +1,7 @@
 {
   "schema": "configured-contact-v2",
   "scope": "Current numerical profile verification, not a new frequency search or physical material/source/assembly certification.",
-  "validationCodeHash": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+  "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
   "physicsModel": "rigid-contact-v8-solid-sweep-contact480-collision1920-js0.19.2-rust0.30.1-parry0.25.1-sat-cache3-f32-abi1-5e4c38a5ada93780-profilea491baad9d8d5af2",
   "selectionEvidence": {
     "path": "runs/diagnostics/2026-09-27-finer-contact-matrix.json.gz",

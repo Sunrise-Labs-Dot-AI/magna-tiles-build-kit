@@ -1,0 +1,60 @@
+{
+  "scope": "Captured fixed-pivot fold endpoint closure and release experiment. Completion records the protocol, not a release or source acceptance.",
+  "command": [
+    "npx",
+    "vitest",
+    "run",
+    "--config",
+    "scripts/reference/probe-fold-closure-release.config.ts"
+  ],
+  "context": {
+    "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+    "inputHashes": {
+      "runs/diagnostics/2026-09-27-native-fold-pivots.json.gz": "73ee5160dac7c914a420f91fb60bf463419ef5a35261353785d418b26551516d",
+      "scripts/reference/probe-fold-closure-release.config.ts": "e41fca47b4ec00c039c0a9d3d7db2f9fb0cd1a5a8169de0f8454d5d81f3a3e62",
+      "scripts/reference/probe-fold-closure-release.ts": "cbbf98fce2d8e525e9e386163596b2f1cc00d1d3d1c9ad8cfee7df6d5062d4cc"
+    }
+  },
+  "startedAt": "2026-09-28T21:11:27.551Z",
+  "runnerSha256": "291102e4fb66199c1d1179cb7ca4787612873cad4414de746f6e8fed703210af",
+  "completed": true,
+  "finishedAt": "2026-09-28T21:12:33.710Z",
+  "durationSeconds": 66.15740083300001,
+  "exitCode": 0,
+  "signal": null,
+  "finalContext": {
+    "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+    "inputHashes": {
+      "runs/diagnostics/2026-09-27-native-fold-pivots.json.gz": "73ee5160dac7c914a420f91fb60bf463419ef5a35261353785d418b26551516d",
+      "scripts/reference/probe-fold-closure-release.config.ts": "e41fca47b4ec00c039c0a9d3d7db2f9fb0cd1a5a8169de0f8454d5d81f3a3e62",
+      "scripts/reference/probe-fold-closure-release.ts": "cbbf98fce2d8e525e9e386163596b2f1cc00d1d3d1c9ad8cfee7df6d5062d4cc"
+    }
+  },
+  "contextUnchanged": true,
+  "archives": [
+    {
+      "source": "/tmp/magnatiles-fold-closure-release.log",
+      "path": "runs/diagnostics/2026-09-28-fold-closure-release.log.txt",
+      "rawSha256": "5fe7f2ce9479df397360fcd6ff60579a96ce31166c0d861923bf3411633eeeec",
+      "sha256": "5fe7f2ce9479df397360fcd6ff60579a96ce31166c0d861923bf3411633eeeec"
+    },
+    {
+      "source": "/tmp/magnatiles-fold-closure-release.json",
+      "path": "runs/diagnostics/2026-09-28-fold-closure-release.json.gz",
+      "rawSha256": "06b3c0a737bf6ee6ed6e301ad118378bc09ac879e4f7acb0978314b285f261fb",
+      "sha256": "10e58f6c6db36fc727fd6424602aaaaa2c836aca743a2691c0d10cdb4c7f33fa"
+    },
+    {
+      "source": "scripts/reference/probe-fold-closure-release.ts",
+      "path": "runs/diagnostics/2026-09-28-fold-closure-release.script.ts.gz",
+      "rawSha256": "cbbf98fce2d8e525e9e386163596b2f1cc00d1d3d1c9ad8cfee7df6d5062d4cc",
+      "sha256": "931b72a79ccd9faf5e4a5349c79a9921c93c55db2679332d2c30c3cc8dfee6be"
+    },
+    {
+      "source": "scripts/reference/probe-fold-closure-release.config.ts",
+      "path": "runs/diagnostics/2026-09-28-fold-closure-release.config.ts.gz",
+      "rawSha256": "e41fca47b4ec00c039c0a9d3d7db2f9fb0cd1a5a8169de0f8454d5d81f3a3e62",
+      "sha256": "24b548274809af04ca3e162555facab32a478f96fbd19aeab6d70d530178da50"
+    }
+  ]
+}

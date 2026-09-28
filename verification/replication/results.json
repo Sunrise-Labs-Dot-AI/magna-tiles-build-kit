@@ -291,7 +291,7 @@
         },
         "sourceStages": {
           "status": "unverified",
-          "detail": "0/3 source-stage piece sets established. small-wedge: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. small-launch: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. small-final: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts."
+          "detail": "2/3 source-stage piece sets established. small-final: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts."
         },
         "fidelity": {
           "status": "fail",
@@ -323,7 +323,7 @@
         }
       },
       "replication": "not-verified",
-      "fingerprint": "e3a6803496aec8e47a23abbc7fd60688fc02ab055c818a96cf0ced9a60459bd2",
+      "fingerprint": "b12f8b6298e3eb9b4736b4fbb9d838a3580da85db5c71c83f361dcea9ecff885",
       "stages": [
         {
           "id": "small-wedge",
@@ -430,7 +430,7 @@
         },
         "sourceStages": {
           "status": "unverified",
-          "detail": "0/11 source-stage piece sets established. medium-lower: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-upper-preparation: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-support: 0 mapped observed panels; coverage is partial. Visible minimums, inferred and proposed panels cannot establish an exact source-stage set. At least two bounded green square faces are visible. The roughly one-by-one-square footprint challenges the elongated candidate, but hidden face count is unresolved. Visible minima do not establish the full installed set. medium-upper-transfer: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-lower-placement: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-turn: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-lower-walls: 0 mapped observed panels; coverage is partial. Visible minimums, inferred and proposed panels cannot establish an exact source-stage set. Only the first red/orange side module has been placed at 63 seconds. At least two distinct triangular faces are established; hidden counts and correspondence remain unresolved. This is not an observed eight-wall checkpoint. medium-lower-cover: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-turn-cover: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-upper-cover: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-final: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts."
+          "detail": "0/11 source-stage piece sets established. medium-lower: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-upper-preparation: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-support: 0 observed panels; coverage is partial. Visible minimums, inferred and proposed panels cannot establish an exact source-stage set. At least two bounded green square faces are visible. The roughly one-by-one-square footprint challenges the elongated candidate, but hidden face count is unresolved. Visible minima do not establish the full installed set. medium-upper-transfer: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-lower-placement: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-turn: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-lower-walls: 0 observed panels; coverage is partial. Visible minimums, inferred and proposed panels cannot establish an exact source-stage set. Only the first red/orange side module has been placed at 63 seconds. At least two distinct triangular faces are established; hidden counts and correspondence remain unresolved. This is not an observed eight-wall checkpoint. medium-lower-cover: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-turn-cover: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-upper-cover: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-final: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts."
         },
         "fidelity": {
           "status": "fail",

@@ -1,0 +1,161 @@
+{
+  "scope": "Unreviewed fitting-only image measurement proposal. No catalog, source geometry, observation lock, source acceptance or runtime change.",
+  "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+  "frameId": "small-fit-33",
+  "frameSha256": "9595d6e202d8b246aaaaae839e028a31cfd212c4775dd2cb44ff9867c8d34fff",
+  "seconds": 33,
+  "width": 1920,
+  "height": 1080,
+  "partition": "fit",
+  "catalogSceneStageId": "small-launch",
+  "proposedMeasuredComponentStageId": "small-wedge",
+  "bindingStatus": "off-path proposal; production frame/stage binding remains unchanged",
+  "excludedComponent": "The separately held launch module.",
+  "uncertaintyMeaning": "Manual draft +/-6px boundary-selection band, not a statistical confidence interval. Reject or revise through image review before fitting.",
+  "segments": [
+    {
+      "id": "upper-back",
+      "sourcePanelRole": "upper-deck",
+      "segmentPixels": [
+        [
+          1024,
+          368
+        ],
+        [
+          977,
+          477
+        ]
+      ],
+      "draftBandPx": 6,
+      "feature": "Proposed visible exterior orange-plastic boundary; distinguish from internal frame decoration and yellow plastic seen through the face.",
+      "status": "unreviewed",
+      "occlusion": "Endpoints avoid rounded corners; physical boundary and visibility require independent review."
+    },
+    {
+      "id": "upper-far",
+      "sourcePanelRole": "upper-deck",
+      "segmentPixels": [
+        [
+          1063,
+          363
+        ],
+        [
+          1235,
+          466
+        ]
+      ],
+      "draftBandPx": 6,
+      "feature": "Proposed visible exterior orange-plastic boundary; distinguish from internal frame decoration and yellow plastic seen through the face.",
+      "status": "unreviewed",
+      "occlusion": "Endpoints avoid rounded corners; physical boundary and visibility require independent review."
+    },
+    {
+      "id": "upper-front",
+      "sourcePanelRole": "upper-deck",
+      "segmentPixels": [
+        [
+          1269,
+          520
+        ],
+        [
+          1240,
+          625
+        ]
+      ],
+      "draftBandPx": 6,
+      "feature": "Proposed visible exterior orange-plastic boundary; distinguish from internal frame decoration and yellow plastic seen through the face.",
+      "status": "unreviewed",
+      "occlusion": "Endpoints avoid rounded corners; physical boundary and visibility require independent review."
+    },
+    {
+      "id": "upper-near",
+      "sourcePanelRole": "upper-deck",
+      "segmentPixels": [
+        [
+          997,
+          529
+        ],
+        [
+          1200,
+          646
+        ]
+      ],
+      "draftBandPx": 6,
+      "feature": "Proposed visible exterior orange-plastic boundary; distinguish from internal frame decoration and yellow plastic seen through the face.",
+      "status": "unreviewed",
+      "occlusion": "Endpoints avoid rounded corners; physical boundary and visibility require independent review."
+    },
+    {
+      "id": "lower-back",
+      "sourcePanelRole": "lower-deck",
+      "segmentPixels": [
+        [
+          1268,
+          548
+        ],
+        [
+          1250,
+          629
+        ]
+      ],
+      "draftBandPx": 6,
+      "feature": "Proposed visible exterior orange-plastic boundary; distinguish from internal frame decoration and yellow plastic seen through the face.",
+      "status": "unreviewed",
+      "occlusion": "Endpoints avoid rounded corners; physical boundary and visibility require independent review."
+    },
+    {
+      "id": "lower-far",
+      "sourcePanelRole": "lower-deck",
+      "segmentPixels": [
+        [
+          1303,
+          529
+        ],
+        [
+          1477,
+          635
+        ]
+      ],
+      "draftBandPx": 6,
+      "feature": "Proposed visible exterior orange-plastic boundary; distinguish from internal frame decoration and yellow plastic seen through the face.",
+      "status": "unreviewed",
+      "occlusion": "Endpoints avoid rounded corners; physical boundary and visibility require independent review."
+    },
+    {
+      "id": "lower-front",
+      "sourcePanelRole": "lower-deck",
+      "segmentPixels": [
+        [
+          1511,
+          686
+        ],
+        [
+          1499,
+          791
+        ]
+      ],
+      "draftBandPx": 6,
+      "feature": "Proposed visible exterior orange-plastic boundary; distinguish from internal frame decoration and yellow plastic seen through the face.",
+      "status": "unreviewed",
+      "occlusion": "Endpoints avoid rounded corners; physical boundary and visibility require independent review."
+    },
+    {
+      "id": "lower-near",
+      "sourcePanelRole": "lower-deck",
+      "segmentPixels": [
+        [
+          1272,
+          698
+        ],
+        [
+          1452,
+          809
+        ]
+      ],
+      "draftBandPx": 6,
+      "feature": "Proposed visible exterior orange-plastic boundary; distinguish from internal frame decoration and yellow plastic seen through the face.",
+      "status": "unreviewed",
+      "occlusion": "Endpoints avoid rounded corners; physical boundary and visibility require independent review."
+    }
+  ]
+}

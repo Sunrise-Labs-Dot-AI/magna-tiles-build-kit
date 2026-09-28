@@ -1,0 +1,58 @@
+{
+  "scope": "Source-set integration lint, type and production build checks after completed frozen current-context regeneration.",
+  "startedAt": "2026-09-28T21:12:51.647Z",
+  "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+  "runnerSha256": "e0d3c38ed60cfdb01cc91663a2538cda6a7e78de0b1265b0cee192bf05d18959",
+  "completed": true,
+  "stages": [
+    {
+      "name": "lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "startedAt": "2026-09-28T21:12:51.649Z",
+      "finishedAt": "2026-09-28T21:12:55.374Z",
+      "durationSeconds": 3.724698209,
+      "exitCode": 0,
+      "signal": null,
+      "contextUnchanged": true,
+      "archive": "runs/diagnostics/2026-09-28-source-sets-web-checks.lint.log.txt",
+      "logSha256": "4a7cc61e35c53fd958e73faa14481b3b6d236d1d7636c751453ba1062fd9de64"
+    },
+    {
+      "name": "types",
+      "command": [
+        "npx",
+        "tsc",
+        "--noEmit"
+      ],
+      "startedAt": "2026-09-28T21:12:55.375Z",
+      "finishedAt": "2026-09-28T21:13:01.408Z",
+      "durationSeconds": 6.033568667,
+      "exitCode": 0,
+      "signal": null,
+      "contextUnchanged": true,
+      "archive": "runs/diagnostics/2026-09-28-source-sets-web-checks.types.log.txt",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "startedAt": "2026-09-28T21:13:01.409Z",
+      "finishedAt": "2026-09-28T21:13:14.609Z",
+      "durationSeconds": 13.200076790999999,
+      "exitCode": 0,
+      "signal": null,
+      "contextUnchanged": true,
+      "archive": "runs/diagnostics/2026-09-28-source-sets-web-checks.build.log.txt",
+      "logSha256": "bcdbcd9998ef2d03eb0397c3cbe021ba1354f48cf3fe352d98e186413a18ad70"
+    }
+  ],
+  "finishedAt": "2026-09-28T21:13:14.609Z"
+}

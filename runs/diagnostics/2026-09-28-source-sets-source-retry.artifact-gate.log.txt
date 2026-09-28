@@ -1,0 +1,5 @@
+
+> magnetic-tile-builder@0.1.0 reference:check-artifacts
+> tsx scripts/reference/check-artifacts.ts
+
+Four artifact/model/validator fingerprints match. This does not certify replication or recheck unavailable local media.

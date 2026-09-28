@@ -1,0 +1,15 @@
+Found 2 actionable issues. No edits, network, simulations, or broad runs.
+
+**Finding 1: CRITICAL**
+**Section:** Experiment, [runs/2026-09-28-fold-closure-release-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-28-fold-closure-release-plan.md:19)
+
+**Scenario:** The plan requires instrumentation at every native step proving “the same two original models persist” and “the third join is the only addition.” That conflicts with correctly reporting a joint break. The engine represents a break by removing the joint from `engine.joints` and appending its id to `poppedJoints` in [rapier-world.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts:383). A per-step exact active-joint assertion would turn a valid physical failure into a harness assertion failure, losing the required “first failed phase” evidence.
+
+**Concrete fix:** Define active-joint expectations as: before each step, active ids must equal expected ids minus already popped ids; after each step, active ids may lose ids that were appended to `poppedJoints` during that step. Only a pass may require exactly the three expected retained joins. The report should record `{activeJointIdsBefore, activeJointIdsAfter, poppedJoints}` per phase or step.
+
+**Finding 2: WARNING**
+**Section:** Experiment, [runs/2026-09-28-fold-closure-release-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-28-fold-closure-release-plan.md:17)
+
+**Scenario:** Held stabilization does not, by itself, prove the terminal hand-command velocity has been cleared. The archive’s six completed endpoints have nonzero terminal end velocities, about `0.679 in/s` linear and `0.419 rad/s` angular. `simulateSupport` restores serialized velocities, then changes held bodies to `Fixed`, but rest accounting ignores held bodies because it only measures dynamics in [support.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/support.ts:78). If Rapier preserves fixed-body velocity, the final released hand can inherit command momentum. If Rapier zeros it, the experiment has an implicit velocity reset despite the plan saying “No velocity reset.”
+
+**Concrete fix:** Add explicit evidence around each hand transition: record held body `linvel/angvel` before mode change, immediately after `setBodyType(Fixed)`, after held stabilization, and immediately before the released body’s first dynamic step. Release criteria should state whether fixed-hand stabilization is allowed to dissipate command velocity. If yes, require released-body speed below rest thresholds before withdrawal; if no, require exact preserved velocities and report that remaining command momentum is part of the diagnostic.

@@ -1,0 +1,52 @@
+{
+  "scope": "Operational retry preparation; no native simulation, new source reports or build run.",
+  "checks": [
+    {
+      "case": "current-unchanged-prerequisites",
+      "exitCode": 0,
+      "result": {
+        "preflight": "pass",
+        "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+        "priorSha256": "a44eeef81a7fac8f2027636b2a41b5571a4ea26bec7efb5d9076e06e08c028f8",
+        "preservedStages": [
+          "focused96",
+          "configured72",
+          "generic-assembly"
+        ],
+        "willRun": [
+          "source-reports",
+          "artifact-gate"
+        ],
+        "simulationsStarted": false
+      }
+    },
+    {
+      "case": "wrong-context",
+      "exitCode": 1,
+      "expectedFailure": "Completed prerequisite context differs",
+      "detected": true,
+      "nativeProducerStarted": false
+    },
+    {
+      "case": "wrong-output-digest",
+      "exitCode": 1,
+      "expectedFailure": "Prerequisite output changed",
+      "detected": true,
+      "nativeProducerStarted": false
+    }
+  ],
+  "archivedRunners": [
+    {
+      "path": "runs/diagnostics/2026-09-28-source-sets-resume.magnatiles-source-sets-source-retry.cjs.gz",
+      "rawSha256": "2d7feeb2b60060cf0768e5977fe977f5f05a2184b4c8cf1c8c240ef5df0b5f0e",
+      "gzipSha256": "8cf4670bad4d7cced9e04273587345aa6631f9552c08043b8a437b3386e78c79"
+    },
+    {
+      "path": "runs/diagnostics/2026-09-28-source-sets-resume.magnatiles-source-sets-web-checks.cjs.gz",
+      "rawSha256": "e0d3c38ed60cfdb01cc91663a2538cda6a7e78de0b1265b0cee192bf05d18959",
+      "gzipSha256": "2d25b2c4ec2876ac53c707af425a649c654ea9b1cf97d1c2df5934a5d1d1cdd2"
+    }
+  ],
+  "priorManifestSha256": "a44eeef81a7fac8f2027636b2a41b5571a4ea26bec7efb5d9076e06e08c028f8",
+  "hostStillClosed": true
+}

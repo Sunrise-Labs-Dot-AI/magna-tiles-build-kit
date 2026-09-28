@@ -1,0 +1,16 @@
+{
+  "scope": "Fresh executed configured72 outputs versus qualified base, not provenance restamping.",
+  "baselineArchive": "runs/diagnostics/2026-09-27-final-qualification.configured72.verification_replication_rigid-contact-fixture.json.gz",
+  "baselineRawSha256": "4a26d57e0c702809061b5685869c5618d443023e61853ea4795ba92aaee63e19",
+  "currentOutput": "verification/replication/rigid-contact-fixture.json",
+  "currentSha256": "9cd607ef77e6037633d646f33f161c1c02b408ede9b10face2786cd274a898fb",
+  "differentLeaves": [
+    [
+      ".validationCodeHash",
+      "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+      "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a"
+    ]
+  ],
+  "all72CompleteTrialPayloadsIdentical": true,
+  "allOtherReportFieldsIdentical": true
+}

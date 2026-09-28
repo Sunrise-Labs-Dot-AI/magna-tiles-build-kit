@@ -2795,8 +2795,8 @@
   "report": {
     "id": "jet",
     "fingerprint": "7948dc18b05a1e92b6f16e12cd3dcac568f61ad06ed77586c82b0b976c38066e",
-    "validationCodeHash": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
-    "generatedAt": "2026-09-28T03:07:34.166Z",
+    "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+    "generatedAt": "2026-09-28T20:52:55.378Z",
     "replication": "not-verified",
     "checks": {
       "source": {
@@ -5383,6 +5383,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [
@@ -5397,6 +5398,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [
@@ -5414,6 +5416,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [
@@ -5434,6 +5437,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [
@@ -5457,6 +5461,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [
@@ -5480,6 +5485,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [
@@ -5506,6 +5512,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [
@@ -5521,6 +5528,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [
@@ -5551,6 +5559,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [
@@ -5566,6 +5575,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [
@@ -5600,6 +5610,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [
@@ -5636,6 +5647,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [
@@ -5674,6 +5686,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [
@@ -5715,6 +5728,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [
@@ -5758,6 +5772,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [
@@ -5803,6 +5818,7 @@
         "status": "unverified",
         "detail": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
         "observedTileIds": [],
+        "observedSets": [],
         "inferredTileIds": [],
         "proposedTileIds": [],
         "unaccountedTileIds": [

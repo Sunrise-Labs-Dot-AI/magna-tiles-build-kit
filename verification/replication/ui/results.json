@@ -8,6 +8,9 @@
   ],
   "sourceStagePieces": {
     "allDownloadsBound": true,
+    "observedWedgeAndLaunchSets": true,
+    "memberIdentitiesUnresolved": true,
+    "finalSmallSetUnverified": true,
     "partialSupportUnverified": true,
     "partialCanopyUnverified": true
   },

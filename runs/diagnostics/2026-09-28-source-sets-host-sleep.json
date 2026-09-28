@@ -1,0 +1,32 @@
+{
+  "sourceReportStartedAt": "2026-09-28T07:00:37.075Z",
+  "sourceReportFailedAt": "2026-09-28T07:18:44.851Z",
+  "exitCode": 1,
+  "failure": "SimulationBudgetExceeded in releaseCandidate before any newly generated source report.",
+  "deadlineMilliseconds": 900000,
+  "powerLogTimezone": "America/Los_Angeles",
+  "powerLogEvents": [
+    {
+      "at": "2026-09-28T00:01:21-07:00",
+      "event": "Sleep",
+      "reason": "Maintenance Sleep",
+      "reportedSleepSeconds": 1043
+    },
+    {
+      "at": "2026-09-28T00:18:44-07:00",
+      "event": "DarkWake",
+      "reason": "rtc/SleepService"
+    },
+    {
+      "at": "2026-09-28T00:18:46-07:00",
+      "event": "Sleep",
+      "reason": "Sleep Service Back to Sleep",
+      "reportedSleepSeconds": 232
+    }
+  ],
+  "interpretation": "System sleep spanned the wall-clock source computation deadline. Preserve failure; do not alter deadlines or claim new source reports.",
+  "previousSourceReportsRemainAtValidator": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+  "currentValidator": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+  "repeatScope": "After host is awake, retry source-reports and artifact gate only, retaining completed configured72 and generic fixture outputs.",
+  "userAvailabilityQuestion": "Asked asynchronously to leave Mac awake about30minutes; no reply received."
+}
