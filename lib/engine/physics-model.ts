@@ -37,6 +37,8 @@ export interface PhysicsJointModel {
   axis: Vec3;
   fromLocal: EdgeGeometry;
   toLocal: EdgeGeometry;
+  /** Two point constraints encode a free hinge when the body-local axes differ. */
+  secondAnchors?: { from: Vec3; to: Vec3 };
 }
 
 export interface MagneticPhysicsModel {
@@ -64,11 +66,12 @@ export interface RollTestPlan {
   radius: number;
 }
 
-export function createMagneticPhysicsModel(input: EngineBuild, options: { drop?: boolean } = {}): MagneticPhysicsModel {
+export function createMagneticPhysicsModel(input: EngineBuild, options: { drop?: boolean; floorY?: number; existingConnections?: ReadonlyMap<string, ValidatedConnection> } = {}): MagneticPhysicsModel {
   const build = normalizeBuild(input);
-  const validation = validateMagneticBuild(build);
-  const offsetY = computeGroundOffset(build.tiles) + (options.drop ?? true ? DROP_HEIGHT : 0);
-  const targetOffsetY = computeGroundOffset(build.tiles);
+  const validation = validateMagneticBuild(build, options.existingConnections);
+  if (options.floorY !== undefined && !Number.isFinite(options.floorY)) throw new Error("Invalid assembly floor");
+  const targetOffsetY = options.floorY === undefined ? computeGroundOffset(build.tiles) : -options.floorY;
+  const offsetY = targetOffsetY + (options.drop ?? true ? DROP_HEIGHT : 0);
   const bodies = build.tiles.map((tile) => createBodyModel(tile, offsetY, targetOffsetY));
   const byId = new Map(bodies.map((body) => [body.tile.id, body]));
 

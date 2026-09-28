@@ -1,0 +1,13 @@
+**Verdict: REFUTE as written for a manifold-producing `/tmp` prototype.** The SAT diagnosis phase is fine, but the copied-Parry query path is not cleared until it explicitly preserves Parry’s manifold contract.
+
+Prototype blockers:
+
+- Preserve `NormalConstraintsPair::project_local_normals`, border-radius adjustment, manifold cache/update behavior, and contact matching. The current PFM path applies all of these around the GJK normal in `/tmp/.../contact_manifolds_pfm_pfm.rs:63`, `/tmp/.../contact_manifolds_pfm_pfm.rs:87`, and `/tmp/.../contact_manifolds_pfm_pfm.rs:138`.
+- Define deterministic SAT tie-breaking for exact touching, containment, and near-parallel axes before interpreting results. The plan asks for full SAT, but equal-depth axes can still choose an unstable normal unless axis priority, epsilon scale, and body-swap reversal are specified in [runs/2026-09-27-polyhedral-contact-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-polyhedral-contact-plan.md:11).
+- Do not assume “SAT normal + existing `local_support_feature`” is enough. `ConvexPolyhedron::local_support_feature` chooses only the best face and truncates faces over four vertices at `/tmp/.../convex_polyhedron.rs:959`; edge-edge or corner contacts need either correct feature generation or must fail the prototype honestly.
+- Use `contact_manifolds_cuboid_triangle.rs` as the pattern: SAT axes, then normal-constraint projection, then clipping, then divergence guard and `match_contacts` at `/tmp/.../contact_manifolds_cuboid_triangle.rs:73` and `/tmp/.../contact_manifolds_cuboid_triangle.rs:117`.
+- Do not replace the existing Cuboid/Cuboid specialized SAT path. Target the generic Cuboid/ConvexPolyhedron fallback where the invalid GJK normal is actually load-bearing.
+
+Later promotion requirements are separate: reproducible source patch, license/provenance, settings snapshot, ABI/model identity, stale-state rejection, cross-backend ownership guards, full dynamic matrix, durable solid-sweep guard, and maintenance-cost decision. Those are already broadly captured in the plan’s production section at [runs/2026-09-27-polyhedral-contact-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-polyhedral-contact-plan.md:15).
+
+No source changes made. This is the fresh GPT review lane after the Claude OAuth failure, not an executed `/tmp` prototype run.

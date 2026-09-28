@@ -1,0 +1,21 @@
+VERIFIED/CLEAN for the bounded final evidence audit.
+
+No severity findings found.
+
+Verified evidence chain:
+- Frozen validator/current hash: `3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d`.
+- HEAD observed: `39686d84a81bec3b7277fee1445ef4eed5dd4520`.
+- Full tests manifest: `exitCode: 0`, `contextUnchanged: true`, same 182 input hashes before/after, `739 passed | 1 skipped`, 62 files, `npm test` using repo default `vitest` `maxWorkers: 2`.
+- Final qualification manifest: `completed: true`, five sequential stages all `exitCode: 0` and `contextUnchanged: true`: `configured72`, `structural25`, `generic-assembly`, `source-reports`, `artifact-gate`.
+- All qualification archived gzip hashes and decompressed raw hashes match the manifest, and current canonical output files match the archived raw SHA hashes.
+- Current source input hashes match the final qualification manifest, and current `validationCodeHash()` returns the frozen validator hash.
+
+Specific scope checks:
+- Configured contact: repo consumer `assertConfiguredContactReport` passes; 72/72 trials pass across six fixtures, 480 Hz, 1920/3840 collision Hz, solver 16/32, seeds 0/17/53, with historical finer-contact selection bound by hash.
+- Structural25: 25/25 pass, 20 constructive solved and 5 required rejections; largest recorded row is five-step staircase at `188139 ms`; benchmark path retains the original `240000 ms` per-case budget.
+- Generic assembly: recorded stage rows are all `status: pass`, with three-seed checkpoint/terminal records; stored failure arrays are present and empty where expected.
+- Source reports: report-only completed, but no source acceptance is implied. Four authored payloads match current model artifacts and HEAD hashes; all four remain `replication: not-verified`. Small ramp has `3/3` assembly stages pass; medium ramp has `6/11`; snail remains missing with source `unverified`.
+- No source or assembly credit from native-pivot or observed-set prototype appears in current production artifacts. Prototype imports are confined to `scripts/reference`, and run notes state the separate source-sets checkout is future work outside this frozen `3a2` qualification.
+- Web checks manifest is present and completed: lint, types, and production build all `exitCode: 0`, unchanged validator. Lint has 38 warnings and 0 errors; no separate browser/UI visual QA evidence is present, so I am not claiming UI readiness beyond lint/type/build.
+
+Referenced existing reviews only: `runs/reviews/final-integration-code-review.txt` is CLEAN, and `runs/reviews/native-pivot-completed-results-review.txt` is VERIFIED/CLEAN with the stated diagnostic-only boundary. No source-replica acceptance or physical calibration is claimed.

@@ -1,0 +1,13 @@
+**Findings**
+
+1. **WARNING: stale all-72 wording remains in current docs.**  
+   [docs/footage-reconstruction.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/docs/footage-reconstruction.md:176) still says “the unchanged convergence criterion passes 72 trials,” which conflicts with the corrected evidence at [docs/footage-reconstruction.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/docs/footage-reconstruction.md:257) and raw fixture counts: 0/24 at 30 Hz, 12/24 at 60 Hz, 24/24 at 120 Hz. This is exactly the “all-72” wording the increment says was corrected.
+
+2. **WARNING: current `STATUS.md` still states a final regression total while this increment’s full suite is pending.**  
+   [STATUS.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/STATUS.md:25) says “Regression coverage is 654 passing tests...” in the current status file. The increment correctly says the complete-suite summary remains pending. Since the supported-transfer test count changed and the full suite is still running, this should be made explicitly historical or pending to avoid evidence inflation.
+
+**Verified Within Bounds**
+
+The rest checked clean. The probe config now replaces `test.include` directly, not via `mergeConfig`, at [scripts/reference/probe-supported-transfer.config.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/probe-supported-transfer.config.ts:3). The raw `/tmp/magnatiles-compact-supported-transfer.json` supports the stated outcome: first 3 stages pass, transfer fails overall, seed 0 fails docking before carry, seeds 17/53 pass carry/free release under both policies, and no terminal workspace is accepted. The deformation artifact’s `rawSha256` matches the raw `/tmp` file hash, and its scope is correlation-only.
+
+The generic fixture now has 102 operation trials with the supported-transfer section included, hash `39bf11c...c120`, and the supported fixture contributes 33 passing ops. Artifact comparison scope is narrow and correct: published models/results unchanged except generation time and validator hash, with the new fixture separate. Loaded-shell evidence matches 5/9/13/17 passing and 25 failing all seeds. I did not rerun expensive physics, inspect source media, modify files, or touch credentials. Full-suite and exact-head preview remain pending.

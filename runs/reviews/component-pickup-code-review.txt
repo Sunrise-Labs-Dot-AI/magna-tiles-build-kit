@@ -1,0 +1,14 @@
+Found one required finding.
+
+**Finding 1: Independent components can start in unearned magnetic contact**
+Severity: Blocker
+
+`componentContacts` validates declared group coverage, rejects authored cross-group connections, checks raw solid overlaps, and validates each group internally, but it does not reject actual magnetic edge matches between different declared groups: [components.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/components.ts:8).
+
+The new pickup/lowering resolver relies on that check before resolving the moving component at [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:252) and [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:363). `simulateHeldMotion` then only rejects cross-group preattachment when there is an authored `build.connections` edge crossing `movingTileIds`, not when two declared independent groups are physically edge-matched with the cross connection omitted: [held-motion.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/held-motion.ts:69).
+
+Concrete failure: a zero-offset or near-zero-offset workspace can have the released predecessor component magnetically touching the new component at actual poses while no cross connection is declared. The resolver can still pass, the motion can treat the predecessor as a dynamic obstacle, and the report can claim independent component-local pickup/lowering instead of failing the unearned contact. That violates the plan boundary that unintended magnetic contact remains a failure.
+
+Correction: add a cross-group actual magnetic-contact check to `componentContacts` or to the component resolver path, using `findMagneticEdgeMatch` for every tile pair in different declared groups. Add a negative test with two declared groups in exact magnetic edge contact and no authored cross connection, asserting `movingComponent` or the assembly pickup path rejects before `simulateHeldMotion`.
+
+I did not edit files or run the long suite.

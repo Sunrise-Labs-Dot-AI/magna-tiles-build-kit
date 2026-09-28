@@ -1,0 +1,10 @@
+**Findings**
+
+**WARNING:** Missing two-hand post-acquisition failure coverage in [tests/supported-transfer.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/supported-transfer.test.ts:119).  
+The negative matrix only covers failures before support/carry starts and asserts `handoff` and `carry` are undefined. The only later injected failure is terminal free release at line 144. That leaves a false-pass gap for the new receiver-support path: a regression that skips two-hand intermediate support failure, missed contact-arrival rejection, or closure/component-contact rejection could still pass this focused test. Existing one-hand `component-transfer.test.ts` covers some of this, but not with the explicit receiving-panel grip.
+
+**NOTE:** No positive retained-moving-hand plus acquired receiver-grip case is covered. The success path at [tests/supported-transfer.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/supported-transfer.test.ts:94) proves two acquired hands from `previousHands=[]`; the retained coverage is only the changed-retained rejection at line 124. A regression that rejects `previousHands=[movingHand]` with `hands=[sameMovingHand, receiverHand]` would not be caught.
+
+Production review: I did not find a concrete violation in [prepared-transfer.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/prepared-transfer.ts:81). Role resolution is component-based, hand order is removed from mover selection, only one moving hand is allowed, unrelated receiver hands fail, and the actual support/motion helpers still enforce named-body modes without threshold or source changes.
+
+I did not modify files or run physics.

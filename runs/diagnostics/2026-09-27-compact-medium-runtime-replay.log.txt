@@ -1,0 +1,15 @@
+four-wall support, inherited square flaps seed=0 pass table=0.004345677497132586 rest=808 wall=10.959s
+four-wall support, inherited square flaps seed=17 pass table=0.004397546515651987 rest=826 wall=10.787s
+four-wall support, inherited square flaps seed=53 pass table=0.004429477820265579 rest=647 wall=10.635s
+six-face support, no square flaps seed=0 pass table=0.024599902907053106 rest=640 wall=10.193s
+six-face support, no square flaps seed=17 pass table=0.024499749263153917 rest=643 wall=10.266s
+six-face support, no square flaps seed=53 pass table=0.01912994055432919 rest=649 wall=9.913s
+six-face support with roof-face seating, no square flaps seed=0 pass table=0.007261699062601615 rest=642 wall=9.530s
+six-face support with roof-face seating, no square flaps seed=17 pass table=0.00728881960112604 rest=642 wall=9.536s
+six-face support with roof-face seating, no square flaps seed=53 pass table=0.007513419407126354 rest=643 wall=9.647s
+closed-support-through-step-4 seed=0 pass table=0.0083711248005532 rest=766 wall=3.575s
+closed-support-through-step-4 seed=17 pass table=0.008400567415814117 rest=734 wall=3.628s
+closed-support-through-step-4 seed=53 pass table=0.009362338722578634 rest=708 wall=3.571s
+closed-support-through-step-7 seed=0 pass table=0.016264820563165708 rest=883 wall=6.652s
+closed-support-through-step-7 seed=17 pass table=0.01613459380951575 rest=889 wall=6.692s
+closed-support-through-step-7 seed=53 pass table=0.015956032674111928 rest=888 wall=6.610s

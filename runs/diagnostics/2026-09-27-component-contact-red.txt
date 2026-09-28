@@ -1,0 +1,39 @@
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+ ❯ tests/component-selection.test.ts (3 tests | 1 failed) 11ms
+     × rejects actual magnetic contact between independent groups even when the graph omits the join 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/component-selection.test.ts > present component resolution > rejects actual magnetic contact between independent groups even when the graph omits the join
+AssertionError: expected { status: 'pass', …(2) } to match object { status: 'fail', tileIds: [] }
+(1 matching property omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "status": "fail",
+-   "tileIds": [],
++   "status": "pass",
++   "tileIds": [
++     "x-0--1",
++   ],
+  }
+
+ ❯ tests/component-selection.test.ts:35:20
+     33|     const r=assemblyUFixture(),tiles=r.build.tiles.slice(0,2),build={.…
+     34|     const result=movingComponent(build,tiles[0].id,tiles.map(t=>[t.id]…
+     35|     expect(result).toMatchObject({status:"fail",tileIds:[]});
+       |                    ^
+     36|     expect(result.detail).toContain("magnetic contact");
+     37|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  04:56:21
+   Duration  246ms (transform 91ms, setup 0ms, import 136ms, tests 11ms, environment 0ms)

@@ -1,0 +1,58 @@
+{
+  "scope": "Final lint, type and production build checks after completed frozen canonical qualification.",
+  "startedAt": "2026-09-28T03:28:12.217Z",
+  "validationCodeHash": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+  "runnerSha256": "b01b6491303cf36f475ed0cbb7498bf4cdcafe3ff69b989d24a9818f1e04d4da",
+  "completed": true,
+  "stages": [
+    {
+      "name": "lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "startedAt": "2026-09-28T03:28:12.218Z",
+      "finishedAt": "2026-09-28T03:28:15.918Z",
+      "durationSeconds": 3.6993828750000004,
+      "exitCode": 0,
+      "signal": null,
+      "contextUnchanged": true,
+      "archive": "runs/diagnostics/2026-09-28-final-web-checks.lint.log.txt",
+      "logSha256": "4a7cc61e35c53fd958e73faa14481b3b6d236d1d7636c751453ba1062fd9de64"
+    },
+    {
+      "name": "types",
+      "command": [
+        "npx",
+        "tsc",
+        "--noEmit"
+      ],
+      "startedAt": "2026-09-28T03:28:15.919Z",
+      "finishedAt": "2026-09-28T03:28:22.158Z",
+      "durationSeconds": 6.239297458000001,
+      "exitCode": 0,
+      "signal": null,
+      "contextUnchanged": true,
+      "archive": "runs/diagnostics/2026-09-28-final-web-checks.types.log.txt",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "startedAt": "2026-09-28T03:28:22.158Z",
+      "finishedAt": "2026-09-28T03:28:34.668Z",
+      "durationSeconds": 12.509058625,
+      "exitCode": 0,
+      "signal": null,
+      "contextUnchanged": true,
+      "archive": "runs/diagnostics/2026-09-28-final-web-checks.build.log.txt",
+      "logSha256": "958f85d3b51a78b7d6dba2e2c8acd5accdb31fa08089d8980671f6bac0e7067c"
+    }
+  ],
+  "finishedAt": "2026-09-28T03:28:34.668Z"
+}

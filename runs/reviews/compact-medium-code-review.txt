@@ -1,0 +1,9 @@
+VERIFIED/CLEAN within the stated diagnostic scope.
+
+I found no concrete defects in the unpromoted compact-medium hypothesis or the UI verification additions. The generated `/tmp/magnatiles-compact-medium.json` is internally bounded: 37 parts, exact medium BOM shape counts, geometry pass, and three release passes, while its own `scope` withholds source fit, exact source-stage accounting, assembly, passive car function, and physical-material certification.
+
+The catalog geometry checks out against [scripts/reference/probe-compact-medium.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/probe-compact-medium.ts:19): the blue upright is a real 3 in by 3 in square, not a stretched panel, and the roof move at [line 22](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/probe-compact-medium.ts:22) raises the original triangular roof from `H` above the turn floor to exactly 3 inches above it via `3 - H`.
+
+The diagnostic claims are honest enough for this scope. The script and JSON continue to describe the four hidden green support walls and one square blue upright as plausible/hypothetical allocations, not proven by subtracting the BOM. The UI verifier additions at [scripts/reference/verify-ui.ts:27](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/verify-ui.ts:27), [line 148](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/verify-ui.ts:148), and [line 225](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/verify-ui.ts:225) correctly guard against confusing legacy medium physical passes with exact source-piece verification.
+
+I did not open new or heldout frames, run long physics, or alter files.

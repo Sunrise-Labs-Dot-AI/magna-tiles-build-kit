@@ -1,0 +1,1460 @@
+{
+  "scope": "Proposed two-panel operation diagnostic. Existing 37-piece geometry unchanged. Not source-motion or complete-canopy verification.",
+  "status": "diagnostic-pass-not-promoted",
+  "elapsedSeconds": 834.874,
+  "rawResultSha256": "0b688f0680e1a05afe9fe27d97237ebcc047cf5dac5ff8f5dd66be812ca7f2f9",
+  "runtime": {
+    "assemblySha256": "fa91f5d15c7602e220093191cec149caf4f798a2ec5760f15c33047cbc4ade36",
+    "insertionSha256": "5d12c91556940d6065eb3f0d2be6ed66522647792854d58438534239202e6519",
+    "note": "Diagnostic started after the final assembly/insertion edits. Hashes recorded after completion; whole-validator provenance registration changed during the run. This is not a frozen full-replica evidence bundle."
+  },
+  "recipe": {
+    "base": "mediumRamp() at the unchanged 37-piece candidate",
+    "retainStages": 6,
+    "appendStage": {
+      "id": "medium-first-canopy-pair-probe",
+      "frameId": "medium-fit",
+      "title": "Proposed individual-panel preparation of the first lower side pair",
+      "instruction": "Diagnostic only. Source shows a prepared red/orange pair placed together. This proposed individual insertion tests the same first-side piece set without claiming its motion reproduces the observed transfer.",
+      "tileIds": [
+        "lower-side--1",
+        "lower-side-1",
+        "lower-deck-1",
+        "lower-deck-2",
+        "support-side--1-0",
+        "support-side--1-1",
+        "support-side-1-0",
+        "support-side-1-1",
+        "support-back",
+        "upper-side--1",
+        "upper-side-1",
+        "upper-deck-1",
+        "upper-deck-2",
+        "turn-floor",
+        "lower-wall--1-1",
+        "lower-wall--1-2"
+      ],
+      "installedStageIds": [
+        "medium-turn"
+      ],
+      "support": "released"
+    },
+    "appendConstruction": {
+      "stageId": "medium-first-canopy-pair-probe",
+      "operations": [
+        {
+          "tileIds": [
+            "lower-wall--1-1"
+          ],
+          "hands": [
+            {
+              "tileId": "lower-wall--1-1",
+              "localPoint": {
+                "x": -0.75,
+                "y": 0,
+                "z": 0
+              },
+              "localOutward": {
+                "x": -0.8660254037844386,
+                "y": 0.5,
+                "z": 0
+              },
+              "proxy": "edge-pinch-v1"
+            }
+          ]
+        },
+        {
+          "tileIds": [
+            "lower-wall--1-2"
+          ],
+          "hands": [
+            {
+              "tileId": "lower-wall--1-2",
+              "localPoint": {
+                "x": 0,
+                "y": -1.299038105676658,
+                "z": 0
+              },
+              "localOutward": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "proxy": "edge-pinch-v1"
+            },
+            {
+              "tileId": "lower-wall--1-1",
+              "localPoint": {
+                "x": -0.75,
+                "y": 0,
+                "z": 0
+              },
+              "localOutward": {
+                "x": -0.8660254037844386,
+                "y": 0.5,
+                "z": 0
+              },
+              "proxy": "edge-pinch-v1"
+            }
+          ],
+          "releaseAfter": true
+        }
+      ]
+    },
+    "evaluate": "evaluateAssembly(replica)"
+  },
+  "sourceLimit": "Footage shows a red/orange pair prepared in hands and placed together. This uses proposed individual insertions and does not validate the observed motion, exact source-to-part mapping, remaining canopy, passive route or complete replica.",
+  "stageStatuses": [
+    {
+      "stageId": "medium-lower",
+      "status": "pass"
+    },
+    {
+      "stageId": "medium-upper-preparation",
+      "status": "pass"
+    },
+    {
+      "stageId": "medium-support",
+      "status": "pass"
+    },
+    {
+      "stageId": "medium-upper-transfer",
+      "status": "pass"
+    },
+    {
+      "stageId": "medium-lower-placement",
+      "status": "pass"
+    },
+    {
+      "stageId": "medium-turn",
+      "status": "pass"
+    },
+    {
+      "stageId": "medium-first-canopy-pair-probe",
+      "status": "pass"
+    }
+  ],
+  "operations": [
+    {
+      "index": 0,
+      "seed": 0,
+      "tileIds": [
+        "lower-wall--1-1"
+      ],
+      "status": "pass",
+      "timeline": [
+        {
+          "phase": "support",
+          "index": 0,
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0"
+          ]
+        },
+        {
+          "phase": "carry",
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0"
+          ]
+        },
+        {
+          "phase": "support",
+          "index": 1,
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0",
+            "lower-deck-1:0->lower-wall--1-1:0",
+            "lower-side--1:1->lower-wall--1-1:0"
+          ]
+        }
+      ],
+      "path": {
+        "id": "insert-lower-wall--1-1",
+        "movingTileIds": [
+          "lower-wall--1-1"
+        ],
+        "fixedTileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2",
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back",
+          "upper-side--1",
+          "upper-side-1",
+          "upper-deck-1",
+          "upper-deck-2",
+          "turn-floor"
+        ],
+        "offsets": [
+          {
+            "x": 0,
+            "y": 14.360485955831754,
+            "z": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        ]
+      },
+      "docking": {
+        "status": "pass",
+        "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+        "offset": {
+          "x": -0.0064463286366518435,
+          "y": -0.011812598218822828,
+          "z": 0.00445437477050295
+        },
+        "targetPenetration": 0
+      },
+      "grip": {
+        "status": "pass",
+        "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+      },
+      "closure": {
+        "status": "pass",
+        "detail": "2 new edge contacts close after a separated, clear approach. Gap \u2264 thickness + 0.03 in, alignment within 5 degrees and overlap within 0.21 in of the shorter edge. Magnetic force remains a model assumption."
+      },
+      "carry": {
+        "status": "pass",
+        "completion": "rested",
+        "movingComponentTileIds": [
+          "lower-wall--1-1"
+        ],
+        "heldTileIds": [
+          "lower-wall--1-1"
+        ],
+        "dynamicTileCount": 14,
+        "peakDeformation": 9.536745636307867e-07,
+        "settledSteps": 900,
+        "poppedJoints": []
+      },
+      "trials": [
+        {
+          "status": "pass",
+          "heldTileIds": [],
+          "dynamicTileCount": 14,
+          "settledSteps": 900,
+          "peakDisplacement": 0,
+          "poppedJoints": [],
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0005127111577770682,
+          "peakGroundPenetration": 0.004706912903132854
+        },
+        {
+          "status": "pass",
+          "heldTileIds": [
+            "lower-wall--1-1"
+          ],
+          "dynamicTileCount": 14,
+          "settledSteps": 900,
+          "peakDisplacement": 0,
+          "poppedJoints": [],
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0005127111577770682,
+          "peakGroundPenetration": 0.011812686920166016
+        }
+      ],
+      "handTransitionStatuses": []
+    },
+    {
+      "index": 1,
+      "seed": 0,
+      "tileIds": [
+        "lower-wall--1-2"
+      ],
+      "status": "pass",
+      "timeline": [
+        {
+          "phase": "support",
+          "index": 0,
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0",
+            "lower-deck-1:0->lower-wall--1-1:0",
+            "lower-side--1:1->lower-wall--1-1:0"
+          ]
+        },
+        {
+          "phase": "carry",
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0",
+            "lower-deck-1:0->lower-wall--1-1:0",
+            "lower-side--1:1->lower-wall--1-1:0"
+          ]
+        },
+        {
+          "phase": "support",
+          "index": 1,
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0",
+            "lower-deck-1:0->lower-wall--1-1:0",
+            "lower-side--1:1->lower-wall--1-1:0",
+            "lower-wall--1-1:1->lower-wall--1-2:2"
+          ]
+        },
+        {
+          "phase": "support",
+          "index": 2,
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0",
+            "lower-deck-1:0->lower-wall--1-1:0",
+            "lower-side--1:1->lower-wall--1-1:0",
+            "lower-wall--1-1:1->lower-wall--1-2:2"
+          ]
+        }
+      ],
+      "path": {
+        "id": "insert-lower-wall--1-2",
+        "movingTileIds": [
+          "lower-wall--1-2"
+        ],
+        "fixedTileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2",
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back",
+          "upper-side--1",
+          "upper-side-1",
+          "upper-deck-1",
+          "upper-deck-2",
+          "turn-floor",
+          "lower-wall--1-1"
+        ],
+        "offsets": [
+          {
+            "x": 0,
+            "y": 14.360485955831754,
+            "z": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        ]
+      },
+      "docking": {
+        "status": "pass",
+        "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+        "offset": {
+          "x": -0.0064463330093721405,
+          "y": -0.011812648804431003,
+          "z": 0.004454350471496671
+        },
+        "targetPenetration": 0
+      },
+      "grip": {
+        "status": "pass",
+        "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+      },
+      "closure": {
+        "status": "pass",
+        "detail": "1 new edge contacts close after a separated, clear approach. Gap \u2264 thickness + 0.03 in, alignment within 5 degrees and overlap within 0.21 in of the shorter edge. Magnetic force remains a model assumption."
+      },
+      "carry": {
+        "status": "pass",
+        "completion": "rested",
+        "movingComponentTileIds": [
+          "lower-wall--1-2"
+        ],
+        "heldTileIds": [
+          "lower-wall--1-2",
+          "lower-wall--1-1"
+        ],
+        "dynamicTileCount": 14,
+        "peakDeformation": 8.776875371934947e-07,
+        "settledSteps": 900,
+        "poppedJoints": []
+      },
+      "trials": [
+        {
+          "status": "pass",
+          "heldTileIds": [
+            "lower-wall--1-1"
+          ],
+          "dynamicTileCount": 14,
+          "settledSteps": 900,
+          "peakDisplacement": 0,
+          "poppedJoints": [],
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0005127111577770682,
+          "peakGroundPenetration": 0.011812686920166016
+        },
+        {
+          "status": "pass",
+          "heldTileIds": [
+            "lower-wall--1-2",
+            "lower-wall--1-1"
+          ],
+          "dynamicTileCount": 14,
+          "settledSteps": 900,
+          "peakDisplacement": 0,
+          "poppedJoints": [],
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0005127111577770682,
+          "peakGroundPenetration": 0.011812686920166016
+        },
+        {
+          "status": "pass",
+          "heldTileIds": [],
+          "dynamicTileCount": 16,
+          "settledSteps": 892,
+          "peakDisplacement": 0.007891962790421932,
+          "poppedJoints": [],
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0005127111577770682,
+          "peakGroundPenetration": 0.011812686920166016
+        }
+      ],
+      "handTransitionStatuses": [
+        "pass"
+      ]
+    },
+    {
+      "index": 0,
+      "seed": 17,
+      "tileIds": [
+        "lower-wall--1-1"
+      ],
+      "status": "pass",
+      "timeline": [
+        {
+          "phase": "support",
+          "index": 0,
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0"
+          ]
+        },
+        {
+          "phase": "carry",
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0"
+          ]
+        },
+        {
+          "phase": "support",
+          "index": 1,
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0",
+            "lower-deck-1:0->lower-wall--1-1:0",
+            "lower-side--1:1->lower-wall--1-1:0"
+          ]
+        }
+      ],
+      "path": {
+        "id": "insert-lower-wall--1-1",
+        "movingTileIds": [
+          "lower-wall--1-1"
+        ],
+        "fixedTileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2",
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back",
+          "upper-side--1",
+          "upper-side-1",
+          "upper-deck-1",
+          "upper-deck-2",
+          "turn-floor"
+        ],
+        "offsets": [
+          {
+            "x": 0,
+            "y": 14.357070512283478,
+            "z": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        ]
+      },
+      "docking": {
+        "status": "pass",
+        "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+        "offset": {
+          "x": -0.0064376263585146365,
+          "y": -0.011687607278728834,
+          "z": 0.00442867160349128
+        },
+        "targetPenetration": 0
+      },
+      "grip": {
+        "status": "pass",
+        "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+      },
+      "closure": {
+        "status": "pass",
+        "detail": "2 new edge contacts close after a separated, clear approach. Gap \u2264 thickness + 0.03 in, alignment within 5 degrees and overlap within 0.21 in of the shorter edge. Magnetic force remains a model assumption."
+      },
+      "carry": {
+        "status": "pass",
+        "completion": "rested",
+        "movingComponentTileIds": [
+          "lower-wall--1-1"
+        ],
+        "heldTileIds": [
+          "lower-wall--1-1"
+        ],
+        "dynamicTileCount": 14,
+        "peakDeformation": 8.501576437114514e-07,
+        "settledSteps": 900,
+        "poppedJoints": []
+      },
+      "trials": [
+        {
+          "status": "pass",
+          "heldTileIds": [],
+          "dynamicTileCount": 14,
+          "settledSteps": 900,
+          "peakDisplacement": 0,
+          "poppedJoints": [],
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0005130368176765598,
+          "peakGroundPenetration": 0.004572468726432799
+        },
+        {
+          "status": "pass",
+          "heldTileIds": [
+            "lower-wall--1-1"
+          ],
+          "dynamicTileCount": 14,
+          "settledSteps": 900,
+          "peakDisplacement": 0,
+          "poppedJoints": [],
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0005130368176765598,
+          "peakGroundPenetration": 0.011687636375427246
+        }
+      ],
+      "handTransitionStatuses": []
+    },
+    {
+      "index": 1,
+      "seed": 17,
+      "tileIds": [
+        "lower-wall--1-2"
+      ],
+      "status": "pass",
+      "timeline": [
+        {
+          "phase": "support",
+          "index": 0,
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0",
+            "lower-deck-1:0->lower-wall--1-1:0",
+            "lower-side--1:1->lower-wall--1-1:0"
+          ]
+        },
+        {
+          "phase": "carry",
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0",
+            "lower-deck-1:0->lower-wall--1-1:0",
+            "lower-side--1:1->lower-wall--1-1:0"
+          ]
+        },
+        {
+          "phase": "support",
+          "index": 1,
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0",
+            "lower-deck-1:0->lower-wall--1-1:0",
+            "lower-side--1:1->lower-wall--1-1:0",
+            "lower-wall--1-1:1->lower-wall--1-2:2"
+          ]
+        },
+        {
+          "phase": "support",
+          "index": 2,
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0",
+            "lower-deck-1:0->lower-wall--1-1:0",
+            "lower-side--1:1->lower-wall--1-1:0",
+            "lower-wall--1-1:1->lower-wall--1-2:2"
+          ]
+        }
+      ],
+      "path": {
+        "id": "insert-lower-wall--1-2",
+        "movingTileIds": [
+          "lower-wall--1-2"
+        ],
+        "fixedTileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2",
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back",
+          "upper-side--1",
+          "upper-side-1",
+          "upper-deck-1",
+          "upper-deck-2",
+          "turn-floor",
+          "lower-wall--1-1"
+        ],
+        "offsets": [
+          {
+            "x": 0,
+            "y": 14.357070512283478,
+            "z": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        ]
+      },
+      "docking": {
+        "status": "pass",
+        "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+        "offset": {
+          "x": -0.0064376307312349335,
+          "y": -0.011687598259692233,
+          "z": 0.004428720474243253
+        },
+        "targetPenetration": 0
+      },
+      "grip": {
+        "status": "pass",
+        "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+      },
+      "closure": {
+        "status": "pass",
+        "detail": "1 new edge contacts close after a separated, clear approach. Gap \u2264 thickness + 0.03 in, alignment within 5 degrees and overlap within 0.21 in of the shorter edge. Magnetic force remains a model assumption."
+      },
+      "carry": {
+        "status": "pass",
+        "completion": "rested",
+        "movingComponentTileIds": [
+          "lower-wall--1-2"
+        ],
+        "heldTileIds": [
+          "lower-wall--1-2",
+          "lower-wall--1-1"
+        ],
+        "dynamicTileCount": 14,
+        "peakDeformation": 8.662155192777295e-07,
+        "settledSteps": 900,
+        "poppedJoints": []
+      },
+      "trials": [
+        {
+          "status": "pass",
+          "heldTileIds": [
+            "lower-wall--1-1"
+          ],
+          "dynamicTileCount": 14,
+          "settledSteps": 900,
+          "peakDisplacement": 0,
+          "poppedJoints": [],
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0005130368176765598,
+          "peakGroundPenetration": 0.011687636375427246
+        },
+        {
+          "status": "pass",
+          "heldTileIds": [
+            "lower-wall--1-2",
+            "lower-wall--1-1"
+          ],
+          "dynamicTileCount": 14,
+          "settledSteps": 900,
+          "peakDisplacement": 0,
+          "poppedJoints": [],
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0005130368176765598,
+          "peakGroundPenetration": 0.011687636375427246
+        },
+        {
+          "status": "pass",
+          "heldTileIds": [],
+          "dynamicTileCount": 16,
+          "settledSteps": 661,
+          "peakDisplacement": 0.008518763949808864,
+          "poppedJoints": [],
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0005130368176765598,
+          "peakGroundPenetration": 0.011687636375427246
+        }
+      ],
+      "handTransitionStatuses": [
+        "pass"
+      ]
+    },
+    {
+      "index": 0,
+      "seed": 53,
+      "tileIds": [
+        "lower-wall--1-1"
+      ],
+      "status": "pass",
+      "timeline": [
+        {
+          "phase": "support",
+          "index": 0,
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0"
+          ]
+        },
+        {
+          "phase": "carry",
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0"
+          ]
+        },
+        {
+          "phase": "support",
+          "index": 1,
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0",
+            "lower-deck-1:0->lower-wall--1-1:0",
+            "lower-side--1:1->lower-wall--1-1:0"
+          ]
+        }
+      ],
+      "path": {
+        "id": "insert-lower-wall--1-1",
+        "movingTileIds": [
+          "lower-wall--1-1"
+        ],
+        "fixedTileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2",
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back",
+          "upper-side--1",
+          "upper-side-1",
+          "upper-deck-1",
+          "upper-deck-2",
+          "turn-floor"
+        ],
+        "offsets": [
+          {
+            "x": 0,
+            "y": 14.358094342698847,
+            "z": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        ]
+      },
+      "docking": {
+        "status": "pass",
+        "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+        "offset": {
+          "x": -0.006430414196496814,
+          "y": -0.011694163789654127,
+          "z": 0.004609814201685408
+        },
+        "targetPenetration": 0
+      },
+      "grip": {
+        "status": "pass",
+        "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+      },
+      "closure": {
+        "status": "pass",
+        "detail": "2 new edge contacts close after a separated, clear approach. Gap \u2264 thickness + 0.03 in, alignment within 5 degrees and overlap within 0.21 in of the shorter edge. Magnetic force remains a model assumption."
+      },
+      "carry": {
+        "status": "pass",
+        "completion": "rested",
+        "movingComponentTileIds": [
+          "lower-wall--1-1"
+        ],
+        "heldTileIds": [
+          "lower-wall--1-1"
+        ],
+        "dynamicTileCount": 14,
+        "peakDeformation": 9.528770082859357e-07,
+        "settledSteps": 900,
+        "poppedJoints": []
+      },
+      "trials": [
+        {
+          "status": "pass",
+          "heldTileIds": [],
+          "dynamicTileCount": 14,
+          "settledSteps": 900,
+          "peakDisplacement": 0,
+          "poppedJoints": [],
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0005129548927951255,
+          "peakGroundPenetration": 0.004581982494532566
+        },
+        {
+          "status": "pass",
+          "heldTileIds": [
+            "lower-wall--1-1"
+          ],
+          "dynamicTileCount": 14,
+          "settledSteps": 900,
+          "peakDisplacement": 0,
+          "poppedJoints": [],
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0005129548927951255,
+          "peakGroundPenetration": 0.011694192886352539
+        }
+      ],
+      "handTransitionStatuses": []
+    },
+    {
+      "index": 1,
+      "seed": 53,
+      "tileIds": [
+        "lower-wall--1-2"
+      ],
+      "status": "pass",
+      "timeline": [
+        {
+          "phase": "support",
+          "index": 0,
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0",
+            "lower-deck-1:0->lower-wall--1-1:0",
+            "lower-side--1:1->lower-wall--1-1:0"
+          ]
+        },
+        {
+          "phase": "carry",
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0",
+            "lower-deck-1:0->lower-wall--1-1:0",
+            "lower-side--1:1->lower-wall--1-1:0"
+          ]
+        },
+        {
+          "phase": "support",
+          "index": 1,
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0",
+            "lower-deck-1:0->lower-wall--1-1:0",
+            "lower-side--1:1->lower-wall--1-1:0",
+            "lower-wall--1-1:1->lower-wall--1-2:2"
+          ]
+        },
+        {
+          "phase": "support",
+          "index": 2,
+          "activeConnectionIds": [
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-2:2",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-deck-1:1->lower-deck-2:3",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-2:2",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-deck-1:1->upper-deck-2:3",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-1:1->support-back:1",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side-1-0:2->upper-side-1:2",
+            "upper-deck-1:3->turn-floor:1",
+            "lower-deck-2:1->turn-floor:0",
+            "lower-deck-1:0->lower-wall--1-1:0",
+            "lower-side--1:1->lower-wall--1-1:0",
+            "lower-wall--1-1:1->lower-wall--1-2:2"
+          ]
+        }
+      ],
+      "path": {
+        "id": "insert-lower-wall--1-2",
+        "movingTileIds": [
+          "lower-wall--1-2"
+        ],
+        "fixedTileIds": [
+          "lower-side--1",
+          "lower-side-1",
+          "lower-deck-1",
+          "lower-deck-2",
+          "support-side--1-0",
+          "support-side--1-1",
+          "support-side-1-0",
+          "support-side-1-1",
+          "support-back",
+          "upper-side--1",
+          "upper-side-1",
+          "upper-deck-1",
+          "upper-deck-2",
+          "turn-floor",
+          "lower-wall--1-1"
+        ],
+        "offsets": [
+          {
+            "x": 0,
+            "y": 14.358094342698847,
+            "z": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        ]
+      },
+      "docking": {
+        "status": "pass",
+        "detail": "Incoming target passes closure, grip and insertion checks with 0.000000 in cross-solid penetration. Connected stabilization and free release remain mandatory.",
+        "offset": {
+          "x": -0.006430418569217111,
+          "y": -0.011694154770617526,
+          "z": 0.00460979938507089
+        },
+        "targetPenetration": 0
+      },
+      "grip": {
+        "status": "pass",
+        "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+      },
+      "closure": {
+        "status": "pass",
+        "detail": "1 new edge contacts close after a separated, clear approach. Gap \u2264 thickness + 0.03 in, alignment within 5 degrees and overlap within 0.21 in of the shorter edge. Magnetic force remains a model assumption."
+      },
+      "carry": {
+        "status": "pass",
+        "completion": "rested",
+        "movingComponentTileIds": [
+          "lower-wall--1-2"
+        ],
+        "heldTileIds": [
+          "lower-wall--1-2",
+          "lower-wall--1-1"
+        ],
+        "dynamicTileCount": 14,
+        "peakDeformation": 9.363087347876913e-07,
+        "settledSteps": 900,
+        "poppedJoints": []
+      },
+      "trials": [
+        {
+          "status": "pass",
+          "heldTileIds": [
+            "lower-wall--1-1"
+          ],
+          "dynamicTileCount": 14,
+          "settledSteps": 900,
+          "peakDisplacement": 0,
+          "poppedJoints": [],
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0005129548927951255,
+          "peakGroundPenetration": 0.011694192886352539
+        },
+        {
+          "status": "pass",
+          "heldTileIds": [
+            "lower-wall--1-2",
+            "lower-wall--1-1"
+          ],
+          "dynamicTileCount": 14,
+          "settledSteps": 900,
+          "peakDisplacement": 0,
+          "poppedJoints": [],
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0005129548927951255,
+          "peakGroundPenetration": 0.011694192886352539
+        },
+        {
+          "status": "pass",
+          "heldTileIds": [],
+          "dynamicTileCount": 16,
+          "settledSteps": 667,
+          "peakDisplacement": 0.008624696671063505,
+          "poppedJoints": [],
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0005129548927951255,
+          "peakGroundPenetration": 0.011694192886352539
+        }
+      ],
+      "handTransitionStatuses": [
+        "pass"
+      ]
+    }
+  ],
+  "terminalConnections": [
+    {
+      "seed": 0,
+      "connectionIds": [
+        "lower-deck-1:0->lower-wall--1-1:0",
+        "lower-deck-1:1->lower-deck-2:3",
+        "lower-deck-2:1->turn-floor:0",
+        "lower-side--1:1->lower-deck-1:0",
+        "lower-side--1:1->lower-deck-2:0",
+        "lower-side--1:1->lower-wall--1-1:0",
+        "lower-side-1:1->lower-deck-1:2",
+        "lower-side-1:1->lower-deck-2:2",
+        "lower-wall--1-1:1->lower-wall--1-2:2",
+        "support-side--1-0:1->support-side--1-1:3",
+        "support-side--1-0:2->upper-side--1:2",
+        "support-side--1-1:1->support-back:3",
+        "support-side-1-0:1->support-side-1-1:3",
+        "support-side-1-0:2->upper-side-1:2",
+        "support-side-1-1:1->support-back:1",
+        "upper-deck-1:1->upper-deck-2:3",
+        "upper-deck-1:3->turn-floor:1",
+        "upper-side--1:1->upper-deck-1:0",
+        "upper-side--1:1->upper-deck-2:0",
+        "upper-side-1:1->upper-deck-1:2",
+        "upper-side-1:1->upper-deck-2:2"
+      ]
+    },
+    {
+      "seed": 17,
+      "connectionIds": [
+        "lower-deck-1:0->lower-wall--1-1:0",
+        "lower-deck-1:1->lower-deck-2:3",
+        "lower-deck-2:1->turn-floor:0",
+        "lower-side--1:1->lower-deck-1:0",
+        "lower-side--1:1->lower-deck-2:0",
+        "lower-side--1:1->lower-wall--1-1:0",
+        "lower-side-1:1->lower-deck-1:2",
+        "lower-side-1:1->lower-deck-2:2",
+        "lower-wall--1-1:1->lower-wall--1-2:2",
+        "support-side--1-0:1->support-side--1-1:3",
+        "support-side--1-0:2->upper-side--1:2",
+        "support-side--1-1:1->support-back:3",
+        "support-side-1-0:1->support-side-1-1:3",
+        "support-side-1-0:2->upper-side-1:2",
+        "support-side-1-1:1->support-back:1",
+        "upper-deck-1:1->upper-deck-2:3",
+        "upper-deck-1:3->turn-floor:1",
+        "upper-side--1:1->upper-deck-1:0",
+        "upper-side--1:1->upper-deck-2:0",
+        "upper-side-1:1->upper-deck-1:2",
+        "upper-side-1:1->upper-deck-2:2"
+      ]
+    },
+    {
+      "seed": 53,
+      "connectionIds": [
+        "lower-deck-1:0->lower-wall--1-1:0",
+        "lower-deck-1:1->lower-deck-2:3",
+        "lower-deck-2:1->turn-floor:0",
+        "lower-side--1:1->lower-deck-1:0",
+        "lower-side--1:1->lower-deck-2:0",
+        "lower-side--1:1->lower-wall--1-1:0",
+        "lower-side-1:1->lower-deck-1:2",
+        "lower-side-1:1->lower-deck-2:2",
+        "lower-wall--1-1:1->lower-wall--1-2:2",
+        "support-side--1-0:1->support-side--1-1:3",
+        "support-side--1-0:2->upper-side--1:2",
+        "support-side--1-1:1->support-back:3",
+        "support-side-1-0:1->support-side-1-1:3",
+        "support-side-1-0:2->upper-side-1:2",
+        "support-side-1-1:1->support-back:1",
+        "upper-deck-1:1->upper-deck-2:3",
+        "upper-deck-1:3->turn-floor:1",
+        "upper-side--1:1->upper-deck-1:0",
+        "upper-side--1:1->upper-deck-2:0",
+        "upper-side-1:1->upper-deck-1:2",
+        "upper-side-1:1->upper-deck-2:2"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "status": "pass",
+      "heldTileIds": [],
+      "dynamicTileCount": 16,
+      "settledSteps": 900,
+      "peakDisplacement": 0,
+      "poppedJoints": [],
+      "solidFailures": [],
+      "peakSolidOverlap": 0.0005127111577770682,
+      "peakGroundPenetration": 0.005089319400046977
+    },
+    {
+      "status": "pass",
+      "heldTileIds": [],
+      "dynamicTileCount": 16,
+      "settledSteps": 900,
+      "peakDisplacement": 0,
+      "poppedJoints": [],
+      "solidFailures": [],
+      "peakSolidOverlap": 0.0005130368176765598,
+      "peakGroundPenetration": 0.004764600057379775
+    },
+    {
+      "status": "pass",
+      "heldTileIds": [],
+      "dynamicTileCount": 16,
+      "settledSteps": 900,
+      "peakDisplacement": 0,
+      "poppedJoints": [],
+      "solidFailures": [],
+      "peakSolidOverlap": 0.0005129548927951255,
+      "peakGroundPenetration": 0.004566868012876757
+    }
+  ]
+}

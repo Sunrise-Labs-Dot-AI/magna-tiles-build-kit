@@ -1,0 +1,7 @@
+CLEAN.
+
+I did a read-only review of the continuation increment, amended plan, inspection record, fixture registration, tests, and provenance. I did not find a correctness or acceptance blocker.
+
+The continued fixture is bound and fail-closed: it is included in `scripts/reference/assembly-fixtures.ts`, participates in the aggregate pass check, and `tests/fixtures/continued-prefix.ts` is included in `validationCodeHash()` via `lib/replication/provenance.ts`. The current manifest does not match the on-disk fixture digest, which means artifact verification should fail until regeneration finishes. That matches the stated “regeneration ongoing” state, not a completion claim.
+
+The amended source plan is properly bounded: it says the 24-panel target was an initial proposal invalidated as observed, keeps the 37-piece mapping unresolved, denies new holdout credit, and labels the two-panel first-side diagnostic as proposed individual insertions, not observed source motion. I also saw no language implying medium/broad/source regeneration is complete.

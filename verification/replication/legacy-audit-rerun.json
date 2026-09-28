@@ -1,0 +1,329 @@
+{
+  "schema": "reference-replication-baseline-v1",
+  "purpose": "Measure the gap to the user's sourced builds. A physics pass is not replication evidence.",
+  "sourceInventoryProvenance": "Existing annotations require source verification; candidate expectedInventory and visualSignoff are ignored.",
+  "entries": [
+    {
+      "id": "jet-aircraft",
+      "source": {
+        "url": "https://www.youtube.com/watch?v=WDtC_9se3ds",
+        "localFile": "sample-videos/YTDown_YouTube_Magna-Tiles-Idea-Jet-Aircraft_Media_WDtC_9se3ds_001_1080p.mp4",
+        "filePresent": false,
+        "evidence": "Legacy video annotations; not reverified against source media in this audit.",
+        "targetSha256": "c799818659d830141e20dcf651409a79a793692374ce3862207420183646e51b"
+      },
+      "candidate": {
+        "path": "build-drafts/jet-aircraft.json",
+        "sha256": "5971ef61a730909db0b015bcbb94c725ae75a9be206b845695b4450de555e66f",
+        "pieces": 23,
+        "inventory": {
+          "small-square": 12,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 2,
+          "right-triangle": 0,
+          "isosceles-triangle": 9
+        }
+      },
+      "recordedSourceInventory": {
+        "small-square": 16,
+        "large-square": 0,
+        "xl-square": 0,
+        "equilateral-triangle": 9,
+        "right-triangle": 10,
+        "isosceles-triangle": 5
+      },
+      "recordedSourcePieces": 40,
+      "inventoryDifferences": [
+        {
+          "shape": "small-square",
+          "expected": 16,
+          "actual": 12
+        },
+        {
+          "shape": "equilateral-triangle",
+          "expected": 9,
+          "actual": 2
+        },
+        {
+          "shape": "right-triangle",
+          "expected": 10,
+          "actual": 0
+        },
+        {
+          "shape": "isosceles-triangle",
+          "expected": 5,
+          "actual": 9
+        }
+      ],
+      "physics": {
+        "passed": true,
+        "reasons": [
+          "pre-filter passed: no raw tile overlaps",
+          "pre-filter passed: 48 valid magnetic joint(s)",
+          "engine passed: build stands (max displacement 0.806)",
+          "recognizable-object resemblance requires human signoff beyond this engine gate"
+        ],
+        "scope": "Existing nominal engine gate; ramps include its straight ball test, not source-specific car behavior."
+      },
+      "sourceFrameFidelity": "not-evaluated",
+      "sourceAssemblySequence": "not-evaluated",
+      "replication": "not-verified",
+      "blockers": [
+        "Source media unavailable locally.",
+        "Candidate inventory differs from the recorded source inventory.",
+        "Measured source-frame comparison and source-matched assembly verification are required."
+      ]
+    },
+    {
+      "id": "small-car-ramp",
+      "source": {
+        "url": "https://www.youtube.com/watch?v=vxwBYubszZ8",
+        "localFile": "sample-videos/YTDown_YouTube_Build-Car-Ramps-with-Henry-the-MAGNA-TIL_Media_vxwBYubszZ8_001_1080p.mp4",
+        "filePresent": false,
+        "evidence": "Legacy video annotations; not reverified against source media in this audit.",
+        "targetSha256": "1fae2dd1277522c9959d0c65ca23db1a6d249933b25230e4ade958fcb90b16f4"
+      },
+      "candidate": {
+        "path": "build-drafts/small-car-ramp.json",
+        "sha256": "1b32386e09037706e49e07ad79138b531111b00ba8f68ab7ddce7667736009a0",
+        "pieces": 8,
+        "inventory": {
+          "small-square": 4,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 2,
+          "isosceles-triangle": 2
+        }
+      },
+      "recordedSourceInventory": {
+        "small-square": 5,
+        "large-square": 0,
+        "xl-square": 0,
+        "equilateral-triangle": 0,
+        "right-triangle": 2,
+        "isosceles-triangle": 2
+      },
+      "recordedSourcePieces": 9,
+      "inventoryDifferences": [
+        {
+          "shape": "small-square",
+          "expected": 5,
+          "actual": 4
+        }
+      ],
+      "physics": {
+        "passed": true,
+        "reasons": [
+          "pre-filter passed: no raw tile overlaps",
+          "pre-filter passed: 9 valid magnetic joint(s)",
+          "engine passed: build stands (max displacement 0.426)",
+          "engine passed: roll test reached the bottom without falling off"
+        ],
+        "scope": "Existing nominal engine gate; ramps include its straight ball test, not source-specific car behavior."
+      },
+      "sourceFrameFidelity": "not-evaluated",
+      "sourceAssemblySequence": "not-evaluated",
+      "replication": "not-verified",
+      "blockers": [
+        "Source media unavailable locally.",
+        "Candidate inventory differs from the recorded source inventory.",
+        "Measured source-frame comparison and source-matched assembly verification are required."
+      ]
+    },
+    {
+      "id": "medium-car-ramp",
+      "source": {
+        "url": "https://www.youtube.com/watch?v=vxwBYubszZ8",
+        "localFile": "sample-videos/YTDown_YouTube_Build-Car-Ramps-with-Henry-the-MAGNA-TIL_Media_vxwBYubszZ8_001_1080p.mp4",
+        "filePresent": false,
+        "evidence": "Legacy video annotations; not reverified against source media in this audit.",
+        "targetSha256": "699b4dd6be8d345b64c1e49f7adcc66cf5041237b1472acfd35f6f6d3486fc6e"
+      },
+      "candidate": {
+        "path": "build-drafts/medium-car-ramp.json",
+        "sha256": "ea2981698c07933729ce7c82e1b0f64ad5f65f41d935033dbd9180ce668f859c",
+        "pieces": 11,
+        "inventory": {
+          "small-square": 5,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 4,
+          "isosceles-triangle": 2
+        }
+      },
+      "recordedSourceInventory": {
+        "small-square": 15,
+        "large-square": 0,
+        "xl-square": 0,
+        "equilateral-triangle": 18,
+        "right-triangle": 0,
+        "isosceles-triangle": 4
+      },
+      "recordedSourcePieces": 37,
+      "inventoryDifferences": [
+        {
+          "shape": "small-square",
+          "expected": 15,
+          "actual": 5
+        },
+        {
+          "shape": "equilateral-triangle",
+          "expected": 18,
+          "actual": 0
+        },
+        {
+          "shape": "right-triangle",
+          "expected": 0,
+          "actual": 4
+        },
+        {
+          "shape": "isosceles-triangle",
+          "expected": 4,
+          "actual": 2
+        }
+      ],
+      "physics": {
+        "passed": true,
+        "reasons": [
+          "pre-filter passed: no raw tile overlaps",
+          "pre-filter passed: 12 valid magnetic joint(s)",
+          "engine passed: build stands (max displacement 0.215)",
+          "engine passed: roll test reached the bottom without falling off"
+        ],
+        "scope": "Existing nominal engine gate; ramps include its straight ball test, not source-specific car behavior."
+      },
+      "sourceFrameFidelity": "not-evaluated",
+      "sourceAssemblySequence": "not-evaluated",
+      "replication": "not-verified",
+      "blockers": [
+        "Source media unavailable locally.",
+        "Candidate inventory differs from the recorded source inventory.",
+        "Measured source-frame comparison and source-matched assembly verification are required."
+      ]
+    },
+    {
+      "id": "large-car-ramp",
+      "source": {
+        "url": "https://www.youtube.com/watch?v=vxwBYubszZ8",
+        "localFile": "sample-videos/YTDown_YouTube_Build-Car-Ramps-with-Henry-the-MAGNA-TIL_Media_vxwBYubszZ8_001_1080p.mp4",
+        "filePresent": false,
+        "evidence": "Legacy video annotations; not reverified against source media in this audit.",
+        "targetSha256": "825551fda54a1c5b983fcf7f63309c2ef172e434a374fbd9d0b1e2dd4b433fe4"
+      },
+      "candidate": {
+        "path": "build-drafts/large-car-ramp.json",
+        "sha256": "0c73d7f30a01003cdacd9efebbe08d15762c1971990708cf0fb437ed6eb10979",
+        "pieces": 10,
+        "inventory": {
+          "small-square": 6,
+          "large-square": 2,
+          "xl-square": 0,
+          "equilateral-triangle": 0,
+          "right-triangle": 0,
+          "isosceles-triangle": 2
+        }
+      },
+      "recordedSourceInventory": {
+        "small-square": 42,
+        "large-square": 0,
+        "xl-square": 3,
+        "equilateral-triangle": 6,
+        "right-triangle": 0,
+        "isosceles-triangle": 0
+      },
+      "recordedSourcePieces": 51,
+      "inventoryDifferences": [
+        {
+          "shape": "small-square",
+          "expected": 42,
+          "actual": 6
+        },
+        {
+          "shape": "large-square",
+          "expected": 0,
+          "actual": 2
+        },
+        {
+          "shape": "xl-square",
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "shape": "equilateral-triangle",
+          "expected": 6,
+          "actual": 0
+        },
+        {
+          "shape": "isosceles-triangle",
+          "expected": 0,
+          "actual": 2
+        }
+      ],
+      "physics": {
+        "passed": true,
+        "reasons": [
+          "pre-filter passed: no raw tile overlaps",
+          "pre-filter passed: 11 valid magnetic joint(s)",
+          "engine passed: build stands (max displacement 0.449)",
+          "engine passed: roll test reached the bottom without falling off"
+        ],
+        "scope": "Existing nominal engine gate; ramps include its straight ball test, not source-specific car behavior."
+      },
+      "sourceFrameFidelity": "not-evaluated",
+      "sourceAssemblySequence": "not-evaluated",
+      "replication": "not-verified",
+      "blockers": [
+        "Source media unavailable locally.",
+        "Candidate inventory differs from the recorded source inventory.",
+        "Confirm the source XL square dimensions before reconstructing its slope.",
+        "Measured source-frame comparison and source-matched assembly verification are required."
+      ]
+    },
+    {
+      "id": "snail",
+      "source": {
+        "url": null,
+        "localFile": null,
+        "filePresent": false,
+        "evidence": "Legacy video annotations; not reverified against source media in this audit.",
+        "targetSha256": "19a217d90c13085fac35949532ce35c0d450bb52df9371409d89e0fedd7bdc21"
+      },
+      "candidate": {
+        "path": "build-drafts/snail.json",
+        "sha256": "b0bdb90c4c14e1f26ff05ebff73ea57c6d450f4101be309e3771894a75aa19c7",
+        "pieces": 42,
+        "inventory": {
+          "small-square": 29,
+          "large-square": 0,
+          "xl-square": 0,
+          "equilateral-triangle": 1,
+          "right-triangle": 1,
+          "isosceles-triangle": 11
+        }
+      },
+      "recordedSourceInventory": null,
+      "recordedSourcePieces": null,
+      "inventoryDifferences": null,
+      "physics": {
+        "passed": false,
+        "reasons": [
+          "pre-filter passed: no raw tile overlaps",
+          "pre-filter passed: 68 valid magnetic joint(s)",
+          "engine failed: build does not stand (max displacement 2.361)"
+        ],
+        "scope": "Existing nominal engine gate; ramps include its straight ball test, not source-specific car behavior."
+      },
+      "sourceFrameFidelity": "not-evaluated",
+      "sourceAssemblySequence": "not-evaluated",
+      "replication": "not-verified",
+      "blockers": [
+        "Source media unavailable locally.",
+        "Recover the exact 3D snail video. The separate official 2D snail is not this target.",
+        "Measured source-frame comparison and source-matched assembly verification are required."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "jet": {
+    "replica": true,
+    "projections": true,
+    "releases": true,
+    "stages": true,
+    "instructions": true,
+    "constructionPaths": true,
+    "assemblySimulation": true,
+    "carTrials": true,
+    "holdoutCoverage": true
+  },
+  "small-ramp": {
+    "replica": true,
+    "projections": true,
+    "releases": true,
+    "stages": true,
+    "instructions": true,
+    "constructionPaths": true,
+    "assemblySimulation": true,
+    "carTrials": true,
+    "holdoutCoverage": true
+  },
+  "medium-ramp": {
+    "replica": true,
+    "projections": true,
+    "releases": true,
+    "stages": true,
+    "instructions": true,
+    "constructionPaths": true,
+    "assemblySimulation": true,
+    "carTrials": true,
+    "holdoutCoverage": true
+  },
+  "large-ramp": {
+    "replica": true,
+    "projections": true,
+    "releases": true,
+    "stages": true,
+    "instructions": true,
+    "constructionPaths": true,
+    "assemblySimulation": true,
+    "carTrials": true,
+    "holdoutCoverage": true
+  }
+}

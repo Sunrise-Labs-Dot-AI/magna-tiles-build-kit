@@ -1,0 +1,181 @@
+
+> magnetic-tile-builder@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+ ❯ tests/continued-prefix.test.ts (9 tests | 9 skipped) 262133ms
+ ❯ tests/engine-gate.test.ts (13 tests | 2 failed) 94908ms
+     × keeps all legacy card, draft and verification statuses consistent with live gates 71339ms
+     × accepts the re-authored medium ramp as a continuous rollable wedge 6762ms
+ ❯ tests/rigid-contact.test.ts (12 tests | 1 failed) 38103ms
+     × preserves elapsed gravity time and the caller's timestep 4ms
+ ❯ tests/engine-calibration.test.ts (7 tests | 1 failed) 29924ms
+     × keeps the approved medium car ramp rollable through a clear descent 8835ms
+ ❯ tests/reference-acceptance.test.ts (11 tests | 1 failed) 13415ms
+     × uses gateBuild, not silhouette/subassembly proxies, for shipped reference validity 13414ms
+ ❯ tests/assembly-state.test.ts (4 tests | 1 failed) 331ms
+     × adds a free hinge to an already rotated body using both local axis frames 36ms
+ ❯ tests/jet-generator.test.ts (1 test | 1 failed) 13077ms
+     × rejects the recognizable seed jet when its wings move too far under inch-scale gravity 13076ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/continued-prefix.test.ts [ tests/continued-prefix.test.ts ]
+AssertionError: expected [ { kind: 'table', …(3) } ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "detail": "right-x-0--1 intersects the fixed table by 0.0300460895967102 in during motion.",
++     "kind": "table",
++     "penetration": 0.0300460895967102,
++     "tileIds": [
++       "right-x-0--1",
++     ],
++   },
++ ]
+
+ ❯ checkState tests/continued-prefix.test.ts:47:74
+     45|       expect(oldJoints.get(seed)!.every(id=>ids.includes(id))).toBe(tr…
+     46|       expect(ids).not.toContain(unearned);
+     47|       expect(state.poppedJoints).toEqual([]);expect(state.solidFailure…
+       |                                                                          ^
+     48|     };
+     49|     vi.spyOn(motion,"simulateHeldMotion").mockImplementation(async(...…
+ ❯ tests/continued-prefix.test.ts:53:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 7 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/assembly-state.test.ts > physical state between assembly phases > adds a free hinge to an already rotated body using both local axis frames
+AssertionError: expected 0.12053832347623647 to be less than 0.08
+ ❯ tests/assembly-state.test.ts:98:121
+     96|           control.bodies.get("x-0--1")!.body.setBodyType(RigidBodyType…
+     97|           for (let i = 0; i < 35; i++) control.step();
+     98|           expect(distance(control.bodies.get("roof")!.body.translation…
+       |                                                                                                                         ^
+     99|         } finally { control.dispose(); }
+    100|         // Rotate about the primary anchor, leaving it coincident whil…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯
+
+ FAIL  tests/engine-calibration.test.ts > headless Magna-Tiles physics calibration > keeps the approved medium car ramp rollable through a clear descent
+AssertionError: expected { passed: false, reasons: [ …(3) ] } to match object { passed: true }
+(1 matching property omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "passed": true,
++   "passed": false,
+  }
+
+ ❯ tests/engine-calibration.test.ts:35:63
+     33|
+     34|     expect(roll).toMatchObject({ reachedBottom: true, fellOff: false }…
+     35|     await expect(gateBuild(mediumCarRampDraft as EngineBuild)).resolve…
+       |                                                               ^
+     36|   });
+     37|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/8]⎯
+
+ FAIL  tests/engine-gate.test.ts > gateBuild engine source of truth > keeps all legacy card, draft and verification statuses consistent with live gates
+AssertionError: medium-car-ramp: expected 'engine-valid' to be 'engine-fail-pending-reauthoring' // Object.is equality
+
+Expected: "engine-fail-pending-reauthoring"
+Received: "engine-valid"
+
+ ❯ tests/engine-gate.test.ts:20:36
+     18|       const draft = await readBuildDraft(card.id), verdict = await gat…
+     19|       const expected = verdict.passed ? "engine-valid" : "engine-fail-…
+     20|       expect(card.status, card.id).toBe(expected);
+       |                                    ^
+     21|       expect(draft.status, card.id).toBe(expected);
+     22|       expect((ENGINE_VALID_LIBRARY_BUILD_IDS as readonly string[]).inc…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/8]⎯
+
+ FAIL  tests/engine-gate.test.ts > gateBuild engine source of truth > accepts the re-authored medium ramp as a continuous rollable wedge
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/engine-gate.test.ts:35:28
+     33|     const verdict = await gateBuild(draftToBuildGraph(mediumCarRampDra…
+     34|
+     35|     expect(verdict.passed).toBe(true);
+       |                            ^
+     36|     expect(verdict.reasons.join(" ")).toContain("build stands");
+     37|     expect(verdict.reasons.join(" ")).toContain("roll test");
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/8]⎯
+
+ FAIL  tests/jet-generator.test.ts > parametric jet generator > rejects the recognizable seed jet when its wings move too far under inch-scale gravity
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/jet-generator.test.ts:14:25
+     12|     const recognition = scoreRecognition(graph, JET_RECOGNITION_TARGET…
+     13|
+     14|     expect(gate.passed).toBe(false);
+       |                         ^
+     15|     expect(gate.reasons.join(" ")).toContain("engine failed: build doe…
+     16|     expect(recognition.total).toBeGreaterThanOrEqual(0.6);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/8]⎯
+
+ FAIL  tests/reference-acceptance.test.ts > reference acceptance > uses gateBuild, not silhouette/subassembly proxies, for shipped reference validity
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/reference-acceptance.test.ts:33:84
+     31|
+     32|     expect(verdicts.find((item) => item.id === "small-car-ramp")?.verd…
+     33|     expect(verdicts.find((item) => item.id === "medium-car-ramp")?.ver…
+       |                                                                                    ^
+     34|     // The historical platform begins at the solid-overlap limit; its …
+     35|     // release cannot be certified. The corrected generated sprint is …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/8]⎯
+
+ FAIL  tests/rigid-contact.test.ts > independent rigid table contact > preserves elapsed gravity time and the caller's timestep
+AssertionError: expected -38.62059783935547 to be close to -38.62204724409449, received difference is 0.0014494047390201104, but expected 0.0005
+ ❯ tests/rigid-contact.test.ts:118:28
+    116|       const dt=e.world.integrationParameters.dt;
+    117|       for(let n=0;n<12;n++) e.step();
+    118|       expect(b.linvel().y).toBeCloseTo(gravityVector().y*.1,3);
+       |                            ^
+    119|       expect(e.world.integrationParameters.dt).toBe(dt);
+    120|     } finally {e.dispose();}
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/8]⎯
+
+
+ Test Files  7 failed | 55 passed (62)
+      Tests  7 failed | 723 passed | 10 skipped (740)
+   Start at  17:32:32
+   Duration  2374.75s (transform 698ms, setup 0ms, import 3.24s, tests 4732.78s, environment 3ms)
+

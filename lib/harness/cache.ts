@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { PHYSICS_MODEL_VERSION } from "@/lib/engine/constants";
 import { simulate, type SimulationResult } from "@/lib/engine/simulate";
 import type { BuildGraph } from "@/lib/magnetic-tiles/types";
 
@@ -9,6 +10,7 @@ export function physicsKey(build: BuildGraph): string {
   return createHash("sha256")
     .update(
       JSON.stringify({
+        physicsModel: PHYSICS_MODEL_VERSION,
         family: build.family,
         tiles: build.tiles.map((tile) => ({ ...tile, step: undefined })),
         connections: build.connections,

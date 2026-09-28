@@ -1,0 +1,23 @@
+# Start an independent module in an occupied workspace
+
+The integrated four-piece medium lower wedge passes all three seeds. The first held panel of the next five-square support fails checkClosure because an unrelated released obstacle exists. componentContacts accepts the explicit separate groups, but checkClosure then requires a magnetic join to any installed part. The small launch avoided this path by gravity-seating its first panel.
+
+Proposal: after the existing complete component validation, resolve the one declared group containing every moving part. Require that all moving parts belong to exactly that group, rejecting a move spanning independent groups. If no fixed part from that group exists, accept the first component placement as a closure with no pre-existing join, while retaining every other group's solids and dynamics. Otherwise require a separated approach and a new magnetic cross-contact within that same group. Omitted component declarations retain the existing connected-build behavior. Do not infer new groups, ignore obstacles, add connections, teleport predecessor states, or change physics/grip tolerances.
+
+Acceptance: direct positive first placement with a disconnected obstacle; negatives for undeclared separation, missing/duplicate groups, moving across groups, disconnected later placement, an already attached start, and overlap. An independent two-stage integration fixture must retain released predecessor bodies and construct/release a U beside them across all three seeds. The medium support candidate uses offset (0,0,6), back square, two rear side squares, then two front side squares. It holds the back through the first three panels, releases the U, then supports each rear side while attaching its forward extension. Retain all attempts and require all nine placed parts to survive the final free checkpoint. This is a proposed assembly workspace, not a source measurement.
+
+Full engineering loop: fresh alternative-model plan review, implementation, direct and stateful tests, medium probe, adversarial review and fresh source artifacts. Claude subscription OAuth remains unavailable as previously recorded; use a fresh GPT-5.5 read-only review. This change is limited to closure semantics for existing explicit independent groups.
+
+## Review disposition
+
+Fresh GPT-5.5 review is retained in `runs/reviews/independent-module-start-plan-review.txt`.
+
+1. Accepted: absent authored cross-group connections alone do not prove magnetic separation. Check actual moving-panel edge matches against every other component at both insertion endpoints and reject any match, even if omitted from the graph. Add direct negative tests for contact at the start and at the finish.
+2. Rejected as a physical-teleport diagnosis: workspaceBuild changes the public coordinate label of the floor and every inherited Y coordinate together. EngineState stores positions relative to that floor and is reused exactly; no physical motion occurs. `tests/prepared-workspace.test.ts` already creates a world at a different floor label, asserts its complete engine snapshot equals the original and checks that X/Z remain unchanged. The plan already labels support placement as a proposed construction workspace rather than a measured cross-stage source pose. Pinning the coordinate label would instead change that existing stage-frame contract. No world-state or floor behavior is changed here.
+3. Accepted: strengthen integration evidence beyond body counts. Spy on the first successor support simulation and compare its complete EngineState argument with the exact terminal predecessor workspace for each seed. Also compare predecessor terminal motion tiles to the successor's initial support frame and require all predecessor IDs in every incoming carry frame. The new fixture checks these invariants as well as the final six-body free release.
+
+The direct positive first-placement test failed before the code change with the predicted closure rejection. Implementation now resolves one moving component, rejects cross-group magnetic contacts and retains the existing requirement for later connected insertions. All accepted plan changes are reflected in tests; no acceptance threshold is relaxed.
+
+## Focused verification
+
+Five independent-component tests and the medium lower-wedge integration test pass (six total, 55.88 seconds). Fresh adversarial code review reports no required findings in `runs/reviews/independent-module-start-code-review.txt`. The source-specific support experiment also passes both stages, all nine operations and all free checkpoints across seeds 0, 17 and 53. This verifies the internal proposed workspace sequence, not a measured source pose or the remaining 28 source pieces.

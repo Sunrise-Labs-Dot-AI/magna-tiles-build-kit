@@ -1,0 +1,46 @@
+{
+  "scope": "Exact runtime equivalence only; no source or material acceptance.",
+  "context": {
+    "validationCodeHash": "b9bbd653196afef018c4ab1a7d430c9ab108e1bdcfbef63b7ef12a092b43be43",
+    "scriptHashes": {
+      "scripts/reference/probe-proof-reuse.config.ts": "16fb5a24cab8e790cc5c4c413e152b0207fce616c49b084c4bc35a8884956b55",
+      "scripts/reference/probe-proof-reuse.ts": "80619f317470d24e29d207c09c798c8a81ce5ff9555ccf8d52e0808b7fc55f7f",
+      "tests/fixtures/component-transfer.ts": "1717f60b9bd15a4238da15bff860cd1ecebeec457882c0256cdbb9302dac3b47",
+      "tests/fixtures/loaded-contact.ts": "20611217d370987219286fa19781b212623eaef4348b03b778b024f141b38273",
+      "tests/fixtures/rigid-contact.ts": "d2b7fd030081a029e0baee936e4db3f31e3ca83a30dce6faef067f41364d5a1a"
+    }
+  },
+  "rawSha256": "de59a4cd8203ce6928b16c25d5675fde4af47b96064f94cad972e09f6435d19b",
+  "gzipSha256": "c875a91eb8128757744f9fb0ea99fc8333b352f979020907e1d9474cc6d9e40d",
+  "rawBytes": 16755445,
+  "gzipBytes": 409867,
+  "worlds": 124,
+  "nativeSteps": 2275376,
+  "timings": [
+    {
+      "scenario": "flat-contact",
+      "wallSeconds": 0.24520570800000008,
+      "solidChecks": 28801
+    },
+    {
+      "scenario": "loaded-shell-6",
+      "wallSeconds": 35.52064595899999,
+      "solidChecks": 28801
+    },
+    {
+      "scenario": "held-translation-rotation",
+      "wallSeconds": 0.34599670799999876,
+      "solidChecks": 38401
+    },
+    {
+      "scenario": "failed-hinge",
+      "wallSeconds": 0.005156167000001005,
+      "solidChecks": 223
+    },
+    {
+      "scenario": "supported-transfer",
+      "wallSeconds": 520.1284105,
+      "solidChecks": 4454650
+    }
+  ]
+}

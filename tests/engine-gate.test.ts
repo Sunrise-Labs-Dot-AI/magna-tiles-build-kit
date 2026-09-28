@@ -8,38 +8,47 @@ import type { AuthoredBuildDraft } from "@/lib/builder/types";
 import { gateBuild } from "@/lib/engine";
 import { generateBuild } from "@/lib/magnetic-tiles/generate";
 import { VERIFICATION_PROMPTS } from "@/verification/prompt-set";
+import { BUILD_LIBRARY } from "@/lib/magnetic-tiles/library";
+import { readBuildDraft } from "@/lib/builder/storage";
+import { ENGINE_VALID_LIBRARY_BUILD_IDS } from "@/verification/engine-valid-builds";
 
 describe("gateBuild engine source of truth", () => {
-  it("accepts the authored small ramp as today's engine-valid anchor", async () => {
+  it("keeps all legacy card, draft and verification statuses consistent with live gates", async () => {
+    for (const card of BUILD_LIBRARY) {
+      const draft = await readBuildDraft(card.id), verdict = await gateBuild(draftToBuildGraph(draft));
+      const expected = verdict.passed ? "engine-valid" : "engine-fail-pending-reauthoring";
+      expect(card.status, card.id).toBe(expected);
+      expect(draft.status, card.id).toBe(expected);
+      expect((ENGINE_VALID_LIBRARY_BUILD_IDS as readonly string[]).includes(card.id), card.id).toBe(verdict.passed);
+    }
+  }, 120_000);
+  it("rejects the historical small ramp until it sustains rest", async () => {
     const verdict = await gateBuild(draftToBuildGraph(smallCarRampDraft as AuthoredBuildDraft));
 
-    expect(verdict.passed).toBe(true);
-    expect(verdict.reasons.join(" ")).toContain("build stands");
-    expect(verdict.reasons.join(" ")).toContain("roll test");
+    expect(verdict.passed).toBe(false);
+    expect(verdict.reasons.join(" ")).toContain("rest steps");
   });
 
-  it("accepts the re-authored medium ramp as a continuous rollable wedge", async () => {
+  it("rejects the historical medium wedge until it sustains rest", async () => {
     const verdict = await gateBuild(draftToBuildGraph(mediumCarRampDraft as AuthoredBuildDraft));
 
-    expect(verdict.passed).toBe(true);
-    expect(verdict.reasons.join(" ")).toContain("build stands");
-    expect(verdict.reasons.join(" ")).toContain("roll test");
+    expect(verdict.passed).toBe(false);
+    expect(verdict.reasons.join(" ")).toContain("build does not stand");
+    expect(verdict.reasons.join(" ")).toContain("0/90 rest steps");
   });
 
-  it("accepts the re-authored large ramp as a wider continuous rollable wedge", async () => {
+  it("rejects the historical large ramp's uncertified platform release", async () => {
     const verdict = await gateBuild(draftToBuildGraph(largeCarRampDraft as AuthoredBuildDraft));
 
-    expect(verdict.passed).toBe(true);
-    expect(verdict.reasons.join(" ")).toContain("build stands");
-    expect(verdict.reasons.join(" ")).toContain("roll test");
+    expect(verdict.passed).toBe(false);
+    expect(verdict.reasons.join(" ")).toContain("Swept solid clearance cannot be certified");
   });
 
-  it("accepts the re-authored jet aircraft as a standing recognizable-object build", async () => {
+  it("rejects the historical jet after removing artificial contact expansion", async () => {
     const verdict = await gateBuild(draftToBuildGraph(jetAircraftDraft as AuthoredBuildDraft));
 
-    expect(verdict.passed).toBe(true);
-    expect(verdict.reasons.join(" ")).toContain("build stands");
-    expect(verdict.reasons.join(" ")).toContain("recognizable-object resemblance requires human signoff");
+    expect(verdict.passed).toBe(false);
+    expect(verdict.reasons.join(" ")).toContain("build does not stand");
   });
 
   it.each(VERIFICATION_PROMPTS)("$id prompt output is expected-fail until re-authored", async ({ prompt }) => {

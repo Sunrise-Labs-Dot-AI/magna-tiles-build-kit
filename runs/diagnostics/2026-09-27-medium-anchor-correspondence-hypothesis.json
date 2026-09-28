@@ -1,0 +1,369 @@
+{
+  "scope": "Unverified correspondence hypothesis only, from inspection of the existing fitting frame. No persistent annotations, geometry or acceptance criteria changed. Requires independent footage review before any lock or ledger update.",
+  "results": [
+    {
+      "camera5Vertex": 0,
+      "anchorRms": 26.676691786517512,
+      "result": {
+        "id": "medium-stage-63",
+        "frameId": "medium-fit",
+        "partition": "fit",
+        "status": "fail",
+        "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 26.68 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
+        "camera": {
+          "position": {
+            "x": -339.4676329902065,
+            "y": 178.15872145896756,
+            "z": -303.5558009413435
+          },
+          "target": {
+            "x": 7.82191774307419,
+            "y": 3.76276010404575,
+            "z": 4.338300449891226
+          },
+          "up": {
+            "x": 0.2078298376939027,
+            "y": 0.9329345611046079,
+            "z": 0.29400657009780934
+          },
+          "focal": 27749.26512621425,
+          "cx": 926.7640906827627,
+          "cy": 280.6974699689322
+        },
+        "cameraRegion": {
+          "status": "unverified",
+          "detail": "No independently observed camera region."
+        },
+        "cameraAnchors": 6,
+        "checkLandmarks": 4,
+        "rmsPx": 171.2466071893747,
+        "maxPx": 241.18851738388042,
+        "sourceDiagonalPx": 895.4289474882974,
+        "residuals": [
+          {
+            "id": "medium-stage-63-camera-1",
+            "use": "camera",
+            "observed": [
+              773,
+              253
+            ],
+            "projected": [
+              795.6551225653188,
+              247.63709109730667
+            ],
+            "errorPx": 23.281223557798803,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-camera-2",
+            "use": "camera",
+            "observed": [
+              829,
+              93
+            ],
+            "projected": [
+              830.8864115112885,
+              115.9118158638754
+            ],
+            "errorPx": 22.989342195244618,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-camera-3",
+            "use": "camera",
+            "observed": [
+              1012,
+              125
+            ],
+            "projected": [
+              990.9592977566273,
+              121.15338181647789
+            ],
+            "errorPx": 21.389427817126688,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-camera-4",
+            "use": "camera",
+            "observed": [
+              942,
+              288
+            ],
+            "projected": [
+              956.2295625975934,
+              253.1339506865431
+            ],
+            "errorPx": 37.65795860700945,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-camera-5",
+            "use": "camera",
+            "observed": [
+              965,
+              505
+            ],
+            "projected": [
+              945.2086711305101,
+              534.518116006167
+            ],
+            "errorPx": 35.538934578485026,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-camera-6",
+            "use": "camera",
+            "observed": [
+              1041,
+              420
+            ],
+            "projected": [
+              1041.0352109510839,
+              412.2087546860197
+            ],
+            "errorPx": 7.791324877945753,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-check-1",
+            "use": "check",
+            "observed": [
+              930,
+              900
+            ],
+            "projected": [
+              1013.7355934513555,
+              673.8136801060159
+            ],
+            "errorPx": 241.18851738388042,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-check-2",
+            "use": "check",
+            "observed": [
+              1101,
+              804
+            ],
+            "projected": [
+              1136.9093293562237,
+              622.342974023257
+            ],
+            "errorPx": 185.17223069760973,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-check-3",
+            "use": "check",
+            "observed": [
+              713,
+              544
+            ],
+            "projected": [
+              800.9916728578968,
+              448.5737830215091
+            ],
+            "errorPx": 129.80253225248404,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-check-4",
+            "use": "check",
+            "observed": [
+              884,
+              478
+            ],
+            "projected": [
+              924.3394642314271,
+              398.2191990358014
+            ],
+            "errorPx": 89.39937682650621,
+            "uncertaintyPx": 12
+          }
+        ]
+      }
+    },
+    {
+      "camera5Vertex": 1,
+      "anchorRms": 4.091245254315461,
+      "result": {
+        "id": "medium-stage-63",
+        "frameId": "medium-fit",
+        "partition": "fit",
+        "status": "fail",
+        "detail": "6 camera anchors / 7 camera parameters; 4 scored landmarks; anchor RMS 4.09 px. No independently observed camera region. Independent point agreement only; not complete shape fidelity.",
+        "camera": {
+          "position": {
+            "x": -283.57292884862517,
+            "y": 222.2999409515851,
+            "z": -220.15466366118164
+          },
+          "target": {
+            "x": 8.07191774307419,
+            "y": 3.76276010404575,
+            "z": 4.7713131517834455
+          },
+          "up": {
+            "x": 0.40584904588663423,
+            "y": 0.8599984666636982,
+            "z": 0.30933669243883244
+          },
+          "focal": 26833.309654670513,
+          "cx": 927.1715896396128,
+          "cy": 280.9513721298326
+        },
+        "cameraRegion": {
+          "status": "unverified",
+          "detail": "No independently observed camera region."
+        },
+        "cameraAnchors": 6,
+        "checkLandmarks": 4,
+        "rmsPx": 46.12797458404765,
+        "maxPx": 74.41607543520504,
+        "sourceDiagonalPx": 895.4289474882974,
+        "residuals": [
+          {
+            "id": "medium-stage-63-camera-1",
+            "use": "camera",
+            "observed": [
+              773,
+              253
+            ],
+            "projected": [
+              770.401035654587,
+              250.30840688268285
+            ],
+            "errorPx": 3.7415623979719084,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-camera-2",
+            "use": "camera",
+            "observed": [
+              829,
+              93
+            ],
+            "projected": [
+              832.6611800449812,
+              91.4830981938504
+            ],
+            "errorPx": 3.962982514630644,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-camera-3",
+            "use": "camera",
+            "observed": [
+              1012,
+              125
+            ],
+            "projected": [
+              1006.5237317867607,
+              128.11611099392533
+            ],
+            "errorPx": 6.30076672078866,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-camera-4",
+            "use": "camera",
+            "observed": [
+              942,
+              288
+            ],
+            "projected": [
+              944.6346763357577,
+              287.4156238350948
+            ],
+            "errorPx": 2.6987061522720563,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-camera-5",
+            "use": "camera",
+            "observed": [
+              965,
+              505
+            ],
+            "projected": [
+              968.3731784460408,
+              507.8655214572914
+            ],
+            "errorPx": 4.426007913575348,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-camera-6",
+            "use": "camera",
+            "observed": [
+              1041,
+              420
+            ],
+            "projected": [
+              1039.3786024600874,
+              418.76547393830987
+            ],
+            "errorPx": 2.037887283297734,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-check-1",
+            "use": "check",
+            "observed": [
+              930,
+              900
+            ],
+            "projected": [
+              931.2447394309523,
+              825.594335518543
+            ],
+            "errorPx": 74.41607543520504,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-check-2",
+            "use": "check",
+            "observed": [
+              1101,
+              804
+            ],
+            "projected": [
+              1082.1562055943705,
+              764.6728287288037
+            ],
+            "errorPx": 43.608657257425904,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-check-3",
+            "use": "check",
+            "observed": [
+              713,
+              544
+            ],
+            "projected": [
+              732.7461214365984,
+              522.5845310562063
+            ],
+            "errorPx": 29.129566111967474,
+            "uncertaintyPx": 12
+          },
+          {
+            "id": "medium-stage-63-check-4",
+            "use": "check",
+            "observed": [
+              884,
+              478
+            ],
+            "projected": [
+              883.7070100615371,
+              463.0642904099977
+            ],
+            "errorPx": 14.938583067377165,
+            "uncertaintyPx": 12
+          }
+        ]
+      }
+    }
+  ]
+}

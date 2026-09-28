@@ -1,0 +1,7 @@
+CLEAN
+
+The plan is execution-safe and scoped tightly enough for implementation. It models interchangeable observed panels as complete counted sets, not serial identities; preserves count, shape, explicit candidate membership, stage/frame/source/hash binding, and keeps pose, joins, motion, and fidelity independent.
+
+It also calls out the main false-pass risks directly: malformed set fields must fail instead of being ignored as schema1, exact/inferred/proposed identities cannot overlap with sets, complete coverage requires the exact stage tile union, and cross-stage set splitting/reassignment is out of scope.
+
+No tests run, no files edited, no generated artifacts inspected.

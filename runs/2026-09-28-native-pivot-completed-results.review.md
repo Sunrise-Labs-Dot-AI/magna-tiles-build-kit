@@ -1,0 +1,7 @@
+# Native pivot comparison: completed evidence review
+
+Fresh sequential read-only GPT-5.5 medium fallback review89976 completed VERIFIED/CLEAN. No findings. Full review: `reviews/native-pivot-completed-results-review.txt`. It checked hashes and original scripts, all18 predeclared rows, separated negative control, actual modes/perturbations/native evidence, exact complete six historical controls and terminal contact results. It did not run another competing simulation.
+
+The native diagnostic completed exit0 in52.921s with unchanged3a2 inputs. Six correct-side surface-pivot rows complete19392 native steps and the10.100000526756s command, with zero solid overlap or broken joins and maximum retained edge gap0.200884811881in. Their explicit third-contact and whole-ring geometric checks pass. Six zero-offset controls exactly reproduce the original collision failure near74.7625 degrees; six wrong-side controls collide near37.8813–37.8875 degrees. Total observed native steps226796.
+
+These results validate a gripped direction-dependent pivot hypothesis, not a universal magnetic seam model. There is no third joint, hand withdrawal, free release, source/assembly/material acceptance or production adoption. The next model design must let local physical interaction determine the pivot without target-directed constraint resets or hidden support. Source geometry and canonical physics stay unchanged.

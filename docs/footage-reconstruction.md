@@ -1,0 +1,289 @@
+# Footage reconstruction workshop
+
+Updated 2026-09-28. `/references` contains four inspectable reconstruction candidates and their separate evidence. **No complete source replica is verified.** The new models are independent of the old AI-authored jet reference model and the 23/8/11/10-piece draft approximations.
+
+## Qualified numerical integration
+
+The qualified integration uses 480 Hz contact with 1920 native steps per second and 120Hz reporting. The completed selection experiment qualifies that profile against 3840-step refinement. Two reviewed computation optimizations preserve 124 complete world records and 2,275,376 native steps/outcomes exactly. The unchanged medium assembly test passes in 933.47 seconds, and the four-source reporter completes within its 900-second per-replica allowance.
+
+After reviewed diagnosis and narrow test/status corrections, the complete default regression passes 739 tests with one existing skip across 62 files. Its complete input hashes remain unchanged under final context `3a2`. Type checking, full lint and final independent code review pass. Fresh canonical qualification passes all 72 contact trials, all 25 structural outcomes and all five generic assembly families. Fresh source reports, artifact integrity, production build and built-workshop browser checks all pass. Physical limits, source geometry and original test budgets are unchanged. The table below records the regenerated per-target verdicts. See [the integration increment](../runs/2026-09-27-contact-integration-increment.md) for archived evidence and actual completion records.
+
+## What is implemented
+
+The subsequent source-accounting increment uses context `b354`. Schema2 can represent a completely observed set of interchangeable same-shape panels without inventing individual serial identities. The five-panel small wedge and four-panel launch pass their reviewed installed-set checks at27s/32.5s; both retain unresolved side-member identities. Final small-stage accounting and all aggregate source-stage verdicts remain unverified. No pose, join or independent fidelity credit follows. Fresh source reports preserve every compared physical, assembly and projection payload from the qualified numerical baseline. Focused96, configured72, all five generic families, artifact integrity, lint, types and production build pass; the baseline full739-test and structural25 evidence is retained without relabeling it as a new-context run. See [the source increment](../runs/2026-09-28-observed-piece-sets-increment.md).
+
+- Rigid, finite-thickness catalog geometry for the jet and three Henry ramps: **40 / 9 / 37 / 51 pieces**, matching the inspected BOM cards. No stretched tiles or extra support pieces are used. Raw overlap tolerance remains unchanged.
+- A reusable five-piece isosceles ramp prism; the medium flight uses its four-piece open-back form. Explicit stage snapshots support separate modules and rigid pose changes, including the jet body being assembled upright and then placed horizontally.
+- A source evaluation lane, `evaluateReferenceCandidate(build, referenceContract, observations, options)`, in `lib/harness/reference.ts`. It accepts an external candidate with stable part IDs; structural grammar success and candidate signoff fields cannot establish source fidelity. The structural prompt grammar is unchanged.
+- Numbered parts and edges that persist across stage changes, candidate join lists, source video links, downloadable geometry/evidence, and a responsive 3D workshop.
+- Measured perspective comparisons with separate camera anchors and scored corners; immutable camera alignment after release. Fitting cannot move or stretch individual parts. Both fitting views and withheld views are visible, including failures.
+- Passive four-wheel car trials require contact with the named driving tiles. Routes and cars share grounded coordinates. The car has no motor, steering controller or waypoint attraction. Post-run structural checks observe a further second of free motion.
+- Source/video/frame hashes, a reviewed observation lock, and generated-artifact checksums. The production build rejects stale models, validator changes, altered verdicts, altered SVGs and incomplete evidence bundles. These are integrity checks, not physical signoff or cryptographic authentication of repository authors.
+
+## Current acceptance boundary
+
+| Target | Source and inventory | Source shape | Release simulation | Assembly | Car function |
+|---|---|---|---|---|---|
+| Jet, 40 | Verified local hashes and BOM | Fails withheld view; historical views need independent camera-region constraints | Fails three perturbations | Released checkpoints fail; upright rings and separate pods are explicitly held | No flight test or claim |
+| Small ramp, 9 | Verified local hashes and BOM | Fails withheld view | Passes all three perturbations | All three stages, including actual transfer and final free release, pass all three seeds | One assumed car completes the inferred deck route with wheel contact |
+| Medium ramp, 37 | Verified local hashes and BOM | Fitting and withheld views fail | Passes all three perturbations | Lower preparation, upper preparation, support construction, upper transfer, lower table relocation and blue bridge insertion pass every operation and free checkpoint on all three seeds, ending in one 14-panel world; five later stages remain unverified | Fails; no successful passive turn demonstrated |
+| Large ramp, 51 | Verified local hashes and BOM | No scored camera fit yet | Passes all three perturbations | Released checkpoints pass; insertion and grip checks remain unverified | Not reconstructed/tested |
+| 3D snail | Exact source absent | Not assessed | Not assessed | Not assessed | Not assessed |
+
+All real-world material behavior remains **uncalibrated**. Passing a simulator check is not a claim of physical validation. Detailed numbers and failures live in `verification/replication/results.json` and the workshop downloads.
+
+## Continued harness development
+
+The goal is reliable generation of verified builds. The earlier candidate PR is a checkpoint, not the acceptance event. The implementation plan and independent review are in `runs/2026-09-26-reliable-verification-plan.md` and its sidecar. No source verification is promoted by the current increment.
+
+`lib/replication/insertion.ts` checks the complete swept path of fixed-orientation translating catalog prisms against every installed part and the table. It intersects analytic time intervals on the full prism separating-axis set, including thickness edges; collisions between distant endpoints cannot evade the check. The unchanged 0.03-inch contact tolerance applies. Rotating insertions are outside this solver.
+
+`planConstructionPaths` performs bounded direction search in a supplied per-part order, validates each path independently, and retains all installed parts as obstacles. Multi-part moves require a previously planned matching module. Missing parts, duplicate insertions, future module references, and a single arbitrary whole-model insertion fail. These are clearance checks, not hand or stability checks.
+
+The small ramp has five wedge insertions, four separately held launch-module insertions, and one module-joining path. The per-part order is a candidate sequence within the source stages; the generated paths are not measurements of Henry’s hand motions. Select a construction checkpoint and an insertion in the workshop, then move the slider to inspect it. Downloads contain the same coordinates used by the validator.
+
+The medium ramp now exposes four-piece lower and upper wedge preparations, five individual support-square placements, upper-wedge transfer onto the support, and lower-wedge table relocation. A retained roof grip lifts each wedge prefix, lets the opposite side enter laterally, receives the lower deck and lowers the wedge before free release. Grip-aware search requires both finite tiles and fingertips to clear along the exact carried path. Preparation retains earlier released modules as dynamic obstacles. The upper transfer earns exactly two support joins and leaves the lower wedge independent; all 13 panels pass the final free checkpoint on three seeds. These hand sequences and preparation locations are proposed procedures, not measured source motions. Source frames bind the existing upper wedge, upper placement and later lower relocation separately. The lower relocation moves the four-panel wedge about six inches using one driving-panel grip, then proves actual table bearing and free rest without new joints. The blue turn now enters this actual workspace as one new panel, reaches exactly its two named contacts and passes connected support, hand withdrawal and free rest on all three seeds. The 14-panel construction result does not establish complete 37-panel source fidelity; five canopy/final stages remain unverified.
+
+### Supported assembly and independent source evidence
+
+`evaluateAssembly` now simulates every operation across seeds 0, 17 and 53. A maximum of two hand contacts each controls exactly one panel. A hand cannot fix an entire multi-part module. When one or two panels are each directly grasped, their zero-dynamic-body record explicitly makes no free-stability claim. Ordinary support transitions retain the previous grips, reject implicit regrasping or acquisition requiring a third hand, and check finger access and withdrawal before changing support. Explicit release steps make the medium support's successive grip changes possible. Carried modules have one held panel, with the remaining parts dynamic. Lowering starts from the actual checked one-hand support state. Every released stage runs a mandatory free checkpoint and checks the remaining hand's withdrawal, including stages that add no parts. The small candidate keeps the same rear and launch-roof grips across placements and passes all three stages under these stricter checks.
+
+The fingertip proxy pinches an actual catalog edge with two 0.22-inch-radius spheres, checked along a 1.5-inch approach and the full translation. It checks table clearance, present panels, support-hand clearance and withdrawal. This is a stated proxy, not a measurement of human dexterity, palm clearance or grip force. The small launch transfer has a checked continuous rotation and now passes final free release across all three seeds. The table stays at the complete stage's height; a floating prefix cannot invent support by regrounding itself. Settled geometry is carried into the next insertion and closure rather than restored to the authored pose.
+
+Closure adds stricter contact requirements than the legacy broad magnetic search: transverse edge gap at most tile thickness plus 0.03 inches, alignment within 5 degrees, and longitudinal overlap within 0.21 inches of the shorter edge. A disconnected or merely nearby module cannot pass. All original raw-overlap, peak-motion and rest limits remain unchanged.
+
+A source-independent three-wall U passes its complete assembly in all three seeds, including final free releases. Reproducible evidence is `verification/replication/assembly-fixture.json`; the build also rejects a stale or edited fixture artifact. Negative tests cover missing/excess grips, blocked approach, unsupported hanging modules, absent joins, premature floating-panel release and omitted operations. The small candidate now completes its five-piece wedge assembly with actual state carried through pickup, docking, support handoff, lowering and free release. Its four-piece launch also passes assembly in the observed sideways construction pose across all three seeds; its continuous rotation, actual named contact arrival, connected support and final free release all pass. The detailed checks are visible in the workshop and downloads.
+
+The fitting footage at 24.5 seconds shows the small ramp's rear square and two isosceles sides standing before either deck panel is installed. Its instructions now follow that observed sequence. The 34-second historical annotation had lateral corner IDs mirrored; only those IDs were corrected, preserving all pixels and roles. Prior observations and locks remain in `verification/replication/observation-history/`. Correcting this transcription makes the camera physically plausible, but scored RMS remains about 23.3 pixels, above the unchanged threshold. The candidate geometry has not changed.
+
+Camera acceptance now separately requires an observed hemisphere, position above the table, finite positive focal length, nondegenerate axes and positive depth. A perfect pixel residual cannot override an impossible camera. Historical views with no recorded region cannot pass this gate.
+
+The locked evidence-use ledger and candidate-freeze record track source/frame hashes, reservation and inspection order, prior inspection, baseline/current candidate digests and reviewed view families. The actual evaluator uses those records; changing a candidate after freeze fails, and reservation hashes must match verified local extraction records. The newly reserved 36.25- and 40.2-second frames were inspected only after candidate freeze. They match already inspected fitting view families, so neither supplies new independent coverage. The first shows the yellow car descending the orange deck, but does not by itself measure a complete trajectory. The second is a wide shot with the completed small ramp on the left. Source insufficiency is recorded explicitly; no favorable frame replaces a failed heldout measurement.
+
+### Gravity placement and observed launch pose
+
+`gravitySeat` adds a bounded release above the target with no new magnetic joints during the fall. Existing installed/internal joints remain active. Table placements require actual ground contact; magnetic placements must earn every named cross-module edge from the actual rested geometry before the normal connected support/release trial. The local 480/1920 integration uses sixteen CCD-enabled substeps per 120 Hz reporting interval, with the original physical duration, rest time, forces and tolerances. The published 120/960 checkpoint used eight. Per-substep checks cover solid/table penetration, displacement, existing-joint failure and conservatively swept fingertip clearance. Joint-break damping uses the actual integration timestep.
+
+The generic roof fixture has real bearing area on narrower supports and passes all three seeds. A roof with only edge contact fails this rest-before-attachment operation: magnetic capture while falling is a separate model requirement. Unsupported, obstructed, missed-contact, invalid-grip and fingertip-crossing cases fail. Recorded motion retains actual terminal poses on failure.
+
+Fitting frames at 28.75/30.25 seconds show the launch's final back panel flat and final roof upright before both green ends are closed. Frames at 32.5/33 seconds show its subsequent rotation. The verified proposed joining sequence uses that observed pose, with an initial table placement and three supported joins, across seeds 0/17/53. Exact human hand trajectories are not claimed. Transformed initial assembly poses remain distinct from transferring completed modules; the small launch now has a continuous orientation/translation check in a shared workspace. The workshop replays actual settled predecessor/carry positions and saved gravity frames, with future parts absent.
+
+These four construction claims are bound to the replica, stage and canonical extraction manifest. Re-extraction reproduced the earlier fitting PNG hashes. The source evaluator rejects a changed construction frame just as it rejects a changed reserved frame. Reviewed original-photo measurements and their limits are in `docs/research/contact-measurements/`; no tile dimensions or heldout pixels were changed.
+
+The earlier gravity-placement increment and its verification are recorded in `runs/2026-09-26-gravity-seating-increment.md`. Current contact-model results and validation are recorded in `runs/2026-09-26-rigid-contact-increment.md`.
+
+### Rigid table contact and exact rectangular colliders
+
+Independent flat and loaded-base fixtures exposed excessive softness in the previous table contact. The earlier 72-trial sweep covered three frequencies, two collision rates, two solver settings and three release seeds. Its selected 120 Hz contact frequency had to pass the unchanged **0.03-inch peak** penetration limit and a stricter **0.01-inch late** numerical target, plus sustained rest and unchanged break/displacement limits. The higher contact frequency is a numerical rigid-contact setting, not a measured material property. That earlier sweep remains reproducible at `39686d8`. The current `verification/replication/rigid-contact-fixture.json` instead contains the 72-cell qualification of the independently selected 480/1920 profile. Report generation reruns the complete configured qualification, and the build consumer recomputes coverage, numerical settings, full terminal-state consistency, margins and sensitivity; stale or edited success labels cannot replace those checks. The installed JS 0.19.2 bindings pin Rust Rapier 0.30.1, whose documented default contact frequency is 30 Hz ([versioned source](https://raw.githubusercontent.com/dimforge/rapier/v0.30.1/src/dynamics/integration_parameters.rs)). Length unit, allowed linear error and damping remain unchanged.
+
+A separate rotated-reference hinge fixture exposed a false three-inch penetration reported by the generic convex-hull narrow phase. Square catalog tiles now use exact cuboids with their original reference basis. Triangle prisms are unchanged. Tests verify all square sizes under noncommuting body/reference rotations, Euler fallback, transformed-corner equality, analytic and prior-shape mass/inertia, and actual contact manifolds during free folding. Contacts remain enabled. Saved engine states carry the physics-model version and cannot continue evidence from the superseded collision model.
+
+The earlier runtime capped acceptance-physics steps at 1/960 second after an independent inclined-panel fixture exceeded the peak floor limit at 480 Hz and passed at 960/1920 Hz. The local integration candidate now caps native steps at 1/1920 second and uses actual 1920/3840 refinement tests. Subdivision preserves elapsed time, interpolates kinematic targets and evaluates joint breaks using the actual substep duration. Maximum corner motion and floor penetration are retained from every collision step, including transient failures. Nominal and structural releases now require the same separate linear/angular rest limits as source releases; rolls and cars reject structural floor penetration too. Source geometry, BOM, observations, force thresholds and overlap tolerance are unchanged.
+
+The actual small-wedge free checkpoints remain below 0.005 inches of table penetration in all three seeds. Nominal small/medium/large source releases pass sustained rest; source shape and assembly/function gates remain separate. The historical eight-piece small-ramp draft still moves and the historical rocket exceeds floor penetration, so their stored engine-valid labels have been removed. Neither is the corresponding source reconstruction.
+
+### Earlier contact-skin correction
+
+The old engine inflated each already finite-thickness tile collider by a 0.006-inch contact skin. At flush, hinge-constrained seams that added competing separation and attachment constraints. Rapier documents that contact skin creates a gap between touching objects ([official documentation](https://rapier.rs/docs/user_guides/javascript/collider_contact_skin/)). Removing this extra margin retains full tile hulls, contact between connected tiles, and all physical constants. It changes neither magnetic torque nor raw intersection tolerances.
+
+A source-independent nine-piece closed support failed to settle with the old margin and reached sustained rest without it. A thirteen-piece support drifted 2.60 inches in the old 7.5-second diagnostic and only 0.266 inches without the margin, including the deliberate 0.28-inch drop. The 9/13-piece fixtures pass all three release seeds after the correction. Full differential results are in `verification/replication/contact-diagnostics.json`; reproduce with `node --import tsx scripts/reference/contact-diagnostics.ts`.
+
+At that earlier checkpoint, the 51-piece candidate passed three releases and the medium candidate missed sustained rest. The latest results in the table above supersede those release outcomes. The contact-skin correction also made the historical 23-piece jet fail its nominal gate; its former stored engine-valid status was stale. A generated two-step riser uses three explicit rear-bracing squares (13 pieces total) because the old open-ended linkage collapses without the artificial contact margin. No supports were added to source candidates.
+
+## Source record and observations
+
+The original local jet cache was recovered. After searching the project, Documents, Downloads, Movies, Desktop and local media indexes, Henry's exact supplied YouTube video was retrieved in format 399. The exact 3D snail was not found; the separate flat snail was excluded.
+
+| Source | Local path | SHA-256 |
+|---|---|---|
+| [Jet](https://www.youtube.com/watch?v=WDtC_9se3ds), 1280×720 | `.video-cache/WDtC_9se3ds/source.mp4` | `7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7` |
+| [Henry's ramps](https://www.youtube.com/watch?v=vxwBYubszZ8), 1920×1080 | `.video-cache/vxwBYubszZ8/source.mp4` | `2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0` |
+
+`sources.json` records 51 BOM, construction, comparison and functional-inspection timestamps. `frame-manifest.json` binds each PNG to its source hash, timestamp, construction stage and partition. Videos and extracted creator frames stay ignored locally. The PR contains our geometry renders and numeric annotations only. Restoring media on another machine requires the same bytes; a changed download fails the hash check.
+
+Five sparse camera observations contain six camera anchors and at least four scored corners each. RMS tolerance is **2%** and maximum corner error **4%** of the source annotation bounding-box diagonal. Camera fitting has seven parameters and rejects insufficient or degenerate depth anchors. Its optimization and initialization use only camera anchors. Changing check pixels cannot change the fitted camera. Runtime labels, stage membership and exact locked observation content are validated.
+
+The initial topology hypotheses predate the annotations, so this is not a blind reconstruction study. The 388-second fitting view had a mirrored face-index transcription corrected without changing its pixel measurements. Cockpit pitch was fitted from construction geometry before inspecting the 397/416-second withheld views. Geometry was not tuned to their errors. The 416-second frame was rejected because it is dark, cropped and hand-supported, so that frame supplies no independent acceptance evidence. That exclusion remains recorded, not silently replaced by a favorable frame. Medium has one measured fitting stage and one measured withheld view. Small has one measured withheld view. The large ramp has no scored observation yet.
+
+The evaluator deliberately cannot award full fidelity from these sparse points. It lacks complete silhouette/visible-edge coverage, constraints on every occluded part, and a fully justified useful final view reserved from fitting for each target. The earlier additional requirement for two views was removed to match the user’s definition; historical and fresh evidence remain distinct. A passing point comparison never promotes `replication` beyond `not-verified`.
+
+Construction links identify an assembly operation or prepared subassembly; other pieces can appear around it. Only fit/holdout observations claim a specific projected stage snapshot. Source transitions are not treated as views of one static object.
+
+## Findings from the footage
+
+- The jet body is four triangular prism bays of three squares each. Four further squares belong to the two wing pods. The final six-piece cockpit retains two long purple triangles, two green right triangles, a yellow divider and a red floor. A rigid tilt seats its longitudinal tips; hidden joins and pod incidence remain hypotheses.
+- The medium candidate allocates eight squares/isosceles pieces to two open-back wedges, five green squares to the elongated U support, sixteen equilateral triangles to four canopy walls, two blue equilateral turn pieces, four yellow cover squares and two red launch squares. The exact canopy/support arrangement is still contradicted by image measurements; matching the BOM is insufficient.
+- At 1:46, Henry points along the medium ramp. The inspected close-up does not establish a complete car trajectory. Its roof route is an **inferred functional target**. A successful real passive turn is not asserted.
+- The large blue XL edge spans two classic-square widths in the 2:50 construction view, supporting a 2:1 side ratio and the catalog's six-inch interpretation. This relative observation does not calibrate dimensions, magnet spacing or force.
+- The catalog's existing 143 mm isosceles equal side is shorter than two three-inch squares. The model retains a 0.37-inch total deck overhang. Actual source-piece measurement is needed; triangle geometry was not enlarged to make the model fit.
+
+## Physics diagnosis
+
+`reference:fixtures` isolates body rings, body-plus-nose, the small wedge and the separate launch. Held stages can also be deliberately simulated without hands as diagnostics, explicitly labeled as such. A separate two-piece fixture clamps one panel and releases the adjoining horizontal panel. It sags to near vertical without breaking the hinge, exposing the current joint's lack of restoring torque. The clamp is never added to a source model.
+
+The source release check samples maximum corner displacement and table penetration at every collision step for 900 reporting intervals at 120 Hz. It requires no broken/rejected joints, peak displacement ≤0.95 inches, table penetration ≤0.03 inches, and at least 90 consecutive rest intervals below 0.035 inches/second linear speed and 0.08 radians/second angular speed. Nominal and structural releases use these same limits. The historical nominal gate could report a low final displacement while the assembly was still moving; that loophole is closed.
+
+`physics-fixtures.json` records the tests. The subsequent contact-skin experiment above resolves one numerical cause for the support-shell jitter. These results separate fixture behavior from source claims; they do not prove that magnet torque alone causes every candidate failure. Candidate topology, broad nominal edge matching, finite-thickness seating and contact/constraint jitter can also contribute. A measured hinge/cantilever fixture and tile dimensions are needed before changing the material model. No force threshold or overlap tolerance was weakened to pass these models.
+
+The car's dimensions, mass, tire friction and spherical wheel approximation are assumptions. Continuous contact permits a maximum 0.15-second interruption for seams and requires contact at each ordered checkpoint. Turning and off-road failures stay visible.
+
+## Reproduce
+
+```sh
+npm ci
+npm run reference:check-artifacts  # Works without the locally ignored videos
+npm test
+npm run lint
+npm run build
+npm run benchmark:harness
+```
+
+With the exact local media restored and `ffmpeg` available:
+
+```sh
+npm run reference:extract
+npm run reference:report          # Produces failures as inspectable artifacts; exit 0 means report generation only
+npm run reference:fixtures
+npm run reference:verify          # Intentionally exits 1: no complete replica passes
+```
+
+The strict command remains closed until full replica acceptance is implemented and supported. Updating source observations requires reviewing the measurement change and explicitly replacing `observation-lock.json`; `initial-observation-lock.sha256` preserves the first sparse transcription record. Do not tune to withheld measurements or relax tolerances when updating candidates.
+
+Run the built app on port 3008, then `npx tsx scripts/reference/verify-ui.ts`. The browser check uses installed Chrome by default; `PLAYWRIGHT_CHANNEL` and `REFERENCE_PREVIEW_URL` override those choices. It exercises all models, a separately held stage, stable labels, the snail state and a 390-pixel viewport. Screenshots contain no creator footage. Local source overlays are available at `/reference-frames/replication/comparison.html` after report generation; they are not included in Git.
+
+The old audit command still reports the old 23/8/11/10/42-piece drafts. Its rerun is saved separately as `verification/replication/legacy-audit-rerun.json`; the inherited baseline is preserved. It is a diagnostic of historical models, never an acceptance result for these candidates.
+
+## Remaining work
+
+1. Refine the jet pod orientation and medium canopy/turn arrangement against fitting frames, with additional edge and occlusion measurements. Keep the already inspected withheld errors out of that optimization; reserve new independent views before further tuning.
+2. Obtain exact source tile/vehicle dimensions and physical hinge/friction fixtures. Diagnose contact jitter separately from missing magnetic torque, and fit any replacement model to measurements.
+3. Resolve medium support/deck continuity and then test the inferred passive turn under car-size and friction variations. Do not substitute the passing straight sprint.
+4. Add measured large-ramp camera views, per-ring construction checkpoints, and its car route.
+5. Locate the exact 3D snail source before reconstruction.
+
+See `runs/reviews/footage-code-review.txt` and its verification/disposition artifacts for the independent review. This PR is a reconstruction implementation with unresolved acceptance gates, not a completed replication milestone.
+
+### Prepared modules in one physical workspace
+
+The five-piece wedge stays present and dynamic while the launch is built six inches beside it. Construction placement is separate from source-stage geometry. A prepared workspace carries the complete body/joint state, floor frame, stage/seed lineage, held hands and explicit independent component groups. Stale histories, omitted obstacles, undeclared disconnection and extra independent components at the final transfer fail closed. Explicit table placement must prove bearing on the incoming part.
+
+The launch retains its last green-side edge grip while the roof hand withdraws. A checked sideways finger path clears the installed wedge. The held trajectory lifts, rotates and translates the module, then pauses at a physically separated approach. Every other body remains dynamic. Actual sampled poses and positive separations certify that checkpoint; a nominal docking proposal cannot supply it. The right-triangle fingertip checker now uses an interior polygon centroid, preventing rounding from flipping a half-space at the triangle's edge-centered catalog origin.
+
+Contact arrival independently enumerates the exact physical edge pairs and retains their directed source/engine identities. This completion kind makes no rest claim. New joins stay absent in the immediate returned body state, then only the earned source definitions enter connected stabilization. Free release is mandatory. The standalone unsupported-hinge regression can reach contact but fails connected/free support, so arrival cannot certify a build.
+
+The September 26 increment established workspace construction, hand withdrawal, continuous transfer, exact contact arrival and connected support. Its final released nine-piece state failed sustained rest; that historical result and review remain in `runs/2026-09-26-prepared-transfer-increment.md`. The September 27 contact correction and bounded docking search now pass the entire inherited-state construction, including final free release, across all three seeds. Playback includes existing workspace parts, active joins and the actual selected or rejected motion. A nominal release is never substituted for the constructed state.
+
+### Finite contact correction and bounded docking search
+
+The headless simulator uses a pinned Rapier.js 0.19.2 package with a narrow Parry finite-polyhedron contact correction. Its separating-axis check retains valid contact normals, replaces provably invalid normals before the original clipping, invalidates stale manifolds and rejects an invalid optional GJK witness. Catalog solids, precision, materials and solver settings are unchanged. Two clean builds produce the same CJS/WASM artifacts; pinned sources, patch, build recipe, licenses and hashes live in `vendor/rapier-contact/`. Engine continuation and workspace histories include the backend identity and cannot reuse an older runtime's state.
+
+A separate continuous solid check covers every moving tile pair and the table at each collision substep. It certifies linear/slerped intervals conservatively and fails closed when an interval cannot be certified. Failure history persists into release, assembly and car reports. This guard concerns tiles and the floor; car and ball collision models retain their separate checks.
+
+Assembly searches at most two whole-stage docking policies: clear-first and support-aligned. Each policy starts with the same selected predecessor state and must pass every seed. A failed attempt contributes no prepared state, and seeds cannot be combined from different attempts. The small wedge selects support-aligned docking; launch construction and final transfer select clear-first. Both rejected and selected attempts remain inspectable in the workshop.
+
+That historical checkpoint recorded 542 passing tests with one skipped across 51 files after the assembly, component-transfer and source-sequence improvements; its validation is recorded in `runs/2026-09-27-medium-source-sequence-increment.md`. The contact tests include 198 orientation trials, 1,200 random pairs in both orders, 360 near-parallel pairs in both orders, 50 analytic touching/shallow cases, and 16 cache configurations with 52 movements each. The unchanged 72-row sweep selects 120 Hz: 0/24 rows pass at 30 Hz, 12/24 at 60 Hz and all 24 at 120 Hz. These are simulation checks; source fidelity and measured real-world materials remain separate requirements. Plan/review artifacts are `runs/2026-09-27-contact-backend-integration-plan.md`, `runs/2026-09-27-finite-gjk-witness-plan.md`, and `runs/reviews/solid-backend-assembly-code-review.txt`. The later grip and medium-construction evidence is indexed in `runs/2026-09-27-medium-initial-assembly-increment.md`.
+
+For the more expensive continuous assembly checks, regenerate with an explicit wall-clock computation budget:
+
+```sh
+node --import tsx scripts/reference/rigid-contact.ts
+node --import tsx scripts/reference/assembly-fixtures.ts
+node --import tsx scripts/reference/verify.ts --report-only --max-ms=900000
+```
+
+This changes only the allowed computation time. Simulation duration, rest windows, grip limits, forces and geometric tolerances stay fixed.
+
+The subsequent solid-sweep optimization removes repeated AABB allocations, reuses only already-observed pair gaps, and computes top-level motion bounds once per tile. Recursive bounds remain tied to exact endpoints. Frozen-oracle tests compare full results and budget checkpoints across 600 moving scenes in both pair orders and analytic boundary cases. All four source reports and both physical fixtures retain identical candidate/physical payloads, excluding only generation time and validator hash. The structural benchmark now passes 20/20 constructive briefs and 5/5 required rejections, including the five-step staircase in 154 seconds within the unchanged four-minute budget. See `runs/2026-09-27-solid-sweep-performance-plan.md` for review and measurement evidence.
+
+### Pickup in an occupied workspace
+
+Pickup and lowering resolve the complete already-present component around the gripped panel. Other prepared modules remain in the physical world as dynamic obstacles and are excluded from the carried deformation baseline. A fully released prefix requires checked grip access and a real one-hand support trial before lifting; its terminal state is the motion input. Reports expose carried IDs separately from physically held IDs. Tests prove full state continuity, one kinematic pickup panel, complete obstacle playback and unchanged obstacle resting poses.
+
+The independent-component and insertion-endpoint guards share the exact contact test used by arrival. A nearby-edge proposal alone is insufficient: closure retains the established gap, angle and overlap limits. This preserves legitimate separated gravity placements while rejecting undeclared actual joins. A strict audit of unchanged candidate edges finds 68/84 closed jet connections, 15/15 small-ramp connections, 61/64 medium-ramp connections and 107/107 large-ramp connections. The workshop's raw geometry label now says “Tile shapes & intersections”; it does not certify exact closure of every proposed edge.
+
+The initial diagnostic medium preparation assembled lower wedge, upper wedge and support sequentially in the same 13-panel world at zero support offset, passing every operation and free checkpoint on seeds 0, 17 and 53. Its subsequent upper transfer also passed all three seeds, acquiring one checked upper-deck grip, earning exactly two upper-to-support edges, and releasing with the lower wedge still independent. All 13 panels remained in the same world throughout; peak carried deformation was approximately 0.0245 inches. The diagnostic evidence remains in `runs/2026-09-27-three-component-upper-transfer-increment.md` and `runs/diagnostics/2026-09-27-medium-upper-transfer.json`; the following source-sequence increment now exposes this procedure in the actual candidate and workshop.
+
+Prepared transfer identifies the module separately from the latest workspace. Its contract permits one complete moving component to join exactly one other component, preserving any unrelated components. Pickup and every later phase inherit the actual full body/joint state. Docking uses actual prior joins and only intended moving-to-neighbor edges; actual arrival must close those exact edges and pass the complete component-contact audit before the merge is earned. Release-only successors preserve those groups. An ordinary new-panel insertion cannot silently collapse multiple groups; bridging them needs an explicit joining contract. The generic ten-panel integration includes an untouched third module, full-state continuity assertions, and negative acquisition/contact cases.
+
+A reviewed correction to the 63-second medium fitting view changes one support-corner binding from the lower free endpoint to the shared lower junction between the two green side squares. Independent visual inspection established the physical corner identity before adoption; the pixel, 12-pixel uncertainty, camera role, fit partition and all candidate geometry remain unchanged. The correction is recorded in the historical evidence ledger and observation lock. It supplies no fresh independent coverage. The fitting-view camera-anchor RMS changes from 26.68 to 4.09 pixels; scored fitting-corner RMS changes from 171.25 to 46.13 pixels and still fails. Other observation projections are unchanged. See `runs/2026-09-27-medium-anchor-correction-increment.md` for the review, provenance and regenerated-result comparison.
+
+### Source sequence and actual join instructions
+
+The medium candidate now separately binds the already prepared upper wedge at 49 seconds, its placement onto the support at 52.5 seconds, and the later lower-wedge relocation at 53.5 seconds. These previously inspected fitting frames supply construction context, not fresh independent coverage. Re-extraction preserves every existing frame hash; no scored pixel observation or complete-build geometry changed. The upper preparation copy explicitly states that its detailed method is proposed, not observed. The first four actual candidate stages pass all three seeds; the lower-placement stage and six subsequent stages remain unverified.
+
+Passing assembly results expose active joint IDs from the actual terminal physical state for each seed, only after the whole stage passes. Released stages capture this evidence after their mandatory free checkpoint; held stages retain their distinct supported boundary. Numbered instructions require complete, consistent terminal records and reject malformed passing evidence. They list actual checked joins separately from proposed later-stage joins, so an earlier nominal proposal cannot hide a later earned edge. The medium upper-transfer instructions contain exactly P5 edge 3 to P10 edge 3 and P7 edge 3 to P11 edge 3. See `runs/2026-09-27-medium-source-sequence-increment.md` for physical, review and browser evidence.
+
+
+### Prepared table relocation
+
+An explicit table-placement operation moves one complete already assembled component while preserving every existing body, velocity, joint frame and independent component. Exactly one moving panel is gripped; all other panels remain dynamic. Prepared continuation rejects extra or missing bodies before engine creation. The fall begins at the actual carried arrival, changes the held panel to dynamic, and requires table contact, sustained rest and an additional free checkpoint. Table mode requests no new joins; unearned edges retained in the source model are excluded from checked instructions.
+
+The medium lower wedge is prepared six inches away from its intended footprint. A six-inch pickup-height proposal failed on all three seeds because descent intersected the upper deck. The selected three-inch path passes all five initial assembly stages: lower relocation measures 5.999716–6.000341 inches, retains all 13 panels and all 16 active joints, and records table bearing on both lower sides and the lower driving square. The exact path and staging position are simulation proposals; source pixels, frame roles, full-build geometry and material assumptions remain unchanged. A separate seven-panel fixture and 30 rejection/continuation/playback tests exercise the reusable operation. See `runs/2026-09-27-prepared-table-relocation-increment.md` for verification and review evidence.
+
+## One-panel bridge insertion
+
+The blue-turn stage now continues the actual released 13-panel medium workspace. A distinct bridge contract names only the incoming triangle and its two requested physical edge pairs. Before motion, the harness checks that the existing bodies, velocities, modes, reference tiles, joint frames and failure history survive exactly; it introduces no future canopy pieces. The gripped triangle dwells at a separated approach pose, moves continuously to the exact two contacts, and adds those joints only during connected stabilization. Checked hand withdrawal and an additional free checkpoint are mandatory before terminal evidence appears.
+
+All six initial medium stages pass the physical probe on seeds 0/17/53. The resulting 14-panel stage retains 16 original joints and earns two blue joins; all 14 bodies are dynamic at the final free checkpoint. An eight-panel generic fixture separately proves the same operation while keeping an unrelated table panel independent. Prepared transfer retains its one-neighbor restriction. The new operation does not alter complete candidate geometry, contact tolerances, forces, solver settings or source observations. It certifies only this simulated construction checkpoint; complete 37-panel fidelity, the remaining five assembly stages, passive car turns and material calibration remain separate. See `runs/2026-09-27-bridge-panel-increment.md` and its linked reviews for the complete verification record.
+
+### Continuing a connected workspace
+
+The next ordinary insertion uses the predecessor's actual old joints, even after a bridge has merged its components. A nominal old-to-old proposal cannot recreate a missing join. Exact body, pose, joint and failure history is checked before merging proposals. Future panels do not set insertion span or the ordinary continuation's floor; their incident joins remain proposals until their own operations. The new eight-panel fixture and detailed state/playback regression cover three seeds, mandatory withdrawal/free release, and future panels below and far from the prefix. Descriptive stored bounds are not physics input.
+
+The next source inspection found interleaved canopy construction, an upright blue panel before the blue top, and later individual upper red triangles. The 63-second fitting frame shows only the first lower side module. This contradicts treating the existing eight-wall stage as the observed completed object. Earlier construction frames also support a compact green support footprint; the current elongated support is not established by those frames. The hidden panel count remains unresolved. The 37-piece model and scored observations remain unchanged while the full part mapping is resolved. The two-panel individual-insertion diagnostic reaches 16 released bodies and 21 retained joints on all three seeds, but is a proposed method without observed-motion, exact-source-piece-set or complete-canopy credit. See `runs/2026-09-27-continued-prefix-increment.md` for the implementation and evidence boundaries, and `runs/2026-09-27-medium-topology-correction-plan.md` for the next correction's acceptance requirements.
+
+### Exact source-stage piece accounting
+
+The `sourceStages` verdict checks a separate locked ledger, `verification/replication/source-pieces.json`. Each record binds source and extracted-frame hashes, frame role, timestamp and candidate stage. Exact source-part identities retain a stable one-to-one correspondence across stages. Schema2 additionally represents a completely observed set of interchangeable same-shape members, preserving its entire membership across stages without inventing an individual side mapping. Sets must be disjoint from exact, inferred, proposed and other set members; splitting or reassigning them is rejected. Visible minima remain separate. A complete-set pass requires every installed panel to be covered by exact observations or a reviewed complete interchangeable set, with locally verified media. Prose links, missing records and partial coverage cannot pass. This gate does not establish pose, joins, motion, materials or independent final-source fidelity.
+
+The five-panel small wedge and four-panel completed launch now pass installed-set accounting, each explicitly retaining unresolved identities for its two matching side panels. The final nine-panel stage has no complete reviewed record and stays unverified. The medium support and lower-canopy records contain partial minima only, so neither inherits source agreement from a passing physical simulation. The workshop and downloads expose these separate verdicts. Previously inspected comparison views are not labeled as fresh independent verification. No production source geometry, measured pixel or holdout role changed; the completed launch's checkpoint/instruction now points to32.5seconds, with31seconds retained as in-progress context.
+
+### Compact-support reconstruction probes
+
+The [bounded evidence](../runs/diagnostics/2026-09-27-compact-medium-hypotheses.json) keeps several unpromoted hypotheses and their failed attempts. A compact rear support improves camera-anchor agreement, but scored lower-ramp corners still fail. Both wedges and a four-wall support assemble on all three seeds; the subsequent upper transfer fails with either tested grip. A front-deck grip is rejected by the table-clearance check.
+
+A support/upright-only 37-piece model passes release but retains the source-contradicted square flaps. Closed six-face-support alternatives remove them and provisionally map the late red triangles onto upper wall panels. They preserve the BOM and have no raw overlap, yet fail the fixed table-penetration guard, including after a catalog-thickness roof-seating correction. Smaller closed support/wedge fixtures pass at 0 and 60 degrees yaw; coupled 15/27-panel prefixes fail. This isolates further contact/load work without proving the hidden green faces or changing the physical limits.
+
+These commands write diagnostics to `/tmp`; they do not replace public source candidates or certify complete replicas:
+
+```sh
+node --import tsx scripts/reference/probe-compact-support-fit.ts
+node --import tsx scripts/reference/probe-compact-support.ts
+node --import tsx scripts/reference/probe-compact-support.ts --closed --yaw60
+node --import tsx scripts/reference/probe-compact-support-assembly.ts
+node --import tsx scripts/reference/probe-compact-support-assembly.ts --side-grip
+node --import tsx scripts/reference/probe-compact-medium.ts
+node --import tsx scripts/reference/probe-compact-medium.ts --closed-support
+node --import tsx scripts/reference/probe-compact-medium.ts --closed-support --seat-roof
+node --import tsx scripts/reference/probe-closed-support-load.ts
+```
+
+The fit probe must run before the full-model and assembly probes; the closed full-model probe must run before the load-isolation probe. No actual engine state is reconstructed from a report's poses. Every physical assembly retry starts with fresh individual panels. See [the increment record](../runs/2026-09-27-medium-topology-correction-increment.md) for review, provenance and validation.
+
+### Contact sweep interpretation correction
+
+The 72-row contact sweep is a parameter-selection experiment, not 72 passing physical trials. It records 0/24 passes at 30 Hz, 12/24 at 60 Hz and 24/24 at 120 Hz (36/72 overall). The sweep command succeeds because 120 Hz is the lowest frequency at which every row passes. Earlier summaries that called all 72 rows passing were inaccurate shorthand; the original rejected rows and unchanged criteria remain in the evidence.
+
+### Explicit receiving-panel support
+
+Prepared transfer can now name one grip on the receiving component in addition to exactly one moving-panel grip. It resolves roles from the actual component partition rather than array order. All other panels remain dynamic. Hand acquisition preserves the actual pose, motion earns only declared contacts, and connected stabilization, withdrawal and sustained free release remain mandatory. Existing one-hand behavior and every published source/physical result are unchanged.
+
+The independent ten-panel supported-transfer fixture passes all three seeds; per-step engine-mode assertions and fifteen focused regression cases cover failures as well as success. Generic assembly evidence now contains 102 operation trials. A fresh compact-ramp diagnostic succeeds through both wedge preparations and its four-wall support, but the transfer still fails seed 0 before carry. Seeds 17/53 pass transfer and all-dynamic release under both policies. The overall stage remains failed, later stages remain unverified, and no full source topology is promoted. Static diagnosis records a 1.835° receiving-left-wall deviation in seed 0 versus about 0.003°/0.013° in the passing runs; correlation alone does not establish a correction.
+
+Reproduce the bounded experiment with `node --import tsx scripts/reference/probe-compact-support-fit.ts`, then `npx vitest run --config scripts/reference/probe-supported-transfer.config.ts`. The config selects exactly that one experiment, outside the normal suite. Its green runner status means evidence/mode assertions completed; read the recorded stage verdicts for physical acceptance. `node --import tsx scripts/reference/inspect-supported-transfer.ts` analyzes the saved actual handoff poses without granting new physical credit.
+
+`node --import tsx scripts/reference/probe-loaded-shell.ts` reproduces the independent 5/9/13/17/25-panel base-load family. Only the 25-panel cases fail the current table guard. The follow-up numerical experiment below preserves the entire load family and stricter criteria; physical success cannot establish hidden source parts.
+
+The supported-transfer checkpoint passes the complete suite: **669 tests plus one existing skip across all 56 files**, in 2242.31 seconds. Type checking, lint (zero errors, 38 existing warnings), regenerated evidence, exact unchanged-model comparisons, production build and built-workshop browser checks pass under validator `39bf11c647fd7845b96cd8e2748d5c6c388ec2229bdc14cad60be83b3c60c120`.
+
+### Independent load-aware numerical qualification
+
+The completed 216-cell experiment covers flat and 5/9/13/17/25-panel catalog fixtures at contact frequencies 120/240/480 Hz, integration rates 960/1920 Hz, solver counts 16/32 and seeds 0/17/53. Actual native integration time is recorded. Each failed trial stops immediately, preserves the complete terminal state and leaves incomplete late/rest windows unavailable. The assessor checks effective numerical settings and exact fixture bodies/joints, rejecting mislabeled settings and truncated or copied snapshots.
+
+The matrix has 168 ordinary passes: 24/72 at 120 Hz and 72/72 each at 240 and 480 Hz. **No replacement setting qualifies.** The 120 Hz failures comprise 36 excessive late-depth and 12 table-penetration trials. At 240 Hz the maximum complete-group peak spread is 0.011313 inches against the predeclared 0.005 limit, and the maximum late depth is 0.008411 against the 0.008 selection margin. The 480 Hz rows are diagnostic-only and also fail peak-spread qualification (maximum 0.009820 inches). Acceptance limits are unchanged; a successful experiment command is not a passing physical qualification.
+
+The 25-panel baseline event is a bottom-square/table penetration at native step 112, with every panel dynamic and all 48 joints active. Four native solver contacts are present. This evidence localizes the failing contact but does not establish a material value or prove a correction. All 24 original 120 Hz flat/five-panel physical outcomes reproduce exactly. Runtime, source candidates and published source reports remain unchanged.
+
+Complete states and all failed rows are retained losslessly in `runs/diagnostics/2026-09-27-loaded-contact-matrix.json.gz`; the adjacent manifest binds raw/compressed bytes, scripts and inputs, and the inspection JSON exposes per-cell shape and contact summaries. Reproduction and review are in `runs/2026-09-27-loaded-contact-increment.md`. The independently reviewed next experiment uses finer integration with the same loads and margins; it must qualify a complete numerical profile before any runtime change.
+
+The load-aware diagnostic increment passes the full suite: **677 tests plus one existing skip across all 57 files**, in 2099.47 seconds. The production runtime and validator remain unchanged. Focused checks, type checking, lint, artifact integrity, build, workshop browser checks and independent code/evidence review also pass.

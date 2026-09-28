@@ -1,0 +1,5 @@
+ADDRESSED.
+
+The current fix fulfills the accepted plan: [componentContacts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/components.ts:16) now rejects actual `findMagneticEdgeMatch` contact across declared groups before `movingComponent` can resolve a pickup component. The two-panel omitted-edge negative coverage is present in [component-selection.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/component-selection.test.ts:32) and the insertion endpoint failure is covered in [independent-module-start.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/independent-module-start.test.ts:45).
+
+I found no remaining concrete regression findings in the scoped read: intended same-component insertion remains allowed, prepared transfer still validates its two declared components before withholding cross joins, and declared independent obstacles remain retained as dynamic obstacles. I did not edit files or run tests.

@@ -1,0 +1,22 @@
+VERIFIED/CLEAN.
+
+I found no actionable overclaim or latent reporting flaw in the bounded claim: captured experimental fixed-pivot endpoint closure and release only.
+
+Evidence checked read-only:
+
+- Hashes match: release raw JSON `06b3c0a7...261fb`, gzip `10e58f6c...33fa`, script raw `cbbf98fc...d4cc`, config raw `e41fca47...3e62`; source archive raw `0d36f4cf...523ff`, gzip `73ee5160...1516d`.
+- Contexts match and stayed unchanged: release `b354b6ed...cf1a`; original native archive `3a2ed4dd...381d`.
+- Release manifest: `completed: true`, `exitCode: 0`, `contextUnchanged: true`; release JSON also has `completed: true` and `instrumentationFailures: []`. The earlier false-completed-flag risk is fixed in the recorded artifact.
+- Source archive recomputes to 18 rows: 6 `command-completed`, 12 historical `motion-failed`. Eligible rows are exactly offsets `-0.09/+0.09`, directions `+1/-1`, seeds `0/17/53`.
+- Continuation recomputes to 12/12 `captured-release-pass`: both withdrawal orders for each eligible endpoint.
+- All 36 phases pass, each with one observed engine call and `14400` native steps.
+- Exact state restoration verified: 12 first-phase source matches and 24 later handoff matches, with zero mismatches.
+- Original joint models retained: 72 original-model checks, zero mismatches. Active joints before/after every phase are exactly `middle:1->end:3`, `root:1->middle:3`, `root:3->end:1`, so the third join is the only addition.
+- Mode/wake evidence holds: 108 mode changes, all `wake: true`, 3 per phase; newly released bodies are awake at first native step.
+- Stopped-hand withdrawal holds: max measured pre-withdraw linear speed `0`, angular speed `0`, below `.035` and `.08`.
+- Perturb-once markers are preserved: source starts with `middle=true`; one-hand phases add exactly the withdrawn endpoint; hands-free phases end with all 3 marked perturbed, with no marker regression.
+- Final release states: 12/12 final phases have all bodies dynamic, all three joints retained, no pops, no solid failures, final contact pass, and `900/90` rest steps.
+- Motion/contact boundaries hold: max peak displacement `0.0010280516 in` versus `0.95 in`; max ground penetration `0.0010277914 in` versus `0.03 in`; max solid overlap `0`.
+- Negative controls hold: missing-third rejects 12/12; separated-third rejects 12/12. Original third max gap `0.2008847`; separated min gap `0.4357895`; separated axis min `1`; overlap min `3.0`; separated solid overlaps `0`.
+
+I did not rerun native simulations or broad tests. I only recomputed archive math and inspected recorded artifacts/script/sidecars.

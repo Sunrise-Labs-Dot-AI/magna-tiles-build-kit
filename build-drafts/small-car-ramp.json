@@ -4,7 +4,7 @@
   "prompt": "Small Car Ramp",
   "family": "ramp",
   "inventoryPreset": "classic-100",
-  "status": "engine-valid",
+  "status": "engine-fail-pending-reauthoring",
   "createdAt": "2026-05-15T21:07:46.320Z",
   "updatedAt": "2026-06-02T19:17:54.377Z",
   "notes": "Tile geometry regeneration: right-triangle local geometry now comes from the corrected 45-45-90 catalog constants. Rechecked the macro-derived wedge plus smallLanding support structure; absolute support centers remain unchanged because the corrected geometry changes the local right-triangle vertices, not the accepted landing/support anchor centers. Headless gateBuild passes stands plus rollTest.",

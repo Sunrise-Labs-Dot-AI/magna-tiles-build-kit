@@ -1,0 +1,20 @@
+**Incremental Verdict:** MERGE-OK for this foundation increment.
+
+Both accepted findings are fixed on inspection:
+
+- `rapier-world.ts` now tracks `companionPreviousDistance`, serializes it in `EngineState`, samples `secondAnchors` in `updateBreakableJoints`, and removes both joints when either anchor exceeds the break law. `tests/assembly-state.test.ts` now exercises the exact missed case: primary anchor held near coincident while the companion anchor tears away.
+- `tests/gravity-seating.test.ts` now covers `small-wedge` for seeds `0/17/53`, including pickup, docking, two-hand to one-hand support handoff, lowering, and final free release. The free release remains rejected with a fixed-table penetration detail, and preview-at-100% is asserted against the recorded final failure pose.
+
+Later edits look correct within this increment:
+
+- `support.ts`: 960 Hz substeps preserve fixed duration and rest threshold, enable CCD, return motion traces, and carry engine state forward.
+- `assembly.ts`: seed failures are now accumulated per seed, timelines are chronological, and prepared module transfer remains explicitly unverified.
+- `assembly-preview.ts` and `reference-lab.tsx`: preview now replays recorded motion phases and failure poses instead of snapping back to nominal geometry.
+
+Concrete remaining blockers for the full goal:
+
+- Prepared module transfer is still intentionally blocked, especially the transformed `small-launch` into `small-final`.
+- `small-final` is still not certified.
+- Physical magnetic force and real human grip remain model assumptions, as stated in the assembly verdict text.
+
+I did not modify files, run tests, or use network tools.

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "kind": "diagnostic-geometry-visualization",
+  "sourceRawSha256": "6429fba205ad440963074c80a3b64f0032e0a3bf81dc9f8550342f58e4bb5b63",
+  "matplotlibVersion": "3.11.2",
+  "scope": "Prescribed geometric cross sections only; no native dynamics, force, grip, release, or assembly verification.",
+  "sha256": {
+    "scripts/reference/plot-fold-pivots.py": "da8fbea1f562cff95db540c0437bc4ca4ff7509f29d0aae1d7b1d2301f385b5c",
+    "runs/diagnostics/2026-09-27-fold-pivots.json.gz": "116889dd7d5a566f507c8d1d938216b6666ad10bede73a3dbe2876590f3b66a3",
+    "runs/diagnostics/2026-09-27-fold-pivots-comparison.png": "430bac440552dd4b31950a456f4a68e61faf56e93b65ca1734bc72b67067f780",
+    "runs/diagnostics/2026-09-27-fold-pivots-comparison.svg": "f6d5402893f75b0d712adea6ae78eccda892690b6b3014ca0b26efe726cbbbcf"
+  }
+}

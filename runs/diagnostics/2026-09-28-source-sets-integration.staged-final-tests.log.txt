@@ -1,0 +1,9 @@
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-source-sets
+
+
+ Test Files  2 passed (2)
+      Tests  95 passed (95)
+   Start at  20:11:54
+   Duration  285ms (transform 181ms, setup 0ms, import 249ms, tests 29ms, environment 0ms)
+

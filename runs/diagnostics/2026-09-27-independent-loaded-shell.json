@@ -1,0 +1,4022 @@
+{
+  "scope": "Independent catalog load diagnostic only. No numerical settings changed, no source geometry, no physical material calibration.",
+  "validationCodeHash": "39bf11c647fd7845b96cd8e2748d5c6c388ec2229bdc14cad60be83b3c60c120",
+  "rows": [
+    {
+      "levels": 1,
+      "build": {
+        "id": "loaded-shell-1",
+        "title": "Independent 1-level base load",
+        "prompt": "Independent 1-level base load",
+        "summary": "Source-constrained reconstruction candidate. Read the independent evidence before building.",
+        "seed": 0,
+        "family": "tower",
+        "inventoryPreset": "builder-xl",
+        "tiles": [
+          {
+            "id": "x-0--1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": -1.59,
+              "y": 1.6800000000000002,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": true
+          },
+          {
+            "id": "z-0--1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 1.6800000000000002,
+              "z": 1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-0--1",
+            "parentEdge": 0,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-0-1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": 1.59,
+              "y": 1.6800000000000002,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-0--1",
+            "parentEdge": 1,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-0-1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 1.6800000000000002,
+              "z": -1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-0--1",
+            "parentEdge": 2,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "roof",
+            "shape": "small-square",
+            "color": "green",
+            "position": {
+              "x": 0,
+              "y": 0.0900000000000003,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-0--1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          }
+        ],
+        "connections": [
+          {
+            "fromTileId": "x-0--1",
+            "fromEdge": 0,
+            "toTileId": "z-0--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-0--1",
+            "fromEdge": 1,
+            "toTileId": "x-0-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0-1",
+            "fromEdge": 2,
+            "toTileId": "z-0-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0--1",
+            "fromEdge": 2,
+            "toTileId": "z-0-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-0-1",
+            "fromEdge": 2,
+            "toTileId": "roof",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0-1",
+            "fromEdge": 1,
+            "toTileId": "roof",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-0--1",
+            "fromEdge": 2,
+            "toTileId": "roof",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0--1",
+            "fromEdge": 1,
+            "toTileId": "roof",
+            "toEdge": 3,
+            "kind": "edge"
+          }
+        ],
+        "bounds": {
+          "width": 3.3600000000000003,
+          "height": 3.1799999999999997,
+          "depth": 3.3600000000000003
+        }
+      },
+      "geometry": {
+        "status": "pass",
+        "detail": "5 rigid catalog parts; 8 nominal edge connections; zero raw intersections. Magnet spacing and force are not physically calibrated."
+      },
+      "releases": [
+        {
+          "seed": 0,
+          "status": "pass",
+          "peakDisplacement": 0.28000003814697494,
+          "peakGroundPenetration": 0.011052751445213782,
+          "solidFailures": [],
+          "peakSolidOverlap": 4.2049447206427e-06,
+          "finalDisplacement": 0.015615768968035518,
+          "finalSpeed": 0,
+          "linearSpeed": 0,
+          "angularSpeed": 0,
+          "settledSteps": 874,
+          "poppedJoints": []
+        },
+        {
+          "seed": 17,
+          "status": "pass",
+          "peakDisplacement": 0.28000003814697494,
+          "peakGroundPenetration": 0.010809845550808092,
+          "solidFailures": [],
+          "peakSolidOverlap": 4.0798530747121475e-06,
+          "finalDisplacement": 0.0167730940498188,
+          "finalSpeed": 0,
+          "linearSpeed": 0,
+          "angularSpeed": 0,
+          "settledSteps": 877,
+          "poppedJoints": []
+        },
+        {
+          "seed": 53,
+          "status": "pass",
+          "peakDisplacement": 0.28000003814697494,
+          "peakGroundPenetration": 0.010812120859848298,
+          "solidFailures": [],
+          "peakSolidOverlap": 3.7157475720750455e-06,
+          "finalDisplacement": 0.016964290160385656,
+          "finalSpeed": 0,
+          "linearSpeed": 0,
+          "angularSpeed": 0,
+          "settledSteps": 875,
+          "poppedJoints": []
+        }
+      ]
+    },
+    {
+      "levels": 2,
+      "build": {
+        "id": "loaded-shell-2",
+        "title": "Independent 2-level base load",
+        "prompt": "Independent 2-level base load",
+        "summary": "Source-constrained reconstruction candidate. Read the independent evidence before building.",
+        "seed": 0,
+        "family": "tower",
+        "inventoryPreset": "builder-xl",
+        "tiles": [
+          {
+            "id": "x-0--1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": -1.59,
+              "y": 4.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": true
+          },
+          {
+            "id": "z-0--1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 4.68,
+              "z": 1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-0--1",
+            "parentEdge": 0,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-0-1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": 1.59,
+              "y": 4.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-0--1",
+            "parentEdge": 1,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-0-1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 4.68,
+              "z": -1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-0--1",
+            "parentEdge": 2,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-1--1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": -1.59,
+              "y": 1.6799999999999997,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-0--1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-1--1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 1.6799999999999997,
+              "z": 1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-0--1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-1-1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": 1.59,
+              "y": 1.6799999999999997,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-0-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-1-1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 1.6799999999999997,
+              "z": -1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-0-1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "roof",
+            "shape": "small-square",
+            "color": "green",
+            "position": {
+              "x": 0,
+              "y": 0.08999999999999986,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-1--1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          }
+        ],
+        "connections": [
+          {
+            "fromTileId": "x-0--1",
+            "fromEdge": 0,
+            "toTileId": "z-0--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-0--1",
+            "fromEdge": 1,
+            "toTileId": "x-0-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0-1",
+            "fromEdge": 2,
+            "toTileId": "z-0-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0--1",
+            "fromEdge": 2,
+            "toTileId": "z-0-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0--1",
+            "fromEdge": 1,
+            "toTileId": "x-1--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1--1",
+            "fromEdge": 0,
+            "toTileId": "z-1--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-0--1",
+            "fromEdge": 2,
+            "toTileId": "z-1--1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-1--1",
+            "fromEdge": 1,
+            "toTileId": "x-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0-1",
+            "fromEdge": 1,
+            "toTileId": "x-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1-1",
+            "fromEdge": 2,
+            "toTileId": "z-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1--1",
+            "fromEdge": 2,
+            "toTileId": "z-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-0-1",
+            "fromEdge": 2,
+            "toTileId": "z-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-1-1",
+            "fromEdge": 2,
+            "toTileId": "roof",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1-1",
+            "fromEdge": 1,
+            "toTileId": "roof",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-1--1",
+            "fromEdge": 2,
+            "toTileId": "roof",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1--1",
+            "fromEdge": 1,
+            "toTileId": "roof",
+            "toEdge": 3,
+            "kind": "edge"
+          }
+        ],
+        "bounds": {
+          "width": 3.3600000000000003,
+          "height": 6.18,
+          "depth": 3.3600000000000003
+        }
+      },
+      "geometry": {
+        "status": "pass",
+        "detail": "9 rigid catalog parts; 16 nominal edge connections; zero raw intersections. Magnet spacing and force are not physically calibrated."
+      },
+      "releases": [
+        {
+          "seed": 0,
+          "status": "pass",
+          "peakDisplacement": 0.28000003814697494,
+          "peakGroundPenetration": 0.014266411884761604,
+          "solidFailures": [],
+          "peakSolidOverlap": 2.7311309081401447e-05,
+          "finalDisplacement": 0.011780849719450594,
+          "finalSpeed": 0,
+          "linearSpeed": 0,
+          "angularSpeed": 0,
+          "settledSteps": 655,
+          "poppedJoints": []
+        },
+        {
+          "seed": 17,
+          "status": "pass",
+          "peakDisplacement": 0.28000003814697494,
+          "peakGroundPenetration": 0.014032750380686354,
+          "solidFailures": [],
+          "peakSolidOverlap": 2.9483350286518828e-05,
+          "finalDisplacement": 0.012276992556835899,
+          "finalSpeed": 0,
+          "linearSpeed": 0,
+          "angularSpeed": 0,
+          "settledSteps": 655,
+          "poppedJoints": []
+        },
+        {
+          "seed": 53,
+          "status": "pass",
+          "peakDisplacement": 0.28000003814697494,
+          "peakGroundPenetration": 0.013637145039019138,
+          "solidFailures": [],
+          "peakSolidOverlap": 3.12759488387826e-05,
+          "finalDisplacement": 0.012192994503267074,
+          "finalSpeed": 0,
+          "linearSpeed": 0,
+          "angularSpeed": 0,
+          "settledSteps": 654,
+          "poppedJoints": []
+        }
+      ]
+    },
+    {
+      "levels": 3,
+      "build": {
+        "id": "loaded-shell-3",
+        "title": "Independent 3-level base load",
+        "prompt": "Independent 3-level base load",
+        "summary": "Source-constrained reconstruction candidate. Read the independent evidence before building.",
+        "seed": 0,
+        "family": "tower",
+        "inventoryPreset": "builder-xl",
+        "tiles": [
+          {
+            "id": "x-0--1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": -1.59,
+              "y": 7.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": true
+          },
+          {
+            "id": "z-0--1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 7.68,
+              "z": 1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-0--1",
+            "parentEdge": 0,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-0-1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": 1.59,
+              "y": 7.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-0--1",
+            "parentEdge": 1,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-0-1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 7.68,
+              "z": -1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-0--1",
+            "parentEdge": 2,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-1--1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": -1.59,
+              "y": 4.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-0--1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-1--1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 4.68,
+              "z": 1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-0--1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-1-1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": 1.59,
+              "y": 4.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-0-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-1-1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 4.68,
+              "z": -1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-0-1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-2--1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": -1.59,
+              "y": 1.6799999999999997,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-1--1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-2--1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 1.6799999999999997,
+              "z": 1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-1--1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-2-1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": 1.59,
+              "y": 1.6799999999999997,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-2-1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 1.6799999999999997,
+              "z": -1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-1-1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "roof",
+            "shape": "small-square",
+            "color": "green",
+            "position": {
+              "x": 0,
+              "y": 0.08999999999999986,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-2--1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          }
+        ],
+        "connections": [
+          {
+            "fromTileId": "x-0--1",
+            "fromEdge": 0,
+            "toTileId": "z-0--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-0--1",
+            "fromEdge": 1,
+            "toTileId": "x-0-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0-1",
+            "fromEdge": 2,
+            "toTileId": "z-0-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0--1",
+            "fromEdge": 2,
+            "toTileId": "z-0-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0--1",
+            "fromEdge": 1,
+            "toTileId": "x-1--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1--1",
+            "fromEdge": 0,
+            "toTileId": "z-1--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-0--1",
+            "fromEdge": 2,
+            "toTileId": "z-1--1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-1--1",
+            "fromEdge": 1,
+            "toTileId": "x-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0-1",
+            "fromEdge": 1,
+            "toTileId": "x-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1-1",
+            "fromEdge": 2,
+            "toTileId": "z-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1--1",
+            "fromEdge": 2,
+            "toTileId": "z-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-0-1",
+            "fromEdge": 2,
+            "toTileId": "z-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1--1",
+            "fromEdge": 1,
+            "toTileId": "x-2--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-2--1",
+            "fromEdge": 0,
+            "toTileId": "z-2--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-1--1",
+            "fromEdge": 2,
+            "toTileId": "z-2--1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-2--1",
+            "fromEdge": 1,
+            "toTileId": "x-2-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1-1",
+            "fromEdge": 1,
+            "toTileId": "x-2-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-2-1",
+            "fromEdge": 2,
+            "toTileId": "z-2-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-2--1",
+            "fromEdge": 2,
+            "toTileId": "z-2-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-1-1",
+            "fromEdge": 2,
+            "toTileId": "z-2-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-2-1",
+            "fromEdge": 2,
+            "toTileId": "roof",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-2-1",
+            "fromEdge": 1,
+            "toTileId": "roof",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-2--1",
+            "fromEdge": 2,
+            "toTileId": "roof",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-2--1",
+            "fromEdge": 1,
+            "toTileId": "roof",
+            "toEdge": 3,
+            "kind": "edge"
+          }
+        ],
+        "bounds": {
+          "width": 3.3600000000000003,
+          "height": 9.18,
+          "depth": 3.3600000000000003
+        }
+      },
+      "geometry": {
+        "status": "pass",
+        "detail": "13 rigid catalog parts; 24 nominal edge connections; zero raw intersections. Magnet spacing and force are not physically calibrated."
+      },
+      "releases": [
+        {
+          "seed": 0,
+          "status": "pass",
+          "peakDisplacement": 0.28000003814697494,
+          "peakGroundPenetration": 0.017122088127945925,
+          "solidFailures": [],
+          "peakSolidOverlap": 6.388448033733951e-05,
+          "finalDisplacement": 0.016494150404253876,
+          "finalSpeed": 0,
+          "linearSpeed": 0,
+          "angularSpeed": 0,
+          "settledSteps": 654,
+          "poppedJoints": []
+        },
+        {
+          "seed": 17,
+          "status": "pass",
+          "peakDisplacement": 0.28000003814697494,
+          "peakGroundPenetration": 0.017435944530722808,
+          "solidFailures": [],
+          "peakSolidOverlap": 6.372032642332215e-05,
+          "finalDisplacement": 0.01648644216620285,
+          "finalSpeed": 0,
+          "linearSpeed": 0,
+          "angularSpeed": 0,
+          "settledSteps": 654,
+          "poppedJoints": []
+        },
+        {
+          "seed": 53,
+          "status": "pass",
+          "peakDisplacement": 0.28000003814697494,
+          "peakGroundPenetration": 0.016968745047956243,
+          "solidFailures": [],
+          "peakSolidOverlap": 6.744558653348776e-05,
+          "finalDisplacement": 0.016569820885658997,
+          "finalSpeed": 0,
+          "linearSpeed": 0,
+          "angularSpeed": 0,
+          "settledSteps": 654,
+          "poppedJoints": []
+        }
+      ]
+    },
+    {
+      "levels": 4,
+      "build": {
+        "id": "loaded-shell-4",
+        "title": "Independent 4-level base load",
+        "prompt": "Independent 4-level base load",
+        "summary": "Source-constrained reconstruction candidate. Read the independent evidence before building.",
+        "seed": 0,
+        "family": "tower",
+        "inventoryPreset": "builder-xl",
+        "tiles": [
+          {
+            "id": "x-0--1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": -1.59,
+              "y": 10.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": true
+          },
+          {
+            "id": "z-0--1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 10.68,
+              "z": 1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-0--1",
+            "parentEdge": 0,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-0-1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": 1.59,
+              "y": 10.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-0--1",
+            "parentEdge": 1,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-0-1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 10.68,
+              "z": -1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-0--1",
+            "parentEdge": 2,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-1--1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": -1.59,
+              "y": 7.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-0--1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-1--1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 7.68,
+              "z": 1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-0--1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-1-1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": 1.59,
+              "y": 7.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-0-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-1-1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 7.68,
+              "z": -1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-0-1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-2--1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": -1.59,
+              "y": 4.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-1--1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-2--1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 4.68,
+              "z": 1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-1--1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-2-1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": 1.59,
+              "y": 4.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-2-1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 4.68,
+              "z": -1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-1-1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-3--1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": -1.59,
+              "y": 1.6799999999999997,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-2--1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-3--1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 1.6799999999999997,
+              "z": 1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-2--1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-3-1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": 1.59,
+              "y": 1.6799999999999997,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-2-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-3-1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 1.6799999999999997,
+              "z": -1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-2-1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "roof",
+            "shape": "small-square",
+            "color": "green",
+            "position": {
+              "x": 0,
+              "y": 0.08999999999999986,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-3--1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          }
+        ],
+        "connections": [
+          {
+            "fromTileId": "x-0--1",
+            "fromEdge": 0,
+            "toTileId": "z-0--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-0--1",
+            "fromEdge": 1,
+            "toTileId": "x-0-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0-1",
+            "fromEdge": 2,
+            "toTileId": "z-0-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0--1",
+            "fromEdge": 2,
+            "toTileId": "z-0-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0--1",
+            "fromEdge": 1,
+            "toTileId": "x-1--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1--1",
+            "fromEdge": 0,
+            "toTileId": "z-1--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-0--1",
+            "fromEdge": 2,
+            "toTileId": "z-1--1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-1--1",
+            "fromEdge": 1,
+            "toTileId": "x-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0-1",
+            "fromEdge": 1,
+            "toTileId": "x-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1-1",
+            "fromEdge": 2,
+            "toTileId": "z-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1--1",
+            "fromEdge": 2,
+            "toTileId": "z-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-0-1",
+            "fromEdge": 2,
+            "toTileId": "z-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1--1",
+            "fromEdge": 1,
+            "toTileId": "x-2--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-2--1",
+            "fromEdge": 0,
+            "toTileId": "z-2--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-1--1",
+            "fromEdge": 2,
+            "toTileId": "z-2--1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-2--1",
+            "fromEdge": 1,
+            "toTileId": "x-2-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1-1",
+            "fromEdge": 1,
+            "toTileId": "x-2-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-2-1",
+            "fromEdge": 2,
+            "toTileId": "z-2-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-2--1",
+            "fromEdge": 2,
+            "toTileId": "z-2-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-1-1",
+            "fromEdge": 2,
+            "toTileId": "z-2-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-2--1",
+            "fromEdge": 1,
+            "toTileId": "x-3--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-3--1",
+            "fromEdge": 0,
+            "toTileId": "z-3--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-2--1",
+            "fromEdge": 2,
+            "toTileId": "z-3--1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-3--1",
+            "fromEdge": 1,
+            "toTileId": "x-3-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-2-1",
+            "fromEdge": 1,
+            "toTileId": "x-3-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-3-1",
+            "fromEdge": 2,
+            "toTileId": "z-3-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-3--1",
+            "fromEdge": 2,
+            "toTileId": "z-3-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-2-1",
+            "fromEdge": 2,
+            "toTileId": "z-3-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-3-1",
+            "fromEdge": 2,
+            "toTileId": "roof",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-3-1",
+            "fromEdge": 1,
+            "toTileId": "roof",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-3--1",
+            "fromEdge": 2,
+            "toTileId": "roof",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-3--1",
+            "fromEdge": 1,
+            "toTileId": "roof",
+            "toEdge": 3,
+            "kind": "edge"
+          }
+        ],
+        "bounds": {
+          "width": 3.3600000000000003,
+          "height": 12.18,
+          "depth": 3.3600000000000003
+        }
+      },
+      "geometry": {
+        "status": "pass",
+        "detail": "17 rigid catalog parts; 32 nominal edge connections; zero raw intersections. Magnet spacing and force are not physically calibrated."
+      },
+      "releases": [
+        {
+          "seed": 0,
+          "status": "pass",
+          "peakDisplacement": 0.28000003814697494,
+          "peakGroundPenetration": 0.02126333210110337,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.00010915689719714905,
+          "finalDisplacement": 0.021166380795482078,
+          "finalSpeed": 0,
+          "linearSpeed": 0,
+          "angularSpeed": 0,
+          "settledSteps": 878,
+          "poppedJoints": []
+        },
+        {
+          "seed": 17,
+          "status": "pass",
+          "peakDisplacement": 0.28000003814697494,
+          "peakGroundPenetration": 0.021276284931103312,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0001046389103991352,
+          "finalDisplacement": 0.021169939532766302,
+          "finalSpeed": 0,
+          "linearSpeed": 0,
+          "angularSpeed": 0,
+          "settledSteps": 876,
+          "poppedJoints": []
+        },
+        {
+          "seed": 53,
+          "status": "pass",
+          "peakDisplacement": 0.28000003814697494,
+          "peakGroundPenetration": 0.021242135768457293,
+          "solidFailures": [],
+          "peakSolidOverlap": 0.0001003544492208519,
+          "finalDisplacement": 0.021169528940094124,
+          "finalSpeed": 0,
+          "linearSpeed": 0,
+          "angularSpeed": 0,
+          "settledSteps": 878,
+          "poppedJoints": []
+        }
+      ]
+    },
+    {
+      "levels": 6,
+      "build": {
+        "id": "loaded-shell-6",
+        "title": "Independent 6-level base load",
+        "prompt": "Independent 6-level base load",
+        "summary": "Source-constrained reconstruction candidate. Read the independent evidence before building.",
+        "seed": 0,
+        "family": "tower",
+        "inventoryPreset": "builder-xl",
+        "tiles": [
+          {
+            "id": "x-0--1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": -1.59,
+              "y": 16.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": true
+          },
+          {
+            "id": "z-0--1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 16.68,
+              "z": 1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-0--1",
+            "parentEdge": 0,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-0-1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": 1.59,
+              "y": 16.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-0--1",
+            "parentEdge": 1,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-0-1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 16.68,
+              "z": -1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-0--1",
+            "parentEdge": 2,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-1--1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": -1.59,
+              "y": 13.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-0--1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-1--1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 13.68,
+              "z": 1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-0--1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-1-1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": 1.59,
+              "y": 13.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-0-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-1-1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 13.68,
+              "z": -1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-0-1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-2--1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": -1.59,
+              "y": 10.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-1--1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-2--1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 10.68,
+              "z": 1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-1--1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-2-1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": 1.59,
+              "y": 10.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-1-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-2-1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 10.68,
+              "z": -1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-1-1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-3--1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": -1.59,
+              "y": 7.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-2--1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-3--1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 7.68,
+              "z": 1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-2--1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-3-1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": 1.59,
+              "y": 7.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-2-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-3-1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 7.68,
+              "z": -1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-2-1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-4--1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": -1.59,
+              "y": 4.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-3--1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-4--1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 4.68,
+              "z": 1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-3--1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-4-1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": 1.59,
+              "y": 4.68,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-3-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-4-1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 4.68,
+              "z": -1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-3-1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-5--1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": -1.59,
+              "y": 1.6799999999999997,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-4--1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-5--1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 1.6799999999999997,
+              "z": 1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-4--1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "x-5-1",
+            "shape": "small-square",
+            "color": "blue",
+            "position": {
+              "x": 1.59,
+              "y": 1.6799999999999997,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-4-1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          },
+          {
+            "id": "z-5-1",
+            "shape": "small-square",
+            "color": "red",
+            "position": {
+              "x": 0,
+              "y": 1.6799999999999997,
+              "z": -1.59
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "z-4-1",
+            "parentEdge": 2,
+            "childEdge": 0,
+            "foldAngle": 0
+          },
+          {
+            "id": "roof",
+            "shape": "small-square",
+            "color": "green",
+            "position": {
+              "x": 0,
+              "y": 0.08999999999999986,
+              "z": 0
+            },
+            "basis": {
+              "xAxis": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "yAxis": {
+                "x": 0,
+                "y": 0,
+                "z": -1
+              },
+              "zAxis": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              }
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "step": 1,
+            "role": "shell",
+            "subassemblyId": "shell",
+            "root": false,
+            "parentTileId": "x-5--1",
+            "parentEdge": 1,
+            "childEdge": 3,
+            "foldAngle": 0
+          }
+        ],
+        "connections": [
+          {
+            "fromTileId": "x-0--1",
+            "fromEdge": 0,
+            "toTileId": "z-0--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-0--1",
+            "fromEdge": 1,
+            "toTileId": "x-0-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0-1",
+            "fromEdge": 2,
+            "toTileId": "z-0-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0--1",
+            "fromEdge": 2,
+            "toTileId": "z-0-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0--1",
+            "fromEdge": 1,
+            "toTileId": "x-1--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1--1",
+            "fromEdge": 0,
+            "toTileId": "z-1--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-0--1",
+            "fromEdge": 2,
+            "toTileId": "z-1--1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-1--1",
+            "fromEdge": 1,
+            "toTileId": "x-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-0-1",
+            "fromEdge": 1,
+            "toTileId": "x-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1-1",
+            "fromEdge": 2,
+            "toTileId": "z-1-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1--1",
+            "fromEdge": 2,
+            "toTileId": "z-1-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-0-1",
+            "fromEdge": 2,
+            "toTileId": "z-1-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1--1",
+            "fromEdge": 1,
+            "toTileId": "x-2--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-2--1",
+            "fromEdge": 0,
+            "toTileId": "z-2--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-1--1",
+            "fromEdge": 2,
+            "toTileId": "z-2--1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-2--1",
+            "fromEdge": 1,
+            "toTileId": "x-2-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-1-1",
+            "fromEdge": 1,
+            "toTileId": "x-2-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-2-1",
+            "fromEdge": 2,
+            "toTileId": "z-2-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-2--1",
+            "fromEdge": 2,
+            "toTileId": "z-2-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-1-1",
+            "fromEdge": 2,
+            "toTileId": "z-2-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-2--1",
+            "fromEdge": 1,
+            "toTileId": "x-3--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-3--1",
+            "fromEdge": 0,
+            "toTileId": "z-3--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-2--1",
+            "fromEdge": 2,
+            "toTileId": "z-3--1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-3--1",
+            "fromEdge": 1,
+            "toTileId": "x-3-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-2-1",
+            "fromEdge": 1,
+            "toTileId": "x-3-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-3-1",
+            "fromEdge": 2,
+            "toTileId": "z-3-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-3--1",
+            "fromEdge": 2,
+            "toTileId": "z-3-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-2-1",
+            "fromEdge": 2,
+            "toTileId": "z-3-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-3--1",
+            "fromEdge": 1,
+            "toTileId": "x-4--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-4--1",
+            "fromEdge": 0,
+            "toTileId": "z-4--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-3--1",
+            "fromEdge": 2,
+            "toTileId": "z-4--1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-4--1",
+            "fromEdge": 1,
+            "toTileId": "x-4-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-3-1",
+            "fromEdge": 1,
+            "toTileId": "x-4-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-4-1",
+            "fromEdge": 2,
+            "toTileId": "z-4-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-4--1",
+            "fromEdge": 2,
+            "toTileId": "z-4-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-3-1",
+            "fromEdge": 2,
+            "toTileId": "z-4-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-4--1",
+            "fromEdge": 1,
+            "toTileId": "x-5--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-5--1",
+            "fromEdge": 0,
+            "toTileId": "z-5--1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-4--1",
+            "fromEdge": 2,
+            "toTileId": "z-5--1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-5--1",
+            "fromEdge": 1,
+            "toTileId": "x-5-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-4-1",
+            "fromEdge": 1,
+            "toTileId": "x-5-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-5-1",
+            "fromEdge": 2,
+            "toTileId": "z-5-1",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-5--1",
+            "fromEdge": 2,
+            "toTileId": "z-5-1",
+            "toEdge": 3,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-4-1",
+            "fromEdge": 2,
+            "toTileId": "z-5-1",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-5-1",
+            "fromEdge": 2,
+            "toTileId": "roof",
+            "toEdge": 2,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-5-1",
+            "fromEdge": 1,
+            "toTileId": "roof",
+            "toEdge": 1,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "z-5--1",
+            "fromEdge": 2,
+            "toTileId": "roof",
+            "toEdge": 0,
+            "kind": "edge"
+          },
+          {
+            "fromTileId": "x-5--1",
+            "fromEdge": 1,
+            "toTileId": "roof",
+            "toEdge": 3,
+            "kind": "edge"
+          }
+        ],
+        "bounds": {
+          "width": 3.3600000000000003,
+          "height": 18.18,
+          "depth": 3.3600000000000003
+        }
+      },
+      "geometry": {
+        "status": "pass",
+        "detail": "25 rigid catalog parts; 48 nominal edge connections; zero raw intersections. Magnet spacing and force are not physically calibrated."
+      },
+      "releases": [
+        {
+          "seed": 0,
+          "status": "fail",
+          "peakDisplacement": 0.28000003814697494,
+          "peakGroundPenetration": 0.030032443280976935,
+          "solidFailures": [
+            {
+              "kind": "table",
+              "tileIds": [
+                "roof"
+              ],
+              "penetration": 0.030032439704699022,
+              "detail": "roof intersects the fixed table by 0.030032439704699022 in during motion."
+            }
+          ],
+          "peakSolidOverlap": 0.00015684295737949938,
+          "finalDisplacement": 0.03254870201197374,
+          "finalSpeed": 0.05421653069864018,
+          "linearSpeed": 0.05421653069864018,
+          "angularSpeed": 0.007209052853713067,
+          "settledSteps": 0,
+          "poppedJoints": []
+        },
+        {
+          "seed": 17,
+          "status": "fail",
+          "peakDisplacement": 0.28000003814697494,
+          "peakGroundPenetration": 0.03000650540185494,
+          "solidFailures": [
+            {
+              "kind": "table",
+              "tileIds": [
+                "roof"
+              ],
+              "penetration": 0.030006501825577105,
+              "detail": "roof intersects the fixed table by 0.030006501825577105 in during motion."
+            }
+          ],
+          "peakSolidOverlap": 0.00016008132023648258,
+          "finalDisplacement": 0.03260139789480998,
+          "finalSpeed": 0.05745216417249846,
+          "linearSpeed": 0.05745216417249846,
+          "angularSpeed": 0.0077604367305531665,
+          "settledSteps": 0,
+          "poppedJoints": []
+        },
+        {
+          "seed": 53,
+          "status": "fail",
+          "peakDisplacement": 0.28000003814697494,
+          "peakGroundPenetration": 0.030030604834364955,
+          "solidFailures": [
+            {
+              "kind": "table",
+              "tileIds": [
+                "roof"
+              ],
+              "penetration": 0.03003060125808702,
+              "detail": "roof intersects the fixed table by 0.03003060125808702 in during motion."
+            }
+          ],
+          "peakSolidOverlap": 0.00016087786184248998,
+          "finalDisplacement": 0.03241435441984838,
+          "finalSpeed": 0.04434558443413204,
+          "linearSpeed": 0.04434558443413204,
+          "angularSpeed": 0.007066005245895502,
+          "settledSteps": 0,
+          "poppedJoints": []
+        }
+      ]
+    }
+  ],
+  "reproduction": {
+    "command": "node --import tsx scripts/reference/probe-loaded-shell.ts",
+    "script": "scripts/reference/probe-loaded-shell.ts",
+    "scriptSha256": "c6c83f2882d8948e2ebcbe3c10646ab9326ab41192a5029992a2ba4d3d2af2e9",
+    "localRawSha256": "f23869581cc50a4117cd9056c93a71a50a6cae0f3f7136b3b0784f07480f0265",
+    "rawPath": "/tmp/magnatiles-loaded-shell-diagnostic.json",
+    "note": "Source-independent catalog stress family; the generator and original criteria predate these outcomes. This is release-only evidence, not individual-panel assembly or replica acceptance."
+  }
+}

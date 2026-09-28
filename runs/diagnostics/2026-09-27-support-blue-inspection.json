@@ -1,0 +1,47 @@
+{
+  "scope": "Declared before extraction and opening. Construction/fitting inspection only; no independent holdout credit or scored observation changes. Resolve support-square accounting and blue upright geometry.",
+  "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+  "seconds": [
+    48.5,
+    49,
+    50.5,
+    51,
+    52.5,
+    75.8,
+    76.2,
+    76.8
+  ],
+  "additionalSeconds": [
+    46.75,
+    47.25,
+    47.75,
+    48,
+    50.75
+  ],
+  "additionalScope": "Declared before viewing to count separate support panels and determine whether a horizontal floor is actually visible. Construction/fitting only.",
+  "findings": [
+    {
+      "seconds": [
+        47.75,
+        48.5,
+        50.5,
+        50.75,
+        51,
+        52.5
+      ],
+      "finding": "The released green support appears compact, roughly one square edge in each horizontal direction. Four surrounding wall faces are a reconstruction hypothesis; hidden faces and any floor require explicit accounting. The independently reviewed minimum is two clearly bounded square faces, not an exact total of two. A two-square-long U is not established by these views."
+    },
+    {
+      "seconds": [
+        76.8,
+        78.5,
+        81.5
+      ],
+      "finding": "One upright blue rectangular panel is visible before the triangular top. Its complete face is edge-on; exact square identity remains a catalog-constrained hypothesis. No second upright blue panel established."
+    }
+  ],
+  "independentReview": "runs/reviews/support-blue-source-review.txt",
+  "reviewMethod": "Independent GPT-5.5 image-only read-only review, without candidate code or target count. The recorded substitute follows the existing Claude OAuth blocker.",
+  "nextAction": "Reconstruct and measure the compact support and missing blue upright jointly against construction/fitting views; do not force the BOM, count minimum visible faces as a total, or inherit physical certification from the elongated-support candidate.",
+  "unchanged": "No current candidate geometry, source pixels, scored annotations, holdout roles, physical limits or validation hash changed."
+}

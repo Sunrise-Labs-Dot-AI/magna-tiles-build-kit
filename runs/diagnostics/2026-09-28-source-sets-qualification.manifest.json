@@ -1,0 +1,163 @@
+{
+  "scope": "Focused source-accounting tests and fresh current-context canonical regeneration. Physics and build geometry are unchanged from the fully qualified base; source report-only completion is not replica acceptance.",
+  "baseline": {
+    "commit": "245e440a2a8edb3eb16c05bfc1da14173aa4b1a3",
+    "validationCodeHash": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+    "fullTests": "runs/diagnostics/2026-09-27-final-context-full-tests.manifest.json",
+    "qualification": "runs/diagnostics/2026-09-27-final-qualification.manifest.json",
+    "changedFiles": [
+      "lib/replication/models.ts",
+      "lib/replication/source-pieces.ts",
+      "tests/source-pieces.test.ts",
+      "verification/replication/observation-history/2026-09-28-pre-observed-sets-observation-lock.json",
+      "verification/replication/observation-history/2026-09-28-pre-observed-sets-source-pieces.json",
+      "verification/replication/observation-lock.json",
+      "verification/replication/source-pieces.json"
+    ]
+  },
+  "context": {
+    "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+    "sourceInputs": {
+      "tests/evidence-gates.test.ts": "a9b816065c952275e4dd707f5688561b18bc94aae70437f69f8239c5a5498a8d",
+      "tests/source-pieces.test.ts": "c16ca99f6b8d3501d18eafc026f8982e6b92dd8a4178e678c2b301d28c79f693",
+      "verification/replication/candidate-freezes.json": "086a14313159a908ddb44c4a2bc7bba753cbe40c65b5b42f1c60f6dac2229aed",
+      "verification/replication/evidence-ledger.json": "93e64f7589007234d2564bb386cb98911a9538aa5f00cb569c95d726cd5b5d55",
+      "verification/replication/frame-manifest.json": "3ad88b57e0c173411c1f13cf5c90bfb3a76eef214f2982fa8f7d2e46b17292f2",
+      "verification/replication/observation-lock.json": "e84b8e3fc3b487bae7032373e4567a7a284af9804fc1ad75800fb5db6143563f",
+      "verification/replication/observations.json": "499da9f22fceeaf6485ed36aca3be85965d2c1eab72932ab028186194931c02e",
+      "verification/replication/source-pieces.json": "0b125c0091eb496eeb73d08408fd051b1925610133803c17f4b018ea347b4a4a",
+      "verification/replication/sources.json": "7d9f57749926ec8dd01273ba6928955b9abd8c46681372645e1aef9c344b1e43"
+    }
+  },
+  "startedAt": "2026-09-28T03:36:00.736Z",
+  "runnerSha256": "065b5a75c640796399800153c60711521590e1b87e1a568cd1ae9179dd60853f",
+  "completed": false,
+  "stages": [
+    {
+      "name": "focused96",
+      "command": [
+        "npx",
+        "vitest",
+        "run",
+        "tests/source-pieces.test.ts",
+        "tests/evidence-gates.test.ts"
+      ],
+      "startedAt": "2026-09-28T03:36:00.745Z",
+      "finishedAt": "2026-09-28T03:36:01.604Z",
+      "durationSeconds": 0.8592174160000001,
+      "exitCode": 0,
+      "signal": null,
+      "contextUnchanged": true,
+      "log": "runs/diagnostics/2026-09-28-source-sets-qualification.focused96.log.txt",
+      "logSha256": "87485f2635d2a87fd878ee27ac1f0b524412b6acd9232898607f4309f7dfa03f",
+      "outputs": []
+    },
+    {
+      "name": "configured72",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/reference/rigid-contact.ts"
+      ],
+      "startedAt": "2026-09-28T03:36:01.611Z",
+      "finishedAt": "2026-09-28T04:38:56.719Z",
+      "durationSeconds": 3775.130226667,
+      "exitCode": 0,
+      "signal": null,
+      "contextUnchanged": true,
+      "log": "runs/diagnostics/2026-09-28-source-sets-qualification.configured72.log.txt",
+      "logSha256": "f6fe3fd9ec3a03d89cd29f6edaf96372fc24a4ab262944c53f21cba7969d3a66",
+      "outputs": [
+        {
+          "file": "verification/replication/rigid-contact-fixture.json",
+          "sha256": "9cd607ef77e6037633d646f33f161c1c02b408ede9b10face2786cd274a898fb",
+          "archive": "runs/diagnostics/2026-09-28-source-sets-qualification.configured72.verification_replication_rigid-contact-fixture.json.gz",
+          "gzipSha256": "dc2e3179bde846dc1aca22f19bd26b3353963178cd5ddcad0cf642f3c6b848fc"
+        }
+      ]
+    },
+    {
+      "name": "generic-assembly",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/reference/assembly-fixtures.ts"
+      ],
+      "startedAt": "2026-09-28T04:38:56.727Z",
+      "finishedAt": "2026-09-28T07:00:37.067Z",
+      "durationSeconds": 8500.385139917,
+      "exitCode": 0,
+      "signal": null,
+      "contextUnchanged": true,
+      "log": "runs/diagnostics/2026-09-28-source-sets-qualification.generic-assembly.log.txt",
+      "logSha256": "43b0aba1bb4daf2a0d848c6f07aa02ad0c5c8b944968d30bb22926545aedca52",
+      "outputs": [
+        {
+          "file": "verification/replication/assembly-fixture.json",
+          "sha256": "d769c953a30421684dc7960a5cd14661dbccc0e384372f0c2378df2809d4b3a5",
+          "archive": "runs/diagnostics/2026-09-28-source-sets-qualification.generic-assembly.verification_replication_assembly-fixture.json.gz",
+          "gzipSha256": "50f418bad7bd08cd43e6ed11f04d2f028dbcf9b4ea1b4e7350b377a281d11a6e"
+        }
+      ]
+    },
+    {
+      "name": "source-reports",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/reference/verify.ts",
+        "--report-only",
+        "--max-ms=900000"
+      ],
+      "startedAt": "2026-09-28T07:00:37.075Z",
+      "finishedAt": "2026-09-28T07:18:44.851Z",
+      "durationSeconds": 1087.772734000001,
+      "exitCode": 1,
+      "signal": null,
+      "contextUnchanged": true,
+      "log": "runs/diagnostics/2026-09-28-source-sets-qualification.source-reports.log.txt",
+      "logSha256": "077d74aed4e3c3d5b40a4db799c16ed473d0c3986fa7527a2c5d337a46a32ca1",
+      "outputs": [
+        {
+          "file": "public/reference-replicas/jet.json",
+          "sha256": "1ffe333f83bd2b309b53c8d7b03b33fa4c70e567c90daf4e0978df610e729d86",
+          "archive": "runs/diagnostics/2026-09-28-source-sets-qualification.source-reports.public_reference-replicas_jet.json.gz",
+          "gzipSha256": "810a0b02322466567f5f7152343a1b0ad79c1d0c7dcc66fa3ef0dfd9cc65872d"
+        },
+        {
+          "file": "public/reference-replicas/small-ramp.json",
+          "sha256": "6b5ef672f914286866e42a4b0f08b8f84f7de532969a2cf4003f6de28445a8a7",
+          "archive": "runs/diagnostics/2026-09-28-source-sets-qualification.source-reports.public_reference-replicas_small-ramp.json.gz",
+          "gzipSha256": "f57b47d522536ae33ee72b47ce0a8615b1f42da8a405fc9b691ecad95c9dcca5"
+        },
+        {
+          "file": "public/reference-replicas/medium-ramp.json",
+          "sha256": "ce0197f8993f20d1659aeac9a3a31f95f7aac1c2440034102e907e16f77ad02d",
+          "archive": "runs/diagnostics/2026-09-28-source-sets-qualification.source-reports.public_reference-replicas_medium-ramp.json.gz",
+          "gzipSha256": "9346d4b445f0e65b12c0b646f234d72c46addfe9315f25bc9e07d1f638c5e0f0"
+        },
+        {
+          "file": "public/reference-replicas/large-ramp.json",
+          "sha256": "949b2f643bb1d4619f2091d0e86054de6bb4049e9b1a97a70dde225b2dddd2ac",
+          "archive": "runs/diagnostics/2026-09-28-source-sets-qualification.source-reports.public_reference-replicas_large-ramp.json.gz",
+          "gzipSha256": "aba88d28b551bd6990b33308705a71929604c55b0a5b54680631b63c8341a431"
+        },
+        {
+          "file": "verification/replication/results.json",
+          "sha256": "b6921d6744d7a8e25a4129410601af770d3849522159677b39d5eae014552e04",
+          "archive": "runs/diagnostics/2026-09-28-source-sets-qualification.source-reports.verification_replication_results.json.gz",
+          "gzipSha256": "16c8e8a45163245717f10480625ea0287147730ef12d269c5c7c15e63d35b9f3"
+        },
+        {
+          "file": "verification/replication/artifact-manifest.json",
+          "sha256": "a632d2a4afc9e9f2c2760aa44c547d9713ac28254ff651fa1c5dc82de23bd546",
+          "archive": "runs/diagnostics/2026-09-28-source-sets-qualification.source-reports.verification_replication_artifact-manifest.json.gz",
+          "gzipSha256": "7a0c8866ff07776e32850d02838fbd2e20b19e6b6e97d82032ee21e9fb61bb87"
+        }
+      ]
+    }
+  ]
+}

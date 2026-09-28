@@ -1,0 +1,3 @@
+Found one actionable issue:
+
+- [scripts/reference/probe-native-fold.ts:197](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/probe-native-fold.ts:197): the probe records and rechecks whatever `validationCodeHash()` is present at startup, but it does not assert the declared frozen runtime hash `7a8ad00bf79266e385e434dcb9bdb6f7fabe98d1511f8564b36cd81496c93e29`. Failure scenario: if the probe is launched after an accidental runtime/source change, it can complete cleanly under the wrong starting runtime as long as the hash stays stable during the run. Add a literal expected-hash assertion before the first checkpoint, and keep the existing end-of-run recheck.

@@ -1,0 +1,8 @@
+CONCERNS, not VERIFIED/CLEAN.
+
+The revised plan addresses findings 1 and 3 cleanly:
+
+- Old-to-old preservation is covered at [runs/2026-09-27-lower-canopy-plan.md:11](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-lower-canopy-plan.md:11>) and the regression names introduction, carry, connected support, hand withdrawal, free release, and terminal publication at line 13.
+- Source-stage alignment is covered at lines 21 and 23, including observed piece sets, proposed intermediates, interleaving, and not inheriting partial-frame proof for a different assembly.
+
+Concrete remaining gap: finding 2 asked the future-panel negative fixture to fail if unplaced panels affect pathing, physics input, active joints, terminal connections, or previews. The revised plan covers path, physics inputs, active-joint sets, support/free results, playback, and final accountability at line 15, but it does not explicitly name prefix terminal connections or previews for that isolation regression. “Playback” may imply previews, but it is not exact enough for the accepted finding.

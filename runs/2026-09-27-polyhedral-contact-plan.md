@@ -1,0 +1,47 @@
+# Polyhedral contact-normal diagnostic
+
+Full loop, isolated /tmp experiment only until independent review and verification. No dependency or accepted-report changes. Prior precision-only candidate is rejected by the mandatory exact-coordinate check (180/198 pass).
+
+## Observed defect
+
+In native Parry 0.25.1 at exact prism contact, GJK/EPA reports coincident witnesses and distance near 1e-15 but can return an inward or unrelated unit normal. The manifold generator uses this normal to choose/clamp faces and creates additional contacts 3.18 inches deep. This occurs in f32 and f64 under different poses. Full precision and canonical hull orientation do not eliminate it. Upstream's newer `local_support_feature_toward` currently changes curved cap approximation only; its convex-polyhedron default still ignores the point hint, so that API is not a proven fix.
+
+## Proposal and bounded proof
+
+Use the complete separating-axis theorem (SAT) for pairs drawn only from Cuboid and ConvexPolyhedron, selecting the normal from all face normals and cross products of all actual edges. Both signed interval directions are required for containment and normal orientation. All vertices must support the selected interval; no source coordinates, tolerance tuning or nearest desired pose. Reuse Parry's existing PolygonalFeature contact clipping and feature IDs/impulse matching. Keep all other shape paths, shapes, materials, masses, solver settings, timestep, CCD and sleeping unchanged. Prefer the original f32 kernel if this narrow correction works there; f64 remains a separate comparison, not an assumed dependency.
+
+The experiment first computes SAT on native exported exact-coordinate and quantized cases and compares normals/depth against GJK/manifold witnesses. Only after that diagnosis, prototype a separate query path in a copied Parry source tree. Do not edit global Cargo caches. No post-hoc filtering of bad contacts, collision disabling, penetration clamping, shape rounding or new supports.
+
+Required independent checks before a production proposal:
+
+- All 198 existing frame cases, original f32 and full-coordinate f64, including nonvacuous raw/solver contacts and frozen pre-step movement limits.
+- Separately reserved randomized rigid frame transforms and oblique face/edge/corner contacts, separated pairs, shallow/deep overlap and containment; swapping body order must reverse the world normal and preserve depth within declared numeric precision. Complete SAT must include thickness edges and near-parallel axes, with explicit degeneracy handling.
+- Every generated contact lies on/in both finite convex features, signed depth agrees with the chosen normal and interval geometry, and moving apart removes contact. Predictive contact must not become attractive. Include ball and cylinder contacts as unchanged-path controls.
+- Actual dynamic square/triangle and triangle/triangle impacts in both directions, tabletop drops, sliding/rolling, free hinged fall and closed-loop stability. Preserve geometry/mass/COM/world inertia and force/break behavior.
+- The independent solid sweep guard remains mandatory and durable. Run original flat/loaded frequency sweeps and mixed-frame closed shells at existing settings. Only after those pass inspect fresh source construction and functional car trials. Keep changed legacy failures visible.
+
+If selected later, review the exact small upstream patch and its license, source/version provenance, clean reproducible build, adapter ownership boundary, ABI/model identity and stale-state rejection. A source pass cannot choose a manifold normal or a test allowance. If clipping with a correct SAT normal still fails, record the failure and diagnose it rather than filter or clamp contacts.
+
+## Review resolution before prototype implementation
+
+The independent review in `runs/reviews/polyhedral-contact-plan-review.txt` rejects a standalone manifold path that omits the existing contract. All findings are accepted. Narrow the implementation: retain the original PFM function, cache update, normal-constraint projection, border adjustment, divergence guard and feature/impulse matching. Keep the specialized Cuboid/Cuboid dispatcher unchanged. Add optional polyhedral geometry to Cuboid and ConvexPolyhedron feature maps; only zero-border polyhedra whose faces all have at most four vertices are eligible. All other pairs retain their existing path.
+
+After the original GJK/EPA query, compare its directed support-plane gap with the maximum SAT gap. Replace only a provably inconsistent normal, when SAT's gap exceeds the directed gap by more than 32 machine epsilons times the pair's local coordinate scale. This is a numeric comparison margin, not an acceptance allowance. Generate the corrected contacts through the original finite-face clipper. Do not append the old GJK witness under a changed normal; the original extra GJK witness is retained only under its original normal. An empty or invalid corrected manifold fails the experiment; do not filter or clamp contacts into a pass.
+
+SAT uses every face normal and edge cross product, skips only exact zero vectors, evaluates both interval signs for containment, and uses a deterministic iteration order. A face axis takes priority over an edge axis only within the same declared 32-epsilon numeric tie band; otherwise the larger gap wins. Center displacement selects the sign for an exact signed tie. Exact concentric symmetric solids have no unique antisymmetric normal: test membership in the equivalent minimum-separation normal set and equal depth there, and require reversed normals on unique-axis body-swap cases. Near-parallel axes, body order and equivalent reference frames are reserved regression cases. Missing corner/edge contacts remain failures requiring diagnosis.
+
+## Isolated prototype results
+
+The original f32 kernel with the narrow normal correction passes all 198 dynamic frame cases. Both native f32 and f64 pass 45 exported touching pairs; worst depth is 1.44e-6 and 2.67e-15 inches respectively. Two separate 1,200-pair randomized sets pass in both body orders (all convex hulls, then catalog square cuboids mixed with triangle hulls). Every contact is checked against independent finite-solid bounds and signed-depth algebra. Among 687 overlapping pairs per set, swapped normal disagreement is below 9e-6. The independent 72-row loaded/flat sweep still selects 120 Hz; 36 closed-shell trials pass at unchanged 16 iterations and both timesteps. Dynamic impacts, passive narrow-edge rolling, physical integrity and assembly-support tests pass 29/29.
+
+Near-parallel cases exposed a flaw in the independent JS SAT helper: its general-purpose vector normalization zeroed vectors shorter than 1e-6. Correct both the production solid guard and independent fixture to normalize every nonzero candidate axis directly. Add a guard regression for overlapping panels rotated by 1e-7. With the corrected guard, all 360 near-parallel cases and all 198 contact cases pass; repeat closed-loop and fresh construction evidence before acceptance. An initial fixed/fixed property-test setup produced no manifolds, so the reported 1,200-pair sets use translation/rotation-locked dynamic bodies and require nonempty contacts on every penetrating pair.
+
+Fresh small-ramp construction using the SAT prototype passed wedge and launch stages across all three seeds. All-nine-body free release still fails sustained rest (0/90) with about .05 inches peak displacement and no broken joins. That run started before the near-parallel guard correction, so it is diagnostic and must be repeated. It does not justify relaxing rest or increasing iterations. No dependency, accepted evidence, or published report is updated.
+
+## Cached-contact review follow-up
+
+The review's request to force every touching normal onto a finite SAT tie winner is not adopted. At exact corner contact, the cone of valid support normals includes diagonals between the finite SAT axes; a diagonal with the same maximum directed support gap is geometrically valid. The independent certificate now checks each emitted normal is unit length and its directed support gap is no worse than the complete SAT gap within 1e-4 inches. Empty separated manifolds do not emit a contact normal and are excluded from this assertion.
+
+The cache concern is valid. A 16-case fixture (face, edge, corner, containment; both body orders; exact and 1e-7-radian tilt) seeds cached contacts inside, reaches exact touch, then separates incrementally. The original cache permits tangential drift and returns stale contacts with an invalid support normal; only 4/16 pass. Version 2 validates both the cached normal and every cached witness against the finite solids before reuse. Invalid caches recompute through the original query and feature matching. No contact is filtered or depth clamped. Version 2 passes 16/16, all 198 frame trials, 1,200 randomized cuboid/hull pairs in both orders, and 360 near-parallel cases. The original-hinge variant also passes all 36 closed-shell trials at unchanged settings. A fresh full construction run remains in progress; a replay still fails rest, so the cache fix is not claimed to fix assembly.
+
+Distinct native hinge frames passed their independent constraints tests but did not remove final source release jitter. They remain an unselected experiment. Prefer the smaller original-wrapper SAT/cache correction unless additional evidence demonstrates a need for the hinge API.

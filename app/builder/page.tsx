@@ -40,7 +40,7 @@ import {
 } from "@/lib/builder/operations";
 import type { EdgeFitMode } from "@/lib/builder/operations";
 import type { AuthoredBuildDraft, BuildDraftSummary, BuilderTile } from "@/lib/builder/types";
-import { BALL_FRICTION, GROUND_FRICTION, HINGE_MAX_ANGLE, HINGE_MIN_ANGLE, ROLL_TEST_OFF_SURFACE_MARGIN, ROLL_TEST_SETTLE_STEPS, SIMULATION_TIMESTEP_SECONDS, TILE_FRICTION, TILE_THICKNESS } from "@/lib/engine/constants";
+import { BALL_FRICTION, GROUND_FRICTION, HINGE_MAX_ANGLE, HINGE_MIN_ANGLE, ROLL_TEST_OFF_SURFACE_MARGIN, ROLL_TEST_SETTLE_STEPS, SIMULATION_TIMESTEP_SECONDS, TILE_CONTACT_SKIN, TILE_FRICTION, TILE_THICKNESS } from "@/lib/engine/constants";
 import { createMagneticPhysicsModel, createRollTestPlan, currentWorldEdgeFromBody, gravityVector, isFunctionalRamp, sampleJointBreak, type MagneticPhysicsModel, type PhysicsBodyModel, type PhysicsJointModel, type RollTestPlan } from "@/lib/engine/physics-model";
 import type { GateBuildResult } from "@/lib/engine";
 import { SHAPE_ORDER, TILE_SPECS } from "@/lib/magnetic-tiles/catalog";
@@ -512,7 +512,7 @@ export default function BuilderPage() {
             </div>
             {sandboxStatus ? (
               <p className="issue-detail">
-                Run: displacement {sandboxStatus.maxDisplacement.toFixed(2)}, speed {sandboxStatus.maxSpeed.toFixed(2)}
+                Sandbox preview (diagnostic): displacement {sandboxStatus.maxDisplacement.toFixed(2)}, speed {sandboxStatus.maxSpeed.toFixed(2)}
                 {sandboxStatus.poppedJoints.length ? `, popped joints ${sandboxStatus.poppedJoints.length}` : ""}
                 {sandboxStatus.roll ? `, roll ${sandboxStatus.roll}` : ""}
               </p>
@@ -888,7 +888,7 @@ function PhysicsTileBody({ body, bodyRef }: { body: PhysicsBodyModel; bodyRef: B
     >
       <ConvexHullCollider
         args={[body.localHullPoints]}
-        contactSkin={0.006}
+        contactSkin={TILE_CONTACT_SKIN}
         friction={TILE_FRICTION}
         mass={body.mass}
         restitution={0.02}

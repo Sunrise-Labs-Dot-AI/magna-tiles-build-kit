@@ -1,0 +1,20 @@
+VERIFIED/CLEAN, with limits.
+
+I found no concrete blocking findings in the loaded-contact code/evidence package.
+
+Verified:
+- 216/216 unique predeclared cells are present, with no duplicates.
+- Fixture coverage is complete: flat, 5, 9, 13, 17, and 25 panels, 36 rows each.
+- Declared parameters match recorded effective parameters across all 216 rows, including f32 timestep, solver count, length unit, allowed linear error, ERP, and ERP-inferred frequency.
+- Terminal body/joint counts match fixtures: 1/0, 5/8, 9/16, 13/24, 17/32, 25/48.
+- Matrix result is 168 ordinary passes and 48 failures.
+- Frequency counts match: 120 Hz = 24/72 passes with 36 late-penetration and 12 table failures; 240 Hz = 72/72 ordinary passes; 480 Hz = 72/72 ordinary passes.
+- Selection is null: 240 Hz fails stricter late margin and peak-spread checks; 480 Hz remains diagnostic-only and also fails peak-spread.
+- Failed cells have unavailable certified late/rest metrics, with no failed row carrying complete late/rest credit.
+- Manifest hashes match the gzip, decompressed raw JSON, inspection JSON, plan, runner, contact-matrix code, and loaded-contact fixture hash.
+- Baseline comparison retains 24 original 120 Hz flat/five-panel rows with zero differences, and event replay is exact.
+- Event labeling is truthful: baseline 25-panel 120/960/16 seed 0, first failure at step 112, all 25 bodies dynamic, 48 joints active, roof/base table penetration only, native manifold table contacts labeled separately from current solid guard pose.
+
+I also checked the two prior high findings: current [contact-matrix.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/contact-matrix.ts:47) revalidates actual settings and complete fixture snapshots instead of trusting labels, and [contact-matrix.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/contact-matrix.test.ts:124) covers the corruption paths that originally exposed the gap.
+
+Limits: I stayed read-only, did not run physics or new simulations, did not inspect source media, did not touch credentials, push, or interrupt jobs. I verified saved evidence and compact JSON queries only. The 34 focused-test pass is recorded in the increment, but I did not find a distinct saved stdout log for that exact focused command; broader saved logs do show type/build/artifact/browser checks and the prior full supported-transfer validation. Full regression is still not claimed complete, and exact-head preview/publication remains pending.

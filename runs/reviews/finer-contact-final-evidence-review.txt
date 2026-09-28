@@ -1,0 +1,18 @@
+VERIFIED/CLEAN for this read-only final review.
+
+I found no concrete evidence-validity or integration-contract issue to refute the completed finer-contact result. I did not edit files, rerun the physics matrix, rerun the full suite, spawn workers, or make external writes.
+
+Checked:
+- 216/216 unique cells in the frozen matrix: 2 frequencies, 3 rates, 2 solvers, 3 seeds, 6 fixtures.
+- Raw `/tmp/magnatiles-finer-contact-matrix.json` exactly matches the gzipped archive contents, 33,217,318 bytes, SHA-256 `e8558125b1e9e5de8c67782b402a18bf2242da95651837273b592e2e588674be`.
+- Runtime/source binding: manifest validator hash remains `39bf11...c120`; no `lib`, `vendor`, `tests/fixtures`, package, config, or artifact-check runtime file diff was reported against `e27e9df`.
+- All 216 trials are completed ordinary passes with finite terminal state, no invalid states, no solid failures, no popped joints, exact native step counts, and rest minimum 654 reporting steps.
+- Terminal fixture counts match expectations: flat 1 body, then 5/9/13/17/25 bodies with 8/16/24/32/48 joints for loaded fixtures.
+- Recomputed compact profile results match the observed claim: both 240 Hz profiles fail stricter late margin; both 480 Hz profiles pass stricter margins and sensitivity; selected profile is 480 Hz / 1920 native steps/s, qualified against 3840.
+- The 72 shared 1920 Hz rows are byte-identical against the archived loaded-contact study.
+- Archive hashes, plot hash, plot source hash, and archive-script hash match the manifest.
+- Supplemental archiver’s fixture comparison at [archive-finer-contact-matrix.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/archive-finer-contact-matrix.ts:23) correctly compares the serialized JSON representation, which fixes the undefined/signed-zero mismatch without adding geometric tolerance; the logged `0.000001` inch mutation rejects before output.
+
+Pending integration work remains pending. The audit’s next-step contract looks correct: replace the old production 72-cell frequency search with the selected profile’s actual rate pair, preserve historical evidence at the pre-promotion checkpoint, recompute consumer gates from measurements rather than trusting pass flags or outer hashes, keep old subdivided-rate cases as explicit negative tests, and move positives to actual native rates.
+
+Limits: I did not re-simulate any cell, did not rerun the full suite, and did not validate source fidelity, material calibration, complete construction, passive car turns, or runtime promotion. This is clean evidence for the diagnostic numerical selection only.

@@ -1,0 +1,11 @@
+VERIFIED/CLEAN.
+
+All five accepted findings from `runs/reviews/loaded-contact-initial-plan-review.txt` are addressed in amended `runs/2026-09-27-loaded-contact-plan.md`:
+
+- Whole flat plus 5/9/13/17/25 family included: line 13.
+- Explicit fail-fast runner, unavailable late/rest metrics on early failure: line 13.
+- Selection margins tightened to `0.025` peak and `0.008` late without changing runtime guards: line 15.
+- Spread denominator defined over all four passing `rate × solver` cells per fixture/seed/frequency: line 15.
+- `480 Hz` made diagnostic-only pending finer-rate review with at least `3840 Hz`: line 15.
+
+I stayed read-only: no implementation, no physics runs, no media inspection, no file or credential changes.

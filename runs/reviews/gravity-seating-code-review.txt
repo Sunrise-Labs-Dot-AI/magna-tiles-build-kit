@@ -1,0 +1,19 @@
+**Findings**
+
+1. **BLOCK: `gravitySeat` can pass a first placement without proving any contact topology.**  
+[seating.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/seating.ts:46) only requires moving-to-installed contacts when `fixed.length` is nonzero, and [gravity-seating.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/gravity-seating.test.ts:13) blesses a no-joint floor placement. That may be valid as “placed on table,” but the result still uses the same `Gravity seating earned 0 new contacts` path. Split table placement from magnetic seating and assert actual floor bearing/contact for the first case.
+
+2. **BLOCK: final seating closure is post-hoc graph validation, not proof of the specific withheld edges.**  
+[seating.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/seating.ts:92) reattaches all target connections to `result.settled`, then [seating.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/seating.ts:110) calls `contactsClosed`. This checks the authored final graph after the fall, but does not explicitly assert every `withheldJointIds` edge is present in the final `validConnections` set and is moving-to-installed. Add that certificate before returning pass.
+
+3. **WARNING: support-finger collision checking is discrete and not part of the physics world.**  
+[grip.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/grip.ts:141) tests static fingertip spheres against per-step snapshots; [seating.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/seating.ts:102) calls it each step. A falling panel can still pass between sampled poses because the finger is not a Rapier collider and there is no swept tile-vs-finger test. Add swept clearance or fixture coverage with a fast panel crossing a support fingertip.
+
+4. **WARNING: the “blocked release” regression does not block a release path.**  
+[gravity-seating.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/gravity-seating.test.ts:35) labels `blocked-grip`, but [gravity-seating.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/gravity-seating.test.ts:39) only changes release height to `.05`. That exercises already-connected or low-release behavior, not an obstacle between release and target. Add a real obstructing installed tile/finger and prove the moving body cannot pass through it.
+
+5. **WARNING: source acceptance still reports the rejected two-view rule.**  
+The plan says one useful final view reserved from fitting is the user’s definition, with historical freshness reported separately. Current fidelity text still says “at least two distinct withheld final views” in [evaluate.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/evaluate.ts:318), and the evidence helper still gates on two families. This preserves a known source-evidence mismatch.
+
+6. **WARNING: launch construction evidence is not machine-bound to the changed operation claim.**  
+[models.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/models.ts:187) changes launch order and [models.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/models.ts:208) changes source wording, while the new ledger entries are generic fit records. Add an explicit evidence reference or assertion binding `small-construction-seat-*` frames to the launch-back-flat, roof-upright, later-rotation claims.

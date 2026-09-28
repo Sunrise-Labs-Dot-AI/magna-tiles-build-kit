@@ -1,0 +1,4 @@
+SimulationBudgetExceeded: Analysis time budget exceeded.
+    at releaseCandidate (/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/release.ts:38:15)
+    at async evaluateReplica (/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/evaluate.ts:389:20)
+    at async main (/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/verify.ts:24:20)

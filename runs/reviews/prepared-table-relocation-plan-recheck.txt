@@ -1,0 +1,12 @@
+Verdict: **CLEAN** for next-increment design. No source changes inspected beyond the two requested plan/review files, and no edits made.
+
+- **CRITICAL exact prepared body-ID equality:** **ADDRESSED**
+  The amended plan requires exact input tile-ID set equality with saved state body IDs before engine creation at support, carry, table-fall and free-release boundaries, requires all 13 bodies, rejects extra blue-turn/canopy bodies, and explicitly preserves ordinary new-panel insertion’s ability to add one accounted-for body. See [plan line 19](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-prepared-table-relocation-plan.md:19).
+
+- **WARNING first fall frame and carried state continuity:** **ADDRESSED**
+  The plan now requires first fall tiles to exactly equal the prior carry terminal settled tiles, active joint IDs to equal carry joints, velocities/body references/body types to be restored unchanged, explicit release as the only type transition, actual-state initial frame recording, and mismatch rejection before seating evidence. See [plan line 21](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-prepared-table-relocation-plan.md:21).
+
+- **WARNING meaningful displacement and component preservation:** **ADDRESSED**
+  The plan defines a concrete threshold: at least 3 inches of horizontal component-centroid displacement between prepared lower terminal state and final lower-placement terminal state, coherent displacement of all four lower panels, unchanged deformation limit, and passive upper/support component within existing passive displacement limit. See [plan line 15](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-prepared-table-relocation-plan.md:15).
+
+The amended plan closes the three review findings at the design level and keeps the current source-sequence runtime frozen.

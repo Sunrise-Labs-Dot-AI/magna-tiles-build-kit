@@ -1,0 +1,11 @@
+VERIFIED/CLEAN
+
+Within the strictly diagnostic scope, I found no concrete defect requiring BLOCK. I did not run physics, edit files, or open images.
+
+Checked:
+- Probe scripts preserve hypothesis-only language and do not promote source acceptance.
+- Evidence JSON script hashes match current probe files.
+- Claimed inventories match the recorded 37 parts: 15 squares, 18 equilateral triangles, 4 isosceles triangles.
+- Assembly accounting supports the “first 3 stages / 36 operations” claim.
+- Rear and side grip transfer failures, stopped front-grip retry, legacy square-flap contradiction, closed-support table-guard failures, and 10-panel versus 15/27-panel outcomes are all recorded without promotion.
+- The hidden green floor/roof faces are consistently treated as hypotheses, not source proof by BOM subtraction.

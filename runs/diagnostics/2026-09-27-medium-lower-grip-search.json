@@ -1,0 +1,1599 @@
+{
+  "scope": "Candidate nominal grip search only. No physical acceptance or bound source-motion claim. Frozen medium geometry unchanged.",
+  "floor": -0.09503728193078545,
+  "attempts": [
+    {
+      "order": [
+        "lower-side--1",
+        "lower-deck-2",
+        "lower-side-1",
+        "lower-deck-1"
+      ],
+      "status": "rejected",
+      "operations": [
+        {
+          "id": "lower-side--1",
+          "path": {
+            "id": "insert-lower-side--1",
+            "movingTileIds": [
+              "lower-side--1"
+            ],
+            "fixedTileIds": [
+              "lower-side--1",
+              "lower-deck-2"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 8.881138940187094,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          "proposals": [
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -2.7132090498166,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "pass",
+                "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+              }
+            }
+          ],
+          "selected": [
+            {
+              "tileId": "lower-side--1",
+              "localPoint": {
+                "x": 0,
+                "y": -2.7132090498166,
+                "z": 0
+              },
+              "localOutward": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "proxy": "edge-pinch-v1"
+            }
+          ]
+        },
+        {
+          "id": "lower-deck-2",
+          "path": {
+            "id": "insert-lower-deck-2",
+            "movingTileIds": [
+              "lower-deck-2"
+            ],
+            "fixedTileIds": [
+              "lower-side--1",
+              "lower-deck-2"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 8.881138940187094,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          "proposals": [
+            {
+              "hands": [
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -1.5,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -2.7132090498166,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-deck-2 is blocked by lower-side--1."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -1.5,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": 0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-deck-2 is blocked by lower-side--1."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -1.5,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": -0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-deck-2 is blocked by lower-side--1."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -2.7132090498166,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "pass",
+                "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+              }
+            }
+          ],
+          "selected": [
+            {
+              "tileId": "lower-deck-2",
+              "localPoint": {
+                "x": 1.5,
+                "y": 0,
+                "z": 0
+              },
+              "localOutward": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+              },
+              "proxy": "edge-pinch-v1"
+            },
+            {
+              "tileId": "lower-side--1",
+              "localPoint": {
+                "x": 0,
+                "y": -2.7132090498166,
+                "z": 0
+              },
+              "localOutward": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "proxy": "edge-pinch-v1"
+            }
+          ]
+        },
+        {
+          "id": "lower-side-1",
+          "path": {
+            "id": "insert-lower-side-1",
+            "movingTileIds": [
+              "lower-side-1"
+            ],
+            "fixedTileIds": [
+              "lower-side--1",
+              "lower-deck-2"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 8.881138940187094,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          "proposals": [
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -2.7132090498166,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -1.5,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -2.7132090498166,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -2.7132090498166,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 0,
+                    "y": 1.5,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -2.7132090498166,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": -1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -1,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": 0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -1.5,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": 0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": 0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 0,
+                    "y": 1.5,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": 0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": -1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -1,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": -0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -1.5,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 crosses the table."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": -0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 crosses the table."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": -0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 0,
+                    "y": 1.5,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 crosses the table."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": -0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": -1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -1,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 crosses the table."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -2.7132090498166,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -2.7132090498166,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -2.7132090498166,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": 0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -2.7132090498166,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": -0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": 0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -2.7132090498166,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": 0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": 0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": 0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": -0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": -0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -2.7132090498166,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 crosses the table."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": -0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": 0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 crosses the table."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side-1",
+                  "localPoint": {
+                    "x": -0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": -0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side-1 crosses the table."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": [
+        "lower-deck-2",
+        "lower-side--1",
+        "lower-side-1",
+        "lower-deck-1"
+      ],
+      "status": "rejected",
+      "operations": [
+        {
+          "id": "lower-deck-2",
+          "path": {
+            "id": "insert-lower-deck-2",
+            "movingTileIds": [
+              "lower-deck-2"
+            ],
+            "fixedTileIds": [
+              "lower-deck-2"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 8.881138940187094,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          "proposals": [
+            {
+              "hands": [
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -1.5,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "pass",
+                "detail": "Two-finger edge proxies clear the table, all present panels and each other. Palm, force and human dexterity remain uncalibrated."
+              }
+            }
+          ],
+          "selected": [
+            {
+              "tileId": "lower-deck-2",
+              "localPoint": {
+                "x": 0,
+                "y": -1.5,
+                "z": 0
+              },
+              "localOutward": {
+                "x": 0,
+                "y": -1,
+                "z": 0
+              },
+              "proxy": "edge-pinch-v1"
+            }
+          ]
+        },
+        {
+          "id": "lower-side--1",
+          "path": {
+            "id": "insert-lower-side--1",
+            "movingTileIds": [
+              "lower-side--1"
+            ],
+            "fixedTileIds": [
+              "lower-deck-2"
+            ],
+            "offsets": [
+              {
+                "x": 0,
+                "y": 8.881138940187094,
+                "z": 0
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            ]
+          },
+          "proposals": [
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -2.7132090498166,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -1.5,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side--1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -2.7132090498166,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side--1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -2.7132090498166,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 0,
+                    "y": 1.5,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side--1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -2.7132090498166,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": -1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -1,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side--1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": 0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -1.5,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side--1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": 0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side--1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": 0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 0,
+                    "y": 1.5,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side--1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": 0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": -1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -1,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side--1 is blocked by lower-deck-2."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": -0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 0,
+                    "y": -1.5,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side--1 crosses the table."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": -0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side--1 crosses the table."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": -0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": 0,
+                    "y": 1.5,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side--1 crosses the table."
+              }
+            },
+            {
+              "hands": [
+                {
+                  "tileId": "lower-side--1",
+                  "localPoint": {
+                    "x": -0.75,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -0.9638532848299529,
+                    "y": 0.2664335664335664,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                },
+                {
+                  "tileId": "lower-deck-2",
+                  "localPoint": {
+                    "x": -1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "localOutward": {
+                    "x": -1,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "proxy": "edge-pinch-v1"
+                }
+              ],
+              "check": {
+                "status": "fail",
+                "detail": "Grip on lower-side--1 crosses the table."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "scope": "Injected fixed-pivot native diagnostic. No production model adoption, source fidelity, hands-off release or assembly acceptance.",
+  "command": [
+    "npx",
+    "vitest",
+    "run",
+    "--config",
+    "scripts/reference/probe-native-fold-pivots.config.ts"
+  ],
+  "startedAt": "2026-09-28T02:39:23.810Z",
+  "finishedAt": "2026-09-28T02:40:16.733Z",
+  "durationSeconds": 52.921350958000005,
+  "exitCode": 0,
+  "signal": null,
+  "contextUnchanged": true,
+  "context": {
+    "validationCodeHash": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+    "inputHashes": {
+      "scripts/reference/probe-native-fold-pivots.config.ts": "a6345fc5e1902fea1c05a3808833b062fb7b31ad816660d9551a12cf30d8c358",
+      "scripts/reference/probe-native-fold-pivots.ts": "1602bf62058d5a9f4ab293a783b6ec52f647314dd7bd541b10764681e62682c0"
+    }
+  },
+  "finalContext": {
+    "validationCodeHash": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+    "inputHashes": {
+      "scripts/reference/probe-native-fold-pivots.config.ts": "a6345fc5e1902fea1c05a3808833b062fb7b31ad816660d9551a12cf30d8c358",
+      "scripts/reference/probe-native-fold-pivots.ts": "1602bf62058d5a9f4ab293a783b6ec52f647314dd7bd541b10764681e62682c0"
+    }
+  },
+  "runnerSha256": "99ec3f508d617cfbdd26b193b271fb3167b4f634c0878fca8dd1eee48fe4b7be",
+  "archives": [
+    {
+      "source": "/tmp/magnatiles-native-fold-pivots.log",
+      "target": "runs/diagnostics/2026-09-27-native-fold-pivots.log.txt",
+      "rawSha256": "0a1a14f1badbccae8ed23df68d4cf091bf5bc0236ba2e5bcc69bd7248b05b854",
+      "sha256": "0a1a14f1badbccae8ed23df68d4cf091bf5bc0236ba2e5bcc69bd7248b05b854"
+    },
+    {
+      "source": "/tmp/magnatiles-native-fold-pivots.json",
+      "target": "runs/diagnostics/2026-09-27-native-fold-pivots.json.gz",
+      "rawSha256": "0d36f4cf0249a54ecb3a0dc495cbf725108b3f5ce893b2edb032c66deb1523ff",
+      "sha256": "73ee5160dac7c914a420f91fb60bf463419ef5a35261353785d418b26551516d"
+    },
+    {
+      "source": "scripts/reference/probe-native-fold-pivots.ts",
+      "target": "runs/diagnostics/2026-09-27-native-fold-pivots.script.ts.gz",
+      "rawSha256": "1602bf62058d5a9f4ab293a783b6ec52f647314dd7bd541b10764681e62682c0",
+      "sha256": "4bbb6dc0b2197e979b3888914fe9a44aa69f981d57e6647c0f10b4d171da69f5"
+    },
+    {
+      "source": "scripts/reference/probe-native-fold-pivots.config.ts",
+      "target": "runs/diagnostics/2026-09-27-native-fold-pivots.config.ts.gz",
+      "rawSha256": "a6345fc5e1902fea1c05a3808833b062fb7b31ad816660d9551a12cf30d8c358",
+      "sha256": "835172ebdfaa97cb5d654bdb5f084c177c5a65d585a8cdb23b82215cb715535d"
+    }
+  ]
+}

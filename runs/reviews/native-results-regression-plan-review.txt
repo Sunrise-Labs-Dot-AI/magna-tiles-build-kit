@@ -1,0 +1,28 @@
+**1. Native Folding Result Review: VERIFIED WITH ONE RECORDING DEFECT**
+
+The core result is supported by the archives: runtime `7a8ad00bf79266e385e434dcb9bdb6f7fabe98d1511f8564b36cd81496c93e29`, script hash `b4e6d1aaee365d01d46df37e880fd51c4153e0994bd349218a0683ab58339e33`, exit 0, 12 declared rows, 6 integrated rows, 72,924 native steps, all rows rejected or failed before full fold.
+
+Confirmed:
+- `.09` rows integrated 12,154 native steps each and failed by native solid collision at 6.330208663s, which is 74.7625 degrees into the 120 degree command.
+- Peak residuals stayed at or below `0.0003270504574107472` in.
+- Popped joints remained empty; terminal joint count remained 2.
+- Root/middle/end modes were fixed/dynamic/kinematic after grip setup and at terminal state.
+- Seeds produced distinct post-perturbation velocities and six distinct trajectory hashes.
+- `.21` rows were native setup rejects with zero steps, due native initial closure failing at transverse gap `0.210 in`.
+- The analytic 120 degree fixed-pivot formula matches archived endpoints to floating-point roundoff and is properly scoped to this prescribed fixture. It does not claim universal impossibility, retail calibration, native dynamics, or a model/controller fix.
+- No source, release, complete jet assembly, new gap, or accepted final closure is claimed in the plan/result scopes.
+
+Actionable finding:
+- [scripts/reference/probe-native-fold.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/probe-native-fold.ts:99) stores `nativeInitial.solidFailures: engine.solidFailures` by reference, not by clone. In the `.09` integrated rows, archived `nativeInitial.solidFailures` is later contaminated with the motion failure, even though the row passed the initial check before integration. This does not overturn the manifest outcome or first-failure evidence, but future result archives should clone this field to keep initial-state evidence faithful.
+
+**2. Regression Diagnosis Plan Review: FINDINGS**
+
+The plan is directionally sufficient and correctly diagnosis-only: it freezes runtime, keeps thresholds and inputs unchanged, separates experiment completion from passing outcomes, and targets the observed failure families without authorizing a passing physics profile.
+
+Two protocol gaps would make the diagnostic less decisive:
+
+1. [runs/2026-09-27-integration-regression-diagnosis-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-integration-regression-diagnosis-plan.md:18) should explicitly run and archive `rollTest(mediumCarRampDraft)` separately. The failing calibration test asserts roll success before gate success, while `gateBuild` only reaches roll after `simulate` stands ([gate.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/gate.ts:77), [engine-calibration.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/engine-calibration.test.ts:31)). Without separate roll evidence, the diagnosis can distinguish stand/release failure from gate failure, but not fully preserve the rollable-ramp claim.
+
+2. The plan should explicitly hash and record the legacy status surfaces: `BUILD_LIBRARY`, `readBuildDraft` output status, `ENGINE_VALID_LIBRARY_BUILD_IDS`, and `referenceAcceptanceCases`. The failed tests compare live gate results against those labels/lists ([engine-gate.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/engine-gate.test.ts:16), [reference-acceptance.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/reference-acceptance.test.ts:23)). Hashing only drafts/tests/generator inputs leaves “stale legacy label” under-instrumented.
+
+Everything else I checked is clean for the requested purpose: continued-prefix, rotated-hinge, and gravity diagnostics are scoped to reveal actual simulation issues versus early-stopped comparisons and float32 accumulation without changing acceptance, inputs, thresholds, or runtime.

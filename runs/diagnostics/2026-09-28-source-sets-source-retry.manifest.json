@@ -1,0 +1,150 @@
+{
+  "scope": "Targeted source-report retry after documented host sleep. The completed focused96/contact72/generic fixture runs remain bound to their original evidence; they are not rerun or restamped. Report-only completion is not replica acceptance.",
+  "prerequisite": {
+    "path": "runs/diagnostics/2026-09-28-source-sets-qualification.manifest.json",
+    "sha256": "a44eeef81a7fac8f2027636b2a41b5571a4ea26bec7efb5d9076e06e08c028f8",
+    "stages": [
+      "focused96",
+      "configured72",
+      "generic-assembly"
+    ]
+  },
+  "baseline": {
+    "commit": "245e440a2a8edb3eb16c05bfc1da14173aa4b1a3",
+    "validationCodeHash": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+    "fullTests": "runs/diagnostics/2026-09-27-final-context-full-tests.manifest.json",
+    "qualification": "runs/diagnostics/2026-09-27-final-qualification.manifest.json",
+    "changedFiles": [
+      "lib/replication/models.ts",
+      "lib/replication/source-pieces.ts",
+      "tests/source-pieces.test.ts",
+      "verification/replication/observation-history/2026-09-28-pre-observed-sets-observation-lock.json",
+      "verification/replication/observation-history/2026-09-28-pre-observed-sets-source-pieces.json",
+      "verification/replication/observation-lock.json",
+      "verification/replication/source-pieces.json"
+    ]
+  },
+  "context": {
+    "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+    "sourceInputs": {
+      "tests/evidence-gates.test.ts": "a9b816065c952275e4dd707f5688561b18bc94aae70437f69f8239c5a5498a8d",
+      "tests/source-pieces.test.ts": "c16ca99f6b8d3501d18eafc026f8982e6b92dd8a4178e678c2b301d28c79f693",
+      "verification/replication/candidate-freezes.json": "086a14313159a908ddb44c4a2bc7bba753cbe40c65b5b42f1c60f6dac2229aed",
+      "verification/replication/evidence-ledger.json": "93e64f7589007234d2564bb386cb98911a9538aa5f00cb569c95d726cd5b5d55",
+      "verification/replication/frame-manifest.json": "3ad88b57e0c173411c1f13cf5c90bfb3a76eef214f2982fa8f7d2e46b17292f2",
+      "verification/replication/observation-lock.json": "e84b8e3fc3b487bae7032373e4567a7a284af9804fc1ad75800fb5db6143563f",
+      "verification/replication/observations.json": "499da9f22fceeaf6485ed36aca3be85965d2c1eab72932ab028186194931c02e",
+      "verification/replication/source-pieces.json": "0b125c0091eb496eeb73d08408fd051b1925610133803c17f4b018ea347b4a4a",
+      "verification/replication/sources.json": "7d9f57749926ec8dd01273ba6928955b9abd8c46681372645e1aef9c344b1e43"
+    }
+  },
+  "startedAt": "2026-09-28T20:52:55.158Z",
+  "runnerSha256": "2d7feeb2b60060cf0768e5977fe977f5f05a2184b4c8cf1c8c240ef5df0b5f0e",
+  "completed": true,
+  "stages": [
+    {
+      "name": "source-reports",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/reference/verify.ts",
+        "--report-only",
+        "--max-ms=900000"
+      ],
+      "startedAt": "2026-09-28T20:52:55.216Z",
+      "finishedAt": "2026-09-28T21:11:18.230Z",
+      "durationSeconds": 1103.0176398339997,
+      "exitCode": 0,
+      "signal": null,
+      "contextUnchanged": true,
+      "log": "runs/diagnostics/2026-09-28-source-sets-source-retry.source-reports.log.txt",
+      "logSha256": "9af7e742f94023475ed2b823678f06cc69599cedd79378e258db0ec4745a1785",
+      "outputs": [
+        {
+          "file": "public/reference-replicas/jet.json",
+          "sha256": "5c29f9ec378a8335411da2bfd5a6e44fff89cd55ba4a710f4fbb2800779e7767",
+          "archive": "runs/diagnostics/2026-09-28-source-sets-source-retry.source-reports.public_reference-replicas_jet.json.gz",
+          "gzipSha256": "4d25c7b106b7b358f484e9ff126272ceaa1212246d26375a82d1ae4afe9ec6ad"
+        },
+        {
+          "file": "public/reference-replicas/small-ramp.json",
+          "sha256": "6d993aa7f7e373ac74a31aa2b942e2d5f9585cb627ff4e6a06a3ce4d99bf5f1a",
+          "archive": "runs/diagnostics/2026-09-28-source-sets-source-retry.source-reports.public_reference-replicas_small-ramp.json.gz",
+          "gzipSha256": "1da4ef59b752896dd85ac8df8154dc4b8822c12c29f912b88d7a5c7bdce08ddc"
+        },
+        {
+          "file": "public/reference-replicas/medium-ramp.json",
+          "sha256": "9a41b34c683483e68d19a713fa66a65d9e0b5ade31a397737b5466396dd9fec8",
+          "archive": "runs/diagnostics/2026-09-28-source-sets-source-retry.source-reports.public_reference-replicas_medium-ramp.json.gz",
+          "gzipSha256": "e3bf7fdd4bf0cd0b6541061119db677f0c11ddee6f0fa7889dff1ed1f0fe06d1"
+        },
+        {
+          "file": "public/reference-replicas/large-ramp.json",
+          "sha256": "c5f91d279ff14c2e1430fd9d6a09f24ba041e2cfde5e3ba553dad32f964f9790",
+          "archive": "runs/diagnostics/2026-09-28-source-sets-source-retry.source-reports.public_reference-replicas_large-ramp.json.gz",
+          "gzipSha256": "68a79be058d9ab4bd9f9885e6eda352575f477f67c6bcaa983088cab3a1f8272"
+        },
+        {
+          "file": "verification/replication/results.json",
+          "sha256": "35ef784b259ccbac7d0eac4e4973cf9f956ce9a075213a318fdada76e1fa115f",
+          "archive": "runs/diagnostics/2026-09-28-source-sets-source-retry.source-reports.verification_replication_results.json.gz",
+          "gzipSha256": "9e55963affcb85c1a9feea3503ec6c45cb41373201d9a1fbcc9ed532fae2a10d"
+        },
+        {
+          "file": "verification/replication/artifact-manifest.json",
+          "sha256": "770beb3bd9be9383c51735d648c399e403bd6353f182bdfa798dd5b94f7d3717",
+          "archive": "runs/diagnostics/2026-09-28-source-sets-source-retry.source-reports.verification_replication_artifact-manifest.json.gz",
+          "gzipSha256": "0c9d7d11336e49305c0b0b26405d2f01e4cac71308a78bf6b916e5dcebf0a03c"
+        }
+      ],
+      "reportFreshness": [
+        {
+          "id": "jet",
+          "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+          "generatedAt": "2026-09-28T20:52:55.378Z",
+          "generatedInThisStage": true
+        },
+        {
+          "id": "small-ramp",
+          "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+          "generatedAt": "2026-09-28T20:53:33.887Z",
+          "generatedInThisStage": true
+        },
+        {
+          "id": "medium-ramp",
+          "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+          "generatedAt": "2026-09-28T20:58:30.398Z",
+          "generatedInThisStage": true
+        },
+        {
+          "id": "large-ramp",
+          "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+          "generatedAt": "2026-09-28T21:09:57.832Z",
+          "generatedInThisStage": true
+        }
+      ],
+      "outputsCurrent": true
+    },
+    {
+      "name": "artifact-gate",
+      "command": [
+        "npm",
+        "run",
+        "reference:check-artifacts"
+      ],
+      "startedAt": "2026-09-28T21:11:18.287Z",
+      "finishedAt": "2026-09-28T21:11:19.285Z",
+      "durationSeconds": 0.9976966250000987,
+      "exitCode": 0,
+      "signal": null,
+      "contextUnchanged": true,
+      "log": "runs/diagnostics/2026-09-28-source-sets-source-retry.artifact-gate.log.txt",
+      "logSha256": "7a9b8664ff040c974300463b0f3b450e349465bd1d4acf39e294bb30b7d3a614",
+      "outputs": [],
+      "reportFreshness": null,
+      "outputsCurrent": true
+    }
+  ],
+  "finishedAt": "2026-09-28T21:11:19.286Z"
+}

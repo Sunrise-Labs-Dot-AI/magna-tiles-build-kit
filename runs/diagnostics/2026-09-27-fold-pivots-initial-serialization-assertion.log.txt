@@ -1,0 +1,26 @@
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+... Skipped lines
+
+  {
+    bounds: {
+      depth: 0.18,
+      height: 3,
+      width: 9.18
+...
+    inventoryPreset: 'builder-xl',
++   ports: undefined,
+    prompt: 'Three-panel folding diagnostic',
+    seed: 0,
+    summary: 'Source-constrained reconstruction candidate. Read the independent evidence before building.',
+    tiles: [
+      {
+
+    at main (/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/probe-fold-pivots.ts:63:10) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [Object],
+  expected: [Object],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}

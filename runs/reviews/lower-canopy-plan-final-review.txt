@@ -1,0 +1,9 @@
+VERIFIED/CLEAN.
+
+The three original findings are addressed in `runs/2026-09-27-lower-canopy-plan.md`:
+
+- Finding 1: old-to-old actual-joint preservation and regression coverage are explicit at lines 11 and 13.
+- Finding 2: the prior wording gap is closed at line 15, including `prefix terminal connections`, `previews/playback`, and equality checks for `prefix terminal connections` plus `preview bodies/joins`.
+- Finding 3: source-stage alignment and observed/proposed boundary rules are explicit at lines 21 and 23.
+
+No files edited, no credentials or external services used, no runtime changes.

@@ -1,0 +1,99 @@
+{
+  "scope": "Source-only integration staged in separate checkout; no native simulation, fresh physical report or deployment claim. Primary qualifier remains3a2.",
+  "worktree": "/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-source-sets",
+  "base": "39686d84a81bec3b7277fee1445ef4eed5dd4520",
+  "geometryInventoryConstructionRouteIdentical": true,
+  "changedStageFields": [
+    [
+      "small-launch",
+      "instruction"
+    ],
+    [
+      "small-launch",
+      "frameId"
+    ]
+  ],
+  "tests": {
+    "passed": 96,
+    "failed": 0,
+    "files": 2,
+    "durationSeconds": 0.356
+  },
+  "inputHashes": {
+    "lib/replication/source-pieces.ts": "822ea7d68ab944305485ea650ac6d49af63bc3833548c311f1077e0c7b806a39",
+    "lib/replication/models.ts": "176033bd4ecb6e041d220f775f0b8ef3210cb6ebc714866ad21da95c86c26ea9",
+    "tests/source-pieces.test.ts": "c16ca99f6b8d3501d18eafc026f8982e6b92dd8a4178e678c2b301d28c79f693",
+    "verification/replication/source-pieces.json": "0b125c0091eb496eeb73d08408fd051b1925610133803c17f4b018ea347b4a4a",
+    "verification/replication/observation-lock.json": "e84b8e3fc3b487bae7032373e4567a7a284af9804fc1ad75800fb5db6143563f"
+  },
+  "logs": [
+    {
+      "path": "runs/diagnostics/2026-09-28-source-sets-integration.local-source-check.log.txt",
+      "sha256": "f6c21c68e582bc1f560a7cbb2fb1f75662cacddd02a00ce065644c4cdff8b64d"
+    },
+    {
+      "path": "runs/diagnostics/2026-09-28-source-sets-integration.staged-final-tests.log.txt",
+      "sha256": "3a8f871f90cba3d0b87abea9e77341e136cef1d605354aeab720ec2e178ead55"
+    },
+    {
+      "path": "runs/diagnostics/2026-09-28-source-sets-integration.staged-final-types.log.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/diagnostics/2026-09-28-source-sets-integration.staged-final-lint.log.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/diagnostics/2026-09-28-source-sets-integration.inherited-field-before.log.txt",
+      "sha256": "11359f4d2a1288c9f9d2ad01dce894ef9b6ed405bd6efe7aff3297138c3c6719"
+    },
+    {
+      "path": "runs/diagnostics/2026-09-28-source-sets-integration.staged-closed-tests.log.txt",
+      "sha256": "31b9313a3849918dac3baf6f4a7b4e471394dea2a6d8e826ef26e0842df06170"
+    },
+    {
+      "path": "runs/diagnostics/2026-09-28-source-sets-integration.staged-closed-types.log.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/diagnostics/2026-09-28-source-sets-integration.staged-closed-lint.log.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "beforeInheritedFieldFix": {
+    "tests": {
+      "passed": 95,
+      "failed": 0,
+      "files": 2,
+      "durationSeconds": 0.285
+    },
+    "inputHashes": {
+      "lib/replication/source-pieces.ts": "0bed12f4d6ccfca2cf255ffd2624c7fdbe2be52eb695f87780a1c5c7e6d47309",
+      "lib/replication/models.ts": "176033bd4ecb6e041d220f775f0b8ef3210cb6ebc714866ad21da95c86c26ea9",
+      "tests/source-pieces.test.ts": "9fa6abcf54d0bbe0b759a65a9f71616f03f2310c2c5f0f26bcfa8ee0f4ebe43a",
+      "verification/replication/source-pieces.json": "0b125c0091eb496eeb73d08408fd051b1925610133803c17f4b018ea347b4a4a",
+      "verification/replication/observation-lock.json": "e84b8e3fc3b487bae7032373e4567a7a284af9804fc1ad75800fb5db6143563f"
+    },
+    "logs": [
+      {
+        "path": "runs/diagnostics/2026-09-28-source-sets-integration.local-source-check.log.txt",
+        "sha256": "f6c21c68e582bc1f560a7cbb2fb1f75662cacddd02a00ce065644c4cdff8b64d"
+      },
+      {
+        "path": "runs/diagnostics/2026-09-28-source-sets-integration.staged-final-tests.log.txt",
+        "sha256": "3a8f871f90cba3d0b87abea9e77341e136cef1d605354aeab720ec2e178ead55"
+      },
+      {
+        "path": "runs/diagnostics/2026-09-28-source-sets-integration.staged-final-types.log.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "runs/diagnostics/2026-09-28-source-sets-integration.staged-final-lint.log.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ]
+  },
+  "commit": "95051c86d1cee8d6790be15c99a2cf26803365be",
+  "published": false,
+  "nativeSimulationRun": false
+}

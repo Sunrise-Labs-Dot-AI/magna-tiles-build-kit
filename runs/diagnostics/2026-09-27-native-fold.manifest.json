@@ -1,0 +1,29 @@
+{
+  "scope": "Native three-panel folding diagnostic. No source, material, release or assembly acceptance.",
+  "context": {
+    "validationCodeHash": "7a8ad00bf79266e385e434dcb9bdb6f7fabe98d1511f8564b36cd81496c93e29",
+    "scriptHashes": {
+      "scripts/reference/probe-native-fold.ts": "b4e6d1aaee365d01d46df37e880fd51c4153e0994bd349218a0683ab58339e33"
+    }
+  },
+  "exitCode": 0,
+  "completed": true,
+  "declaredRows": 12,
+  "nativeRows": 6,
+  "nativeSteps": 72924,
+  "outcomes": {
+    "motion-failed": 6,
+    "native-setup-rejected": 6
+  },
+  "firstFailureKinds": [
+    "native-solid"
+  ],
+  "maximumTargetResidual": 0.0003270504574107472,
+  "rawSha256": "1b090122d289dd18aed3994781c4bb81a6f8a76d670809832a9b03651856d625",
+  "gzipSha256": "dddff987b07247b2773985bba70432c1c5dad9f25a1a216e06d7ebf8725a7651",
+  "limits": [
+    "Prescribed two-link fixture, not a measured human trajectory or universal impossibility result.",
+    "The six .21-inch rows reject native initial contact and integrate zero steps.",
+    "No final closure join, hand withdrawal, free release, source fidelity or assembly pass."
+  ]
+}

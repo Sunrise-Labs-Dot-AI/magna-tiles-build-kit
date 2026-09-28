@@ -16,6 +16,10 @@ interface TileViewerProps {
   trials?: CarTrial[];
   playbackTime?: number;
   showLabels?: boolean;
+  partLabels?: Record<string, string>;
+  viewDirection?: [number, number, number];
+  /** Stable bounds for a motion preview, including its start and end poses. */
+  framingTiles?: TileInstance[];
   build: BuildGraph | null;
   visibleStep: number;
 }
@@ -58,7 +62,7 @@ function unregisterBuildViewer(handle: BuildViewerHandle, domElement: HTMLElemen
   delete domElement.dataset.buildViewer;
 }
 
-export function TileViewer({ build, visibleStep, lanes = [], trials = [], playbackTime = 0, showLabels = false }: TileViewerProps) {
+export function TileViewer({ build, visibleStep, lanes = [], trials = [], playbackTime = 0, showLabels = false, partLabels, viewDirection, framingTiles }: TileViewerProps) {
   if (!build) {
     return (
       <div className="empty-state">
@@ -72,15 +76,19 @@ export function TileViewer({ build, visibleStep, lanes = [], trials = [], playba
   }
 
   const visibleTiles = build.tiles.filter((tile) => tile.step <= visibleStep);
-  const viewingBox = calculateViewingBox(build.tiles);
+  const viewingBox = calculateViewingBox(framingTiles ?? build.tiles);
   const cameraDistance = Math.max(viewingBox.width, viewingBox.height, viewingBox.depth) * 2.25;
   const loweredCenterY = viewingBox.center.y - build.bounds.height * 0.28;
   const cameraPosition: [number, number, number] =
-    build.family === "aircraft"
+    viewDirection
+      ? [viewingBox.center.x + cameraDistance * viewDirection[0] * .8, loweredCenterY + cameraDistance * viewDirection[1] * .8, viewingBox.center.z + cameraDistance * viewDirection[2] * .8]
+      : build.family === "aircraft"
       ? [viewingBox.center.x + build.bounds.width * 0.05, loweredCenterY + cameraDistance * 1.05, viewingBox.center.z - cameraDistance * 0.08]
       : [viewingBox.center.x + cameraDistance * 0.72, loweredCenterY + cameraDistance * 0.38, viewingBox.center.z + cameraDistance * 0.82];
   const cameraTarget: [number, number, number] =
-    build.family === "aircraft"
+    viewDirection
+      ? [viewingBox.center.x, loweredCenterY, viewingBox.center.z]
+      : build.family === "aircraft"
       ? [viewingBox.center.x, loweredCenterY + build.bounds.height * 0.04, viewingBox.center.z - 0.2]
       : [viewingBox.center.x, loweredCenterY + build.bounds.height * 0.2, viewingBox.center.z];
 
@@ -99,7 +107,7 @@ export function TileViewer({ build, visibleStep, lanes = [], trials = [], playba
           <TileMesh key={tile.id} tile={tile} />
         ))}
         {showLabels && visibleTiles.map(tile => <group key={`label-${tile.id}`}>
-          <Html position={[tile.position.x,tile.position.y+0.2,tile.position.z]} center><span className="design-piece-label">{`P${build.tiles.findIndex(t=>t.id===tile.id)+1}`}</span></Html>
+          <Html position={[tile.position.x,tile.position.y+0.2,tile.position.z]} center><span className="design-piece-label">{partLabels?.[tile.id] ?? `P${build.tiles.findIndex(t=>t.id===tile.id)+1}`}</span></Html>
           {tileWorldVertices(tile).map((p,index,vertices) => { const q=vertices[(index+1)%vertices.length]; return <Html key={index} center position={[(p.x+q.x)/2,(p.y+q.y)/2+0.15,(p.z+q.z)/2]}><span className="design-edge-label">{index+1}</span></Html>; })}
         </group>)}
         {lanes.map((lane,i)=><Line key={lane.id} points={lane.waypoints.map(p=>[p.x,p.y+0.2,p.z] as [number,number,number])} color={i?'#dd4c48':'#2165dc'} lineWidth={3}/>) }

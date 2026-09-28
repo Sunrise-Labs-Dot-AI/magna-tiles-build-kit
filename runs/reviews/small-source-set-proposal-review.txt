@@ -1,0 +1,17 @@
+**Verdict: not implementation-ready as written.**
+
+I viewed exactly the four proposal images and verified their hashes match the proposal.
+
+Supportable:
+- `small-construction-seat-25.5`: supports a three-piece wedge subassembly: red rear square plus two yellow isosceles sides installed, with one orange square being placed and another orange square still separate.
+- `small-fit` at 27s: supports the wedge having five installed panels: red rear square, two yellow isosceles sides, and two orange deck squares. It does not establish calibrated pose, seam geometry, or hand-free stability.
+- `small-launch` at 31s: supports transition evidence only: two red squares plus one attached green right triangle, with the other green triangle still in hand/on table. It must not be a complete four-panel launch source set.
+- `small-construction-seat-32.5`: supports four launch panels being present and attached: two red squares plus two green right triangles. It does not establish a frozen static pose, final placement, transfer path, passive success, or hand-force validity.
+
+Needs changes or qualification:
+- The exact `source-side-a/b -> candidate sign` mappings are not visually proven for either wedge or launch. The images establish counts, colors, shapes, and broad installed roles, but not unique stable correspondence for same-color same-shape side panels. Those mappings should remain `proposed` or be explicitly qualified as bookkeeping identities, not fully `observed`.
+- The wedge record can legitimately claim a complete five-panel installed set only if “observed complete” is allowed to mean installed count and role set, with the side-sign correspondence qualified. As written, marking all five exact mappings observed overclaims.
+- The launch record can bind complete count evidence to `small-construction-seat-32.5`, not frame31, but the same side-a/b correspondence issue applies.
+- Current stage semantics do not yet accept the proposed launch record as-is: `checkSourcePieces` requires `record.frameId === stage.frameId`, while `smallRamp()` still has `small-launch` bound to frame31. Moving the completed-set binding to 32.5 requires a matching model/source-stage binding change after review.
+
+Ready status: **BLOCK for implementation as written.** The evidence supports complete installed source counts for the wedge at 27s and launch at 32.5s, but not exact same-shape side identity mappings as observed, and not any fidelity, final-stage, geometry, release, or car-run acceptance.

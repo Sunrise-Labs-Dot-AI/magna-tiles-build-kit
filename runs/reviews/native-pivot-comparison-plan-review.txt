@@ -1,0 +1,7 @@
+CLEAN.
+
+Read-only review only: no native runs, no edits, no forced findings.
+
+I checked the plan against the native probe, corrected native archive reviews, geometric pivot plan/result review, `createMagneticPhysicsModel`, `createEngineWorld`, joint construction, break sampling, and Vitest config shape. The plan preserves runtime3a2, keeps implementation off-path before native world construction, uses offset0 as an exact replay control, records provenance tightly, and keeps the fixed surface pivot framed as a conditional diagnostic rather than a universal physical or magnetic model.
+
+No concrete blocker found in transform semantics, model injection, offset0 controls, observer fidelity, provenance, or interpretation boundaries.

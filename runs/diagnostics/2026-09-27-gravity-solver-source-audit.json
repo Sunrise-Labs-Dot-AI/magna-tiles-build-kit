@@ -1,0 +1,25 @@
+{
+  "scope": "Read-only matched native source and completed gravity trace audit; no runtime/test tolerance change.",
+  "crate": "rapier3d",
+  "version": "0.30.1",
+  "crateChecksum": "5bd27b8eb36d0833fa0f2aea40164fabfad0fc34b9932286ae9e84f3452f5364",
+  "inputLock": "vendor/rapier-contact/build/Cargo.lock",
+  "inputLockSha256": "f6266b2e2001d89fddd49df8d49517e10ddd93cf5a55555f11956ad1002581c3",
+  "localSourceRoot": "/tmp/magnatiles-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rapier3d-0.30.1",
+  "localCrateArchive": "/tmp/magnatiles-rust-tools/cargo/registry/cache/index.crates.io-1949cf8c6b5b557f/rapier3d-0.30.1.crate",
+  "verifiedSourceHashes": {
+    "src/dynamics/solver/island_solver.rs": "52de0159617d386fa6ef29db170c1f0dc67fa2d54af19920d4631284c850f1f9",
+    "src/dynamics/solver/velocity_solver.rs": "5e114a81722e9da0dc65ea52add92c3916551b0bec53bcb7f6514c10cb07934b",
+    "src/dynamics/rigid_body_components.rs": "53cb27cee74609a5e77dea0a13401dfec17fce2576f5d942d39e8275de2511f6"
+  },
+  "facts": [
+    "island_solver.rs adds island additional solver iterations to the base count and divides dt by that count.",
+    "velocity_solver.rs computes force times effective inverse mass times the divided dt, then adds that increment in each small step.",
+    "Application bodies request8 additional iterations on top of the configured16; confirm the actual body values in the native gravity replay.",
+    "rigid_body_components.rs computes user force plus gravity times mass times gravity scale before the velocity solver; all operators use Real=f32 for this backend."
+  ],
+  "limits": [
+    "This is a free body scalar velocity recurrence, not a contact, constraint, damping or trajectory model.",
+    "No production physical tolerance changes are proposed."
+  ]
+}

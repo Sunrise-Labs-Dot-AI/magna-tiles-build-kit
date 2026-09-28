@@ -1,0 +1,20 @@
+{
+  "scope": "Fresh executed generic fixtures versus qualified base; no restamping.",
+  "baselineArchive": "runs/diagnostics/2026-09-27-final-qualification.generic-assembly.verification_replication_assembly-fixture.json.gz",
+  "baselineRawSha256": "eda4cd90b47cad2a254103b2a5a472731a3989b9f84b3ab0d18812efffdc113c",
+  "currentOutput": "verification/replication/assembly-fixture.json",
+  "currentSha256": "d769c953a30421684dc7960a5cd14661dbccc0e384372f0c2378df2809d4b3a5",
+  "differentLeaves": [
+    [
+      ".generatedAt",
+      "2026-09-28T03:07:33.651Z",
+      "2026-09-28T07:00:36.569Z"
+    ],
+    [
+      ".validationCodeHash",
+      "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+      "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a"
+    ]
+  ],
+  "allFiveFixtureBodiesAndPhysicalResultsIdentical": true
+}

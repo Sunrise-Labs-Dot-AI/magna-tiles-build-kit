@@ -1,0 +1,13 @@
+CLEAN.
+
+I think this is legitimate explicit no-new-join table behavior, not masking a required assembly/contact condition.
+
+Why it holds:
+- Caller narrows only the table target connection set: [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:252) uses nominal poses but `current.connections`, so the retained nominal lower/support proposal is not requested.
+- Helper still rejects cross joins from either side: [prepared-placement.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/prepared-placement.ts:58).
+- The narrowed connection set survives `transferTarget`: [prepared-placement.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/prepared-placement.ts:75).
+- It still checks actual continuity, complete component movement, separate component contacts, free table release, no earned joints, and unchanged active joints: [prepared-placement.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/prepared-placement.ts:47), [prepared-placement.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/prepared-placement.ts:93), [prepared-placement.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/prepared-placement.ts:102).
+- Table release requires measured table bearing contact: [seating.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/seating.ts:179).
+- The medium assertion documents the exact integration boundary: nominal proposal retained, terminal actual connections unchanged, no lower/support id published: [medium-assembly.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/medium-assembly.test.ts:108).
+
+Confidence limits: read-only review only. I did not run the long physical tests, and `git status` was noisy under the read-only sandbox, though it completed. I scoped inspection to the requested table target construction, helper guards, relevant caller context, and named assertions.

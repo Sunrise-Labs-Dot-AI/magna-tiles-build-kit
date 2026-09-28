@@ -1,0 +1,8 @@
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+
+ Test Files  1 passed (1)
+      Tests  17 passed (17)
+   Start at  05:29:43
+   Duration  417.03s (transform 129ms, setup 0ms, import 180ms, tests 416.76s, environment 0ms)

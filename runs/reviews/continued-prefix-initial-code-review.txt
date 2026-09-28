@@ -1,0 +1,11 @@
+Found one blocking acceptance gap.
+
+**Finding:** Future panels can still change current assembly physics through the stage-level floor.
+
+`runAssemblyStage` computes `floorY` from the entire nominal target stage before any operation runs: [assembly.ts:176-178](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:176). If a later, unplaced wall or roof panel sits lower than the current prefix, every current support/carry/docking call gets that future-derived `floorY` through lines like [assembly.ts:253](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:253), [assembly.ts:418](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:418), and [assembly.ts:504](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:504). That affects engine target offsets in `createMagneticPhysicsModel`: [physics-model.ts:73-75](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/physics-model.ts:73).
+
+Reproduction: add a future stage panel below the present prefix, like the insertion unit test does at [insertion-path.test.ts:97-104](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/insertion-path.test.ts:97), but inside `continuedPrefixFixture(..., true)`. The current prefix operation should be byte-identical to the no-future case. With the current assembly code, the shared `floorY` can differ before that future panel is placed.
+
+Suggested fix: derive the assembly floor from only present panels at each boundary, or carry the predecessor workspace’s fixed floor until a panel is actually introduced. Add a continued-prefix regression with a future panel below the prefix and assert the captured `floorY` and physics inputs match the no-future case.
+
+I did not run tests, per your instruction not to run expensive assembly tests.

@@ -7,7 +7,7 @@ import {
 } from "@/lib/builder/operations";
 import { readBuildDraft } from "@/lib/builder/storage";
 import { RawOverlapError } from "@/lib/engine";
-import { ENGINE_VALID_LIBRARY_BUILD_IDS } from "@/verification/engine-valid-builds";
+import { RAW_GEOMETRY_LIBRARY_BUILD_IDS } from "@/verification/engine-valid-builds";
 
 describe("overlap is systematically impossible, not just flagged", () => {
   it("strict assembly throws on a draft whose tiles interpenetrate", () => {
@@ -18,7 +18,7 @@ describe("overlap is systematically impossible, not just flagged", () => {
     expect(() => assembleBuildGraph(draft, { strict: true })).toThrow(RawOverlapError);
   });
 
-  it.each(ENGINE_VALID_LIBRARY_BUILD_IDS)(
+  it.each(RAW_GEOMETRY_LIBRARY_BUILD_IDS)(
     "strict assembly accepts engine-valid library build %s",
     async (id) => {
       const draft = await readBuildDraft(id);

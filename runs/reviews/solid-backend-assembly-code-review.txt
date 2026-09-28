@@ -1,0 +1,8 @@
+Found one required correctness finding.
+
+**Finding**
+- [lib/engine/physics-backend.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/physics-backend.ts:93) only ownership-guards `contactPair`, but the app-used seating path calls inherited `World.contactPairsWith` at [lib/replication/seating.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/seating.ts:141). That method can still be invoked with a collider from another Rapier world and enter WASM before the wrapper checks ownership. Failure scenario: any app path holding `engine.world` and a stale/foreign collider can call `contactPairsWith(foreignCollider, ...)`; unlike `contactPair`, `createCollider`, and `removeCollider`, this bypasses the guard the change is relying on. The table-bearing scan currently passes an owned collider, but the guarded backend is incomplete on an exposed app-used method.
+
+No other required correctness findings in the requested scope from this pass. I did not edit files.
+
+Implementer resolution: ACCEPT. World.contactPairsWith now checks the collider's ownership/lifetime before calling the upstream method. Boundary tests exercise both a foreign collider and a removed collider, and a valid owned query. A search of all engine/planner/replication World calls found no additional app-used object-ingress methods. The full suite passes 460 tests with one skipped. Fresh source construction passes all three small-ramp stages and all three seeds against this change.

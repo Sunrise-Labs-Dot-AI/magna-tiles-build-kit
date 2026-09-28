@@ -1,0 +1,100 @@
+{
+  "baselineCommit": "05e3775",
+  "fixture": "48-tile four-step staircase, 300 sweeps with 0.00001-inch translation, floor -100 to isolate pairs",
+  "before": {
+    "count": 300,
+    "tiles": 48,
+    "milliseconds": 424.61816699999997,
+    "result": {
+      "peakSolidOverlap": 8.881784197001252e-16,
+      "peakGroundPenetration": 0,
+      "peakSolidPair": [
+        "riser-3-bottom-1-1",
+        "riser-3-left-1-1"
+      ]
+    }
+  },
+  "after": {
+    "count": 300,
+    "tiles": 48,
+    "milliseconds": 195.907375,
+    "result": {
+      "peakSolidOverlap": 8.881784197001252e-16,
+      "peakGroundPenetration": 0,
+      "peakSolidPair": [
+        "riser-3-bottom-1-1",
+        "riser-3-left-1-1"
+      ]
+    }
+  },
+  "ratio": 2.1674435023183785,
+  "scope": "Single local microbenchmark, not a complete harness latency guarantee. Five-step solver before optimization exceeded 240000 ms in two fresh runs.",
+  "fiveStepAfter": {
+    "status": "solved",
+    "milliseconds": 170396,
+    "attempts": 1,
+    "explanation": "Solved without relaxing the intent contract after 1 evaluated candidate(s).",
+    "evidence": [
+      {
+        "id": "input",
+        "label": "Valid catalog geometry",
+        "passed": true,
+        "expected": "Finite rigid tiles, unique IDs and valid references",
+        "actual": "valid"
+      },
+      {
+        "id": "resolved-intent",
+        "label": "Complete intent contract",
+        "passed": true,
+        "expected": "No unresolved clauses",
+        "actual": "resolved",
+        "repair": "intent"
+      },
+      {
+        "id": "stair-treads",
+        "label": "Ascending usable treads",
+        "passed": true,
+        "expected": "5 distinct ascending 3-inch risers",
+        "actual": "5 levels: 3.1, 6.1, 9.1, 12.1, 15.1 in"
+      },
+      {
+        "id": "inventory",
+        "label": "Piece and inventory budget",
+        "passed": true,
+        "expected": "Unlimited pieces",
+        "actual": "70 pieces; inventory limits disabled",
+        "repair": "budget"
+      },
+      {
+        "id": "structure",
+        "label": "Geometry, joins and nominal structure",
+        "passed": true,
+        "expected": "No intersections or unsupported joints; stands under gravity",
+        "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 246 valid magnetic joint(s)\nadvisory validateBuild status: error\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.009 in; 886 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+        "repair": "reinforce"
+      },
+      {
+        "id": "release-sweep",
+        "label": "Release robustness",
+        "passed": true,
+        "expected": "All 3 releases; peak corner displacement \u22640.95 in; table penetration \u22640.03 in; 90 consecutive rest steps",
+        "actual": "seed 0: 0.280 in; table 0.009 in; 887 rest steps; settled intent passed; seed 17: 0.280 in; table 0.009 in; 886 rest steps; settled intent passed; seed 53: 0.280 in; table 0.009 in; 886 rest steps; settled intent passed",
+        "repair": "reinforce"
+      },
+      {
+        "id": "assembly",
+        "label": "Stable completed assembly stages",
+        "passed": true,
+        "expected": "Every completed geometry-derived stage stands; hand access and within-stage stability are not modeled",
+        "actual": "step 1: 26 pieces, stands; step 2: 17 pieces, stands; step 3: 13 pieces, stands; step 4: 9 pieces, stands; step 5: 5 pieces, stands",
+        "repair": "sequence"
+      }
+    ]
+  },
+  "fullBenchmark": {
+    "correct": 25,
+    "total": 25,
+    "fiveStepMilliseconds": 153688,
+    "perBriefBudgetMilliseconds": 240000
+  }
+}

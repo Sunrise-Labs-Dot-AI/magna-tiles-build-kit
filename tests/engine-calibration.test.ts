@@ -1,10 +1,11 @@
 import { describe, expect, it } from "vitest";
-import largeCarRampDraft from "@/build-drafts/large-car-ramp.json";
 import mediumCarRampDraft from "@/build-drafts/medium-car-ramp.json";
 import smallCarRampDraft from "@/build-drafts/small-car-ramp.json";
 import { gateBuild, MAGNET_HOLD_FORCE, rollTest, simulate, TILE_FRICTION, TILE_MASS_KG, TILE_THICKNESS } from "@/lib/engine";
 import type { EngineBuild } from "@/lib/engine";
 import type { MagneticConnection, TileInstance } from "@/lib/magnetic-tiles/types";
+import { courseCandidates } from "@/lib/planner/candidates";
+import { parseDesignBrief } from "@/lib/planner/brief";
 
 describe("headless Magna-Tiles physics calibration", () => {
   it("documents the assumed and calibrated physical constants in one place", () => {
@@ -15,21 +16,29 @@ describe("headless Magna-Tiles physics calibration", () => {
     expect(Number.isFinite(MAGNET_HOLD_FORCE)).toBe(true);
   });
 
-  it("keeps the approved small car ramp standing and rollable", async () => {
+  it("rejects the historical small ramp's missing rest even when its ball rolls", async () => {
     const simulation = await simulate(smallCarRampDraft as EngineBuild);
     const roll = await rollTest(smallCarRampDraft as EngineBuild);
 
-    expect(simulation.stands).toBe(true);
+    expect(simulation.stands).toBe(false);
+    expect(simulation.settledSteps).toBeLessThan(90);
+    expect(simulation.peakGroundPenetration).toBeLessThanOrEqual(.03);
     expect(simulation.poppedJoints).toEqual([]);
-    expect(roll).toEqual({ reachedBottom: true, fellOff: false });
-    await expect(gateBuild(smallCarRampDraft as EngineBuild)).resolves.toMatchObject({ passed: true });
+    expect(roll).toMatchObject({ reachedBottom: true, fellOff: false });
+    await expect(gateBuild(smallCarRampDraft as EngineBuild)).resolves.toMatchObject({ passed: false });
   });
 
-  it("keeps the approved medium car ramp rollable through a clear descent", async () => {
+  it("rejects the historical medium ramp's missing rest even when its ball rolls", async () => {
+    const simulation = await simulate(mediumCarRampDraft as EngineBuild);
     const roll = await rollTest(mediumCarRampDraft as EngineBuild);
 
-    expect(roll).toEqual({ reachedBottom: true, fellOff: false });
-    await expect(gateBuild(mediumCarRampDraft as EngineBuild)).resolves.toMatchObject({ passed: true });
+    expect(simulation.stands).toBe(false);
+    expect(simulation.settledSteps).toBeLessThan(90);
+    expect(simulation.peakGroundPenetration).toBeLessThanOrEqual(.03);
+    expect(simulation.solidFailures).toEqual([]);
+    expect(simulation.poppedJoints).toEqual([]);
+    expect(roll).toMatchObject({ reachedBottom: true, fellOff: false });
+    await expect(gateBuild(mediumCarRampDraft as EngineBuild)).resolves.toMatchObject({ passed: false });
   });
 
   it("rejects a wall-blocked ramp path even when the build stands", async () => {
@@ -39,7 +48,8 @@ describe("headless Magna-Tiles physics calibration", () => {
     const verdict = await gateBuild(blockedRamp);
 
     expect(simulation.stands).toBe(true);
-    expect(roll).toEqual({ reachedBottom: false, fellOff: true });
+    expect(simulation.solidFailures).toEqual([]);
+    expect(roll).toMatchObject({ reachedBottom: false, fellOff: true });
     expect(verdict.passed).toBe(false);
     expect(verdict.reasons.join(" ")).toContain("roll test reachedBottom=false fellOff=true");
   });
@@ -50,16 +60,20 @@ describe("headless Magna-Tiles physics calibration", () => {
     expect(simulation.stands).toBe(false);
   });
 
-  it("rejects a horizontal deck with an unsupported center seam", async () => {
+  it("does not mistake a horizontal load-bearing span for a downhill ramp", async () => {
     const unsupportedSpan = unsupportedCenterSeamSpanFixture();
     const simulation = await simulate(unsupportedSpan);
     const verdict = await gateBuild(unsupportedSpan);
 
-    expect(simulation.stands).toBe(false);
+    // With rigid contact the finite panel edges can bear this load. It is not
+    // an unsupported hinge fixture; the inverted hinge tests exercise free sag.
+    expect(simulation.stands).toBe(true);
+    expect(simulation.settledSteps).toBeGreaterThanOrEqual(90);
+    expect(simulation.peakGroundPenetration).toBeLessThanOrEqual(.03);
     expect(verdict.passed).toBe(false);
     expect(verdict.reasons).toContain("pre-filter passed: no raw tile overlaps");
     expect(verdict.reasons.join(" ")).toContain("pre-filter passed:");
-    expect(verdict.reasons.join(" ")).toContain("engine failed: build does not stand");
+    expect(verdict.reasons.join(" ")).toContain("roll test reachedBottom=false");
   });
 
   it("rejects a reproducible floating-arm fixture without depending on deleted git history", async () => {
@@ -78,7 +92,9 @@ describe("headless Magna-Tiles physics calibration", () => {
 });
 
 function wallBlockedLargeRampFixture(): EngineBuild {
-  const blocked = structuredClone(largeCarRampDraft as EngineBuild);
+  // Use the generated variant seated on actual finite support faces. The
+  // historical center-plane draft itself has an overlapping launch platform.
+  const blocked: EngineBuild = courseCandidates(parseDesignBrief("a downhill racecourse"))[0].build;
   const verticalWallBasis: TileInstance["basis"] = {
     xAxis: { x: 0, y: 0, z: 1 },
     yAxis: { x: 0, y: 1, z: 0 },

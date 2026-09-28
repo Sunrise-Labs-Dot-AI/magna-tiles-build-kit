@@ -1,0 +1,7 @@
+CLEAN.
+
+Confidence limits: read-only review only. I inspected the current diff and untracked source/test files, ignored `tests/tmp-medium-placement-capture.test.ts`, and did not run expensive physical tests or inspect media.
+
+The two follow-up changes hold their stated boundaries: `transitHeight: 3` changes only the proposed lower-placement path, not geometry, physics, tolerances, or source evidence; and `prepared-placement.ts` now rejects cross-component edges from both actual and nominal connections before engine creation, with an intended-cross-join regression covering the missed guard.
+
+Not certifying the pending full medium physical run. This review only says I found no actionable implementation or acceptance-boundary defect in the current code.

@@ -1,0 +1,8 @@
+VERIFIED/CLEAN.
+
+The two BLOCK findings are resolved in the amended plan:
+
+- Source-stage piece accounting is now explicitly machine-checkable, with `observed`, `minimumVisible`, `inferred`, and `proposed` semantics, source/frame/stage binding, exact/contradiction/insufficient-evidence outcomes, and negative cases for prose-only binding, partial-stage overclaiming, duplicate/unknown mappings, and visible-minimum misuse.
+- Holdout audit/reservation is now a prerequisite before topology selection or fitting, and the increment is explicitly limited to fitting/construction. Independent-source acceptance is deferred to a later blind evaluation after a reviewed `medium-ramp` freeze.
+
+I do not see a remaining concrete acceptance blocker in the plan itself. The plan can still fail during execution if the new artifact reports insufficient evidence for source-stage agreement, but that is now a proper gate outcome rather than a planning defect.

@@ -1,0 +1,60 @@
+--- a/src/dynamics/joint.rs
++++ b/src/dynamics/joint.rs
+@@ -279,6 +279,15 @@
+         )
+     }
+ 
++    /// Native free hinge with independently expressed body-local frames.
++    #[cfg(feature = "dim3")]
++    pub fn revoluteFrames(anchor1: &RawVector, axes1: &RawRotation, anchor2: &RawVector, axes2: &RawRotation) -> Self {
++        Self(GenericJointBuilder::new(JointAxesMask::LOCKED_REVOLUTE_AXES)
++            .local_frame1(Isometry::from_parts(anchor1.0.into(), axes1.0))
++            .local_frame2(Isometry::from_parts(anchor2.0.into(), axes2.0))
++            .into())
++    }
++
+     /// Create a new joint descriptor that builds Revolute joints.
+     ///
+     /// A revolute joint removes all degrees of freedom between the affected
+--- a/src.ts/dynamics/impulse_joint.ts
++++ b/src.ts/dynamics/impulse_joint.ts
+@@ -582,6 +582,20 @@
+     }
+     // #endif
+ 
++    // #if DIM3
++    /** A native free hinge with immutable, independent body-local frames. */
++    public static revoluteFrames(anchor1: Vector, frame1: Rotation, anchor2: Vector, frame2: Rotation): JointData {
++        for (const anchor of [anchor1,anchor2]) {
++            if (![anchor.x,anchor.y,anchor.z].every(Number.isFinite)) throw new Error("Invalid hinge anchor");
++        }
++        for (const frame of [frame1,frame2]) {
++            if (![frame.x,frame.y,frame.z,frame.w].every(Number.isFinite) || Math.abs(Math.hypot(frame.x,frame.y,frame.z,frame.w)-1)>1e-5) throw new Error("Invalid hinge frame");
++        }
++        const res=new JointData();res.anchor1=anchor1;res.anchor2=anchor2;res.frame1=frame1;res.frame2=frame2;res.jointType=JointType.Revolute;
++        return res;
++    }
++    // #endif
++
+     public intoRaw(): RawGenericJoint {
+         let rawA1 = VectorOps.intoRaw(this.anchor1);
+         let rawA2 = VectorOps.intoRaw(this.anchor2);
+@@ -666,9 +680,15 @@
+                 result = RawGenericJoint.spherical(rawA1, rawA2);
+                 break;
+             case JointType.Revolute:
+-                rawAx = VectorOps.intoRaw(this.axis);
+-                result = RawGenericJoint.revolute(rawA1, rawA2, rawAx);
+-                rawAx.free();
++                if (this.frame1 && this.frame2) {
++                    const f1=RotationOps.intoRaw(this.frame1),f2=RotationOps.intoRaw(this.frame2);
++                    try { result=RawGenericJoint.revoluteFrames(rawA1,f1,rawA2,f2); }
++                    finally { f1.free();f2.free(); }
++                } else {
++                    rawAx = VectorOps.intoRaw(this.axis);
++                    result = RawGenericJoint.revolute(rawA1, rawA2, rawAx);
++                    rawAx.free();
++                }
+                 break;
+             // #endif
+         }

@@ -1,0 +1,17 @@
+{
+  "scope": "Complete unchanged medium assembly regression test, running alone. All assertions passed. This is not complete medium assembly or source acceptance; five later authored stages remain unverified. Full two-worker suite and 900000 ms source-report execution are separate pending gates.",
+  "validationCodeHash": "7a8ad00bf79266e385e434dcb9bdb6f7fabe98d1511f8564b36cd81496c93e29",
+  "runtimeFrozenAndFinalHashMatched": true,
+  "testAllowanceMs": 1200000,
+  "testSeconds": 933.47,
+  "totalSeconds": 933.76,
+  "exitCode": 0,
+  "testsPassed": 1,
+  "inputHashes": {
+    "tests/medium-assembly.test.ts": "0734bdb64cca66e2cd058afebd8b8149030dc6467910eb7e5abb18fe20cad8f0",
+    "vitest.config.ts": "593a4047719834d7a45c913ef7f579316637a878fa4f8a6fd03419342575721a",
+    "lib/replication/insertion.ts": "cdb9e91c15a90de97ebedb612d1938f797fdfdb7ee010d6ee9f1ae326d2dabaa",
+    "lib/replication/rotation-clearance.ts": "55ecce24778017923c27b224a07880b79b0fc27f47e34c69ac60837c04ccb485"
+  },
+  "logSha256": "0280c56c7dd2275b37e182409909c4a064e3ccc1c411ce99e705303970f811ce"
+}

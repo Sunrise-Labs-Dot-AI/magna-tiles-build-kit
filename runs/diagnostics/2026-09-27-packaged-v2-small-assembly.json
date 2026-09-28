@@ -1,0 +1,34 @@
+{
+  "backend": "js0.19.2-rust0.30.1-parry0.25.1-sat-cache2-f32-abi1-a7ffc0b88b1da922-profile10e2e81b05c3c518",
+  "scope": "Fresh source small-ramp assembly only; original settings. Superseded for acceptance by pending finite auxiliary-witness correction. Source fidelity and car behavior are separate.",
+  "stages": [
+    {
+      "stageId": "small-wedge",
+      "status": "pass",
+      "dockingPolicy": "support-aligned",
+      "attemptedPolicies": [
+        "clear-first",
+        "support-aligned"
+      ],
+      "detail": "All operations passed with three perturbation seeds, at most two panel grips and mandatory free checkpoints. Fingertip-proxy simulation only; measured human grip and physical magnetic forces remain unverified."
+    },
+    {
+      "stageId": "small-launch",
+      "status": "pass",
+      "dockingPolicy": "clear-first",
+      "attemptedPolicies": [
+        "clear-first"
+      ],
+      "detail": "All operations passed with three perturbation seeds, at most two panel grips and mandatory free checkpoints. Fingertip-proxy simulation only; measured human grip and physical magnetic forces remain unverified."
+    },
+    {
+      "stageId": "small-final",
+      "status": "pass",
+      "dockingPolicy": "clear-first",
+      "attemptedPolicies": [
+        "clear-first"
+      ],
+      "detail": "All operations passed with three perturbation seeds, at most two panel grips and mandatory free checkpoints. Fingertip-proxy simulation only; measured human grip and physical magnetic forces remain unverified."
+    }
+  ]
+}

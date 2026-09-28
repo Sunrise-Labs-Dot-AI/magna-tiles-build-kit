@@ -1,0 +1,584 @@
+{
+  "scope": "Exact JSON payload comparison to qualified245e440 baseline. Source accounting, source checkpoint and instruction/provenance differences are listed separately; identical physical trajectories do not establish complete replica acceptance.",
+  "baselineContext": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+  "currentContext": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+  "rows": [
+    {
+      "id": "jet",
+      "beforeSha256": "1ffe333f83bd2b309b53c8d7b03b33fa4c70e567c90daf4e0978df610e729d86",
+      "afterSha256": "5c29f9ec378a8335411da2bfd5a6e44fff89cd55ba4a710f4fbb2800779e7767",
+      "identicalPhysicalAndProjectionSections": [
+        {
+          "path": "report.projections",
+          "identical": true,
+          "sha256": "7071d080783ebf5b02961262e4e6ebb8998ac461c868843feb747ecc9c7ca0e8"
+        },
+        {
+          "path": "report.releases",
+          "identical": true,
+          "sha256": "9b8f7ec2138e08234074edc42cd979c1dc5edfba96da34626a4cbb2a78e99736"
+        },
+        {
+          "path": "report.stages",
+          "identical": true,
+          "sha256": "835de80ffedeb9e7eeb2e4d12787a85c7ef94252258afdd3a185148a5bba5521"
+        },
+        {
+          "path": "report.constructionPaths",
+          "identical": true,
+          "sha256": "9e76e58c1c6ac88bd2b9291d3e91791d6610e907653478793074f25d86aaec61"
+        },
+        {
+          "path": "report.assemblySimulation",
+          "identical": true,
+          "sha256": "2cec9b43edbba624124d0c4df91c62faffb696bbc6070c9a154115d70d64fc0e"
+        },
+        {
+          "path": "report.holdoutCoverage",
+          "identical": true,
+          "sha256": "ce44d4ecda6fe1ee6b58fe4cd0d31b58e044dfebf18ccb909ffb1c917f0e9bbc"
+        },
+        {
+          "path": "report.carTrials",
+          "identical": true,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "path": "replica.build",
+          "identical": true,
+          "sha256": "630895ec1f2c976866dfe93d81f78c49c388bae0529f36d6ded4df513b324600"
+        },
+        {
+          "path": "replica.inventory",
+          "identical": true,
+          "sha256": "89546d2a06f6d0019a9f30bd7f3276077ed1167c3ed580d544eb48e0a9989e4b"
+        },
+        {
+          "path": "replica.construction",
+          "identical": true,
+          "sha256": "eb045d78d273107348b0300c01d29b7552d622abbc6faf81b3ec55359aa9950c"
+        },
+        {
+          "path": "replica.route",
+          "identical": true,
+          "sha256": "eb045d78d273107348b0300c01d29b7552d622abbc6faf81b3ec55359aa9950c"
+        }
+      ],
+      "differences": [
+        {
+          "path": "report.validationCodeHash",
+          "before": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+          "after": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a"
+        },
+        {
+          "path": "report.generatedAt",
+          "before": "2026-09-28T03:07:34.166Z",
+          "after": "2026-09-28T20:52:55.378Z"
+        },
+        {
+          "path": "report.sourceStagePieces.0.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.1.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.2.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.3.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.4.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.5.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.6.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.7.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.8.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.9.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.10.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.11.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.12.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.13.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.14.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.15.observedSets",
+          "after": []
+        }
+      ]
+    },
+    {
+      "id": "small-ramp",
+      "beforeSha256": "6b5ef672f914286866e42a4b0f08b8f84f7de532969a2cf4003f6de28445a8a7",
+      "afterSha256": "6d993aa7f7e373ac74a31aa2b942e2d5f9585cb627ff4e6a06a3ce4d99bf5f1a",
+      "identicalPhysicalAndProjectionSections": [
+        {
+          "path": "report.projections",
+          "identical": true,
+          "sha256": "94b03f1bf41e3e53b996a980a41c20529b9798532de5c907a40d1932e4d54e11"
+        },
+        {
+          "path": "report.releases",
+          "identical": true,
+          "sha256": "ab5ae71928cd838a158742f7be4e7f52b6d26d742aae77b1f918e86882298bb5"
+        },
+        {
+          "path": "report.stages",
+          "identical": true,
+          "sha256": "3310e1f65a5d6357ea1a1c07b6a5cdbfef52a03b7d4210507ac7069f9efe9314"
+        },
+        {
+          "path": "report.constructionPaths",
+          "identical": true,
+          "sha256": "9941bcb60fed9ee3c7bac50b0d7ee00a5caa854996513787dcb46e8622a66fbd"
+        },
+        {
+          "path": "report.assemblySimulation",
+          "identical": true,
+          "sha256": "c179c3067fd606173c91cd7bc88ac8b98e039ff699e4314708851fd290d0e3e1"
+        },
+        {
+          "path": "report.holdoutCoverage",
+          "identical": true,
+          "sha256": "a608e14664c6a469eaaf0a7034bbe53fece035569342e0652c3249f86cdea542"
+        },
+        {
+          "path": "report.carTrials",
+          "identical": true,
+          "sha256": "089d320b413dacbeeb5e0a73ac64c2de4caded08aaf0ac9baba1ec364283ac85"
+        },
+        {
+          "path": "replica.build",
+          "identical": true,
+          "sha256": "576b51983908dd12ccd1ff0c5b59bef696488404fe45dd9746244c24f3a9c3c3"
+        },
+        {
+          "path": "replica.inventory",
+          "identical": true,
+          "sha256": "1cb92e68bac47a3c21c77a9a4ba84a852bbc5cbcd657fe3c08995e59ca5ba9be"
+        },
+        {
+          "path": "replica.construction",
+          "identical": true,
+          "sha256": "6b2b07f6b1cc0a81d62a718ecacb194c36fd9d5f204616780825aef758b5120a"
+        },
+        {
+          "path": "replica.route",
+          "identical": true,
+          "sha256": "a34103da10a3b63d8eaeddea53d3d2f727bd148d316a5fe0bbd8ee7eb1ba6633"
+        }
+      ],
+      "differences": [
+        {
+          "path": "replica.stages.1.frameId",
+          "before": "small-launch",
+          "after": "small-construction-seat-32.5"
+        },
+        {
+          "path": "replica.stages.1.instruction",
+          "before": "Place the red back square flat on the table. Hold the red roof upright at its far edge, then attach both green sides. Henry turns this completed module before joining it to the ramp; that transfer needs its own motion check.",
+          "after": "Place the red back square flat on the table. Hold the red roof upright at its far edge, then attach both green sides. The 31-second source view shows assembly in progress; the 32.5-second view shows all four panels attached. Henry turns this completed module before joining it to the ramp; that transfer needs its own motion check."
+        },
+        {
+          "path": "report.fingerprint",
+          "before": "e3a6803496aec8e47a23abbc7fd60688fc02ab055c818a96cf0ced9a60459bd2",
+          "after": "b12f8b6298e3eb9b4736b4fbb9d838a3580da85db5c71c83f361dcea9ecff885"
+        },
+        {
+          "path": "report.validationCodeHash",
+          "before": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+          "after": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a"
+        },
+        {
+          "path": "report.generatedAt",
+          "before": "2026-09-28T03:08:12.756Z",
+          "after": "2026-09-28T20:53:33.887Z"
+        },
+        {
+          "path": "report.checks.sourceStages.detail",
+          "before": "0/3 source-stage piece sets established. small-wedge: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. small-launch: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. small-final: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
+          "after": "2/3 source-stage piece sets established. small-final: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts."
+        },
+        {
+          "path": "report.instructions.1.instruction",
+          "before": "Place the red back square flat on the table. Hold the red roof upright at its far edge, then attach both green sides. Henry turns this completed module before joining it to the ramp; that transfer needs its own motion check. New parts: P6 (Small square), P7 (Small square), P8 (Right triangle), P9 (Right triangle). Joins present after assembly checks: P6 edge 2 to P7 edge 2; P7 edge 1 to P8 edge 3; P6 edge 1 to P8 edge 1; P7 edge 3 to P9 edge 3; P6 edge 3 to P9 edge 1. Source frame: small-launch. Keep this module in your hand; no unattended release is asserted.",
+          "after": "Place the red back square flat on the table. Hold the red roof upright at its far edge, then attach both green sides. The 31-second source view shows assembly in progress; the 32.5-second view shows all four panels attached. Henry turns this completed module before joining it to the ramp; that transfer needs its own motion check. New parts: P6 (Small square), P7 (Small square), P8 (Right triangle), P9 (Right triangle). Joins present after assembly checks: P6 edge 2 to P7 edge 2; P7 edge 1 to P8 edge 3; P6 edge 1 to P8 edge 1; P7 edge 3 to P9 edge 3; P6 edge 3 to P9 edge 1. Source frame: small-construction-seat-32.5. Keep this module in your hand; no unattended release is asserted."
+        },
+        {
+          "path": "report.sourceStagePieces.0.status",
+          "before": "unverified",
+          "after": "pass"
+        },
+        {
+          "path": "report.sourceStagePieces.0.detail",
+          "before": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
+          "after": "5 installed panels match the complete reviewed source-stage accounting. 2 panels belong to observed interchangeable sets; individual member identities remain unresolved. Pose, joins, motion and independent final-view fidelity remain separate checks."
+        },
+        {
+          "path": "report.sourceStagePieces.0.observedTileIds.0",
+          "after": "small-back"
+        },
+        {
+          "path": "report.sourceStagePieces.0.observedTileIds.1",
+          "after": "small-deck-2"
+        },
+        {
+          "path": "report.sourceStagePieces.0.observedTileIds.2",
+          "after": "small-deck-1"
+        },
+        {
+          "path": "report.sourceStagePieces.0.unaccountedTileIds.0",
+          "before": "small-side--1"
+        },
+        {
+          "path": "report.sourceStagePieces.0.unaccountedTileIds.1",
+          "before": "small-side-1"
+        },
+        {
+          "path": "report.sourceStagePieces.0.unaccountedTileIds.2",
+          "before": "small-deck-1"
+        },
+        {
+          "path": "report.sourceStagePieces.0.unaccountedTileIds.3",
+          "before": "small-deck-2"
+        },
+        {
+          "path": "report.sourceStagePieces.0.unaccountedTileIds.4",
+          "before": "small-back"
+        },
+        {
+          "path": "report.sourceStagePieces.0.observedSets",
+          "after": [
+            {
+              "sourceSetId": "small-wedge-observed-side-pair",
+              "shape": "isosceles-triangle",
+              "count": 2,
+              "tileIds": [
+                "small-side--1",
+                "small-side-1"
+              ]
+            }
+          ]
+        },
+        {
+          "path": "report.sourceStagePieces.1.frameId",
+          "before": "small-launch",
+          "after": "small-construction-seat-32.5"
+        },
+        {
+          "path": "report.sourceStagePieces.1.status",
+          "before": "unverified",
+          "after": "pass"
+        },
+        {
+          "path": "report.sourceStagePieces.1.detail",
+          "before": "No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
+          "after": "4 installed panels match the complete reviewed source-stage accounting. 2 panels belong to observed interchangeable sets; individual member identities remain unresolved. Pose, joins, motion and independent final-view fidelity remain separate checks."
+        },
+        {
+          "path": "report.sourceStagePieces.1.observedTileIds.0",
+          "after": "launch-back"
+        },
+        {
+          "path": "report.sourceStagePieces.1.observedTileIds.1",
+          "after": "launch-roof"
+        },
+        {
+          "path": "report.sourceStagePieces.1.unaccountedTileIds.0",
+          "before": "launch-roof"
+        },
+        {
+          "path": "report.sourceStagePieces.1.unaccountedTileIds.1",
+          "before": "launch-back"
+        },
+        {
+          "path": "report.sourceStagePieces.1.unaccountedTileIds.2",
+          "before": "launch-side--1"
+        },
+        {
+          "path": "report.sourceStagePieces.1.unaccountedTileIds.3",
+          "before": "launch-side-1"
+        },
+        {
+          "path": "report.sourceStagePieces.1.observedSets",
+          "after": [
+            {
+              "sourceSetId": "small-launch-observed-side-pair",
+              "shape": "right-triangle",
+              "count": 2,
+              "tileIds": [
+                "launch-side--1",
+                "launch-side-1"
+              ]
+            }
+          ]
+        },
+        {
+          "path": "report.sourceStagePieces.2.observedSets",
+          "after": []
+        }
+      ]
+    },
+    {
+      "id": "medium-ramp",
+      "beforeSha256": "ce0197f8993f20d1659aeac9a3a31f95f7aac1c2440034102e907e16f77ad02d",
+      "afterSha256": "9a41b34c683483e68d19a713fa66a65d9e0b5ade31a397737b5466396dd9fec8",
+      "identicalPhysicalAndProjectionSections": [
+        {
+          "path": "report.projections",
+          "identical": true,
+          "sha256": "3d4694e4df0475c0127279b3d36bb269d7537258a90f71706ff0f6c60e6814e7"
+        },
+        {
+          "path": "report.releases",
+          "identical": true,
+          "sha256": "14ea0152145f0eeaeaf4cb9f48bb581b5a2d566b88e474bc7f97127d45764514"
+        },
+        {
+          "path": "report.stages",
+          "identical": true,
+          "sha256": "5660e0fcc2b94b33b82949d32a50ec1f21909dcbcb01b8812a21688bbb9dbea4"
+        },
+        {
+          "path": "report.constructionPaths",
+          "identical": true,
+          "sha256": "17faa68a6a26c657a61c04577bce4fe551b508c68167a8a70cf746c2cbce433a"
+        },
+        {
+          "path": "report.assemblySimulation",
+          "identical": true,
+          "sha256": "43da1b639bda878bf1fd1987741047c8164299e1fd8bbae3a2dd73fd403c57bf"
+        },
+        {
+          "path": "report.holdoutCoverage",
+          "identical": true,
+          "sha256": "ce44d4ecda6fe1ee6b58fe4cd0d31b58e044dfebf18ccb909ffb1c917f0e9bbc"
+        },
+        {
+          "path": "report.carTrials",
+          "identical": true,
+          "sha256": "e998ebd69a1a6af1c41e8bf3a7b9049af3c25aeafeab5138138d2708242e37c6"
+        },
+        {
+          "path": "replica.build",
+          "identical": true,
+          "sha256": "aa438a3f954fed43615bed3eb8bc5d9835b3f5d75414f2ca424b8684ac94ea71"
+        },
+        {
+          "path": "replica.inventory",
+          "identical": true,
+          "sha256": "c8c3f5adb4841c2a509e52089bd48826957b430496317c8e24a355e1d5e40720"
+        },
+        {
+          "path": "replica.construction",
+          "identical": true,
+          "sha256": "fccb9b2166f1463d9ddc46aa6687c5ca044c0a57e0ee34b2ce9de1b528a34c73"
+        },
+        {
+          "path": "replica.route",
+          "identical": true,
+          "sha256": "53725ef6a72e910522b0549a0e2a3817ba087f7c6c62383c07e16cf7cb29e18c"
+        }
+      ],
+      "differences": [
+        {
+          "path": "report.validationCodeHash",
+          "before": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+          "after": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a"
+        },
+        {
+          "path": "report.generatedAt",
+          "before": "2026-09-28T03:12:56.581Z",
+          "after": "2026-09-28T20:58:30.398Z"
+        },
+        {
+          "path": "report.checks.sourceStages.detail",
+          "before": "0/11 source-stage piece sets established. medium-lower: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-upper-preparation: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-support: 0 mapped observed panels; coverage is partial. Visible minimums, inferred and proposed panels cannot establish an exact source-stage set. At least two bounded green square faces are visible. The roughly one-by-one-square footprint challenges the elongated candidate, but hidden face count is unresolved. Visible minima do not establish the full installed set. medium-upper-transfer: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-lower-placement: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-turn: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-lower-walls: 0 mapped observed panels; coverage is partial. Visible minimums, inferred and proposed panels cannot establish an exact source-stage set. Only the first red/orange side module has been placed at 63 seconds. At least two distinct triangular faces are established; hidden counts and correspondence remain unresolved. This is not an observed eight-wall checkpoint. medium-lower-cover: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-turn-cover: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-upper-cover: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-final: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts.",
+          "after": "0/11 source-stage piece sets established. medium-lower: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-upper-preparation: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-support: 0 observed panels; coverage is partial. Visible minimums, inferred and proposed panels cannot establish an exact source-stage set. At least two bounded green square faces are visible. The roughly one-by-one-square footprint challenges the elongated candidate, but hidden face count is unresolved. Visible minima do not establish the full installed set. medium-upper-transfer: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-lower-placement: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-turn: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-lower-walls: 0 observed panels; coverage is partial. Visible minimums, inferred and proposed panels cannot establish an exact source-stage set. Only the first red/orange side module has been placed at 63 seconds. At least two distinct triangular faces are established; hidden counts and correspondence remain unresolved. This is not an observed eight-wall checkpoint. medium-lower-cover: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-turn-cover: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-upper-cover: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts. medium-final: No reviewed piece accounting for this source stage; a frame link alone cannot establish its installed parts."
+        },
+        {
+          "path": "report.sourceStagePieces.0.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.1.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.2.detail",
+          "before": "0 mapped observed panels; coverage is partial. Visible minimums, inferred and proposed panels cannot establish an exact source-stage set. At least two bounded green square faces are visible. The roughly one-by-one-square footprint challenges the elongated candidate, but hidden face count is unresolved. Visible minima do not establish the full installed set.",
+          "after": "0 observed panels; coverage is partial. Visible minimums, inferred and proposed panels cannot establish an exact source-stage set. At least two bounded green square faces are visible. The roughly one-by-one-square footprint challenges the elongated candidate, but hidden face count is unresolved. Visible minima do not establish the full installed set."
+        },
+        {
+          "path": "report.sourceStagePieces.2.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.3.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.4.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.5.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.6.detail",
+          "before": "0 mapped observed panels; coverage is partial. Visible minimums, inferred and proposed panels cannot establish an exact source-stage set. Only the first red/orange side module has been placed at 63 seconds. At least two distinct triangular faces are established; hidden counts and correspondence remain unresolved. This is not an observed eight-wall checkpoint.",
+          "after": "0 observed panels; coverage is partial. Visible minimums, inferred and proposed panels cannot establish an exact source-stage set. Only the first red/orange side module has been placed at 63 seconds. At least two distinct triangular faces are established; hidden counts and correspondence remain unresolved. This is not an observed eight-wall checkpoint."
+        },
+        {
+          "path": "report.sourceStagePieces.6.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.7.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.8.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.9.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.10.observedSets",
+          "after": []
+        }
+      ]
+    },
+    {
+      "id": "large-ramp",
+      "beforeSha256": "949b2f643bb1d4619f2091d0e86054de6bb4049e9b1a97a70dde225b2dddd2ac",
+      "afterSha256": "c5f91d279ff14c2e1430fd9d6a09f24ba041e2cfde5e3ba553dad32f964f9790",
+      "identicalPhysicalAndProjectionSections": [
+        {
+          "path": "report.projections",
+          "identical": true,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "path": "report.releases",
+          "identical": true,
+          "sha256": "3265598a529b9892cc059752b5ae3102f72e5374d11e4eac6e6558cb395ebd24"
+        },
+        {
+          "path": "report.stages",
+          "identical": true,
+          "sha256": "c7347c1a529c8a07872ee6971c7fcfd812cb3d237f3376eac90d5770be5f1a83"
+        },
+        {
+          "path": "report.constructionPaths",
+          "identical": true,
+          "sha256": "777a56363da8e49c640438f495348f9e8afd49a20f7c02861a3512795557684a"
+        },
+        {
+          "path": "report.assemblySimulation",
+          "identical": true,
+          "sha256": "db52f5f1771bad0a13793070903c3c072b93ec3e8176fa9a62c4e70da857ec49"
+        },
+        {
+          "path": "report.holdoutCoverage",
+          "identical": true,
+          "sha256": "ce44d4ecda6fe1ee6b58fe4cd0d31b58e044dfebf18ccb909ffb1c917f0e9bbc"
+        },
+        {
+          "path": "report.carTrials",
+          "identical": true,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "path": "replica.build",
+          "identical": true,
+          "sha256": "16e1d7f9d3c775e0ad6b8a2ee92b4fef39e9fc42d27bca521362bc44e693e66b"
+        },
+        {
+          "path": "replica.inventory",
+          "identical": true,
+          "sha256": "1f80b9e649af1e3cb0c4931e38d8a02d44d0ba514f2841dc8e6be5b03c040cdd"
+        },
+        {
+          "path": "replica.construction",
+          "identical": true,
+          "sha256": "eb045d78d273107348b0300c01d29b7552d622abbc6faf81b3ec55359aa9950c"
+        },
+        {
+          "path": "replica.route",
+          "identical": true,
+          "sha256": "eb045d78d273107348b0300c01d29b7552d622abbc6faf81b3ec55359aa9950c"
+        }
+      ],
+      "differences": [
+        {
+          "path": "report.validationCodeHash",
+          "before": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+          "after": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a"
+        },
+        {
+          "path": "report.generatedAt",
+          "before": "2026-09-28T03:24:25.082Z",
+          "after": "2026-09-28T21:09:57.832Z"
+        },
+        {
+          "path": "report.sourceStagePieces.0.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.1.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.2.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.3.observedSets",
+          "after": []
+        },
+        {
+          "path": "report.sourceStagePieces.4.observedSets",
+          "after": []
+        }
+      ]
+    }
+  ]
+}

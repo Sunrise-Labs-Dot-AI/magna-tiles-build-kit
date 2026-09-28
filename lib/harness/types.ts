@@ -46,6 +46,8 @@ export interface ReleaseTrial {
   passed: boolean;
   peakDisplacement: number;
   finalDisplacement: number;
+  peakGroundPenetration: number;
+  settledSteps: number;
   failedRequirements: string[];
   intentEvidence: Evidence[];
 }

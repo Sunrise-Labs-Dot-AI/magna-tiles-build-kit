@@ -1,0 +1,16 @@
+VERIFIED/CLEAN
+
+I found no concrete actionable defect in the narrow increment.
+
+Reviewed against `runs/2026-09-27-swept-clearance-cost-plan.md` for:
+
+- axis candidate ordering and cross-product operand order
+- `NaN` and signed-zero preservation in axis equality and projection reductions
+- threshold expressions, recursion order, deadline checks, and failure strings
+- per-interval-only prepared geometry with no global cache
+- mutation hazards in implementation and tests
+- negative coverage and frozen oracle integrity
+
+Evidence consulted: `/tmp/magnatiles-swept-clearance-focused.log` shows 4 files / 50 tests passed. The swept-clearance type and lint logs are present and empty. The frozen oracle SHA records match the pre-change `HEAD` contents for `rotation-clearance.ts` and `insertion.ts`.
+
+I am not granting evidence for the native probe, measured medium run, or wider final validation, since those have not run yet.

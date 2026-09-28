@@ -1,0 +1,59 @@
+{
+  "scope": "Regression diagnosis only. Completed scenarios may fail their original physical/test contract. No source or material acceptance.",
+  "context": {
+    "validationCodeHash": "7a8ad00bf79266e385e434dcb9bdb6f7fabe98d1511f8564b36cd81496c93e29",
+    "inputHashes": {
+      "build-drafts/castle.json": "fdfe3598b7203a6f8dea95055668a22e9c429a914e6f1a8d39413aacc769547f",
+      "build-drafts/dog.json": "864533956733ca02cf5337bfab088703eb4e7ace8c2d6bb4ed1d2beac93b6d15",
+      "build-drafts/house.json": "bdde1d0accc4a50edfac6169ed51dd22533f93260c6a129b8571c1bca5daca92",
+      "build-drafts/jet-aircraft.json": "e5c3828b40492dfbf42f30221049f1a10b68a46d0769a9bdd10746ff66b14740",
+      "build-drafts/large-car-ramp.json": "16a1134a8226b065bd1f882cbe29a9f466371b7c7c6c8c230b028c3665e6b3c5",
+      "build-drafts/medium-car-ramp.json": "ea2981698c07933729ce7c82e1b0f64ad5f65f41d935033dbd9180ce668f859c",
+      "build-drafts/rocket.json": "58f2b6a8986767c98ffb2c52f3ac5d7527cfb806aaf3652640f98721134fedba",
+      "build-drafts/small-car-ramp.json": "04c013a5dffaf80d86a81b099a7816d66412aa514afe10da2937f88b7f58edd2",
+      "build-drafts/snail.json": "cf87c51f635448d8af51a93ee76cbe17c157f9191ec24a854862d17633fd86d5",
+      "lib/builder/operations.ts": "900ca7b10447a41372738df74182ba3c5f2436bad311584761caab4a99e130c2",
+      "lib/builder/storage.ts": "1674fd2c79c61f392c4fe672a37c86e916154cf8d24411babb531cb6cecc809e",
+      "lib/magnetic-tiles/library.ts": "07ef433fc1c6a06ce30de6f8fcab13a7d8e12fe481de6faec12d97b0be679957",
+      "lib/reference-encoder/examples/car-ramps-reference.ts": "192e0f86f3158b9cc8e196d69bbf24b675f883ac89790ab35f7680c2c2875d3c",
+      "lib/reference-encoder/examples/jet-aircraft-reference.ts": "7e2d610df5817ca040f98e4cca736f42d24cb8b57186df77e301a1d6c9d31a9d",
+      "lib/reference-encoder/reference-acceptance.ts": "b067eec78e577f11fc3c1e0fbd8381f080b4d0f61150cced3fd7817767ba3356",
+      "scripts/generate-jet.ts": "454930d5c1f1f07721536858ad046a77fb1e4e47a8281bd1bc32426fd43b3ed9",
+      "scripts/reference/probe-integration-regressions.config.ts": "30f01715e04260e585d831bded229ab5f9621917755c1a1cd67947b7ceac21ff",
+      "scripts/reference/probe-integration-regressions.ts": "b6835c2b005d37db68485def1189d463474ca2cdb07ac657db30697245783de0",
+      "tests/assembly-state.test.ts": "a4da91948a5a116d3c6c4993d2b58e327fe871414975f09b38b8dd1968bfd32c",
+      "tests/continued-prefix.test.ts": "2643ba2094c1309761d826244b28d04513252f1a4293d66602a7ca65485b312f",
+      "tests/engine-calibration.test.ts": "7158964af854b66c37f9b5849c4ede2c1bc536f18fc5cc641da8b593c8d842e3",
+      "tests/engine-gate.test.ts": "8231f1f185c57d8792d455bcdedc9862f4387213cf5aa5962cd0b8aeef39d533",
+      "tests/fixtures/bridge-panel.ts": "55b1a42f2e07540a0d92b4664a19b2516e6bceea34cb971a85cb16e26f456fca",
+      "tests/fixtures/closed-shell.ts": "7d307ce7780a0b4e0db76088ec09d04cc7087fde4b392b93df44647868cdefaf",
+      "tests/fixtures/continued-prefix.ts": "3d9087323a9d793a4b04c7cf9eda4a029e5e15209a6780528409088c4b5a0ab4",
+      "tests/fixtures/rigid-contact.ts": "d2b7fd030081a029e0baee936e4db3f31e3ca83a30dce6faef067f41364d5a1a",
+      "tests/jet-generator.test.ts": "fd8b6d20de20517eb903c05412b8ee3cd9b907718434c8360a4e01ce5296176a",
+      "tests/reference-acceptance.test.ts": "106fcb62107fc0cb95a385d3c3ae3139327f48f4bdddb13a55519296321ef128",
+      "tests/rigid-contact.test.ts": "cf759edaf8e69d718afc5017a46ef7105642487349f39c6964798defc5b71d28",
+      "verification/engine-valid-builds.ts": "c9db2e05ad80ec875f9623d64e50cd88ac270d6027577ecc019458a32d98f3e5",
+      "vitest.config.ts": "593a4047719834d7a45c913ef7f579316637a878fa4f8a6fd03419342575721a"
+    }
+  },
+  "exitCode": 0,
+  "completed": true,
+  "diagnosticScenarios": 6,
+  "vitestTests": 5,
+  "durationSeconds": 321.57,
+  "rawSha256": "a9a0cb97b6bc2845e4650a13e5c93d4191cd912a4d42d733379a64b4405f6b2b",
+  "gzipSha256": "c400e02d8c5ae1d98eab10aeea8df80414735c159b6789cd7fda381d8d87221e",
+  "logSha256": "815e89e78ae695bc0ed8e9d6142b93b361233138c56627ccafa0324ea3225943",
+  "scriptHashes": {
+    "scripts/reference/probe-integration-regressions.ts": "b6835c2b005d37db68485def1189d463474ca2cdb07ac657db30697245783de0",
+    "scripts/reference/probe-integration-regressions.config.ts": "30f01715e04260e585d831bded229ab5f9621917755c1a1cd67947b7ceac21ff"
+  },
+  "scenarioDurations": {
+    "continued-prefix-base": 123.486907417,
+    "continued-prefix-future": 155.591128042,
+    "legacy-medium": 15.667402457999996,
+    "generated-seed-jet": 25.860885707999987,
+    "rotated-hinge": 0.0369246249999851,
+    "gravity-time": 0.004456458000000566
+  }
+}

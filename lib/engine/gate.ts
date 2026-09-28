@@ -80,7 +80,8 @@ export async function gateBuild(
       passed: false,
       reasons: [
         ...reasons,
-        `engine failed: build does not stand (max displacement ${simulation.maxDisplacement.toFixed(3)})`,
+        ...simulation.solidFailures.map(f=>f.detail),
+        `engine failed: build does not stand (peak displacement ${simulation.maxDisplacement.toFixed(3)} in; table penetration ${simulation.peakGroundPenetration.toFixed(3)} in; ${simulation.settledSteps}/90 rest steps)`,
         ...simulation.poppedJoints
           .slice(0, 12)
           .map((joint) => `popped-joint:${joint}`),
@@ -88,7 +89,7 @@ export async function gateBuild(
     };
   }
   reasons.push(
-    `engine passed: build stands (max displacement ${simulation.maxDisplacement.toFixed(3)})`,
+    `engine passed: build stands (peak displacement ${simulation.maxDisplacement.toFixed(3)} in; table penetration ${simulation.peakGroundPenetration.toFixed(3)} in; ${simulation.settledSteps} rest steps)`,
   );
 
   if (isFunctionalRamp(build)) {
@@ -98,7 +99,8 @@ export async function gateBuild(
         passed: false,
         reasons: [
           ...reasons,
-          `engine failed: roll test reachedBottom=${roll.reachedBottom} fellOff=${roll.fellOff}`,
+          ...roll.solidFailures.map(f=>f.detail),
+          `engine failed: roll test reachedBottom=${roll.reachedBottom} fellOff=${roll.fellOff}; table penetration ${roll.peakGroundPenetration.toFixed(3)} in`,
         ],
       };
     }

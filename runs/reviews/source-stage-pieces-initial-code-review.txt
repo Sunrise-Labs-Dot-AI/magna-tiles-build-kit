@@ -1,0 +1,7 @@
+VERIFIED/CLEAN.
+
+I found no actionable defects in the WIP increment. The new gate in `lib/replication/source-pieces.ts` keeps prose-only links, partial/minimum evidence, inferred/proposed panels, duplicate/unknown mappings, stale frame/source hashes, and heldout-frame misuse from becoming a source-stage pass. The current `source-pieces.json` records only partial minima for `medium-support` and `medium-lower-walls`, and the tests assert those remain unverified for the existing medium candidate.
+
+Integration also looks correctly bounded: `evaluate.ts` surfaces `sourceStages` separately, provenance binds `source-pieces.json` into the validator hash and observation lock, and the reference lab displays per-stage source-piece status without implying geometry, assembly, or independent-source acceptance. The holdout prerequisite audit records that no fresh medium independent-source claim is being made.
+
+I did not run tests or regenerate outputs, per your read-only / no long-physics constraint.

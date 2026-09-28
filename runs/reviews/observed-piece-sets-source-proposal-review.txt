@@ -1,0 +1,15 @@
+VERIFIED/CLEAN.
+
+The proposed records correctly encode the prior reviewed evidence as:
+
+- `small-wedge`: 3 exact observed square mappings plus one 2-member interchangeable `isosceles-triangle` set at `small-fit`, 27s.
+- `small-launch`: 2 exact observed square mappings plus one 2-member interchangeable `right-triangle` set at `small-construction-seat-32.5`, 32.5s.
+- No individual side serial identity is asserted. The text explicitly keeps side member identities unresolved.
+- Source and frame hashes match Henry and the relevant frame-manifest entries.
+- The proposal clone changes only `small-launch` frame binding from `small-launch` to `small-construction-seat-32.5`; build SHA is unchanged and construction is marked identical.
+- `small-final` and aggregate remain `unverified`.
+- Existing medium schema1 records are migrated to schema2 with `observedSets: []` and otherwise unchanged in meaning.
+- Active source records, active model, observation lock, and validator remain untouched in the reviewed proposal scope.
+- `/tmp/magnatiles-observed-piece-sets-proposal.json` and the gzipped diagnostic proposal have the same SHA-256: `ad381e259993c3d3b61248411202fabefba786b728bb190af040271e5c68231f`.
+
+I did not rereview pixels, run tests, run simulations, use agents, or edit files. I only read the bounded artifacts and existing logs.

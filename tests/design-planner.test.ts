@@ -5,10 +5,33 @@ import { courseCandidates } from "@/lib/planner/candidates";
 import { checkCourse } from "@/lib/planner/route-checks";
 import { testCars } from "@/lib/planner/car-test";
 import { POST } from "@/app/api/design-build/route";
+import { tilePrismVertices } from "@/lib/magnetic-tiles/prism-geometry";
+import { exactPrismDepth } from "./fixtures/contact-frames";
 
 const sprint = "a downhill racecourse for two side by side cars";
 
 describe("simulation-gated design planner", () => {
+  it("seats the generated launch platform and rear walls on finite support faces", () => {
+    const { build } = courseCandidates(parseDesignBrief(sprint))[0];
+    const platform = build.tiles.find((t) => t.id === "large-top-platform-panel")!;
+    const top = (tile: typeof platform) =>
+      Math.max(...tilePrismVertices(tile).map((p) => p.y));
+    const bottom = (tile: typeof platform) =>
+      Math.min(...tilePrismVertices(tile).map((p) => p.y));
+    const supports = build.tiles.filter((t) => /platform.*wall|side-brace/.test(t.id));
+    expect(supports.length).toBeGreaterThan(0);
+    for (const support of supports) {
+      expect(exactPrismDepth(platform, support)).toBeLessThan(1e-7);
+    }
+    expect(bottom(platform)).toBeCloseTo(Math.max(...supports.map(top)), 8);
+    const walls = build.tiles.filter((t) => /upper-rear-wall/.test(t.id));
+    expect(walls).toHaveLength(2);
+    for (const wall of walls) {
+      expect(bottom(wall)).toBeCloseTo(top(platform), 8);
+      expect(exactPrismDepth(platform, wall)).toBeLessThan(1e-7);
+    }
+  });
+
   it("produces a two-car sprint with recorded free dynamics and stable assembly steps", async () => {
     const result = await designBuild(sprint);
     expect(result.status).toBe("simulation-passed");
@@ -22,6 +45,8 @@ describe("simulation-gated design planner", () => {
         trial.samples[0].position.y,
       );
       expect(trial.reachedWaypoint).toBe(result.lanes[0].waypoints.length - 1);
+      expect(trial.contactEvidence?.roadContactSteps).toBeGreaterThan(10);
+      expect(trial.contactEvidence?.postRunStructurePassed).toBe(true);
     }
     expect(new Set(result.instructions.flatMap((s) => s.tileIds)).size).toBe(
       result.build.tiles.length,
@@ -94,6 +119,62 @@ describe("simulation-gated design planner", () => {
     }));
     expect(
       (await testCars(build, uphill, brief)).every((trial) => !trial.passed),
+    ).toBe(true);
+  });
+
+  it("scores translated builds and routes in the same grounded coordinates", async () => {
+    const brief = parseDesignBrief(sprint),
+      candidate = courseCandidates(brief)[0];
+    const original = await testCars(candidate.build, candidate.lanes, brief);
+    const shifted = structuredClone(candidate);
+    for (const tile of shifted.build.tiles) tile.position.y += 17;
+    for (const lane of shifted.lanes) for (const p of lane.waypoints) p.y += 17;
+    const translated = await testCars(shifted.build, shifted.lanes, brief);
+    expect(original.every((t) => t.passed)).toBe(true);
+    expect(translated.map((t) => [t.passed, t.reachedWaypoint])).toEqual(
+      original.map((t) => [t.passed, t.reachedWaypoint]),
+    );
+  });
+
+  it("requires contact with named driving tiles even when another road is present", async () => {
+    const brief = parseDesignBrief(sprint),
+      { build, lanes } = courseCandidates(brief)[0];
+    const support = build.tiles.find(
+      (t) => !lanes.flatMap((l) => l.surfaceTileIds).includes(t.id),
+    )!;
+    expect(support).toBeDefined();
+    const results = await testCars(
+      build,
+      lanes.map((l) => ({ ...l, surfaceTileIds: [support.id] })),
+      brief,
+    );
+    expect(results.every((t) => !t.passed)).toBe(true);
+    expect(results.every((t) => t.reason.includes("lost contact"))).toBe(true);
+  });
+
+  it("rejects nonfinite routes and missing surface IDs before simulation", async () => {
+    const brief = parseDesignBrief(sprint),
+      { build, lanes } = courseCandidates(brief)[0];
+    lanes[0].waypoints[0].x = NaN;
+    lanes[1].surfaceTileIds = ["absent"];
+    expect(
+      (await testCars(build, lanes, brief)).every(
+        (t) => !t.passed && t.samples.length === 0,
+      ),
+    ).toBe(true);
+  });
+  it("returns failure for a vertical route instead of constructing a degenerate chassis", async () => {
+    const brief = parseDesignBrief(sprint),
+      { build, lanes } = courseCandidates(brief)[0];
+    for (const lane of lanes)
+      lane.waypoints = [
+        { x: 0, y: 4, z: 0 },
+        { x: 0, y: 1, z: 0 },
+      ];
+    expect(
+      (await testCars(build, lanes, brief)).every(
+        (t) => !t.passed && t.samples.length === 0,
+      ),
     ).toBe(true);
   });
 

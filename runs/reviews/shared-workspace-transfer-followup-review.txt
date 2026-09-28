@@ -1,0 +1,16 @@
+**Findings**
+
+1. **High: prepared transfer can still pass without final all-hands-free release.**  
+The transfer branch runs connected stabilization at [assembly.ts:177](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:177>) and checks retained cross joints at [assembly.ts:178-179](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:178>), but the free release is conditional on `operation.releaseAfter` at [assembly.ts:180](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:180>). A prepared transfer in a held stage, or one missing `releaseAfter`, can pass without the accepted “connected rest AND free release” condition. Make prepared transfers require the free release checkpoint, or reject transfer operations without `releaseAfter`.
+
+2. **Medium: `simulatePreparedTransfer` returns a joined build with an unjoined state.**  
+After contact arrival, it creates `joined` with the cross connections at [prepared-transfer.ts:134](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/prepared-transfer.ts:134>), validates closure, then returns `settled: joined` while `state` is still the pre-closure contact-arrival snapshot from [prepared-transfer.ts:125](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/prepared-transfer.ts:125>). Assembly happens to continue it later through `record`, but the transfer result itself is internally inconsistent. Either return the unjoined arrival build/state and let the caller append joints, or append exactly the earned joints through state continuation before returning.
+
+3. **Medium: arrival identity is physical-unordered, while transfer evidence remains directed.**  
+`exactContactArrival` compares `physicalConnectionId` at [contact-arrival.ts:44-45](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/contact-arrival.ts:44>), and the test explicitly accepts a reversed connection at [contact-arrival.test.ts:66-70](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/contact-arrival.test.ts:66>). But `withheldCrossConnectionIds`, `earnedCrossConnectionIds`, and joint IDs are directed `connectionId`s in [prepared-transfer.ts:68-70](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/prepared-transfer.ts:68>) and [prepared-transfer.ts:137-139](</Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/prepared-transfer.ts:137>). If the accepted condition is “source-derived directed IDs exactly,” reversal is still not rejected. Use one identity contract throughout, or record both physical pair IDs and directed source IDs explicitly.
+
+**Cleared From Prior Review**
+
+The actual stationary separation checkpoint is now real and sampled during a dwell before closing. The two-to-one handoff guard is enforced. The two-component transfer scope is fail-closed. Exact physical contact set enumeration is present, subject to the identity issue above.
+
+I did not edit files, run tests, use network, or delegate.

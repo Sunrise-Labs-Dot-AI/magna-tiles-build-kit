@@ -1,0 +1,7 @@
+# Lower-side boundary followup
+
+Performed during the unchanged finer-contact matrix under the existing reviewed medium-topology plan. Only already-inspected fitting/construction images at 65.25 and 67.5 seconds were reopened. Their hashes, rough visual boundary proposals and review disposition are in `diagnostics/2026-09-27-lower-side-boundary-hypothesis.json`. No new heldout image, scored landmark, candidate geometry, material setting or source-piece ledger entry changed.
+
+The implementing agent proposed that the image-right side at 67.5 seconds might show three distinct triangles, and requested an independent adversarial boundary check. The reviewer did not establish the proposed upper orange triangle as a separate panel: its edges can be read as driving-deck/background structure seen through transparent plastic. The central red and lower orange faces remain supported. Full review: `reviews/lower-side-boundaries-review.txt`.
+
+Disposition: retain **at least two visible triangular panels**, with the total module count unresolved. The three-face proposal receives no source-count credit. Rough pixel coordinates are boundary locators for inspection, not scored geometry-fit observations. Neither symmetry nor the verified total BOM can turn this visible minimum into an exact module or construction-stage set. The next topology work must preserve this uncertainty or obtain stronger construction evidence; it cannot inherit a passing source-piece status from this check.

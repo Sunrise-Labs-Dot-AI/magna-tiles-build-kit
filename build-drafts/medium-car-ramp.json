@@ -4,10 +4,10 @@
   "prompt": "Medium Car Ramp",
   "family": "ramp",
   "inventoryPreset": "classic-100",
-  "status": "engine-valid",
+  "status": "engine-fail-pending-reauthoring",
   "createdAt": "2026-05-15T18:06:12.367Z",
   "updatedAt": "2026-06-02T21:30:00.000Z",
-  "notes": "Re-authored as a larger clean bare wedge: the continuous two-square sloped driving deck now feeds a two-square raised landing, with the vertical end support moved to the far landing edge and mirrored right-triangle side supports under the extension. No rails, switchback, or stray protruding panels; headless gateBuild passes pre-filters, stands, and rollTest.",
+  "notes": "Historical 11-piece bare wedge variant, distinct from Henry's 37-piece source ramp. The two-square sloped deck feeds a two-square raised landing with end and triangle supports. It has no rails or switchback. Under the 480 Hz contact / 1920 Hz collision profile, pre-filters and the separate ball roll pass, but the build fails sustained rest (0/90 steps). Geometry is retained as diagnostic evidence pending reauthoring.",
   "expectedInventory": {
     "small-square": 5,
     "large-square": 0,

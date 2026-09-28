@@ -1,0 +1,17 @@
+Not CLEAN. I found four actionable gaps.
+
+**CRITICAL** [scripts/reference/probe-fold-closure-release.ts:209](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/probe-fold-closure-release.ts:209)  
+Scenario: `observedSupport` catches instrumentation/assertion errors into row data, but the test writes `completed: true` before asserting that no instrumentation errors occurred at line 210. A joint-identity or restore assertion can fail, the Vitest run can fail, and `/tmp/magnatiles-fold-closure-release.json` can still advertise a completed archive.  
+Fix: check `rows.every(...!instrumentationError)` before `save(true)`. If any instrumentation error exists, save `completed: false` with a top-level instrumentation failure summary, then throw.
+
+**WARNING** [scripts/reference/probe-fold-closure-release.ts:42](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/probe-fold-closure-release.ts:42) and [scripts/reference/probe-fold-closure-release.ts:84](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/probe-fold-closure-release.ts:84)  
+Scenario: the plan requires evidence for restoration normalization and wake behavior, but `velocities()` omits `sleeping`, and the `setBodyType(type, wake)` wrapper records `requested` but drops `wake`. If `simulateSupport` later changes wake flags or a restored body remains asleep, the archive cannot prove the release used the intended wake behavior.  
+Fix: include `sleeping` in all velocity snapshots, record the `wake` argument in `modeChanges`, and assert expected wake semantics for the support routine, especially released dynamic bodies before the first native step.
+
+**WARNING** [scripts/reference/probe-fold-closure-release.ts:105](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/probe-fold-closure-release.ts:105)  
+Scenario: pop events record the cumulative `engine.poppedJoints`, not the newly popped IDs for that step. If one joint breaks, then another breaks later, the second event reports both IDs, making dynamic joint identity ambiguous in the evidence.  
+Fix: record `engine.poppedJoints.slice(oldPops)` as `newIds`, plus the cumulative list separately if useful.
+
+**WARNING** [scripts/reference/probe-fold-closure-release.ts:139](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/probe-fold-closure-release.ts:139)  
+Scenario: `separatedThird` accepts any `contactsClosed` failure. The control is named as a geometry-only third-contact control, but it could pass because of invalid edge selection, disconnected tile validation, or another setup defect rather than the intended third-contact rejection.  
+Fix: assert the failure is specifically for `root:3->end:1` contact closure, with no missing-tile/disconnected/overlap confound, or return a structured helper result for that exact candidate third prerequisite.

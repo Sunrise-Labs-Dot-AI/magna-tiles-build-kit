@@ -1,0 +1,163 @@
+{
+  "builds": 4,
+  "downloads": [
+    "jet",
+    "small-ramp",
+    "medium-ramp",
+    "large-ramp"
+  ],
+  "sourceStagePieces": {
+    "allDownloadsBound": true,
+    "observedWedgeAndLaunchSets": true,
+    "memberIdentitiesUnresolved": true,
+    "finalSmallSetUnverified": true,
+    "partialSupportUnverified": true,
+    "partialCanopyUnverified": true
+  },
+  "snailEmptyState": true,
+  "stableModuleLabels": [
+    "P6",
+    "P7",
+    "P8",
+    "P9"
+  ],
+  "insertionPreview": {
+    "labels": [
+      "P5"
+    ],
+    "keyboardStartEnd": true,
+    "resetsAtNextStage": true
+  },
+  "gravityPreview": {
+    "labels": [
+      "P7",
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5"
+    ],
+    "recordedFramesDiffer": true,
+    "launchAssemblyPassed": true
+  },
+  "pickupPreview": {
+    "labels": [
+      "P1",
+      "P2",
+      "P4",
+      "P5"
+    ],
+    "terminalLabels": [
+      "P1",
+      "P2",
+      "P4",
+      "P5",
+      "P3"
+    ],
+    "recordedFramesDiffer": true
+  },
+  "transferPreview": {
+    "labels": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "P8",
+      "P9"
+    ],
+    "recordedFramesDiffer": true,
+    "completeAssemblyPassed": true
+  },
+  "mediumPreview": {
+    "pickupLabels": [
+      "P1",
+      "P4"
+    ],
+    "preparedLabels": [
+      "P10",
+      "P11",
+      "P12",
+      "P13",
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ],
+    "workspaceLabels": [
+      "P5",
+      "P6",
+      "P7",
+      "P8",
+      "P9",
+      "P10",
+      "P11",
+      "P12",
+      "P13",
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ],
+    "transferLabels": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "P8",
+      "P9",
+      "P10",
+      "P11",
+      "P12",
+      "P13"
+    ],
+    "relocatedLabels": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "P8",
+      "P9",
+      "P10",
+      "P11",
+      "P12",
+      "P13"
+    ],
+    "bridgeLabels": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "P8",
+      "P9",
+      "P10",
+      "P11",
+      "P12",
+      "P13",
+      "P14"
+    ],
+    "firstSixStagesPassed": true,
+    "transferPlaybackMoves": true,
+    "checkedJoinInstructions": true,
+    "lowerPlacementPlaybackMoves": true,
+    "tableBearingChecked": true,
+    "noNewPlacementJoins": true,
+    "bridgePlaybackMoves": true,
+    "exactNewBridgeJoins": true,
+    "bridgeReleaseChecked": true,
+    "lowerCanopyUnverified": true
+  },
+  "mobileOverflow": false,
+  "pageErrors": []
+}

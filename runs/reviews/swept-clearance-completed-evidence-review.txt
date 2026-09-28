@@ -1,0 +1,13 @@
+VERIFIED/CLEAN for the scoped evidence pass. I found no actionable defect in the completed evidence claims.
+
+I validated with read-only file/code inspection plus lightweight Python hash/JSON/gzip comparisons only. No native simulation, tests, builds, benchmarks, or credential/auth work.
+
+Key checks:
+
+- Exact-equivalence archive holds: current `7a8ad00...` archive has the same probe and fixture hashes as the reviewed `50853cf...` baseline, `124` ordered records, `2,275,376` summed native steps, exact `records` equality, and exact `results` equality.
+- Timing claim is scoped correctly: supported-transfer went `371.433s -> 315.568s`, a `15.04%` reduction, while the other four timing rows were slightly slower, so there is no implied universal speedup.
+- Medium assembly evidence is bounded: manifest/log show unchanged `1,200,000 ms` allowance, exit `0`, `933.47s` test time, `933.76s` total. Scope text correctly excludes full 11-stage assembly and full source acceptance.
+- Source reports are fresh for `7a8ad00...`, hash-bound, exit `0`, budget `900000 ms`, and all embedded `replica` objects exactly match the nested committed replica objects at `39686d84a81bec3b7277fee1445ef4eed5dd4520`.
+- Source acceptance is not overclaimed: all four reports remain `not-verified`; small is `3/3` assembly and release pass but fidelity still fails; medium is `6/11` assembly with five unverified stages and function fail; large has release pass but source/assembly/function unresolved; jet fails fidelity/release/assembly.
+- The `681.5s` medium source-report duration is present as the manifest’s timestamp-derived approximate duration and matches `public/reference-replicas/medium-ramp.json` mtime minus `generatedAt`. The archived `.json.gz` mtime is later, so the correct reading is the manifest/public report timestamp, not the gzip archive filesystem mtime.
+- The cited run notes continue to withhold pass credit for full regression, final configured72, final structural benchmark, generic fixtures, build/UI, and native folding execution. Session `84897` is documented as still live.

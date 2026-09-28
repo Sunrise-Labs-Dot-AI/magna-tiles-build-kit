@@ -1,0 +1,17 @@
+**Findings**
+
+1. **High: selection can pass mislabeled refinement cells because actual solver/frequency parameters are not validated**
+   [scripts/reference/contact-matrix.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/contact-matrix.ts:42)
+   `passesTrial()` checks `trial.frequency`, `trial.hz`, `trial.solver`, step counts, duration and measured outcomes, but it never verifies `trial.parameters.dt === 1 / trial.hz`, `trial.parameters.frequency === trial.frequency`, or `trial.parameters.solver === trial.solver`. The synthetic selection test at [tests/contact-matrix.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/contact-matrix.test.ts:88) clones one real flat trial across all 216 cells without updating `parameters`, and `assessContactMatrix(good()).selectedFrequency` still returns `120`.
+   **Failure scenario:** a runner bug or corrupted checkpoint labels rows as the four 120/240/480 refinement settings while all were actually run with the first cell’s parameters. The assessor can still select a promoted contact frequency.
+   **Suggested correction:** make `passesTrial()` reject parameter mismatches for `dt`, `frequency`, `solver`, and the fixed invariants being recorded (`lengthUnit`, `normalizedAllowedLinearError`, likely `contactERP` within expected value for `dt/frequency`). Update the synthetic tests to create internally consistent trial parameters per cell.
+
+2. **High: assessment can select evidence whose terminal snapshot does not preserve the declared fixture’s bodies or joints**
+   [scripts/reference/contact-matrix.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/contact-matrix.ts:50)
+   `passesTrial()` only checks that `terminal.solidFailures` and `terminal.poppedJoints` are empty. It does not verify that `terminal.bodies` contains the fixture’s exact panel IDs/count, or that `terminal.joints`/`connections` correspond to the declared fixture. The current synthetic test again demonstrates this: all 216 rows inherit the one-body flat-panel terminal snapshot while rows are relabeled as 5/9/13/17/25-panel fixtures, yet selection succeeds.
+   **Failure scenario:** a matrix JSON with copied or truncated terminal snapshots can claim complete loaded-shell coverage while preserving only a flat-panel terminal state. That violates the “preserve actual state and joints” requirement and weakens promotion evidence.
+   **Suggested correction:** have assessment validate each trial terminal against `contactMatrixFixtures()` for that `fixture`: exact body IDs/count, expected connections, expected active joints minus recorded popped joints, and no missing/extra terminal bodies. Add a negative test where a loaded-shell trial carries the flat terminal snapshot and must block selection.
+
+**Limits**
+
+I did not edit files, run tests/simulations, inspect source media, push, read credentials, or touch the separately running matrix. Actual `runContactCell()` does set parameters and capture a snapshot; these findings are about the evidence validation and selection layer allowing bad records through.

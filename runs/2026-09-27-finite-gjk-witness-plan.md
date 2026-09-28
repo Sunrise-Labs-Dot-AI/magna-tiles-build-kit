@@ -1,0 +1,21 @@
+# Reject a fabricated auxiliary GJK witness
+
+Full engineering loop, continuing the unpromoted contact runtime integration.
+
+The strengthened packaged cache test checks both normals and finite witnesses. With two 3 × 3 × .18 inch hulls, offsets (3,3,.179) then (3,3,.18), the v2 runtime emits two correct corner witnesses at (1.5,1.5,.09) and an additional UNKNOWN-feature witness at the origin. Its second local point is (-3,-3,-.18), outside the second hull by 1.5 inches. The normal remains a valid support normal, so normal-only validation missed this. Cached-point validation correctly triggers recomputation, but fresh GJK can return coincident origin placeholders and append them after correct finite-feature clipping. The actual clipped contacts are valid.
+
+Proposal: for the same eligible zero-border polyhedra only, append the optional extra GJK witness only when both GJK points are finite and contained by their actual finite solids within the existing 32-epsilon coordinate margin. Use the already computed geometry and contains_point helper. Do not discard, alter or replace the finite-feature contacts, contact normal, material or geometry. Noneligible paths and normal constraints retain their previous behavior. No new world-space tolerance or force is introduced. This extends the existing rule that omits the auxiliary GJK witness when its original normal is invalid.
+
+The risk is omitting the only useful contact when clipping is empty. Tests must require actual contacts at all penetrating or touching fixture states; checking only the surviving points would be insufficient. If this occurs, investigate the finite clipping/GJK witness generation rather than allowing invalid points or accepting an empty manifold.
+
+Acceptance: the exact corner control fails v2 and passes the corrected version in both insertion orders; all 16 face/edge/corner/containment cache cases check every point over 52 movements, including separation; 1200 deterministic random pairs and 360 near-parallel pairs in both orders; all 198 frame cases and 36 dynamic closed shells; fresh small-ramp assembly at original settings. Keep the old-runtime deep-contact control. Rebuild twice, update artifact/profile identity and provenance, reject old states, then run the full integration gates and independent adversarial code review. No source-fidelity or functional pass is inferred.
+
+## Plan review resolution
+
+All three findings in `runs/reviews/finite-gjk-witness-plan-review.txt` are accepted. Both geometry and witnesses use A-local coordinates: A checks p1, and B transformed by pos12 checks p2_1. In addition to finite containment, require each point to lie on its support plane along the selected normal (A maximum, B minimum), require a finite signed distance and matching gap, and bound the tangential residual by the same numerical margin. This prevents finite interior placeholders as well as the observed exterior placeholder. Only the optional auxiliary contact is gated; original finite-feature clipping remains intact.
+
+Known exact-touch and shallow-penetration configurations must have contacts, including both insertion orders, mixed hull/cuboid pairs and all catalog triangle types. Random floating-orientation pairs retain an explicit positive-depth threshold to avoid classifying floating geometry on a rounded boundary as certain contact; separate analytic configurations cover exact touch and depth 0.00001. Cache fixtures already require contacts at the initial penetration and exact-touch steps.
+
+## Implementation and review evidence
+
+The corrected v3 artifact is `5e4c38a5ada93780d4dd9aba7553d63cdb6f003c59c602f784beeff719d347c0`. Two fresh builds (repro-5 and repro-6) have identical CJS/MJS/WASM and lock hashes. The packaged runtime passes 29 tests covering 198 contact-frame trials, 1200 random pairs in both orders, 360 near-parallel pairs in both orders, 50 analytic exact-touch/shallow-depth pairs in both orders, 16 cached configurations over 52 steps, the original false-deep-contact and invalid-corner controls, numerical settings, backend ownership, binary snapshot rejection, repeated disposal and stale state identity. The independent v3 code review reports no required correctness findings. Full physical regressions and fresh construction remain required.

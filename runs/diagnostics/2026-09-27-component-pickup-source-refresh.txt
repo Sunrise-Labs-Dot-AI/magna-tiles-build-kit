@@ -1,0 +1,7 @@
+Independent rigid-contact sweep: 72 trials; lowest passing frequency 120 Hz.
+Verified 21 insertion/support operations, including three gravity placements.
+jet: 40 pieces; source=pass, inventory=pass, fidelity=fail, materials=unverified, geometry=pass, release=fail, settledShape=fail, assembly=fail, function=unverified
+small-ramp: 9 pieces; source=pass, inventory=pass, fidelity=fail, materials=unverified, geometry=pass, release=pass, settledShape=fail, assembly=pass, function=pass
+medium-ramp: 37 pieces; source=pass, inventory=pass, fidelity=fail, materials=unverified, geometry=pass, release=pass, settledShape=fail, assembly=fail, function=fail
+large-ramp: 51 pieces; source=pass, inventory=pass, fidelity=unverified, materials=unverified, geometry=pass, release=pass, settledShape=unverified, assembly=unverified, function=unverified
+Models, numbered instructions and independent evidence written. No full replica has been verified.

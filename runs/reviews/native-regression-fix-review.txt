@@ -1,0 +1,12 @@
+VERIFIED/CLEAN.
+
+I verified the accepted findings read-only only. Key checks:
+
+- `probe-native-fold.ts` now uses `structuredClone` for the whole `nativeInitial` object, including `solidFailures`.
+- Archived original script decompresses to `b4e6d1aa...`; current/corrected script is `1396ce3c...`; runtime hash remains `7a8ad00...`.
+- Corrected manifest records exit 0, 12 declared rows, 6 integrated rows, and 72,924 native steps.
+- Normalized original vs corrected archive hashes match exactly after removing only `context.scriptHashes` and `nativeInitial.solidFailures`. The only row deltas are the six `.09` rows changing `nativeInitial.solidFailures` length from 1 to 0.
+- Diagnosis plan now explicitly archives `rollTest(mediumCarRampDraft)` separately from `gateBuild`, records the legacy status surfaces, and captures original failing carry/support arguments for later replay.
+- I found no diagnostic implementation or run for the regression plan yet. The documented GPT-5.5 read-only substitute after Claude OAuth failure is present; I did no credential work.
+
+No remaining actionable gaps found.

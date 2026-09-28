@@ -1,0 +1,19 @@
+VERIFIED/CLEAN.
+
+I independently checked the named plan/review/code/archive evidence read-only. No findings.
+
+Key evidence verified:
+- Manifest duration `52.921350958s`, exit code `0`, `contextUnchanged: true`, initial and final runtime hash both `3a2ed4dd...`.
+- Live script/config hashes match manifest raw hashes. Archived gzip hashes and decompressed raw hashes match the manifest and in-script pins.
+- Archive is `completed: true`, `requiredRows: 18`, with full coverage of offsets `-.09/0/+.09`, directions `-1/+1`, seeds `0/17/53`.
+- Separated negative control is present, `nativeSteps: 0`, closure fails at `.360 in` transverse gap.
+- Six zero-offset controls exactly match `2026-09-27-native-fold-corrected.json.gz` after excluding only added `peakRetainedEdgeGap`; no mismatches.
+- Body modes are consistently root fixed, middle dynamic, end kinematic; middle perturbation flips exactly once from `releasePerturbed=false` to `true`.
+- Each row has initial/native-initial evidence, native step count, 64-char trajectory hash, ordered `root,middle,end` trace encoding, and sampled motion arrays.
+- Correct-side rows completed: `offset -.09 + direction +1` and `offset +.09 + direction -1`, all six at `19392` steps / `10.100000526756s`, peak retained edge gap max `0.200884811881 in`, zero solid overlap, zero popped joints.
+- Zero-offset rows all fail at `12154` steps, about `74.762504 deg`, matching the historical archive.
+- Wrong-side rows all fail around `6253-6254` steps, about `37.881252-37.887502 deg`, by native solid overlap.
+- Terminal geometry for completed rows preserves two retained joints and passes explicit root edge `3` to end edge `1` third-contact and whole-ring closure.
+- No evidence of third joint addition, hand withdrawal, release/rest acceptance, assembly/source/material acceptance, or production model adoption.
+
+Limit preserved: this is diagnostic evidence for a direction-dependent injected fixed pivot under gripped native motion only. It is not universal model evidence, canonical physics evidence, or source/assembly acceptance.

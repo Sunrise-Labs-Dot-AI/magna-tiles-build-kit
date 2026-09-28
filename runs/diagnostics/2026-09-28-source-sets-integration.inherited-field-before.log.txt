@@ -1,0 +1,30 @@
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-source-sets
+
+ ❯ tests/source-pieces.test.ts (77 tests | 1 failed | 76 skipped) 6ms
+     × cannot smuggle observed sets into schema1 through an inherited field 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/source-pieces.test.ts > observed interchangeable installed sets > cannot smuggle observed sets into schema1 through an inherited field
+AssertionError: expected 'pass' to be 'fail' // Object.is equality
+
+Expected: "fail"
+Received: "pass"
+
+ ❯ tests/source-pieces.test.ts:217:54
+    215|     const record=Object.assign(Object.create({observedSets}),fields);
+    216|     expect(checkSourcePieces(f.replica,{schema:1,records:[record]},f.s…
+    217|       {status:"pass",detail:"Synthetic"})[0].status).toBe("fail");
+       |                                                      ^
+    218|   });
+    219|   it.each([-1,0,1.5,NaN,Infinity,1,3])("rejects invalid or mismatched …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 76 skipped (77)
+   Start at  20:17:41
+   Duration  283ms (transform 122ms, setup 0ms, import 173ms, tests 6ms, environment 0ms)
+

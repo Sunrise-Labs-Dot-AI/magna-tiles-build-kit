@@ -1,0 +1,7 @@
+Findings: none.
+
+Verdict: MERGE-OK for the remaining binding finding. `constructionFrameBinding` now requires the ledger entry to match `role`, `replicaId`, `stageId`, frame id, seconds, `sourceSha256`, frame hash, manifest `sourceId`, manifest stage/partition, and canonical extracted path in [lib/replication/evidence.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/evidence.ts:19).
+
+`verifyLocalSource` calls it for each `stage.constructionEvidence` frame, rejects missing/duplicate ledger entries, and supplies the actual replica id, stage id, source id, source hash, `sources.json` frame, and `frame-manifest.json` record in [lib/replication/evaluate.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/evaluate.ts:212). The existing frame loop also hashes the local extracted PNGs before claim binding.
+
+The four `small-launch` claim records now bind correctly: `small-construction-seat-28.75`, `small-construction-seat-30.25`, `small-construction-seat-32.5`, and `small-fit-33` all have `replicaId: "small-ramp"`, `stageId: "small-launch"`, `henry` manifest entries, `fit` partition/use, matching seconds, hashes, and canonical paths. The unit test and corruption probe cover the intended failure modes structurally. No tests were run.

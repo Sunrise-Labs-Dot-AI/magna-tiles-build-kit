@@ -1,0 +1,174 @@
+{
+  "scope": "Source-piece ledger proposal for independent review only. Not read by the evaluator, not a source-fidelity/pose/assembly/functional certificate, and not an accepted replica. Runtime and production source records remain frozen.",
+  "productionChangesRequired": [
+    "If the complete launch set is established, bind its completed four-part source-piece checkpoint to small-construction-seat-32.5, not the mid-construction small-launch frame at31. Keep31 as transition/instruction evidence.",
+    "Only after review, update source-piece records and observation lock in a separate source increment; regenerate affected source reports. Do not relabel any historical/reserved frame as independent.",
+    "Do not mark final-stage identity or full replica acceptance complete from these two records. Final scene, independent geometry/joins, settled shape and source car-path evidence remain required."
+  ],
+  "identityBoundary": "The reviewer rejected unique side-a/side-b to candidate-sign correspondence as an observed fact. These bookkeeping assignments now remain proposed and both exact-identity records remain partial. The separately reviewed installed counts do not establish calibrated poses or part-specific joins.",
+  "evidence": [
+    {
+      "frameId": "small-construction-seat-25.5",
+      "seconds": 25.5,
+      "path": "public/reference-frames/replication/research-seating/fit-25.5.png",
+      "frameSha256": "402444c434ef495181ee54bab5d1be820a28f81fa16767c4d7fc1d700ab4e380",
+      "role": "previously inspected fit",
+      "claim": "Two yellow sides and the red rear square form the open-bottom support; the upper orange deck is being placed and the lower orange square remains separate."
+    },
+    {
+      "frameId": "small-fit",
+      "seconds": 27,
+      "path": "public/reference-frames/replication/henry/small-fit.png",
+      "frameSha256": "cd6657bc0191307bdb6408a9b8416882c5a4ec358f6e9041c4131e3c21141fbd",
+      "role": "fit",
+      "claim": "Both orange deck panels appear installed; the five-part wedge is the completed module. The hand occludes some edge positions."
+    },
+    {
+      "frameId": "small-launch",
+      "seconds": 31,
+      "path": "public/reference-frames/replication/henry/small-launch.png",
+      "frameSha256": "65ed040acd54fbaf6a7c80df4bbdd75589c5c7221d155215d3e77ffb454b8b72",
+      "role": "construction",
+      "claim": "The near green side is attached between two red squares; the other green triangle remains separate under the left hand. This is not the complete four-part static source set."
+    },
+    {
+      "frameId": "small-construction-seat-32.5",
+      "seconds": 32.5,
+      "path": "public/reference-frames/replication/henry/small-construction-seat-32.5.png",
+      "frameSha256": "e30c53b4b7c612efae4b13eae31b7e0b80e16f2de66ec5ad57ba368bb0e10d20",
+      "role": "fit",
+      "claim": "Both green triangles are attached between the two red squares. Pose is beginning to change; this record asserts only installed identities, not calibrated pose or movement."
+    }
+  ],
+  "records": [
+    {
+      "replicaId": "small-ramp",
+      "stageId": "small-wedge",
+      "sourceId": "henry",
+      "frameId": "small-fit",
+      "seconds": 27,
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "frameSha256": "cd6657bc0191307bdb6408a9b8416882c5a4ec358f6e9041c4131e3c21141fbd",
+      "coverage": "partial",
+      "observed": [
+        {
+          "sourcePartId": "henry-small-wedge-rear-square",
+          "tileId": "small-back",
+          "shape": "small-square"
+        },
+        {
+          "sourcePartId": "henry-small-wedge-upper-deck",
+          "tileId": "small-deck-2",
+          "shape": "small-square"
+        },
+        {
+          "sourcePartId": "henry-small-wedge-lower-deck",
+          "tileId": "small-deck-1",
+          "shape": "small-square"
+        }
+      ],
+      "minimumVisible": [
+        {
+          "shape": "small-square",
+          "count": 3
+        },
+        {
+          "shape": "isosceles-triangle",
+          "count": 2
+        }
+      ],
+      "inferred": [],
+      "proposed": [
+        {
+          "sourcePartId": "henry-small-wedge-side-a",
+          "tileId": "small-side--1",
+          "shape": "isosceles-triangle"
+        },
+        {
+          "sourcePartId": "henry-small-wedge-side-b",
+          "tileId": "small-side-1",
+          "shape": "isosceles-triangle"
+        }
+      ],
+      "basis": "Reviewed sequence proposal: the open-bottom rear-and-two-sides structure is visible at25.5s; the two orange squares are then installed and both appear at27s. This proposes an exact five-panel source set from observed placement, not BOM subtraction. Hand-occluded pose and seam geometry remain separate.",
+      "review": "runs/reviews/small-source-set-proposal-review.txt: counts/roles supported; exact side-to-sign mapping unproved and retained as proposed. No complete identity-set acceptance."
+    },
+    {
+      "replicaId": "small-ramp",
+      "stageId": "small-launch",
+      "sourceId": "henry",
+      "frameId": "small-construction-seat-32.5",
+      "seconds": 32.5,
+      "sourceSha256": "2d2aca38030161b613d445154154e59a040514543079de9936869ba25d85bfe0",
+      "frameSha256": "e30c53b4b7c612efae4b13eae31b7e0b80e16f2de66ec5ad57ba368bb0e10d20",
+      "coverage": "partial",
+      "observed": [
+        {
+          "sourcePartId": "henry-small-launch-final-back",
+          "tileId": "launch-back",
+          "shape": "small-square"
+        },
+        {
+          "sourcePartId": "henry-small-launch-final-roof",
+          "tileId": "launch-roof",
+          "shape": "small-square"
+        }
+      ],
+      "minimumVisible": [
+        {
+          "shape": "small-square",
+          "count": 2
+        },
+        {
+          "shape": "right-triangle",
+          "count": 2
+        }
+      ],
+      "inferred": [],
+      "proposed": [
+        {
+          "sourcePartId": "henry-small-launch-side-a",
+          "tileId": "launch-side--1",
+          "shape": "right-triangle"
+        },
+        {
+          "sourcePartId": "henry-small-launch-side-b",
+          "tileId": "launch-side-1",
+          "shape": "right-triangle"
+        }
+      ],
+      "basis": "Reviewed sequence proposal:31s shows two red squares and one attached green right triangle, with the remaining green triangle separate;32.5s shows both green ends attached. The red square that was flat becomes the final back, and the formerly upright square becomes the roof. This proposes the complete four-part set, not a frozen pose or final placement.",
+      "review": "runs/reviews/small-source-set-proposal-review.txt: counts/roles supported; exact side-to-sign mapping unproved and retained as proposed. No complete identity-set acceptance."
+    }
+  ],
+  "reviewDisposition": {
+    "review": "runs/reviews/small-source-set-proposal-review.txt",
+    "verdict": "Not implementation-ready as initially written; all findings accepted.",
+    "accepted": [
+      "Five installed wedge panels at27s and four launch panels at32.5s are visually supported as source counts.",
+      "Same-shape/color side-to-candidate-sign mappings are not proved and remain proposed.",
+      "Frame31 remains transition evidence; a completed-set binding requires an explicit later source/model stage update."
+    ],
+    "implementationStatus": "OFF-PATH PROPOSAL ONLY. Production records/geometry/lock unchanged. Counts and exact identities remain distinct."
+  },
+  "reviewedInstalledCounts": [
+    {
+      "stageId": "small-wedge",
+      "frameId": "small-fit",
+      "counts": {
+        "small-square": 3,
+        "isosceles-triangle": 2
+      },
+      "scope": "Complete installed counts established by reviewed sequence; side-to-candidate-sign correspondence unresolved."
+    },
+    {
+      "stageId": "small-launch",
+      "frameId": "small-construction-seat-32.5",
+      "counts": {
+        "small-square": 2,
+        "right-triangle": 2
+      },
+      "scope": "Complete installed counts at32.5; source pose and side-to-candidate-sign correspondence unresolved."
+    }
+  ]
+}

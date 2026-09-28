@@ -1,0 +1,37 @@
+{
+  "baseline": "24d6fbd27eeeb674ea9ae61a1c0ca11d0f4fd622",
+  "cases": [
+    {
+      "id": "jet",
+      "parts": 40,
+      "geometryUnchanged": true,
+      "inventoryUnchanged": true,
+      "previousBuildSha256": "630895ec1f2c976866dfe93d81f78c49c388bae0529f36d6ded4df513b324600",
+      "currentBuildSha256": "630895ec1f2c976866dfe93d81f78c49c388bae0529f36d6ded4df513b324600"
+    },
+    {
+      "id": "small-ramp",
+      "parts": 9,
+      "geometryUnchanged": true,
+      "inventoryUnchanged": true,
+      "previousBuildSha256": "576b51983908dd12ccd1ff0c5b59bef696488404fe45dd9746244c24f3a9c3c3",
+      "currentBuildSha256": "576b51983908dd12ccd1ff0c5b59bef696488404fe45dd9746244c24f3a9c3c3"
+    },
+    {
+      "id": "medium-ramp",
+      "parts": 37,
+      "geometryUnchanged": true,
+      "inventoryUnchanged": true,
+      "previousBuildSha256": "aa438a3f954fed43615bed3eb8bc5d9835b3f5d75414f2ca424b8684ac94ea71",
+      "currentBuildSha256": "aa438a3f954fed43615bed3eb8bc5d9835b3f5d75414f2ca424b8684ac94ea71"
+    },
+    {
+      "id": "large-ramp",
+      "parts": 51,
+      "geometryUnchanged": true,
+      "inventoryUnchanged": true,
+      "previousBuildSha256": "16e1d7f9d3c775e0ad6b8a2ee92b4fef39e9fc42d27bca521362bc44e693e66b",
+      "currentBuildSha256": "16e1d7f9d3c775e0ad6b8a2ee92b4fef39e9fc42d27bca521362bc44e693e66b"
+    }
+  ]
+}

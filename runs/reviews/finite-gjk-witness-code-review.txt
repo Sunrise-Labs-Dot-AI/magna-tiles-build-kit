@@ -1,0 +1,9 @@
+No required correctness findings.
+
+I reviewed the plan, plan review, patch, tests, unpatched control, and upstream local source. The `finite_gjk_witness` guard checks the optional GJK pair in the right frame: `p1` against A-local geometry and `p2_1` against B transformed into A-local space, then stores `p2_1` back as B-local via `pos12.inverse_transform_point(&p2_1)`. It also goes beyond containment with support-plane checks, finite signed distance, gap consistency, and tangential residual, so finite interior placeholders should not be appended.
+
+I did not find evidence that valid clipped contacts are being filtered. The new predicate gates only the optional UNKNOWN-feature GJK witness after `PolygonalFeature::contacts`; clipped feature contacts remain intact. Noneligible paths fall back through `polyhedral_geometry() -> None`, nonzero border-radius paths are skipped, and normal-constraint behavior remains protected by the existing `local_n1 == dir` guard.
+
+The exact-touch contact-existence gap from the plan review is covered in `tests/polyhedral-contact.test.ts` by the new `requireContact` face-touch and shallow-penetration matrix, plus cache fixtures requiring contacts at initial penetration and exact touch. The two fresh builds match exactly for `build-proof.json`, `rapier.cjs`, and WASM hashes.
+
+I did not edit files or run the full test suite in this read-only session.

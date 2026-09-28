@@ -333,7 +333,7 @@ describe("magnetic tile structural macros", () => {
       rampSegment({ id: "ramp-segment", deckLength: 1, width: 1, sideShape: "isosceles-triangle", withLanding: true }),
       { "small-square": 3, "right-triangle": 2, "isosceles-triangle": 2 }
     ],
-    ["stepped riser", steppedRiser({ id: "riser", steps: 2 }), { "small-square": 10 }],
+    ["stepped riser", steppedRiser({ id: "riser", steps: 2 }), { "small-square": 13 }],
     ["triangle tent", triangleTent({ id: "tent" }), { "small-square": 2, "equilateral-triangle": 2 }],
     ["gable roof", gableRoof({ id: "gable" }), { "small-square": 2, "equilateral-triangle": 2 }],
     ["square pyramid", squarePyramid({ id: "pyramid" }), { "small-square": 1, "equilateral-triangle": 4 }],

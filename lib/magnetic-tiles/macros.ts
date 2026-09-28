@@ -450,7 +450,9 @@ export function steppedRiser(params: SteppedRiserParams): TileMacro {
         width: 1,
         height: index + 1,
         depth: 1,
-        openFaces: ["front", "back"],
+        // A rear wall braces each riser against hinge shear. Two open ends leave
+        // a folding rectangular linkage that only appeared stable with contact skin.
+        openFaces: ["front"],
         origin: transformPoint({ x: index * (EDGE + PANEL_THICKNESS * 2), y: 0, z: 0 }, frame),
         facing: params.facing,
         stepStart: stepStart + index,

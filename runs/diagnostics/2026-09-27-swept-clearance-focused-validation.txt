@@ -1,0 +1,13 @@
+Focused verification for the prepared caller-clearance increment.
+
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+
+ Test Files  4 passed (4)
+      Tests  50 passed (50)
+   Start at  16:47:44
+   Duration  5.62s (transform 203ms, setup 0ms, import 389ms, tests 7.52s, environment 0ms)
+
+
+Type checking exit 0; log empty. Focused lint exit 0; log empty.

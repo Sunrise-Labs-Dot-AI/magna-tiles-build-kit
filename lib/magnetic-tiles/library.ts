@@ -49,7 +49,7 @@ export const BUILD_LIBRARY: BuildLibraryItem[] = [
     difficulty: "medium",
     estimatedMinutes: 14,
     status: "engine-valid",
-    tags: ["snail", "animal", "radial shell", "triangle fan", "physics verified"]
+    tags: ["snail", "animal", "radial shell", "triangle fan", "simulation passed", "source unverified"]
   },
   {
     id: "small-car-ramp",
@@ -58,18 +58,18 @@ export const BUILD_LIBRARY: BuildLibraryItem[] = [
     summary: "A compact ramp for small toy cars using a low wedge and top landing.",
     difficulty: "easy",
     estimatedMinutes: 6,
-    status: "engine-valid",
-    tags: ["ramp", "toy cars", "wedge", "quick build", "physics verified"]
+    status: "engine-fail-pending-reauthoring",
+    tags: ["ramp", "toy cars", "wedge", "quick build", "needs verification"]
   },
   {
     id: "medium-car-ramp",
     title: "Medium Car Ramp",
     prompt: "Medium Car Ramp",
-    summary: "A continuous wedge ramp with rear supports, sloped driving surfaces, and side guardRails.",
+    summary: "A historical 11-piece wedge variant with a raised landing. It needs stability verification.",
     difficulty: "medium",
     estimatedMinutes: 10,
-    status: "engine-valid",
-    tags: ["ramp", "supports", "guardRails", "toy cars", "physics verified"]
+    status: "engine-fail-pending-reauthoring",
+    tags: ["ramp", "supports", "landing", "toy cars", "needs verification"]
   },
   {
     id: "large-car-ramp",
@@ -79,7 +79,7 @@ export const BUILD_LIBRARY: BuildLibraryItem[] = [
     difficulty: "hard",
     estimatedMinutes: 18,
     status: "engine-fail-pending-reauthoring",
-    tags: ["ramp", "large panels", "stability", "toy cars", "pending E4"]
+    tags: ["ramp", "large panels", "stability", "toy cars", "needs verification"]
   },
   {
     id: "rocket",
@@ -89,7 +89,7 @@ export const BUILD_LIBRARY: BuildLibraryItem[] = [
     difficulty: "medium",
     estimatedMinutes: 10,
     status: "engine-valid",
-    tags: ["rocket", "box", "nose cone", "fins", "physics verified"]
+    tags: ["rocket", "box", "nose cone", "fins", "simulation passed"]
   }
 ];
 

@@ -1,0 +1,175 @@
+{
+  "scope": "Sequential final-context verification; source report-only completion is not replica acceptance.",
+  "context": {
+    "validationCodeHash": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+    "sourceInputs": {
+      "verification/replication/candidate-freezes.json": "086a14313159a908ddb44c4a2bc7bba753cbe40c65b5b42f1c60f6dac2229aed",
+      "verification/replication/evidence-ledger.json": "93e64f7589007234d2564bb386cb98911a9538aa5f00cb569c95d726cd5b5d55",
+      "verification/replication/frame-manifest.json": "3ad88b57e0c173411c1f13cf5c90bfb3a76eef214f2982fa8f7d2e46b17292f2",
+      "verification/replication/observation-lock.json": "a0ec02c57195c259e6794bb3d0d0c8faba00d6670eba2869e2777a463326042d",
+      "verification/replication/observations.json": "499da9f22fceeaf6485ed36aca3be85965d2c1eab72932ab028186194931c02e",
+      "verification/replication/source-pieces.json": "82c2ad3475fc6b63025f6369c54ecbb43261626767b525ab307ff7685c79ff1d",
+      "verification/replication/sources.json": "7d9f57749926ec8dd01273ba6928955b9abd8c46681372645e1aef9c344b1e43"
+    }
+  },
+  "startedAt": "2026-09-28T02:40:33.782Z",
+  "runnerSha256": "aa107962c103cd55aab8043ee3438d6eaff6786ff7d055ef2c5c3e2c4942cc40",
+  "completed": true,
+  "stages": [
+    {
+      "name": "configured72",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/reference/rigid-contact.ts"
+      ],
+      "startedAt": "2026-09-28T02:40:33.792Z",
+      "finishedAt": "2026-09-28T02:47:33.811Z",
+      "durationSeconds": 420.006715791,
+      "exitCode": 0,
+      "signal": null,
+      "contextUnchanged": true,
+      "log": "runs/diagnostics/2026-09-27-final-qualification.configured72.log.txt",
+      "logSha256": "9489d75b9c4d3939ed829112e9e0661cbaa2851e4d5f1a24b78786f5473b0f70",
+      "outputs": [
+        {
+          "file": "verification/replication/rigid-contact-fixture.json",
+          "sha256": "4a26d57e0c702809061b5685869c5618d443023e61853ea4795ba92aaee63e19",
+          "archive": "runs/diagnostics/2026-09-27-final-qualification.configured72.verification_replication_rigid-contact-fixture.json.gz",
+          "gzipSha256": "73c4171e71550c9b02b486986824f92c88cf27be8d214c872d1f9d045cf55fe6"
+        }
+      ]
+    },
+    {
+      "name": "structural25",
+      "command": [
+        "npm",
+        "run",
+        "benchmark:harness"
+      ],
+      "startedAt": "2026-09-28T02:47:33.820Z",
+      "finishedAt": "2026-09-28T03:00:17.411Z",
+      "durationSeconds": 763.591007709,
+      "exitCode": 0,
+      "signal": null,
+      "contextUnchanged": true,
+      "log": "runs/diagnostics/2026-09-27-final-qualification.structural25.log.txt",
+      "logSha256": "9a1f7648f509a48ea2b1881045778ad382f5987330511b02bf8cd0fec168fabc",
+      "outputs": [
+        {
+          "file": "verification/harness-benchmark.json",
+          "sha256": "1097f8f4557df3578cebf527922e6f70b43333b080965b0b209b575a9e99415e",
+          "archive": "runs/diagnostics/2026-09-27-final-qualification.structural25.verification_harness-benchmark.json.gz",
+          "gzipSha256": "cb42038e8892f4d425e00a4a04800f305c56689f9b47f60e4d2660baa3af6330"
+        },
+        {
+          "file": "verification/harness-benchmark-summary.json",
+          "sha256": "dc2949e3eef04f26ee6c333c975bb92960ee53bedc1b7f1aed0b948c421ae2c6",
+          "archive": "runs/diagnostics/2026-09-27-final-qualification.structural25.verification_harness-benchmark-summary.json.gz",
+          "gzipSha256": "9c796af2015e56eed798aa45b422c85c216410c037884821638e64728ab6b839"
+        }
+      ]
+    },
+    {
+      "name": "generic-assembly",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/reference/assembly-fixtures.ts"
+      ],
+      "startedAt": "2026-09-28T03:00:17.418Z",
+      "finishedAt": "2026-09-28T03:07:34.001Z",
+      "durationSeconds": 436.5824611669998,
+      "exitCode": 0,
+      "signal": null,
+      "contextUnchanged": true,
+      "log": "runs/diagnostics/2026-09-27-final-qualification.generic-assembly.log.txt",
+      "logSha256": "43b0aba1bb4daf2a0d848c6f07aa02ad0c5c8b944968d30bb22926545aedca52",
+      "outputs": [
+        {
+          "file": "verification/replication/assembly-fixture.json",
+          "sha256": "eda4cd90b47cad2a254103b2a5a472731a3989b9f84b3ab0d18812efffdc113c",
+          "archive": "runs/diagnostics/2026-09-27-final-qualification.generic-assembly.verification_replication_assembly-fixture.json.gz",
+          "gzipSha256": "ff845394454514d00f4a4b88efff12cac7b7781302111469cb2015bc91df02cd"
+        }
+      ]
+    },
+    {
+      "name": "source-reports",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/reference/verify.ts",
+        "--report-only",
+        "--max-ms=900000"
+      ],
+      "startedAt": "2026-09-28T03:07:34.007Z",
+      "finishedAt": "2026-09-28T03:25:44.354Z",
+      "durationSeconds": 1090.3210721670002,
+      "exitCode": 0,
+      "signal": null,
+      "contextUnchanged": true,
+      "log": "runs/diagnostics/2026-09-27-final-qualification.source-reports.log.txt",
+      "logSha256": "9af7e742f94023475ed2b823678f06cc69599cedd79378e258db0ec4745a1785",
+      "outputs": [
+        {
+          "file": "public/reference-replicas/jet.json",
+          "sha256": "1ffe333f83bd2b309b53c8d7b03b33fa4c70e567c90daf4e0978df610e729d86",
+          "archive": "runs/diagnostics/2026-09-27-final-qualification.source-reports.public_reference-replicas_jet.json.gz",
+          "gzipSha256": "810a0b02322466567f5f7152343a1b0ad79c1d0c7dcc66fa3ef0dfd9cc65872d"
+        },
+        {
+          "file": "public/reference-replicas/small-ramp.json",
+          "sha256": "6b5ef672f914286866e42a4b0f08b8f84f7de532969a2cf4003f6de28445a8a7",
+          "archive": "runs/diagnostics/2026-09-27-final-qualification.source-reports.public_reference-replicas_small-ramp.json.gz",
+          "gzipSha256": "f57b47d522536ae33ee72b47ce0a8615b1f42da8a405fc9b691ecad95c9dcca5"
+        },
+        {
+          "file": "public/reference-replicas/medium-ramp.json",
+          "sha256": "ce0197f8993f20d1659aeac9a3a31f95f7aac1c2440034102e907e16f77ad02d",
+          "archive": "runs/diagnostics/2026-09-27-final-qualification.source-reports.public_reference-replicas_medium-ramp.json.gz",
+          "gzipSha256": "9346d4b445f0e65b12c0b646f234d72c46addfe9315f25bc9e07d1f638c5e0f0"
+        },
+        {
+          "file": "public/reference-replicas/large-ramp.json",
+          "sha256": "949b2f643bb1d4619f2091d0e86054de6bb4049e9b1a97a70dde225b2dddd2ac",
+          "archive": "runs/diagnostics/2026-09-27-final-qualification.source-reports.public_reference-replicas_large-ramp.json.gz",
+          "gzipSha256": "aba88d28b551bd6990b33308705a71929604c55b0a5b54680631b63c8341a431"
+        },
+        {
+          "file": "verification/replication/results.json",
+          "sha256": "b6921d6744d7a8e25a4129410601af770d3849522159677b39d5eae014552e04",
+          "archive": "runs/diagnostics/2026-09-27-final-qualification.source-reports.verification_replication_results.json.gz",
+          "gzipSha256": "16c8e8a45163245717f10480625ea0287147730ef12d269c5c7c15e63d35b9f3"
+        },
+        {
+          "file": "verification/replication/artifact-manifest.json",
+          "sha256": "a632d2a4afc9e9f2c2760aa44c547d9713ac28254ff651fa1c5dc82de23bd546",
+          "archive": "runs/diagnostics/2026-09-27-final-qualification.source-reports.verification_replication_artifact-manifest.json.gz",
+          "gzipSha256": "7a0c8866ff07776e32850d02838fbd2e20b19e6b6e97d82032ee21e9fb61bb87"
+        }
+      ]
+    },
+    {
+      "name": "artifact-gate",
+      "command": [
+        "npm",
+        "run",
+        "reference:check-artifacts"
+      ],
+      "startedAt": "2026-09-28T03:25:44.365Z",
+      "finishedAt": "2026-09-28T03:25:45.432Z",
+      "durationSeconds": 1.067383624999784,
+      "exitCode": 0,
+      "signal": null,
+      "contextUnchanged": true,
+      "log": "runs/diagnostics/2026-09-27-final-qualification.artifact-gate.log.txt",
+      "logSha256": "7a9b8664ff040c974300463b0f3b450e349465bd1d4acf39e294bb30b7d3a614",
+      "outputs": []
+    }
+  ],
+  "finishedAt": "2026-09-28T03:25:45.433Z"
+}

@@ -1,0 +1,11 @@
+**Findings**
+
+- **Initial red/orange side module:** From 65.25s and 67.5s, the hand-held/installed red-orange assembly establishes **at least two triangular tiles**: a red triangular face and an orange/yellow triangular face sharing/meeting along an edge. I do **not** think this evidence reliably supports calling it **three triangles**. Any possible third face is obscured by hands, edge-on viewing, or transparency; no separate solid boundary/vertex set is clearly visible.
+
+- **Yellow side addition:** At 74.0s, a yellow triangular side piece is being positioned on the left/front side of the lower ramp section. The visible vertices show one triangular yellow tile: top vertex near the ramp ridge/side joint, lower vertices along the side edge. Because it is partly edge-on and partly overlapped by orange transparent tiles, I would count only the clearly bounded yellow triangle, not background yellow/orange seen through it.
+
+- **Blue side addition before blue top turn:** Yes. At 78.5s, a **blue panel is already upright** on the left side of the structure before the later blue top/turn placement. Its vertical edge is visible just behind the front-left roof/side area. At 80.5s, the blue triangular tile is then placed across the top/turn area. So the evidence supports: **upright blue side panel first, blue top/turn panel afterward.**
+
+- **Initial upper green/orange side modules:** At 85.0s and 91.0s, the upper structure shows green/orange triangular side modules along the sloped upper section. Some green/orange triangular faces are solidly bounded, but several apparent colors are visible through transparent overlapping tiles. I would only treat the clearly edged green triangle on the upper side and the orange triangular face beside it as established; I would not infer a full tessellated wall or hidden triangle count from translucency alone.
+
+**Bottom line:** The initial red/orange module can be called **two triangles with confidence**, but **not three** from these frames alone. And yes, the blue upright side panel appears before the blue top turn is added.

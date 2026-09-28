@@ -1,0 +1,7 @@
+CLEAN.
+
+I found no concrete defects in the reviewed integration. Fixture evidence is scoped as source-independent, `validationCodeHash()` now binds the bridge fixture and replication/runtime trees, and reporting keeps source fidelity separate: `replication` starts as `not-verified`, fidelity stays observation-gated, and UI copy says the bridge is only a construction-stage check.
+
+The medium and bridge tests cover the requested gates: six medium stages by behavior, seeds `[0,17,53]`, 13-to-14 bridge body introduction, 16-to-18 joint growth via exact terminal connection comparison, withheld joins until contact arrival, and mandatory withdrawal/free-rest failure behavior.
+
+I did not run tests, per your read-only review scope and the pending physical test run.

@@ -1,0 +1,87 @@
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+
+<--- Last few GCs --->
+
+[53151:0x9a880c000]    55104 ms: Scavenge (during sweeping) 4046.3 (4086.0) -> 4032.7 (4087.3) MB, pooled: 0.0 MB, 6.16 / 0.00 ms (average mu = 0.323, current mu = 0.302) allocation failure; 
+[53151:0x9a880c000]    56422 ms: Mark-Compact (reduce) 4046.2 (4088.3) -> 4027.9 (4056.8) MB, pooled: 0.0 MB, 20.00 / 0.00 ms (+ 1105.8 ms in 208 steps since start of marking, biggest step 21.6 ms, walltime since start of marking 1163 ms) (average mu = 0.
+FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
+----- Native stack trace -----
+
+ 1: 0x109496cd8 node::OOMErrorHandler(char const*, v8::OOMDetails const&) [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+ 2: 0x1097b1bc8 v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+ 3: 0x1097b1b80 v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+ 4: 0x10995f740 v8::internal::Heap::ShouldOptimizeForLoadTime() const [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+ 5: 0x109961d50 v8::internal::Heap::OldGenerationConsumedBytes() const [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+ 6: 0x109961bf8 v8::internal::Heap::RecomputeLimits(v8::internal::GarbageCollector, v8::base::TimeTicks) [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+ 7: 0x10996f4e8 v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags, v8::internal::PerformHeapLimitCheck)::$_1::operator()() const [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+ 8: 0x10996f18c void heap::base::Stack::SetMarkerAndCallbackImpl<v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags, v8::internal::PerformHeapLimitCheck)::$_1>(heap::base::Stack*, void*, void const*) [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+ 9: 0x109f908d4 PushAllRegistersAndIterateStack [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+10: 0x10995dc3c v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags, v8::internal::PerformHeapLimitCheck) [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+11: 0x1098ec354 v8::internal::StackGuard::HandleInterrupts(v8::internal::StackGuard::InterruptLevel) [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+12: 0x109c4c268 v8::internal::Runtime_StackGuardWithGap(int, unsigned long*, v8::internal::Isolate*) [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+13: 0x1092a5474 Builtins_CEntry_Return1_ArgvOnStack_NoBuiltinExit [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+14: 0x12b47d630 
+15: 0x1092477cc Builtins_LoadIC [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+16: 0x12b379d48 
+17: 0x1092bab78 Builtins_FlattenIntoArrayWithMapFn [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+18: 0x1092bb9b0 Builtins_ArrayPrototypeFlatMap [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+19: 0x12b34887c 
+20: 0x12b41ce24 
+21: 0x12b1db538 
+22: 0x12b4e4c58 
+23: 0x12b372dc8 
+24: 0x12b42f704 
+25: 0x12b380318 
+26: 0x1092434c4 Builtins_AsyncFunctionAwaitResolveClosure [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+27: 0x10931a058 Builtins_PromiseFulfillReactionJob [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+28: 0x109232920 Builtins_RunMicrotasks [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+29: 0x109202850 Builtins_JSRunMicrotasksEntry [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+30: 0x1098c7f00 v8::internal::(anonymous namespace)::Invoke(v8::internal::Isolate*, v8::internal::(anonymous namespace)::InvokeParams const&) [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+31: 0x1098c85b0 v8::internal::(anonymous namespace)::InvokeWithTryCatch(v8::internal::Isolate*, v8::internal::(anonymous namespace)::InvokeParams const&) [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+32: 0x1098c86a0 v8::internal::Execution::TryRunMicrotasks(v8::internal::Isolate*, v8::internal::MicrotaskQueue*) [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+33: 0x1098ea84c v8::internal::MicrotaskQueue::RunMicrotasks(v8::internal::Isolate*) [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+34: 0x1098ea668 v8::internal::MicrotaskQueue::PerformCheckpointInternal(v8::Isolate*) [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+35: 0x1093dd844 node::InternalCallbackScope::Close() [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+36: 0x1093dd6d4 node::InternalCallbackScope::~InternalCallbackScope() [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+37: 0x10a43a330 node::fs::FSReqPromise<node::AliasedBufferBase<double, v8::Float64Array>>::Resolve(v8::Local<v8::Value>) [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+38: 0x10a43ff4c node::fs::AfterNoArgs(uv_fs_s*) [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+39: 0x1094904f0 node::MakeLibuvRequestCallback<uv_fs_s, void (*)(uv_fs_s*)>::Wrapper(uv_fs_s*) [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+40: 0x104f16e64 uv__work_done [/opt/homebrew/Cellar/libuv/1.52.1/lib/libuv.1.0.0.dylib]
+41: 0x104f1a3cc uv__async_io [/opt/homebrew/Cellar/libuv/1.52.1/lib/libuv.1.0.0.dylib]
+42: 0x104f291b0 uv__io_poll [/opt/homebrew/Cellar/libuv/1.52.1/lib/libuv.1.0.0.dylib]
+43: 0x104f1ab64 uv_run [/opt/homebrew/Cellar/libuv/1.52.1/lib/libuv.1.0.0.dylib]
+44: 0x1093de8c8 node::SpinEventLoopInternal(node::Environment*) [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+45: 0x1094c4838 node::NodeMainInstance::Run(node::ExitCode*, node::Environment*) [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+46: 0x1094c456c node::NodeMainInstance::Run() [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+47: 0x109469d70 node::Start(int, char**) [/opt/homebrew/Cellar/node/25.6.0/lib/libnode.141.dylib]
+48: 0x1882804e4 start [/usr/lib/dyld]
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 1 unhandled error during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯⎯⎯ Unhandled Error ⎯⎯⎯⎯⎯⎯⎯
+Error: [vitest-pool]: Worker forks emitted error.
+ ❯ EventEmitter.<anonymous> node_modules/vitest/dist/chunks/cli-api.B5majYba.js:3446:22
+ ❯ EventEmitter.emit node:events:508:20
+ ❯ ChildProcess.emitUnexpectedExit node_modules/vitest/dist/chunks/cli-api.B5majYba.js:3013:22
+ ❯ ChildProcess.emit node:events:508:20
+ ❯ Process.ChildProcess._handle.onexit node:internal/child_process:293:12
+
+Caused by: Error: Worker exited unexpectedly
+ ❯ ChildProcess.emitUnexpectedExit node_modules/vitest/dist/chunks/cli-api.B5majYba.js:3012:33
+ ❯ ChildProcess.emit node:events:508:20
+ ❯ Process.ChildProcess._handle.onexit node:internal/child_process:293:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files   (1)
+      Tests   (1)
+     Errors  1 error
+   Start at  15:25:03
+   Duration  56.53s (transform 138ms, setup 0ms, import 196ms, tests 0ms, environment 0ms)
+
+[vitest-pool]: Timeout terminating forks worker for test files /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/probe-proof-reuse.ts.

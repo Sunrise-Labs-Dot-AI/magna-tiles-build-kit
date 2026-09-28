@@ -35,11 +35,22 @@ export interface CarSample {
   position: Vec3;
 }
 export interface CarTrial {
+  /** Absent when rejected before creating a physics world. */
+  peakGroundPenetration?: number;
+  /** Tile/table guard history; vehicle contacts are tested separately. */
+  solidFailures?: import("@/lib/magnetic-tiles/swept-prisms").SolidFailure[];
+  peakSolidOverlap?: number;
   laneId: string;
   passed: boolean;
   reachedWaypoint: number;
   reason: string;
   samples: CarSample[];
+  contactEvidence?: {
+    roadContactSteps: number;
+    longestContactGapSeconds: number;
+    allowedContactGapSeconds: number;
+    postRunStructurePassed: boolean;
+  };
 }
 export interface CandidateResult {
   id: string;

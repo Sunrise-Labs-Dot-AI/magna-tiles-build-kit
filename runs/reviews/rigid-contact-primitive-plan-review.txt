@@ -1,0 +1,15 @@
+**Verdict:** BLOCK adoption until acceptance is tightened. The exact-cuboid primitive is a plausible bounded fix, but the current proposal has gaps that could let a frame bug or stale continued state pass as “fixed.”
+
+**Findings:**
+
+1. **Frame equivalence is underspecified.** Current hull points are baked as `tilePrismVertices(tile) - tile.position`, meaning the tile basis is already embedded in body-local coordinates ([build.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/build.ts:155), [rapier-world.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts:261)). A cuboid must reproduce `bodyRotation * referenceBasis * catalogLocalVertex`, not just “set local rotation.” Acceptance should require noncommuting reference/body rotations and both `basis` and Euler-only tiles.
+
+2. **The SAT oracle is not currently strong enough.** `tilesIntersectAsPrisms` has a 0.03-inch tolerance and returns overlap/penetration, not signed manifold depth or witness points ([prism-geometry.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/prism-geometry.ts:29)). “Manifold depths agree with independent SAT” needs a new exact signed-distance/contact-depth check, otherwise the former `-3` inch phantom can be replaced by an unverified near-contact story.
+
+3. **Continued-state safety needs an explicit stale-state gate.** `EngineState` stores `referenceTile` plus body rotation, but no collision primitive/version ([rapier-world.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts:55)). Since the old convex hull can pollute saved poses/velocities via the phantom contact, post-fix continuation should reject or invalidate pre-fix physics fingerprints before using them as evidence.
+
+4. **Motion equivalence alone is insufficient.** The logs support the diagnosis: contacts enabled creates a continued-only `~ -3` inch z-depth phantom, while no-contact fresh/continued trajectories align. But the cuboid fix must pass contact-manifold assertions with contacts enabled before any folding/pass result counts.
+
+5. **Mass/inertia equivalence is unproven.** Switching from convex hull to cuboid should not change dimensions, anchors, forces, or tolerances, but Rapier may derive inertia from shape. Acceptance should include isolated rectangular-panel mass/inertia or torque/hinge equivalence, especially because hinge folding is the affected behavior.
+
+**Required acceptance additions:** exact transformed-corner equality for small/large/XL squares; noncommuting reference/body rotation cases; Euler fallback; fresh vs continued manifold-depth parity with contacts enabled; stale physics-state invalidation; and inertia/hinge equivalence evidence.

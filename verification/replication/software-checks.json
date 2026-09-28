@@ -1,0 +1,40 @@
+{
+  "date": "2026-09-26",
+  "tests": {
+    "passed": 308,
+    "skipped": 1,
+    "files": 23
+  },
+  "productionBuild": "pass",
+  "lint": {
+    "errors": 0,
+    "existingWarnings": 38,
+    "newWarnings": 0
+  },
+  "structuralBenchmark": {
+    "correct": 25,
+    "total": 25
+  },
+  "replicationAcceptance": {
+    "verifiedTargets": 0,
+    "strictExitCode": 1
+  },
+  "review": {
+    "initial": "BLOCK",
+    "acceptedFindingsResolved": 3,
+    "followup": "all three ADDRESSED by independent follow-up; no additional concrete blocker",
+    "model": "gpt-5.5",
+    "limitation": "Independent static review; executable verification performed in implementation lane."
+  },
+  "browserEvidence": "ui/results.json",
+  "artifactIntegrityEvidence": "artifact-integrity-regressions.json",
+  "originalLocalChangesPreserved": true,
+  "newEvidence": {
+    "release": "small and large candidates pass all three final releases; jet and medium fail",
+    "assembly": "generic U fixture passes all operations and free checkpoints in three seeds; source small-ramp deck closure and launch grip fail",
+    "source": "candidate freeze and reserved PNG binding enforced in actual evaluator; historical and duplicate view families rejected",
+    "camera": "impossible below-table/wrong-hemisphere perfect-residual cameras rejected",
+    "legacyLibrary": "seven nominal gates pass; historical jet/snail fail, unchanged"
+  },
+  "evidenceIntegrityEvidence": "evidence-integrity.json"
+}

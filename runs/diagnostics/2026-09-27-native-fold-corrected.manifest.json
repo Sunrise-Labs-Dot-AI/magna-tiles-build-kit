@@ -1,0 +1,20 @@
+{
+  "context": {
+    "validationCodeHash": "7a8ad00bf79266e385e434dcb9bdb6f7fabe98d1511f8564b36cd81496c93e29",
+    "scriptHashes": {
+      "scripts/reference/probe-native-fold.ts": "1396ce3c7a714951650287f0c4dbbe3dd14a205dd57062502832284ee6f1c34f"
+    }
+  },
+  "scope": "Native three-panel folding diagnostic. No source, material, release or assembly acceptance.",
+  "exitCode": 0,
+  "completed": true,
+  "declaredRows": 12,
+  "nativeRows": 6,
+  "nativeSteps": 72924,
+  "rawSha256": "227416a245557f4ca7b0c84d751b07db17f63b654e1571f18148fd0f480a97c4",
+  "gzipSha256": "89e9062d1b35093421f71350ea1120298069af25b692012d02e46637a2e68ec4",
+  "originalArchive": "runs/diagnostics/2026-09-27-native-fold.json.gz",
+  "comparison": "All complete rows exactly match the original after correcting only nativeInitial.solidFailures to its real empty initial value. Native trajectories, outcomes, terminal states and motion samples are unchanged.",
+  "correctedInitialFailureArrays": 6,
+  "scriptSha256": "1396ce3c7a714951650287f0c4dbbe3dd14a205dd57062502832284ee6f1c34f"
+}

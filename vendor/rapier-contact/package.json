@@ -1,0 +1,16 @@
+{
+  "name": "@magnatiles/rapier-contact",
+  "version": "0.19.2-sat-cache.3",
+  "private": true,
+  "description": "Pinned f32 Rapier headless verifier with the reviewed finite-polyhedron contact correction.",
+  "license": "Apache-2.0",
+  "main": "./rapier.cjs",
+  "types": "./rapier.d.ts",
+  "exports": {
+    ".": {
+      "types": "./rapier.d.ts",
+      "require": "./rapier.cjs",
+      "import": "./rapier.cjs"
+    }
+  }
+}

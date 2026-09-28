@@ -1,0 +1,15 @@
+**Verification Result**
+
+1. **BLOCKER: ADDRESSED**
+The revised plan explicitly adds `movingComponentTileIds` to `HeldMotionTrial`, separates it from `heldTileIds`, and states it is only for measurement/partition/baseline logic. This matches the actual runtime hazard in [held-motion.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/held-motion.ts:37): `movingTileIds` currently drives splitting/baseline/access, while [line 89](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/held-motion.ts:89) makes only the gripped moving hand kinematic and other hands fixed.
+**Residual correction:** none required, but implementation must preserve the plan’s distinction: `movingComponentTileIds` must never imply carried/kinematic bodies.
+
+2. **Component resolver contract: ADDRESSED**
+The plan now requires resolution against the complete present prefix, after `componentContacts`, with unplaced incoming/future tiles filtered out and predecessor components excluded. That directly closes the risk from [assembly.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:182), where generated workspace components currently include predecessor components plus nominal stage tiles.
+**Residual correction:** none required.
+
+3. **Exact call-boundary regression assertions: ADDRESSED**
+The acceptance section now requires assertions at both pickup and lowering `simulateHeldMotion` boundaries: full build retains obstacles, state equals the preceding support terminal state, moving IDs equal only the resolved component, hands exclude obstacles, and `motion[0].tiles` equals the preceding support terminal poses. This directly targets the risky current calls at [assembly.ts:276](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:276) and [assembly.ts:360](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/assembly.ts:360).
+**Residual correction:** none required.
+
+I did not edit files or run tests.

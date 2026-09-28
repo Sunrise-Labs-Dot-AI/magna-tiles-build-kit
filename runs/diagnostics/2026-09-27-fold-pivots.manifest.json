@@ -1,0 +1,216 @@
+{
+  "scope": "Prescribed geometry only. Continuous clearance applies to piecewise linear/slerped intervals, not the exact curved hinge motion; contacts are checked only at samples. No native, material, grip, assembly, release or source acceptance.",
+  "context": {
+    "validationCodeHash": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+    "inputHashes": {
+      "runs/diagnostics/2026-09-27-fold-clearance.json.gz": "857b742fe3507450b92533cc9a97c580eabe2ed663a4eda974cc5d1e1f537202",
+      "runs/diagnostics/2026-09-27-native-fold-corrected.json.gz": "89e9062d1b35093421f71350ea1120298069af25b692012d02e46637a2e68ec4",
+      "scripts/reference/probe-fold-clearance.ts": "2d35c7889907a3758577d6a21d573d7339cfaaba2ff3091c0664db5cfeacca2a",
+      "scripts/reference/probe-fold-pivots.ts": "bdaddc5c72bbe4feb5b5fc7832aa200a13f12e195fdd8451f552a6113a24610a",
+      "scripts/reference/probe-native-fold.ts": "1396ce3c7a714951650287f0c4dbbe3dd14a205dd57062502832284ee6f1c34f"
+    }
+  },
+  "finalContext": {
+    "validationCodeHash": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+    "inputHashes": {
+      "runs/diagnostics/2026-09-27-fold-clearance.json.gz": "857b742fe3507450b92533cc9a97c580eabe2ed663a4eda974cc5d1e1f537202",
+      "runs/diagnostics/2026-09-27-native-fold-corrected.json.gz": "89e9062d1b35093421f71350ea1120298069af25b692012d02e46637a2e68ec4",
+      "scripts/reference/probe-fold-clearance.ts": "2d35c7889907a3758577d6a21d573d7339cfaaba2ff3091c0664db5cfeacca2a",
+      "scripts/reference/probe-fold-pivots.ts": "bdaddc5c72bbe4feb5b5fc7832aa200a13f12e195fdd8451f552a6113a24610a",
+      "scripts/reference/probe-native-fold.ts": "1396ce3c7a714951650287f0c4dbbe3dd14a205dd57062502832284ee6f1c34f"
+    }
+  },
+  "exitCode": 0,
+  "completed": true,
+  "nativeDynamicsRun": false,
+  "rows": 18,
+  "segmentsPerRow": 24,
+  "computeSeconds": 0.23532425,
+  "rawSha256": "6429fba205ad440963074c80a3b64f0032e0a3bf81dc9f8550342f58e4bb5b63",
+  "gzipSha256": "116889dd7d5a566f507c8d1d938216b6666ad10bede73a3dbe2876590f3b66a3",
+  "scriptSha256": "bdaddc5c72bbe4feb5b5fc7832aa200a13f12e195fdd8451f552a6113a24610a",
+  "logSha256": "fe9e8b3e5609f72e7736c7f283ec0746cef671a1723cc63acf18251d15e8101c",
+  "summary": [
+    {
+      "direction": -1,
+      "proximalOffset": -0.09,
+      "distalOffset": -0.09,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": -1,
+      "proximalOffset": -0.09,
+      "distalOffset": 0,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": -1,
+      "proximalOffset": -0.09,
+      "distalOffset": 0.09,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": -1,
+      "proximalOffset": 0,
+      "distalOffset": -0.09,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": -1,
+      "proximalOffset": 0,
+      "distalOffset": 0,
+      "firstEngineFailure": 75,
+      "firstCallerFailure": 75,
+      "firstSampledRetainedClosureFailure": 75,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": -1,
+      "proximalOffset": 0,
+      "distalOffset": 0.09,
+      "firstEngineFailure": 75,
+      "firstCallerFailure": 75,
+      "firstSampledRetainedClosureFailure": 75,
+      "terminalThird": "pass",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": -1,
+      "proximalOffset": 0.09,
+      "distalOffset": -0.09,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": -1,
+      "proximalOffset": 0.09,
+      "distalOffset": 0,
+      "firstEngineFailure": 75,
+      "firstCallerFailure": 75,
+      "firstSampledRetainedClosureFailure": 75,
+      "terminalThird": "pass",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": -1,
+      "proximalOffset": 0.09,
+      "distalOffset": 0.09,
+      "firstEngineFailure": null,
+      "firstCallerFailure": null,
+      "firstSampledRetainedClosureFailure": null,
+      "terminalThird": "pass",
+      "wholeRing": "pass"
+    },
+    {
+      "direction": 1,
+      "proximalOffset": -0.09,
+      "distalOffset": -0.09,
+      "firstEngineFailure": null,
+      "firstCallerFailure": null,
+      "firstSampledRetainedClosureFailure": null,
+      "terminalThird": "pass",
+      "wholeRing": "pass"
+    },
+    {
+      "direction": 1,
+      "proximalOffset": -0.09,
+      "distalOffset": 0,
+      "firstEngineFailure": 75,
+      "firstCallerFailure": 75,
+      "firstSampledRetainedClosureFailure": 75,
+      "terminalThird": "pass",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": 1,
+      "proximalOffset": -0.09,
+      "distalOffset": 0.09,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": 1,
+      "proximalOffset": 0,
+      "distalOffset": -0.09,
+      "firstEngineFailure": 75,
+      "firstCallerFailure": 75,
+      "firstSampledRetainedClosureFailure": 75,
+      "terminalThird": "pass",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": 1,
+      "proximalOffset": 0,
+      "distalOffset": 0,
+      "firstEngineFailure": 75,
+      "firstCallerFailure": 75,
+      "firstSampledRetainedClosureFailure": 75,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": 1,
+      "proximalOffset": 0,
+      "distalOffset": 0.09,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": 1,
+      "proximalOffset": 0.09,
+      "distalOffset": -0.09,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": 1,
+      "proximalOffset": 0.09,
+      "distalOffset": 0,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": 1,
+      "proximalOffset": 0.09,
+      "distalOffset": 0.09,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    }
+  ],
+  "initialAttempt": "An initial JSON comparison rejected optional ports:undefined omitted by the archive. Comparison now uses the same JSON representation, preserving all geometry/connection values. No row ran before that setup assertion."
+}

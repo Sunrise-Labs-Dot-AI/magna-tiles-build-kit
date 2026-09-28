@@ -1,0 +1,154 @@
+{
+  "tiles": [
+    {
+      "id": "lower-side--1",
+      "position": {
+        "x": 2.6151354550960852,
+        "y": 0.7228899636224644,
+        "z": -1.59
+      }
+    },
+    {
+      "id": "lower-side-1",
+      "position": {
+        "x": 2.6151354550960852,
+        "y": 0.7228899636224644,
+        "z": 1.59
+      }
+    },
+    {
+      "id": "lower-deck-1",
+      "position": {
+        "x": 1.0820462999631681,
+        "y": 0.7525936904990206,
+        "z": -4.588603803098342e-18
+      }
+    },
+    {
+      "id": "lower-deck-2",
+      "position": {
+        "x": 3.65612522802811,
+        "y": 2.2934108996747358,
+        "z": -4.588603803098343e-18
+      }
+    },
+    {
+      "id": "support-side--1-0",
+      "position": {
+        "x": 8.749183189754497,
+        "y": 1.733819504262593,
+        "z": 1.7043713156445657
+      }
+    },
+    {
+      "id": "support-side--1-1",
+      "position": {
+        "x": 10.249183189754497,
+        "y": 1.733819504262593,
+        "z": 4.302447526997883
+      }
+    },
+    {
+      "id": "support-side-1-0",
+      "position": {
+        "x": 5.995222405719981,
+        "y": 1.733819504262593,
+        "z": 3.2943713156445664
+      }
+    },
+    {
+      "id": "support-side-1-1",
+      "position": {
+        "x": 7.495222405719982,
+        "y": 1.733819504262593,
+        "z": 5.892447526997882
+      }
+    },
+    {
+      "id": "support-back",
+      "position": {
+        "x": 9.66720279773724,
+        "y": 1.733819504262593,
+        "z": 6.474427919015138
+      }
+    },
+    {
+      "id": "upper-side--1",
+      "position": {
+        "x": 9.216750917302539,
+        "y": 3.956709467885058,
+        "z": 2.5142223757372975
+      }
+    },
+    {
+      "id": "upper-side-1",
+      "position": {
+        "x": 6.462790133268024,
+        "y": 3.956709467885058,
+        "z": 4.104222375737297
+      }
+    },
+    {
+      "id": "upper-deck-1",
+      "position": {
+        "x": 7.073225947718822,
+        "y": 3.9864131947616137,
+        "z": 1.9815282211257699
+      }
+    },
+    {
+      "id": "upper-deck-2",
+      "position": {
+        "x": 8.360265411751294,
+        "y": 5.527230403937328,
+        "z": 4.210745964176226
+      }
+    }
+  ],
+  "cross": [
+    {
+      "fromTileId": "lower-side-1",
+      "fromEdge": 0,
+      "toTileId": "support-side-1-0",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "support-side--1-0",
+      "fromEdge": 2,
+      "toTileId": "upper-side--1",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "support-side-1-0",
+      "fromEdge": 2,
+      "toTileId": "upper-side-1",
+      "toEdge": 2,
+      "kind": "edge"
+    }
+  ],
+  "sourceCross": [
+    {
+      "fromTileId": "lower-side-1",
+      "fromEdge": 0,
+      "toTileId": "support-side-1-0",
+      "toEdge": 3,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "support-side--1-0",
+      "fromEdge": 2,
+      "toTileId": "upper-side--1",
+      "toEdge": 2,
+      "kind": "edge"
+    },
+    {
+      "fromTileId": "support-side-1-0",
+      "fromEdge": 2,
+      "toTileId": "upper-side-1",
+      "toEdge": 2,
+      "kind": "edge"
+    }
+  ]
+}

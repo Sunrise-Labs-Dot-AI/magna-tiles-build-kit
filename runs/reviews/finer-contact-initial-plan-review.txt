@@ -1,0 +1,11 @@
+VERIFIED/CLEAN, with limitations.
+
+I found no concrete integrity issue in the finer-rate plan. It is defensible as a new predeclared experiment, not a laundering of the failed coarse settings, because:
+
+- 120 Hz is already rejected on ordinary checks at 1920 as well as 960 in the current partial checkpoint.
+- 240 Hz is not accepted from the failed 960/1920 spread. The new 240 profile must qualify on fresh adjacent pairs, 1920/3840 or 3840/7680.
+- 480 Hz remains unauthorizable from old 960 results and must prove at least 1920/3840.
+- The plan keeps the existing numerical margins, fixture family, seeds, solvers, physical constants, fail-fast semantics and no-source-credit boundary.
+- Selection is predeclared: lowest qualifying frequency, then lowest qualifying collision rate.
+
+Important limitations: I did not run simulations, inspect source media, edit files, touch credentials, push, or interrupt jobs. The current checkpoint at `/tmp/magnatiles-loaded-contact-matrix.json` is still incomplete, so this review only verifies the proposed next experiment’s design against the current partial evidence and existing runner/contracts. Future implementation still needs code and complete-evidence review, especially around hard-coded 960 Hz paths and physics identity invalidation.

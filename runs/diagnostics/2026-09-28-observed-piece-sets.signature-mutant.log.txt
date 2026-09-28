@@ -1,0 +1,37 @@
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+ ❯ scripts/reference/observed-piece-sets.signature-mutant.test.ts (75 tests | 3 failed | 72 skipped) 8ms
+     × rejects changed shape even when both stage sets are locally valid 5ms
+     × rejects changed count even when both stage sets are locally valid 1ms
+     × rejects changed members even when both stage sets are locally valid 1ms
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 72 skipped (75)
+   Start at  19:58:41
+   Duration  258ms (transform 110ms, setup 0ms, import 159ms, tests 8ms, environment 0ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  scripts/reference/observed-piece-sets.signature-mutant.test.ts > observed interchangeable installed sets (isolated prototype) > rejects changed shape even when both stage sets are locally valid
+ FAIL  scripts/reference/observed-piece-sets.signature-mutant.test.ts > observed interchangeable installed sets (isolated prototype) > rejects changed count even when both stage sets are locally valid
+ FAIL  scripts/reference/observed-piece-sets.signature-mutant.test.ts > observed interchangeable installed sets (isolated prototype) > rejects changed members even when both stage sets are locally valid
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ scripts/reference/observed-piece-sets.signature-mutant.test.ts:250:82
+    248|     expect(f.run()[1].status).toBe("pass");
+    249|     f.records.unshift(earlier);
+    250|     expect(f.run().every(r=>r.status==="fail"&&r.detail.includes("iden…
+       |                                                                                  ^
+    251|   });
+    252|   it.each([false,true])("rejects source-ID collisions and member reass…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+

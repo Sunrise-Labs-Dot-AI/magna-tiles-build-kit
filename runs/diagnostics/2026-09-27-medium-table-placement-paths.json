@@ -1,0 +1,3661 @@
+{
+  "scope": "Rejected hand-path proposal for the unchanged 37-piece model; no fifth-stage terminal acceptance. Exact state continuations are covered by the relocation regression.",
+  "highPath": {
+    "transitHeight": 6,
+    "seconds": 493.909,
+    "precedingStages": [
+      {
+        "stageId": "medium-lower",
+        "status": "pass"
+      },
+      {
+        "stageId": "medium-upper-preparation",
+        "status": "pass"
+      },
+      {
+        "stageId": "medium-support",
+        "status": "pass"
+      },
+      {
+        "stageId": "medium-upper-transfer",
+        "status": "pass"
+      }
+    ],
+    "status": "fail",
+    "terminalConnections": null,
+    "attempts": [
+      {
+        "policy": "clear-first",
+        "detail": "Seed 0: upper-deck-1 intersects lower-side-1 by 0.030889338458530813 in during motion. Seed 17: upper-deck-1 intersects lower-side-1 by 0.030605284349300654 in during motion. Seed 53: upper-deck-1 intersects lower-side-1 by 0.0308149232176248 in during motion.",
+        "operations": [
+          {
+            "seed": 0,
+            "status": "fail",
+            "detail": "upper-deck-1 intersects lower-side-1 by 0.030889338458530813 in during motion.",
+            "carryCompletion": "incomplete",
+            "failedAtSeconds": 6.867708333333333,
+            "heldTileIds": [
+              "lower-deck-2"
+            ],
+            "finalTiles": [
+              {
+                "id": "lower-side--1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 2.6175549030303955,
+                  "y": 3.8628336783048103,
+                  "z": -1.5203355550765991
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.26463241162979545,
+                    "y": 0.9608415216701047,
+                    "z": -0.08217820239988416
+                  },
+                  "yAxis": {
+                    "x": -0.9633547530394981,
+                    "y": -0.267267174887525,
+                    "z": -0.022712926360309096
+                  },
+                  "zAxis": {
+                    "x": -0.043787058718372684,
+                    "y": 0.07315618540027176,
+                    "z": 0.9963588038585672
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": true
+              },
+              {
+                "id": "lower-side-1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 2.6175456047058105,
+                  "y": 3.862853705465455,
+                  "z": 1.5212321281433105
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.26467607316913755,
+                    "y": 0.9609159761950367,
+                    "z": 0.08116072316647478
+                  },
+                  "yAxis": {
+                    "x": -0.9633671122075833,
+                    "y": -0.26724610928827874,
+                    "z": 0.022434887722006202
+                  },
+                  "zAxis": {
+                    "x": 0.04324792952948108,
+                    "y": -0.07224959351731482,
+                    "z": 0.9964484998372951
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": true
+              },
+              {
+                "id": "lower-deck-1",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 1.0536537170410156,
+                  "y": 3.923898398458619,
+                  "z": -0.000020564617443596944
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.858025481608848,
+                    "y": 0.51360711921653,
+                    "z": 3.971021154901016e-8
+                  },
+                  "yAxis": {
+                    "x": -5.2420312658301826e-8,
+                    "y": 1.0256385613956453e-8,
+                    "z": 0.9999999999999986
+                  },
+                  "zAxis": {
+                    "x": 0.5136071192165288,
+                    "y": -0.8580254816088488,
+                    "z": 3.5723685978841245e-8
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": false,
+                "parentTileId": "lower-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              },
+              {
+                "id": "lower-deck-2",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 3.65612530708313,
+                  "y": 5.437405764639038,
+                  "z": -4.588603709174078e-18
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.8580263093549806,
+                    "y": 0.5136057363919049,
+                    "z": -6.86773063720276e-17
+                  },
+                  "yAxis": {
+                    "x": 3.7007434154171876e-17,
+                    "y": 4.6721885619642e-16,
+                    "z": 1
+                  },
+                  "zAxis": {
+                    "x": 0.5136057363919049,
+                    "y": -0.8580263093549806,
+                    "z": 3.8187884037254126e-16
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": false,
+                "parentTileId": "lower-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-side--1-0",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 8.762763023376465,
+                  "y": 1.4028481836911628,
+                  "z": 1.681503415107727
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.5000000172861037,
+                    "y": 0.00016946732867445315,
+                    "z": 0.8660253772232777
+                  },
+                  "yAxis": {
+                    "x": -0.0002351452545639658,
+                    "y": 0.9999999705579814,
+                    "z": -0.00005992283101986434
+                  },
+                  "zAxis": {
+                    "x": -0.8660253618807044,
+                    "y": -0.0001736803412402577,
+                    "z": 0.500000042414532
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": true
+              },
+              {
+                "id": "support-side--1-1",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 10.292779922485352,
+                  "y": 1.4033741350766609,
+                  "z": 4.279573917388916
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.472024894199339,
+                    "y": 0.00016713483721837253,
+                    "z": 0.8815852036655611
+                  },
+                  "yAxis": {
+                    "x": -0.00023951745690990457,
+                    "y": 0.9999999694343822,
+                    "z": -0.00006134021944555331
+                  },
+                  "zAxis": {
+                    "x": -0.8815851869714523,
+                    "y": -0.00018220093543742393,
+                    "z": 0.4720249198033177
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "support-side--1-0",
+                "parentEdge": 1,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-side-1-0",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 5.9951653480529785,
+                  "y": 1.403685628950257,
+                  "z": 3.294126510620117
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.4998162311676563,
+                    "y": 0.00017629785697978177,
+                    "z": 0.8661314588331412
+                  },
+                  "yAxis": {
+                    "x": -0.00024185210830888159,
+                    "y": 0.999999968706973,
+                    "z": -0.00006398132941926431
+                  },
+                  "zAxis": {
+                    "x": -0.8661314430090374,
+                    "y": -0.00017749681245600953,
+                    "z": 0.499816258164902
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "lower-side-1",
+                "parentEdge": 0,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-side-1-1",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 7.494905948638916,
+                  "y": 1.4027957316037605,
+                  "z": 5.892360210418701
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.4999972791100861,
+                    "y": 0.0001776004081834016,
+                    "z": 0.8660269564745694
+                  },
+                  "yAxis": {
+                    "x": -0.0002428669655702731,
+                    "y": 0.9999999684046275,
+                    "z": -0.00006485661927873303
+                  },
+                  "zAxis": {
+                    "x": -0.8660269406306872,
+                    "y": -0.00017790120584939233,
+                    "z": 0.49999730644575807
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "support-side-1-0",
+                "parentEdge": 1,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-back",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 9.66688060760498,
+                  "y": 1.4033594723340461,
+                  "z": 6.474339962005615
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.8660242807665477,
+                    "y": -0.00017772575314532749,
+                    "z": 0.5000019135326789
+                  },
+                  "yAxis": {
+                    "x": -0.00024171340228959653,
+                    "y": 0.9999999687897139,
+                    "z": -0.00006320761364238576
+                  },
+                  "zAxis": {
+                    "x": -0.5000018866938553,
+                    "y": -0.00017559649181490939,
+                    "z": -0.8660242966963786
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "support-side--1-1",
+                "parentEdge": 1,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-side--1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 9.164451599121094,
+                  "y": 3.6522626276608894,
+                  "z": 2.5393471717834473
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.06150138530638591,
+                    "y": 0.9608490958035352,
+                    "z": -0.27016031296051674
+                  },
+                  "yAxis": {
+                    "x": -0.4620581341707035,
+                    "y": -0.2673305758574197,
+                    "z": -0.8455983939544993
+                  },
+                  "zAxis": {
+                    "x": -0.884714564281658,
+                    "y": 0.07282429749245295,
+                    "z": 0.46040934117657417
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "support-side--1-0",
+                "parentEdge": 2,
+                "childEdge": 2,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-side-1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 6.530191421508789,
+                  "y": 3.6521086092587898,
+                  "z": 4.060232639312744
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.2027844997886992,
+                    "y": 0.9608851747791677,
+                    "z": -0.18862165181933713
+                  },
+                  "yAxis": {
+                    "x": -0.5011126496427434,
+                    "y": -0.2673207852382521,
+                    "z": -0.8230587525490713
+                  },
+                  "zAxis": {
+                    "x": -0.8412874413739195,
+                    "y": -0.07238286170919515,
+                    "z": 0.5357202276536807
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "support-side-1-0",
+                "parentEdge": 2,
+                "childEdge": 2,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-deck-1",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 7.080481052398682,
+                  "y": 3.6831139917966316,
+                  "z": 1.941335916519165
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.4289699312185783,
+                    "y": 0.5136708277353615,
+                    "z": 0.7430525411059412
+                  },
+                  "yAxis": {
+                    "x": -0.8660250641590889,
+                    "y": -0.00005449645552062988,
+                    "z": 0.5000005852780398
+                  },
+                  "zAxis": {
+                    "x": 0.2568762082376918,
+                    "y": -0.8579873412608163,
+                    "z": 0.4448284342053925
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "upper-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-deck-2",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 8.366704940795898,
+                  "y": 5.22681540209021,
+                  "z": 4.199031352996826
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.4289700660401992,
+                    "y": 0.5136703315120129,
+                    "z": 0.7430528063104301
+                  },
+                  "yAxis": {
+                    "x": -0.8660250915242161,
+                    "y": -0.00005443594513121443,
+                    "z": 0.5000005378869116
+                  },
+                  "zAxis": {
+                    "x": 0.25687589083434853,
+                    "y": -0.8579876383497995,
+                    "z": 0.4448280444699874
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "upper-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              }
+            ]
+          },
+          {
+            "seed": 17,
+            "status": "fail",
+            "detail": "upper-deck-1 intersects lower-side-1 by 0.030605284349300654 in during motion.",
+            "carryCompletion": "incomplete",
+            "failedAtSeconds": 6.867708333333333,
+            "heldTileIds": [
+              "lower-deck-2"
+            ],
+            "finalTiles": [
+              {
+                "id": "lower-side--1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 2.6175549030303955,
+                  "y": 3.8632826204892585,
+                  "z": -1.5203405618667603
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.26463261394502957,
+                    "y": 0.9608419721611428,
+                    "z": -0.08217228346654797
+                  },
+                  "yAxis": {
+                    "x": -0.9633548455202914,
+                    "y": -0.2672669892901421,
+                    "z": -0.022711187735533146
+                  },
+                  "zAxis": {
+                    "x": -0.043783801219132015,
+                    "y": 0.07315094646871549,
+                    "z": 0.9963593316577783
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": true
+              },
+              {
+                "id": "lower-side-1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 2.6175453662872314,
+                  "y": 3.8633031244870613,
+                  "z": 1.5212438106536865
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.26467663513297324,
+                    "y": 0.9609169785809563,
+                    "z": 0.08114702144584912
+                  },
+                  "yAxis": {
+                    "x": -0.9633672830217145,
+                    "y": -0.2672458063542036,
+                    "z": 0.022431161125798852
+                  },
+                  "zAxis": {
+                    "x": 0.04324068475460303,
+                    "y": -0.07223738132669046,
+                    "z": 0.9964496996441995
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": true
+              },
+              {
+                "id": "lower-deck-1",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 1.0536537170410156,
+                  "y": 3.9243480558988044,
+                  "z": -0.000019091909052804112
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.8580255647011943,
+                    "y": 0.5136069804034954,
+                    "z": 1.2202682593697726e-8
+                  },
+                  "yAxis": {
+                    "x": -7.402990252541138e-9,
+                    "y": -1.139144856276087e-8,
+                    "z": 0.9999999999999999
+                  },
+                  "zAxis": {
+                    "x": 0.5136069804034955,
+                    "y": -0.8580255647011943,
+                    "z": -5.9719266162633405e-9
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": false,
+                "parentTileId": "lower-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              },
+              {
+                "id": "lower-deck-2",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 3.65612530708313,
+                  "y": 5.437854945242066,
+                  "z": -4.588603709174078e-18
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.8580263093549806,
+                    "y": 0.5136057363919049,
+                    "z": 5.702169141218515e-17
+                  },
+                  "yAxis": {
+                    "x": 1.4802973661668753e-16,
+                    "y": 3.7007434154171876e-17,
+                    "z": 1
+                  },
+                  "zAxis": {
+                    "x": 0.5136057363919049,
+                    "y": -0.8580263093549806,
+                    "z": -4.427556973691198e-17
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": false,
+                "parentTileId": "lower-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-side--1-0",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 8.7191162109375,
+                  "y": 1.403086721479554,
+                  "z": 1.7043325901031494
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.5000144860377592,
+                    "y": 0.000057639544302622466,
+                    "z": 0.8660170381869391
+                  },
+                  "yAxis": {
+                    "x": -0.00002981818554848974,
+                    "y": 0.999999998338178,
+                    "z": -0.000049340853125346285
+                  },
+                  "zAxis": {
+                    "x": -0.8660170395917572,
+                    "y": -0.0000011519154166770884,
+                    "z": 0.5000144869255307
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": true
+              },
+              {
+                "id": "support-side--1-1",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 10.24911117553711,
+                  "y": 1.4032657738324592,
+                  "z": 4.302411079406738
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.5000235699979626,
+                    "y": 0.00005893140779886882,
+                    "z": 0.8660117932069872
+                  },
+                  "yAxis": {
+                    "x": -0.000030801344186963095,
+                    "y": 0.9999999982623577,
+                    "z": -0.0000502649155087885
+                  },
+                  "zAxis": {
+                    "x": -0.8660117946643507,
+                    "y": -0.0000015406848141871406,
+                    "z": 0.5000235709442671
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "support-side--1-0",
+                "parentEdge": 1,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-side-1-0",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 5.965185165405273,
+                  "y": 1.4030883904096076,
+                  "z": 3.2942941188812256
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.5000001736247282,
+                    "y": 0.00005373204509265969,
+                    "z": 0.866025301875245
+                  },
+                  "yAxis": {
+                    "x": -0.000029070158223337486,
+                    "y": 0.9999999985531949,
+                    "z": -0.000045260757129240715
+                  },
+                  "zAxis": {
+                    "x": -0.8660253030542281,
+                    "y": -0.0000025451061279199696,
+                    "z": 0.5000001744633245
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "lower-side-1",
+                "parentEdge": 0,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-side-1-1",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 7.495185852050781,
+                  "y": 1.4032589789029548,
+                  "z": 5.892373561859131
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.4999956431003164,
+                    "y": 0.00005840090110056747,
+                    "z": 0.8660279172578883
+                  },
+                  "yAxis": {
+                    "x": -0.00003120491175338066,
+                    "y": 0.9999999982919882,
+                    "z": -0.000049419401185485314
+                  },
+                  "zAxis": {
+                    "x": -0.8660279186648397,
+                    "y": -0.0000023148394566271816,
+                    "z": 0.49999564406871294
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "support-side-1-0",
+                "parentEdge": 1,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-back",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 9.667162895202637,
+                  "y": 1.4033562536832282,
+                  "z": 6.474365234375
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.8660279606716812,
+                    "y": -0.000002219762466747688,
+                    "z": 0.4999955713103083
+                  },
+                  "yAxis": {
+                    "x": -0.00003117605287108657,
+                    "y": 0.9999999982859509,
+                    "z": -0.0000495595810216046
+                  },
+                  "zAxis": {
+                    "x": -0.4999955703432808,
+                    "y": -0.00005850787125036249,
+                    "z": -0.8660279592564701
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "support-side--1-1",
+                "parentEdge": 1,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-side--1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 9.12770938873291,
+                  "y": 3.651970803320069,
+                  "z": 2.5508787631988525
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.06138472928993909,
+                    "y": 0.9608468598946666,
+                    "z": -0.27019479425140613
+                  },
+                  "yAxis": {
+                    "x": -0.462057151158643,
+                    "y": -0.2673075778009362,
+                    "z": -0.8456062014397455
+                  },
+                  "zAxis": {
+                    "x": -0.8847231793466022,
+                    "y": 0.0729381291284279,
+                    "z": 0.4603747660831172
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "support-side--1-0",
+                "parentEdge": 2,
+                "childEdge": 2,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-side-1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 6.493571758270264,
+                  "y": 3.6519863005277107,
+                  "z": 4.0716872215271
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.2028149607729001,
+                    "y": 0.9608891150727205,
+                    "z": -0.18856882091547178
+                  },
+                  "yAxis": {
+                    "x": -0.5011520954038787,
+                    "y": -0.26729554327322846,
+                    "z": -0.8230429331563277
+                  },
+                  "zAxis": {
+                    "x": -0.841256601138433,
+                    "y": -0.07242376047288579,
+                    "z": 0.5357631285932034
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "support-side-1-0",
+                "parentEdge": 2,
+                "childEdge": 2,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-deck-1",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 7.04380989074707,
+                  "y": 3.682948290884156,
+                  "z": 1.952824354171753
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.4290000293049377,
+                    "y": 0.5136478253819916,
+                    "z": 0.7430510657664879
+                  },
+                  "yAxis": {
+                    "x": -0.8660261862597283,
+                    "y": 0.0000014279273463300415,
+                    "z": 0.4999986447085544
+                  },
+                  "zAxis": {
+                    "x": 0.2568221555255555,
+                    "y": -0.8580011139143771,
+                    "z": 0.44483307987704246
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "upper-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-deck-2",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 8.330102920532227,
+                  "y": 5.226581751882691,
+                  "z": 4.210526943206787
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.4290002068013444,
+                    "y": 0.5136473120616368,
+                    "z": 0.7430513181310286
+                  },
+                  "yAxis": {
+                    "x": -0.866026183379062,
+                    "y": 0.0000014719112045626906,
+                    "z": 0.4999986496979051
+                  },
+                  "zAxis": {
+                    "x": 0.25682186874621615,
+                    "y": -0.8580014212165902,
+                    "z": 0.4448326527178645
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "upper-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              }
+            ]
+          },
+          {
+            "seed": 53,
+            "status": "fail",
+            "detail": "upper-deck-1 intersects lower-side-1 by 0.0308149232176248 in during motion.",
+            "carryCompletion": "incomplete",
+            "failedAtSeconds": 6.867708333333333,
+            "heldTileIds": [
+              "lower-deck-2"
+            ],
+            "finalTiles": [
+              {
+                "id": "lower-side--1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 2.6175568103790283,
+                  "y": 3.863487898885865,
+                  "z": -1.5201971530914307
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.2646249846571446,
+                    "y": 0.9608293841552766,
+                    "z": -0.08234386461053485
+                  },
+                  "yAxis": {
+                    "x": -0.9633527642124623,
+                    "y": -0.26727042279347546,
+                    "z": -0.022759015444544808
+                  },
+                  "zAxis": {
+                    "x": -0.043875610302468754,
+                    "y": 0.0733035854756711,
+                    "z": 0.9963440746935753
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": true
+              },
+              {
+                "id": "lower-side-1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 2.6175451278686523,
+                  "y": 3.8635119791623542,
+                  "z": 1.5212557315826416
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.2646772024497823,
+                    "y": 0.9609179950275033,
+                    "z": 0.08113313340232965
+                  },
+                  "yAxis": {
+                    "x": -0.9633674641528767,
+                    "y": -0.2672454847698467,
+                    "z": 0.022427212974097485
+                  },
+                  "zAxis": {
+                    "x": 0.0432331760921268,
+                    "y": -0.07222504899584978,
+                    "z": 0.9964509194047313
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": true
+              },
+              {
+                "id": "lower-deck-1",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 1.0536543130874634,
+                  "y": 3.9245545263883064,
+                  "z": 0.00006243534880923107
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.858025644908158,
+                    "y": 0.5136068464106949,
+                    "z": 1.9021886227141387e-8
+                  },
+                  "yAxis": {
+                    "x": -5.7797836899682933e-8,
+                    "y": 5.952050769900218e-8,
+                    "z": 0.9999999999999966
+                  },
+                  "zAxis": {
+                    "x": 0.5136068464106919,
+                    "y": -0.8580256449081561,
+                    "z": 8.075548674310317e-8
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": false,
+                "parentTileId": "lower-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              },
+              {
+                "id": "lower-deck-2",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 3.65612530708313,
+                  "y": 5.4380633230802005,
+                  "z": -4.588603709174078e-18
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.8580263093549806,
+                    "y": 0.5136057363919049,
+                    "z": -2.2639517666596635e-18
+                  },
+                  "yAxis": {
+                    "x": 9.25185853854297e-17,
+                    "y": 2.451742512713887e-16,
+                    "z": 1
+                  },
+                  "zAxis": {
+                    "x": 0.5136057363919049,
+                    "y": -0.8580263093549806,
+                    "z": 1.6284788179043937e-16
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": false,
+                "parentTileId": "lower-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-side--1-0",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 8.73198413848877,
+                  "y": 1.4028485413190315,
+                  "z": 1.6973130702972412
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.5000018302100121,
+                    "y": 0.00017074095354742554,
+                    "z": 0.8660243302784079
+                  },
+                  "yAxis": {
+                    "x": -0.00023981872158173353,
+                    "y": 0.9999999695209485,
+                    "z": -0.00005869482745082926
+                  },
+                  "zAxis": {
+                    "x": -0.8660243139044186,
+                    "y": -0.0001783413265967693,
+                    "z": 0.5000018559173078
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": true
+              },
+              {
+                "id": "support-side--1-1",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 10.261960983276367,
+                  "y": 1.4033727045651863,
+                  "z": 4.295402526855469
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.49163911565050933,
+                    "y": 0.0001700240862702626,
+                    "z": 0.870799030232691
+                  },
+                  "yAxis": {
+                    "x": -0.00024059686604655127,
+                    "y": 0.9999999692915893,
+                    "z": -0.000059413537224146206
+                  },
+                  "zAxis": {
+                    "x": -0.8707990135935691,
+                    "y": -0.0001803014987318136,
+                    "z": 0.4916391414603158
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "support-side--1-0",
+                "parentEdge": 1,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-side-1-0",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 5.995192527770996,
+                  "y": 1.4036907549497077,
+                  "z": 3.2940962314605713
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.4997786083136976,
+                    "y": 0.00017593769925111643,
+                    "z": 0.8661531687397729
+                  },
+                  "yAxis": {
+                    "x": -0.00024337911085714066,
+                    "y": 0.9999999684180774,
+                    "z": -0.00006269332300298173
+                  },
+                  "zAxis": {
+                    "x": -0.8661531524151096,
+                    "y": -0.0001794708063529895,
+                    "z": 0.49977863534928907
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "lower-side-1",
+                "parentEdge": 0,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-side-1-1",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 7.4948625564575195,
+                  "y": 1.4027964468594978,
+                  "z": 5.892385482788086
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.49999829356645026,
+                    "y": 0.0001770946529005619,
+                    "z": 0.8660263708849296
+                  },
+                  "yAxis": {
+                    "x": -0.00024398590147528854,
+                    "y": 0.999999968211282,
+                    "z": -0.00006362636835495985
+                  },
+                  "zAxis": {
+                    "x": -0.8660263546229512,
+                    "y": -0.00017948514919842185,
+                    "z": 0.49999832088074403
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "support-side-1-0",
+                "parentEdge": 1,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-back",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 9.666844367980957,
+                  "y": 1.4033612604733894,
+                  "z": 6.474374771118164
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.8660283046279629,
+                    "y": -0.00017924904966989957,
+                    "z": 0.4999949434274256
+                  },
+                  "yAxis": {
+                    "x": -0.00024277469908121836,
+                    "y": 0.9999999686080945,
+                    "z": -0.00006200206105372506
+                  },
+                  "zAxis": {
+                    "x": -0.49999491661782103,
+                    "y": -0.000175081661750521,
+                    "z": -0.8660283209588183
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "support-side--1-1",
+                "parentEdge": 1,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-side--1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 9.149086952209473,
+                  "y": 3.6522678728696296,
+                  "z": 2.5472352504730225
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.061519970787508337,
+                    "y": 0.9608502988543385,
+                    "z": -0.27015180248488513
+                  },
+                  "yAxis": {
+                    "x": -0.46205876348151487,
+                    "y": -0.2673315463005725,
+                    "z": -0.8455977432813303
+                  },
+                  "zAxis": {
+                    "x": -0.8847129434365917,
+                    "y": 0.07280485934381803,
+                    "z": 0.4604155298984704
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "support-side--1-0",
+                "parentEdge": 2,
+                "childEdge": 2,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-side-1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 6.514861106872559,
+                  "y": 3.6521086092587898,
+                  "z": 4.068086624145508
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.20284952332741601,
+                    "y": 0.9608792041722743,
+                    "z": -0.18858214622571484
+                  },
+                  "yAxis": {
+                    "x": -0.501126149626562,
+                    "y": -0.26732357663892664,
+                    "z": -0.8230496264098712
+                  },
+                  "zAxis": {
+                    "x": -0.8412637238383079,
+                    "y": -0.07245177956564444,
+                    "z": 0.5357481559384731
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "support-side-1-0",
+                "parentEdge": 2,
+                "childEdge": 2,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-deck-1",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 7.065147876739502,
+                  "y": 3.6831142302152107,
+                  "z": 1.9491984844207764
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.42896565551236554,
+                    "y": 0.513671841628829,
+                    "z": 0.743054308586185
+                  },
+                  "yAxis": {
+                    "x": -0.8660274000447773,
+                    "y": -0.000055621946775334504,
+                    "z": 0.4999965392659056
+                  },
+                  "zAxis": {
+                    "x": 0.25687547325996213,
+                    "y": -0.8579867341770768,
+                    "z": 0.44483002957716794
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "upper-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-deck-2",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 8.351314544677734,
+                  "y": 5.226819693624634,
+                  "z": 4.2069244384765625
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.4289658195349075,
+                    "y": 0.5136714003602347,
+                    "z": 0.7430545189437316
+                  },
+                  "yAxis": {
+                    "x": -0.8660273821303495,
+                    "y": -0.00005561006458790745,
+                    "z": 0.4999965702962112
+                  },
+                  "zAxis": {
+                    "x": 0.25687525974916026,
+                    "y": -0.8579869983627233,
+                    "z": 0.4448296433122745
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "upper-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "policy": "support-aligned",
+        "detail": "Seed 0: upper-deck-1 intersects lower-side-1 by 0.030889338458530813 in during motion. Seed 17: upper-deck-1 intersects lower-side-1 by 0.030605284349300654 in during motion. Seed 53: upper-deck-1 intersects lower-side-1 by 0.0308149232176248 in during motion.",
+        "operations": [
+          {
+            "seed": 0,
+            "status": "fail",
+            "detail": "upper-deck-1 intersects lower-side-1 by 0.030889338458530813 in during motion.",
+            "carryCompletion": "incomplete",
+            "failedAtSeconds": 6.867708333333333,
+            "heldTileIds": [
+              "lower-deck-2"
+            ],
+            "finalTiles": [
+              {
+                "id": "lower-side--1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 2.6175549030303955,
+                  "y": 3.8628336783048103,
+                  "z": -1.5203355550765991
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.26463241162979545,
+                    "y": 0.9608415216701047,
+                    "z": -0.08217820239988416
+                  },
+                  "yAxis": {
+                    "x": -0.9633547530394981,
+                    "y": -0.267267174887525,
+                    "z": -0.022712926360309096
+                  },
+                  "zAxis": {
+                    "x": -0.043787058718372684,
+                    "y": 0.07315618540027176,
+                    "z": 0.9963588038585672
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": true
+              },
+              {
+                "id": "lower-side-1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 2.6175456047058105,
+                  "y": 3.862853705465455,
+                  "z": 1.5212321281433105
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.26467607316913755,
+                    "y": 0.9609159761950367,
+                    "z": 0.08116072316647478
+                  },
+                  "yAxis": {
+                    "x": -0.9633671122075833,
+                    "y": -0.26724610928827874,
+                    "z": 0.022434887722006202
+                  },
+                  "zAxis": {
+                    "x": 0.04324792952948108,
+                    "y": -0.07224959351731482,
+                    "z": 0.9964484998372951
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": true
+              },
+              {
+                "id": "lower-deck-1",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 1.0536537170410156,
+                  "y": 3.923898398458619,
+                  "z": -0.000020564617443596944
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.858025481608848,
+                    "y": 0.51360711921653,
+                    "z": 3.971021154901016e-8
+                  },
+                  "yAxis": {
+                    "x": -5.2420312658301826e-8,
+                    "y": 1.0256385613956453e-8,
+                    "z": 0.9999999999999986
+                  },
+                  "zAxis": {
+                    "x": 0.5136071192165288,
+                    "y": -0.8580254816088488,
+                    "z": 3.5723685978841245e-8
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": false,
+                "parentTileId": "lower-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              },
+              {
+                "id": "lower-deck-2",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 3.65612530708313,
+                  "y": 5.437405764639038,
+                  "z": -4.588603709174078e-18
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.8580263093549806,
+                    "y": 0.5136057363919049,
+                    "z": -6.86773063720276e-17
+                  },
+                  "yAxis": {
+                    "x": 3.7007434154171876e-17,
+                    "y": 4.6721885619642e-16,
+                    "z": 1
+                  },
+                  "zAxis": {
+                    "x": 0.5136057363919049,
+                    "y": -0.8580263093549806,
+                    "z": 3.8187884037254126e-16
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": false,
+                "parentTileId": "lower-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-side--1-0",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 8.762763023376465,
+                  "y": 1.4028481836911628,
+                  "z": 1.681503415107727
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.5000000172861037,
+                    "y": 0.00016946732867445315,
+                    "z": 0.8660253772232777
+                  },
+                  "yAxis": {
+                    "x": -0.0002351452545639658,
+                    "y": 0.9999999705579814,
+                    "z": -0.00005992283101986434
+                  },
+                  "zAxis": {
+                    "x": -0.8660253618807044,
+                    "y": -0.0001736803412402577,
+                    "z": 0.500000042414532
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": true
+              },
+              {
+                "id": "support-side--1-1",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 10.292779922485352,
+                  "y": 1.4033741350766609,
+                  "z": 4.279573917388916
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.472024894199339,
+                    "y": 0.00016713483721837253,
+                    "z": 0.8815852036655611
+                  },
+                  "yAxis": {
+                    "x": -0.00023951745690990457,
+                    "y": 0.9999999694343822,
+                    "z": -0.00006134021944555331
+                  },
+                  "zAxis": {
+                    "x": -0.8815851869714523,
+                    "y": -0.00018220093543742393,
+                    "z": 0.4720249198033177
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "support-side--1-0",
+                "parentEdge": 1,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-side-1-0",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 5.9951653480529785,
+                  "y": 1.403685628950257,
+                  "z": 3.294126510620117
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.4998162311676563,
+                    "y": 0.00017629785697978177,
+                    "z": 0.8661314588331412
+                  },
+                  "yAxis": {
+                    "x": -0.00024185210830888159,
+                    "y": 0.999999968706973,
+                    "z": -0.00006398132941926431
+                  },
+                  "zAxis": {
+                    "x": -0.8661314430090374,
+                    "y": -0.00017749681245600953,
+                    "z": 0.499816258164902
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "lower-side-1",
+                "parentEdge": 0,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-side-1-1",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 7.494905948638916,
+                  "y": 1.4027957316037605,
+                  "z": 5.892360210418701
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.4999972791100861,
+                    "y": 0.0001776004081834016,
+                    "z": 0.8660269564745694
+                  },
+                  "yAxis": {
+                    "x": -0.0002428669655702731,
+                    "y": 0.9999999684046275,
+                    "z": -0.00006485661927873303
+                  },
+                  "zAxis": {
+                    "x": -0.8660269406306872,
+                    "y": -0.00017790120584939233,
+                    "z": 0.49999730644575807
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "support-side-1-0",
+                "parentEdge": 1,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-back",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 9.66688060760498,
+                  "y": 1.4033594723340461,
+                  "z": 6.474339962005615
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.8660242807665477,
+                    "y": -0.00017772575314532749,
+                    "z": 0.5000019135326789
+                  },
+                  "yAxis": {
+                    "x": -0.00024171340228959653,
+                    "y": 0.9999999687897139,
+                    "z": -0.00006320761364238576
+                  },
+                  "zAxis": {
+                    "x": -0.5000018866938553,
+                    "y": -0.00017559649181490939,
+                    "z": -0.8660242966963786
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "support-side--1-1",
+                "parentEdge": 1,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-side--1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 9.164451599121094,
+                  "y": 3.6522626276608894,
+                  "z": 2.5393471717834473
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.06150138530638591,
+                    "y": 0.9608490958035352,
+                    "z": -0.27016031296051674
+                  },
+                  "yAxis": {
+                    "x": -0.4620581341707035,
+                    "y": -0.2673305758574197,
+                    "z": -0.8455983939544993
+                  },
+                  "zAxis": {
+                    "x": -0.884714564281658,
+                    "y": 0.07282429749245295,
+                    "z": 0.46040934117657417
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "support-side--1-0",
+                "parentEdge": 2,
+                "childEdge": 2,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-side-1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 6.530191421508789,
+                  "y": 3.6521086092587898,
+                  "z": 4.060232639312744
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.2027844997886992,
+                    "y": 0.9608851747791677,
+                    "z": -0.18862165181933713
+                  },
+                  "yAxis": {
+                    "x": -0.5011126496427434,
+                    "y": -0.2673207852382521,
+                    "z": -0.8230587525490713
+                  },
+                  "zAxis": {
+                    "x": -0.8412874413739195,
+                    "y": -0.07238286170919515,
+                    "z": 0.5357202276536807
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "support-side-1-0",
+                "parentEdge": 2,
+                "childEdge": 2,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-deck-1",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 7.080481052398682,
+                  "y": 3.6831139917966316,
+                  "z": 1.941335916519165
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.4289699312185783,
+                    "y": 0.5136708277353615,
+                    "z": 0.7430525411059412
+                  },
+                  "yAxis": {
+                    "x": -0.8660250641590889,
+                    "y": -0.00005449645552062988,
+                    "z": 0.5000005852780398
+                  },
+                  "zAxis": {
+                    "x": 0.2568762082376918,
+                    "y": -0.8579873412608163,
+                    "z": 0.4448284342053925
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "upper-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-deck-2",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 8.366704940795898,
+                  "y": 5.22681540209021,
+                  "z": 4.199031352996826
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.4289700660401992,
+                    "y": 0.5136703315120129,
+                    "z": 0.7430528063104301
+                  },
+                  "yAxis": {
+                    "x": -0.8660250915242161,
+                    "y": -0.00005443594513121443,
+                    "z": 0.5000005378869116
+                  },
+                  "zAxis": {
+                    "x": 0.25687589083434853,
+                    "y": -0.8579876383497995,
+                    "z": 0.4448280444699874
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "upper-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              }
+            ]
+          },
+          {
+            "seed": 17,
+            "status": "fail",
+            "detail": "upper-deck-1 intersects lower-side-1 by 0.030605284349300654 in during motion.",
+            "carryCompletion": "incomplete",
+            "failedAtSeconds": 6.867708333333333,
+            "heldTileIds": [
+              "lower-deck-2"
+            ],
+            "finalTiles": [
+              {
+                "id": "lower-side--1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 2.6175549030303955,
+                  "y": 3.8632826204892585,
+                  "z": -1.5203405618667603
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.26463261394502957,
+                    "y": 0.9608419721611428,
+                    "z": -0.08217228346654797
+                  },
+                  "yAxis": {
+                    "x": -0.9633548455202914,
+                    "y": -0.2672669892901421,
+                    "z": -0.022711187735533146
+                  },
+                  "zAxis": {
+                    "x": -0.043783801219132015,
+                    "y": 0.07315094646871549,
+                    "z": 0.9963593316577783
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": true
+              },
+              {
+                "id": "lower-side-1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 2.6175453662872314,
+                  "y": 3.8633031244870613,
+                  "z": 1.5212438106536865
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.26467663513297324,
+                    "y": 0.9609169785809563,
+                    "z": 0.08114702144584912
+                  },
+                  "yAxis": {
+                    "x": -0.9633672830217145,
+                    "y": -0.2672458063542036,
+                    "z": 0.022431161125798852
+                  },
+                  "zAxis": {
+                    "x": 0.04324068475460303,
+                    "y": -0.07223738132669046,
+                    "z": 0.9964496996441995
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": true
+              },
+              {
+                "id": "lower-deck-1",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 1.0536537170410156,
+                  "y": 3.9243480558988044,
+                  "z": -0.000019091909052804112
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.8580255647011943,
+                    "y": 0.5136069804034954,
+                    "z": 1.2202682593697726e-8
+                  },
+                  "yAxis": {
+                    "x": -7.402990252541138e-9,
+                    "y": -1.139144856276087e-8,
+                    "z": 0.9999999999999999
+                  },
+                  "zAxis": {
+                    "x": 0.5136069804034955,
+                    "y": -0.8580255647011943,
+                    "z": -5.9719266162633405e-9
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": false,
+                "parentTileId": "lower-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              },
+              {
+                "id": "lower-deck-2",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 3.65612530708313,
+                  "y": 5.437854945242066,
+                  "z": -4.588603709174078e-18
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.8580263093549806,
+                    "y": 0.5136057363919049,
+                    "z": 5.702169141218515e-17
+                  },
+                  "yAxis": {
+                    "x": 1.4802973661668753e-16,
+                    "y": 3.7007434154171876e-17,
+                    "z": 1
+                  },
+                  "zAxis": {
+                    "x": 0.5136057363919049,
+                    "y": -0.8580263093549806,
+                    "z": -4.427556973691198e-17
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": false,
+                "parentTileId": "lower-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-side--1-0",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 8.7191162109375,
+                  "y": 1.403086721479554,
+                  "z": 1.7043325901031494
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.5000144860377592,
+                    "y": 0.000057639544302622466,
+                    "z": 0.8660170381869391
+                  },
+                  "yAxis": {
+                    "x": -0.00002981818554848974,
+                    "y": 0.999999998338178,
+                    "z": -0.000049340853125346285
+                  },
+                  "zAxis": {
+                    "x": -0.8660170395917572,
+                    "y": -0.0000011519154166770884,
+                    "z": 0.5000144869255307
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": true
+              },
+              {
+                "id": "support-side--1-1",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 10.24911117553711,
+                  "y": 1.4032657738324592,
+                  "z": 4.302411079406738
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.5000235699979626,
+                    "y": 0.00005893140779886882,
+                    "z": 0.8660117932069872
+                  },
+                  "yAxis": {
+                    "x": -0.000030801344186963095,
+                    "y": 0.9999999982623577,
+                    "z": -0.0000502649155087885
+                  },
+                  "zAxis": {
+                    "x": -0.8660117946643507,
+                    "y": -0.0000015406848141871406,
+                    "z": 0.5000235709442671
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "support-side--1-0",
+                "parentEdge": 1,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-side-1-0",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 5.965185165405273,
+                  "y": 1.4030883904096076,
+                  "z": 3.2942941188812256
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.5000001736247282,
+                    "y": 0.00005373204509265969,
+                    "z": 0.866025301875245
+                  },
+                  "yAxis": {
+                    "x": -0.000029070158223337486,
+                    "y": 0.9999999985531949,
+                    "z": -0.000045260757129240715
+                  },
+                  "zAxis": {
+                    "x": -0.8660253030542281,
+                    "y": -0.0000025451061279199696,
+                    "z": 0.5000001744633245
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "lower-side-1",
+                "parentEdge": 0,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-side-1-1",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 7.495185852050781,
+                  "y": 1.4032589789029548,
+                  "z": 5.892373561859131
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.4999956431003164,
+                    "y": 0.00005840090110056747,
+                    "z": 0.8660279172578883
+                  },
+                  "yAxis": {
+                    "x": -0.00003120491175338066,
+                    "y": 0.9999999982919882,
+                    "z": -0.000049419401185485314
+                  },
+                  "zAxis": {
+                    "x": -0.8660279186648397,
+                    "y": -0.0000023148394566271816,
+                    "z": 0.49999564406871294
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "support-side-1-0",
+                "parentEdge": 1,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-back",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 9.667162895202637,
+                  "y": 1.4033562536832282,
+                  "z": 6.474365234375
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.8660279606716812,
+                    "y": -0.000002219762466747688,
+                    "z": 0.4999955713103083
+                  },
+                  "yAxis": {
+                    "x": -0.00003117605287108657,
+                    "y": 0.9999999982859509,
+                    "z": -0.0000495595810216046
+                  },
+                  "zAxis": {
+                    "x": -0.4999955703432808,
+                    "y": -0.00005850787125036249,
+                    "z": -0.8660279592564701
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "support-side--1-1",
+                "parentEdge": 1,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-side--1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 9.12770938873291,
+                  "y": 3.651970803320069,
+                  "z": 2.5508787631988525
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.06138472928993909,
+                    "y": 0.9608468598946666,
+                    "z": -0.27019479425140613
+                  },
+                  "yAxis": {
+                    "x": -0.462057151158643,
+                    "y": -0.2673075778009362,
+                    "z": -0.8456062014397455
+                  },
+                  "zAxis": {
+                    "x": -0.8847231793466022,
+                    "y": 0.0729381291284279,
+                    "z": 0.4603747660831172
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "support-side--1-0",
+                "parentEdge": 2,
+                "childEdge": 2,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-side-1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 6.493571758270264,
+                  "y": 3.6519863005277107,
+                  "z": 4.0716872215271
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.2028149607729001,
+                    "y": 0.9608891150727205,
+                    "z": -0.18856882091547178
+                  },
+                  "yAxis": {
+                    "x": -0.5011520954038787,
+                    "y": -0.26729554327322846,
+                    "z": -0.8230429331563277
+                  },
+                  "zAxis": {
+                    "x": -0.841256601138433,
+                    "y": -0.07242376047288579,
+                    "z": 0.5357631285932034
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "support-side-1-0",
+                "parentEdge": 2,
+                "childEdge": 2,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-deck-1",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 7.04380989074707,
+                  "y": 3.682948290884156,
+                  "z": 1.952824354171753
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.4290000293049377,
+                    "y": 0.5136478253819916,
+                    "z": 0.7430510657664879
+                  },
+                  "yAxis": {
+                    "x": -0.8660261862597283,
+                    "y": 0.0000014279273463300415,
+                    "z": 0.4999986447085544
+                  },
+                  "zAxis": {
+                    "x": 0.2568221555255555,
+                    "y": -0.8580011139143771,
+                    "z": 0.44483307987704246
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "upper-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-deck-2",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 8.330102920532227,
+                  "y": 5.226581751882691,
+                  "z": 4.210526943206787
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.4290002068013444,
+                    "y": 0.5136473120616368,
+                    "z": 0.7430513181310286
+                  },
+                  "yAxis": {
+                    "x": -0.866026183379062,
+                    "y": 0.0000014719112045626906,
+                    "z": 0.4999986496979051
+                  },
+                  "zAxis": {
+                    "x": 0.25682186874621615,
+                    "y": -0.8580014212165902,
+                    "z": 0.4448326527178645
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "upper-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              }
+            ]
+          },
+          {
+            "seed": 53,
+            "status": "fail",
+            "detail": "upper-deck-1 intersects lower-side-1 by 0.0308149232176248 in during motion.",
+            "carryCompletion": "incomplete",
+            "failedAtSeconds": 6.867708333333333,
+            "heldTileIds": [
+              "lower-deck-2"
+            ],
+            "finalTiles": [
+              {
+                "id": "lower-side--1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 2.6175568103790283,
+                  "y": 3.863487898885865,
+                  "z": -1.5201971530914307
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.2646249846571446,
+                    "y": 0.9608293841552766,
+                    "z": -0.08234386461053485
+                  },
+                  "yAxis": {
+                    "x": -0.9633527642124623,
+                    "y": -0.26727042279347546,
+                    "z": -0.022759015444544808
+                  },
+                  "zAxis": {
+                    "x": -0.043875610302468754,
+                    "y": 0.0733035854756711,
+                    "z": 0.9963440746935753
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": true
+              },
+              {
+                "id": "lower-side-1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 2.6175451278686523,
+                  "y": 3.8635119791623542,
+                  "z": 1.5212557315826416
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.2646772024497823,
+                    "y": 0.9609179950275033,
+                    "z": 0.08113313340232965
+                  },
+                  "yAxis": {
+                    "x": -0.9633674641528767,
+                    "y": -0.2672454847698467,
+                    "z": 0.022427212974097485
+                  },
+                  "zAxis": {
+                    "x": 0.0432331760921268,
+                    "y": -0.07222504899584978,
+                    "z": 0.9964509194047313
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": true
+              },
+              {
+                "id": "lower-deck-1",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 1.0536543130874634,
+                  "y": 3.9245545263883064,
+                  "z": 0.00006243534880923107
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.858025644908158,
+                    "y": 0.5136068464106949,
+                    "z": 1.9021886227141387e-8
+                  },
+                  "yAxis": {
+                    "x": -5.7797836899682933e-8,
+                    "y": 5.952050769900218e-8,
+                    "z": 0.9999999999999966
+                  },
+                  "zAxis": {
+                    "x": 0.5136068464106919,
+                    "y": -0.8580256449081561,
+                    "z": 8.075548674310317e-8
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": false,
+                "parentTileId": "lower-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              },
+              {
+                "id": "lower-deck-2",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 3.65612530708313,
+                  "y": 5.4380633230802005,
+                  "z": -4.588603709174078e-18
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.8580263093549806,
+                    "y": 0.5136057363919049,
+                    "z": -2.2639517666596635e-18
+                  },
+                  "yAxis": {
+                    "x": 9.25185853854297e-17,
+                    "y": 2.451742512713887e-16,
+                    "z": 1
+                  },
+                  "zAxis": {
+                    "x": 0.5136057363919049,
+                    "y": -0.8580263093549806,
+                    "z": 1.6284788179043937e-16
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 1,
+                "role": "lower",
+                "subassemblyId": "lower",
+                "root": false,
+                "parentTileId": "lower-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-side--1-0",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 8.73198413848877,
+                  "y": 1.4028485413190315,
+                  "z": 1.6973130702972412
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.5000018302100121,
+                    "y": 0.00017074095354742554,
+                    "z": 0.8660243302784079
+                  },
+                  "yAxis": {
+                    "x": -0.00023981872158173353,
+                    "y": 0.9999999695209485,
+                    "z": -0.00005869482745082926
+                  },
+                  "zAxis": {
+                    "x": -0.8660243139044186,
+                    "y": -0.0001783413265967693,
+                    "z": 0.5000018559173078
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": true
+              },
+              {
+                "id": "support-side--1-1",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 10.261960983276367,
+                  "y": 1.4033727045651863,
+                  "z": 4.295402526855469
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.49163911565050933,
+                    "y": 0.0001700240862702626,
+                    "z": 0.870799030232691
+                  },
+                  "yAxis": {
+                    "x": -0.00024059686604655127,
+                    "y": 0.9999999692915893,
+                    "z": -0.000059413537224146206
+                  },
+                  "zAxis": {
+                    "x": -0.8707990135935691,
+                    "y": -0.0001803014987318136,
+                    "z": 0.4916391414603158
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "support-side--1-0",
+                "parentEdge": 1,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-side-1-0",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 5.995192527770996,
+                  "y": 1.4036907549497077,
+                  "z": 3.2940962314605713
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.4997786083136976,
+                    "y": 0.00017593769925111643,
+                    "z": 0.8661531687397729
+                  },
+                  "yAxis": {
+                    "x": -0.00024337911085714066,
+                    "y": 0.9999999684180774,
+                    "z": -0.00006269332300298173
+                  },
+                  "zAxis": {
+                    "x": -0.8661531524151096,
+                    "y": -0.0001794708063529895,
+                    "z": 0.49977863534928907
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "lower-side-1",
+                "parentEdge": 0,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-side-1-1",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 7.4948625564575195,
+                  "y": 1.4027964468594978,
+                  "z": 5.892385482788086
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.49999829356645026,
+                    "y": 0.0001770946529005619,
+                    "z": 0.8660263708849296
+                  },
+                  "yAxis": {
+                    "x": -0.00024398590147528854,
+                    "y": 0.999999968211282,
+                    "z": -0.00006362636835495985
+                  },
+                  "zAxis": {
+                    "x": -0.8660263546229512,
+                    "y": -0.00017948514919842185,
+                    "z": 0.49999832088074403
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "support-side-1-0",
+                "parentEdge": 1,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "support-back",
+                "shape": "small-square",
+                "color": "#32ad66",
+                "position": {
+                  "x": 9.666844367980957,
+                  "y": 1.4033612604733894,
+                  "z": 6.474374771118164
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.8660283046279629,
+                    "y": -0.00017924904966989957,
+                    "z": 0.4999949434274256
+                  },
+                  "yAxis": {
+                    "x": -0.00024277469908121836,
+                    "y": 0.9999999686080945,
+                    "z": -0.00006200206105372506
+                  },
+                  "zAxis": {
+                    "x": -0.49999491661782103,
+                    "y": -0.000175081661750521,
+                    "z": -0.8660283209588183
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 2,
+                "role": "support",
+                "subassemblyId": "support",
+                "root": false,
+                "parentTileId": "support-side--1-1",
+                "parentEdge": 1,
+                "childEdge": 3,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-side--1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 9.149086952209473,
+                  "y": 3.6522678728696296,
+                  "z": 2.5472352504730225
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.061519970787508337,
+                    "y": 0.9608502988543385,
+                    "z": -0.27015180248488513
+                  },
+                  "yAxis": {
+                    "x": -0.46205876348151487,
+                    "y": -0.2673315463005725,
+                    "z": -0.8455977432813303
+                  },
+                  "zAxis": {
+                    "x": -0.8847129434365917,
+                    "y": 0.07280485934381803,
+                    "z": 0.4604155298984704
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "support-side--1-0",
+                "parentEdge": 2,
+                "childEdge": 2,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-side-1",
+                "shape": "isosceles-triangle",
+                "color": "#f3bc25",
+                "position": {
+                  "x": 6.514861106872559,
+                  "y": 3.6521086092587898,
+                  "z": 4.068086624145508
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": -0.20284952332741601,
+                    "y": 0.9608792041722743,
+                    "z": -0.18858214622571484
+                  },
+                  "yAxis": {
+                    "x": -0.501126149626562,
+                    "y": -0.26732357663892664,
+                    "z": -0.8230496264098712
+                  },
+                  "zAxis": {
+                    "x": -0.8412637238383079,
+                    "y": -0.07245177956564444,
+                    "z": 0.5357481559384731
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "support-side-1-0",
+                "parentEdge": 2,
+                "childEdge": 2,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-deck-1",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 7.065147876739502,
+                  "y": 3.6831142302152107,
+                  "z": 1.9491984844207764
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.42896565551236554,
+                    "y": 0.513671841628829,
+                    "z": 0.743054308586185
+                  },
+                  "yAxis": {
+                    "x": -0.8660274000447773,
+                    "y": -0.000055621946775334504,
+                    "z": 0.4999965392659056
+                  },
+                  "zAxis": {
+                    "x": 0.25687547325996213,
+                    "y": -0.8579867341770768,
+                    "z": 0.44483002957716794
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "upper-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              },
+              {
+                "id": "upper-deck-2",
+                "shape": "small-square",
+                "color": "#eb802b",
+                "position": {
+                  "x": 8.351314544677734,
+                  "y": 5.226819693624634,
+                  "z": 4.2069244384765625
+                },
+                "basis": {
+                  "xAxis": {
+                    "x": 0.4289658195349075,
+                    "y": 0.5136714003602347,
+                    "z": 0.7430545189437316
+                  },
+                  "yAxis": {
+                    "x": -0.8660273821303495,
+                    "y": -0.00005561006458790745,
+                    "z": 0.4999965702962112
+                  },
+                  "zAxis": {
+                    "x": 0.25687525974916026,
+                    "y": -0.8579869983627233,
+                    "z": 0.4448296433122745
+                  }
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "step": 3,
+                "role": "upper",
+                "subassemblyId": "upper",
+                "root": false,
+                "parentTileId": "upper-side--1",
+                "parentEdge": 1,
+                "childEdge": 0,
+                "foldAngle": 0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "lowPath": {
+    "transitHeight": 3,
+    "seconds": 950.702,
+    "stageStatus": [
+      {
+        "stageId": "medium-lower",
+        "status": "pass"
+      },
+      {
+        "stageId": "medium-upper-preparation",
+        "status": "pass"
+      },
+      {
+        "stageId": "medium-support",
+        "status": "pass"
+      },
+      {
+        "stageId": "medium-upper-transfer",
+        "status": "pass"
+      },
+      {
+        "stageId": "medium-lower-placement",
+        "status": "pass"
+      },
+      {
+        "stageId": "medium-turn",
+        "status": "unverified"
+      },
+      {
+        "stageId": "medium-lower-walls",
+        "status": "unverified"
+      },
+      {
+        "stageId": "medium-lower-cover",
+        "status": "unverified"
+      },
+      {
+        "stageId": "medium-turn-cover",
+        "status": "unverified"
+      },
+      {
+        "stageId": "medium-upper-cover",
+        "status": "unverified"
+      },
+      {
+        "stageId": "medium-final",
+        "status": "unverified"
+      }
+    ],
+    "operations": [
+      {
+        "seed": 0,
+        "status": "pass",
+        "tablePlacement": {
+          "status": "pass",
+          "detail": "One complete component was acquired, carried and gravity-seated on the fixed table. All bodies and existing joints remain present; no component merge or new magnetic join is claimed. Final free checkpoint remains mandatory.",
+          "componentGroups": [
+            [
+              "lower-side--1",
+              "lower-side-1",
+              "lower-deck-1",
+              "lower-deck-2"
+            ],
+            [
+              "upper-side--1",
+              "upper-side-1",
+              "upper-deck-1",
+              "upper-deck-2",
+              "support-side--1-0",
+              "support-side--1-1",
+              "support-side-1-0",
+              "support-side-1-1",
+              "support-back"
+            ]
+          ],
+          "activeJointIds": [
+            "lower-deck-1:1->lower-deck-2:3",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side-1:1->lower-deck-2:2",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side-1-0:2->upper-side-1:2",
+            "support-side-1-1:1->support-back:1",
+            "upper-deck-1:1->upper-deck-2:3",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side-1:1->upper-deck-2:2"
+          ],
+          "horizontalDisplacement": 5.999715984565962,
+          "acquisition": {
+            "status": "pass",
+            "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+            "changed": true,
+            "previousHands": [],
+            "nextHands": [
+              {
+                "tileId": "lower-deck-2",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ]
+          },
+          "withdrawal": {
+            "status": "pass",
+            "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+            "changed": true,
+            "previousHands": [
+              {
+                "tileId": "lower-deck-2",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ],
+            "nextHands": []
+          }
+        },
+        "seating": {
+          "status": "pass",
+          "detail": "Placed on the fixed table with 3 measured bearing contact(s) and 894 rest steps. No new magnetic contact is claimed.",
+          "tableBearingTileIds": [
+            "lower-side--1",
+            "lower-side-1",
+            "lower-deck-1"
+          ],
+          "settledSteps": 894,
+          "earnedJointIds": []
+        },
+        "carry": {
+          "status": "pass",
+          "completion": "rested",
+          "heldTileIds": [
+            "lower-deck-2"
+          ],
+          "movingComponentTileIds": [
+            "lower-side--1",
+            "lower-side-1",
+            "lower-deck-1",
+            "lower-deck-2"
+          ],
+          "peakDeformation": 0.01543463417282251,
+          "frameCount": 32,
+          "bodyCounts": [
+            13
+          ]
+        }
+      },
+      {
+        "seed": 17,
+        "status": "pass",
+        "tablePlacement": {
+          "status": "pass",
+          "detail": "One complete component was acquired, carried and gravity-seated on the fixed table. All bodies and existing joints remain present; no component merge or new magnetic join is claimed. Final free checkpoint remains mandatory.",
+          "componentGroups": [
+            [
+              "lower-side--1",
+              "lower-side-1",
+              "lower-deck-1",
+              "lower-deck-2"
+            ],
+            [
+              "upper-side--1",
+              "upper-side-1",
+              "upper-deck-1",
+              "upper-deck-2",
+              "support-side--1-0",
+              "support-side--1-1",
+              "support-side-1-0",
+              "support-side-1-1",
+              "support-back"
+            ]
+          ],
+          "activeJointIds": [
+            "lower-deck-1:1->lower-deck-2:3",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side-1:1->lower-deck-2:2",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side-1-0:2->upper-side-1:2",
+            "support-side-1-1:1->support-back:1",
+            "upper-deck-1:1->upper-deck-2:3",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side-1:1->upper-deck-2:2"
+          ],
+          "horizontalDisplacement": 6.000341351043886,
+          "acquisition": {
+            "status": "pass",
+            "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+            "changed": true,
+            "previousHands": [],
+            "nextHands": [
+              {
+                "tileId": "lower-deck-2",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ]
+          },
+          "withdrawal": {
+            "status": "pass",
+            "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+            "changed": true,
+            "previousHands": [
+              {
+                "tileId": "lower-deck-2",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ],
+            "nextHands": []
+          }
+        },
+        "seating": {
+          "status": "pass",
+          "detail": "Placed on the fixed table with 3 measured bearing contact(s) and 894 rest steps. No new magnetic contact is claimed.",
+          "tableBearingTileIds": [
+            "lower-side--1",
+            "lower-side-1",
+            "lower-deck-1"
+          ],
+          "settledSteps": 894,
+          "earnedJointIds": []
+        },
+        "carry": {
+          "status": "pass",
+          "completion": "rested",
+          "heldTileIds": [
+            "lower-deck-2"
+          ],
+          "movingComponentTileIds": [
+            "lower-side--1",
+            "lower-side-1",
+            "lower-deck-1",
+            "lower-deck-2"
+          ],
+          "peakDeformation": 0.015431155367625782,
+          "frameCount": 32,
+          "bodyCounts": [
+            13
+          ]
+        }
+      },
+      {
+        "seed": 53,
+        "status": "pass",
+        "tablePlacement": {
+          "status": "pass",
+          "detail": "One complete component was acquired, carried and gravity-seated on the fixed table. All bodies and existing joints remain present; no component merge or new magnetic join is claimed. Final free checkpoint remains mandatory.",
+          "componentGroups": [
+            [
+              "lower-side--1",
+              "lower-side-1",
+              "lower-deck-1",
+              "lower-deck-2"
+            ],
+            [
+              "upper-side--1",
+              "upper-side-1",
+              "upper-deck-1",
+              "upper-deck-2",
+              "support-side--1-0",
+              "support-side--1-1",
+              "support-side-1-0",
+              "support-side-1-1",
+              "support-back"
+            ]
+          ],
+          "activeJointIds": [
+            "lower-deck-1:1->lower-deck-2:3",
+            "lower-side--1:1->lower-deck-1:0",
+            "lower-side--1:1->lower-deck-2:0",
+            "lower-side-1:1->lower-deck-1:2",
+            "lower-side-1:1->lower-deck-2:2",
+            "support-side--1-0:1->support-side--1-1:3",
+            "support-side--1-0:2->upper-side--1:2",
+            "support-side--1-1:1->support-back:3",
+            "support-side-1-0:1->support-side-1-1:3",
+            "support-side-1-0:2->upper-side-1:2",
+            "support-side-1-1:1->support-back:1",
+            "upper-deck-1:1->upper-deck-2:3",
+            "upper-side--1:1->upper-deck-1:0",
+            "upper-side--1:1->upper-deck-2:0",
+            "upper-side-1:1->upper-deck-1:2",
+            "upper-side-1:1->upper-deck-2:2"
+          ],
+          "horizontalDisplacement": 6.000126804403607,
+          "acquisition": {
+            "status": "pass",
+            "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+            "changed": true,
+            "previousHands": [],
+            "nextHands": [
+              {
+                "tileId": "lower-deck-2",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ]
+          },
+          "withdrawal": {
+            "status": "pass",
+            "detail": "Prior-hand withdrawal and new-grip acquisition clear the actual prefix with at most two hands; final support is checked separately.",
+            "changed": true,
+            "previousHands": [
+              {
+                "tileId": "lower-deck-2",
+                "localPoint": {
+                  "x": 1.5,
+                  "y": 0,
+                  "z": 0
+                },
+                "localOutward": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 0
+                },
+                "proxy": "edge-pinch-v1"
+              }
+            ],
+            "nextHands": []
+          }
+        },
+        "seating": {
+          "status": "pass",
+          "detail": "Placed on the fixed table with 3 measured bearing contact(s) and 894 rest steps. No new magnetic contact is claimed.",
+          "tableBearingTileIds": [
+            "lower-side--1",
+            "lower-side-1",
+            "lower-deck-1"
+          ],
+          "settledSteps": 894,
+          "earnedJointIds": []
+        },
+        "carry": {
+          "status": "pass",
+          "completion": "rested",
+          "heldTileIds": [
+            "lower-deck-2"
+          ],
+          "movingComponentTileIds": [
+            "lower-side--1",
+            "lower-side-1",
+            "lower-deck-1",
+            "lower-deck-2"
+          ],
+          "peakDeformation": 0.015272414812406586,
+          "frameCount": 32,
+          "bodyCounts": [
+            13
+          ]
+        }
+      }
+    ],
+    "terminalConnections": [
+      {
+        "seed": 0,
+        "connectionIds": [
+          "lower-deck-1:1->lower-deck-2:3",
+          "lower-side--1:1->lower-deck-1:0",
+          "lower-side--1:1->lower-deck-2:0",
+          "lower-side-1:1->lower-deck-1:2",
+          "lower-side-1:1->lower-deck-2:2",
+          "support-side--1-0:1->support-side--1-1:3",
+          "support-side--1-0:2->upper-side--1:2",
+          "support-side--1-1:1->support-back:3",
+          "support-side-1-0:1->support-side-1-1:3",
+          "support-side-1-0:2->upper-side-1:2",
+          "support-side-1-1:1->support-back:1",
+          "upper-deck-1:1->upper-deck-2:3",
+          "upper-side--1:1->upper-deck-1:0",
+          "upper-side--1:1->upper-deck-2:0",
+          "upper-side-1:1->upper-deck-1:2",
+          "upper-side-1:1->upper-deck-2:2"
+        ]
+      },
+      {
+        "seed": 17,
+        "connectionIds": [
+          "lower-deck-1:1->lower-deck-2:3",
+          "lower-side--1:1->lower-deck-1:0",
+          "lower-side--1:1->lower-deck-2:0",
+          "lower-side-1:1->lower-deck-1:2",
+          "lower-side-1:1->lower-deck-2:2",
+          "support-side--1-0:1->support-side--1-1:3",
+          "support-side--1-0:2->upper-side--1:2",
+          "support-side--1-1:1->support-back:3",
+          "support-side-1-0:1->support-side-1-1:3",
+          "support-side-1-0:2->upper-side-1:2",
+          "support-side-1-1:1->support-back:1",
+          "upper-deck-1:1->upper-deck-2:3",
+          "upper-side--1:1->upper-deck-1:0",
+          "upper-side--1:1->upper-deck-2:0",
+          "upper-side-1:1->upper-deck-1:2",
+          "upper-side-1:1->upper-deck-2:2"
+        ]
+      },
+      {
+        "seed": 53,
+        "connectionIds": [
+          "lower-deck-1:1->lower-deck-2:3",
+          "lower-side--1:1->lower-deck-1:0",
+          "lower-side--1:1->lower-deck-2:0",
+          "lower-side-1:1->lower-deck-1:2",
+          "lower-side-1:1->lower-deck-2:2",
+          "support-side--1-0:1->support-side--1-1:3",
+          "support-side--1-0:2->upper-side--1:2",
+          "support-side--1-1:1->support-back:3",
+          "support-side-1-0:1->support-side-1-1:3",
+          "support-side-1-0:2->upper-side-1:2",
+          "support-side-1-1:1->support-back:1",
+          "upper-deck-1:1->upper-deck-2:3",
+          "upper-side--1:1->upper-deck-1:0",
+          "upper-side--1:1->upper-deck-2:0",
+          "upper-side-1:1->upper-deck-1:2",
+          "upper-side-1:1->upper-deck-2:2"
+        ]
+      }
+    ],
+    "checkpoints": [
+      {
+        "status": "pass",
+        "detail": "0 individually held panels, 13 dynamic panels; peak 0.000 in, 900/90 rest steps, 0 rejected/broken joins.",
+        "dynamicTileCount": 13,
+        "heldTileIds": [],
+        "poppedJoints": [],
+        "solidFailures": []
+      },
+      {
+        "status": "pass",
+        "detail": "0 individually held panels, 13 dynamic panels; peak 0.000 in, 900/90 rest steps, 0 rejected/broken joins.",
+        "dynamicTileCount": 13,
+        "heldTileIds": [],
+        "poppedJoints": [],
+        "solidFailures": []
+      },
+      {
+        "status": "pass",
+        "detail": "0 individually held panels, 13 dynamic panels; peak 0.000 in, 900/90 rest steps, 0 rejected/broken joins.",
+        "dynamicTileCount": 13,
+        "heldTileIds": [],
+        "poppedJoints": [],
+        "solidFailures": []
+      }
+    ]
+  }
+}

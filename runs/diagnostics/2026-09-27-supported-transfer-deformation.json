@@ -1,0 +1,178 @@
+{
+  "scope": "Static diagnosis only. Align each held panel to its nominal pose and retain actual internal deformations; no new physical motion or acceptance. The observed difference is not a demonstrated causal fix.",
+  "rawSha256": "80420a6d5590bd2643b6a4021a7af52acf411da79db1682522db7bcb3a402f27",
+  "rows": [
+    {
+      "seed": 0,
+      "docking": "fail",
+      "movingRelativeToHeldDeck": [
+        {
+          "tileId": "upper-side--1",
+          "centerDifference": 0.06964959649105114,
+          "orientationDifferenceDegrees": 4.880724522077107,
+          "worldOrientationDifferenceDegrees": 4.962705607518031
+        },
+        {
+          "tileId": "upper-side-1",
+          "centerDifference": 0.06924925487578339,
+          "orientationDifferenceDegrees": 4.852629712364896,
+          "worldOrientationDifferenceDegrees": 4.936592971261377
+        },
+        {
+          "tileId": "upper-deck-1",
+          "centerDifference": 0.028672842212608095,
+          "orientationDifferenceDegrees": 5.6632936810203734e-05,
+          "worldOrientationDifferenceDegrees": 0.9027749452114456
+        },
+        {
+          "tileId": "upper-deck-2",
+          "centerDifference": 0,
+          "orientationDifferenceDegrees": 0,
+          "worldOrientationDifferenceDegrees": 0.9027188405490034
+        }
+      ],
+      "receivingRelativeToHeldBack": [
+        {
+          "tileId": "support-side--1-0",
+          "centerDifference": 0.049502682453923204,
+          "orientationDifferenceDegrees": 1.8350727184137197,
+          "worldOrientationDifferenceDegrees": 1.835117154588734
+        },
+        {
+          "tileId": "support-side-1-0",
+          "centerDifference": 9.059344279381599e-06,
+          "orientationDifferenceDegrees": 0.00034842334091522774,
+          "worldOrientationDifferenceDegrees": 0.000392007638470843
+        },
+        {
+          "tileId": "support-front",
+          "centerDifference": 0.02476102180316059,
+          "orientationDifferenceDegrees": 0.00029266384266640684,
+          "worldOrientationDifferenceDegrees": 0.00024802381583017294
+        },
+        {
+          "tileId": "support-back",
+          "centerDifference": 0,
+          "orientationDifferenceDegrees": 0,
+          "worldOrientationDifferenceDegrees": 5.102681605027467e-05
+        }
+      ]
+    },
+    {
+      "seed": 17,
+      "docking": "pass",
+      "movingRelativeToHeldDeck": [
+        {
+          "tileId": "upper-side--1",
+          "centerDifference": 0.06968143776019721,
+          "orientationDifferenceDegrees": 4.882973712384594,
+          "worldOrientationDifferenceDegrees": 4.965736352191608
+        },
+        {
+          "tileId": "upper-side-1",
+          "centerDifference": 0.06934704448752345,
+          "orientationDifferenceDegrees": 4.859518034813459,
+          "worldOrientationDifferenceDegrees": 4.942584341147718
+        },
+        {
+          "tileId": "upper-deck-1",
+          "centerDifference": 0.028684473473995508,
+          "orientationDifferenceDegrees": 5.658142889885566e-05,
+          "worldOrientationDifferenceDegrees": 0.9028824454430295
+        },
+        {
+          "tileId": "upper-deck-2",
+          "centerDifference": 0,
+          "orientationDifferenceDegrees": 1.7075472925031877e-06,
+          "worldOrientationDifferenceDegrees": 0.9028259050586677
+        }
+      ],
+      "receivingRelativeToHeldBack": [
+        {
+          "tileId": "support-side--1-0",
+          "centerDifference": 8.220606285112284e-05,
+          "orientationDifferenceDegrees": 0.0030269607582298756,
+          "worldOrientationDifferenceDegrees": 0.002921240647474342
+        },
+        {
+          "tileId": "support-side-1-0",
+          "centerDifference": 7.624552717003127e-07,
+          "orientationDifferenceDegrees": 3.37213571033647e-05,
+          "worldOrientationDifferenceDegrees": 9.257048387731985e-05
+        },
+        {
+          "tileId": "support-front",
+          "centerDifference": 0.03003741591443869,
+          "orientationDifferenceDegrees": 5.998329526685435e-05,
+          "worldOrientationDifferenceDegrees": 6.524529043507406e-05
+        },
+        {
+          "tileId": "support-back",
+          "centerDifference": 0,
+          "orientationDifferenceDegrees": 0,
+          "worldOrientationDifferenceDegrees": 0.00011928412572484203
+        }
+      ]
+    },
+    {
+      "seed": 53,
+      "docking": "pass",
+      "movingRelativeToHeldDeck": [
+        {
+          "tileId": "upper-side--1",
+          "centerDifference": 0.06958812741565258,
+          "orientationDifferenceDegrees": 4.876422238772264,
+          "worldOrientationDifferenceDegrees": 4.962544069156976
+        },
+        {
+          "tileId": "upper-side-1",
+          "centerDifference": 0.06938185005581633,
+          "orientationDifferenceDegrees": 4.861955912683531,
+          "worldOrientationDifferenceDegrees": 4.941713949518071
+        },
+        {
+          "tileId": "upper-deck-1",
+          "centerDifference": 0.0286981228670922,
+          "orientationDifferenceDegrees": 3.549070400330649e-05,
+          "worldOrientationDifferenceDegrees": 0.9028369636455816
+        },
+        {
+          "tileId": "upper-deck-2",
+          "centerDifference": 0,
+          "orientationDifferenceDegrees": 0,
+          "worldOrientationDifferenceDegrees": 0.9028032309629274
+        }
+      ],
+      "receivingRelativeToHeldBack": [
+        {
+          "tileId": "support-side--1-0",
+          "centerDifference": 0.0003303341840213216,
+          "orientationDifferenceDegrees": 0.012270794128069133,
+          "worldOrientationDifferenceDegrees": 0.013297774702525779
+        },
+        {
+          "tileId": "support-side-1-0",
+          "centerDifference": 3.840567842488473e-05,
+          "orientationDifferenceDegrees": 0.0014208086389397787,
+          "worldOrientationDifferenceDegrees": 0.0003968973207403413
+        },
+        {
+          "tileId": "support-front",
+          "centerDifference": 0.00012311854269272298,
+          "orientationDifferenceDegrees": 0.0001125945860318153,
+          "worldOrientationDifferenceDegrees": 0.0011393064691674743
+        },
+        {
+          "tileId": "support-back",
+          "centerDifference": 0,
+          "orientationDifferenceDegrees": 0,
+          "worldOrientationDifferenceDegrees": 0.0010284454004890625
+        }
+      ]
+    }
+  ],
+  "reproduction": {
+    "command": "node --import tsx scripts/reference/inspect-supported-transfer.ts",
+    "scriptSha256": "1c5fecf87c6ef147be606f5038e9504362a76d4741f87e748c1c7cc6e984ef6a"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "scope": "Complete numerical experiment. No runtime setting selected or changed; no source, material or assembly acceptance.",
+  "validationCodeHash": "39bf11c647fd7845b96cd8e2748d5c6c388ec2229bdc14cad60be83b3c60c120",
+  "scriptHashes": {
+    "runs/2026-09-27-loaded-contact-plan.md": "6b3ebcf159515242ff2eb79e561841d22062e8f56a55901054f4f1b124ac46ea",
+    "scripts/reference/contact-matrix.ts": "e7cb7b55a49bd00f31504198ea8d7884342b41fa764c3df4b5cc19f3be554b72",
+    "scripts/reference/probe-contact-matrix.ts": "a023ea9e9f74be2c8853cf197536e8b9f6ec2f66d36c7e18cb4bdb4e883464ad",
+    "tests/fixtures/loaded-contact.ts": "20611217d370987219286fa19781b212623eaef4348b03b778b024f141b38273"
+  },
+  "rawSha256": "3a1ef49a947a2853ca7ac448c82e77f6bb125e118b0b9f20903ac696ef7b3938",
+  "gzipSha256": "26f244b81ee5c686bfd5cb399291d5ca393a2ced38e57bcb3ae3e39ab036cfeb",
+  "inspectionSha256": "af719e960a2ef8270b9c0f34ad41a3669c84813f7632cb7a7096c2d1a8c176b9",
+  "rawBytes": 33265107,
+  "gzipBytes": 1107208,
+  "trialCount": 216,
+  "ordinaryPassCount": 168,
+  "selectedFrequency": null,
+  "frequencies": [
+    {
+      "frequency": 120,
+      "ordinaryPasses": 24,
+      "trials": 72,
+      "eligible": true,
+      "qualifies": false,
+      "peakPenetrationMax": 0.030035276464327472,
+      "completedLatePenetrationMax": 0.006961704045720191,
+      "peakSpreadMaxAmongCompleteGroups": 0.007059684896874099,
+      "firstFailures": {
+        "late-penetration": 36,
+        "table": 12
+      }
+    },
+    {
+      "frequency": 240,
+      "ordinaryPasses": 72,
+      "trials": 72,
+      "eligible": true,
+      "qualifies": false,
+      "peakPenetrationMax": 0.019750358240940624,
+      "completedLatePenetrationMax": 0.008411318260073408,
+      "peakSpreadMaxAmongCompleteGroups": 0.011312639055151674,
+      "firstFailures": {}
+    },
+    {
+      "frequency": 480,
+      "ordinaryPasses": 72,
+      "trials": 72,
+      "eligible": false,
+      "qualifies": false,
+      "peakPenetrationMax": 0.014617534552662861,
+      "completedLatePenetrationMax": 0.002854358625806075,
+      "peakSpreadMaxAmongCompleteGroups": 0.009820418029639968,
+      "firstFailures": {}
+    }
+  ],
+  "supplementalPlot": {
+    "scope": "Presentation only; no numerical acceptance or runtime changes.",
+    "matplotlibVersion": "3.11.2",
+    "scriptSha256": "4eeb688a112684d9c32cda0496274cdceb9ace20de45fb5fdffa071f3c50a67b",
+    "imageSha256": "11db0d4994a9e018e0a7af1ddc37a4f7690f358b3df22551648155a495cb523b"
+  }
+}

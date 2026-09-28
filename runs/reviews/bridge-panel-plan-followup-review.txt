@@ -1,0 +1,13 @@
+**VERIFIED/CLEAN**
+
+All four initial findings are resolved in the revised plan:
+
+1. Bridge routing contract: resolved by explicit `bridgeInsertion: { afterStageId, connections }`, single new tile, route through latest predecessor workspace, and preserved prepared-transfer guards in [runs/2026-09-27-bridge-panel-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-bridge-panel-plan.md:15).
+
+2. State-boundary invariant: resolved by exact predecessor body set, exact expanded first engine input, pre-step pose/velocity/body-type/joint-frame restoration checks, and negative tests in [runs/2026-09-27-bridge-panel-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-bridge-panel-plan.md:17).
+
+3. Edge endpoint uniqueness: resolved by bridge-scoped distinct incoming edges and distinct installed endpoints, with the duplicate incoming-edge negative case explicitly called out in [runs/2026-09-27-bridge-panel-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-bridge-panel-plan.md:21).
+
+4. Source-promotion/reporting guard: resolved by 14-panel construction-frame labeling, retained separate later outcomes, and no full-replica promotion in [runs/2026-09-27-bridge-panel-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-bridge-panel-plan.md:27).
+
+I did not find new material issues in the wording. Confidence: moderate-high for plan adequacy against the four review findings. Limits: read-only review, no tests run, and I only inspected the two requested documents plus directly relevant assembly/contact/workspace code paths.
