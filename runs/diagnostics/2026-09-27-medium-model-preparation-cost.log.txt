@@ -1,0 +1,1 @@
+{"scope":"Model preparation cost only; no assembly evaluation or source acceptance.","seconds":0.0063403749999999945,"pieces":37,"stages":11}

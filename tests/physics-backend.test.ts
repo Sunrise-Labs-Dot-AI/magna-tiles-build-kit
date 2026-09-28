@@ -5,7 +5,7 @@ import { beforeAll, describe, expect, it } from "vitest";
 import Original from "@dimforge/rapier3d-compat";
 import RAPIER, { World, ColliderDesc, RigidBodyDesc, JointData, assertIntegrationSettings, integrationSettings } from "@/lib/engine/physics-backend";
 import { PHYSICS_BACKEND_ID } from "@/lib/engine/backend-identity";
-import { PHYSICS_MODEL_VERSION } from "@/lib/engine/constants";
+import { PHYSICS_MODEL_VERSION, CONTACT_NATURAL_FREQUENCY_HZ, SIMULATION_TIMESTEP_SECONDS } from "@/lib/engine/constants";
 import { createEngineWorld } from "@/lib/engine/rapier-world";
 import { assemble, square, v } from "@/lib/replication/geometry";
 import { workspaceBuild, type PreparedWorkspace } from "@/lib/replication/workspace";
@@ -31,9 +31,9 @@ describe("one guarded headless physics runtime", () => {
       expect(integrationSettings(selected)).toEqual(profile.defaults);
       expect(integrationSettings(original)).toEqual(profile.defaults);
       for (const world of [selected, original]) {
-        world.integrationParameters.dt = 1/120;
+        world.integrationParameters.dt = SIMULATION_TIMESTEP_SECONDS;
         world.integrationParameters.numSolverIterations = 16;
-        world.integrationParameters.contact_natural_frequency = 120;
+        world.integrationParameters.contact_natural_frequency = CONTACT_NATURAL_FREQUENCY_HZ;
       }
       expect(integrationSettings(selected)).toEqual(profile.configured);
       expect(integrationSettings(original)).toEqual(profile.configured);

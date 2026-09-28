@@ -1,0 +1,116 @@
+{
+  "scope": "Analytic interpretation of the existing prescribed symmetric fixed-midpoint hinge fixture at120degrees only. No native dynamics, universal folding impossibility, physical calibration or authorized gap change.",
+  "input": "runs/diagnostics/2026-09-27-fold-clearance.json.gz",
+  "inputSha256": "857b742fe3507450b92533cc9a97c580eabe2ed663a4eda974cc5d1e1f537202",
+  "context": {
+    "validationCodeHash": "7a8ad00bf79266e385e434dcb9bdb6f7fabe98d1511f8564b36cd81496c93e29",
+    "scriptHashes": {
+      "scripts/reference/probe-fold-clearance.ts": "2d35c7889907a3758577d6a21d573d7339cfaaba2ff3091c0664db5cfeacca2a"
+    }
+  },
+  "formula": "max(0, thickness/2*(1-cos(phi)) - initialGap/2*sin(phi)) at phi=120degrees for this two-square fixture",
+  "thickness": 0.18,
+  "rawOverlapTolerance": 0.03,
+  "turnRadians": 2.0943951023931953,
+  "requiredInitialGapForTerminalTolerance": 0.24248711305964277,
+  "maximumInitiallyClosedGap": 0.21,
+  "requiredInitialGapForZeroPenetration": 0.3117691453623978,
+  "rows": [
+    {
+      "gap": 0,
+      "direction": -1,
+      "initialContact": "pass",
+      "predictedTerminalPenetration": 0.13499999999999998,
+      "recordedFinalSegmentPeak": 0.13499999999999995,
+      "difference": 2.7755575615628914e-17
+    },
+    {
+      "gap": 0,
+      "direction": 1,
+      "initialContact": "pass",
+      "predictedTerminalPenetration": 0.13499999999999998,
+      "recordedFinalSegmentPeak": 0.13499999999999995,
+      "difference": 2.7755575615628914e-17
+    },
+    {
+      "gap": 0.03,
+      "direction": -1,
+      "initialContact": "pass",
+      "predictedTerminalPenetration": 0.1220096189432334,
+      "recordedFinalSegmentPeak": 0.12200961894323321,
+      "difference": 1.8041124150158794e-16
+    },
+    {
+      "gap": 0.03,
+      "direction": 1,
+      "initialContact": "pass",
+      "predictedTerminalPenetration": 0.1220096189432334,
+      "recordedFinalSegmentPeak": 0.12200961894323323,
+      "difference": 1.6653345369377348e-16
+    },
+    {
+      "gap": 0.09,
+      "direction": -1,
+      "initialContact": "pass",
+      "predictedTerminalPenetration": 0.09602885682970025,
+      "recordedFinalSegmentPeak": 0.09602885682970005,
+      "difference": 1.942890293094024e-16
+    },
+    {
+      "gap": 0.09,
+      "direction": 1,
+      "initialContact": "pass",
+      "predictedTerminalPenetration": 0.09602885682970025,
+      "recordedFinalSegmentPeak": 0.09602885682970005,
+      "difference": 1.942890293094024e-16
+    },
+    {
+      "gap": 0.18,
+      "direction": -1,
+      "initialContact": "pass",
+      "predictedTerminalPenetration": 0.0570577136594005,
+      "recordedFinalSegmentPeak": 0.05705771365940036,
+      "difference": 1.457167719820518e-16
+    },
+    {
+      "gap": 0.18,
+      "direction": 1,
+      "initialContact": "pass",
+      "predictedTerminalPenetration": 0.0570577136594005,
+      "recordedFinalSegmentPeak": 0.05705771365940036,
+      "difference": 1.457167719820518e-16
+    },
+    {
+      "gap": 0.21,
+      "direction": -1,
+      "initialContact": "pass",
+      "predictedTerminalPenetration": 0.044067332602633916,
+      "recordedFinalSegmentPeak": 0.04406733260263394,
+      "difference": 2.0816681711721685e-17
+    },
+    {
+      "gap": 0.21,
+      "direction": 1,
+      "initialContact": "pass",
+      "predictedTerminalPenetration": 0.044067332602633916,
+      "recordedFinalSegmentPeak": 0.04406733260263394,
+      "difference": 2.0816681711721685e-17
+    },
+    {
+      "gap": 0.36,
+      "direction": -1,
+      "initialContact": "fail",
+      "predictedTerminalPenetration": 0,
+      "recordedFinalSegmentPeak": 0,
+      "difference": 0
+    },
+    {
+      "gap": 0.36,
+      "direction": 1,
+      "initialContact": "fail",
+      "predictedTerminalPenetration": 0,
+      "recordedFinalSegmentPeak": 0,
+      "difference": 0
+    }
+  ]
+}

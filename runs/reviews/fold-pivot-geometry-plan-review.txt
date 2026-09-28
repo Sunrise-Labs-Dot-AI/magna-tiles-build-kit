@@ -1,0 +1,14 @@
+CLEAN.
+
+I found no concrete omission that would make `runs/2026-09-27-fold-pivot-geometry-plan.md` overclaim or lose the actual native failure.
+
+Checked against the referenced evidence:
+
+- Transform composition matches the native target structure in `probe-native-fold.ts`: proximal rotation of middle and distal subchain, with the distal relative turn composed before the proximal transform.
+- The plan preserves the actual failure context: `.09` native rows hit solid collision around 74.76 degrees with both old joins retained, and it does not reinterpret that as release, source success, or a force model.
+- The 18 cases are predeclared correctly: 3 offsets per retained hinge, 2 fold directions.
+- Existing `.21` contact and `.03` solid limits are explicitly retained, and `contactsClosed` enforces those limits through `TILE_THICKNESS + .03` and overlap/orientation checks.
+- Terminal root/end contact is scoped as a separate measured contact, with the proposed third edge IDs and whole-ring check kept distinct from any earned construction join.
+- Interpretation boundaries are appropriately conservative: no native dynamics, no retail magnetic pivot claim, no hand withdrawal/free rest, no source acceptance, and no adoption of a fixed surface-offset pivot as a universal hinge.
+
+One note, not a finding: the plan’s wording already covers the active regression hazard by requiring off-path lightweight arithmetic and frozen inputs. If implemented, the result artifact should record the active `validationCodeHash` before/after so the current `3a2...` runtime state is visibly preserved, but the plan’s existing “unchanged runtime/script before/after” requirement is sufficient for this review.

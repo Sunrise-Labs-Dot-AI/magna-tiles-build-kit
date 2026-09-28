@@ -2,7 +2,7 @@ import { RigidBodyType } from "@/lib/engine/physics-backend";
 import { createEngineWorld, perturbFirstRelease, type EngineState } from "@/lib/engine/rapier-world";
 import { buildBounds, connectionId, validateMagneticBuild } from "@/lib/engine/build";
 import { validateEngineInput } from "@/lib/engine/input";
-import { MAX_STANDING_DISPLACEMENT, SETTLED_ANGULAR_SPEED, SETTLED_LINEAR_SPEED, SETTLED_REQUIRED_STEPS, SIMULATION_MAX_STEPS, SIMULATION_TIMESTEP_SECONDS } from "@/lib/engine/constants";
+import { COLLISION_SUBSTEPS, MAX_STANDING_DISPLACEMENT, SETTLED_ANGULAR_SPEED, SETTLED_LINEAR_SPEED, SETTLED_REQUIRED_STEPS, SIMULATION_MAX_STEPS, SIMULATION_TIMESTEP_SECONDS } from "@/lib/engine/constants";
 import { add, distance, magnitude } from "@/lib/engine/math";
 import { findRawOverlaps, RAW_OVERLAP_TOLERANCE } from "@/lib/engine/overlap";
 import { SimulationBudgetExceeded } from "@/lib/engine/simulate";
@@ -16,9 +16,9 @@ import type { Check } from "./types";
 import { componentContacts, splitComponents } from "./components";
 import { checkPreparedContinuation } from "./workspace";
 
-// Resolve a falling panel's contact at 960 Hz. This refines collision integration;
+// Observe a falling panel at every native collision step. This refines collision integration;
 // duration, rest time, forces, friction and geometric tolerances stay unchanged.
-const SEATING_SUBSTEPS = 8;
+const SEATING_SUBSTEPS = COLLISION_SUBSTEPS;
 
 export interface SeatingTrial extends Check {
   placement: "table" | "magnetic";

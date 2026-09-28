@@ -1,0 +1,1204 @@
+{
+  "scope": "Independent scalar f32 recurrence from matched native source. No runtime or tolerance changes.",
+  "inputSha256": "a9a0cb97b6bc2845e4650a13e5c93d4191cd912a4d42d733379a64b4405f6b2b",
+  "nativeSourceAudit": "runs/diagnostics/2026-09-27-gravity-solver-source-audit.json",
+  "inputs": {
+    "gravity": {
+      "x": 0,
+      "y": -386.2204724409449,
+      "z": 0
+    },
+    "worldGravity": {
+      "x": 0,
+      "y": -386.2204724409449,
+      "z": 0
+    },
+    "mass": 0.026000000536441803,
+    "invMass": 38.4615364074707,
+    "effectiveInvMass": {
+      "x": 38.4615364074707,
+      "y": 38.4615364074707,
+      "z": 38.4615364074707
+    },
+    "gravityScale": 1,
+    "additionalSolverIterations": 8,
+    "userForce": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "settings": {
+      "dt": 0.008333333767950535,
+      "contact_erp": 0.7153651714324951,
+      "lengthUnit": 1,
+      "normalizedAllowedLinearError": 0.0010000000474974513,
+      "normalizedPredictionDistance": 0.0020000000949949026,
+      "numSolverIterations": 16,
+      "numInternalPgsIterations": 1,
+      "minIslandSize": 128,
+      "maxCcdSubsteps": 1
+    }
+  },
+  "nativeDt": 0.0005208333604969084,
+  "smallIterations": 24,
+  "force": -10.041731834411621,
+  "smallDt": 0.000021701389414374717,
+  "increment": -0.008381519466638565,
+  "nativeSteps": 192,
+  "rounds": 4608,
+  "allNativeVelocitiesExact": true,
+  "rows": [
+    {
+      "nativeStep": 1,
+      "expectedVelocityY": -0.2011564075946808,
+      "actualVelocityY": -0.2011564075946808,
+      "exact": true
+    },
+    {
+      "nativeStep": 2,
+      "expectedVelocityY": -0.4023127853870392,
+      "actualVelocityY": -0.4023127853870392,
+      "exact": true
+    },
+    {
+      "nativeStep": 3,
+      "expectedVelocityY": -0.6034695506095886,
+      "actualVelocityY": -0.6034695506095886,
+      "exact": true
+    },
+    {
+      "nativeStep": 4,
+      "expectedVelocityY": -0.8046266436576843,
+      "actualVelocityY": -0.8046266436576843,
+      "exact": true
+    },
+    {
+      "nativeStep": 5,
+      "expectedVelocityY": -1.0057836771011353,
+      "actualVelocityY": -1.0057836771011353,
+      "exact": true
+    },
+    {
+      "nativeStep": 6,
+      "expectedVelocityY": -1.2069393396377563,
+      "actualVelocityY": -1.2069393396377563,
+      "exact": true
+    },
+    {
+      "nativeStep": 7,
+      "expectedVelocityY": -1.4080950021743774,
+      "actualVelocityY": -1.4080950021743774,
+      "exact": true
+    },
+    {
+      "nativeStep": 8,
+      "expectedVelocityY": -1.6092506647109985,
+      "actualVelocityY": -1.6092506647109985,
+      "exact": true
+    },
+    {
+      "nativeStep": 9,
+      "expectedVelocityY": -1.8104063272476196,
+      "actualVelocityY": -1.8104063272476196,
+      "exact": true
+    },
+    {
+      "nativeStep": 10,
+      "expectedVelocityY": -2.0115621089935303,
+      "actualVelocityY": -2.0115621089935303,
+      "exact": true
+    },
+    {
+      "nativeStep": 11,
+      "expectedVelocityY": -2.2127206325531006,
+      "actualVelocityY": -2.2127206325531006,
+      "exact": true
+    },
+    {
+      "nativeStep": 12,
+      "expectedVelocityY": -2.413879156112671,
+      "actualVelocityY": -2.413879156112671,
+      "exact": true
+    },
+    {
+      "nativeStep": 13,
+      "expectedVelocityY": -2.615037679672241,
+      "actualVelocityY": -2.615037679672241,
+      "exact": true
+    },
+    {
+      "nativeStep": 14,
+      "expectedVelocityY": -2.8161962032318115,
+      "actualVelocityY": -2.8161962032318115,
+      "exact": true
+    },
+    {
+      "nativeStep": 15,
+      "expectedVelocityY": -3.017354726791382,
+      "actualVelocityY": -3.017354726791382,
+      "exact": true
+    },
+    {
+      "nativeStep": 16,
+      "expectedVelocityY": -3.218513250350952,
+      "actualVelocityY": -3.218513250350952,
+      "exact": true
+    },
+    {
+      "nativeStep": 17,
+      "expectedVelocityY": -3.4196717739105225,
+      "actualVelocityY": -3.4196717739105225,
+      "exact": true
+    },
+    {
+      "nativeStep": 18,
+      "expectedVelocityY": -3.6208302974700928,
+      "actualVelocityY": -3.6208302974700928,
+      "exact": true
+    },
+    {
+      "nativeStep": 19,
+      "expectedVelocityY": -3.821988821029663,
+      "actualVelocityY": -3.821988821029663,
+      "exact": true
+    },
+    {
+      "nativeStep": 20,
+      "expectedVelocityY": -4.023146629333496,
+      "actualVelocityY": -4.023146629333496,
+      "exact": true
+    },
+    {
+      "nativeStep": 21,
+      "expectedVelocityY": -4.224299430847168,
+      "actualVelocityY": -4.224299430847168,
+      "exact": true
+    },
+    {
+      "nativeStep": 22,
+      "expectedVelocityY": -4.42545223236084,
+      "actualVelocityY": -4.42545223236084,
+      "exact": true
+    },
+    {
+      "nativeStep": 23,
+      "expectedVelocityY": -4.626605033874512,
+      "actualVelocityY": -4.626605033874512,
+      "exact": true
+    },
+    {
+      "nativeStep": 24,
+      "expectedVelocityY": -4.827757835388184,
+      "actualVelocityY": -4.827757835388184,
+      "exact": true
+    },
+    {
+      "nativeStep": 25,
+      "expectedVelocityY": -5.0289106369018555,
+      "actualVelocityY": -5.0289106369018555,
+      "exact": true
+    },
+    {
+      "nativeStep": 26,
+      "expectedVelocityY": -5.230063438415527,
+      "actualVelocityY": -5.230063438415527,
+      "exact": true
+    },
+    {
+      "nativeStep": 27,
+      "expectedVelocityY": -5.431216239929199,
+      "actualVelocityY": -5.431216239929199,
+      "exact": true
+    },
+    {
+      "nativeStep": 28,
+      "expectedVelocityY": -5.632369041442871,
+      "actualVelocityY": -5.632369041442871,
+      "exact": true
+    },
+    {
+      "nativeStep": 29,
+      "expectedVelocityY": -5.833521842956543,
+      "actualVelocityY": -5.833521842956543,
+      "exact": true
+    },
+    {
+      "nativeStep": 30,
+      "expectedVelocityY": -6.034674644470215,
+      "actualVelocityY": -6.034674644470215,
+      "exact": true
+    },
+    {
+      "nativeStep": 31,
+      "expectedVelocityY": -6.235827445983887,
+      "actualVelocityY": -6.235827445983887,
+      "exact": true
+    },
+    {
+      "nativeStep": 32,
+      "expectedVelocityY": -6.436980247497559,
+      "actualVelocityY": -6.436980247497559,
+      "exact": true
+    },
+    {
+      "nativeStep": 33,
+      "expectedVelocityY": -6.6381330490112305,
+      "actualVelocityY": -6.6381330490112305,
+      "exact": true
+    },
+    {
+      "nativeStep": 34,
+      "expectedVelocityY": -6.839285850524902,
+      "actualVelocityY": -6.839285850524902,
+      "exact": true
+    },
+    {
+      "nativeStep": 35,
+      "expectedVelocityY": -7.040438652038574,
+      "actualVelocityY": -7.040438652038574,
+      "exact": true
+    },
+    {
+      "nativeStep": 36,
+      "expectedVelocityY": -7.241591453552246,
+      "actualVelocityY": -7.241591453552246,
+      "exact": true
+    },
+    {
+      "nativeStep": 37,
+      "expectedVelocityY": -7.442744255065918,
+      "actualVelocityY": -7.442744255065918,
+      "exact": true
+    },
+    {
+      "nativeStep": 38,
+      "expectedVelocityY": -7.64389705657959,
+      "actualVelocityY": -7.64389705657959,
+      "exact": true
+    },
+    {
+      "nativeStep": 39,
+      "expectedVelocityY": -7.845049858093262,
+      "actualVelocityY": -7.845049858093262,
+      "exact": true
+    },
+    {
+      "nativeStep": 40,
+      "expectedVelocityY": -8.046205520629883,
+      "actualVelocityY": -8.046205520629883,
+      "exact": true
+    },
+    {
+      "nativeStep": 41,
+      "expectedVelocityY": -8.247369766235352,
+      "actualVelocityY": -8.247369766235352,
+      "exact": true
+    },
+    {
+      "nativeStep": 42,
+      "expectedVelocityY": -8.44853401184082,
+      "actualVelocityY": -8.44853401184082,
+      "exact": true
+    },
+    {
+      "nativeStep": 43,
+      "expectedVelocityY": -8.649698257446289,
+      "actualVelocityY": -8.649698257446289,
+      "exact": true
+    },
+    {
+      "nativeStep": 44,
+      "expectedVelocityY": -8.850862503051758,
+      "actualVelocityY": -8.850862503051758,
+      "exact": true
+    },
+    {
+      "nativeStep": 45,
+      "expectedVelocityY": -9.052026748657227,
+      "actualVelocityY": -9.052026748657227,
+      "exact": true
+    },
+    {
+      "nativeStep": 46,
+      "expectedVelocityY": -9.253190994262695,
+      "actualVelocityY": -9.253190994262695,
+      "exact": true
+    },
+    {
+      "nativeStep": 47,
+      "expectedVelocityY": -9.454355239868164,
+      "actualVelocityY": -9.454355239868164,
+      "exact": true
+    },
+    {
+      "nativeStep": 48,
+      "expectedVelocityY": -9.655519485473633,
+      "actualVelocityY": -9.655519485473633,
+      "exact": true
+    },
+    {
+      "nativeStep": 49,
+      "expectedVelocityY": -9.856683731079102,
+      "actualVelocityY": -9.856683731079102,
+      "exact": true
+    },
+    {
+      "nativeStep": 50,
+      "expectedVelocityY": -10.05784797668457,
+      "actualVelocityY": -10.05784797668457,
+      "exact": true
+    },
+    {
+      "nativeStep": 51,
+      "expectedVelocityY": -10.259012222290039,
+      "actualVelocityY": -10.259012222290039,
+      "exact": true
+    },
+    {
+      "nativeStep": 52,
+      "expectedVelocityY": -10.460176467895508,
+      "actualVelocityY": -10.460176467895508,
+      "exact": true
+    },
+    {
+      "nativeStep": 53,
+      "expectedVelocityY": -10.661340713500977,
+      "actualVelocityY": -10.661340713500977,
+      "exact": true
+    },
+    {
+      "nativeStep": 54,
+      "expectedVelocityY": -10.862504959106445,
+      "actualVelocityY": -10.862504959106445,
+      "exact": true
+    },
+    {
+      "nativeStep": 55,
+      "expectedVelocityY": -11.063669204711914,
+      "actualVelocityY": -11.063669204711914,
+      "exact": true
+    },
+    {
+      "nativeStep": 56,
+      "expectedVelocityY": -11.264833450317383,
+      "actualVelocityY": -11.264833450317383,
+      "exact": true
+    },
+    {
+      "nativeStep": 57,
+      "expectedVelocityY": -11.465997695922852,
+      "actualVelocityY": -11.465997695922852,
+      "exact": true
+    },
+    {
+      "nativeStep": 58,
+      "expectedVelocityY": -11.66716194152832,
+      "actualVelocityY": -11.66716194152832,
+      "exact": true
+    },
+    {
+      "nativeStep": 59,
+      "expectedVelocityY": -11.868326187133789,
+      "actualVelocityY": -11.868326187133789,
+      "exact": true
+    },
+    {
+      "nativeStep": 60,
+      "expectedVelocityY": -12.069490432739258,
+      "actualVelocityY": -12.069490432739258,
+      "exact": true
+    },
+    {
+      "nativeStep": 61,
+      "expectedVelocityY": -12.270654678344727,
+      "actualVelocityY": -12.270654678344727,
+      "exact": true
+    },
+    {
+      "nativeStep": 62,
+      "expectedVelocityY": -12.471818923950195,
+      "actualVelocityY": -12.471818923950195,
+      "exact": true
+    },
+    {
+      "nativeStep": 63,
+      "expectedVelocityY": -12.672983169555664,
+      "actualVelocityY": -12.672983169555664,
+      "exact": true
+    },
+    {
+      "nativeStep": 64,
+      "expectedVelocityY": -12.874147415161133,
+      "actualVelocityY": -12.874147415161133,
+      "exact": true
+    },
+    {
+      "nativeStep": 65,
+      "expectedVelocityY": -13.075311660766602,
+      "actualVelocityY": -13.075311660766602,
+      "exact": true
+    },
+    {
+      "nativeStep": 66,
+      "expectedVelocityY": -13.27647590637207,
+      "actualVelocityY": -13.27647590637207,
+      "exact": true
+    },
+    {
+      "nativeStep": 67,
+      "expectedVelocityY": -13.477640151977539,
+      "actualVelocityY": -13.477640151977539,
+      "exact": true
+    },
+    {
+      "nativeStep": 68,
+      "expectedVelocityY": -13.678804397583008,
+      "actualVelocityY": -13.678804397583008,
+      "exact": true
+    },
+    {
+      "nativeStep": 69,
+      "expectedVelocityY": -13.879968643188477,
+      "actualVelocityY": -13.879968643188477,
+      "exact": true
+    },
+    {
+      "nativeStep": 70,
+      "expectedVelocityY": -14.081132888793945,
+      "actualVelocityY": -14.081132888793945,
+      "exact": true
+    },
+    {
+      "nativeStep": 71,
+      "expectedVelocityY": -14.282297134399414,
+      "actualVelocityY": -14.282297134399414,
+      "exact": true
+    },
+    {
+      "nativeStep": 72,
+      "expectedVelocityY": -14.483461380004883,
+      "actualVelocityY": -14.483461380004883,
+      "exact": true
+    },
+    {
+      "nativeStep": 73,
+      "expectedVelocityY": -14.684625625610352,
+      "actualVelocityY": -14.684625625610352,
+      "exact": true
+    },
+    {
+      "nativeStep": 74,
+      "expectedVelocityY": -14.88578987121582,
+      "actualVelocityY": -14.88578987121582,
+      "exact": true
+    },
+    {
+      "nativeStep": 75,
+      "expectedVelocityY": -15.086954116821289,
+      "actualVelocityY": -15.086954116821289,
+      "exact": true
+    },
+    {
+      "nativeStep": 76,
+      "expectedVelocityY": -15.288118362426758,
+      "actualVelocityY": -15.288118362426758,
+      "exact": true
+    },
+    {
+      "nativeStep": 77,
+      "expectedVelocityY": -15.489282608032227,
+      "actualVelocityY": -15.489282608032227,
+      "exact": true
+    },
+    {
+      "nativeStep": 78,
+      "expectedVelocityY": -15.690446853637695,
+      "actualVelocityY": -15.690446853637695,
+      "exact": true
+    },
+    {
+      "nativeStep": 79,
+      "expectedVelocityY": -15.891611099243164,
+      "actualVelocityY": -15.891611099243164,
+      "exact": true
+    },
+    {
+      "nativeStep": 80,
+      "expectedVelocityY": -16.092763900756836,
+      "actualVelocityY": -16.092763900756836,
+      "exact": true
+    },
+    {
+      "nativeStep": 81,
+      "expectedVelocityY": -16.29390525817871,
+      "actualVelocityY": -16.29390525817871,
+      "exact": true
+    },
+    {
+      "nativeStep": 82,
+      "expectedVelocityY": -16.495046615600586,
+      "actualVelocityY": -16.495046615600586,
+      "exact": true
+    },
+    {
+      "nativeStep": 83,
+      "expectedVelocityY": -16.69618797302246,
+      "actualVelocityY": -16.69618797302246,
+      "exact": true
+    },
+    {
+      "nativeStep": 84,
+      "expectedVelocityY": -16.897329330444336,
+      "actualVelocityY": -16.897329330444336,
+      "exact": true
+    },
+    {
+      "nativeStep": 85,
+      "expectedVelocityY": -17.09847068786621,
+      "actualVelocityY": -17.09847068786621,
+      "exact": true
+    },
+    {
+      "nativeStep": 86,
+      "expectedVelocityY": -17.299612045288086,
+      "actualVelocityY": -17.299612045288086,
+      "exact": true
+    },
+    {
+      "nativeStep": 87,
+      "expectedVelocityY": -17.50075340270996,
+      "actualVelocityY": -17.50075340270996,
+      "exact": true
+    },
+    {
+      "nativeStep": 88,
+      "expectedVelocityY": -17.701894760131836,
+      "actualVelocityY": -17.701894760131836,
+      "exact": true
+    },
+    {
+      "nativeStep": 89,
+      "expectedVelocityY": -17.90303611755371,
+      "actualVelocityY": -17.90303611755371,
+      "exact": true
+    },
+    {
+      "nativeStep": 90,
+      "expectedVelocityY": -18.104177474975586,
+      "actualVelocityY": -18.104177474975586,
+      "exact": true
+    },
+    {
+      "nativeStep": 91,
+      "expectedVelocityY": -18.30531883239746,
+      "actualVelocityY": -18.30531883239746,
+      "exact": true
+    },
+    {
+      "nativeStep": 92,
+      "expectedVelocityY": -18.506460189819336,
+      "actualVelocityY": -18.506460189819336,
+      "exact": true
+    },
+    {
+      "nativeStep": 93,
+      "expectedVelocityY": -18.70760154724121,
+      "actualVelocityY": -18.70760154724121,
+      "exact": true
+    },
+    {
+      "nativeStep": 94,
+      "expectedVelocityY": -18.908742904663086,
+      "actualVelocityY": -18.908742904663086,
+      "exact": true
+    },
+    {
+      "nativeStep": 95,
+      "expectedVelocityY": -19.10988426208496,
+      "actualVelocityY": -19.10988426208496,
+      "exact": true
+    },
+    {
+      "nativeStep": 96,
+      "expectedVelocityY": -19.311025619506836,
+      "actualVelocityY": -19.311025619506836,
+      "exact": true
+    },
+    {
+      "nativeStep": 97,
+      "expectedVelocityY": -19.51216697692871,
+      "actualVelocityY": -19.51216697692871,
+      "exact": true
+    },
+    {
+      "nativeStep": 98,
+      "expectedVelocityY": -19.713308334350586,
+      "actualVelocityY": -19.713308334350586,
+      "exact": true
+    },
+    {
+      "nativeStep": 99,
+      "expectedVelocityY": -19.91444969177246,
+      "actualVelocityY": -19.91444969177246,
+      "exact": true
+    },
+    {
+      "nativeStep": 100,
+      "expectedVelocityY": -20.115591049194336,
+      "actualVelocityY": -20.115591049194336,
+      "exact": true
+    },
+    {
+      "nativeStep": 101,
+      "expectedVelocityY": -20.31673240661621,
+      "actualVelocityY": -20.31673240661621,
+      "exact": true
+    },
+    {
+      "nativeStep": 102,
+      "expectedVelocityY": -20.517873764038086,
+      "actualVelocityY": -20.517873764038086,
+      "exact": true
+    },
+    {
+      "nativeStep": 103,
+      "expectedVelocityY": -20.71901512145996,
+      "actualVelocityY": -20.71901512145996,
+      "exact": true
+    },
+    {
+      "nativeStep": 104,
+      "expectedVelocityY": -20.920156478881836,
+      "actualVelocityY": -20.920156478881836,
+      "exact": true
+    },
+    {
+      "nativeStep": 105,
+      "expectedVelocityY": -21.12129783630371,
+      "actualVelocityY": -21.12129783630371,
+      "exact": true
+    },
+    {
+      "nativeStep": 106,
+      "expectedVelocityY": -21.322439193725586,
+      "actualVelocityY": -21.322439193725586,
+      "exact": true
+    },
+    {
+      "nativeStep": 107,
+      "expectedVelocityY": -21.52358055114746,
+      "actualVelocityY": -21.52358055114746,
+      "exact": true
+    },
+    {
+      "nativeStep": 108,
+      "expectedVelocityY": -21.724721908569336,
+      "actualVelocityY": -21.724721908569336,
+      "exact": true
+    },
+    {
+      "nativeStep": 109,
+      "expectedVelocityY": -21.92586326599121,
+      "actualVelocityY": -21.92586326599121,
+      "exact": true
+    },
+    {
+      "nativeStep": 110,
+      "expectedVelocityY": -22.127004623413086,
+      "actualVelocityY": -22.127004623413086,
+      "exact": true
+    },
+    {
+      "nativeStep": 111,
+      "expectedVelocityY": -22.32814598083496,
+      "actualVelocityY": -22.32814598083496,
+      "exact": true
+    },
+    {
+      "nativeStep": 112,
+      "expectedVelocityY": -22.529287338256836,
+      "actualVelocityY": -22.529287338256836,
+      "exact": true
+    },
+    {
+      "nativeStep": 113,
+      "expectedVelocityY": -22.73042869567871,
+      "actualVelocityY": -22.73042869567871,
+      "exact": true
+    },
+    {
+      "nativeStep": 114,
+      "expectedVelocityY": -22.931570053100586,
+      "actualVelocityY": -22.931570053100586,
+      "exact": true
+    },
+    {
+      "nativeStep": 115,
+      "expectedVelocityY": -23.13271141052246,
+      "actualVelocityY": -23.13271141052246,
+      "exact": true
+    },
+    {
+      "nativeStep": 116,
+      "expectedVelocityY": -23.333852767944336,
+      "actualVelocityY": -23.333852767944336,
+      "exact": true
+    },
+    {
+      "nativeStep": 117,
+      "expectedVelocityY": -23.53499412536621,
+      "actualVelocityY": -23.53499412536621,
+      "exact": true
+    },
+    {
+      "nativeStep": 118,
+      "expectedVelocityY": -23.736135482788086,
+      "actualVelocityY": -23.736135482788086,
+      "exact": true
+    },
+    {
+      "nativeStep": 119,
+      "expectedVelocityY": -23.93727684020996,
+      "actualVelocityY": -23.93727684020996,
+      "exact": true
+    },
+    {
+      "nativeStep": 120,
+      "expectedVelocityY": -24.138418197631836,
+      "actualVelocityY": -24.138418197631836,
+      "exact": true
+    },
+    {
+      "nativeStep": 121,
+      "expectedVelocityY": -24.33955955505371,
+      "actualVelocityY": -24.33955955505371,
+      "exact": true
+    },
+    {
+      "nativeStep": 122,
+      "expectedVelocityY": -24.540700912475586,
+      "actualVelocityY": -24.540700912475586,
+      "exact": true
+    },
+    {
+      "nativeStep": 123,
+      "expectedVelocityY": -24.74184226989746,
+      "actualVelocityY": -24.74184226989746,
+      "exact": true
+    },
+    {
+      "nativeStep": 124,
+      "expectedVelocityY": -24.942983627319336,
+      "actualVelocityY": -24.942983627319336,
+      "exact": true
+    },
+    {
+      "nativeStep": 125,
+      "expectedVelocityY": -25.14412498474121,
+      "actualVelocityY": -25.14412498474121,
+      "exact": true
+    },
+    {
+      "nativeStep": 126,
+      "expectedVelocityY": -25.345266342163086,
+      "actualVelocityY": -25.345266342163086,
+      "exact": true
+    },
+    {
+      "nativeStep": 127,
+      "expectedVelocityY": -25.54640769958496,
+      "actualVelocityY": -25.54640769958496,
+      "exact": true
+    },
+    {
+      "nativeStep": 128,
+      "expectedVelocityY": -25.747549057006836,
+      "actualVelocityY": -25.747549057006836,
+      "exact": true
+    },
+    {
+      "nativeStep": 129,
+      "expectedVelocityY": -25.94869041442871,
+      "actualVelocityY": -25.94869041442871,
+      "exact": true
+    },
+    {
+      "nativeStep": 130,
+      "expectedVelocityY": -26.149831771850586,
+      "actualVelocityY": -26.149831771850586,
+      "exact": true
+    },
+    {
+      "nativeStep": 131,
+      "expectedVelocityY": -26.35097312927246,
+      "actualVelocityY": -26.35097312927246,
+      "exact": true
+    },
+    {
+      "nativeStep": 132,
+      "expectedVelocityY": -26.552114486694336,
+      "actualVelocityY": -26.552114486694336,
+      "exact": true
+    },
+    {
+      "nativeStep": 133,
+      "expectedVelocityY": -26.75325584411621,
+      "actualVelocityY": -26.75325584411621,
+      "exact": true
+    },
+    {
+      "nativeStep": 134,
+      "expectedVelocityY": -26.954397201538086,
+      "actualVelocityY": -26.954397201538086,
+      "exact": true
+    },
+    {
+      "nativeStep": 135,
+      "expectedVelocityY": -27.15553855895996,
+      "actualVelocityY": -27.15553855895996,
+      "exact": true
+    },
+    {
+      "nativeStep": 136,
+      "expectedVelocityY": -27.356679916381836,
+      "actualVelocityY": -27.356679916381836,
+      "exact": true
+    },
+    {
+      "nativeStep": 137,
+      "expectedVelocityY": -27.55782127380371,
+      "actualVelocityY": -27.55782127380371,
+      "exact": true
+    },
+    {
+      "nativeStep": 138,
+      "expectedVelocityY": -27.758962631225586,
+      "actualVelocityY": -27.758962631225586,
+      "exact": true
+    },
+    {
+      "nativeStep": 139,
+      "expectedVelocityY": -27.96010398864746,
+      "actualVelocityY": -27.96010398864746,
+      "exact": true
+    },
+    {
+      "nativeStep": 140,
+      "expectedVelocityY": -28.161245346069336,
+      "actualVelocityY": -28.161245346069336,
+      "exact": true
+    },
+    {
+      "nativeStep": 141,
+      "expectedVelocityY": -28.36238670349121,
+      "actualVelocityY": -28.36238670349121,
+      "exact": true
+    },
+    {
+      "nativeStep": 142,
+      "expectedVelocityY": -28.563528060913086,
+      "actualVelocityY": -28.563528060913086,
+      "exact": true
+    },
+    {
+      "nativeStep": 143,
+      "expectedVelocityY": -28.76466941833496,
+      "actualVelocityY": -28.76466941833496,
+      "exact": true
+    },
+    {
+      "nativeStep": 144,
+      "expectedVelocityY": -28.965810775756836,
+      "actualVelocityY": -28.965810775756836,
+      "exact": true
+    },
+    {
+      "nativeStep": 145,
+      "expectedVelocityY": -29.16695213317871,
+      "actualVelocityY": -29.16695213317871,
+      "exact": true
+    },
+    {
+      "nativeStep": 146,
+      "expectedVelocityY": -29.368093490600586,
+      "actualVelocityY": -29.368093490600586,
+      "exact": true
+    },
+    {
+      "nativeStep": 147,
+      "expectedVelocityY": -29.56923484802246,
+      "actualVelocityY": -29.56923484802246,
+      "exact": true
+    },
+    {
+      "nativeStep": 148,
+      "expectedVelocityY": -29.770376205444336,
+      "actualVelocityY": -29.770376205444336,
+      "exact": true
+    },
+    {
+      "nativeStep": 149,
+      "expectedVelocityY": -29.97151756286621,
+      "actualVelocityY": -29.97151756286621,
+      "exact": true
+    },
+    {
+      "nativeStep": 150,
+      "expectedVelocityY": -30.172658920288086,
+      "actualVelocityY": -30.172658920288086,
+      "exact": true
+    },
+    {
+      "nativeStep": 151,
+      "expectedVelocityY": -30.37380027770996,
+      "actualVelocityY": -30.37380027770996,
+      "exact": true
+    },
+    {
+      "nativeStep": 152,
+      "expectedVelocityY": -30.574941635131836,
+      "actualVelocityY": -30.574941635131836,
+      "exact": true
+    },
+    {
+      "nativeStep": 153,
+      "expectedVelocityY": -30.77608299255371,
+      "actualVelocityY": -30.77608299255371,
+      "exact": true
+    },
+    {
+      "nativeStep": 154,
+      "expectedVelocityY": -30.977224349975586,
+      "actualVelocityY": -30.977224349975586,
+      "exact": true
+    },
+    {
+      "nativeStep": 155,
+      "expectedVelocityY": -31.17836570739746,
+      "actualVelocityY": -31.17836570739746,
+      "exact": true
+    },
+    {
+      "nativeStep": 156,
+      "expectedVelocityY": -31.379507064819336,
+      "actualVelocityY": -31.379507064819336,
+      "exact": true
+    },
+    {
+      "nativeStep": 157,
+      "expectedVelocityY": -31.58064842224121,
+      "actualVelocityY": -31.58064842224121,
+      "exact": true
+    },
+    {
+      "nativeStep": 158,
+      "expectedVelocityY": -31.781789779663086,
+      "actualVelocityY": -31.781789779663086,
+      "exact": true
+    },
+    {
+      "nativeStep": 159,
+      "expectedVelocityY": -31.98293113708496,
+      "actualVelocityY": -31.98293113708496,
+      "exact": true
+    },
+    {
+      "nativeStep": 160,
+      "expectedVelocityY": -32.18407440185547,
+      "actualVelocityY": -32.18407440185547,
+      "exact": true
+    },
+    {
+      "nativeStep": 161,
+      "expectedVelocityY": -32.385215759277344,
+      "actualVelocityY": -32.385215759277344,
+      "exact": true
+    },
+    {
+      "nativeStep": 162,
+      "expectedVelocityY": -32.58635711669922,
+      "actualVelocityY": -32.58635711669922,
+      "exact": true
+    },
+    {
+      "nativeStep": 163,
+      "expectedVelocityY": -32.787498474121094,
+      "actualVelocityY": -32.787498474121094,
+      "exact": true
+    },
+    {
+      "nativeStep": 164,
+      "expectedVelocityY": -32.98863983154297,
+      "actualVelocityY": -32.98863983154297,
+      "exact": true
+    },
+    {
+      "nativeStep": 165,
+      "expectedVelocityY": -33.189781188964844,
+      "actualVelocityY": -33.189781188964844,
+      "exact": true
+    },
+    {
+      "nativeStep": 166,
+      "expectedVelocityY": -33.39092254638672,
+      "actualVelocityY": -33.39092254638672,
+      "exact": true
+    },
+    {
+      "nativeStep": 167,
+      "expectedVelocityY": -33.592063903808594,
+      "actualVelocityY": -33.592063903808594,
+      "exact": true
+    },
+    {
+      "nativeStep": 168,
+      "expectedVelocityY": -33.79320526123047,
+      "actualVelocityY": -33.79320526123047,
+      "exact": true
+    },
+    {
+      "nativeStep": 169,
+      "expectedVelocityY": -33.994346618652344,
+      "actualVelocityY": -33.994346618652344,
+      "exact": true
+    },
+    {
+      "nativeStep": 170,
+      "expectedVelocityY": -34.19548797607422,
+      "actualVelocityY": -34.19548797607422,
+      "exact": true
+    },
+    {
+      "nativeStep": 171,
+      "expectedVelocityY": -34.396629333496094,
+      "actualVelocityY": -34.396629333496094,
+      "exact": true
+    },
+    {
+      "nativeStep": 172,
+      "expectedVelocityY": -34.59777069091797,
+      "actualVelocityY": -34.59777069091797,
+      "exact": true
+    },
+    {
+      "nativeStep": 173,
+      "expectedVelocityY": -34.798912048339844,
+      "actualVelocityY": -34.798912048339844,
+      "exact": true
+    },
+    {
+      "nativeStep": 174,
+      "expectedVelocityY": -35.00005340576172,
+      "actualVelocityY": -35.00005340576172,
+      "exact": true
+    },
+    {
+      "nativeStep": 175,
+      "expectedVelocityY": -35.201194763183594,
+      "actualVelocityY": -35.201194763183594,
+      "exact": true
+    },
+    {
+      "nativeStep": 176,
+      "expectedVelocityY": -35.40233612060547,
+      "actualVelocityY": -35.40233612060547,
+      "exact": true
+    },
+    {
+      "nativeStep": 177,
+      "expectedVelocityY": -35.603477478027344,
+      "actualVelocityY": -35.603477478027344,
+      "exact": true
+    },
+    {
+      "nativeStep": 178,
+      "expectedVelocityY": -35.80461883544922,
+      "actualVelocityY": -35.80461883544922,
+      "exact": true
+    },
+    {
+      "nativeStep": 179,
+      "expectedVelocityY": -36.005760192871094,
+      "actualVelocityY": -36.005760192871094,
+      "exact": true
+    },
+    {
+      "nativeStep": 180,
+      "expectedVelocityY": -36.20690155029297,
+      "actualVelocityY": -36.20690155029297,
+      "exact": true
+    },
+    {
+      "nativeStep": 181,
+      "expectedVelocityY": -36.408042907714844,
+      "actualVelocityY": -36.408042907714844,
+      "exact": true
+    },
+    {
+      "nativeStep": 182,
+      "expectedVelocityY": -36.60918426513672,
+      "actualVelocityY": -36.60918426513672,
+      "exact": true
+    },
+    {
+      "nativeStep": 183,
+      "expectedVelocityY": -36.810325622558594,
+      "actualVelocityY": -36.810325622558594,
+      "exact": true
+    },
+    {
+      "nativeStep": 184,
+      "expectedVelocityY": -37.01146697998047,
+      "actualVelocityY": -37.01146697998047,
+      "exact": true
+    },
+    {
+      "nativeStep": 185,
+      "expectedVelocityY": -37.212608337402344,
+      "actualVelocityY": -37.212608337402344,
+      "exact": true
+    },
+    {
+      "nativeStep": 186,
+      "expectedVelocityY": -37.41374969482422,
+      "actualVelocityY": -37.41374969482422,
+      "exact": true
+    },
+    {
+      "nativeStep": 187,
+      "expectedVelocityY": -37.614891052246094,
+      "actualVelocityY": -37.614891052246094,
+      "exact": true
+    },
+    {
+      "nativeStep": 188,
+      "expectedVelocityY": -37.81603240966797,
+      "actualVelocityY": -37.81603240966797,
+      "exact": true
+    },
+    {
+      "nativeStep": 189,
+      "expectedVelocityY": -38.017173767089844,
+      "actualVelocityY": -38.017173767089844,
+      "exact": true
+    },
+    {
+      "nativeStep": 190,
+      "expectedVelocityY": -38.21831512451172,
+      "actualVelocityY": -38.21831512451172,
+      "exact": true
+    },
+    {
+      "nativeStep": 191,
+      "expectedVelocityY": -38.419456481933594,
+      "actualVelocityY": -38.419456481933594,
+      "exact": true
+    },
+    {
+      "nativeStep": 192,
+      "expectedVelocityY": -38.62059783935547,
+      "actualVelocityY": -38.62059783935547,
+      "exact": true
+    }
+  ]
+}

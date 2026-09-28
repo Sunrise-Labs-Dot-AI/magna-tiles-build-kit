@@ -1,0 +1,27 @@
+VERIFIED/CLEAN.
+
+I found no concrete overclaim in the bounded surface-pivot evidence.
+
+Checked evidence:
+- Archive raw SHA: `6429fba205ad440963074c80a3b64f0032e0a3bf81dc9f8550342f58e4bb5b63`
+- Archive gzip SHA: `116889dd7d5a566f507c8d1d938216b6666ad10bede73a3dbe2876590f3b66a3`
+- Script SHA: `bdaddc5c72bbe4feb5b5fc7832aa200a13f12e195fdd8451f552a6113a24610a`
+- Log SHA: `fe9e8b3e5609f72e7736c7f283ec0746cef671a1723cc63acf18251d15e8101c`
+- Runtime hash stayed `3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d`; `context == finalContext`.
+- Decompressed archived script hash matches [probe-fold-pivots.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/probe-fold-pivots.ts).
+
+Independent recomputation from the archived JSON confirmed:
+- `18` rows, each with `24` intervals.
+- Exact transform regeneration for all archived endpoints: max delta `0`, mismatch count `0`.
+- Retained contact IDs are exactly `root:1->middle:3` and `middle:1->end:3`.
+- Proposed third contact ID is exactly `root:3->end:1`.
+- The only two passing branches are:
+  - `direction=-1`, `proximalOffset=0.09`, `distalOffset=0.09`
+  - `direction=1`, `proximalOffset=-0.09`, `distalOffset=-0.09`
+- Both passing branches have no engine/caller interval failure, sampled retained contacts closed, terminal third closure pass, and whole-ring closure pass.
+- Max passing retained gap: `0.20088457268119908`; max terminal third gap: `0.20088457268120025`, both below `.21`.
+- Other `16` rows fail.
+- Both zero-offset rows first fail at `75` degrees, matching the prior two-panel sampled failure and consistent with the native first failure around `74.76` degrees.
+- Archive records `nativeDynamicsRun: false` and compute time `0.23532425` seconds.
+
+Boundary language is clean: the artifact states this is prescribed geometry only, with continuous clearance over piecewise linear/slerped intervals, endpoint-sampled contact closure, and no claim of forces, materials, fingers, dynamics, earned third join, release, or source acceptance. The initial `ports: undefined` setup assertion is documented as a serialization comparison issue, with no rows run before that failed setup assertion.

@@ -1,0 +1,286 @@
+{
+  "scope": "Unchanged archived hypotheses and load prefixes. No source, assembly, vehicle or physical-calibration credit.",
+  "input": "runs/diagnostics/2026-09-27-compact-medium-hypotheses.json",
+  "inputSha256": "b2591b2b5d6a84ed9efd9c4d9be2e67d682fe90bda96503bdd9bd2032e1ca2b5",
+  "scriptSha256": "f30d93ccebd068c99efb70f337730dd7346adf4b52075df6246d5585c1794bdc",
+  "validationCodeHash": "50853cf620abb7438d728475d3e567213dedc796f6f4930ecfcbe3cb7f61db2b",
+  "rawSha256": "c58a52f466245a32047531d06951aaf6a2a9bf46c746248a1236c682bb7ae772",
+  "gzipSha256": "b8b25adfd8c221ddb8bc09dcd923f13719bd16f2fe36e83e2a3cbe5c5bda926e",
+  "rawBytes": 1058822,
+  "gzipBytes": 95847,
+  "unchangedBuilds": 5,
+  "completeReleaseTrials": 15,
+  "passingReleaseTrials": 15,
+  "rows": [
+    {
+      "id": "four-wall support, inherited square flaps",
+      "pieces": 37,
+      "geometry": {
+        "status": "pass",
+        "detail": "37 rigid catalog parts; 67 nominal edge connections; zero raw intersections. Magnet spacing and force are not physically calibrated."
+      },
+      "before": [
+        {
+          "seed": 0,
+          "status": "pass",
+          "peakGroundPenetration": 0.0206625081251338
+        },
+        {
+          "seed": 17,
+          "status": "pass",
+          "peakGroundPenetration": 0.020687634476315473
+        },
+        {
+          "seed": 53,
+          "status": "pass",
+          "peakGroundPenetration": 0.020652194234440854
+        }
+      ],
+      "current": [
+        {
+          "seed": 0,
+          "status": "pass",
+          "peakGroundPenetration": 0.004345677497132586,
+          "peakDisplacement": 0.7325226500888418,
+          "settledSteps": 808,
+          "poppedJoints": [],
+          "solidFailures": []
+        },
+        {
+          "seed": 17,
+          "status": "pass",
+          "peakGroundPenetration": 0.004397546515651987,
+          "peakDisplacement": 0.7317411218922257,
+          "settledSteps": 826,
+          "poppedJoints": [],
+          "solidFailures": []
+        },
+        {
+          "seed": 53,
+          "status": "pass",
+          "peakGroundPenetration": 0.004429477820265579,
+          "peakDisplacement": 0.7305003834346114,
+          "settledSteps": 647,
+          "poppedJoints": [],
+          "solidFailures": []
+        }
+      ]
+    },
+    {
+      "id": "six-face support, no square flaps",
+      "pieces": 37,
+      "geometry": {
+        "status": "pass",
+        "detail": "37 rigid catalog parts; 73 nominal edge connections; zero raw intersections. Magnet spacing and force are not physically calibrated."
+      },
+      "before": [
+        {
+          "seed": 0,
+          "status": "fail",
+          "peakGroundPenetration": 0.0321579630688963
+        },
+        {
+          "seed": 17,
+          "status": "fail",
+          "peakGroundPenetration": 0.031125432405544523
+        },
+        {
+          "seed": 53,
+          "status": "fail",
+          "peakGroundPenetration": 0.03218099347926555
+        }
+      ],
+      "current": [
+        {
+          "seed": 0,
+          "status": "pass",
+          "peakGroundPenetration": 0.024599902907053106,
+          "peakDisplacement": 0.28000020606459197,
+          "settledSteps": 640,
+          "poppedJoints": [],
+          "solidFailures": []
+        },
+        {
+          "seed": 17,
+          "status": "pass",
+          "peakGroundPenetration": 0.024499749263153917,
+          "peakDisplacement": 0.28000020606459197,
+          "settledSteps": 643,
+          "poppedJoints": [],
+          "solidFailures": []
+        },
+        {
+          "seed": 53,
+          "status": "pass",
+          "peakGroundPenetration": 0.01912994055432919,
+          "peakDisplacement": 0.28000020606459197,
+          "settledSteps": 649,
+          "poppedJoints": [],
+          "solidFailures": []
+        }
+      ]
+    },
+    {
+      "id": "six-face support with roof-face seating, no square flaps",
+      "pieces": 37,
+      "geometry": {
+        "status": "pass",
+        "detail": "37 rigid catalog parts; 73 nominal edge connections; zero raw intersections. Magnet spacing and force are not physically calibrated."
+      },
+      "before": [
+        {
+          "seed": 0,
+          "status": "fail",
+          "peakGroundPenetration": 0.030639084366142495
+        },
+        {
+          "seed": 17,
+          "status": "fail",
+          "peakGroundPenetration": 0.030617095556777413
+        },
+        {
+          "seed": 53,
+          "status": "fail",
+          "peakGroundPenetration": 0.030012180331528082
+        }
+      ],
+      "current": [
+        {
+          "seed": 0,
+          "status": "pass",
+          "peakGroundPenetration": 0.007261699062601615,
+          "peakDisplacement": 0.2800002216938971,
+          "settledSteps": 642,
+          "poppedJoints": [],
+          "solidFailures": []
+        },
+        {
+          "seed": 17,
+          "status": "pass",
+          "peakGroundPenetration": 0.00728881960112604,
+          "peakDisplacement": 0.2800002216938971,
+          "settledSteps": 642,
+          "poppedJoints": [],
+          "solidFailures": []
+        },
+        {
+          "seed": 53,
+          "status": "pass",
+          "peakGroundPenetration": 0.007513419407126354,
+          "peakDisplacement": 0.2800002216938971,
+          "settledSteps": 643,
+          "poppedJoints": [],
+          "solidFailures": []
+        }
+      ]
+    },
+    {
+      "id": "closed-support-through-step-4",
+      "pieces": 15,
+      "geometry": {
+        "status": "pass",
+        "detail": "15 rigid catalog parts; 28 nominal edge connections; zero raw intersections. Magnet spacing and force are not physically calibrated."
+      },
+      "before": [
+        {
+          "seed": 0,
+          "status": "fail",
+          "peakGroundPenetration": 0.030368851587054907
+        },
+        {
+          "seed": 17,
+          "status": "fail",
+          "peakGroundPenetration": 0.030664316807145597
+        },
+        {
+          "seed": 53,
+          "status": "fail",
+          "peakGroundPenetration": 0.031022228512371477
+        }
+      ],
+      "current": [
+        {
+          "seed": 0,
+          "status": "pass",
+          "peakGroundPenetration": 0.0083711248005532,
+          "peakDisplacement": 0.280000195457266,
+          "settledSteps": 766,
+          "poppedJoints": [],
+          "solidFailures": []
+        },
+        {
+          "seed": 17,
+          "status": "pass",
+          "peakGroundPenetration": 0.008400567415814117,
+          "peakDisplacement": 0.280000195457266,
+          "settledSteps": 734,
+          "poppedJoints": [],
+          "solidFailures": []
+        },
+        {
+          "seed": 53,
+          "status": "pass",
+          "peakGroundPenetration": 0.009362338722578634,
+          "peakDisplacement": 0.280000195457266,
+          "settledSteps": 708,
+          "poppedJoints": [],
+          "solidFailures": []
+        }
+      ]
+    },
+    {
+      "id": "closed-support-through-step-7",
+      "pieces": 27,
+      "geometry": {
+        "status": "pass",
+        "detail": "27 rigid catalog parts; 51 nominal edge connections; zero raw intersections. Magnet spacing and force are not physically calibrated."
+      },
+      "before": [
+        {
+          "seed": 0,
+          "status": "fail",
+          "peakGroundPenetration": 0.0306769203923814
+        },
+        {
+          "seed": 17,
+          "status": "fail",
+          "peakGroundPenetration": 0.030624095384548577
+        },
+        {
+          "seed": 53,
+          "status": "fail",
+          "peakGroundPenetration": 0.03076497921582738
+        }
+      ],
+      "current": [
+        {
+          "seed": 0,
+          "status": "pass",
+          "peakGroundPenetration": 0.016264820563165708,
+          "peakDisplacement": 0.28000020606459197,
+          "settledSteps": 883,
+          "poppedJoints": [],
+          "solidFailures": []
+        },
+        {
+          "seed": 17,
+          "status": "pass",
+          "peakGroundPenetration": 0.01613459380951575,
+          "peakDisplacement": 0.28000020606459197,
+          "settledSteps": 889,
+          "poppedJoints": [],
+          "solidFailures": []
+        },
+        {
+          "seed": 53,
+          "status": "pass",
+          "peakGroundPenetration": 0.015956032674111928,
+          "peakDisplacement": 0.28000020606459197,
+          "settledSteps": 888,
+          "poppedJoints": [],
+          "solidFailures": []
+        }
+      ]
+    }
+  ]
+}

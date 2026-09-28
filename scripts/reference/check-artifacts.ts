@@ -12,6 +12,7 @@ import type {
   ReplicaReport,
 } from "../../lib/replication/types";
 import data from "../../verification/replication/observations.json";
+import { assertConfiguredContactReport, configuredContactContext } from "./configured-contact";
 
 async function main() {
   await verifyObservationLock();
@@ -19,8 +20,8 @@ async function main() {
   const artifacts = ["verification/replication/results.json", "verification/replication/assembly-fixture.json", "verification/replication/rigid-contact-fixture.json"];
   const fixture = JSON.parse(await readFile("verification/replication/assembly-fixture.json", "utf8")) as { validationCodeHash: string };
   if (fixture.validationCodeHash !== context) throw new Error("Stale assembly fixture evidence. Regenerate the source report.");
-  const contact = JSON.parse(await readFile("verification/replication/rigid-contact-fixture.json", "utf8")) as { validationCodeHash: string };
-  if (contact.validationCodeHash !== context) throw new Error("Stale rigid-contact fixture evidence. Regenerate the source report.");
+  const contact = JSON.parse(await readFile("verification/replication/rigid-contact-fixture.json", "utf8"));
+  assertConfiguredContactReport(contact, await configuredContactContext());
   for (const replica of replicas()) {
     const saved = JSON.parse(
       await readFile(`public/reference-replicas/${replica.id}.json`, "utf8"),

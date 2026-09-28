@@ -1,0 +1,196 @@
+{
+  "scope": "Built production workshop browser verification; not source acceptance.",
+  "completedAt": "2026-09-28T03:30:10.138479+00:00",
+  "session": 10607,
+  "exitCode": 0,
+  "command": "REFERENCE_PREVIEW_URL=http://127.0.0.1:3013 npx tsx scripts/reference/verify-ui.ts",
+  "validationCodeHash": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+  "buildId": "cbPxENux6DBfNRuJHEVF0",
+  "scriptSha256": "520c1a50e98a07fedfa3a94bf6e055fd47098e4a03fba20cfa44aeef8abbcfc9",
+  "log": "runs/diagnostics/2026-09-28-final-ui.log.txt",
+  "logSha256": "28ef90a3449f2c758e5b97cbbc9d45e77f6704f9bab50af90977c2a098de136c",
+  "outputs": {
+    "verification/replication/ui/jet-workshop.png": "4417ef467469d42c31a7b1e8ef8af37998fd51a192217abb0d0b15fe6886e965",
+    "verification/replication/ui/large-workshop.png": "f1527c0f378465dc7564a4cb81edd3fb7b32601d7095aac2bba0c28eb6703a87",
+    "verification/replication/ui/medium-blue-bridge-release.png": "0d6e22b88269093691e13c6a02677dc316b05999985ae873f0b8242e0a4a4464",
+    "verification/replication/ui/medium-blue-bridge-start.png": "ceaf94775350b0f18f7e07e91bc11ba1e1b799df07db285f81ebf9b3db64260e",
+    "verification/replication/ui/medium-lower-placement-release.png": "d138d9dba968feccf7dc3bfa7ea3608956c6189e0eea99c6a44c760445f9386a",
+    "verification/replication/ui/medium-retained-pickup.png": "c358fe38596799a96effbeffef82ff19dbe523dbf28e742ab40515bdd1f36f86",
+    "verification/replication/ui/medium-support-release.png": "00ae043595c94c26b6aea87214e9dd51b9136079ea675adb0f7018104085d274",
+    "verification/replication/ui/medium-upper-preparation.png": "610f5438871d09910604cad5c509bd51fcf783dbd616235594d3e4b42217d6dd",
+    "verification/replication/ui/medium-upper-transfer-release.png": "9a806385e0b420cbf1cd1c27fdd638a911ecd357e02958cc2f01adef5f294c13",
+    "verification/replication/ui/medium-workshop.png": "97c4c9d50136c57352bbd6161a8efd4c944e14b28af9749923432aa0030f6df6",
+    "verification/replication/ui/mobile-workshop.png": "b014b820c989188ef6228764fd12cf6fc36578e1159c8042398ef1b2a3ef1306",
+    "verification/replication/ui/small-insertion.png": "fc8a2b05f679069156be63eff8a8b60c30b095ac3e916e13db0a5e8b65945f76",
+    "verification/replication/ui/small-launch-placement.png": "ed70a05474a7d313dec4ebb76f0a1d17b9a02f5950873a5d9728261cd070f200",
+    "verification/replication/ui/small-support-lift.png": "9654c90d056d879c84c18f2f4f49f186b4b6529b5bc14e272ba3966b33c64469",
+    "verification/replication/ui/small-transfer-release.png": "8476280cc74ae9f44bbd2424b3f98ded47ba3c991a2a5a32c5f9230559fc3520",
+    "verification/replication/ui/small-transfer-start.png": "e8a89ebc004253f765b8093e8fbc4fdfff26722415a7101c5a4569a6feea2886",
+    "verification/replication/ui/small-workshop.png": "25352d6f29f129b4767f21419d217d55ce0aa9d1c28c3a05a61b1e05a2932725",
+    "verification/replication/ui/results.json": "bc3760cc4947fec890df5cd62bbbcff0ba7fc95327fde57dd23e654ec2f52afb"
+  },
+  "visualInspection": [
+    "small-transfer-release.png",
+    "mobile-workshop.png"
+  ],
+  "checks": {
+    "builds": 4,
+    "downloads": [
+      "jet",
+      "small-ramp",
+      "medium-ramp",
+      "large-ramp"
+    ],
+    "sourceStagePieces": {
+      "allDownloadsBound": true,
+      "partialSupportUnverified": true,
+      "partialCanopyUnverified": true
+    },
+    "snailEmptyState": true,
+    "stableModuleLabels": [
+      "P6",
+      "P7",
+      "P8",
+      "P9"
+    ],
+    "insertionPreview": {
+      "labels": [
+        "P5"
+      ],
+      "keyboardStartEnd": true,
+      "resetsAtNextStage": true
+    },
+    "gravityPreview": {
+      "labels": [
+        "P7",
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5"
+      ],
+      "recordedFramesDiffer": true,
+      "launchAssemblyPassed": true
+    },
+    "pickupPreview": {
+      "labels": [
+        "P1",
+        "P2",
+        "P4",
+        "P5"
+      ],
+      "terminalLabels": [
+        "P1",
+        "P2",
+        "P4",
+        "P5",
+        "P3"
+      ],
+      "recordedFramesDiffer": true
+    },
+    "transferPreview": {
+      "labels": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "P9"
+      ],
+      "recordedFramesDiffer": true,
+      "completeAssemblyPassed": true
+    },
+    "mediumPreview": {
+      "pickupLabels": [
+        "P1",
+        "P4"
+      ],
+      "preparedLabels": [
+        "P10",
+        "P11",
+        "P12",
+        "P13",
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "workspaceLabels": [
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "P9",
+        "P10",
+        "P11",
+        "P12",
+        "P13",
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "transferLabels": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "P9",
+        "P10",
+        "P11",
+        "P12",
+        "P13"
+      ],
+      "relocatedLabels": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "P9",
+        "P10",
+        "P11",
+        "P12",
+        "P13"
+      ],
+      "bridgeLabels": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "P9",
+        "P10",
+        "P11",
+        "P12",
+        "P13",
+        "P14"
+      ],
+      "firstSixStagesPassed": true,
+      "transferPlaybackMoves": true,
+      "checkedJoinInstructions": true,
+      "lowerPlacementPlaybackMoves": true,
+      "tableBearingChecked": true,
+      "noNewPlacementJoins": true,
+      "bridgePlaybackMoves": true,
+      "exactNewBridgeJoins": true,
+      "bridgeReleaseChecked": true,
+      "lowerCanopyUnverified": true
+    },
+    "mobileOverflow": false,
+    "pageErrors": []
+  }
+}

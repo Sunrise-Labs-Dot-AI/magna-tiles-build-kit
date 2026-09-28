@@ -1,3 +1,4 @@
+import { MAX_COLLISION_TIMESTEP_SECONDS } from "@/lib/engine/constants";
 import { describe, expect, it } from "vitest";
 import { perturbFirstRelease } from "@/lib/engine/rapier-world";
 import { SETTLED_ANGULAR_SPEED, SETTLED_LINEAR_SPEED } from "@/lib/engine/constants";
@@ -6,7 +7,7 @@ import { closedLoopWorld, triangularShell } from "./fixtures/closed-loop";
 
 describe("closed solid shells under gravity", () => {
   it.each([1,2,3])("releases fixture %s with both reference frames, timesteps and three seeds", async index => {
-    for (const mixed of [false,true]) for (const hz of [960,1920]) for (const seed of [0,17,53]) {
+    for (const mixed of [false,true]) for (const hz of [1/MAX_COLLISION_TIMESTEP_SECONDS,2/MAX_COLLISION_TIMESTEP_SECONDS]) for (const seed of [0,17,53]) {
       const build = index === 3 ? triangularShell() : closedShell(index);
       const engine = await closedLoopWorld(build,mixed);
       try {

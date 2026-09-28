@@ -1,0 +1,20 @@
+{
+  "scope": "Conversation playback of recorded seed0 samples, original hinge and surface-pivot hypothesis. No inferred intermediate motion or release/assembly claim.",
+  "sourceRawSha256": "0d36f4cf0249a54ecb3a0dc495cbf725108b3f5ce893b2edb032c66deb1523ff",
+  "fragmentSha256": "0032a43eeff2447e6ae8b3c0cf6d41d6ce2b2a15510483420a5f1d43eb332702",
+  "samples": [
+    97,
+    154
+  ],
+  "checks": {
+    "timelineChangesGeometry": true,
+    "terminalStatusesCorrect": true,
+    "pageErrors": [],
+    "widthsTested": [
+      780,
+      360
+    ],
+    "narrowOverflow": false,
+    "wideAndNarrowScreenshotsInspected": true
+  }
+}

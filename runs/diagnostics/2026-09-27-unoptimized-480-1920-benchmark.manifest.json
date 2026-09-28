@@ -1,0 +1,223 @@
+{
+  "scope": "Complete unoptimized finer-runtime benchmark, including fixed-budget failure. Not accepted runtime evidence.",
+  "context": {
+    "scope": "Unoptimized 480/1920 integration runtime during the fixed-budget benchmark; not accepted physical evidence.",
+    "validationCodeHash": "b9bbd653196afef018c4ab1a7d430c9ab108e1bdcfbef63b7ef12a092b43be43",
+    "runtimeHashes": {
+      "lib/engine/backend-identity.ts": "611d93e2fe40483d5a3c0cc4fbba6fa0b2b35db18fea81df225264264ef58da6",
+      "lib/engine/constants.ts": "a2f2b57189540ea8cca7dd92ed6320b6b92ec0e7d1abff3e8529f26d421257b5",
+      "lib/engine/rapier-world.ts": "0706d840dab49c9f30d9dfb1144b4d6eadc4be0a62d8da0df9929e6096a9e564",
+      "lib/replication/held-motion.ts": "066befe841ba73912b86a70b3d00693b147a13513692724a2c61f1530d71c7a0",
+      "lib/replication/seating.ts": "8811e452d45a46ec9d939f1ee9be6d95545c1c6403034b22c1766a6d1538ef71",
+      "lib/replication/support.ts": "43163adf9ef759e25ad82ac1d08c8bc27471498925dcb8b84b2f3b55f331e987",
+      "scripts/benchmark-harness.ts": "08760f9aec8968984d3a4c3606594175700bce71b05b61cbd48ab56f52403250",
+      "vendor/rapier-contact/profile.json": "a491baad9d8d5af2378e7e262212cda8a010828b8c7ae74d2a6c302f3d6314cf"
+    },
+    "benchmarkLog": "/tmp/magnatiles-480-1920-harness-benchmark.log",
+    "session": 47630
+  },
+  "rawSha256": "bc6ea3c6df4be0eec07cf7d93b248e5b7cf31bcd8e1609ac3ac7144771705558",
+  "gzipSha256": "05a15b641bf83a75677e30774a8bb3cbc5cb54d1503a1b1cd233f8e84ed5d2a6",
+  "rows": [
+    {
+      "prompt": "a tower at least 6 inches tall",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "milliseconds": 21949,
+      "pieces": 10
+    },
+    {
+      "prompt": "a tower at least 9 inches tall",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "milliseconds": 33129,
+      "pieces": 14
+    },
+    {
+      "prompt": "a tower at least 12 inches tall",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "milliseconds": 45389,
+      "pieces": 18
+    },
+    {
+      "prompt": "a tower at least 15 inches tall",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "milliseconds": 58622,
+      "pieces": 22
+    },
+    {
+      "prompt": "a tower with 3 levels and at most 30 pieces",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "milliseconds": 103055,
+      "pieces": 28
+    },
+    {
+      "prompt": "an open top box",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "milliseconds": 7565,
+      "pieces": 5
+    },
+    {
+      "prompt": "an open top box 2 tiles wide",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "milliseconds": 13994,
+      "pieces": 8
+    },
+    {
+      "prompt": "an open top box 3 tiles wide",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "milliseconds": 20296,
+      "pieces": 11
+    },
+    {
+      "prompt": "an open top box 2 tiles wide and 2 tiles deep",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "milliseconds": 22465,
+      "pieces": 12
+    },
+    {
+      "prompt": "an open top box 3 tiles wide and 2 tiles deep",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "milliseconds": 31706,
+      "pieces": 16
+    },
+    {
+      "prompt": "a tunnel",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "milliseconds": 9510,
+      "pieces": 6
+    },
+    {
+      "prompt": "a tunnel 2 tiles long",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "milliseconds": 7602,
+      "pieces": 6
+    },
+    {
+      "prompt": "a tunnel 3 tiles long",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "milliseconds": 23607,
+      "pieces": 12
+    },
+    {
+      "prompt": "a tunnel 4 tiles long",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "milliseconds": 24812,
+      "pieces": 12
+    },
+    {
+      "prompt": "a tunnel 2 tiles wide and 2 tiles long",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "milliseconds": 7577,
+      "pieces": 6
+    },
+    {
+      "prompt": "a staircase with 2 steps",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "milliseconds": 39978,
+      "pieces": 16
+    },
+    {
+      "prompt": "a staircase with 3 steps",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "milliseconds": 91507,
+      "pieces": 30
+    },
+    {
+      "prompt": "a staircase with 4 steps",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "milliseconds": 170864,
+      "pieces": 48
+    },
+    {
+      "prompt": "a staircase with 5 steps",
+      "expected": "solved",
+      "status": "budget-exhausted",
+      "passed": false,
+      "milliseconds": 240805,
+      "pieces": 0
+    },
+    {
+      "prompt": "a staircase with 3 steps and 2 tiles deep",
+      "expected": "solved",
+      "status": "solved",
+      "passed": true,
+      "milliseconds": 170998,
+      "pieces": 48
+    },
+    {
+      "prompt": "a tower at least 12 inches tall and at most 6 inches tall",
+      "expected": "rejected",
+      "status": "infeasible",
+      "passed": true,
+      "milliseconds": 1,
+      "pieces": 0
+    },
+    {
+      "prompt": "a tower with a working elevator",
+      "expected": "rejected",
+      "status": "unsupported",
+      "passed": true,
+      "milliseconds": 0,
+      "pieces": 0
+    },
+    {
+      "prompt": "an open top box with a lid",
+      "expected": "rejected",
+      "status": "unsupported",
+      "passed": true,
+      "milliseconds": 0,
+      "pieces": 0
+    },
+    {
+      "prompt": "a tunnel with a door",
+      "expected": "rejected",
+      "status": "unsupported",
+      "passed": true,
+      "milliseconds": 0,
+      "pieces": 0
+    },
+    {
+      "prompt": "a staircase with a slide",
+      "expected": "rejected",
+      "status": "unsupported",
+      "passed": true,
+      "milliseconds": 0,
+      "pieces": 0
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import { RigidBodyType } from "@/lib/engine/physics-backend";
 import { createEngineWorld, currentTilePose, perturbFirstRelease, type EngineState, type EngineWorld } from "@/lib/engine/rapier-world";
-import { MAX_STANDING_DISPLACEMENT, SETTLED_ANGULAR_SPEED, SETTLED_LINEAR_SPEED, SETTLED_REQUIRED_STEPS, SIMULATION_MAX_STEPS, SIMULATION_TIMESTEP_SECONDS } from "@/lib/engine/constants";
+import { COLLISION_SUBSTEPS, MAX_STANDING_DISPLACEMENT, SETTLED_ANGULAR_SPEED, SETTLED_LINEAR_SPEED, SETTLED_REQUIRED_STEPS, SIMULATION_MAX_STEPS, SIMULATION_TIMESTEP_SECONDS } from "@/lib/engine/constants";
 import { magnitude } from "@/lib/engine/math";
 import { SimulationBudgetExceeded } from "@/lib/engine/simulate";
 import type { BuildGraph, TileInstance } from "@/lib/magnetic-tiles/types";
@@ -42,9 +42,8 @@ export async function simulateSupport(build: BuildGraph, heldTileIds: string[], 
   const engine = await createEngineWorld(build, { drop: false, floorY, state });
   const componentCheck = components && componentContacts(build,components);
   // Assembly handoffs may release a lifted prefix. Resolve impacts at the same
-  // 960 Hz without changing duration or rest requirements. CCD alone leaves an impact
-  // step that exceeds the existing 0.03-inch penetration tolerance at 480 Hz.
-  const substeps = 8;
+  // native rate used by the engine, without changing duration or rest requirements.
+  const substeps = COLLISION_SUBSTEPS;
   engine.world.integrationParameters.dt = SIMULATION_TIMESTEP_SECONDS/substeps;
   let peak = 0, settledSteps = 0, clearanceFailure = componentCheck?.status === "fail" ? componentCheck.detail : "";
   let previous = build;
@@ -72,7 +71,7 @@ export async function simulateSupport(build: BuildGraph, heldTileIds: string[], 
           if (solids.status !== "pass" || fingers.status !== "pass") clearanceFailure = solids.status !== "pass" ? solids.detail : fingers.detail;
         }
         previous = actual;
-        if (n % 128 === 0) motion.push({ seconds: elapsed,tiles: actual.tiles });
+        if (n % (16 * substeps) === 0) motion.push({ seconds: elapsed,tiles: actual.tiles });
       }
       peak = engine.peakDisplacement;
       if (engine.peakGroundPenetration > RAW_OVERLAP_TOLERANCE) clearanceFailure ||= `A panel penetrated the fixed table by ${engine.peakGroundPenetration.toFixed(3)} in (maximum ${RAW_OVERLAP_TOLERANCE} in).`;

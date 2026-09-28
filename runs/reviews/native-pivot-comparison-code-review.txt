@@ -1,0 +1,7 @@
+CLEAN.
+
+Read-only review only. I did not run native code, tests, typecheck, lint, or change files.
+
+I checked the approved plan and CLEAN review against `scripts/reference/probe-native-fold-pivots.ts`, `scripts/reference/probe-native-fold-pivots.config.ts`, the original `probe-native-fold.ts`, the corrected native archive binding, and the surface-pivot geometry protocol. I found no concrete blocker in the model spy injection, anchor/break-point shifting, pre-integration native/model anchor checks, spy restoration, physical guard preservation, row/control matrix, exact offset0 archive comparison, terminal third-contact separation, atomic output records, hash/runtime guards, or isolation from normal `npm test`.
+
+No native completion is inferred from this review.

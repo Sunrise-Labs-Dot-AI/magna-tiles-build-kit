@@ -26,9 +26,11 @@ export const HINGE_MAX_ANGLE = Math.PI;
 export const SIMULATION_TIMESTEP_SECONDS = 1 / 120;
 // Numerical rigid-contact settings, selected with independent flat/loaded-base
 // convergence fixtures. These are not measurements of physical plastic compliance.
-export const CONTACT_NATURAL_FREQUENCY_HZ = 120;
-export const MAX_COLLISION_TIMESTEP_SECONDS = 1 / 960;
-export const PHYSICS_MODEL_VERSION = `rigid-contact-v7-solid-sweep-960-${PHYSICS_BACKEND_ID}`;
+export const CONTACT_NATURAL_FREQUENCY_HZ = 480;
+export const MAX_COLLISION_TIMESTEP_SECONDS = 1 / 1920;
+/** Assembly observers must inspect every native collision step. */
+export const COLLISION_SUBSTEPS = Math.round(SIMULATION_TIMESTEP_SECONDS / MAX_COLLISION_TIMESTEP_SECONDS);
+export const PHYSICS_MODEL_VERSION = `rigid-contact-v8-solid-sweep-contact480-collision1920-${PHYSICS_BACKEND_ID}`;
 export const SIMULATION_MAX_STEPS = 900;
 export const SETTLED_LINEAR_SPEED = 0.035;
 export const SETTLED_ANGULAR_SPEED = 0.08;

@@ -65,11 +65,11 @@ export const BUILD_LIBRARY: BuildLibraryItem[] = [
     id: "medium-car-ramp",
     title: "Medium Car Ramp",
     prompt: "Medium Car Ramp",
-    summary: "A continuous wedge ramp with rear supports, sloped driving surfaces, and side guardRails.",
+    summary: "A historical 11-piece wedge variant with a raised landing. It needs stability verification.",
     difficulty: "medium",
     estimatedMinutes: 10,
-    status: "engine-valid",
-    tags: ["ramp", "supports", "guardRails", "toy cars", "physics verified"]
+    status: "engine-fail-pending-reauthoring",
+    tags: ["ramp", "supports", "landing", "toy cars", "needs verification"]
   },
   {
     id: "large-car-ramp",

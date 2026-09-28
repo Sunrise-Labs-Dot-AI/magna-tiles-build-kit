@@ -1,0 +1,73 @@
+{
+  "scope": "Off-path construction discovery for the jet first ring. No production source binding, pose measurement or acceptance credit.",
+  "sourceId": "jet",
+  "sourceSha256": "7df676be56d549cf9b2bd5d4702bf4e92b5508a04db2bd75733b490405e193f7",
+  "frames": [
+    {
+      "seconds": 31,
+      "path": "public/reference-frames/replication/research-jet-first-ring/construction-31.png",
+      "sha256": "ddd8724f1e963adbb45cc771a82e8ae636639ac7fd320634c70a9d7fa30195b4",
+      "use": "newly inspected construction/fitting discovery; never a holdout"
+    },
+    {
+      "seconds": 32,
+      "path": "public/reference-frames/replication/research-jet-first-ring/construction-32.png",
+      "sha256": "d38929404af6c75bceda9075124a3907cfeeaf8d6c27d3ae7a4a36622088915d",
+      "use": "newly inspected construction/fitting discovery; never a holdout"
+    },
+    {
+      "seconds": 34,
+      "path": "public/reference-frames/replication/research-jet-first-ring/construction-34.png",
+      "sha256": "18e5a78d1053869cc7b4c9dc1f95dc5249284fc6e428152451af10bc07181590",
+      "use": "newly inspected construction/fitting discovery; never a holdout"
+    },
+    {
+      "seconds": 35,
+      "path": "public/reference-frames/replication/research-jet-first-ring/construction-35.png",
+      "sha256": "59ef3e378dc4e80e18f75d840c56f24716a86619a7a191ddb665e75ee5af0993",
+      "use": "newly inspected construction/fitting discovery; never a holdout"
+    }
+  ],
+  "existingFrame": {
+    "id": "jet-body-ring",
+    "seconds": 33,
+    "path": "public/reference-frames/replication/jet/jet-body-ring.png",
+    "sha256": "dbe1dba8c288b17b6bd7b58f7458820881c1f3877034610877258a3d92fe3470",
+    "use": "previously inspected construction"
+  },
+  "provisionalClaims": [
+    {
+      "claim": "At31s three blue square panels form an open connected strip, with hands on the two end panels.",
+      "status": "Supported by independent visual review, subject to reviewDisposition and limits."
+    },
+    {
+      "claim": "At32s the outer panels are folding behind the front square; by33s the visible top outline is a closed triangular ring.",
+      "status": "Supported by independent visual review, subject to reviewDisposition and limits."
+    },
+    {
+      "claim": "At34s and35s the blue ring appears on the table without a hand contacting it, while the creator handles other panels behind it.",
+      "status": "Supported by independent visual review, subject to reviewDisposition and limits."
+    },
+    {
+      "claim": "The current instruction that the first clear hands-off checkpoint is the horizontal body appears too conservative for the first ring.",
+      "status": "Supported by independent visual review, subject to reviewDisposition and limits."
+    }
+  ],
+  "limits": [
+    "Sampled images do not establish continuous contact-free duration, magnetic force or exact fingertip trajectories.",
+    "Three same-color squares do not establish unique physical panel serial identities or final body-face correspondence.",
+    "Closing the ring by folding retained joins is distinct from inserting three already oriented unconnected panels. A proposed alternative may not be described as observed source motion.",
+    "No simulation result, production stage edit, source-piece record, observation lock change or full source acceptance is supplied by this discovery."
+  ],
+  "sourceLocalPath": ".video-cache/WDtC_9se3ds/source.mp4",
+  "review": "runs/reviews/jet-first-ring-discovery-review.txt",
+  "reviewDisposition": {
+    "status": "Visual claims supported with explicit limits; production unchanged.",
+    "sourceHashLimit": "The reviewer independently matched all five PNG hashes but looked for the video at a legacy example path and did not independently hash video bytes. The discovery now records the actual cached source path; the extraction process and current source evaluator each verified the recorded original SHA-256. Do not call the reviewer video-hash verification complete.",
+    "acceptedCorrections": [
+      "First-ring hands-free instants exist at33/34/35s; revise only that stage after the runtime freeze.",
+      "Later multi-bay upright stages remain held/unverified; these images do not prove their release.",
+      "No continuous hands-free duration or exact physical panel serial correspondence is established."
+    ]
+  }
+}

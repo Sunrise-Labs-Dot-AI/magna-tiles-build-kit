@@ -1,0 +1,185 @@
+{
+  "computeSeconds": 0.23532425,
+  "rows": [
+    {
+      "direction": -1,
+      "proximalOffset": -0.09,
+      "distalOffset": -0.09,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": -1,
+      "proximalOffset": -0.09,
+      "distalOffset": 0,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": -1,
+      "proximalOffset": -0.09,
+      "distalOffset": 0.09,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": -1,
+      "proximalOffset": 0,
+      "distalOffset": -0.09,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": -1,
+      "proximalOffset": 0,
+      "distalOffset": 0,
+      "firstEngineFailure": 75,
+      "firstCallerFailure": 75,
+      "firstSampledRetainedClosureFailure": 75,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": -1,
+      "proximalOffset": 0,
+      "distalOffset": 0.09,
+      "firstEngineFailure": 75,
+      "firstCallerFailure": 75,
+      "firstSampledRetainedClosureFailure": 75,
+      "terminalThird": "pass",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": -1,
+      "proximalOffset": 0.09,
+      "distalOffset": -0.09,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": -1,
+      "proximalOffset": 0.09,
+      "distalOffset": 0,
+      "firstEngineFailure": 75,
+      "firstCallerFailure": 75,
+      "firstSampledRetainedClosureFailure": 75,
+      "terminalThird": "pass",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": -1,
+      "proximalOffset": 0.09,
+      "distalOffset": 0.09,
+      "firstEngineFailure": null,
+      "firstCallerFailure": null,
+      "firstSampledRetainedClosureFailure": null,
+      "terminalThird": "pass",
+      "wholeRing": "pass"
+    },
+    {
+      "direction": 1,
+      "proximalOffset": -0.09,
+      "distalOffset": -0.09,
+      "firstEngineFailure": null,
+      "firstCallerFailure": null,
+      "firstSampledRetainedClosureFailure": null,
+      "terminalThird": "pass",
+      "wholeRing": "pass"
+    },
+    {
+      "direction": 1,
+      "proximalOffset": -0.09,
+      "distalOffset": 0,
+      "firstEngineFailure": 75,
+      "firstCallerFailure": 75,
+      "firstSampledRetainedClosureFailure": 75,
+      "terminalThird": "pass",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": 1,
+      "proximalOffset": -0.09,
+      "distalOffset": 0.09,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": 1,
+      "proximalOffset": 0,
+      "distalOffset": -0.09,
+      "firstEngineFailure": 75,
+      "firstCallerFailure": 75,
+      "firstSampledRetainedClosureFailure": 75,
+      "terminalThird": "pass",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": 1,
+      "proximalOffset": 0,
+      "distalOffset": 0,
+      "firstEngineFailure": 75,
+      "firstCallerFailure": 75,
+      "firstSampledRetainedClosureFailure": 75,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": 1,
+      "proximalOffset": 0,
+      "distalOffset": 0.09,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": 1,
+      "proximalOffset": 0.09,
+      "distalOffset": -0.09,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": 1,
+      "proximalOffset": 0.09,
+      "distalOffset": 0,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    },
+    {
+      "direction": 1,
+      "proximalOffset": 0.09,
+      "distalOffset": 0.09,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "firstSampledRetainedClosureFailure": 40,
+      "terminalThird": "fail",
+      "wholeRing": "fail"
+    }
+  ]
+}

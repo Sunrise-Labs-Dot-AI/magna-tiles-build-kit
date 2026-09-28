@@ -1,0 +1,15 @@
+VERIFIED/CLEAN.
+
+I found no concrete actionable flaw in the proposed exact-pose certificate reuse implementation.
+
+Static review scope covered:
+- Plan and review: [runs/2026-09-27-exact-pose-guard-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-exact-pose-guard-plan.md:1), [runs/2026-09-27-exact-pose-guard-plan.review.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-exact-pose-guard-plan.review.md:1)
+- Proposed certificate: `/tmp/magnatiles-solid-certificate.ts`
+- Proposed engine patch: `/tmp/magnatiles-proof-reuse-engine.patch`
+- Checker contract: [lib/magnetic-tiles/swept-prisms.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/swept-prisms.ts:84)
+- Current engine call site: [lib/engine/rapier-world.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts:161)
+- Draft tests and probe: [tests/exact-solid-certificate.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/exact-solid-certificate.test.ts:1), [scripts/reference/probe-proof-reuse.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/probe-proof-reuse.ts:1)
+
+The proposed identity copies the ordered values consumed by the solid checker: tile IDs/shapes, positions, rotations, basis axes, derived quaternion, vertices, edges, normals, bounds, radius, floor, and tolerance. It rejects nonfinite identity data and compares with `Object.is`, preserving signed-zero distinctions. The engine patch keeps reuse local to one `createEngineWorld` closure, starts with no restored/global certificate, clears on invalid/failure state, updates the certificate only after a successful `checkSolidSweep`, and leaves native stepping, sampling, angular alias checks, joint checks, peak/failure state, and caller checks in place.
+
+Remaining validation limits: I did not edit files, run tests, run simulations, start a duplicate baseline, benchmark, build, or inspect any partial in-flight baseline as acceptance evidence. Baseline-vs-optimized exact physical comparison, full regression, full 25 benchmark, and refreshed final profile/source/assembly/car/build/browser checks still remain required after implementation.

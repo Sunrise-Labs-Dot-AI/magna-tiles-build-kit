@@ -1,0 +1,7 @@
+ADDRESSED/CLEAN.
+
+The fix closes the false pass: [source-pieces.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-source-sets/lib/replication/source-pieces.ts:75) still rejects non-objects before the `in` operator, and [source-pieces.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-source-sets/lib/replication/source-pieces.ts:81) now rejects schema1 records when `observedSets` exists anywhere on the record, including the prototype chain.
+
+The regression test at [source-pieces.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-source-sets/tests/source-pieces.test.ts:213) constructs exactly that inherited-field record and expects `fail`. Existing focused coverage still preserves schema2 exact-only behavior and malformed schema2 rejection at [source-pieces.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-source-sets/tests/source-pieces.test.ts:181), plus ordinary schema1 own-field rejection at [source-pieces.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-source-sets/tests/source-pieces.test.ts:204).
+
+I did not run tests or edit anything. The before log shows the focused regression previously received `pass`; the staged tests log shows `96 passed`.

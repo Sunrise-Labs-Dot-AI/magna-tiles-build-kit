@@ -1,0 +1,7 @@
+CLEAN.
+
+I found no concrete integration defect in the scoped uncommitted diff against `39686d84`. The schema2 path in [source-pieces.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-source-sets/lib/replication/source-pieces.ts:69) fails closed for malformed or missing `observedSets`, preserves schema1 strict rejection, and keeps global part/set identity disjointness stable across records. Complete-stage accounting uses the exact union of mapped observed parts plus observed interchangeable set members, without promoting inferred/proposed/minimum evidence.
+
+The small data rows in [source-pieces.json](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-source-sets/verification/replication/source-pieces.json:48) bind to the expected Henry source hash and frame hashes, and the observation lock only changes the `source-pieces.json` digest. The `small-launch` frame move in [models.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-source-sets/lib/replication/models.ts:207) does not create a new pose/fidelity pass path: source-piece status remains separate from source, fidelity, and assembly gates.
+
+I did not run tests or simulations, per instruction. I also left the symlinked `node_modules`, `.video-cache`, and `public/reference-frames` untouched.

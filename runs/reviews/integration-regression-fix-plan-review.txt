@@ -1,0 +1,16 @@
+CLEAN.
+
+No concrete ranked findings. I did not edit files or run native simulations.
+
+The plan stays within maintenance scope: it preserves the failed full-suite qualification, keeps publication/source acceptance pending, and explicitly requires final reports and hash-bound artifacts to be regenerated after metadata changes.
+
+Key checks:
+
+- Hinge proposal is acceptable: the archived trace shows center agreement through reporting step 20, then post-impact divergence to `0.12053832347623647` by step 35. The plan does not widen `.08`; it limits that comparison to the pre-contact window and keeps full 35-step validity, endpoint/world-anchor, contact-enabled, no-pop/no-solid-failure, and tear assertions.
+- Gravity fix is evidence-bound: the archived f32 replay matches all 192 native velocity samples exactly, using the checksum-audited Rapier 0.30.1 arithmetic. This replaces a decimal analytical assertion, not a physical tolerance.
+- Continued-prefix observer still covers failure histories and input invariance: the future path retains the expected rejected carry with the `0.0300460895967102 in` collision detail, while the base path remains four-stage passing.
+- Medium correction is based on the real historical draft failure: `0/90` rest with no pop/solid failure, while independent ball roll remains separate.
+- Generated seed jet is correctly scoped as a generated 31-tile, 64-join gate pass. The plan gives it no 40-piece source-replica credit.
+- The plan rejects unsupported causal claims and broad native backend replacement; it treats the hinge result as test decomposition evidence, not a new physics model proof.
+
+Recommended cheap hardening, not a blocker: add a geometric hinge negative control/assertion at initialization that transforms both primary and companion anchors into world space and verifies both pairs coincide, while the primary-to-companion vector aligns with the current seam axis rather than the authored unrotated axis. That would make the axis-localization contract fail fast before dynamics or contact response can explain anything away.

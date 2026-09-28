@@ -1,3 +1,4 @@
+import { MAX_COLLISION_TIMESTEP_SECONDS, COLLISION_SUBSTEPS } from "@/lib/engine/constants";
 import { describe, expect, it, vi } from "vitest";
 import { RigidBodyType } from "@/lib/engine/physics-backend";
 import { createEngineWorld, perturbFirstRelease } from "@/lib/engine/rapier-world";
@@ -19,7 +20,7 @@ describe("independent rigid table contact", () => {
     expect(findRawOverlaps(build.tiles)).toEqual([]);
   });
   it.each([0,17,53])("converges under step/solver refinement for seed %i", async seed => {
-    for (const fixture of [flatContactFixture, loadedContactFixture]) for (const hz of [960,1920]) for (const solver of [16,32]) {
+    for (const fixture of [flatContactFixture, loadedContactFixture]) for (const hz of [1/MAX_COLLISION_TIMESTEP_SECONDS,2/MAX_COLLISION_TIMESTEP_SECONDS]) for (const solver of [16,32]) {
       const engine = await createEngineWorld(fixture(), {drop:true, floorY:0});
       try {
         const params = engine.world.integrationParameters;
@@ -65,7 +66,7 @@ describe("independent rigid table contact", () => {
     expect(validateEngineInput(build)).toEqual([]);
     expect(findRawOverlaps(build.tiles)).toEqual([]);
     expect(validateMagneticBuild(build).rejectedReasons).toEqual([]);
-    for(const hz of [960,1920]) for(const seed of [0,17,53]) {
+    for(const hz of [1/MAX_COLLISION_TIMESTEP_SECONDS,2/MAX_COLLISION_TIMESTEP_SECONDS]) for(const seed of [0,17,53]) {
       const e=await createEngineWorld(build,{drop:true});
       try {
         e.world.integrationParameters.dt=1/hz;
@@ -113,8 +114,32 @@ describe("independent rigid table contact", () => {
       const b=[...e.bodies.values()][0].body;
       b.setLinvel({x:0,y:0,z:0},true);
       const dt=e.world.integrationParameters.dt;
+      const gravity={x:0,y:-9.81*1000/25.4,z:0};
+      expect(gravityVector()).toEqual(gravity);
+      expect(e.world.gravity).toEqual(gravity);
+      expect(b.gravityScale()).toBe(1);
+      expect(b.userForce()).toEqual({x:0,y:0,z:0});
+      expect(b.linearDamping()).toBe(0);
+      expect(e.world.integrationParameters.numSolverIterations).toBe(16);
+      expect(b.additionalSolverIterations()).toBe(8);
+      // Rapier 0.30.1 uses f32 force/mass arithmetic and 24 small solver
+      // additions per native step. The independently audited recurrence is
+      // in runs/diagnostics/2026-09-27-gravity-f32-replay.json.
+      const f=Math.fround,nativeDt=f(dt/COLLISION_SUBSTEPS);
+      const force=f(f(f(gravity.y)*b.mass())*b.gravityScale());
+      const increment=f(f(force*b.effectiveInvMass().y)*f(nativeDt/24));
+      let expectedVelocity=0,nativeSteps=0,elapsed=0;
+      const step=e.world.step.bind(e.world);
+      vi.spyOn(e.world,"step").mockImplementation(()=>{
+        expect(e.world.integrationParameters.dt).toBe(nativeDt);
+        elapsed+=e.world.integrationParameters.dt;nativeSteps++;
+        step();
+        for(let i=0;i<24;i++)expectedVelocity=f(expectedVelocity+increment);
+        expect(b.linvel()).toEqual({x:0,y:expectedVelocity,z:0});
+      });
       for(let n=0;n<12;n++) e.step();
-      expect(b.linvel().y).toBeCloseTo(gravityVector().y*.1,3);
+      expect(nativeSteps).toBe(12*COLLISION_SUBSTEPS);
+      expect(elapsed).toBe(12*dt);
       expect(e.world.integrationParameters.dt).toBe(dt);
     } finally {e.dispose();}
   });
@@ -129,9 +154,9 @@ describe("independent rigid table contact", () => {
       const original=e.world.step.bind(e.world);
       vi.spyOn(e.world,"step").mockImplementation(() => {original();positions.push(b.translation().x-start.x); rotations.push(b.rotation().y);});
       e.step();
-      expect(positions).toEqual([.125,.25,.375,.5,.625,.75,.875,1]);
-      expect(rotations[3]).toBeCloseTo(Math.SQRT1_2);
-      expect(rotations[7]).toBeCloseTo(1);
+      expect(positions).toEqual(Array.from({ length: COLLISION_SUBSTEPS }, (_, i) => (i+1)/COLLISION_SUBSTEPS));
+      expect(rotations[COLLISION_SUBSTEPS/2-1]).toBeCloseTo(Math.SQRT1_2);
+      expect(rotations[COLLISION_SUBSTEPS-1]).toBeCloseTo(1);
     } finally {e.dispose();}
   });
   it("uses microstep time for the same magnetic break under coarse/refined reporting", async () => {

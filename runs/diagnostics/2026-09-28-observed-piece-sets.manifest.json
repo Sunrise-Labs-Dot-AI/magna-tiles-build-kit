@@ -1,0 +1,155 @@
+{
+  "scope": "Isolated unconsumed accounting prototype and concrete source-set proposal. No canonical records, active validator or acceptance changed.",
+  "tests": {
+    "passed": 75,
+    "failed": 0,
+    "durationSeconds": 0.297
+  },
+  "nativeSimulation": false,
+  "validationCodeHash": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+  "archives": [
+    {
+      "source": "scripts/reference/observed-piece-sets.prototype.ts",
+      "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.prototype.ts.gz",
+      "rawSha256": "6a27889a35ffb7d3136662d01b8c3786debd7e3f07c46af91056fc63fa51bc34",
+      "sha256": "aa9244d26bf89706df3035a8dc68ff070f1e2f5177e97515449e3670523374ac"
+    },
+    {
+      "source": "scripts/reference/observed-piece-sets.prototype.test.ts",
+      "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.tests.ts.gz",
+      "rawSha256": "5fb0fe40c147b2892eed4d9fff868dcc5e2a867c9958c0a53a8da504b5088bf5",
+      "sha256": "7584efe8ae7b92f3b99690b62e5b812bd7db80c137fe9d9cbbee79d6dad5c468"
+    },
+    {
+      "source": "scripts/reference/observed-piece-sets.prototype.config.ts",
+      "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.config.ts.gz",
+      "rawSha256": "89eb6f3402791f3363f20b2e2d30cf4dde3e6eda891c31af8b8ea330d37da481",
+      "sha256": "d564c3c02a0deeed5ef77deb14632317a943ebbd2dbbd37a0d605940e2a51f10"
+    },
+    {
+      "source": "scripts/reference/probe-observed-piece-sets.ts",
+      "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.proposal-script.ts.gz",
+      "rawSha256": "aec98be8e54ca4c3050a318c927497452068a5affd443725e60600b76d9a450d",
+      "sha256": "5c33eb85563b92ec19d14a93d5b983312671ffae8338ddbf0700292458a1df19"
+    },
+    {
+      "source": "/tmp/magnatiles-observed-piece-sets-proposal.json",
+      "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.proposal.json.gz",
+      "rawSha256": "ad381e259993c3d3b61248411202fabefba786b728bb190af040271e5c68231f",
+      "sha256": "f44cc792e9b1731acad31de5e2600bc7a75bbdd0a6a6ec3ded11cbed1d407c5b"
+    },
+    {
+      "source": "/tmp/magnatiles-observed-piece-sets-prototype-tests-final.log",
+      "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.prototype-tests.log.txt",
+      "rawSha256": "879129ebf7af96d224b747c60831c2bc3d31191a53566ec1cc1444320198e7aa",
+      "sha256": "879129ebf7af96d224b747c60831c2bc3d31191a53566ec1cc1444320198e7aa"
+    },
+    {
+      "source": "/tmp/magnatiles-observed-piece-sets-prototype-lint.log",
+      "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.prototype-lint.log.txt",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "/tmp/magnatiles-observed-piece-sets-prototype-types.log",
+      "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.prototype-types.log.txt",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "/tmp/magnatiles-observed-piece-sets-proposal.log",
+      "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.proposal.log.txt",
+      "rawSha256": "9a3faeb21e791771d7307a1695ba9e65b74bfb38deede77ba773fc2703cae867",
+      "sha256": "9a3faeb21e791771d7307a1695ba9e65b74bfb38deede77ba773fc2703cae867"
+    }
+  ],
+  "reviewedValidation": {
+    "tests": {
+      "passed": 75,
+      "failed": 0,
+      "durationSeconds": 0.276
+    },
+    "signatureMutant": "runs/diagnostics/2026-09-28-observed-piece-sets.signature-mutant.manifest.json",
+    "archives": [
+      {
+        "source": "scripts/reference/observed-piece-sets.prototype.test.ts",
+        "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.reviewed-tests.ts.gz",
+        "rawSha256": "6818b1dda3882d8d4391d77113af94b8c2f410301f2b82a77eb10be71c165bf6",
+        "sha256": "93ff41b7854454181470b601a7a6a14fb8a489ffffe9a8727f3f5be3e3a4d290"
+      },
+      {
+        "source": "/tmp/magnatiles-observed-piece-sets-prototype-tests-reviewed.log",
+        "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.reviewed-tests.log.txt",
+        "rawSha256": "3fbafef0b695b515c23f07201cd367040938f1df8be74ef81b5d189d7fbdef4a",
+        "sha256": "3fbafef0b695b515c23f07201cd367040938f1df8be74ef81b5d189d7fbdef4a"
+      },
+      {
+        "source": "/tmp/magnatiles-observed-piece-sets-prototype-test-lint-reviewed.log",
+        "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.reviewed-test-lint.log.txt",
+        "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "source": "/tmp/magnatiles-observed-piece-sets-prototype-types-reviewed.log",
+        "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.reviewed-types.log.txt",
+        "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "source": "/tmp/magnatiles-observed-piece-sets-proposal-lint.log",
+        "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.proposal-lint.log.txt",
+        "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "source": "/tmp/magnatiles-observed-piece-sets-proposal-types.log",
+        "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.proposal-types.log.txt",
+        "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ]
+  },
+  "inheritedFieldFixValidation": {
+    "testsPassed": 76,
+    "durationSeconds": 0.341,
+    "proposalSemanticOutputUnchanged": true,
+    "archives": [
+      {
+        "source": "scripts/reference/observed-piece-sets.prototype.ts",
+        "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.closed-prototype.ts.gz",
+        "rawSha256": "d8c87ef731f2704203b4320c39168ee20081a4693136dd4c8719680f800588df",
+        "sha256": "1d0705060a7f2bd3dc85126cb64fd5caa347d0d197b3c979421c77ec017539c4"
+      },
+      {
+        "source": "scripts/reference/observed-piece-sets.prototype.test.ts",
+        "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.closed-tests.ts.gz",
+        "rawSha256": "379da2fbc48a3d27d727f200f7985b8edda82860c7de81af3f7e8ab5c3519a0e",
+        "sha256": "2eea347a970d593a6d461a103788076471e1eada54fccb2ec2695a7a40146737"
+      },
+      {
+        "source": "/tmp/magnatiles-observed-piece-sets-proposal.json",
+        "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.closed-proposal.json.gz",
+        "rawSha256": "bc0edad5288f5f67770377e3ed5555b603cf973da4194a24af3dd01b695ada92",
+        "sha256": "e7c3d5bd98c46c2b07569299a98a5dfa370d4dd4fcf93c8934a43b5890fb21ad"
+      },
+      {
+        "source": "/tmp/magnatiles-observed-piece-sets-prototype-closed-tests.log",
+        "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.closed-tests.log.txt",
+        "rawSha256": "1e0393696155c729cde0f7832206a279553a4535073f122c73116950256b97fc",
+        "sha256": "1e0393696155c729cde0f7832206a279553a4535073f122c73116950256b97fc"
+      },
+      {
+        "source": "/tmp/magnatiles-observed-piece-sets-prototype-closed-lint.log",
+        "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.closed-lint.log.txt",
+        "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "source": "/tmp/magnatiles-observed-piece-sets-proposal-closed.log",
+        "archive": "runs/diagnostics/2026-09-28-observed-piece-sets.closed-proposal.log.txt",
+        "rawSha256": "9a3faeb21e791771d7307a1695ba9e65b74bfb38deede77ba773fc2703cae867",
+        "sha256": "9a3faeb21e791771d7307a1695ba9e65b74bfb38deede77ba773fc2703cae867"
+      }
+    ]
+  }
+}

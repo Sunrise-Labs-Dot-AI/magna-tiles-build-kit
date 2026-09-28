@@ -3,8 +3,8 @@ import { RAW_OVERLAP_TOLERANCE } from "@/lib/engine/overlap";
 import { SimulationBudgetExceeded } from "@/lib/engine/simulate";
 import { basisFromEuler } from "@/lib/magnetic-tiles/edge-attachment";
 import { tilePrismVertices } from "@/lib/magnetic-tiles/prism-geometry";
-import type { BuildGraph, TileInstance } from "@/lib/magnetic-tiles/types";
-import { separatingAxes } from "./insertion";
+import type { BuildGraph, TileInstance, Vec3 } from "@/lib/magnetic-tiles/types";
+import { prepareSeparatingAxes, separatingAxesFromPrepared } from "./insertion";
 import type { Check } from "./types";
 
 export const tileQuaternion = (t: TileInstance) => basisToQuaternion(t.basis ?? basisFromEuler(t.rotation.x, t.rotation.y, t.rotation.z));
@@ -24,6 +24,19 @@ export function samePoses(a: BuildGraph, b: BuildGraph): boolean {
   });
 }
 
+function projectionGap(a: Vec3[], b: Vec3[], axis: Vec3): number {
+  let aMin = Infinity, aMax = -Infinity, bMin = Infinity, bMax = -Infinity;
+  for (const point of a) {
+    const value = dot(point, axis);
+    aMin = Math.min(aMin, value); aMax = Math.max(aMax, value);
+  }
+  for (const point of b) {
+    const value = dot(point, axis);
+    bMin = Math.min(bMin, value); bMax = Math.max(bMax, value);
+  }
+  return Math.max(aMin - bMax, bMin - aMax);
+}
+
 /** Conservative certification of every interpolated pose, including rotations.
  * A midpoint separating axis is safe only if its gap exceeds the maximum motion
  * of all vertices in the interval. Ambiguous intervals subdivide, never pass by
@@ -38,16 +51,17 @@ export function checkSweptPoses(before: BuildGraph, after: BuildGraph, floorY: n
     const middle = starts.map((t, i) => interpolateTile(t, stops[i], .5));
     const bounds = starts.map((t, i) => pointMotionBound(t, stops[i]) / 2);
     const vertices = middle.map(t => tilePrismVertices(t));
+    // Each recursive interval owns fresh geometry. No cross-call pose cache.
+    const prepared = middle.map(prepareSeparatingAxes);
     let uncertain = false;
     for (let i = 0; i < middle.length; i++) {
       const minY = Math.min(...vertices[i].map(p => p.y));
       if (minY < floorY - RAW_OVERLAP_TOLERANCE) return `${middle[i].id} intersects the fixed table during rotation/translation.`;
       if (minY - bounds[i] < floorY - RAW_OVERLAP_TOLERANCE) uncertain = true;
       for (let j = 0; j < i; j++) {
-        const gap = Math.max(...separatingAxes(middle[i], middle[j]).map(axis => {
-          const a = vertices[i].map(p => dot(p, axis)), b = vertices[j].map(p => dot(p, axis));
-          return Math.max(Math.min(...a)-Math.max(...b), Math.min(...b)-Math.max(...a));
-        }));
+        let gap = -Infinity;
+        for (const axis of separatingAxesFromPrepared(prepared[i], prepared[j]))
+          gap = Math.max(gap, projectionGap(vertices[i], vertices[j], axis));
         if (gap < -RAW_OVERLAP_TOLERANCE - 1e-9) return `${middle[i].id} intersects ${middle[j].id} during rotation/translation.`;
         if (gap - bounds[i] - bounds[j] < -RAW_OVERLAP_TOLERANCE) uncertain = true;
       }

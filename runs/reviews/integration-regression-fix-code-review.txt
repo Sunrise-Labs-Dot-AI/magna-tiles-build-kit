@@ -1,0 +1,15 @@
+CLEAN.
+
+No concrete ranked findings in the scoped regression corrections. I did not edit files or run tests/simulations.
+
+Checked the main risk points:
+
+- Continued-prefix now preserves successful-state/input comparisons while allowing failed alternatives to carry explicit popped/collision history, and asserts the rejected table collision remains visible: [tests/continued-prefix.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/continued-prefix.test.ts:44).
+- Gravity now asserts source gravity, scale, force, damping, solver counts, native step count, f32 timestep, restored caller dt, and exact audited f32 velocity recurrence: [tests/rigid-contact.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/rigid-contact.test.ts:117).
+- Hinge coverage uses initial world-space primary and companion anchor checks, pre-contact 20-step `.08` comparison, full 35-step validity/contact/anchor checks, and keeps the deliberate companion tear: [tests/assembly-state.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/assembly-state.test.ts:98).
+- Medium ramp status now reflects sustained-rest failure while preserving separate roll success: [tests/engine-calibration.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/engine-calibration.test.ts:31), [lib/magnetic-tiles/library.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/library.ts:65).
+- Generated 31-piece jet pass is scoped as nominal engine gate only, with no source/assembly credit: [tests/jet-generator.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/tests/jet-generator.test.ts:9).
+
+One precision note: the full `public/reference-replicas/*.json` files are modified in report sections, but their `.replica` payloads compare equal to `HEAD`; `build-drafts/medium-car-ramp.json` also compares equal to `HEAD` after excluding only `status` and `notes`. That matches the stale-artifact caveat rather than a correction finding.
+
+Full harness acceptance, artifact regeneration under runtime hash `3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d`, and publication remain pending.

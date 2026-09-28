@@ -12,7 +12,7 @@
   },
   "configured": {
     "dt": 0.008333333767950535,
-    "contact_erp": 0.385869562625885,
+    "contact_erp": 0.7153651714324951,
     "lengthUnit": 1,
     "normalizedAllowedLinearError": 0.0010000000474974513,
     "normalizedPredictionDistance": 0.0020000000949949026,
@@ -31,8 +31,8 @@
     },
     "integration": {
       "contact_damping_ratio": 5,
-      "contact_natural_frequency": 120,
-      "dt": 0.0010416667209938169,
+      "contact_natural_frequency": 480,
+      "dt": 0.0005208333604969084,
       "friction_model": "Simplified",
       "joint_damping_ratio": 1,
       "joint_natural_frequency": 1000000,
@@ -49,7 +49,7 @@
       "warmstart_coefficient": 1
     }
   },
-  "maximumCollisionTimestepSeconds": 0.0010416666666666667,
+  "maximumCollisionTimestepSeconds": 0.0005208333333333333,
   "reportingTimestepSeconds": 0.008333333333333333,
-  "contactNaturalFrequencyHz": 120
+  "contactNaturalFrequencyHz": 480
 }

@@ -1,0 +1,903 @@
+{
+  "scope": "Complete current configured contact qualification. Source fidelity, assembly, function and physical calibration remain separate.",
+  "validationCodeHash": "50853cf620abb7438d728475d3e567213dedc796f6f4930ecfcbe3cb7f61db2b",
+  "physicsModel": "rigid-contact-v8-solid-sweep-contact480-collision1920-js0.19.2-rust0.30.1-parry0.25.1-sat-cache3-f32-abi1-5e4c38a5ada93780-profilea491baad9d8d5af2",
+  "configuredProfile": {
+    "frequency": 480,
+    "collisionHz": 1920
+  },
+  "selectionEvidence": {
+    "path": "runs/diagnostics/2026-09-27-finer-contact-matrix.json.gz",
+    "checkpoint": "39686d84a81bec3b7277fee1445ef4eed5dd4520",
+    "rawSha256": "e8558125b1e9e5de8c67782b402a18bf2242da95651837273b592e2e588674be",
+    "gzipSha256": "d41dc964f4db60d69ba49deed15d377a95fa306ad661a91610ce6e9a90ff1b09"
+  },
+  "inputHash": "769e7628d131b92985909bc202891de75332610575c2d4d07bd127ada0df62e1",
+  "assessment": {
+    "frequency": 480,
+    "collisionHz": 1920,
+    "refinementHz": 3840,
+    "passed": true,
+    "ordinaryPasses": 72,
+    "totalTrials": 72,
+    "groups": [
+      {
+        "fixture": "flat-contact",
+        "seed": 0,
+        "complete": true,
+        "peakSpread": 5.649837959420534e-06,
+        "lateSpread": 8.544004404559269e-06,
+        "passed": true
+      },
+      {
+        "fixture": "flat-contact",
+        "seed": 17,
+        "complete": true,
+        "peakSpread": 4.969089065873233e-06,
+        "lateSpread": 8.779416578508226e-06,
+        "passed": true
+      },
+      {
+        "fixture": "flat-contact",
+        "seed": 53,
+        "complete": true,
+        "peakSpread": 4.711438286952863e-06,
+        "lateSpread": 8.531425198660125e-06,
+        "passed": true
+      },
+      {
+        "fixture": "loaded-base-contact",
+        "seed": 0,
+        "complete": true,
+        "peakSpread": 1.073163229553531e-05,
+        "lateSpread": 9.332138308365545e-07,
+        "passed": true
+      },
+      {
+        "fixture": "loaded-base-contact",
+        "seed": 17,
+        "complete": true,
+        "peakSpread": 0.00023898214461359757,
+        "lateSpread": 1.5690417297653525e-06,
+        "passed": true
+      },
+      {
+        "fixture": "loaded-base-contact",
+        "seed": 53,
+        "complete": true,
+        "peakSpread": 0.00017981182733672885,
+        "lateSpread": 2.613021220981837e-06,
+        "passed": true
+      },
+      {
+        "fixture": "loaded-shell-2",
+        "seed": 0,
+        "complete": true,
+        "peakSpread": 0.0009150265299676524,
+        "lateSpread": 3.259175278230719e-05,
+        "passed": true
+      },
+      {
+        "fixture": "loaded-shell-2",
+        "seed": 17,
+        "complete": true,
+        "peakSpread": 0.0008009833759537871,
+        "lateSpread": 3.846185310173167e-05,
+        "passed": true
+      },
+      {
+        "fixture": "loaded-shell-2",
+        "seed": 53,
+        "complete": true,
+        "peakSpread": 0.0011242234748189972,
+        "lateSpread": 3.905458735287137e-05,
+        "passed": true
+      },
+      {
+        "fixture": "loaded-shell-3",
+        "seed": 0,
+        "complete": true,
+        "peakSpread": 0.0016929447765121342,
+        "lateSpread": 4.3548073289545464e-05,
+        "passed": true
+      },
+      {
+        "fixture": "loaded-shell-3",
+        "seed": 17,
+        "complete": true,
+        "peakSpread": 0.0017652161742932604,
+        "lateSpread": 4.456772443946211e-05,
+        "passed": true
+      },
+      {
+        "fixture": "loaded-shell-3",
+        "seed": 53,
+        "complete": true,
+        "peakSpread": 0.00152365684807923,
+        "lateSpread": 3.948507841834703e-05,
+        "passed": true
+      },
+      {
+        "fixture": "loaded-shell-4",
+        "seed": 0,
+        "complete": true,
+        "peakSpread": 0.002092504348043034,
+        "lateSpread": 3.818384210868553e-05,
+        "passed": true
+      },
+      {
+        "fixture": "loaded-shell-4",
+        "seed": 17,
+        "complete": true,
+        "peakSpread": 0.0020718058270326745,
+        "lateSpread": 3.1271452996611826e-05,
+        "passed": true
+      },
+      {
+        "fixture": "loaded-shell-4",
+        "seed": 53,
+        "complete": true,
+        "peakSpread": 0.00208890971702827,
+        "lateSpread": 3.0581536505439044e-05,
+        "passed": true
+      },
+      {
+        "fixture": "loaded-shell-6",
+        "seed": 0,
+        "complete": true,
+        "peakSpread": 0.0032596538841617173,
+        "lateSpread": 8.360064795154276e-06,
+        "passed": true
+      },
+      {
+        "fixture": "loaded-shell-6",
+        "seed": 17,
+        "complete": true,
+        "peakSpread": 0.0032371945875860897,
+        "lateSpread": 8.154948795718875e-06,
+        "passed": true
+      },
+      {
+        "fixture": "loaded-shell-6",
+        "seed": 53,
+        "complete": true,
+        "peakSpread": 0.0032324107393177787,
+        "lateSpread": 1.233711781903346e-05,
+        "passed": true
+      }
+    ]
+  },
+  "rawSha256": "bbe3727323866935eba464e32955c9d496ec656541fb1a9413fd4052606926a6",
+  "gzipSha256": "21f2966adcdc070b9c948c477f27afb220e8d5e47d5a1e81a98710968990ac01",
+  "rawBytes": 11126906,
+  "gzipBytes": 362030,
+  "ordinaryPasses": 72,
+  "coverage": 72,
+  "comparisonScope": "Exact parsed-JSON equality of every recorded trial field except the explicit terminal.physicsModel identity; no physical field or tolerance omitted. This is recorded-state equality, not a claim of captured per-step trajectories.",
+  "comparisonModelIdentities": {
+    "before": "rigid-contact-v7-solid-sweep-960-js0.19.2-rust0.30.1-parry0.25.1-sat-cache3-f32-abi1-5e4c38a5ada93780-profile10e2e81b05c3c518",
+    "current": "rigid-contact-v8-solid-sweep-contact480-collision1920-js0.19.2-rust0.30.1-parry0.25.1-sat-cache3-f32-abi1-5e4c38a5ada93780-profilea491baad9d8d5af2"
+  },
+  "comparisons": [
+    {
+      "cell": [
+        "flat-contact",
+        480,
+        1920,
+        16,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "flat-contact",
+        480,
+        1920,
+        16,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "flat-contact",
+        480,
+        1920,
+        16,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "flat-contact",
+        480,
+        1920,
+        32,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "flat-contact",
+        480,
+        1920,
+        32,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "flat-contact",
+        480,
+        1920,
+        32,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "flat-contact",
+        480,
+        3840,
+        16,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "flat-contact",
+        480,
+        3840,
+        16,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "flat-contact",
+        480,
+        3840,
+        16,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "flat-contact",
+        480,
+        3840,
+        32,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "flat-contact",
+        480,
+        3840,
+        32,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "flat-contact",
+        480,
+        3840,
+        32,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-base-contact",
+        480,
+        1920,
+        16,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-base-contact",
+        480,
+        1920,
+        16,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-base-contact",
+        480,
+        1920,
+        16,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-base-contact",
+        480,
+        1920,
+        32,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-base-contact",
+        480,
+        1920,
+        32,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-base-contact",
+        480,
+        1920,
+        32,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-base-contact",
+        480,
+        3840,
+        16,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-base-contact",
+        480,
+        3840,
+        16,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-base-contact",
+        480,
+        3840,
+        16,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-base-contact",
+        480,
+        3840,
+        32,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-base-contact",
+        480,
+        3840,
+        32,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-base-contact",
+        480,
+        3840,
+        32,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-2",
+        480,
+        1920,
+        16,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-2",
+        480,
+        1920,
+        16,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-2",
+        480,
+        1920,
+        16,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-2",
+        480,
+        1920,
+        32,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-2",
+        480,
+        1920,
+        32,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-2",
+        480,
+        1920,
+        32,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-2",
+        480,
+        3840,
+        16,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-2",
+        480,
+        3840,
+        16,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-2",
+        480,
+        3840,
+        16,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-2",
+        480,
+        3840,
+        32,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-2",
+        480,
+        3840,
+        32,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-2",
+        480,
+        3840,
+        32,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-3",
+        480,
+        1920,
+        16,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-3",
+        480,
+        1920,
+        16,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-3",
+        480,
+        1920,
+        16,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-3",
+        480,
+        1920,
+        32,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-3",
+        480,
+        1920,
+        32,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-3",
+        480,
+        1920,
+        32,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-3",
+        480,
+        3840,
+        16,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-3",
+        480,
+        3840,
+        16,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-3",
+        480,
+        3840,
+        16,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-3",
+        480,
+        3840,
+        32,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-3",
+        480,
+        3840,
+        32,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-3",
+        480,
+        3840,
+        32,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-4",
+        480,
+        1920,
+        16,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-4",
+        480,
+        1920,
+        16,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-4",
+        480,
+        1920,
+        16,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-4",
+        480,
+        1920,
+        32,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-4",
+        480,
+        1920,
+        32,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-4",
+        480,
+        1920,
+        32,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-4",
+        480,
+        3840,
+        16,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-4",
+        480,
+        3840,
+        16,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-4",
+        480,
+        3840,
+        16,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-4",
+        480,
+        3840,
+        32,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-4",
+        480,
+        3840,
+        32,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-4",
+        480,
+        3840,
+        32,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-6",
+        480,
+        1920,
+        16,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-6",
+        480,
+        1920,
+        16,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-6",
+        480,
+        1920,
+        16,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-6",
+        480,
+        1920,
+        32,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-6",
+        480,
+        1920,
+        32,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-6",
+        480,
+        1920,
+        32,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-6",
+        480,
+        3840,
+        16,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-6",
+        480,
+        3840,
+        16,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-6",
+        480,
+        3840,
+        16,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-6",
+        480,
+        3840,
+        32,
+        0
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-6",
+        480,
+        3840,
+        32,
+        17
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    },
+    {
+      "cell": [
+        "loaded-shell-6",
+        480,
+        3840,
+        32,
+        53
+      ],
+      "recordedPhysicalFieldsExactlyEqual": true
+    }
+  ]
+}

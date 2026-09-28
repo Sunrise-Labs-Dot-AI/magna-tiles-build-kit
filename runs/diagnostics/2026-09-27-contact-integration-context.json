@@ -1,0 +1,16 @@
+{
+  "scope": "Unoptimized 480/1920 integration runtime during the fixed-budget benchmark; not accepted physical evidence.",
+  "validationCodeHash": "b9bbd653196afef018c4ab1a7d430c9ab108e1bdcfbef63b7ef12a092b43be43",
+  "runtimeHashes": {
+    "lib/engine/backend-identity.ts": "611d93e2fe40483d5a3c0cc4fbba6fa0b2b35db18fea81df225264264ef58da6",
+    "lib/engine/constants.ts": "a2f2b57189540ea8cca7dd92ed6320b6b92ec0e7d1abff3e8529f26d421257b5",
+    "lib/engine/rapier-world.ts": "0706d840dab49c9f30d9dfb1144b4d6eadc4be0a62d8da0df9929e6096a9e564",
+    "lib/replication/held-motion.ts": "066befe841ba73912b86a70b3d00693b147a13513692724a2c61f1530d71c7a0",
+    "lib/replication/seating.ts": "8811e452d45a46ec9d939f1ee9be6d95545c1c6403034b22c1766a6d1538ef71",
+    "lib/replication/support.ts": "43163adf9ef759e25ad82ac1d08c8bc27471498925dcb8b84b2f3b55f331e987",
+    "scripts/benchmark-harness.ts": "08760f9aec8968984d3a4c3606594175700bce71b05b61cbd48ab56f52403250",
+    "vendor/rapier-contact/profile.json": "a491baad9d8d5af2378e7e262212cda8a010828b8c7ae74d2a6c302f3d6314cf"
+  },
+  "benchmarkLog": "/tmp/magnatiles-480-1920-harness-benchmark.log",
+  "session": 47630
+}

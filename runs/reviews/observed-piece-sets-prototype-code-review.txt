@@ -1,0 +1,13 @@
+**Findings**
+
+WARNING: [scripts/reference/observed-piece-sets.prototype.test.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/observed-piece-sets.prototype.test.ts:232)  
+The “rejects changed shape/count/members across stages” test does not isolate the stable `sourceSetId` invariant. Each mutation also triggers another failure path: wrong local shape, incomplete complete coverage, or overlap with exact observed IDs. A broken implementation that removed the cross-stage signature check at [observed-piece-sets.prototype.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/observed-piece-sets.prototype.ts:111) could still pass this test.  
+Fix: add a focused case with a later stage containing a distinct same-shape replacement member that is otherwise unclaimed, preferably under partial coverage or with adjusted exact coverage, so failure depends specifically on “same `sourceSetId` must retain same shape/count/membership.”
+
+**Otherwise Clean**
+
+I did not find a runtime correctness defect in the prototype against the stated accounting contract. Schema1 rejects own `observedSets`; schema2 requires explicit `observedSets`; exact observed IDs remain separate from `observedSets`; complete coverage is the exact union; set members are distinct existing stage IDs of one shape; overlap and namespace collisions are rejected; partial/local-byte-unverified remain unverified; and no pose/join/fidelity acceptance is introduced.
+
+Active [lib/replication/source-pieces.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/source-pieces.ts:75) remains schema1-only and unchanged in behavior.
+
+No tests or simulations run, per request.

@@ -1,3 +1,4 @@
+import { MAX_COLLISION_TIMESTEP_SECONDS } from "@/lib/engine/constants";
 import { describe,expect,it } from "vitest";
 import RAPIER,{ColliderDesc,RigidBodyDesc,ShapeType,type RigidBody} from "@/lib/engine/physics-backend";
 import { physicalSpecForTile,tilePrismPoints } from "@/lib/engine/build";
@@ -52,7 +53,7 @@ describe("exact triangle prism collision frames",()=>{
     }
   });
   it.each(triangleShapes)("bounds actual %s contact by independent geometry in every reference frame",async shape=>{
-    for(const frame of referenceFrames)for(const yaw of [0,.37])for(const seed of [0,17,53])for(const hz of [960,1920]) {
+    for(const frame of referenceFrames)for(const yaw of [0,.37])for(const seed of [0,17,53])for(const hz of [1/MAX_COLLISION_TIMESTEP_SECONDS,2/MAX_COLLISION_TIMESTEP_SECONDS]) {
       const trial=await runFrameContact(shape,frame,yaw,seed,hz);
       expect(trial.passed,JSON.stringify(trial)).toBe(true);
     }
@@ -66,7 +67,7 @@ describe("exact triangle prism collision frames",()=>{
   });
   it.each(triangleShapes)("passes the reserved %s orientations without parameter retuning",async shape=>{
     for(const frame of referenceFrames)for(const [seed,yaws] of [[29,[-.61,1.13]],[71,[.23,.89,-1.47]]] as const)
-      for(const yaw of yaws)for(const hz of [960,1920]){
+      for(const yaw of yaws)for(const hz of [1/MAX_COLLISION_TIMESTEP_SECONDS,2/MAX_COLLISION_TIMESTEP_SECONDS]){
         const trial=await runFrameContact(shape,frame,yaw,seed,hz);
         expect(trial.passed,JSON.stringify(trial)).toBe(true);
       }

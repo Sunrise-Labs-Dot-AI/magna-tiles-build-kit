@@ -1,3 +1,4 @@
+import { MAX_COLLISION_TIMESTEP_SECONDS } from "@/lib/engine/constants";
 import { describe,expect,it,vi } from "vitest";
 import { RigidBodyType } from "@/lib/engine/physics-backend";
 import { basisFromEuler } from "@/lib/magnetic-tiles/edge-attachment";
@@ -68,7 +69,7 @@ describe("continuous solid-prism acceptance",()=>{
   it("rejects unobservable full rotations before integrating",async()=>{
     const build=assemble("spin","Spin",[panel("spin")],"tower"),e=await createEngineWorld(build,{drop:false,floorY:0});
     try{
-      e.bodies.get("spin")!.body.setAngvel(v(0,0,Math.PI*960*2),true);
+      e.bodies.get("spin")!.body.setAngvel(v(0,0,Math.PI/MAX_COLLISION_TIMESTEP_SECONDS*2),true);
       const step=vi.spyOn(e.world,"step");e.step();
       expect(step).not.toHaveBeenCalled();expect(e.solidFailures[0].kind).toBe("uncertified-sweep");
     }finally{e.dispose();}
@@ -76,7 +77,7 @@ describe("continuous solid-prism acceptance",()=>{
   it("rejects angular travel introduced by the solver within a step",async()=>{
     const build=assemble("spin","Spin",[panel("spin")],"tower"),e=await createEngineWorld(build,{drop:false,floorY:0});
     try{
-      vi.spyOn(e.world,"step").mockImplementation(()=>e.bodies.get("spin")!.body.setAngvel(v(0,0,Math.PI*960*2),true));
+      vi.spyOn(e.world,"step").mockImplementation(()=>e.bodies.get("spin")!.body.setAngvel(v(0,0,Math.PI/MAX_COLLISION_TIMESTEP_SECONDS*2),true));
       e.step();expect(e.solidFailures[0].kind).toBe("uncertified-sweep");
     }finally{e.dispose();}
   });

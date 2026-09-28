@@ -1,3 +1,4 @@
+import { CONTACT_NATURAL_FREQUENCY_HZ, MAX_COLLISION_TIMESTEP_SECONDS } from "@/lib/engine/constants";
 // Explicit regression control. No object from this backend crosses into the
 // application's patched World; only ordinary geometry and numeric results do.
 import Original from "@dimforge/rapier3d-compat";
@@ -33,9 +34,9 @@ export async function unpatchedContactControl() {
   await Original.init();
   const world = new Original.World(gravityVector());
   try {
-    world.integrationParameters.dt = 1/960;
+    world.integrationParameters.dt = MAX_COLLISION_TIMESTEP_SECONDS;
     world.integrationParameters.numSolverIterations = 16;
-    world.integrationParameters.contact_natural_frequency = 120;
+    world.integrationParameters.contact_natural_frequency = CONTACT_NATURAL_FREQUENCY_HZ;
     const records = [...engine.bodies.values()].map(r => {
       const p = r.body.translation();
       const body = world.createRigidBody((r.tile.id === "roof" ? Original.RigidBodyDesc.fixed() : Original.RigidBodyDesc.dynamic())
@@ -56,7 +57,7 @@ export async function unpatchedContactControl() {
       if (model.secondAnchors) world.createImpulseJoint(Original.JointData.spherical(model.secondAnchors.from,model.secondAnchors.to),a,b,true).setContactsEnabled(true);
     }
     let contacts = 0,depthExcess = 0;
-    for (let n=0;n<64;n++) {
+    for (let n=0;n<1/(15*MAX_COLLISION_TIMESTEP_SECONDS);n++) {
       const before = records.map(r => currentTilePose(r.tile,r.body.translation(),r.body.rotation(),0));
       const depth = Math.max(0,exactPrismDepth(before[0],before[1]));
       world.step();

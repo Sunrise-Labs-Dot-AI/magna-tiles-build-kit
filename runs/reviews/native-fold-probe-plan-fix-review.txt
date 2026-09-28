@@ -1,0 +1,13 @@
+VERIFIED/CLEAN.
+
+I verified the four accepted findings in `runs/reviews/native-fold-probe-plan-review.txt` are resolved in [runs/2026-09-27-native-fold-probe-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-native-fold-probe-plan.md:11) and reflected in [runs/2026-09-27-native-fold-probe-plan.review.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-27-native-fold-probe-plan.review.md:1).
+
+Checked against current engine and replication code:
+
+- One-time `perturbFirstRelease` on the middle panel, with pre-grip, pre-perturb, post-perturb state and velocities, is explicit.
+- The plan uses a bespoke `createEngineWorld` loop, not `simulateHeldMotion`, and requires per-step root `Fixed`, middle `Dynamic`, terminal `KinematicPositionBased`.
+- The deviation metric is an external per-panel catalog-prism residual against an articulated target, while `engine.maxDisplacement()` remains diagnostic only.
+- Installed joint fields, native/model anchors and frames, limits, world anchor/axis derivation, and the moving distal target frame are explicitly required.
+- Initial-native contact and float32 boundary failures remain recorded rejected/setup rows, with no gap substitution.
+
+No edits made. No native or expensive tests run.

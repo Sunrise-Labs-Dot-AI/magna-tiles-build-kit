@@ -1,3 +1,4 @@
+import { MAX_COLLISION_TIMESTEP_SECONDS } from "@/lib/engine/constants";
 import { describe, expect, it, vi } from "vitest";
 import { RigidBodyType } from "@/lib/engine/physics-backend";
 import { createEngineWorld } from "@/lib/engine/rapier-world";
@@ -6,7 +7,7 @@ import { contactMatrixFixtures, loadedShellContactFixture } from "./fixtures/loa
 import { flatContactFixture, loadedContactFixture } from "./fixtures/rigid-contact";
 import { CONTACT_MATRIX, assessContactMatrix, assertContactFixture, contactMatrixCells, runContactCell, simulateContactCell, type ContactMatrixTrial } from "../scripts/reference/contact-matrix";
 
-const cell = contactMatrixCells()[0];
+const cell = contactMatrixCells().find(c => c.hz === 1/MAX_COLLISION_TIMESTEP_SECONDS)!;
 
 describe("independent loaded contact matrix", () => {
   it("uses all six independent catalog fixtures, preserving the original five-panel fixture", () => {
@@ -33,11 +34,23 @@ describe("independent loaded contact matrix", () => {
       selectionPeak: .025, selectionLate: .008, peakSpread: .005, lateSpread: .002 });
   });
 
+  it("rejects a historical coarse-rate label when the current engine subdivides it", async () => {
+    const coarse = contactMatrixCells()[0];
+    const trial = await runContactCell(flatContactFixture(), coarse);
+    expect(trial.passed).toBe(false);
+    expect(trial.firstFailure?.reason).toBe("unexpected-integration-count");
+    expect(trial.attemptedSteps).toBe(1);
+    expect(trial.integrationSteps).toBe((1/coarse.hz)/MAX_COLLISION_TIMESTEP_SECONDS);
+    expect(trial.simulatedSeconds).toBeCloseTo(1/coarse.hz, 9);
+    expect(trial.latePenetration).toBeNull();
+    expect(trial.restReportingSteps).toBeNull();
+  });
+
   it("records actual integration time and a complete terminal snapshot for a real free flat-panel drop", async () => {
     const trial = await runContactCell(flatContactFixture(), cell);
     expect(trial.passed).toBe(true);
     expect(trial.completed).toBe(true);
-    expect(trial.integrationSteps).toBe(7200);
+    expect(trial.integrationSteps).toBe(cell.hz*7.5);
     expect(trial.simulatedSeconds).toBeCloseTo(7.5, 5);
     expect(trial.restReportingSteps).toBeGreaterThanOrEqual(90);
     expect(trial.terminal.bodies).toHaveLength(1);
@@ -58,7 +71,7 @@ describe("independent loaded contact matrix", () => {
       expect(spy).toHaveBeenCalledTimes(3);
       expect(trial.integrationSteps).toBe(3);
       expect(trial.firstFailure?.reason).toBe("table");
-      expect(trial.simulatedSeconds).toBeCloseTo(3 / 960, 7);
+      expect(trial.simulatedSeconds).toBeCloseTo(3 / cell.hz, 7);
       expect(trial.terminal.bodies[0].position.y).toBeCloseTo(-.2);
       expect(trial.latePenetration).toBeNull();
       expect(trial.observedLatePenetration).toBeNull();
@@ -89,11 +102,11 @@ describe("independent loaded contact matrix", () => {
       let steps = 0;
       vi.spyOn(engine.world, "step").mockImplementation(() => {
         native();
-        if (++steps === 6481) body.setTranslation({ x: 0, y: .075, z: 0 }, true);
+        if (++steps === cell.hz*6.75+1) body.setTranslation({ x: 0, y: .075, z: 0 }, true);
       });
       const trial = simulateContactCell(engine, cell);
       expect(trial.firstFailure?.reason).toBe("late-penetration");
-      expect(trial.integrationSteps).toBe(6481);
+      expect(trial.integrationSteps).toBe(cell.hz*6.75+1);
       expect(trial.observedLatePenetration).toBeCloseTo(.015);
       expect(trial.latePenetration).toBeNull();
       expect(trial.restReportingSteps).toBeNull();

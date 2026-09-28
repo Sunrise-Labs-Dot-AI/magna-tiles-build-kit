@@ -1,0 +1,34 @@
+Read-only review complete. I inspected only the diagnostic JSON, the five named construction images, and the current frozen source/model metadata. No mutation, no heldout image inspection, no simulation, no expensive tests, and no active source report run.
+
+**Hash Check**
+The five recorded PNG hashes match on disk:
+
+- `construction-31.png`
+- `construction-32.png`
+- `construction-34.png`
+- `construction-35.png`
+- `jet-body-ring.png`
+
+I could not recompute the original video `sourceSha256` because the referenced local video path in [jet-aircraft-reference.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/reference-encoder/examples/jet-aircraft-reference.ts:5) is not present under this worktree. Existing generated metadata records that source hash as verified in [jet.json](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/public/reference-replicas/jet.json:2804), but I did not independently re-verify the video bytes.
+
+**Supported Claims**
+The provisional claims are mostly supported, with tighter wording:
+
+- At 31s, three blue square panels form a connected open strip. Both hands contact/support the two outer panels.
+- At 32s, the outer panels are visibly folding back behind/around the front square. Hands are still involved.
+- At 33s, the blue piece appears as a closed triangular ring upright on the table, with no visible hand contact at that sampled instant.
+- At 34s and 35s, the blue ring remains upright on the table without visible hand contact while other panels are handled behind it.
+- The complete installed count for the first ring is three blue square panels. The red/yellow pieces behind it should not be counted as installed into that first ring from these frames.
+
+**Concrete Corrections**
+The current model metadata in [models.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/models.ts:597) says: “The creator supports the upright assembly; its first clear hands-off checkpoint is the horizontal pose,” with the upright body stages marked `held` at [models.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/models.ts:599).
+
+That is too conservative for the first ring only, if read as “no upright first-ring hands-off checkpoint exists.” The sampled frames support an upright, table-resting, hands-off first-ring checkpoint at 33s, 34s, and 35s. It remains reasonable for later multi-bay upright body stages, because these images do not establish hands-off stability for stacked rings.
+
+**Acceptance Limits**
+Use this evidence only as construction/fitting discovery:
+
+- Do not claim measured continuous hands-off duration. The images establish sampled hands-off instants, not uninterrupted release.
+- Do not claim unique same-color physical identities or final body-face correspondence for the three blue squares.
+- Do not claim an observed method of inserting three already oriented unconnected panels. The observed sequence is consistent with folding a connected open strip into a ring.
+- Do not grant full jet verification, production source acceptance, geometry tuning, or simulation credit from this discovery.

@@ -1,0 +1,27 @@
+Post-installation focused verification: all commands completed exit 0. Full integration checks remain pending.
+
+magnatiles-proof-reuse-focused-tests.log
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+
+ Test Files  4 passed (4)
+      Tests  25 passed (25)
+   Start at  15:38:33
+   Duration  979ms (transform 193ms, setup 0ms, import 337ms, tests 1.22s, environment 0ms)
+
+
+magnatiles-proof-reuse-contact-tests.log
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+
+ Test Files  4 passed (4)
+      Tests  67 passed (67)
+   Start at  15:39:22
+   Duration  8.90s (transform 146ms, setup 0ms, import 374ms, tests 14.45s, environment 0ms)
+
+
+magnatiles-proof-reuse-types.log
+
+magnatiles-proof-reuse-lint.log

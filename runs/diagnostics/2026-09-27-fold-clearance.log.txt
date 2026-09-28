@@ -1,0 +1,86 @@
+[
+  {
+    "gap": 0,
+    "direction": -1,
+    "initialClosure": "pass",
+    "firstEngineFailure": 20,
+    "firstCallerFailure": 20
+  },
+  {
+    "gap": 0,
+    "direction": 1,
+    "initialClosure": "pass",
+    "firstEngineFailure": 20,
+    "firstCallerFailure": 20
+  },
+  {
+    "gap": 0.03,
+    "direction": -1,
+    "initialClosure": "pass",
+    "firstEngineFailure": 40,
+    "firstCallerFailure": 40
+  },
+  {
+    "gap": 0.03,
+    "direction": 1,
+    "initialClosure": "pass",
+    "firstEngineFailure": 40,
+    "firstCallerFailure": 40
+  },
+  {
+    "gap": 0.09,
+    "direction": -1,
+    "initialClosure": "pass",
+    "firstEngineFailure": 75,
+    "firstCallerFailure": 75
+  },
+  {
+    "gap": 0.09,
+    "direction": 1,
+    "initialClosure": "pass",
+    "firstEngineFailure": 75,
+    "firstCallerFailure": 75
+  },
+  {
+    "gap": 0.18,
+    "direction": -1,
+    "initialClosure": "pass",
+    "firstEngineFailure": 110,
+    "firstCallerFailure": 110
+  },
+  {
+    "gap": 0.18,
+    "direction": 1,
+    "initialClosure": "pass",
+    "firstEngineFailure": 110,
+    "firstCallerFailure": 110
+  },
+  {
+    "gap": 0.21,
+    "direction": -1,
+    "initialClosure": "pass",
+    "firstEngineFailure": 115,
+    "firstCallerFailure": 115
+  },
+  {
+    "gap": 0.21,
+    "direction": 1,
+    "initialClosure": "pass",
+    "firstEngineFailure": 115,
+    "firstCallerFailure": 115
+  },
+  {
+    "gap": 0.36,
+    "direction": -1,
+    "initialClosure": "fail",
+    "firstEngineFailure": null,
+    "firstCallerFailure": null
+  },
+  {
+    "gap": 0.36,
+    "direction": 1,
+    "initialClosure": "fail",
+    "firstEngineFailure": null,
+    "firstCallerFailure": null
+  }
+]

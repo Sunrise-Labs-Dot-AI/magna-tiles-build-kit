@@ -1,0 +1,36 @@
+{
+  "validationCodeHash": "3a2ed4ddf041cbf7615825b5e75dd6b3132f520d65c19ff662896a1285b5381d",
+  "scope": "Seven affected files only. Full regression and final evidence remain pending.",
+  "passedTests": 57,
+  "passedFiles": 7,
+  "shortDurationSeconds": 35.86,
+  "affectedDurationSeconds": 289,
+  "exitCodes": {
+    "shortTests": 0,
+    "affectedTests": 0,
+    "typecheck": 0,
+    "focusedLint": 0
+  },
+  "inputHashes": {
+    "tests/continued-prefix.test.ts": "97f4fa7aee85c55fb05e54c56f111a83a4249ea55d9dc4c15540fa7b37a84345",
+    "tests/rigid-contact.test.ts": "d452bcadefe5e51eb5d84326da36dff2dfb21347d492c41c727729ad0e0845a1",
+    "tests/assembly-state.test.ts": "96b96afd6a953fddc69e04c15e5f77bd361d8a0570d7dd413f9d5fa6b32a3306",
+    "tests/engine-gate.test.ts": "0bd6dd7e465e274d8d7019ab06e8316c0203d551b0fba10369d6cdda0e0fe047",
+    "tests/engine-calibration.test.ts": "759f9078853b42a40c15e6e8c1229b97e50a8637e94559640308db57c701f7bc",
+    "tests/reference-acceptance.test.ts": "286984a451f4ff133b0868c5e38aea4f25b0f0e3b50bfe0ec3f57a6a3f8cdf44",
+    "tests/jet-generator.test.ts": "18cae1d180f1619a154c9025e03f50bd37db1568786020d93ffb84faac076d9d",
+    "lib/magnetic-tiles/library.ts": "ac5528b3ae6a0a1c8be68e83478f4b51e2eb938d80e1aa613ebb1dfabb0be6ae",
+    "verification/engine-valid-builds.ts": "ac931b31cf12ea029257bdc32dc923d3564a60cc14fc5cc9c0db9c37cf53046c",
+    "build-drafts/medium-car-ramp.json": "31665fff0a25f47e4f64bfc84af94ffb44f1fb07d5b6b6b38e1d40c0ac4d4cee",
+    "vitest.config.ts": "593a4047719834d7a45c913ef7f579316637a878fa4f8a6fd03419342575721a"
+  },
+  "logs": {
+    "runs/diagnostics/2026-09-27-regression-fix-validation.short-tests.log.txt": "841f8f39bd58f002506b8ec937febe3b9d25e55b65a730cb28b578100bbfc18a",
+    "runs/diagnostics/2026-09-27-regression-fix-validation.affected-tests.log.txt": "92c24aeca0c3a5e2b37fb2884dbe9eb8ef0b61aca83803ec261e9e98e60756ae",
+    "runs/diagnostics/2026-09-27-regression-fix-validation.types.log.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/diagnostics/2026-09-27-regression-fix-validation.lint.log.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "review": "runs/reviews/integration-regression-fix-code-review.txt",
+  "reviewVerdict": "CLEAN",
+  "geometry": "All four authored source replicas equal HEAD; historical medium draft differs only in status and notes."
+}

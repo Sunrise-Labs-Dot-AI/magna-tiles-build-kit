@@ -28,10 +28,21 @@ function edges(tile: TileInstance): Vec3[] {
   return [tileNormal(tile), ...vertices.map((p, i) => normalize(subtract(vertices[(i + 1) % vertices.length], p)))];
 }
 
-export function separatingAxes(a: TileInstance, b: TileInstance): Vec3[] {
-  const an = tileNormal(a), bn = tileNormal(b), ae = edges(a), be = edges(b);
-  const candidates = [an, bn, ...ae.map(e => cross(e, an)), ...be.map(e => cross(e, bn)),
-    ...ae.flatMap(e => be.map(f => cross(e, f)))];
+interface PreparedSeparatingAxes {
+  normal: Vec3;
+  edges: Vec3[];
+  faceAxes: Vec3[];
+}
+
+/** Geometry for one fixed pose, reusable only while that pose is unchanged. */
+export function prepareSeparatingAxes(tile: TileInstance): PreparedSeparatingAxes {
+  const normal = tileNormal(tile), directions = edges(tile);
+  return { normal, edges: directions, faceAxes: directions.map(e => cross(e, normal)) };
+}
+
+export function separatingAxesFromPrepared(a: PreparedSeparatingAxes, b: PreparedSeparatingAxes): Vec3[] {
+  const candidates = [a.normal, b.normal, ...a.faceAxes, ...b.faceAxes,
+    ...a.edges.flatMap(e => b.edges.map(f => cross(e, f)))];
   const result: Vec3[] = [];
   for (const axis of candidates) {
     if (dot(axis, axis) < 1e-16) continue;
@@ -39,6 +50,10 @@ export function separatingAxes(a: TileInstance, b: TileInstance): Vec3[] {
     if (!result.some(previous => Math.abs(dot(previous, n)) > 1 - 1e-10)) result.push(n);
   }
   return result;
+}
+
+export function separatingAxes(a: TileInstance, b: TileInstance): Vec3[] {
+  return separatingAxesFromPrepared(prepareSeparatingAxes(a), prepareSeparatingAxes(b));
 }
 
 /** Continuous SAT for fixed-orientation convex prisms. Each axis contributes an

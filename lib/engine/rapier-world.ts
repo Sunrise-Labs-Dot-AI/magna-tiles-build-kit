@@ -1,3 +1,4 @@
+import { solidCertificateIdentity, sameSolidCertificate } from "./solid-certificate";
 import RAPIER, {
   ColliderDesc,
   assertIntegrationSettings,
@@ -159,13 +160,19 @@ export async function createEngineWorld(input: EngineBuild, options: { drop?: bo
   });
 
   let previousSolids: PrismPose[] | undefined;
+  let certifiedSolidState: ReturnType<typeof solidCertificateIdentity>;
   const checkSolids = () => {
-    if(engine.invalidState||engine.solidFailures.length)return;
+    if(engine.invalidState||engine.solidFailures.length){certifiedSolidState=undefined;return;}
     const actual=[...bodies.values()].map(r=>prismPose(currentTilePose(r.tile,r.body.translation(),r.body.rotation(),0)));
+    const identity=solidCertificateIdentity(actual,0,RAW_OVERLAP_TOLERANCE);
+    // The last successful closed-interval proof already certified this exact
+    // endpoint. Native dynamics and every state/alias/joint check still run.
+    if(sameSolidCertificate(certifiedSolidState,identity)){previousSolids=actual;return;}
     const sweep=checkSolidSweep(previousSolids??actual,actual,0,RAW_OVERLAP_TOLERANCE);
     if(sweep.peakSolidOverlap>engine.peakSolidOverlap){engine.peakSolidOverlap=sweep.peakSolidOverlap;engine.peakSolidPair=sweep.peakSolidPair;}
     engine.peakGroundPenetration=Math.max(engine.peakGroundPenetration,sweep.peakGroundPenetration);
     if(sweep.failure)engine.solidFailures.push(sweep.failure);
+    certifiedSolidState=sweep.failure?undefined:identity;
     previousSolids=actual;
   };
   const engine: EngineWorld = {

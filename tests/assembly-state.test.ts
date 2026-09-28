@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { unsupportedHingeFixture } from "./fixtures/rigid-contact";
 import { RigidBodyType } from "@/lib/engine/physics-backend";
-import { createEngineWorld } from "@/lib/engine/rapier-world";
+import { createEngineWorld, type EngineWorld } from "@/lib/engine/rapier-world";
+import { EDGE_BREAK_DISTANCE } from "@/lib/engine/constants";
 import { basisToQuaternion, distance, magnitude, multiplyQuaternions, quaternionToBasis, subtract, transformLocal } from "@/lib/engine/math";
 import { simulateSupport, supportSnapshot } from "@/lib/replication/support";
 import { assemble } from "@/lib/replication/geometry";
@@ -85,17 +86,50 @@ describe("physical state between assembly phases", () => {
         expect(next.joints[0].companion!.contactsEnabled()).toBe(true);
         next.bodies.get("x-0--1")!.body.setBodyType(RigidBodyType.Fixed, true);
         const before = { ...next.bodies.get("roof")!.body.translation() };
-        for (let i = 0; i < 35; i++) next.step();
-        expect(distance(before, next.bodies.get("roof")!.body.translation())).toBeGreaterThan(.1);
-        expect(magnitude(next.bodies.get("roof")!.body.angvel())).toBeGreaterThan(.1);
-        expect(next.poppedJoints).toEqual([]);
-        // The same gravity fold occurs with a fresh unrotated-frame revolute joint.
+        const anchors = (world:EngineWorld) => {
+          const record=world.joints[0];
+          const from=world.bodies.get(record.model.fromTileId)!.body,to=world.bodies.get(record.model.toTileId)!.body;
+          return [record.joint,...(record.companion?[record.companion]:[])].map(joint=>{
+            expect(joint.isValid()).toBe(true);expect(joint.contactsEnabled()).toBe(true);
+            return [transformLocal(joint.anchor1(),from.translation(),quaternionToBasis(from.rotation())),
+              transformLocal(joint.anchor2(),to.translation(),quaternionToBasis(to.rotation()))];
+          });
+        };
+        // Independent fixture geometry: the physical seam runs along world z,
+        // although it runs along local -y in the retained rotated roof.
+        const initialAnchors=anchors(next);
+        const midpoint={x:(-1.5-1.59)/2,y:(pair.tiles[0].position.y+7)/2,z:0};
+        for(const side of [0,1]){
+          expect(distance(initialAnchors[0][side],midpoint)).toBeLessThan(1e-6);
+          expect(distance(subtract(initialAnchors[1][side],initialAnchors[0][side]),{x:0,y:0,z:1})).toBeLessThan(1e-6);
+        }
+        // Compare free motion before contact. After impact, the two numerical
+        // joint representations must each remain physically valid; their
+        // bounced endpoints need not coincide (see the reviewed diagnostic).
         const control = await createEngineWorld(pair, { drop: false, floorY: 0 });
         try {
           for (const { body } of control.bodies.values()) { body.setLinvel({ x: 0, y: 0, z: 0 }, true); body.setAngvel({ x: 0, y: 0, z: 0 }, true); }
           control.bodies.get("x-0--1")!.body.setBodyType(RigidBodyType.Fixed, true);
-          for (let i = 0; i < 35; i++) control.step();
-          expect(distance(control.bodies.get("roof")!.body.translation(), next.bodies.get("roof")!.body.translation())).toBeLessThan(.08);
+          for(let i=0;i<35;i++){
+            next.step();control.step();
+            for(const world of [next,control]){
+              expect(world.invalidState).toBe(false);
+              expect(world.solidFailures).toEqual([]);expect(world.poppedJoints).toEqual([]);
+              expect(world.joints).toHaveLength(1);
+              for(const [a,b] of anchors(world))expect(distance(a,b)).toBeLessThan(EDGE_BREAK_DISTANCE);
+              for(const {body} of world.bodies.values())for(const vector of [body.translation(),body.rotation(),body.linvel(),body.angvel()])
+                expect(Object.values(vector).every(Number.isFinite)).toBe(true);
+            }
+            if(i<20){
+              expect(next.peakSolidOverlap).toBe(0);expect(control.peakSolidOverlap).toBe(0);
+              expect(distance(control.bodies.get("roof")!.body.translation(),next.bodies.get("roof")!.body.translation())).toBeLessThan(.08);
+            }
+            if(i===19)expect(distance(before,next.bodies.get("roof")!.body.translation())).toBeGreaterThan(.1);
+          }
+          expect(next.peakSolidOverlap).toBeGreaterThan(0);expect(control.peakSolidOverlap).toBeGreaterThan(0);
+          expect(distance(before,next.bodies.get("roof")!.body.translation())).toBeGreaterThan(.1);
+          expect(magnitude(next.bodies.get("roof")!.body.angvel())).toBeGreaterThan(.1);
+          expect(next.joints[0].companion!.isValid()).toBe(true);
         } finally { control.dispose(); }
         // Rotate about the primary anchor, leaving it coincident while tearing
         // the companion anchor away. Both constraints must break together.

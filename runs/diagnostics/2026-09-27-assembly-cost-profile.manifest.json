@@ -1,0 +1,731 @@
+{
+  "scope": "CPU cost diagnostic only, not source acceptance. Complete unchanged independent transfer fixture; all five stages pass. No other heavy job running. Inclusive samples are non-additive. tsx transpilation collapses line locations.",
+  "context": {
+    "validationCodeHash": "50853cf620abb7438d728475d3e567213dedc796f6f4930ecfcbe3cb7f61db2b",
+    "inputHashes": {
+      "scripts/reference/profile-assembly-checks.ts": "7ae495438d98ccf46e48b1c82cbca20e394b9cf50a1700c0d85b4b24dad61717",
+      "tests/fixtures/component-transfer.ts": "1717f60b9bd15a4238da15bff860cd1ecebeec457882c0256cdbb9302dac3b47"
+    }
+  },
+  "rawSha256": "834f49989a6debeffd034eb33679f63c9fc62fed82dc83cbe082e688dba0e504",
+  "cpuProfileRawSha256": "223ff97faf2ace62e32f3d8c325504cf9879aa115201403c51e8dc6eb14b929b",
+  "wallSeconds": 253.99920308400002,
+  "files": {
+    "2026-09-27-assembly-cost-profile.json.gz": {
+      "bytes": 364303,
+      "sha256": "70eeaa32c1ba6db6fc18701eec4d2aad8b70c78275c3fb3caa756b0803478680"
+    },
+    "2026-09-27-assembly-cost-profile.cpuprofile.gz": {
+      "bytes": 423254,
+      "sha256": "09ef2002a658f16c9df79f2c4ca4f0094868ced5e1961a8886332ae80cda68c7"
+    },
+    "2026-09-27-assembly-cost-profile.log.txt": {
+      "bytes": 238,
+      "sha256": "6811aa1467a916207418ce47cae5e950633d206495a139310432bbbe464bb846"
+    }
+  },
+  "selfSamples": [
+    {
+      "function": "(anonymous)",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/rotation-clearance.ts",
+      "line": 2,
+      "sampleSeconds": 30.009016,
+      "samplePercent": 11.802005997007855
+    },
+    {
+      "function": "__wrap",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/vendor/rapier-contact/rapier.cjs",
+      "line": 1,
+      "sampleSeconds": 21.732251,
+      "samplePercent": 8.546903258356753
+    },
+    {
+      "function": "separatingAxes",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/insertion.ts",
+      "line": 2,
+      "sampleSeconds": 14.68077,
+      "samplePercent": 5.773682668591766
+    },
+    {
+      "function": "prismPose",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/swept-prisms.ts",
+      "line": 2,
+      "sampleSeconds": 12.224803,
+      "samplePercent": 4.807795041271584
+    },
+    {
+      "function": "sampleState",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts",
+      "line": 2,
+      "sampleSeconds": 10.752413,
+      "samplePercent": 4.228730549122478
+    },
+    {
+      "function": "dot",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/math.ts",
+      "line": 2,
+      "sampleSeconds": 10.748866,
+      "samplePercent": 4.227335577848798
+    },
+    {
+      "function": "checkSweptPoses",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/rotation-clearance.ts",
+      "line": 2,
+      "sampleSeconds": 10.234703,
+      "samplePercent": 4.025124522030122
+    },
+    {
+      "function": "(anonymous)",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/solid-certificate.ts",
+      "line": 2,
+      "sampleSeconds": 10.106249,
+      "samplePercent": 3.974605875289434
+    },
+    {
+      "function": "normalizeQuaternion",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/math.ts",
+      "line": 2,
+      "sampleSeconds": 7.294578,
+      "samplePercent": 2.868826265467737
+    },
+    {
+      "function": "scale",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/math.ts",
+      "line": 2,
+      "sampleSeconds": 6.00509,
+      "samplePercent": 2.361693838697407
+    },
+    {
+      "function": "__destroy_into_raw",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/vendor/rapier-contact/rapier.cjs",
+      "line": 1,
+      "sampleSeconds": 5.919292,
+      "samplePercent": 2.327951029185383
+    },
+    {
+      "function": "(anonymous)",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts",
+      "line": 2,
+      "sampleSeconds": 5.573502,
+      "samplePercent": 2.191958044486873
+    },
+    {
+      "function": "transformPoint",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/magnet-geometry.ts",
+      "line": 2,
+      "sampleSeconds": 5.155223,
+      "samplePercent": 2.0274564404881796
+    },
+    {
+      "function": "(anonymous)",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/swept-prisms.ts",
+      "line": 2,
+      "sampleSeconds": 4.90184,
+      "samplePercent": 1.9278054660763615
+    },
+    {
+      "function": "axes",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/swept-prisms.ts",
+      "line": 2,
+      "sampleSeconds": 4.713737,
+      "samplePercent": 1.8538279409867293
+    },
+    {
+      "function": "step",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts",
+      "line": 2,
+      "sampleSeconds": 4.562069,
+      "samplePercent": 1.7941796457692458
+    },
+    {
+      "function": "add",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/math.ts",
+      "line": 2,
+      "sampleSeconds": 4.356058,
+      "samplePercent": 1.7131592265242568
+    },
+    {
+      "function": "cross",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/math.ts",
+      "line": 2,
+      "sampleSeconds": 3.560432,
+      "samplePercent": 1.400253837577969
+    },
+    {
+      "function": "transformLocal",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/math.ts",
+      "line": 2,
+      "sampleSeconds": 3.338464,
+      "samplePercent": 1.3129578173704475
+    },
+    {
+      "function": "tilePrismVertices",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/prism-geometry.ts",
+      "line": 2,
+      "sampleSeconds": 3.327974,
+      "samplePercent": 1.3088322891322468
+    },
+    {
+      "function": "(garbage collector)",
+      "url": "",
+      "line": 0,
+      "sampleSeconds": 3.24782,
+      "samplePercent": 1.2773091632595368
+    },
+    {
+      "function": "subtract",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/math.ts",
+      "line": 2,
+      "sampleSeconds": 2.660906,
+      "samplePercent": 1.0464864482552239
+    },
+    {
+      "function": "(program)",
+      "url": "",
+      "line": 0,
+      "sampleSeconds": 2.612488,
+      "samplePercent": 1.0274445201105913
+    },
+    {
+      "function": "solidCertificateIdentity",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/solid-certificate.ts",
+      "line": 2,
+      "sampleSeconds": 2.597716,
+      "samplePercent": 1.0216349583246334
+    },
+    {
+      "function": "currentTilePose",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts",
+      "line": 2,
+      "sampleSeconds": 2.428276,
+      "samplePercent": 0.9549972553045474
+    },
+    {
+      "function": "tileWorldVertices",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/magnet-geometry.ts",
+      "line": 2,
+      "sampleSeconds": 2.265131,
+      "samplePercent": 0.8908352625093872
+    },
+    {
+      "function": "wasm-function[32]",
+      "url": "wasm://wasm/0060b416",
+      "line": 1,
+      "sampleSeconds": 2.136279,
+      "samplePercent": 0.8401600895304913
+    },
+    {
+      "function": "wasm-function[131]",
+      "url": "wasm://wasm/0060b416",
+      "line": 1,
+      "sampleSeconds": 2.133659,
+      "samplePercent": 0.839129690675955
+    },
+    {
+      "function": "wasm-function[476]",
+      "url": "wasm://wasm/0060b416",
+      "line": 1,
+      "sampleSeconds": 2.075533,
+      "samplePercent": 0.8162697808214606
+    },
+    {
+      "function": "axisGap",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/swept-prisms.ts",
+      "line": 2,
+      "sampleSeconds": 2.04188,
+      "samplePercent": 0.8030346614887472
+    },
+    {
+      "function": "add",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/magnet-geometry.ts",
+      "line": 2,
+      "sampleSeconds": 1.954698,
+      "samplePercent": 0.7687475496810445
+    },
+    {
+      "function": "now",
+      "url": "node:internal/perf/performance",
+      "line": 137,
+      "sampleSeconds": 1.801233,
+      "samplePercent": 0.7083925266995909
+    },
+    {
+      "function": "tileLocalVertices",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/magnet-geometry.ts",
+      "line": 2,
+      "sampleSeconds": 1.487544,
+      "samplePercent": 0.5850242876611833
+    },
+    {
+      "function": "edges",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/insertion.ts",
+      "line": 2,
+      "sampleSeconds": 1.407683,
+      "samplePercent": 0.553616393416099
+    },
+    {
+      "function": "pointMotionBound",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/rotation-clearance.ts",
+      "line": 2,
+      "sampleSeconds": 1.374101,
+      "samplePercent": 0.5404091971057795
+    },
+    {
+      "function": "wasm-function[375]",
+      "url": "wasm://wasm/0060b416",
+      "line": 1,
+      "sampleSeconds": 1.364093,
+      "samplePercent": 0.5364732307942531
+    },
+    {
+      "function": "(anonymous)",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/insertion.ts",
+      "line": 2,
+      "sampleSeconds": 1.279958,
+      "samplePercent": 0.5033844492574558
+    },
+    {
+      "function": "sameSolidCertificate",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/solid-certificate.ts",
+      "line": 2,
+      "sampleSeconds": 1.277289,
+      "samplePercent": 0.5023347795846477
+    },
+    {
+      "function": "set hasAsyncGraph",
+      "url": "",
+      "line": 0,
+      "sampleSeconds": 1.263391,
+      "samplePercent": 0.49686894627153894
+    },
+    {
+      "function": "wasm-function[83]",
+      "url": "wasm://wasm/0060b416",
+      "line": 1,
+      "sampleSeconds": 1.232341,
+      "samplePercent": 0.4846575399992675
+    },
+    {
+      "function": "contactGeometry",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/grip.ts",
+      "line": 2,
+      "sampleSeconds": 1.211159,
+      "samplePercent": 0.4763270405577456
+    },
+    {
+      "function": "(anonymous)",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/magnet-geometry.ts",
+      "line": 2,
+      "sampleSeconds": 1.17874,
+      "samplePercent": 0.4635772312198787
+    },
+    {
+      "function": "simulateHeldMotion",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/held-motion.ts",
+      "line": 2,
+      "sampleSeconds": 1.116595,
+      "samplePercent": 0.43913672098508616
+    },
+    {
+      "function": "wasm-function[45]",
+      "url": "wasm://wasm/0060b416",
+      "line": 1,
+      "sampleSeconds": 1.096626,
+      "samplePercent": 0.4312832726162943
+    },
+    {
+      "function": "updateBreakableJoints",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts",
+      "line": 2,
+      "sampleSeconds": 1.086934,
+      "samplePercent": 0.42747158341852115
+    },
+    {
+      "function": "quaternionToBasis",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/math.ts",
+      "line": 2,
+      "sampleSeconds": 1.083758,
+      "samplePercent": 0.4262225197689001
+    },
+    {
+      "function": "wasm-function[353]",
+      "url": "wasm://wasm/0060b416",
+      "line": 1,
+      "sampleSeconds": 1.040583,
+      "samplePercent": 0.4092425691793568
+    },
+    {
+      "function": "subtract",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/prism-geometry.ts",
+      "line": 2,
+      "sampleSeconds": 1.018329,
+      "samplePercent": 0.4004904714278873
+    },
+    {
+      "function": "(anonymous)",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/support.ts",
+      "line": 2,
+      "sampleSeconds": 0.944746,
+      "samplePercent": 0.3715516016136345
+    },
+    {
+      "function": "normalize",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/math.ts",
+      "line": 2,
+      "sampleSeconds": 0.904742,
+      "samplePercent": 0.35581874826368454
+    }
+  ],
+  "inclusiveSamples": [
+    {
+      "function": "(root)",
+      "url": "",
+      "line": 0,
+      "sampleSeconds": 254.270469,
+      "samplePercent": 100.0
+    },
+    {
+      "function": "simulateHeldMotion",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/held-motion.ts",
+      "line": 2,
+      "sampleSeconds": 153.279284,
+      "samplePercent": 60.28198422051127
+    },
+    {
+      "function": "step",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts",
+      "line": 2,
+      "sampleSeconds": 136.438473,
+      "samplePercent": 53.65879629537318
+    },
+    {
+      "function": "simulateSupport",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/support.ts",
+      "line": 2,
+      "sampleSeconds": 84.600093,
+      "samplePercent": 33.271694244603765
+    },
+    {
+      "function": "checkSweptPoses",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/rotation-clearance.ts",
+      "line": 2,
+      "sampleSeconds": 75.445255,
+      "samplePercent": 29.671261195494942
+    },
+    {
+      "function": "(anonymous)",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts",
+      "line": 2,
+      "sampleSeconds": 71.791721,
+      "samplePercent": 28.234392016636427
+    },
+    {
+      "function": "(anonymous)",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/rotation-clearance.ts",
+      "line": 2,
+      "sampleSeconds": 70.204547,
+      "samplePercent": 27.610185042762478
+    },
+    {
+      "function": "sampleState",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts",
+      "line": 2,
+      "sampleSeconds": 33.660402,
+      "samplePercent": 13.238030406118455
+    },
+    {
+      "function": "separatingAxes",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/insertion.ts",
+      "line": 2,
+      "sampleSeconds": 29.620723,
+      "samplePercent": 11.649297347227531
+    },
+    {
+      "function": "__wrap",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/vendor/rapier-contact/rapier.cjs",
+      "line": 1,
+      "sampleSeconds": 21.732251,
+      "samplePercent": 8.546903258356753
+    },
+    {
+      "function": "prismPose",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/swept-prisms.ts",
+      "line": 2,
+      "sampleSeconds": 21.585779,
+      "samplePercent": 8.489298456440098
+    },
+    {
+      "function": "(anonymous)",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/swept-prisms.ts",
+      "line": 2,
+      "sampleSeconds": 17.645597,
+      "samplePercent": 6.939695777255203
+    },
+    {
+      "function": "checkSolidSweep",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/swept-prisms.ts",
+      "line": 2,
+      "sampleSeconds": 16.054489,
+      "samplePercent": 6.313941631971426
+    },
+    {
+      "function": "step",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/physics-backend.ts",
+      "line": 2,
+      "sampleSeconds": 14.987886,
+      "samplePercent": 5.894465865007706
+    },
+    {
+      "function": "step",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/vendor/rapier-contact/rapier.cjs",
+      "line": 1,
+      "sampleSeconds": 14.975851,
+      "samplePercent": 5.889732716070933
+    },
+    {
+      "function": "wasm-function[249]",
+      "url": "wasm://wasm/0060b416",
+      "line": 1,
+      "sampleSeconds": 14.55602,
+      "samplePercent": 5.724620738399629
+    },
+    {
+      "function": "wasm-function[68]",
+      "url": "wasm://wasm/0060b416",
+      "line": 1,
+      "sampleSeconds": 14.476632,
+      "samplePercent": 5.693398866543169
+    },
+    {
+      "function": "prismGap",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/swept-prisms.ts",
+      "line": 2,
+      "sampleSeconds": 14.245347,
+      "samplePercent": 5.602438637889955
+    },
+    {
+      "function": "checkMotionFingerClearance",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/grip.ts",
+      "line": 2,
+      "sampleSeconds": 13.070602,
+      "samplePercent": 5.140432568282241
+    },
+    {
+      "function": "solidCertificateIdentity",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/solid-certificate.ts",
+      "line": 2,
+      "sampleSeconds": 12.892514,
+      "samplePercent": 5.070393762478174
+    },
+    {
+      "function": "translation",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/vendor/rapier-contact/rapier.cjs",
+      "line": 1,
+      "sampleSeconds": 12.181541,
+      "samplePercent": 4.790780875147558
+    },
+    {
+      "function": "tilePrismVertices",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/prism-geometry.ts",
+      "line": 2,
+      "sampleSeconds": 12.038136,
+      "samplePercent": 4.7343822691419195
+    },
+    {
+      "function": "wasm-function[57]",
+      "url": "wasm://wasm/0060b416",
+      "line": 1,
+      "sampleSeconds": 11.937185,
+      "samplePercent": 4.6946800573998235
+    },
+    {
+      "function": "tileWorldVertices",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/magnet-geometry.ts",
+      "line": 2,
+      "sampleSeconds": 11.896115,
+      "samplePercent": 4.678527965431959
+    },
+    {
+      "function": "rotation",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/vendor/rapier-contact/rapier.cjs",
+      "line": 1,
+      "sampleSeconds": 11.574289,
+      "samplePercent": 4.5519595907144055
+    },
+    {
+      "function": "wasm-function[32]",
+      "url": "wasm://wasm/0060b416",
+      "line": 1,
+      "sampleSeconds": 11.202173,
+      "samplePercent": 4.4056130639378335
+    },
+    {
+      "function": "updateBreakableJoints",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/rapier-world.ts",
+      "line": 2,
+      "sampleSeconds": 11.0385,
+      "samplePercent": 4.341243418243744
+    },
+    {
+      "function": "fromRaw",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/vendor/rapier-contact/rapier.cjs",
+      "line": 1,
+      "sampleSeconds": 10.74985,
+      "samplePercent": 4.227722567342258
+    },
+    {
+      "function": "dot",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/math.ts",
+      "line": 2,
+      "sampleSeconds": 10.748866,
+      "samplePercent": 4.227335577848798
+    },
+    {
+      "function": "transformLocal",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/math.ts",
+      "line": 2,
+      "sampleSeconds": 10.346529,
+      "samplePercent": 4.0691036755825545
+    },
+    {
+      "function": "(anonymous)",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/solid-certificate.ts",
+      "line": 2,
+      "sampleSeconds": 10.106249,
+      "samplePercent": 3.974605875289434
+    },
+    {
+      "function": "axes",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/swept-prisms.ts",
+      "line": 2,
+      "sampleSeconds": 8.802409,
+      "samplePercent": 3.4618290651754764
+    },
+    {
+      "function": "rbTranslation",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/vendor/rapier-contact/rapier.cjs",
+      "line": 1,
+      "sampleSeconds": 8.529913,
+      "samplePercent": 3.354661291791616
+    },
+    {
+      "function": "(anonymous)",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/magnet-geometry.ts",
+      "line": 2,
+      "sampleSeconds": 8.358641,
+      "samplePercent": 3.2873030961373653
+    },
+    {
+      "function": "pointMotionBound",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/rotation-clearance.ts",
+      "line": 2,
+      "sampleSeconds": 7.805311,
+      "samplePercent": 3.069688364007383
+    },
+    {
+      "function": "rbRotation",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/vendor/rapier-contact/rapier.cjs",
+      "line": 1,
+      "sampleSeconds": 7.790482,
+      "samplePercent": 3.063856385147109
+    },
+    {
+      "function": "transformPoint",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/magnet-geometry.ts",
+      "line": 2,
+      "sampleSeconds": 7.669211,
+      "samplePercent": 3.016162683052274
+    },
+    {
+      "function": "free",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/vendor/rapier-contact/rapier.cjs",
+      "line": 1,
+      "sampleSeconds": 7.473459,
+      "samplePercent": 2.9391769439022037
+    },
+    {
+      "function": "normalizeQuaternion",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/math.ts",
+      "line": 2,
+      "sampleSeconds": 7.294578,
+      "samplePercent": 2.868826265467737
+    },
+    {
+      "function": "(anonymous)",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/support.ts",
+      "line": 2,
+      "sampleSeconds": 7.200557,
+      "samplePercent": 2.83184949802409
+    },
+    {
+      "function": "angvel",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/vendor/rapier-contact/rapier.cjs",
+      "line": 1,
+      "sampleSeconds": 7.180903,
+      "samplePercent": 2.824119933487046
+    },
+    {
+      "function": "(anonymous)",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/insertion.ts",
+      "line": 2,
+      "sampleSeconds": 6.961801,
+      "samplePercent": 2.7379510595074255
+    },
+    {
+      "function": "scale",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/math.ts",
+      "line": 2,
+      "sampleSeconds": 6.00509,
+      "samplePercent": 2.361693838697407
+    },
+    {
+      "function": "__destroy_into_raw",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/vendor/rapier-contact/rapier.cjs",
+      "line": 1,
+      "sampleSeconds": 5.919292,
+      "samplePercent": 2.327951029185383
+    },
+    {
+      "function": "edges",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/insertion.ts",
+      "line": 2,
+      "sampleSeconds": 5.811488,
+      "samplePercent": 2.2855536558592653
+    },
+    {
+      "function": "supportSnapshot",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/support.ts",
+      "line": 2,
+      "sampleSeconds": 5.672142,
+      "samplePercent": 2.2307513815141466
+    },
+    {
+      "function": "runGravitySeat",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/replication/seating.ts",
+      "line": 2,
+      "sampleSeconds": 5.524569,
+      "samplePercent": 2.1727135761093828
+    },
+    {
+      "function": "rbAngvel",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/vendor/rapier-contact/rapier.cjs",
+      "line": 1,
+      "sampleSeconds": 4.986363,
+      "samplePercent": 1.9610468410313113
+    },
+    {
+      "function": "axisGap",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/magnetic-tiles/swept-prisms.ts",
+      "line": 2,
+      "sampleSeconds": 4.789613,
+      "samplePercent": 1.8836686064397041
+    },
+    {
+      "function": "quaternionToBasis",
+      "url": "file:///Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/lib/engine/math.ts",
+      "line": 2,
+      "sampleSeconds": 4.68581,
+      "samplePercent": 1.8428447544177848
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "scope": "Geometric hinge-axis diagnostic only. The 120-degree turn is the canonical equal-panel triangular-ring geometry, not a measured source angle. No dynamics or source acceptance.",
+  "context": {
+    "validationCodeHash": "7a8ad00bf79266e385e434dcb9bdb6f7fabe98d1511f8564b36cd81496c93e29",
+    "scriptHashes": {
+      "scripts/reference/probe-fold-clearance.ts": "2d35c7889907a3758577d6a21d573d7339cfaaba2ff3091c0664db5cfeacca2a"
+    }
+  },
+  "rawSha256": "2106b8302ec227d4b15b056c5959d3af8065b85487172e8bf148ee0f7cbc7080",
+  "gzipSha256": "857b742fe3507450b92533cc9a97c580eabe2ed663a4eda974cc5d1e1f537202",
+  "rawBytes": 817543,
+  "gzipBytes": 31765,
+  "nativeDynamicsRun": false,
+  "degreesPerSegment": 5,
+  "summary": [
+    {
+      "gap": 0,
+      "direction": -1,
+      "firstEngineFailure": 20,
+      "firstCallerFailure": 20,
+      "anchorRoundtripGap": 0,
+      "initialClosure": "pass"
+    },
+    {
+      "gap": 0,
+      "direction": 1,
+      "firstEngineFailure": 20,
+      "firstCallerFailure": 20,
+      "anchorRoundtripGap": 0,
+      "initialClosure": "pass"
+    },
+    {
+      "gap": 0.03,
+      "direction": -1,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "anchorRoundtripGap": 2.220446049250313e-16,
+      "initialClosure": "pass"
+    },
+    {
+      "gap": 0.03,
+      "direction": 1,
+      "firstEngineFailure": 40,
+      "firstCallerFailure": 40,
+      "anchorRoundtripGap": 2.220446049250313e-16,
+      "initialClosure": "pass"
+    },
+    {
+      "gap": 0.09,
+      "direction": -1,
+      "firstEngineFailure": 75,
+      "firstCallerFailure": 75,
+      "anchorRoundtripGap": 2.220446049250313e-16,
+      "initialClosure": "pass"
+    },
+    {
+      "gap": 0.09,
+      "direction": 1,
+      "firstEngineFailure": 75,
+      "firstCallerFailure": 75,
+      "anchorRoundtripGap": 2.220446049250313e-16,
+      "initialClosure": "pass"
+    },
+    {
+      "gap": 0.18,
+      "direction": -1,
+      "firstEngineFailure": 110,
+      "firstCallerFailure": 110,
+      "anchorRoundtripGap": 2.220446049250313e-16,
+      "initialClosure": "pass"
+    },
+    {
+      "gap": 0.18,
+      "direction": 1,
+      "firstEngineFailure": 110,
+      "firstCallerFailure": 110,
+      "anchorRoundtripGap": 2.220446049250313e-16,
+      "initialClosure": "pass"
+    },
+    {
+      "gap": 0.21,
+      "direction": -1,
+      "firstEngineFailure": 115,
+      "firstCallerFailure": 115,
+      "anchorRoundtripGap": 0,
+      "initialClosure": "pass"
+    },
+    {
+      "gap": 0.21,
+      "direction": 1,
+      "firstEngineFailure": 115,
+      "firstCallerFailure": 115,
+      "anchorRoundtripGap": 0,
+      "initialClosure": "pass"
+    },
+    {
+      "gap": 0.36,
+      "direction": -1,
+      "firstEngineFailure": null,
+      "firstCallerFailure": null,
+      "anchorRoundtripGap": 0,
+      "initialClosure": "fail"
+    },
+    {
+      "gap": 0.36,
+      "direction": 1,
+      "firstEngineFailure": null,
+      "firstCallerFailure": null,
+      "anchorRoundtripGap": 0,
+      "initialClosure": "fail"
+    }
+  ],
+  "limits": [
+    "First failures name the upper end of a5-degree interval, not the precise onset angle.",
+    "Only sampled gap choices and the current shared-edge-axis path are tested; no universal impossibility theorem or force/material calibration.",
+    "The .36-inch control clears geometry but fails initial attachment; never accepted as a repair.",
+    "Initial anchor round trips differ by at most floating point noise; setup assertion tolerance1e-12 does not alter either physical clearance threshold."
+  ]
+}

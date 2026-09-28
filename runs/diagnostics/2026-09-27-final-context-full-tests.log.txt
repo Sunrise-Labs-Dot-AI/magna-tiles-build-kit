@@ -1,0 +1,13 @@
+
+> magnetic-tile-builder@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+
+ Test Files  62 passed (62)
+      Tests  739 passed | 1 skipped (740)
+   Start at  18:59:15
+   Duration  2391.82s (transform 703ms, setup 0ms, import 3.36s, tests 4774.56s, environment 3ms)
+

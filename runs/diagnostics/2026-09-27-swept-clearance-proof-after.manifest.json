@@ -1,0 +1,77 @@
+{
+  "scope": "Exact native trajectories and complete outcomes for the prepared caller-clearance optimization; not source acceptance or final runtime qualification.",
+  "context": {
+    "validationCodeHash": "7a8ad00bf79266e385e434dcb9bdb6f7fabe98d1511f8564b36cd81496c93e29",
+    "scriptHashes": {
+      "scripts/reference/probe-proof-reuse.config.ts": "16fb5a24cab8e790cc5c4c413e152b0207fce616c49b084c4bc35a8884956b55",
+      "scripts/reference/probe-proof-reuse.ts": "80619f317470d24e29d207c09c798c8a81ce5ff9555ccf8d52e0808b7fc55f7f",
+      "tests/fixtures/component-transfer.ts": "1717f60b9bd15a4238da15bff860cd1ecebeec457882c0256cdbb9302dac3b47",
+      "tests/fixtures/loaded-contact.ts": "20611217d370987219286fa19781b212623eaef4348b03b778b024f141b38273",
+      "tests/fixtures/rigid-contact.ts": "d2b7fd030081a029e0baee936e4db3f31e3ca83a30dce6faef067f41364d5a1a"
+    }
+  },
+  "rawSha256": "8d43c834098258d81e158c905874ec2fc4b463b4030c57ff5cb1226c7512ef75",
+  "gzipSha256": "bfa08ea35c5350029b67ca83146dc9bdc219e4f9dd0232336d49d4d8d12bf426",
+  "rawBytes": 16755429,
+  "gzipBytes": 409867,
+  "baselineRawSha256": "4bda092ab22ed4938559fa223d30d096fa4bc88372a9c322d5122794cfe19825",
+  "baselineArchive": "2026-09-27-proof-reuse-after.json.gz",
+  "worlds": 124,
+  "nativeSteps": 2275376,
+  "worldRecordsExactlyEqual": true,
+  "completeOutcomesExactlyEqual": true,
+  "timings": [
+    {
+      "scenario": "flat-contact",
+      "wallSeconds": 0.266654125,
+      "solidChecks": 3915
+    },
+    {
+      "scenario": "loaded-shell-6",
+      "wallSeconds": 10.969235292,
+      "solidChecks": 3917
+    },
+    {
+      "scenario": "held-translation-rotation",
+      "wallSeconds": 0.3664080419999991,
+      "solidChecks": 4801
+    },
+    {
+      "scenario": "failed-hinge",
+      "wallSeconds": 0.005561458999998649,
+      "solidChecks": 112
+    },
+    {
+      "scenario": "supported-transfer",
+      "wallSeconds": 315.568136292,
+      "solidChecks": 665793
+    }
+  ],
+  "baselineTimings": [
+    {
+      "scenario": "flat-contact",
+      "wallSeconds": 0.25749162499999995,
+      "solidChecks": 3915
+    },
+    {
+      "scenario": "loaded-shell-6",
+      "wallSeconds": 10.587216542,
+      "solidChecks": 3917
+    },
+    {
+      "scenario": "held-translation-rotation",
+      "wallSeconds": 0.3574899999999998,
+      "solidChecks": 4801
+    },
+    {
+      "scenario": "failed-hinge",
+      "wallSeconds": 0.005288915999999517,
+      "solidChecks": 112
+    },
+    {
+      "scenario": "supported-transfer",
+      "wallSeconds": 371.432999792,
+      "solidChecks": 665793
+    }
+  ]
+}

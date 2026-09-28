@@ -1,0 +1,12 @@
+{"gap":0.09,"direction":-1,"seed":0,"outcome":"motion-failed","nativeSteps":12154}
+{"gap":0.09,"direction":-1,"seed":17,"outcome":"motion-failed","nativeSteps":12154}
+{"gap":0.09,"direction":-1,"seed":53,"outcome":"motion-failed","nativeSteps":12154}
+{"gap":0.09,"direction":1,"seed":0,"outcome":"motion-failed","nativeSteps":12154}
+{"gap":0.09,"direction":1,"seed":17,"outcome":"motion-failed","nativeSteps":12154}
+{"gap":0.09,"direction":1,"seed":53,"outcome":"motion-failed","nativeSteps":12154}
+{"gap":0.21,"direction":-1,"seed":0,"outcome":"native-setup-rejected","nativeSteps":0}
+{"gap":0.21,"direction":-1,"seed":17,"outcome":"native-setup-rejected","nativeSteps":0}
+{"gap":0.21,"direction":-1,"seed":53,"outcome":"native-setup-rejected","nativeSteps":0}
+{"gap":0.21,"direction":1,"seed":0,"outcome":"native-setup-rejected","nativeSteps":0}
+{"gap":0.21,"direction":1,"seed":17,"outcome":"native-setup-rejected","nativeSteps":0}
+{"gap":0.21,"direction":1,"seed":53,"outcome":"native-setup-rejected","nativeSteps":0}

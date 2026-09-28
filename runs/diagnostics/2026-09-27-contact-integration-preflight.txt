@@ -1,0 +1,41 @@
+Focused integration verification: all commands completed with exit 0.
+Full runtime acceptance and benchmark still pending.
+
+magnatiles-integrated-contact-preflight.log
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+
+ Test Files  3 passed (3)
+      Tests  32 passed (32)
+   Start at  15:00:13
+   Duration  5.80s (transform 191ms, setup 0ms, import 361ms, tests 9.01s, environment 0ms)
+
+
+magnatiles-configured-contact-consumer-tests.log
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+
+ Test Files  1 passed (1)
+      Tests  35 passed (35)
+   Start at  15:06:11
+   Duration  5.34s (transform 89ms, setup 0ms, import 148ms, tests 5.10s, environment 0ms)
+
+
+magnatiles-collision-observers-tests.log
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+   Start at  15:07:11
+   Duration  906ms (transform 100ms, setup 0ms, import 142ms, tests 669ms, environment 0ms)
+
+
+magnatiles-integrated-contact-types.log
+
+magnatiles-integrated-contact-focused-lint.log
+
+magnatiles-integrated-contact-additional-lint.log

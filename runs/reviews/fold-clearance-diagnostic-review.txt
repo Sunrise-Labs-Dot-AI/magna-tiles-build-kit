@@ -1,0 +1,19 @@
+VERIFIED/CLEAN.
+
+I found no material issues in the diagnostic or its recording.
+
+Checked:
+
+- [probe-fold-clearance.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/scripts/reference/probe-fold-clearance.ts): uses `createMagneticPhysicsModel` to get the current joint, local anchors, and axis, then rotates the moving catalog square rigidly around that world anchor and axis.
+- The moving panel rotation updates both position and basis axes; `rotation` remains stale but is superseded by `basis` in the prism geometry path.
+- It runs the two existing geometric continuous-clearance checks unchanged: `checkSolidSweep(..., RAW_OVERLAP_TOLERANCE)` and `checkSweptPoses(...)`.
+- Stored segment data recomputes to the manifest summary exactly: first failures at 20, 40, 75, 110, 115 degrees for attached gaps, and no geometric failure for `.36` because initial closure fails.
+- Hashes match:
+  - script SHA-256 matches manifest
+  - decompressed raw SHA-256 matches manifest
+  - gzip SHA-256 matches manifest
+  - `validationCodeHash()` recomputes to `7a8ad00bf79266e385e434dcb9bdb6f7fabe98d1511f8564b36cd81496c93e29`
+
+Scope claims are appropriately constrained. I did not see overclaims of native dynamics, calibrated source angles, full continuous gap coverage across all possible paths, or proof that every folding path fails. The artifacts support the intended conclusion: run a native minimal folding fixture before selecting a controller, not relax tolerances or widen initial magnet gaps.
+
+One non-blocking note: the manifest has the explicit `limits` array; the compressed raw JSON has the `scope` string plus full row/segment data, but no top-level `limits` field. Since the review target includes the manifest as part of the bundle, I do not consider that a fidelity problem.

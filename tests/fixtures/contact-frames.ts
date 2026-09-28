@@ -1,3 +1,4 @@
+import { MAX_COLLISION_TIMESTEP_SECONDS } from "@/lib/engine/constants";
 import { RigidBodyType } from "@/lib/engine/physics-backend";
 import { createEngineWorld, currentTilePose } from "@/lib/engine/rapier-world";
 import { gravityVector } from "@/lib/engine/physics-model";
@@ -66,7 +67,7 @@ export interface FrameContactTrial {
 
 /** All allowances are fixed before each collision step. The solver's resulting
  * movement can only fail the motion check; it can never increase its allowance. */
-export async function runFrameContact(shape:TriangleShape,frame:ReferenceFrame,yaw:number,seed:number,hz=960):Promise<FrameContactTrial> {
+export async function runFrameContact(shape:TriangleShape,frame:ReferenceFrame,yaw:number,seed:number,hz=1/MAX_COLLISION_TIMESTEP_SECONDS):Promise<FrameContactTrial> {
   const {build,engine:e}=await frameContactWorld(shape,frame,yaw);
   try {
     const records=[...e.bodies.values()];

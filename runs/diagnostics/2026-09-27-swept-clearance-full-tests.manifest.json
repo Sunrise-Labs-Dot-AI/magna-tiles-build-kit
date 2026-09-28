@@ -1,0 +1,31 @@
+{
+  "validationCodeHash": "7a8ad00bf79266e385e434dcb9bdb6f7fabe98d1511f8564b36cd81496c93e29",
+  "command": "npm test",
+  "session": 84897,
+  "exitCode": 1,
+  "durationSeconds": 2374.75,
+  "testFiles": {
+    "failed": 7,
+    "passed": 55,
+    "total": 62
+  },
+  "tests": {
+    "failed": 7,
+    "passed": 723,
+    "skipped": 10,
+    "total": 740
+  },
+  "inputHashes": {
+    "vitest.config.ts": "593a4047719834d7a45c913ef7f579316637a878fa4f8a6fd03419342575721a",
+    "tests/continued-prefix.test.ts": "2643ba2094c1309761d826244b28d04513252f1a4293d66602a7ca65485b312f",
+    "tests/engine-gate.test.ts": "8231f1f185c57d8792d455bcdedc9862f4387213cf5aa5962cd0b8aeef39d533",
+    "tests/engine-calibration.test.ts": "7158964af854b66c37f9b5849c4ede2c1bc536f18fc5cc641da8b593c8d842e3",
+    "tests/reference-acceptance.test.ts": "106fcb62107fc0cb95a385d3c3ae3139327f48f4bdddb13a55519296321ef128",
+    "tests/assembly-state.test.ts": "a4da91948a5a116d3c6c4993d2b58e327fe871414975f09b38b8dd1968bfd32c",
+    "tests/rigid-contact.test.ts": "cf759edaf8e69d718afc5017a46ef7105642487349f39c6964798defc5b71d28",
+    "tests/jet-generator.test.ts": "fd8b6d20de20517eb903c05412b8ee3cd9b907718434c8360a4e01ce5296176a"
+  },
+  "log": "runs/diagnostics/2026-09-27-swept-clearance-full-tests.log.txt",
+  "logSha256": "d3118ae8b46127c6f8cbb5794ee4eb731ca15cf08ce5a37937fb469efdde98de",
+  "scope": "Complete failed regression. Nine skipped tests follow a continued-prefix setup failure; one further skip is pre-existing. Not accepted for publication."
+}

@@ -14,6 +14,7 @@ const snapshots:workspace.PreparedWorkspace[]=[];
 type Input={seed:number;phase:string;args:unknown[]};
 const cases:{replica:ReturnType<typeof continuedPrefixFixture>;result:AssemblyResult[];inputs:Input[]}[]=[];
 const unearned="left-z-0--1:0->right-z-0--1:0";
+const rejectedSolidFailures:engine.EngineState["solidFailures"]=[];
 
 beforeAll(async()=>{
   for(const future of [false,true]){
@@ -40,17 +41,18 @@ beforeAll(async()=>{
       return world;
     });
     const present=(ids:string[])=>!ids.some(id=>id.startsWith("future-"));
-    const checkState=(seed:number,state:engine.EngineState)=>{
+    const checkState=(seed:number,state:engine.EngineState,passed:boolean)=>{
       const ids=state.joints.map(j=>j.model.id);
-      expect(oldJoints.get(seed)!.every(id=>ids.includes(id))).toBe(true);
+      expect(oldJoints.get(seed)!.every(id=>ids.includes(id)||state.poppedJoints.includes(id))).toBe(true);
       expect(ids).not.toContain(unearned);
-      expect(state.poppedJoints).toEqual([]);expect(state.solidFailures).toEqual([]);
+      if(passed){expect(state.poppedJoints).toEqual([]);expect(state.solidFailures).toEqual([]);}
+      else rejectedSolidFailures.push(...structuredClone(state.solidFailures));
     };
     vi.spyOn(motion,"simulateHeldMotion").mockImplementation(async(...args)=>{
       const active=latest.has(args[6])&&present(args[0].tiles.map(t=>t.id));
       if(active){expect(args[1]).toEqual(latest.get(args[6]));inputs.push(structuredClone({seed:args[6],phase:"carry",args:[normalizeBuild(args[0]),...args.slice(1,7)]}));}
       const result=await carry(...args);
-      if(active){checkState(args[6],result.state!);latest.set(args[6],structuredClone(result.state!));}
+      if(active){checkState(args[6],result.state!,result.status==="pass");latest.set(args[6],structuredClone(result.state!));}
       return result;
     });
     vi.spyOn(support,"simulateSupport").mockImplementation(async(...args)=>{
@@ -58,7 +60,7 @@ beforeAll(async()=>{
       if(active){expect(args[5]).toEqual(latest.get(args[3]));inputs.push(structuredClone({seed:args[3],phase:"support",args:[normalizeBuild(args[0]),...args.slice(1,8)]}));}
       const result=await stabilize(...args);
       if(active){
-        checkState(args[3],result.state);latest.set(args[3],structuredClone(result.state));
+        checkState(args[3],result.state,result.status==="pass");latest.set(args[3],structuredClone(result.state));
         if(!args[1].length)expect(result.state.bodies.every(b=>b.bodyType===RigidBodyType.Dynamic)).toBe(true);
       }
       return result;
@@ -89,6 +91,8 @@ describe("ordinary continuation of an earned connected prefix",()=>{
   it("keeps future wall/roof bodies and their nominal joins out of the complete first operation",()=>{
     const base=cases[0],future=cases[1],last=future.result.at(-1)!;
     expect(last.status).toBe("fail");expect(last.terminalConnections).toBeUndefined();
+    // A rejected alternative must retain the real collision that stopped it.
+    expect(rejectedSolidFailures).toContainEqual(expect.objectContaining({kind:"table",tileIds:["right-x-0--1"]}));
     const attempt=last.rejectedAttempts[0];
     for(const seed of [0,17,53]){
       const before=base.result.at(-1)!.operations.find(r=>r.seed===seed)!;

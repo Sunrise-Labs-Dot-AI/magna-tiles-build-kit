@@ -29,12 +29,12 @@ describe("gateBuild engine source of truth", () => {
     expect(verdict.reasons.join(" ")).toContain("rest steps");
   });
 
-  it("accepts the re-authored medium ramp as a continuous rollable wedge", async () => {
+  it("rejects the historical medium wedge until it sustains rest", async () => {
     const verdict = await gateBuild(draftToBuildGraph(mediumCarRampDraft as AuthoredBuildDraft));
 
-    expect(verdict.passed).toBe(true);
-    expect(verdict.reasons.join(" ")).toContain("build stands");
-    expect(verdict.reasons.join(" ")).toContain("roll test");
+    expect(verdict.passed).toBe(false);
+    expect(verdict.reasons.join(" ")).toContain("build does not stand");
+    expect(verdict.reasons.join(" ")).toContain("0/90 rest steps");
   });
 
   it("rejects the historical large ramp's uncertified platform release", async () => {

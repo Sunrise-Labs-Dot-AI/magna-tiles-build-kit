@@ -1,0 +1,8 @@
+{
+  "scope": "Test-strength check only. Removing exactly the cross-stage set signature comparison must fail all three locally-valid stage contradiction tests. Mutant files removed; canonical/runtime unchanged.",
+  "exitCode": 1,
+  "expectedFailingTests": 3,
+  "prototypeUnchanged": true,
+  "prototypeSha256": "6a27889a35ffb7d3136662d01b8c3786debd7e3f07c46af91056fc63fa51bc34",
+  "mutantSha256": "11aa9b1f7a5a76292b89b47b4907c1ec9991af56ac0c10ebd50f833be51fac77"
+}

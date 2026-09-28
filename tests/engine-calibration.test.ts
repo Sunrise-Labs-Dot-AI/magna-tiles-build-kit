@@ -28,11 +28,17 @@ describe("headless Magna-Tiles physics calibration", () => {
     await expect(gateBuild(smallCarRampDraft as EngineBuild)).resolves.toMatchObject({ passed: false });
   });
 
-  it("keeps the approved medium car ramp rollable through a clear descent", async () => {
+  it("rejects the historical medium ramp's missing rest even when its ball rolls", async () => {
+    const simulation = await simulate(mediumCarRampDraft as EngineBuild);
     const roll = await rollTest(mediumCarRampDraft as EngineBuild);
 
+    expect(simulation.stands).toBe(false);
+    expect(simulation.settledSteps).toBeLessThan(90);
+    expect(simulation.peakGroundPenetration).toBeLessThanOrEqual(.03);
+    expect(simulation.solidFailures).toEqual([]);
+    expect(simulation.poppedJoints).toEqual([]);
     expect(roll).toMatchObject({ reachedBottom: true, fellOff: false });
-    await expect(gateBuild(mediumCarRampDraft as EngineBuild)).resolves.toMatchObject({ passed: true });
+    await expect(gateBuild(mediumCarRampDraft as EngineBuild)).resolves.toMatchObject({ passed: false });
   });
 
   it("rejects a wall-blocked ramp path even when the build stands", async () => {

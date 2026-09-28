@@ -1,5 +1,5 @@
 {
-  "model": "intent-harness-v3-rigid-contact-v7-solid-sweep-960-js0.19.2-rust0.30.1-parry0.25.1-sat-cache3-f32-abi1-5e4c38a5ada93780-profile10e2e81b05c3c518",
+  "model": "intent-harness-v3-rigid-contact-v8-solid-sweep-contact480-collision1920-js0.19.2-rust0.30.1-parry0.25.1-sat-cache3-f32-abi1-5e4c38a5ada93780-profilea491baad9d8d5af2",
   "inventory": "per-case (unlimited unless an explicit finite-budget case)",
   "entries": [
     {
@@ -10,8 +10,8 @@
       "passed": true,
       "attempts": 1,
       "pieces": 10,
-      "milliseconds": 13959,
-      "fingerprint": "d690a0d4a44bbd7dd3d51b0a583de6318f958ab1f6a6b6eff7cdc874e288fbe0",
+      "milliseconds": 14772,
+      "fingerprint": "919877a1d3f510104201d0348d9f880ef6a57b18dc133f1c698e19e7e6f56206",
       "failures": [],
       "program": {
         "kind": "tower",
@@ -80,7 +80,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 20 valid magnetic joint(s)\nadvisory validateBuild status: warning\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.008 in; 887 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 20 valid magnetic joint(s)\nadvisory validateBuild status: warning\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 891 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -88,7 +88,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.008 in; 887 rest steps; settled intent passed; seed 17: 0.280 in; table 0.008 in; 888 rest steps; settled intent passed; seed 53: 0.280 in; table 0.008 in; 888 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 878 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 882 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 880 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -105,9 +105,9 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.28000020980836277,
-            "finalDisplacement": 0.0021950613956497095,
-            "peakGroundPenetration": 0.008190680087869051,
-            "settledSteps": 887,
+            "finalDisplacement": 0.0014009273176432565,
+            "peakGroundPenetration": 0.0013995257291834484,
+            "settledSteps": 878,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -144,9 +144,9 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.28000020980836277,
-            "finalDisplacement": 0.00213540643121856,
-            "peakGroundPenetration": 0.008140209197735615,
-            "settledSteps": 888,
+            "finalDisplacement": 0.001337998872373702,
+            "peakGroundPenetration": 0.0013384595450194325,
+            "settledSteps": 882,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -183,9 +183,9 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.28000020980836277,
-            "finalDisplacement": 0.0022606977172735343,
-            "peakGroundPenetration": 0.008438852710004996,
-            "settledSteps": 888,
+            "finalDisplacement": 0.0015877139692813344,
+            "peakGroundPenetration": 0.0011781843094720301,
+            "settledSteps": 880,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -231,7 +231,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "d690a0d4a44bbd7dd3d51b0a583de6318f958ab1f6a6b6eff7cdc874e288fbe0"
+        "fingerprint": "919877a1d3f510104201d0348d9f880ef6a57b18dc133f1c698e19e7e6f56206"
       },
       "instructions": [
         {
@@ -866,8 +866,8 @@
       "passed": true,
       "attempts": 1,
       "pieces": 14,
-      "milliseconds": 20704,
-      "fingerprint": "b118741c03f3a0f9a3ed6ff32e250c1e0736b9f928b68678fcc334b72506766f",
+      "milliseconds": 21065,
+      "fingerprint": "876e516b40c69ce7b5004d124ae59a64575ae510c7c5fd0547ee49f161897cf5",
       "failures": [],
       "program": {
         "kind": "tower",
@@ -936,7 +936,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 28 valid magnetic joint(s)\nadvisory validateBuild status: warning\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.008 in; 888 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 28 valid magnetic joint(s)\nadvisory validateBuild status: warning\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 885 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -944,7 +944,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.008 in; 887 rest steps; settled intent passed; seed 17: 0.280 in; table 0.008 in; 888 rest steps; settled intent passed; seed 53: 0.280 in; table 0.008 in; 887 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 892 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 889 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 893 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -961,9 +961,9 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.28000020980836277,
-            "finalDisplacement": 0.0024172257670756338,
-            "peakGroundPenetration": 0.008407148200654913,
-            "settledSteps": 887,
+            "finalDisplacement": 0.001196384711251072,
+            "peakGroundPenetration": 0.0010873731939455844,
+            "settledSteps": 892,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -1000,9 +1000,9 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.28000020980836277,
-            "finalDisplacement": 0.002441517791045073,
-            "peakGroundPenetration": 0.008462025507812276,
-            "settledSteps": 888,
+            "finalDisplacement": 0.0012743748241900458,
+            "peakGroundPenetration": 0.001087883987958671,
+            "settledSteps": 889,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -1039,9 +1039,9 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.28000020980836277,
-            "finalDisplacement": 0.00242897211806518,
-            "peakGroundPenetration": 0.00836857945634506,
-            "settledSteps": 887,
+            "finalDisplacement": 0.0012287791279735176,
+            "peakGroundPenetration": 0.0010875077426233393,
+            "settledSteps": 893,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -1092,7 +1092,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "b118741c03f3a0f9a3ed6ff32e250c1e0736b9f928b68678fcc334b72506766f"
+        "fingerprint": "876e516b40c69ce7b5004d124ae59a64575ae510c7c5fd0547ee49f161897cf5"
       },
       "instructions": [
         {
@@ -1962,8 +1962,8 @@
       "passed": true,
       "attempts": 1,
       "pieces": 18,
-      "milliseconds": 27522,
-      "fingerprint": "bf5edd57eef4315c0274ee264e19e9bad081c43348a3d7c691624aa4d83a96be",
+      "milliseconds": 27841,
+      "fingerprint": "ecb4386d913f695eb14c649214f99f606d0bc517b8cb96455013a9d0ba46b4c2",
       "failures": [],
       "program": {
         "kind": "tower",
@@ -2032,7 +2032,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 36 valid magnetic joint(s)\nadvisory validateBuild status: warning\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.009 in; 887 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 36 valid magnetic joint(s)\nadvisory validateBuild status: warning\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 887 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -2040,7 +2040,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.009 in; 887 rest steps; settled intent passed; seed 17: 0.280 in; table 0.009 in; 887 rest steps; settled intent passed; seed 53: 0.280 in; table 0.009 in; 887 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 886 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 887 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 888 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -2057,9 +2057,9 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.28000020980836277,
-            "finalDisplacement": 0.0027737000843921877,
-            "peakGroundPenetration": 0.008660428397250675,
-            "settledSteps": 887,
+            "finalDisplacement": 0.0011636495238128658,
+            "peakGroundPenetration": 0.0011231238907940533,
+            "settledSteps": 886,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -2096,8 +2096,8 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.28000020980836277,
-            "finalDisplacement": 0.0027643988888385184,
-            "peakGroundPenetration": 0.008649295581285354,
+            "finalDisplacement": 0.0014055007281665718,
+            "peakGroundPenetration": 0.0011121228691796659,
             "settledSteps": 887,
             "failedRequirements": [],
             "intentEvidence": [
@@ -2135,9 +2135,9 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.28000020980836277,
-            "finalDisplacement": 0.0027822411085440817,
-            "peakGroundPenetration": 0.008694313534415077,
-            "settledSteps": 887,
+            "finalDisplacement": 0.001305710396214127,
+            "peakGroundPenetration": 0.0011121335815744704,
+            "settledSteps": 888,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -2193,7 +2193,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "bf5edd57eef4315c0274ee264e19e9bad081c43348a3d7c691624aa4d83a96be"
+        "fingerprint": "ecb4386d913f695eb14c649214f99f606d0bc517b8cb96455013a9d0ba46b4c2"
       },
       "instructions": [
         {
@@ -3298,8 +3298,8 @@
       "passed": true,
       "attempts": 1,
       "pieces": 22,
-      "milliseconds": 37077,
-      "fingerprint": "2733afc473a45472b597b6dbfbe158400171a93db7266c4e6534cff3ef321909",
+      "milliseconds": 34760,
+      "fingerprint": "367e0caa46b0417e8e10ee87568932227464e44137a3c1bf9014800b00422647",
       "failures": [],
       "program": {
         "kind": "tower",
@@ -3368,7 +3368,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 44 valid magnetic joint(s)\nadvisory validateBuild status: warning\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.009 in; 887 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 44 valid magnetic joint(s)\nadvisory validateBuild status: warning\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 889 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -3376,7 +3376,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.009 in; 887 rest steps; settled intent passed; seed 17: 0.280 in; table 0.009 in; 887 rest steps; settled intent passed; seed 53: 0.280 in; table 0.009 in; 887 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 887 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 887 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 889 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -3393,8 +3393,8 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.28000020980836277,
-            "finalDisplacement": 0.003190364616735737,
-            "peakGroundPenetration": 0.00911748426518022,
+            "finalDisplacement": 0.0012290849870892665,
+            "peakGroundPenetration": 0.0011357771058395638,
             "settledSteps": 887,
             "failedRequirements": [],
             "intentEvidence": [
@@ -3432,8 +3432,8 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.28000020980836277,
-            "finalDisplacement": 0.0031898061954944556,
-            "peakGroundPenetration": 0.009042455840674979,
+            "finalDisplacement": 0.002172215563444794,
+            "peakGroundPenetration": 0.0011361974577159817,
             "settledSteps": 887,
             "failedRequirements": [],
             "intentEvidence": [
@@ -3471,9 +3471,9 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.28000020980836277,
-            "finalDisplacement": 0.0031997408864141105,
-            "peakGroundPenetration": 0.00912411564609461,
-            "settledSteps": 887,
+            "finalDisplacement": 0.0011882736264824034,
+            "peakGroundPenetration": 0.001149339393801574,
+            "settledSteps": 889,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -3534,7 +3534,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "2733afc473a45472b597b6dbfbe158400171a93db7266c4e6534cff3ef321909"
+        "fingerprint": "367e0caa46b0417e8e10ee87568932227464e44137a3c1bf9014800b00422647"
       },
       "instructions": [
         {
@@ -4874,8 +4874,8 @@
       "passed": true,
       "attempts": 2,
       "pieces": 28,
-      "milliseconds": 61291,
-      "fingerprint": "3b691556af2e11ef3444bd5baaa34102a70cfbdfac4608da09c527177b9d56c8",
+      "milliseconds": 60915,
+      "fingerprint": "2c1ebc6eb0185a887b90eba31727ea69f90b3fb60d97c49d61dfd4f32ca16519",
       "failures": [],
       "program": {
         "kind": "tower",
@@ -4952,7 +4952,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 88 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.009 in; 888 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 88 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 895 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -4960,7 +4960,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.009 in; 887 rest steps; settled intent passed; seed 17: 0.280 in; table 0.009 in; 888 rest steps; settled intent passed; seed 53: 0.280 in; table 0.009 in; 888 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 888 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 894 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 888 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -4977,9 +4977,9 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.2800002098083912,
-            "finalDisplacement": 0.002823807519622972,
-            "peakGroundPenetration": 0.008716790341358527,
-            "settledSteps": 887,
+            "finalDisplacement": 0.0011574191875584608,
+            "peakGroundPenetration": 0.0011345540492917472,
+            "settledSteps": 888,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -5017,9 +5017,9 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.2800002098083912,
-            "finalDisplacement": 0.0028915585905644214,
-            "peakGroundPenetration": 0.008896538473597504,
-            "settledSteps": 888,
+            "finalDisplacement": 0.0013017178437796906,
+            "peakGroundPenetration": 0.001114381262600439,
+            "settledSteps": 894,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -5057,8 +5057,8 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.2800002098083912,
-            "finalDisplacement": 0.002826872369273381,
-            "peakGroundPenetration": 0.008818655509666762,
+            "finalDisplacement": 0.0011647935652331616,
+            "peakGroundPenetration": 0.0011263621102179933,
             "settledSteps": 888,
             "failedRequirements": [],
             "intentEvidence": [
@@ -5111,7 +5111,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "3b691556af2e11ef3444bd5baaa34102a70cfbdfac4608da09c527177b9d56c8"
+        "fingerprint": "2c1ebc6eb0185a887b90eba31727ea69f90b3fb60d97c49d61dfd4f32ca16519"
       },
       "instructions": [
         {
@@ -6971,8 +6971,8 @@
       "passed": true,
       "attempts": 1,
       "pieces": 5,
-      "milliseconds": 4438,
-      "fingerprint": "98fe0782c4fb0d1255fe541c2b4316c7967607e0c7b4097403687b9415f4d097",
+      "milliseconds": 5352,
+      "fingerprint": "444611f345f58642967a8cb45ca2269ce15f10040816b899f0e88fc8e08c3a86",
       "failures": [],
       "program": {
         "kind": "container",
@@ -7034,7 +7034,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 8 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.007 in; 889 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 8 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 894 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -7042,7 +7042,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.008 in; 889 rest steps; settled intent passed; seed 17: 0.280 in; table 0.007 in; 890 rest steps; settled intent passed; seed 53: 0.280 in; table 0.007 in; 888 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 889 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 893 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 894 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -7059,8 +7059,8 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0016831170518906888,
-            "peakGroundPenetration": 0.008142391677004923,
+            "finalDisplacement": 0.005037219956226924,
+            "peakGroundPenetration": 0.0010319553967761408,
             "settledSteps": 889,
             "failedRequirements": [],
             "intentEvidence": [
@@ -7091,9 +7091,9 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0017602205332471295,
-            "peakGroundPenetration": 0.0073476824527543005,
-            "settledSteps": 890,
+            "finalDisplacement": 0.0024687104034889994,
+            "peakGroundPenetration": 0.0010317601026626627,
+            "settledSteps": 893,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -7123,9 +7123,9 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0018073640038038486,
-            "peakGroundPenetration": 0.007318317025301946,
-            "settledSteps": 888,
+            "finalDisplacement": 0.0013680349426415366,
+            "peakGroundPenetration": 0.001031581407473059,
+            "settledSteps": 894,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -7159,7 +7159,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "98fe0782c4fb0d1255fe541c2b4316c7967607e0c7b4097403687b9415f4d097"
+        "fingerprint": "444611f345f58642967a8cb45ca2269ce15f10040816b899f0e88fc8e08c3a86"
       },
       "instructions": [
         {
@@ -7485,8 +7485,8 @@
       "passed": true,
       "attempts": 1,
       "pieces": 8,
-      "milliseconds": 8141,
-      "fingerprint": "d6612b17a553ccddf1a033b7d737916cf94f732b0c9168481fffc49ebac9299e",
+      "milliseconds": 9181,
+      "fingerprint": "9a351b81fee5100f5b0aeeb4df6cbc9092899e202ddf2612a6fc933569020409",
       "failures": [],
       "program": {
         "kind": "container",
@@ -7555,7 +7555,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 13 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.007 in; 890 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 13 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 895 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -7563,7 +7563,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.007 in; 890 rest steps; settled intent passed; seed 17: 0.280 in; table 0.007 in; 889 rest steps; settled intent passed; seed 53: 0.280 in; table 0.008 in; 889 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 894 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 894 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 893 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -7580,9 +7580,9 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0018296140126431676,
-            "peakGroundPenetration": 0.00748150997837449,
-            "settledSteps": 890,
+            "finalDisplacement": 0.0053307059564769955,
+            "peakGroundPenetration": 0.001032981994825155,
+            "settledSteps": 894,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -7612,9 +7612,9 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0017306168147622298,
-            "peakGroundPenetration": 0.00743214636786016,
-            "settledSteps": 889,
+            "finalDisplacement": 0.0013476832719918274,
+            "peakGroundPenetration": 0.0010330776946480685,
+            "settledSteps": 894,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -7644,9 +7644,9 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0017720635759430501,
-            "peakGroundPenetration": 0.007599611955518171,
-            "settledSteps": 889,
+            "finalDisplacement": 0.005853533873401545,
+            "peakGroundPenetration": 0.0010328276948199377,
+            "settledSteps": 893,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -7680,7 +7680,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "d6612b17a553ccddf1a033b7d737916cf94f732b0c9168481fffc49ebac9299e"
+        "fingerprint": "9a351b81fee5100f5b0aeeb4df6cbc9092899e202ddf2612a6fc933569020409"
       },
       "instructions": [
         {
@@ -8166,8 +8166,8 @@
       "passed": true,
       "attempts": 1,
       "pieces": 11,
-      "milliseconds": 11665,
-      "fingerprint": "a4157e267ff281d02b0ba57e210d07b906f92ec7aabf0d56ce0bd6dff121c59f",
+      "milliseconds": 13084,
+      "fingerprint": "391236233c379d51cc1921ae73012790c74d262e7efe8452ea90959205b2321f",
       "failures": [],
       "program": {
         "kind": "container",
@@ -8236,7 +8236,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 18 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.007 in; 889 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 18 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 895 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -8244,7 +8244,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.007 in; 889 rest steps; settled intent passed; seed 17: 0.280 in; table 0.007 in; 890 rest steps; settled intent passed; seed 53: 0.280 in; table 0.008 in; 888 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 893 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 895 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 893 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -8261,9 +8261,9 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0016079729191658602,
-            "peakGroundPenetration": 0.0073882123922031084,
-            "settledSteps": 889,
+            "finalDisplacement": 0.004504656331157397,
+            "peakGroundPenetration": 0.0010335530385021247,
+            "settledSteps": 893,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -8293,9 +8293,9 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0017364187773998496,
-            "peakGroundPenetration": 0.007328272893260879,
-            "settledSteps": 890,
+            "finalDisplacement": 0.0012976489635840515,
+            "peakGroundPenetration": 0.0010336168142301844,
+            "settledSteps": 895,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -8325,9 +8325,9 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0016646386710984858,
-            "peakGroundPenetration": 0.007697177888966289,
-            "settledSteps": 888,
+            "finalDisplacement": 0.0033034132780780504,
+            "peakGroundPenetration": 0.0010335826051785513,
+            "settledSteps": 893,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -8361,7 +8361,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "a4157e267ff281d02b0ba57e210d07b906f92ec7aabf0d56ce0bd6dff121c59f"
+        "fingerprint": "391236233c379d51cc1921ae73012790c74d262e7efe8452ea90959205b2321f"
       },
       "instructions": [
         {
@@ -9005,8 +9005,8 @@
       "passed": true,
       "attempts": 1,
       "pieces": 12,
-      "milliseconds": 13336,
-      "fingerprint": "fb9e57065ee2ed61f289c6a9e14badf9aecbfe1c36fd16d02ece0b57069fc45d",
+      "milliseconds": 14388,
+      "fingerprint": "02f4f130b48c5d2c31870301e8feffd70a9b9ecfd21979233e4b5c470733d1c2",
       "failures": [],
       "program": {
         "kind": "container",
@@ -9082,7 +9082,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 20 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.007 in; 889 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 20 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 894 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -9090,7 +9090,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.008 in; 889 rest steps; settled intent passed; seed 17: 0.280 in; table 0.007 in; 889 rest steps; settled intent passed; seed 53: 0.280 in; table 0.008 in; 889 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 894 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 894 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 894 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -9107,9 +9107,9 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.001546817149898291,
-            "peakGroundPenetration": 0.007527520187923908,
-            "settledSteps": 889,
+            "finalDisplacement": 0.0028408143631483995,
+            "peakGroundPenetration": 0.0010352918074890832,
+            "settledSteps": 894,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -9139,9 +9139,9 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.001633185917570455,
-            "peakGroundPenetration": 0.007328341628800583,
-            "settledSteps": 889,
+            "finalDisplacement": 0.0016312350298259757,
+            "peakGroundPenetration": 0.001035281394647522,
+            "settledSteps": 894,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -9171,9 +9171,9 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0015554385675743436,
-            "peakGroundPenetration": 0.00758923833453351,
-            "settledSteps": 889,
+            "finalDisplacement": 0.003575586815390871,
+            "peakGroundPenetration": 0.0010354647491700592,
+            "settledSteps": 894,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -9207,7 +9207,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "fb9e57065ee2ed61f289c6a9e14badf9aecbfe1c36fd16d02ece0b57069fc45d"
+        "fingerprint": "02f4f130b48c5d2c31870301e8feffd70a9b9ecfd21979233e4b5c470733d1c2"
       },
       "instructions": [
         {
@@ -9907,8 +9907,8 @@
       "passed": true,
       "attempts": 1,
       "pieces": 16,
-      "milliseconds": 20560,
-      "fingerprint": "8f556d555e94f64dab7f76991d60df8551bc39bc7719869fe7aaf5245e9175ab",
+      "milliseconds": 19835,
+      "fingerprint": "8608a4a468132be3c159019b457d43b7bd6ceaf2f7239e23d274a3a8cec7eaae",
       "failures": [],
       "program": {
         "kind": "container",
@@ -9984,7 +9984,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 27 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.007 in; 889 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 27 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 895 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -9992,7 +9992,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.007 in; 888 rest steps; settled intent passed; seed 17: 0.280 in; table 0.007 in; 889 rest steps; settled intent passed; seed 53: 0.280 in; table 0.007 in; 889 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 894 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 894 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 894 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -10009,9 +10009,9 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0017502410752746264,
-            "peakGroundPenetration": 0.007337061408155154,
-            "settledSteps": 888,
+            "finalDisplacement": 0.0014450049603344664,
+            "peakGroundPenetration": 0.001036795526199924,
+            "settledSteps": 894,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -10041,9 +10041,9 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.001735286303308551,
-            "peakGroundPenetration": 0.007481430039783188,
-            "settledSteps": 889,
+            "finalDisplacement": 0.002936907820082838,
+            "peakGroundPenetration": 0.0010368597609020924,
+            "settledSteps": 894,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -10073,9 +10073,9 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0018422555766868902,
-            "peakGroundPenetration": 0.007321951788731074,
-            "settledSteps": 889,
+            "finalDisplacement": 0.0016623303234441754,
+            "peakGroundPenetration": 0.0010367382798486119,
+            "settledSteps": 894,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -10109,7 +10109,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "8f556d555e94f64dab7f76991d60df8551bc39bc7719869fe7aaf5245e9175ab"
+        "fingerprint": "8608a4a468132be3c159019b457d43b7bd6ceaf2f7239e23d274a3a8cec7eaae"
       },
       "instructions": [
         {
@@ -11022,8 +11022,8 @@
       "passed": true,
       "attempts": 2,
       "pieces": 6,
-      "milliseconds": 5535,
-      "fingerprint": "f73acf13eb243e79a5a5836c476bbae00a2f5199208679a106f8dfc4b9e2e458",
+      "milliseconds": 6415,
+      "fingerprint": "b6a1785cef35afc18132ac91846cde21389b4f87ac19262eb4ddc69a160d233c",
       "failures": [],
       "program": {
         "kind": "tunnel",
@@ -11086,7 +11086,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 10 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.008 in; 861 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 10 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 872 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -11094,7 +11094,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.008 in; 860 rest steps; settled intent passed; seed 17: 0.280 in; table 0.008 in; 859 rest steps; settled intent passed; seed 53: 0.280 in; table 0.008 in; 863 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 872 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 872 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 873 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -11111,9 +11111,9 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.002008966976848361,
-            "peakGroundPenetration": 0.008021037588483937,
-            "settledSteps": 860,
+            "finalDisplacement": 0.0011075127954275048,
+            "peakGroundPenetration": 0.0011023042185822618,
+            "settledSteps": 872,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -11135,7 +11135,7 @@
                 "label": "Usable through passage",
                 "passed": true,
                 "expected": "Continuous floor and unobstructed 2 × 2 in passage with two open ends",
-                "actual": "Passage floor at 0.088 in",
+                "actual": "Passage floor at 0.089 in",
                 "repair": "reinforce"
               }
             ]
@@ -11144,9 +11144,9 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0019740676991949475,
-            "peakGroundPenetration": 0.007791750392303287,
-            "settledSteps": 859,
+            "finalDisplacement": 0.0020948819152550448,
+            "peakGroundPenetration": 0.001101283822542154,
+            "settledSteps": 872,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -11168,7 +11168,7 @@
                 "label": "Usable through passage",
                 "passed": true,
                 "expected": "Continuous floor and unobstructed 2 × 2 in passage with two open ends",
-                "actual": "Passage floor at 0.088 in",
+                "actual": "Passage floor at 0.089 in",
                 "repair": "reinforce"
               }
             ]
@@ -11177,9 +11177,9 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0022014899529827336,
-            "peakGroundPenetration": 0.007782048134151731,
-            "settledSteps": 863,
+            "finalDisplacement": 0.0014207216823450039,
+            "peakGroundPenetration": 0.0011078289338595226,
+            "settledSteps": 873,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -11201,7 +11201,7 @@
                 "label": "Usable through passage",
                 "passed": true,
                 "expected": "Continuous floor and unobstructed 2 × 2 in passage with two open ends",
-                "actual": "Passage floor at 0.088 in",
+                "actual": "Passage floor at 0.089 in",
                 "repair": "reinforce"
               }
             ]
@@ -11214,7 +11214,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "f73acf13eb243e79a5a5836c476bbae00a2f5199208679a106f8dfc4b9e2e458"
+        "fingerprint": "b6a1785cef35afc18132ac91846cde21389b4f87ac19262eb4ddc69a160d233c"
       },
       "instructions": [
         {
@@ -11595,8 +11595,8 @@
       "passed": true,
       "attempts": 2,
       "pieces": 6,
-      "milliseconds": 4532,
-      "fingerprint": "03e017af52a63a5392cf25dc8225379099c9dcdb93a1a2aead65b0ff08a3117a",
+      "milliseconds": 5131,
+      "fingerprint": "bc0d2820f671afcb459239ce323673ca8dac1dcaff92b0d21888b9b3c15bf14f",
       "failures": [],
       "program": {
         "kind": "tunnel",
@@ -11666,7 +11666,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 10 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.008 in; 861 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 10 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 872 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -11674,7 +11674,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.008 in; 860 rest steps; settled intent passed; seed 17: 0.280 in; table 0.008 in; 859 rest steps; settled intent passed; seed 53: 0.280 in; table 0.008 in; 863 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 872 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 872 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 873 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -11691,9 +11691,9 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.002008966976848361,
-            "peakGroundPenetration": 0.008021037588483937,
-            "settledSteps": 860,
+            "finalDisplacement": 0.0011075127954275048,
+            "peakGroundPenetration": 0.0011023042185822618,
+            "settledSteps": 872,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -11715,7 +11715,7 @@
                 "label": "Usable through passage",
                 "passed": true,
                 "expected": "Continuous floor and unobstructed 2 × 2 in passage with two open ends",
-                "actual": "Passage floor at 0.088 in",
+                "actual": "Passage floor at 0.089 in",
                 "repair": "reinforce"
               }
             ]
@@ -11724,9 +11724,9 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0019740676991949475,
-            "peakGroundPenetration": 0.007791750392303287,
-            "settledSteps": 859,
+            "finalDisplacement": 0.0020948819152550448,
+            "peakGroundPenetration": 0.001101283822542154,
+            "settledSteps": 872,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -11748,7 +11748,7 @@
                 "label": "Usable through passage",
                 "passed": true,
                 "expected": "Continuous floor and unobstructed 2 × 2 in passage with two open ends",
-                "actual": "Passage floor at 0.088 in",
+                "actual": "Passage floor at 0.089 in",
                 "repair": "reinforce"
               }
             ]
@@ -11757,9 +11757,9 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0022014899529827336,
-            "peakGroundPenetration": 0.007782048134151731,
-            "settledSteps": 863,
+            "finalDisplacement": 0.0014207216823450039,
+            "peakGroundPenetration": 0.0011078289338595226,
+            "settledSteps": 873,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -11781,7 +11781,7 @@
                 "label": "Usable through passage",
                 "passed": true,
                 "expected": "Continuous floor and unobstructed 2 × 2 in passage with two open ends",
-                "actual": "Passage floor at 0.088 in",
+                "actual": "Passage floor at 0.089 in",
                 "repair": "reinforce"
               }
             ]
@@ -11794,7 +11794,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "03e017af52a63a5392cf25dc8225379099c9dcdb93a1a2aead65b0ff08a3117a"
+        "fingerprint": "bc0d2820f671afcb459239ce323673ca8dac1dcaff92b0d21888b9b3c15bf14f"
       },
       "instructions": [
         {
@@ -12177,8 +12177,8 @@
       "passed": true,
       "attempts": 2,
       "pieces": 12,
-      "milliseconds": 13962,
-      "fingerprint": "3dd511dd4f6bf23143dc5b38c2d2831b110de2c9bf66ab4890fa64569f0c6a1c",
+      "milliseconds": 14877,
+      "fingerprint": "b8bc73a7e3407b2ce73ed2647700b2c6769fe06d239e5a3b1517b5b4eefcc9d0",
       "failures": [],
       "program": {
         "kind": "tunnel",
@@ -12248,7 +12248,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 22 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.008 in; 886 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 22 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 891 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -12256,7 +12256,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.008 in; 886 rest steps; settled intent passed; seed 17: 0.280 in; table 0.008 in; 886 rest steps; settled intent passed; seed 53: 0.280 in; table 0.008 in; 886 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 891 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 892 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 890 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -12273,9 +12273,9 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0022306862110170996,
-            "peakGroundPenetration": 0.007505864556919484,
-            "settledSteps": 886,
+            "finalDisplacement": 0.001515103052362208,
+            "peakGroundPenetration": 0.0010607638403516972,
+            "settledSteps": 891,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -12297,7 +12297,7 @@
                 "label": "Usable through passage",
                 "passed": true,
                 "expected": "Continuous floor and unobstructed 2 × 2 in passage with two open ends",
-                "actual": "Passage floor at 0.088 in",
+                "actual": "Passage floor at 0.089 in",
                 "repair": "reinforce"
               }
             ]
@@ -12306,9 +12306,9 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.002084483569053534,
-            "peakGroundPenetration": 0.008080824958924593,
-            "settledSteps": 886,
+            "finalDisplacement": 0.001276325809098922,
+            "peakGroundPenetration": 0.0010606750815871369,
+            "settledSteps": 892,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -12330,7 +12330,7 @@
                 "label": "Usable through passage",
                 "passed": true,
                 "expected": "Continuous floor and unobstructed 2 × 2 in passage with two open ends",
-                "actual": "Passage floor at 0.088 in",
+                "actual": "Passage floor at 0.089 in",
                 "repair": "reinforce"
               }
             ]
@@ -12339,9 +12339,9 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0021037906002655616,
-            "peakGroundPenetration": 0.008311649211893035,
-            "settledSteps": 886,
+            "finalDisplacement": 0.0027546775976063,
+            "peakGroundPenetration": 0.0010605901011224717,
+            "settledSteps": 890,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -12363,7 +12363,7 @@
                 "label": "Usable through passage",
                 "passed": true,
                 "expected": "Continuous floor and unobstructed 2 × 2 in passage with two open ends",
-                "actual": "Passage floor at 0.088 in",
+                "actual": "Passage floor at 0.089 in",
                 "repair": "reinforce"
               }
             ]
@@ -12381,7 +12381,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "3dd511dd4f6bf23143dc5b38c2d2831b110de2c9bf66ab4890fa64569f0c6a1c"
+        "fingerprint": "b8bc73a7e3407b2ce73ed2647700b2c6769fe06d239e5a3b1517b5b4eefcc9d0"
       },
       "instructions": [
         {
@@ -13109,8 +13109,8 @@
       "passed": true,
       "attempts": 2,
       "pieces": 12,
-      "milliseconds": 14750,
-      "fingerprint": "dc20c308155c3c9b420be76ecd112c4740fb7eaecd9bf6f16be578e153ff5f00",
+      "milliseconds": 15663,
+      "fingerprint": "47e31cca62c7438f756a915fe5a861a62a7d0ba43805bc0b0d91037d7af3ac62",
       "failures": [],
       "program": {
         "kind": "tunnel",
@@ -13180,7 +13180,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 24 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.008 in; 862 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 24 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 872 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -13188,7 +13188,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.008 in; 861 rest steps; settled intent passed; seed 17: 0.280 in; table 0.008 in; 860 rest steps; settled intent passed; seed 53: 0.280 in; table 0.008 in; 860 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 872 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 872 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 871 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -13205,9 +13205,9 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0025149499876411796,
-            "peakGroundPenetration": 0.007703036891996362,
-            "settledSteps": 861,
+            "finalDisplacement": 0.001952375028804869,
+            "peakGroundPenetration": 0.0011045053388711867,
+            "settledSteps": 872,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -13229,7 +13229,7 @@
                 "label": "Usable through passage",
                 "passed": true,
                 "expected": "Continuous floor and unobstructed 2 × 2 in passage with two open ends",
-                "actual": "Passage floor at 0.088 in",
+                "actual": "Passage floor at 0.089 in",
                 "repair": "reinforce"
               }
             ]
@@ -13238,9 +13238,9 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.002061229577858149,
-            "peakGroundPenetration": 0.008072046640281272,
-            "settledSteps": 860,
+            "finalDisplacement": 0.0012452400033280927,
+            "peakGroundPenetration": 0.0011061231427247353,
+            "settledSteps": 872,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -13262,7 +13262,7 @@
                 "label": "Usable through passage",
                 "passed": true,
                 "expected": "Continuous floor and unobstructed 2 × 2 in passage with two open ends",
-                "actual": "Passage floor at 0.088 in",
+                "actual": "Passage floor at 0.089 in",
                 "repair": "reinforce"
               }
             ]
@@ -13271,9 +13271,9 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0021255246827749127,
-            "peakGroundPenetration": 0.008379287243311717,
-            "settledSteps": 860,
+            "finalDisplacement": 0.0024475407659273296,
+            "peakGroundPenetration": 0.001106826453163512,
+            "settledSteps": 871,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -13295,7 +13295,7 @@
                 "label": "Usable through passage",
                 "passed": true,
                 "expected": "Continuous floor and unobstructed 2 × 2 in passage with two open ends",
-                "actual": "Passage floor at 0.088 in",
+                "actual": "Passage floor at 0.089 in",
                 "repair": "reinforce"
               }
             ]
@@ -13313,7 +13313,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "dc20c308155c3c9b420be76ecd112c4740fb7eaecd9bf6f16be578e153ff5f00"
+        "fingerprint": "47e31cca62c7438f756a915fe5a861a62a7d0ba43805bc0b0d91037d7af3ac62"
       },
       "instructions": [
         {
@@ -14055,8 +14055,8 @@
       "passed": true,
       "attempts": 2,
       "pieces": 6,
-      "milliseconds": 4506,
-      "fingerprint": "a4c666bce80e4c34f4c8412c6ab498949fda73c6ed677d22b82c058c3a014213",
+      "milliseconds": 5140,
+      "fingerprint": "78d01303ffad5f4180deafdc37727e6b56d9c4ac5e0b2c0dcf56dd037c29cd6a",
       "failures": [],
       "program": {
         "kind": "tunnel",
@@ -14133,7 +14133,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 10 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.008 in; 861 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 10 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 872 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -14141,7 +14141,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.008 in; 860 rest steps; settled intent passed; seed 17: 0.280 in; table 0.008 in; 859 rest steps; settled intent passed; seed 53: 0.280 in; table 0.008 in; 863 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 872 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 872 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 873 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -14158,9 +14158,9 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.002008966976848361,
-            "peakGroundPenetration": 0.008021037588483937,
-            "settledSteps": 860,
+            "finalDisplacement": 0.0011075127954275048,
+            "peakGroundPenetration": 0.0011023042185822618,
+            "settledSteps": 872,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -14182,7 +14182,7 @@
                 "label": "Usable through passage",
                 "passed": true,
                 "expected": "Continuous floor and unobstructed 2 × 2 in passage with two open ends",
-                "actual": "Passage floor at 0.088 in",
+                "actual": "Passage floor at 0.089 in",
                 "repair": "reinforce"
               }
             ]
@@ -14191,9 +14191,9 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0019740676991949475,
-            "peakGroundPenetration": 0.007791750392303287,
-            "settledSteps": 859,
+            "finalDisplacement": 0.0020948819152550448,
+            "peakGroundPenetration": 0.001101283822542154,
+            "settledSteps": 872,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -14215,7 +14215,7 @@
                 "label": "Usable through passage",
                 "passed": true,
                 "expected": "Continuous floor and unobstructed 2 × 2 in passage with two open ends",
-                "actual": "Passage floor at 0.088 in",
+                "actual": "Passage floor at 0.089 in",
                 "repair": "reinforce"
               }
             ]
@@ -14224,9 +14224,9 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.2800000047683716,
-            "finalDisplacement": 0.0022014899529827336,
-            "peakGroundPenetration": 0.007782048134151731,
-            "settledSteps": 863,
+            "finalDisplacement": 0.0014207216823450039,
+            "peakGroundPenetration": 0.0011078289338595226,
+            "settledSteps": 873,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -14248,7 +14248,7 @@
                 "label": "Usable through passage",
                 "passed": true,
                 "expected": "Continuous floor and unobstructed 2 × 2 in passage with two open ends",
-                "actual": "Passage floor at 0.088 in",
+                "actual": "Passage floor at 0.089 in",
                 "repair": "reinforce"
               }
             ]
@@ -14261,7 +14261,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "a4c666bce80e4c34f4c8412c6ab498949fda73c6ed677d22b82c058c3a014213"
+        "fingerprint": "78d01303ffad5f4180deafdc37727e6b56d9c4ac5e0b2c0dcf56dd037c29cd6a"
       },
       "instructions": [
         {
@@ -14645,8 +14645,8 @@
       "passed": true,
       "attempts": 1,
       "pieces": 16,
-      "milliseconds": 23667,
-      "fingerprint": "aabd8ec62ae10da6d8b86fe8b9d1233ea965067ee29deefbd084b5800667853f",
+      "milliseconds": 26582,
+      "fingerprint": "bdbb66c21b48e6abf9ca5252e55a60d6cb154f95b6b05dc31b546d4d06cadcd4",
       "failures": [],
       "program": {
         "kind": "staircase",
@@ -14694,7 +14694,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 45 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.008 in; 888 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 45 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 894 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -14702,7 +14702,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.008 in; 888 rest steps; settled intent passed; seed 17: 0.280 in; table 0.008 in; 888 rest steps; settled intent passed; seed 53: 0.280 in; table 0.008 in; 888 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 885 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 892 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 888 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -14719,9 +14719,9 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.28000020980841456,
-            "finalDisplacement": 0.0021266778064981586,
-            "peakGroundPenetration": 0.00791162245502175,
-            "settledSteps": 888,
+            "finalDisplacement": 0.0015633088816640157,
+            "peakGroundPenetration": 0.0010897081146099552,
+            "settledSteps": 885,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -14737,9 +14737,9 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.28000020980841456,
-            "finalDisplacement": 0.0021065668428922025,
-            "peakGroundPenetration": 0.007989690180679077,
-            "settledSteps": 888,
+            "finalDisplacement": 0.0011643519785186013,
+            "peakGroundPenetration": 0.0010891324856774354,
+            "settledSteps": 892,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -14755,8 +14755,8 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.28000020980841456,
-            "finalDisplacement": 0.0020555817111005624,
-            "peakGroundPenetration": 0.007827263373134441,
+            "finalDisplacement": 0.0015039059471650912,
+            "peakGroundPenetration": 0.00108755064234356,
             "settledSteps": 888,
             "failedRequirements": [],
             "intentEvidence": [
@@ -14782,7 +14782,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "aabd8ec62ae10da6d8b86fe8b9d1233ea965067ee29deefbd084b5800667853f"
+        "fingerprint": "bdbb66c21b48e6abf9ca5252e55a60d6cb154f95b6b05dc31b546d4d06cadcd4"
       },
       "instructions": [
         {
@@ -15834,8 +15834,8 @@
       "passed": true,
       "attempts": 1,
       "pieces": 30,
-      "milliseconds": 56711,
-      "fingerprint": "583c681d4887e2b907e27e8cea89b810571ae6d2b3177563dace63873989fa11",
+      "milliseconds": 60494,
+      "fingerprint": "aafeb48feda4d2cc348b1bf546b562da20bec82e667301fe4a968e53b9885ca5",
       "failures": [],
       "program": {
         "kind": "staircase",
@@ -15883,7 +15883,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 95 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.008 in; 888 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 95 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 894 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -15891,7 +15891,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.008 in; 888 rest steps; settled intent passed; seed 17: 0.280 in; table 0.008 in; 887 rest steps; settled intent passed; seed 53: 0.280 in; table 0.008 in; 887 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 892 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 891 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 894 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -15908,9 +15908,9 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.280000209808664,
-            "finalDisplacement": 0.002737068958069048,
-            "peakGroundPenetration": 0.008173903323254184,
-            "settledSteps": 888,
+            "finalDisplacement": 0.0015135647521019794,
+            "peakGroundPenetration": 0.001160274632302949,
+            "settledSteps": 892,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -15926,9 +15926,9 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.280000209808664,
-            "finalDisplacement": 0.0028102990720840853,
-            "peakGroundPenetration": 0.008397943133049868,
-            "settledSteps": 887,
+            "finalDisplacement": 0.0012925283697905318,
+            "peakGroundPenetration": 0.0011510934738696577,
+            "settledSteps": 891,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -15944,9 +15944,9 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.280000209808664,
-            "finalDisplacement": 0.0026280123200677005,
-            "peakGroundPenetration": 0.008482816389911108,
-            "settledSteps": 887,
+            "finalDisplacement": 0.001159202536562201,
+            "peakGroundPenetration": 0.0011591843409228808,
+            "settledSteps": 894,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -15976,7 +15976,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "583c681d4887e2b907e27e8cea89b810571ae6d2b3177563dace63873989fa11"
+        "fingerprint": "aafeb48feda4d2cc348b1bf546b562da20bec82e667301fe4a968e53b9885ca5"
       },
       "instructions": [
         {
@@ -17967,8 +17967,8 @@
       "passed": true,
       "attempts": 1,
       "pieces": 48,
-      "milliseconds": 102803,
-      "fingerprint": "90071305d94e5263974bd838edd39f74675fbfad477389362c7353c37e587510",
+      "milliseconds": 112557,
+      "fingerprint": "9faaf20d7a69375339d112c16cccd146c1a539ec20003341335119f78b92dbb7",
       "failures": [],
       "program": {
         "kind": "staircase",
@@ -18016,7 +18016,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 162 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.009 in; 887 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 162 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 894 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -18024,7 +18024,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.009 in; 887 rest steps; settled intent passed; seed 17: 0.280 in; table 0.009 in; 887 rest steps; settled intent passed; seed 53: 0.280 in; table 0.009 in; 887 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 889 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 889 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 890 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -18041,9 +18041,9 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.280000209808664,
-            "finalDisplacement": 0.0034874300106932615,
-            "peakGroundPenetration": 0.00869639800108346,
-            "settledSteps": 887,
+            "finalDisplacement": 0.0024147070828645966,
+            "peakGroundPenetration": 0.0012214404731103468,
+            "settledSteps": 889,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -18059,9 +18059,9 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.280000209808664,
-            "finalDisplacement": 0.0034348445244938583,
-            "peakGroundPenetration": 0.008668928430887846,
-            "settledSteps": 887,
+            "finalDisplacement": 0.0014241675036424546,
+            "peakGroundPenetration": 0.001232079561401589,
+            "settledSteps": 889,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -18077,9 +18077,9 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.280000209808664,
-            "finalDisplacement": 0.0033977735512966613,
-            "peakGroundPenetration": 0.008561598504399637,
-            "settledSteps": 887,
+            "finalDisplacement": 0.0017402776384980968,
+            "peakGroundPenetration": 0.0012102789867503017,
+            "settledSteps": 890,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -18114,7 +18114,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "90071305d94e5263974bd838edd39f74675fbfad477389362c7353c37e587510"
+        "fingerprint": "9faaf20d7a69375339d112c16cccd146c1a539ec20003341335119f78b92dbb7"
       },
       "instructions": [
         {
@@ -21327,8 +21327,8 @@
       "passed": true,
       "attempts": 1,
       "pieces": 70,
-      "milliseconds": 153688,
-      "fingerprint": "89251563b741e3af9e6161def96fd4906bb59b47bf12212856459a285e6e6f95",
+      "milliseconds": 188139,
+      "fingerprint": "a1e196a61f9ff5947a83fcc9ee8128f274e4aafdc38b8f2040373dd07577c463",
       "failures": [],
       "program": {
         "kind": "staircase",
@@ -21376,7 +21376,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 246 valid magnetic joint(s)\nadvisory validateBuild status: error\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.009 in; 886 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 246 valid magnetic joint(s)\nadvisory validateBuild status: error\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 889 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -21384,7 +21384,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.009 in; 887 rest steps; settled intent passed; seed 17: 0.280 in; table 0.009 in; 886 rest steps; settled intent passed; seed 53: 0.280 in; table 0.009 in; 886 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 882 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 713 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 889 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -21401,9 +21401,9 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.28000020980919155,
-            "finalDisplacement": 0.004245111124537253,
-            "peakGroundPenetration": 0.008984348096612527,
-            "settledSteps": 887,
+            "finalDisplacement": 0.0018333835474265753,
+            "peakGroundPenetration": 0.0012644425732433184,
+            "settledSteps": 882,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -21419,9 +21419,9 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.28000020980919155,
-            "finalDisplacement": 0.004221378151851181,
-            "peakGroundPenetration": 0.008984725717111619,
-            "settledSteps": 886,
+            "finalDisplacement": 0.0018271299474182986,
+            "peakGroundPenetration": 0.0012706621900924198,
+            "settledSteps": 713,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -21437,9 +21437,9 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.28000020980919155,
-            "finalDisplacement": 0.004169204932130309,
-            "peakGroundPenetration": 0.009005029664680197,
-            "settledSteps": 886,
+            "finalDisplacement": 0.0018080046462146222,
+            "peakGroundPenetration": 0.001254464400098465,
+            "settledSteps": 889,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -21479,7 +21479,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "89251563b741e3af9e6161def96fd4906bb59b47bf12212856459a285e6e6f95"
+        "fingerprint": "a1e196a61f9ff5947a83fcc9ee8128f274e4aafdc38b8f2040373dd07577c463"
       },
       "instructions": [
         {
@@ -26197,8 +26197,8 @@
       "passed": true,
       "attempts": 1,
       "pieces": 48,
-      "milliseconds": 89894,
-      "fingerprint": "e72cbc8077fdf33637079c342617d7af091fd636a1b99b1fb8c941859c2ac5ea",
+      "milliseconds": 107030,
+      "fingerprint": "d9020480108ed074270628b62cfeaee9ad7f66a90acc1998504572ff02d2e976",
       "failures": [],
       "program": {
         "kind": "staircase",
@@ -26253,7 +26253,7 @@
             "label": "Geometry, joins and nominal structure",
             "passed": true,
             "expected": "No intersections or unsupported joints; stands under gravity",
-            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 154 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.008 in; 887 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
+            "actual": "pre-filter passed: no raw tile overlaps\npre-filter passed: 154 valid magnetic joint(s)\nengine passed: build stands (peak displacement 0.280 in; table penetration 0.001 in; 894 rest steps)\nrecognizable-object resemblance requires human signoff beyond this engine gate",
             "repair": "reinforce"
           },
           {
@@ -26261,7 +26261,7 @@
             "label": "Release robustness",
             "passed": true,
             "expected": "All 3 releases; peak corner displacement ≤0.95 in; table penetration ≤0.03 in; 90 consecutive rest steps",
-            "actual": "seed 0: 0.280 in; table 0.008 in; 887 rest steps; settled intent passed; seed 17: 0.280 in; table 0.008 in; 887 rest steps; settled intent passed; seed 53: 0.280 in; table 0.008 in; 887 rest steps; settled intent passed",
+            "actual": "seed 0: 0.280 in; table 0.001 in; 894 rest steps; settled intent passed; seed 17: 0.280 in; table 0.001 in; 894 rest steps; settled intent passed; seed 53: 0.280 in; table 0.001 in; 894 rest steps; settled intent passed",
             "repair": "reinforce"
           },
           {
@@ -26278,9 +26278,9 @@
             "seed": 0,
             "passed": true,
             "peakDisplacement": 0.280000209808664,
-            "finalDisplacement": 0.0027105930556629806,
-            "peakGroundPenetration": 0.008333352666121119,
-            "settledSteps": 887,
+            "finalDisplacement": 0.001241505845304,
+            "peakGroundPenetration": 0.0011695781746365874,
+            "settledSteps": 894,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -26296,9 +26296,9 @@
             "seed": 17,
             "passed": true,
             "peakDisplacement": 0.280000209808664,
-            "finalDisplacement": 0.0027444429297446204,
-            "peakGroundPenetration": 0.008247374014395792,
-            "settledSteps": 887,
+            "finalDisplacement": 0.0012522602471532842,
+            "peakGroundPenetration": 0.0011515799600012588,
+            "settledSteps": 894,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -26314,9 +26314,9 @@
             "seed": 53,
             "passed": true,
             "peakDisplacement": 0.280000209808664,
-            "finalDisplacement": 0.0027005165669851516,
-            "peakGroundPenetration": 0.008299052533003337,
-            "settledSteps": 887,
+            "finalDisplacement": 0.001304367193461346,
+            "peakGroundPenetration": 0.0011583782199773296,
+            "settledSteps": 894,
             "failedRequirements": [],
             "intentEvidence": [
               {
@@ -26346,7 +26346,7 @@
             "passed": true
           }
         ],
-        "fingerprint": "e72cbc8077fdf33637079c342617d7af091fd636a1b99b1fb8c941859c2ac5ea"
+        "fingerprint": "d9020480108ed074270628b62cfeaee9ad7f66a90acc1998504572ff02d2e976"
       },
       "instructions": [
         {
@@ -29622,7 +29622,7 @@
       "passed": true,
       "attempts": 0,
       "pieces": 0,
-      "milliseconds": 0,
+      "milliseconds": 1,
       "failures": [],
       "evaluation": null,
       "instructions": [],

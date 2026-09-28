@@ -1,8 +1,8 @@
 {
   "date": "2026-09-27",
-  "model": "intent-harness-v3-rigid-contact-v7-solid-sweep-960-js0.19.2-rust0.30.1-parry0.25.1-sat-cache3-f32-abi1-5e4c38a5ada93780-profile10e2e81b05c3c518",
+  "model": "intent-harness-v3-rigid-contact-v8-solid-sweep-contact480-collision1920-js0.19.2-rust0.30.1-parry0.25.1-sat-cache3-f32-abi1-5e4c38a5ada93780-profilea491baad9d8d5af2",
   "command": "npm run benchmark:harness",
-  "artifactSha256": "eaa8810d1f64d93a7e121e9f1143cc841cb2238c29ac353954bbea48c2e6704a",
+  "artifactSha256": "6d1a5bf767900e1af5075941193e820486c67fa8f74312a40ba02f525f5a15d9",
   "constructive": {
     "correct": 20,
     "total": 20
@@ -11,7 +11,7 @@
     "correct": 5,
     "total": 5
   },
-  "note": "Recomputed with the finite-polyhedron contact correction and optimized continuous solid-sweep guard under the unchanged 240000 ms per-brief computation budget. All complete evaluations pass. Five-step staircase solves in 153688 ms. This benchmark certifies its explicit structural intent and simulation checks, not source replication, complete hand assembly or measured magnetic forces.",
+  "note": "Recomputed at 480 Hz contact / 1920 native steps with exact-state solid-proof reuse under the unchanged 240000 ms per-brief computation budget. All 25 outcomes pass. Five-step staircase solves in 189870 ms. Certifies only its explicit structural intent and simulation checks, not source replication, complete hand assembly or measured magnetic forces.",
   "entries": [
     {
       "prompt": "a tower at least 6 inches tall",
@@ -21,17 +21,9 @@
       "passed": true,
       "attempts": 1,
       "pieces": 10,
-      "milliseconds": 13959,
-      "fingerprint": "d690a0d4a44bbd7dd3d51b0a583de6318f958ab1f6a6b6eff7cdc874e288fbe0",
-      "failures": [],
-      "program": {
-        "kind": "tower",
-        "width": 1,
-        "height": 2,
-        "depth": 1,
-        "steps": 2,
-        "reinforcement": "shell"
-      }
+      "milliseconds": 15258,
+      "fingerprint": "919877a1d3f510104201d0348d9f880ef6a57b18dc133f1c698e19e7e6f56206",
+      "failures": []
     },
     {
       "prompt": "a tower at least 9 inches tall",
@@ -41,17 +33,9 @@
       "passed": true,
       "attempts": 1,
       "pieces": 14,
-      "milliseconds": 20704,
-      "fingerprint": "b118741c03f3a0f9a3ed6ff32e250c1e0736b9f928b68678fcc334b72506766f",
-      "failures": [],
-      "program": {
-        "kind": "tower",
-        "width": 1,
-        "height": 3,
-        "depth": 1,
-        "steps": 2,
-        "reinforcement": "shell"
-      }
+      "milliseconds": 21618,
+      "fingerprint": "876e516b40c69ce7b5004d124ae59a64575ae510c7c5fd0547ee49f161897cf5",
+      "failures": []
     },
     {
       "prompt": "a tower at least 12 inches tall",
@@ -61,17 +45,9 @@
       "passed": true,
       "attempts": 1,
       "pieces": 18,
-      "milliseconds": 27522,
-      "fingerprint": "bf5edd57eef4315c0274ee264e19e9bad081c43348a3d7c691624aa4d83a96be",
-      "failures": [],
-      "program": {
-        "kind": "tower",
-        "width": 1,
-        "height": 4,
-        "depth": 1,
-        "steps": 2,
-        "reinforcement": "shell"
-      }
+      "milliseconds": 29132,
+      "fingerprint": "ecb4386d913f695eb14c649214f99f606d0bc517b8cb96455013a9d0ba46b4c2",
+      "failures": []
     },
     {
       "prompt": "a tower at least 15 inches tall",
@@ -81,17 +57,9 @@
       "passed": true,
       "attempts": 1,
       "pieces": 22,
-      "milliseconds": 37077,
-      "fingerprint": "2733afc473a45472b597b6dbfbe158400171a93db7266c4e6534cff3ef321909",
-      "failures": [],
-      "program": {
-        "kind": "tower",
-        "width": 1,
-        "height": 5,
-        "depth": 1,
-        "steps": 2,
-        "reinforcement": "shell"
-      }
+      "milliseconds": 35612,
+      "fingerprint": "367e0caa46b0417e8e10ee87568932227464e44137a3c1bf9014800b00422647",
+      "failures": []
     },
     {
       "prompt": "a tower with 3 levels and at most 30 pieces",
@@ -101,17 +69,9 @@
       "passed": true,
       "attempts": 2,
       "pieces": 28,
-      "milliseconds": 61291,
-      "fingerprint": "3b691556af2e11ef3444bd5baaa34102a70cfbdfac4608da09c527177b9d56c8",
-      "failures": [],
-      "program": {
-        "kind": "tower",
-        "width": 2,
-        "height": 3,
-        "depth": 2,
-        "steps": 2,
-        "reinforcement": "rigid-panels"
-      }
+      "milliseconds": 63108,
+      "fingerprint": "2c1ebc6eb0185a887b90eba31727ea69f90b3fb60d97c49d61dfd4f32ca16519",
+      "failures": []
     },
     {
       "prompt": "an open top box",
@@ -121,17 +81,9 @@
       "passed": true,
       "attempts": 1,
       "pieces": 5,
-      "milliseconds": 4438,
-      "fingerprint": "98fe0782c4fb0d1255fe541c2b4316c7967607e0c7b4097403687b9415f4d097",
-      "failures": [],
-      "program": {
-        "kind": "container",
-        "width": 1,
-        "height": 1,
-        "depth": 1,
-        "steps": 2,
-        "reinforcement": "shell"
-      }
+      "milliseconds": 5557,
+      "fingerprint": "444611f345f58642967a8cb45ca2269ce15f10040816b899f0e88fc8e08c3a86",
+      "failures": []
     },
     {
       "prompt": "an open top box 2 tiles wide",
@@ -141,17 +93,9 @@
       "passed": true,
       "attempts": 1,
       "pieces": 8,
-      "milliseconds": 8141,
-      "fingerprint": "d6612b17a553ccddf1a033b7d737916cf94f732b0c9168481fffc49ebac9299e",
-      "failures": [],
-      "program": {
-        "kind": "container",
-        "width": 2,
-        "height": 1,
-        "depth": 1,
-        "steps": 2,
-        "reinforcement": "shell"
-      }
+      "milliseconds": 9456,
+      "fingerprint": "9a351b81fee5100f5b0aeeb4df6cbc9092899e202ddf2612a6fc933569020409",
+      "failures": []
     },
     {
       "prompt": "an open top box 3 tiles wide",
@@ -161,17 +105,9 @@
       "passed": true,
       "attempts": 1,
       "pieces": 11,
-      "milliseconds": 11665,
-      "fingerprint": "a4157e267ff281d02b0ba57e210d07b906f92ec7aabf0d56ce0bd6dff121c59f",
-      "failures": [],
-      "program": {
-        "kind": "container",
-        "width": 3,
-        "height": 1,
-        "depth": 1,
-        "steps": 2,
-        "reinforcement": "shell"
-      }
+      "milliseconds": 13161,
+      "fingerprint": "391236233c379d51cc1921ae73012790c74d262e7efe8452ea90959205b2321f",
+      "failures": []
     },
     {
       "prompt": "an open top box 2 tiles wide and 2 tiles deep",
@@ -181,17 +117,9 @@
       "passed": true,
       "attempts": 1,
       "pieces": 12,
-      "milliseconds": 13336,
-      "fingerprint": "fb9e57065ee2ed61f289c6a9e14badf9aecbfe1c36fd16d02ece0b57069fc45d",
-      "failures": [],
-      "program": {
-        "kind": "container",
-        "width": 2,
-        "height": 1,
-        "depth": 2,
-        "steps": 2,
-        "reinforcement": "shell"
-      }
+      "milliseconds": 14537,
+      "fingerprint": "02f4f130b48c5d2c31870301e8feffd70a9b9ecfd21979233e4b5c470733d1c2",
+      "failures": []
     },
     {
       "prompt": "an open top box 3 tiles wide and 2 tiles deep",
@@ -201,17 +129,9 @@
       "passed": true,
       "attempts": 1,
       "pieces": 16,
-      "milliseconds": 20560,
-      "fingerprint": "8f556d555e94f64dab7f76991d60df8551bc39bc7719869fe7aaf5245e9175ab",
-      "failures": [],
-      "program": {
-        "kind": "container",
-        "width": 3,
-        "height": 1,
-        "depth": 2,
-        "steps": 2,
-        "reinforcement": "shell"
-      }
+      "milliseconds": 19989,
+      "fingerprint": "8608a4a468132be3c159019b457d43b7bd6ceaf2f7239e23d274a3a8cec7eaae",
+      "failures": []
     },
     {
       "prompt": "a tunnel",
@@ -221,17 +141,9 @@
       "passed": true,
       "attempts": 2,
       "pieces": 6,
-      "milliseconds": 5535,
-      "fingerprint": "f73acf13eb243e79a5a5836c476bbae00a2f5199208679a106f8dfc4b9e2e458",
-      "failures": [],
-      "program": {
-        "kind": "tunnel",
-        "width": 2,
-        "height": 1,
-        "depth": 2,
-        "steps": 2,
-        "reinforcement": "rigid-panels"
-      }
+      "milliseconds": 6463,
+      "fingerprint": "b6a1785cef35afc18132ac91846cde21389b4f87ac19262eb4ddc69a160d233c",
+      "failures": []
     },
     {
       "prompt": "a tunnel 2 tiles long",
@@ -241,17 +153,9 @@
       "passed": true,
       "attempts": 2,
       "pieces": 6,
-      "milliseconds": 4532,
-      "fingerprint": "03e017af52a63a5392cf25dc8225379099c9dcdb93a1a2aead65b0ff08a3117a",
-      "failures": [],
-      "program": {
-        "kind": "tunnel",
-        "width": 2,
-        "height": 1,
-        "depth": 2,
-        "steps": 2,
-        "reinforcement": "rigid-panels"
-      }
+      "milliseconds": 5190,
+      "fingerprint": "bc0d2820f671afcb459239ce323673ca8dac1dcaff92b0d21888b9b3c15bf14f",
+      "failures": []
     },
     {
       "prompt": "a tunnel 3 tiles long",
@@ -261,17 +165,9 @@
       "passed": true,
       "attempts": 2,
       "pieces": 12,
-      "milliseconds": 13962,
-      "fingerprint": "3dd511dd4f6bf23143dc5b38c2d2831b110de2c9bf66ab4890fa64569f0c6a1c",
-      "failures": [],
-      "program": {
-        "kind": "tunnel",
-        "width": 2,
-        "height": 1,
-        "depth": 3,
-        "steps": 2,
-        "reinforcement": "rigid-panels"
-      }
+      "milliseconds": 14974,
+      "fingerprint": "b8bc73a7e3407b2ce73ed2647700b2c6769fe06d239e5a3b1517b5b4eefcc9d0",
+      "failures": []
     },
     {
       "prompt": "a tunnel 4 tiles long",
@@ -281,17 +177,9 @@
       "passed": true,
       "attempts": 2,
       "pieces": 12,
-      "milliseconds": 14750,
-      "fingerprint": "dc20c308155c3c9b420be76ecd112c4740fb7eaecd9bf6f16be578e153ff5f00",
-      "failures": [],
-      "program": {
-        "kind": "tunnel",
-        "width": 2,
-        "height": 1,
-        "depth": 4,
-        "steps": 2,
-        "reinforcement": "rigid-panels"
-      }
+      "milliseconds": 15925,
+      "fingerprint": "47e31cca62c7438f756a915fe5a861a62a7d0ba43805bc0b0d91037d7af3ac62",
+      "failures": []
     },
     {
       "prompt": "a tunnel 2 tiles wide and 2 tiles long",
@@ -301,17 +189,9 @@
       "passed": true,
       "attempts": 2,
       "pieces": 6,
-      "milliseconds": 4506,
-      "fingerprint": "a4c666bce80e4c34f4c8412c6ab498949fda73c6ed677d22b82c058c3a014213",
-      "failures": [],
-      "program": {
-        "kind": "tunnel",
-        "width": 2,
-        "height": 1,
-        "depth": 2,
-        "steps": 2,
-        "reinforcement": "rigid-panels"
-      }
+      "milliseconds": 5186,
+      "fingerprint": "78d01303ffad5f4180deafdc37727e6b56d9c4ac5e0b2c0dcf56dd037c29cd6a",
+      "failures": []
     },
     {
       "prompt": "a staircase with 2 steps",
@@ -321,17 +201,9 @@
       "passed": true,
       "attempts": 1,
       "pieces": 16,
-      "milliseconds": 23667,
-      "fingerprint": "aabd8ec62ae10da6d8b86fe8b9d1233ea965067ee29deefbd084b5800667853f",
-      "failures": [],
-      "program": {
-        "kind": "staircase",
-        "width": 1,
-        "height": 1,
-        "depth": 1,
-        "steps": 2,
-        "reinforcement": "shell"
-      }
+      "milliseconds": 26902,
+      "fingerprint": "bdbb66c21b48e6abf9ca5252e55a60d6cb154f95b6b05dc31b546d4d06cadcd4",
+      "failures": []
     },
     {
       "prompt": "a staircase with 3 steps",
@@ -341,17 +213,9 @@
       "passed": true,
       "attempts": 1,
       "pieces": 30,
-      "milliseconds": 56711,
-      "fingerprint": "583c681d4887e2b907e27e8cea89b810571ae6d2b3177563dace63873989fa11",
-      "failures": [],
-      "program": {
-        "kind": "staircase",
-        "width": 1,
-        "height": 1,
-        "depth": 1,
-        "steps": 3,
-        "reinforcement": "shell"
-      }
+      "milliseconds": 61026,
+      "fingerprint": "aafeb48feda4d2cc348b1bf546b562da20bec82e667301fe4a968e53b9885ca5",
+      "failures": []
     },
     {
       "prompt": "a staircase with 4 steps",
@@ -361,17 +225,9 @@
       "passed": true,
       "attempts": 1,
       "pieces": 48,
-      "milliseconds": 102803,
-      "fingerprint": "90071305d94e5263974bd838edd39f74675fbfad477389362c7353c37e587510",
-      "failures": [],
-      "program": {
-        "kind": "staircase",
-        "width": 1,
-        "height": 1,
-        "depth": 1,
-        "steps": 4,
-        "reinforcement": "shell"
-      }
+      "milliseconds": 113133,
+      "fingerprint": "9faaf20d7a69375339d112c16cccd146c1a539ec20003341335119f78b92dbb7",
+      "failures": []
     },
     {
       "prompt": "a staircase with 5 steps",
@@ -381,17 +237,9 @@
       "passed": true,
       "attempts": 1,
       "pieces": 70,
-      "milliseconds": 153688,
-      "fingerprint": "89251563b741e3af9e6161def96fd4906bb59b47bf12212856459a285e6e6f95",
-      "failures": [],
-      "program": {
-        "kind": "staircase",
-        "width": 1,
-        "height": 1,
-        "depth": 1,
-        "steps": 5,
-        "reinforcement": "shell"
-      }
+      "milliseconds": 189870,
+      "fingerprint": "a1e196a61f9ff5947a83fcc9ee8128f274e4aafdc38b8f2040373dd07577c463",
+      "failures": []
     },
     {
       "prompt": "a staircase with 3 steps and 2 tiles deep",
@@ -401,17 +249,9 @@
       "passed": true,
       "attempts": 1,
       "pieces": 48,
-      "milliseconds": 89894,
-      "fingerprint": "e72cbc8077fdf33637079c342617d7af091fd636a1b99b1fb8c941859c2ac5ea",
-      "failures": [],
-      "program": {
-        "kind": "staircase",
-        "width": 1,
-        "height": 1,
-        "depth": 2,
-        "steps": 3,
-        "reinforcement": "shell"
-      }
+      "milliseconds": 108123,
+      "fingerprint": "d9020480108ed074270628b62cfeaee9ad7f66a90acc1998504572ff02d2e976",
+      "failures": []
     },
     {
       "prompt": "a tower at least 12 inches tall and at most 6 inches tall",
@@ -432,7 +272,7 @@
       "passed": true,
       "attempts": 0,
       "pieces": 0,
-      "milliseconds": 1,
+      "milliseconds": 0,
       "failures": []
     },
     {

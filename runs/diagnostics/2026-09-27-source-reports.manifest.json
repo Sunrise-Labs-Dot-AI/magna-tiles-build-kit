@@ -1,0 +1,344 @@
+{
+  "scope": "Complete four-source report regeneration under frozen current runtime. Report-only exit0 is generation success, not replica acceptance. All four replicas remain not-verified; missing 3D snail remains missing. Generic/contact reports and full suite/build are separate pending gates.",
+  "validationCodeHash": "7a8ad00bf79266e385e434dcb9bdb6f7fabe98d1511f8564b36cd81496c93e29",
+  "finalRuntimeHashMatched": true,
+  "scriptExitCode": 0,
+  "maxMillisecondsPerReplica": 900000,
+  "timingScope": "File mtime minus report generatedAt is an approximate report duration, not an isolated benchmark. Small, light read-only discovery/type checks ran during this report; no other native simulation ran.",
+  "sourceReportRows": [
+    {
+      "id": "jet",
+      "path": "public/reference-replicas/jet.json",
+      "archive": "runs/diagnostics/2026-09-27-source-report-jet.json.gz",
+      "rawBytes": 172655,
+      "gzipBytes": 15252,
+      "rawSha256": "8e62eadc60d38226f148ebdae711c6daf79aecf0aa8504f002e35b15d1cf836f",
+      "gzipSha256": "9ad26e3f239a2ef63c24b2323c83a29609b3f150634537e73bea1637d7870c3f",
+      "authoredReplicaExactlyEqualToHEAD": true,
+      "secondsFromReportTimestampToWrite": 37.428640842437744,
+      "checks": {
+        "source": "pass",
+        "inventory": "pass",
+        "sourceStages": "unverified",
+        "fidelity": "fail",
+        "materials": "unverified",
+        "geometry": "pass",
+        "release": "fail",
+        "settledShape": "fail",
+        "assembly": "fail",
+        "function": "unverified"
+      },
+      "assemblyStages": [
+        {
+          "stageId": "body-upright-1",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "body-upright-2",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "body-upright-3",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "body-upright-4",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "body-horizontal",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "nose",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "wing-module--1",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "wing-root--1",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "wing-module-1",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "wing-root-1",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "wing-roots",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "wingtips",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "tail-cone",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "tail-horizontal",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "tail-fins",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "final",
+          "status": "unverified",
+          "operationCount": 0
+        }
+      ],
+      "releaseSeeds": [
+        {
+          "seed": 0,
+          "status": "fail"
+        },
+        {
+          "seed": 17,
+          "status": "fail"
+        },
+        {
+          "seed": 53,
+          "status": "fail"
+        }
+      ]
+    },
+    {
+      "id": "small-ramp",
+      "path": "public/reference-replicas/small-ramp.json",
+      "archive": "runs/diagnostics/2026-09-27-source-report-small-ramp.json.gz",
+      "rawBytes": 17099359,
+      "gzipBytes": 451434,
+      "rawSha256": "0b20a9f063cb053b79916771cfa10b8e5718a74057647e68679d5b8bb8fcf2bf",
+      "gzipSha256": "f349f1fc8fcee2774b2abb5d21c5c4afed337ffc14ca0570b0cd7a9c45369217",
+      "authoredReplicaExactlyEqualToHEAD": true,
+      "secondsFromReportTimestampToWrite": 284.0830092430115,
+      "checks": {
+        "source": "pass",
+        "inventory": "pass",
+        "sourceStages": "unverified",
+        "fidelity": "fail",
+        "materials": "unverified",
+        "geometry": "pass",
+        "release": "pass",
+        "settledShape": "fail",
+        "assembly": "pass",
+        "function": "pass"
+      },
+      "assemblyStages": [
+        {
+          "stageId": "small-wedge",
+          "status": "pass",
+          "operationCount": 15
+        },
+        {
+          "stageId": "small-launch",
+          "status": "pass",
+          "operationCount": 12
+        },
+        {
+          "stageId": "small-final",
+          "status": "pass",
+          "operationCount": 3
+        }
+      ],
+      "releaseSeeds": [
+        {
+          "seed": 0,
+          "status": "pass"
+        },
+        {
+          "seed": 17,
+          "status": "pass"
+        },
+        {
+          "seed": 53,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "medium-ramp",
+      "path": "public/reference-replicas/medium-ramp.json",
+      "archive": "runs/diagnostics/2026-09-27-source-report-medium-ramp.json.gz",
+      "rawBytes": 32950903,
+      "gzipBytes": 806410,
+      "rawSha256": "04b5003c9017a077c4a3e0652361d819db0fbf717484588f78ca9f84cf7b79f1",
+      "gzipSha256": "02c3bc4fab81e4368fb5424b43de98f940d8a7706e54eb04fdbda21d44a6c983",
+      "authoredReplicaExactlyEqualToHEAD": true,
+      "secondsFromReportTimestampToWrite": 681.5048332214355,
+      "checks": {
+        "source": "pass",
+        "inventory": "pass",
+        "sourceStages": "unverified",
+        "fidelity": "fail",
+        "materials": "unverified",
+        "geometry": "pass",
+        "release": "pass",
+        "settledShape": "fail",
+        "assembly": "fail",
+        "function": "fail"
+      },
+      "assemblyStages": [
+        {
+          "stageId": "medium-lower",
+          "status": "pass",
+          "operationCount": 12
+        },
+        {
+          "stageId": "medium-upper-preparation",
+          "status": "pass",
+          "operationCount": 12
+        },
+        {
+          "stageId": "medium-support",
+          "status": "pass",
+          "operationCount": 15
+        },
+        {
+          "stageId": "medium-upper-transfer",
+          "status": "pass",
+          "operationCount": 3
+        },
+        {
+          "stageId": "medium-lower-placement",
+          "status": "pass",
+          "operationCount": 3
+        },
+        {
+          "stageId": "medium-turn",
+          "status": "pass",
+          "operationCount": 3
+        },
+        {
+          "stageId": "medium-lower-walls",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "medium-lower-cover",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "medium-turn-cover",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "medium-upper-cover",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "medium-final",
+          "status": "unverified",
+          "operationCount": 0
+        }
+      ],
+      "releaseSeeds": [
+        {
+          "seed": 0,
+          "status": "pass"
+        },
+        {
+          "seed": 17,
+          "status": "pass"
+        },
+        {
+          "seed": 53,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "large-ramp",
+      "path": "public/reference-replicas/large-ramp.json",
+      "archive": "runs/diagnostics/2026-09-27-source-report-large-ramp.json.gz",
+      "rawBytes": 99018,
+      "gzipBytes": 6341,
+      "rawSha256": "16777ad5d6575441d389bdc1459ead29afe8a481c93481269b7def49b91e1bf7",
+      "gzipSha256": "f10ae04e55b8853c4c38dca2a458eccab8f5255d2e7f965e90e4f92885967d87",
+      "authoredReplicaExactlyEqualToHEAD": true,
+      "secondsFromReportTimestampToWrite": 79.55298495292664,
+      "checks": {
+        "source": "pass",
+        "inventory": "pass",
+        "sourceStages": "unverified",
+        "fidelity": "unverified",
+        "materials": "unverified",
+        "geometry": "pass",
+        "release": "pass",
+        "settledShape": "unverified",
+        "assembly": "unverified",
+        "function": "unverified"
+      },
+      "assemblyStages": [
+        {
+          "stageId": "large-bay-0",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "large-bay-1",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "large-bay-2",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "large-decks",
+          "status": "unverified",
+          "operationCount": 0
+        },
+        {
+          "stageId": "large-final",
+          "status": "unverified",
+          "operationCount": 0
+        }
+      ],
+      "releaseSeeds": [
+        {
+          "seed": 0,
+          "status": "pass"
+        },
+        {
+          "seed": 17,
+          "status": "pass"
+        },
+        {
+          "seed": 53,
+          "status": "pass"
+        }
+      ]
+    }
+  ],
+  "logSha256": "9af7e742f94023475ed2b823678f06cc69599cedd79378e258db0ec4745a1785",
+  "summaryRawSha256": "b6921d6744d7a8e25a4129410601af770d3849522159677b39d5eae014552e04",
+  "summaryGzipSha256": "0e23b53fadc72035cf0318027acf107b2570c171c886b62ccb047c3fcd821081"
+}

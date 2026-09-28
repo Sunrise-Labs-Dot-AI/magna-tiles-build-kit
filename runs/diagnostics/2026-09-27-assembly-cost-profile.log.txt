@@ -1,0 +1,1 @@
+{"wallSeconds":253.99920308400002,"stages":[{"stageId":"base","status":"pass"},{"stageId":"moving","status":"pass"},{"stageId":"third","status":"pass"},{"stageId":"transfer","status":"pass"},{"stageId":"after-transfer","status":"pass"}]}

@@ -1,0 +1,10 @@
+{
+  "runtimeHash": "7a8ad00bf79266e385e434dcb9bdb6f7fabe98d1511f8564b36cd81496c93e29",
+  "command": "npm run lint",
+  "exitCode": 0,
+  "errors": 0,
+  "warnings": 38,
+  "log": "runs/diagnostics/2026-09-27-swept-clearance-full-lint.log.txt",
+  "sha256": "4a7cc61e35c53fd958e73faa14481b3b6d236d1d7636c751453ba1062fd9de64",
+  "scope": "Static lint only. No full regression or source acceptance claim."
+}
