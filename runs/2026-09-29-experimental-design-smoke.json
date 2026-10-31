@@ -1,0 +1,38 @@
+{
+  "httpStatus": 200,
+  "seconds": 0.40887145791202784,
+  "status": "needs-repair",
+  "title": "Tower \u00b7 1 \u00d7 1 \u00d7 1 cells",
+  "pieces": 6,
+  "checks": [
+    {
+      "label": "Valid catalog geometry",
+      "status": "pass"
+    },
+    {
+      "label": "Complete intent contract",
+      "status": "pass"
+    },
+    {
+      "label": "Height envelope",
+      "status": "pass"
+    },
+    {
+      "label": "Upright tower",
+      "status": "fail"
+    },
+    {
+      "label": "Continuous roof",
+      "status": "pass"
+    },
+    {
+      "label": "Enclosing walls",
+      "status": "pass"
+    },
+    {
+      "label": "Piece and inventory budget",
+      "status": "pass"
+    }
+  ],
+  "error": null
+}

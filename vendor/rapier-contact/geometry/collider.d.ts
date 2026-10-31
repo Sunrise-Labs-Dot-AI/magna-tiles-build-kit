@@ -407,7 +407,7 @@ export declare class Collider {
      * If this collider has a triangle mesh, polyline, convex polygon, or convex polyhedron shape,
      * this returns the vertex buffer of said shape.
      */
-    vertices(): Float32Array;
+    vertices(): Float64Array;
     /**
      * If this collider has a triangle mesh, polyline, or convex polyhedron shape,
      * this returns the index buffer of said shape.
@@ -418,7 +418,7 @@ export declare class Collider {
      * the heightfield.
      * In 3D, the returned height matrix is provided in column-major order.
      */
-    heightfieldHeights(): Float32Array;
+    heightfieldHeights(): Float64Array;
     /**
      * If this collider has a heightfield shape, this returns the scale
      * applied to it.
@@ -617,27 +617,27 @@ export declare class ColliderDesc {
      * @param indices - The indices of the polyline's segments. If this is `undefined` or `null`,
      *    the vertices are assumed to describe a line strip.
      */
-    static polyline(vertices: Float32Array, indices?: Uint32Array | null): ColliderDesc;
+    static polyline(vertices: Float64Array, indices?: Uint32Array | null): ColliderDesc;
     /**
      * Creates a new collider descriptor with a shape made of voxels.
      *
      * @param data - Defines the set of voxels. If this is a `Int32Array` then
      *               each voxel is defined from its (signed) grid coordinates,
      *               with 3 (resp 2) contiguous integers per voxel in 3D (resp 2D).
-     *               If this is a `Float32Array`, each voxel will be such that
+     *               If this is a `Float64Array`, each voxel will be such that
      *               they contain at least one point from this array (where each
      *               point is defined from 3 (resp 2) contiguous numbers per point
      *               in 3D (resp 2D).
      * @param voxelSize - The size of each voxel.
      */
-    static voxels(voxels: Float32Array | Int32Array, voxelSize: Vector): ColliderDesc;
+    static voxels(voxels: Float64Array | Int32Array, voxelSize: Vector): ColliderDesc;
     /**
      * Creates a new collider descriptor with a triangle mesh shape.
      *
      * @param vertices - The coordinates of the triangle mesh's vertices.
      * @param indices - The indices of the triangle mesh's triangles.
      */
-    static trimesh(vertices: Float32Array, indices: Uint32Array, flags?: TriMeshFlags): ColliderDesc;
+    static trimesh(vertices: Float64Array, indices: Uint32Array, flags?: TriMeshFlags): ColliderDesc;
     /**
      * Creates a new collider descriptor with a cuboid shape.
      *
@@ -664,7 +664,7 @@ export declare class ColliderDesc {
      *                  provided as a matrix stored in column-major order.
      * @param scale - The scale factor applied to the heightfield.
      */
-    static heightfield(nrows: number, ncols: number, heights: Float32Array, scale: Vector, flags?: HeightFieldFlags): ColliderDesc;
+    static heightfield(nrows: number, ncols: number, heights: Float64Array, scale: Vector, flags?: HeightFieldFlags): ColliderDesc;
     /**
      * Create a new collider descriptor with a cylinder shape.
      *
@@ -701,14 +701,14 @@ export declare class ColliderDesc {
      *
      * @param points - The point that will be used to compute the convex-hull.
      */
-    static convexHull(points: Float32Array): ColliderDesc | null;
+    static convexHull(points: Float64Array): ColliderDesc | null;
     /**
      * Creates a new collider descriptor that uses the given set of points assumed
      * to form a convex polyline (no convex-hull computation will be done).
      *
      * @param vertices - The vertices of the convex polyline.
      */
-    static convexMesh(vertices: Float32Array, indices?: Uint32Array | null): ColliderDesc | null;
+    static convexMesh(vertices: Float64Array, indices?: Uint32Array | null): ColliderDesc | null;
     /**
      * Computes the convex-hull of the given points and use the resulting
      * convex polyhedron as the shape for this new collider descriptor. A
@@ -717,7 +717,7 @@ export declare class ColliderDesc {
      * @param points - The point that will be used to compute the convex-hull.
      * @param borderRadius - The radius of the round border added to the convex polyhedron.
      */
-    static roundConvexHull(points: Float32Array, borderRadius: number): ColliderDesc | null;
+    static roundConvexHull(points: Float64Array, borderRadius: number): ColliderDesc | null;
     /**
      * Creates a new collider descriptor that uses the given set of points assumed
      * to form a round convex polyline (no convex-hull computation will be done).
@@ -725,7 +725,7 @@ export declare class ColliderDesc {
      * @param vertices - The vertices of the convex polyline.
      * @param borderRadius - The radius of the round border added to the convex polyline.
      */
-    static roundConvexMesh(vertices: Float32Array, indices: Uint32Array | null, borderRadius: number): ColliderDesc | null;
+    static roundConvexMesh(vertices: Float64Array, indices: Uint32Array | null, borderRadius: number): ColliderDesc | null;
     /**
      * Sets the position of the collider to be created relative to the rigid-body it is attached to.
      */

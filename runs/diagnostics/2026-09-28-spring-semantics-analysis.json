@@ -1,0 +1,157 @@
+{
+  "scope": "Independent Python matrix calculation on saved query states; no native rerun and no independent model review. Does not repair or qualify the failed experiment.",
+  "sourceRawSha256": "399d6ad3cd7cdb757f5a13a2e4e6ecc245f07451b4444d294f2088fc6dae095e",
+  "productionContext": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+  "forceRows": 11,
+  "freeRows": 13,
+  "passedChecks": 195,
+  "failedChecks": 52,
+  "failedIds": [
+    "identity/damping-0/angular-momentum-with-spin",
+    "rotation/damping-0/angular-momentum-with-spin",
+    "rotation/damping-0/last/0/angular",
+    "rotation/damping-0/last/0/rotation",
+    "rotation/damping-0/last/1/angular",
+    "rotation/damping-0/last/1/rotation",
+    "translation/damping-0/angular-momentum-with-spin",
+    "translation/damping-0/last/0/position",
+    "translation/damping-0/last/0/velocity",
+    "translation/damping-0/last/0/angular",
+    "translation/damping-0/last/1/position",
+    "translation/damping-0/last/1/velocity",
+    "translation/damping-0/last/1/angular",
+    "translation/damping-0/impulse/1/angular",
+    "rigid-transform/damping-0/linear-momentum",
+    "rigid-transform/damping-0/angular-momentum-with-spin",
+    "rigid-transform/damping-0/last/0/velocity",
+    "rigid-transform/damping-0/last/0/angular",
+    "rigid-transform/damping-0/last/0/rotation",
+    "rigid-transform/damping-0/last/1/position",
+    "rigid-transform/damping-0/last/1/velocity",
+    "rigid-transform/damping-0/last/1/angular",
+    "rigid-transform/damping-0/last/1/rotation",
+    "reverse-bodies/damping-0/angular-momentum-with-spin",
+    "reverse-pairs/damping-0/angular-momentum-with-spin",
+    "identity/damping-8.858267716535433/linear-momentum",
+    "identity/damping-8.858267716535433/angular-momentum-with-spin",
+    "rotation/damping-8.858267716535433/angular-momentum-with-spin",
+    "rotation/damping-8.858267716535433/last/0/rotation",
+    "rotation/damping-8.858267716535433/last/1/rotation",
+    "translation/damping-8.858267716535433/linear-momentum",
+    "translation/damping-8.858267716535433/angular-momentum-with-spin",
+    "translation/damping-8.858267716535433/last/0/position",
+    "translation/damping-8.858267716535433/last/0/velocity",
+    "translation/damping-8.858267716535433/last/0/angular",
+    "translation/damping-8.858267716535433/last/1/position",
+    "translation/damping-8.858267716535433/last/1/velocity",
+    "translation/damping-8.858267716535433/last/1/angular",
+    "translation/damping-8.858267716535433/impulse/1/angular",
+    "rigid-transform/damping-8.858267716535433/angular-momentum-with-spin",
+    "rigid-transform/damping-8.858267716535433/last/0/position",
+    "rigid-transform/damping-8.858267716535433/last/0/velocity",
+    "rigid-transform/damping-8.858267716535433/last/0/angular",
+    "rigid-transform/damping-8.858267716535433/last/0/rotation",
+    "rigid-transform/damping-8.858267716535433/last/1/position",
+    "rigid-transform/damping-8.858267716535433/last/1/velocity",
+    "rigid-transform/damping-8.858267716535433/last/1/angular",
+    "rigid-transform/damping-8.858267716535433/last/1/rotation",
+    "reverse-bodies/damping-8.858267716535433/linear-momentum",
+    "reverse-bodies/damping-8.858267716535433/angular-momentum-with-spin",
+    "reverse-pairs/damping-8.858267716535433/linear-momentum",
+    "reverse-pairs/damping-8.858267716535433/angular-momentum-with-spin"
+  ],
+  "independentMomentumRows": [
+    {
+      "id": "identity/damping-0",
+      "recomputedFinalAngularDrift": 0.06458931175151311,
+      "samplePeakAngularDrift": 0.06458931175151311,
+      "reportedFullTracePeak": 0.06458931175151295,
+      "limit": 0.0002774160864680256
+    },
+    {
+      "id": "rotation/damping-0",
+      "recomputedFinalAngularDrift": 0.06470485915237732,
+      "samplePeakAngularDrift": 0.06470485915237732,
+      "reportedFullTracePeak": 0.06470485915237749,
+      "limit": 0.00027741608553448135
+    },
+    {
+      "id": "translation/damping-0",
+      "recomputedFinalAngularDrift": 0.060497630796173235,
+      "samplePeakAngularDrift": 0.06090398591871964,
+      "reportedFullTracePeak": 0.06158475178088805,
+      "limit": 0.0002774160864680256
+    },
+    {
+      "id": "rigid-transform/damping-0",
+      "recomputedFinalAngularDrift": 0.07306558569020745,
+      "samplePeakAngularDrift": 0.07306558569020745,
+      "reportedFullTracePeak": 0.07306558569020788,
+      "limit": 0.0002774160865250938
+    },
+    {
+      "id": "reverse-bodies/damping-0",
+      "recomputedFinalAngularDrift": 0.06458983769168793,
+      "samplePeakAngularDrift": 0.06458983769168793,
+      "reportedFullTracePeak": 0.06458983769168793,
+      "limit": 0.0002774160864680256
+    },
+    {
+      "id": "reverse-pairs/damping-0",
+      "recomputedFinalAngularDrift": 0.06458949854181391,
+      "samplePeakAngularDrift": 0.06458949854181391,
+      "reportedFullTracePeak": 0.06458949854181369,
+      "limit": 0.0002774160864680256
+    },
+    {
+      "id": "identity/damping-8.858267716535433",
+      "recomputedFinalAngularDrift": 0.024645314001138292,
+      "samplePeakAngularDrift": 0.024645314001138292,
+      "reportedFullTracePeak": 0.024645314001138095,
+      "limit": 0.0002774160864680256
+    },
+    {
+      "id": "rotation/damping-8.858267716535433",
+      "recomputedFinalAngularDrift": 0.024729878228953138,
+      "samplePeakAngularDrift": 0.024729878228953138,
+      "reportedFullTracePeak": 0.024729878228953124,
+      "limit": 0.00027741608553448135
+    },
+    {
+      "id": "translation/damping-8.858267716535433",
+      "recomputedFinalAngularDrift": 0.029811047038583456,
+      "samplePeakAngularDrift": 0.029811047038583456,
+      "reportedFullTracePeak": 0.03031926836287626,
+      "limit": 0.0002774160864680256
+    },
+    {
+      "id": "rigid-transform/damping-8.858267716535433",
+      "recomputedFinalAngularDrift": 0.03610031742304206,
+      "samplePeakAngularDrift": 0.03610031742304206,
+      "reportedFullTracePeak": 0.03610031742304183,
+      "limit": 0.0002774160865250938
+    },
+    {
+      "id": "reverse-bodies/damping-8.858267716535433",
+      "recomputedFinalAngularDrift": 0.024645205814671986,
+      "samplePeakAngularDrift": 0.024645205814671986,
+      "reportedFullTracePeak": 0.024645205814672243,
+      "limit": 0.0002774160864680256
+    },
+    {
+      "id": "reverse-pairs/damping-8.858267716535433",
+      "recomputedFinalAngularDrift": 0.02471926776988256,
+      "samplePeakAngularDrift": 0.02471926776988256,
+      "reportedFullTracePeak": 0.024719267769882564,
+      "limit": 0.0002774160864680256
+    },
+    {
+      "id": "conservative-coarse",
+      "recomputedFinalAngularDrift": 0.06421463561876035,
+      "samplePeakAngularDrift": 0.06421463561876035,
+      "reportedFullTracePeak": 0.06421463561876027,
+      "limit": 0.0002774160864680256
+    }
+  ],
+  "allInitialFinalMomentumMatches": true
+}

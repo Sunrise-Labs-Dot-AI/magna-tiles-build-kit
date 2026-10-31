@@ -1,0 +1,305 @@
+{
+  "scope": "Full-coordinate f64 corrected-gyro tile contacts with existing production hinges. Historical unpatched negative control uses frozen original production inputs with exact replay assertions. Not compliant seams, folding or source acceptance.",
+  "startedAt": "2026-09-28T22:50:00.073Z",
+  "completed": false,
+  "executionCompleted": true,
+  "context": {
+    "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+    "inputHashes": {
+      "lib/engine/backend-identity.ts": "611d93e2fe40483d5a3c0cc4fbba6fa0b2b35db18fea81df225264264ef58da6",
+      "lib/engine/build.ts": "c68d3716ce8839e7da3b35c74169efe1902af61ece29e1f1fe37a6e172843f10",
+      "lib/engine/constants.ts": "a2f2b57189540ea8cca7dd92ed6320b6b92ec0e7d1abff3e8529f26d421257b5",
+      "lib/engine/physics-backend.ts": "e9a8032ac986ebd4f28a64b27815d0fdd504d9e0126e935d8ece57bea1e1222d",
+      "lib/engine/physics-model.ts": "1608f221e86bf3cdff3b1e5bf592badfaca9bb1eb914151f73c2f1f153f46162",
+      "lib/engine/rapier-world.ts": "f0617fb979e1dc7b2fd88d6dd733ff9ccdd46d1e7e5d694bcf0da12d00f49d4f",
+      "lib/replication/provenance.ts": "d2a48d4766737709f2cdd50faf434f25b9b6ae5a7b64c251388489c3f47c7984",
+      "runs/2026-09-28-gyroscopic-fixed-control-plan.md": "a194e68a4153337d5cae9fc47c5eae27648723bbeaad8e7282a3997bf587cb4b",
+      "runs/2026-09-28-gyroscopic-tile-contact-plan.md": "b67014f2b18f268de66ccbaa7c7be7c08b1613c4c96ec7e1844e24880ffe318a",
+      "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.manifest.json": "e6a687c82597570bdccd8669f58135012e50daf80ed925e0c41f4ec96d0bda45",
+      "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.production.log.txt": "5c59673c677d320e110c5a0cd14dee528739b0090eef6d211b8d6cf07dbfd767",
+      "scripts/reference/gyroscopic-f64-profile.json": "9b8200540578933472c6d552269e0f87fa2dcac96a8514a93de33505d7cf1adb",
+      "scripts/reference/gyroscopic-frozen-negative-control.ts": "ac9ae29cab47c8979452f2794474d63a0b1d06f2ecaaf5b6157f5220ecc7b0a0",
+      "scripts/reference/gyroscopic-negative-seed.json": "41e80b6c02b92dc21701cc12aef83354e708ff59f7d0b89bfd6ff566665f3256",
+      "scripts/reference/gyroscopic-probe-context.ts": "a68a476efeb875bdc781692d03a5b076a89c95679c4f33ed1d4f2ea2ef768fde",
+      "scripts/reference/gyroscopic-tile-contact-qualified.config.ts": "d6406cfd10b86b37e275b0fa21ef454ba881574345912a16174597dc0e9eacef",
+      "scripts/reference/gyroscopic-tile-probe.config.ts": "772f797d80365d066e226f0015a2c67b90c46ee9f72b32de0033c4b813a76840",
+      "scripts/reference/probe-gyroscopic-semantics.config.ts": "65a49426fbf79692872f50f52d8f0c189e68ca6713d13d37ac5f36e51650c158",
+      "scripts/reference/probe-gyroscopic-tile-contact.ts": "065b997bc02c9406b5648994c6ebb7663b3226b2e57154f025686d93ac08675b",
+      "tests/fixtures/contact-frames.ts": "84e91bf2ff5702082478063516eb07d0ac06adf0271faad5e1266253ee966fbf",
+      "tests/fixtures/unpatched-contact.ts": "76a90c7bea5e3ae6ab7314de2e641b9ae045764edc74c317316b060d6ed6998f",
+      "tests/polyhedral-contact.test.ts": "13a0c9e77de78678b8cee4459608046ddf867f317552ddd2b30cdfbcec7c38a6",
+      "tests/rectangular-contact.test.ts": "f4f5804b762eded3f5df86d8b2f32199f61c072c0ebe9d73e1051f61f9a0e234",
+      "tests/triangle-contact.test.ts": "e9f775d45fe26d9d227067310b783df25a57562a306c092b0498fdab5e68db49",
+      "vitest.config.ts": "593a4047719834d7a45c913ef7f579316637a878fa4f8a6fd03419342575721a"
+    },
+    "nativeHashes": {
+      "/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/node_modules/@dimforge/rapier3d-compat/rapier.cjs": "84b8a4425c8930a627451178c1bb01586ba6c47d93f6f25c80f7af0ca7f1760f",
+      "/tmp/magnatiles-gyroscopic-probe-f64-principal-frame/build-proof.json": "ed82e8c2936d01562042221fd93dde2897f4603689ba055f69a93ce79a6419fd",
+      "/tmp/magnatiles-gyroscopic-probe-f64-principal-frame/gyroscopic-binding.patch": "d6f9b27575dd173599d3ff9c7cc599596e21582906577919cf57aee1a0891dd8",
+      "/tmp/magnatiles-gyroscopic-probe-f64-principal-frame/principal-frame.patch": "ce23b9668ed9928edf4c18e81de0a9157163625678ed5511cda870039943d97e",
+      "/tmp/magnatiles-gyroscopic-probe-f64-principal-frame/source/rapier-compat/builds/3d/pkg/rapier.cjs": "bd257411df16050f6ab6f005990693d4b9d71ebe7aa22a572a8dfbe8bed4d74b",
+      "/tmp/magnatiles-gyroscopic-probe-f64-principal-frame/source/rapier-compat/builds/3d/pkg/rapier_wasm3d_bg.wasm": "45c1c252af5bc0e4f51ab2cf4dcb3716870c261b028db7b5344451d2a9006438"
+    },
+    "runnerSha256": "20f073f8bc4c1cb22a2b5ceda1992398535d40f90750aa380817ae3134e30b02"
+  },
+  "archives": [
+    {
+      "source": "scripts/reference/gyroscopic-tile-contact-qualified.config.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-0.gz",
+      "rawSha256": "d6406cfd10b86b37e275b0fa21ef454ba881574345912a16174597dc0e9eacef",
+      "sha256": "e365c54aee944609ed4e51062bb4e29edf42ba2c5bd9eb7810fe294e70212e11"
+    },
+    {
+      "source": "scripts/reference/gyroscopic-frozen-negative-control.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-1.gz",
+      "rawSha256": "ac9ae29cab47c8979452f2794474d63a0b1d06f2ecaaf5b6157f5220ecc7b0a0",
+      "sha256": "0985fbd2aece89dc148d7ef97f31eca63e563aa1fb5170bcec3c1690d31fb0ca"
+    },
+    {
+      "source": "scripts/reference/gyroscopic-negative-seed.json",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-2.gz",
+      "rawSha256": "41e80b6c02b92dc21701cc12aef83354e708ff59f7d0b89bfd6ff566665f3256",
+      "sha256": "5700a7e68314e5586a29be9bf4c9b66b7b5acb0775af9e946dd7002b1081a3c7"
+    },
+    {
+      "source": "runs/2026-09-28-gyroscopic-fixed-control-plan.md",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-3.gz",
+      "rawSha256": "a194e68a4153337d5cae9fc47c5eae27648723bbeaad8e7282a3997bf587cb4b",
+      "sha256": "27f812ad89b0084d12a41167c29483d36995c30017dfe2aad0d454648ff13822"
+    },
+    {
+      "source": "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.production.log.txt",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-4.gz",
+      "rawSha256": "5c59673c677d320e110c5a0cd14dee528739b0090eef6d211b8d6cf07dbfd767",
+      "sha256": "860edebe8179e508d0b84834993a41d84cb11d64d323d6615bfb086e071fc7fb"
+    },
+    {
+      "source": "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.manifest.json",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-5.gz",
+      "rawSha256": "e6a687c82597570bdccd8669f58135012e50daf80ed925e0c41f4ec96d0bda45",
+      "sha256": "e469f31c4499962f7376e8653e7001035851186a1f08380f581161d4ada7994e"
+    },
+    {
+      "source": "scripts/reference/gyroscopic-tile-probe.config.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-6.gz",
+      "rawSha256": "772f797d80365d066e226f0015a2c67b90c46ee9f72b32de0033c4b813a76840",
+      "sha256": "779a7713c23aecabca27c17cd8d104c1cf1f8290c141c24cc6cc1e3108a66f58"
+    },
+    {
+      "source": "scripts/reference/probe-gyroscopic-tile-contact.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-7.gz",
+      "rawSha256": "065b997bc02c9406b5648994c6ebb7663b3226b2e57154f025686d93ac08675b",
+      "sha256": "3dae7896a3ea97620d590ff1b25cd5b1d089f6756aacc362e7dc869f48efe2de"
+    },
+    {
+      "source": "scripts/reference/gyroscopic-probe-context.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-8.gz",
+      "rawSha256": "a68a476efeb875bdc781692d03a5b076a89c95679c4f33ed1d4f2ea2ef768fde",
+      "sha256": "9a5effab521131bbac1147c9d73fd9a0bf6cab2cb49b5b62567403129a19d215"
+    },
+    {
+      "source": "scripts/reference/gyroscopic-f64-profile.json",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-9.gz",
+      "rawSha256": "9b8200540578933472c6d552269e0f87fa2dcac96a8514a93de33505d7cf1adb",
+      "sha256": "9e2734f6593fd8a5428e276b3984e109f820809ee35ef002b04f862649659acf"
+    },
+    {
+      "source": "scripts/reference/probe-gyroscopic-semantics.config.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-10.gz",
+      "rawSha256": "65a49426fbf79692872f50f52d8f0c189e68ca6713d13d37ac5f36e51650c158",
+      "sha256": "8b5044c9d45ce0306ceed159d30a7368e7c8305044056f6c6e228d3ca560ab1c"
+    },
+    {
+      "source": "runs/2026-09-28-gyroscopic-tile-contact-plan.md",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-11.gz",
+      "rawSha256": "b67014f2b18f268de66ccbaa7c7be7c08b1613c4c96ec7e1844e24880ffe318a",
+      "sha256": "613de876344ff0901339a057c1751779dca749af5eb6f45ae08ea8d91d49b92b"
+    },
+    {
+      "source": "tests/fixtures/contact-frames.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-12.gz",
+      "rawSha256": "84e91bf2ff5702082478063516eb07d0ac06adf0271faad5e1266253ee966fbf",
+      "sha256": "bf214f950258907a956a12788a673e9a3dc6ed2e1975c04645912260f402f415"
+    },
+    {
+      "source": "tests/fixtures/unpatched-contact.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-13.gz",
+      "rawSha256": "76a90c7bea5e3ae6ab7314de2e641b9ae045764edc74c317316b060d6ed6998f",
+      "sha256": "f58aa066f8b70ae46a2e6ee42ce6428f395e24115a9b25fd6584b865c155e823"
+    },
+    {
+      "source": "tests/triangle-contact.test.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-14.gz",
+      "rawSha256": "e9f775d45fe26d9d227067310b783df25a57562a306c092b0498fdab5e68db49",
+      "sha256": "dd61e2d0af73c0a58a0c123aaafdbbcee75c95574658285928f44ee7787db8c9"
+    },
+    {
+      "source": "tests/rectangular-contact.test.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-15.gz",
+      "rawSha256": "f4f5804b762eded3f5df86d8b2f32199f61c072c0ebe9d73e1051f61f9a0e234",
+      "sha256": "21887d2fae41d0a1975be96dbb1489804428413b6e2ee0056b938832084fa6b6"
+    },
+    {
+      "source": "tests/polyhedral-contact.test.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-16.gz",
+      "rawSha256": "13a0c9e77de78678b8cee4459608046ddf867f317552ddd2b30cdfbcec7c38a6",
+      "sha256": "45e7a722be5a94dcffe91c8b6d4115400d137c3a10857ce12f0c65b1a5311745"
+    },
+    {
+      "source": "lib/engine/build.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-17.gz",
+      "rawSha256": "c68d3716ce8839e7da3b35c74169efe1902af61ece29e1f1fe37a6e172843f10",
+      "sha256": "a20c7a238edecd7279705a425ae6ff67c2fb9abc7b7cbc40765a06ef09ce4238"
+    },
+    {
+      "source": "lib/engine/physics-model.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-18.gz",
+      "rawSha256": "1608f221e86bf3cdff3b1e5bf592badfaca9bb1eb914151f73c2f1f153f46162",
+      "sha256": "750a8068edd9ffe2ef0002552985bef29e252bec18001cfe3799d0441c192ea1"
+    },
+    {
+      "source": "lib/engine/rapier-world.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-19.gz",
+      "rawSha256": "f0617fb979e1dc7b2fd88d6dd733ff9ccdd46d1e7e5d694bcf0da12d00f49d4f",
+      "sha256": "c9d1fb62dcaebdc547fb020bfcea8fc2add4869bc2ab1272d07309e1312aa38c"
+    },
+    {
+      "source": "lib/engine/backend-identity.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-20.gz",
+      "rawSha256": "611d93e2fe40483d5a3c0cc4fbba6fa0b2b35db18fea81df225264264ef58da6",
+      "sha256": "e49e5f94b34140b63cfae0545bc77b402481db64b406a2f515babcca0813649d"
+    },
+    {
+      "source": "lib/engine/constants.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-21.gz",
+      "rawSha256": "a2f2b57189540ea8cca7dd92ed6320b6b92ec0e7d1abff3e8529f26d421257b5",
+      "sha256": "97803ff4223c1f2a88abc7a728eaf82d8ef83eb33cf4f7ee0f4d4c69b7853351"
+    },
+    {
+      "source": "lib/engine/physics-backend.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-22.gz",
+      "rawSha256": "e9a8032ac986ebd4f28a64b27815d0fdd504d9e0126e935d8ece57bea1e1222d",
+      "sha256": "54330ef8feb1291b17bfa068f139b137257ee0daa5cca7c79d7823b1f376ef29"
+    },
+    {
+      "source": "lib/replication/provenance.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-23.gz",
+      "rawSha256": "d2a48d4766737709f2cdd50faf434f25b9b6ae5a7b64c251388489c3f47c7984",
+      "sha256": "666f529449d2ee2372cd52b2a4cd3e9df114e4ccc8ff852cb9c8a10aaa42232b"
+    },
+    {
+      "source": "vitest.config.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.input-24.gz",
+      "rawSha256": "593a4047719834d7a45c913ef7f579316637a878fa4f8a6fd03419342575721a",
+      "sha256": "bc320ce4af16a2d209ea151411cc7591f0de3ec0e461177e30a8b74f9c8d4baa"
+    },
+    {
+      "source": "/tmp/magnatiles-gyroscopic-probe-f64-principal-frame/build-proof.json",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.native-input-0.gz",
+      "rawSha256": "ed82e8c2936d01562042221fd93dde2897f4603689ba055f69a93ce79a6419fd",
+      "sha256": "c4d4fcae7521f51f0287ceaca013e7de9060ccb4cba2f1a39a8081377c60a0f8"
+    },
+    {
+      "source": "/tmp/magnatiles-gyroscopic-probe-f64-principal-frame/principal-frame.patch",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.native-input-1.gz",
+      "rawSha256": "ce23b9668ed9928edf4c18e81de0a9157163625678ed5511cda870039943d97e",
+      "sha256": "96c2c9d88881b8f9d3c126051bdbd01d523f3ca4c47abdb8afef78caedf8f7e0"
+    },
+    {
+      "source": "/tmp/magnatiles-gyroscopic-probe-f64-principal-frame/gyroscopic-binding.patch",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.native-input-2.gz",
+      "rawSha256": "d6f9b27575dd173599d3ff9c7cc599596e21582906577919cf57aee1a0891dd8",
+      "sha256": "2fda5c286e652261683be200faa02addaf140966f1fdc1d890d3356b31cf954e"
+    },
+    {
+      "source": "/private/tmp/magnatiles-gyro-tile-fixed-control-run.cjs",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.runner.cjs.gz",
+      "rawSha256": "20f073f8bc4c1cb22a2b5ceda1992398535d40f90750aa380817ae3134e30b02",
+      "sha256": "7484dfcc3c2ffaa220deb4c83756e6db790d015fab82725f246a9f3e1471a9b9"
+    },
+    {
+      "source": "/tmp/magnatiles-gyroscopic-tile-contact-fixed-control.log",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.log.txt",
+      "rawSha256": "97684dda1eb7ca893f081591945add3244aa6b997c570c68e98f6b31a95dfe64",
+      "sha256": "97684dda1eb7ca893f081591945add3244aa6b997c570c68e98f6b31a95dfe64"
+    },
+    {
+      "source": "/tmp/magnatiles-gyroscopic-tile-contact-fixed-control.vitest.json",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.vitest.json.gz",
+      "rawSha256": "85c919b6ebc1908029bed22c46c2b84552a196a109934e68241059afc661f51f",
+      "sha256": "b57364f9b25b33cb47ce7b23c78a99cc31397ede9d7be882e0c3d0e708fbffa6"
+    },
+    {
+      "source": "/tmp/magnatiles-gyroscopic-tile-contact-fixed-control.json",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-tile-contact-fixed-control.matrix.json.gz",
+      "rawSha256": "4540a5d5c0b824bb58307e7eb084ccde7e24e5fc0c0a71c0c4617f29fada017e",
+      "sha256": "d9cc7e2e5e1e9b1485e7905ff1e0d17430afd2e90d8a5818970fb65026657a7f"
+    }
+  ],
+  "run": {
+    "command": [
+      "npx",
+      "vitest",
+      "run",
+      "--config",
+      "scripts/reference/gyroscopic-tile-contact-qualified.config.ts",
+      "--reporter=default",
+      "--reporter=json",
+      "--outputFile=/tmp/magnatiles-gyroscopic-tile-contact-fixed-control.vitest.json"
+    ],
+    "code": 1,
+    "signal": null,
+    "durationSeconds": 166.63649791600002
+  },
+  "results": {
+    "expectedRows": 198,
+    "rows": 198,
+    "passedRows": 198,
+    "matrixCompleted": true,
+    "totalTests": 21,
+    "passedTests": 14,
+    "failedTests": 1,
+    "pendingTests": 6
+  },
+  "finalContext": {
+    "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+    "inputHashes": {
+      "lib/engine/backend-identity.ts": "611d93e2fe40483d5a3c0cc4fbba6fa0b2b35db18fea81df225264264ef58da6",
+      "lib/engine/build.ts": "c68d3716ce8839e7da3b35c74169efe1902af61ece29e1f1fe37a6e172843f10",
+      "lib/engine/constants.ts": "a2f2b57189540ea8cca7dd92ed6320b6b92ec0e7d1abff3e8529f26d421257b5",
+      "lib/engine/physics-backend.ts": "e9a8032ac986ebd4f28a64b27815d0fdd504d9e0126e935d8ece57bea1e1222d",
+      "lib/engine/physics-model.ts": "1608f221e86bf3cdff3b1e5bf592badfaca9bb1eb914151f73c2f1f153f46162",
+      "lib/engine/rapier-world.ts": "f0617fb979e1dc7b2fd88d6dd733ff9ccdd46d1e7e5d694bcf0da12d00f49d4f",
+      "lib/replication/provenance.ts": "d2a48d4766737709f2cdd50faf434f25b9b6ae5a7b64c251388489c3f47c7984",
+      "runs/2026-09-28-gyroscopic-fixed-control-plan.md": "a194e68a4153337d5cae9fc47c5eae27648723bbeaad8e7282a3997bf587cb4b",
+      "runs/2026-09-28-gyroscopic-tile-contact-plan.md": "b67014f2b18f268de66ccbaa7c7be7c08b1613c4c96ec7e1844e24880ffe318a",
+      "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.manifest.json": "e6a687c82597570bdccd8669f58135012e50daf80ed925e0c41f4ec96d0bda45",
+      "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.production.log.txt": "5c59673c677d320e110c5a0cd14dee528739b0090eef6d211b8d6cf07dbfd767",
+      "scripts/reference/gyroscopic-f64-profile.json": "9b8200540578933472c6d552269e0f87fa2dcac96a8514a93de33505d7cf1adb",
+      "scripts/reference/gyroscopic-frozen-negative-control.ts": "ac9ae29cab47c8979452f2794474d63a0b1d06f2ecaaf5b6157f5220ecc7b0a0",
+      "scripts/reference/gyroscopic-negative-seed.json": "41e80b6c02b92dc21701cc12aef83354e708ff59f7d0b89bfd6ff566665f3256",
+      "scripts/reference/gyroscopic-probe-context.ts": "a68a476efeb875bdc781692d03a5b076a89c95679c4f33ed1d4f2ea2ef768fde",
+      "scripts/reference/gyroscopic-tile-contact-qualified.config.ts": "d6406cfd10b86b37e275b0fa21ef454ba881574345912a16174597dc0e9eacef",
+      "scripts/reference/gyroscopic-tile-probe.config.ts": "772f797d80365d066e226f0015a2c67b90c46ee9f72b32de0033c4b813a76840",
+      "scripts/reference/probe-gyroscopic-semantics.config.ts": "65a49426fbf79692872f50f52d8f0c189e68ca6713d13d37ac5f36e51650c158",
+      "scripts/reference/probe-gyroscopic-tile-contact.ts": "065b997bc02c9406b5648994c6ebb7663b3226b2e57154f025686d93ac08675b",
+      "tests/fixtures/contact-frames.ts": "84e91bf2ff5702082478063516eb07d0ac06adf0271faad5e1266253ee966fbf",
+      "tests/fixtures/unpatched-contact.ts": "76a90c7bea5e3ae6ab7314de2e641b9ae045764edc74c317316b060d6ed6998f",
+      "tests/polyhedral-contact.test.ts": "13a0c9e77de78678b8cee4459608046ddf867f317552ddd2b30cdfbcec7c38a6",
+      "tests/rectangular-contact.test.ts": "f4f5804b762eded3f5df86d8b2f32199f61c072c0ebe9d73e1051f61f9a0e234",
+      "tests/triangle-contact.test.ts": "e9f775d45fe26d9d227067310b783df25a57562a306c092b0498fdab5e68db49",
+      "vitest.config.ts": "593a4047719834d7a45c913ef7f579316637a878fa4f8a6fd03419342575721a"
+    },
+    "nativeHashes": {
+      "/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/node_modules/@dimforge/rapier3d-compat/rapier.cjs": "84b8a4425c8930a627451178c1bb01586ba6c47d93f6f25c80f7af0ca7f1760f",
+      "/tmp/magnatiles-gyroscopic-probe-f64-principal-frame/build-proof.json": "ed82e8c2936d01562042221fd93dde2897f4603689ba055f69a93ce79a6419fd",
+      "/tmp/magnatiles-gyroscopic-probe-f64-principal-frame/gyroscopic-binding.patch": "d6f9b27575dd173599d3ff9c7cc599596e21582906577919cf57aee1a0891dd8",
+      "/tmp/magnatiles-gyroscopic-probe-f64-principal-frame/principal-frame.patch": "ce23b9668ed9928edf4c18e81de0a9157163625678ed5511cda870039943d97e",
+      "/tmp/magnatiles-gyroscopic-probe-f64-principal-frame/source/rapier-compat/builds/3d/pkg/rapier.cjs": "bd257411df16050f6ab6f005990693d4b9d71ebe7aa22a572a8dfbe8bed4d74b",
+      "/tmp/magnatiles-gyroscopic-probe-f64-principal-frame/source/rapier-compat/builds/3d/pkg/rapier_wasm3d_bg.wasm": "45c1c252af5bc0e4f51ab2cf4dcb3716870c261b028db7b5344451d2a9006438"
+    },
+    "runnerSha256": "20f073f8bc4c1cb22a2b5ceda1992398535d40f90750aa380817ae3134e30b02"
+  },
+  "contextUnchanged": true,
+  "finishedAt": "2026-09-28T22:52:46.746Z"
+}

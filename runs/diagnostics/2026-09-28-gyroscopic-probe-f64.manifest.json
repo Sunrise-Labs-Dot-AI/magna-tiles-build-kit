@@ -1,0 +1,263 @@
+{
+  "scope": "Full precision gyroscopic off/on diagnostic. completed requires original physics checks, executionCompleted only records all rows ran.",
+  "context": {
+    "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+    "inputHashes": {
+      "runs/2026-09-28-compliant-seam-plan.md": "457480681892f9fa8c1daae1e8bd6edaca78570f115f0908c078aa7c3eb94664",
+      "runs/2026-09-28-gyroscopic-precision-plan.md": "0c4ed26aaa8fc18cf5e8d37d39a8c81d7ab93edbf4d0121bc8a1bdf79511d23f",
+      "runs/2026-09-28-gyroscopic-probe-plan.md": "6380aa794a1ebecc60cb1eeb5f43110dc5e966484d80f774b59d813a30f759bd",
+      "scripts/reference/build-gyroscopic-probe.py": "1c59049e4b451a59348f5e70de3da364b3587ea4e9adb06a6b5e76f28e66ae36",
+      "scripts/reference/gyroscopic-f64-profile.json": "9b8200540578933472c6d552269e0f87fa2dcac96a8514a93de33505d7cf1adb",
+      "scripts/reference/gyroscopic-f64-wrapper.patch": "69bb4befb7248f1c02f42537e9c6840ca8cb58fc4f119d320e855e4eba5e4337",
+      "scripts/reference/gyroscopic-f64.Cargo.lock": "0d77ee17924036480e0f9d123a45a16442bd7a6b676cf7972bbf9bb0ebf77710",
+      "scripts/reference/gyroscopic-probe-context.ts": "3870dec43df7aa6ae0653b2f4f486d0c8635cd89d4c236601e69d332344e0e03",
+      "scripts/reference/probe-free-spin.ts": "49be7a2895d89d66372b83cdc4cf09da67f8522559f185affd7fd4b949758497",
+      "scripts/reference/probe-gyroscopic-free-spin.ts": "41920f5ebde84e0ab773957a5693e84d66b414cb3794f7d0946171c4626c79c5",
+      "scripts/reference/probe-gyroscopic-semantics.config.ts": "02b9ed25b0d1800a47a5680c92a716a0df1f5b1fc8cef2539fdd8ce0183137bf",
+      "scripts/reference/probe-spring-semantics.ts": "302ecc805f4081faae83f3184b053f617609520a33dadf4aed09b78c4b47b50e"
+    },
+    "buildProof": {
+      "scope": "Experimental gyro getter/setter only, false default preserved; not production or source acceptance.",
+      "precision": "f64",
+      "sourceCommit": "f072e6efa75f4f61a290bd0b58b61c443685ec01",
+      "toolchain": {
+        "node": "v25.6.0",
+        "rustc": "rustc 1.98.1 (48a229cea 2026-09-01)",
+        "wasm-pack": "wasm-pack 0.12.1"
+      },
+      "bindingPatchSha256": "d6f9b27575dd173599d3ff9c7cc599596e21582906577919cf57aee1a0891dd8",
+      "precisionPatchSha256": "69bb4befb7248f1c02f42537e9c6840ca8cb58fc4f119d320e855e4eba5e4337",
+      "parryPatchSha256": "c70a284b3ddbeae4c5e2df9221b3822759fd54f8ed43ba01de63976fd8ac6ded",
+      "rustLockSha256": "0d77ee17924036480e0f9d123a45a16442bd7a6b676cf7972bbf9bb0ebf77710",
+      "npmLockSha256": "3efdb47ff60c6b6c15888c6351103bd2239b05a2be631fcbe57b9eacdf5ef19c",
+      "buildRecipeSha256": "1c59049e4b451a59348f5e70de3da364b3587ea4e9adb06a6b5e76f28e66ae36",
+      "artifacts": {
+        "rapier.cjs": "0a0f1f201a81bd22fa6f2e4aa92b2fb5b1888c8ff7794c11f3cea34c18c21d79",
+        "rapier.mjs": "11e9bc7a9808e9c7a84998e54a84db6f19e0a5964e2494a15353363a839ba617",
+        "rapier_wasm3d_bg.wasm": "18ee671ff54123a48ec078de7e71c64bb316a27d021e79f4bf6618d8d937d0a4"
+      }
+    }
+  },
+  "startedAt": "2026-09-28T21:58:38.408Z",
+  "runnerSha256": "3d2f84b511b3fc1976773045c4d0da5a7ece8b8dd25dc27e0309e56e0048ae7a",
+  "completed": false,
+  "executionCompleted": true,
+  "cases": [
+    {
+      "mode": "off",
+      "command": [
+        "npx",
+        "vitest",
+        "run",
+        "--config",
+        "scripts/reference/probe-gyroscopic-semantics.config.ts"
+      ],
+      "code": 1,
+      "signal": null,
+      "durationSeconds": 1.3748513750000002,
+      "forceRows": 11,
+      "freeRows": 13,
+      "checks": 247,
+      "failedChecks": 12,
+      "error": null,
+      "springPassed": false,
+      "spinRows": 4,
+      "spinPassed": false
+    },
+    {
+      "mode": "on",
+      "command": [
+        "npx",
+        "vitest",
+        "run",
+        "--config",
+        "scripts/reference/probe-gyroscopic-semantics.config.ts"
+      ],
+      "code": 1,
+      "signal": null,
+      "durationSeconds": 1.124603625,
+      "forceRows": 11,
+      "freeRows": 13,
+      "checks": 247,
+      "failedChecks": 6,
+      "error": null,
+      "springPassed": false,
+      "spinRows": 4,
+      "spinPassed": true
+    }
+  ],
+  "archives": [
+    {
+      "source": "/tmp/magnatiles-gyro-f64-off.log",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.off.log.txt",
+      "rawSha256": "d2e638dbf8ff23e0cd965d711f45a9a2595586f5a8d5306149bcf1a94462659e",
+      "sha256": "d2e638dbf8ff23e0cd965d711f45a9a2595586f5a8d5306149bcf1a94462659e"
+    },
+    {
+      "source": "/tmp/magnatiles-gyro-f64-off-spring.json",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.off.spring.json.gz",
+      "rawSha256": "83dff5b3fad6d7f8e0175bd4a5b4a9d0232f546af6393e0f3c39f68b2026dab0",
+      "sha256": "6297394576198969883c8f63954f0ee86d7eeb1d43fb63a87d62118f5170e95e"
+    },
+    {
+      "source": "/tmp/magnatiles-gyro-f64-off-spin.json",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.off.spin.json.gz",
+      "rawSha256": "3dbf8726fcfdeda9c1f06ebe6ddadb928c2062a4a03b080849fa19614ea8886b",
+      "sha256": "c66fa46bb129da2609b0fb4c0cadd11fa0c1fc8bfe3611ffc0c1179ace653f9a"
+    },
+    {
+      "source": "/tmp/magnatiles-gyro-f64-on.log",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.on.log.txt",
+      "rawSha256": "568777f29cf491ae93ebc9141fe9cc7a27c0f7dc390da8f6bebf4d940aeca9e5",
+      "sha256": "568777f29cf491ae93ebc9141fe9cc7a27c0f7dc390da8f6bebf4d940aeca9e5"
+    },
+    {
+      "source": "/tmp/magnatiles-gyro-f64-on-spring.json",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.on.spring.json.gz",
+      "rawSha256": "aa7ae11139391758c69040895701fc50f7f25b8b359de4f8bc9c4bbb4a8f33be",
+      "sha256": "c1ff9ad8e934d5d1dc3932df0a18df500804c7c832fcd4132014c6ee79ddb907"
+    },
+    {
+      "source": "/tmp/magnatiles-gyro-f64-on-spin.json",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.on.spin.json.gz",
+      "rawSha256": "bc2d72e6031341ee64ee8249889a3c70a580c28c7c6df09d9906e12c11e5b327",
+      "sha256": "4f2b08a60aaf801ac6339179acf808e923c9f737b734504a42b5d4e1835f76dc"
+    },
+    {
+      "source": "scripts/reference/probe-spring-semantics.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.input-0.gz",
+      "rawSha256": "302ecc805f4081faae83f3184b053f617609520a33dadf4aed09b78c4b47b50e",
+      "sha256": "e3a87a6e82d6634e44d5e03abedbb32f93b5f606dad24bd556fd09c6f486ca86"
+    },
+    {
+      "source": "scripts/reference/probe-free-spin.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.input-1.gz",
+      "rawSha256": "49be7a2895d89d66372b83cdc4cf09da67f8522559f185affd7fd4b949758497",
+      "sha256": "fe0529c857df8f99c6b43890a6cb42879de26f30dc091cf72566450c26bd7275"
+    },
+    {
+      "source": "scripts/reference/gyroscopic-probe-context.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.input-2.gz",
+      "rawSha256": "3870dec43df7aa6ae0653b2f4f486d0c8635cd89d4c236601e69d332344e0e03",
+      "sha256": "8fce2ac23dbc792d7610ca0bae762fa325ae2d26d927d1932b042161900de891"
+    },
+    {
+      "source": "scripts/reference/probe-gyroscopic-semantics.config.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.input-3.gz",
+      "rawSha256": "02b9ed25b0d1800a47a5680c92a716a0df1f5b1fc8cef2539fdd8ce0183137bf",
+      "sha256": "1c9d3298987d22c6f3a7e6701a5ccd862014c09e3bcc135b1f12759572ecf160"
+    },
+    {
+      "source": "scripts/reference/probe-gyroscopic-free-spin.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.input-4.gz",
+      "rawSha256": "41920f5ebde84e0ab773957a5693e84d66b414cb3794f7d0946171c4626c79c5",
+      "sha256": "df881c1f59850d3ee86c915fbfb52ccc09cc68828e4ce2b8fa9c7970679ff231"
+    },
+    {
+      "source": "scripts/reference/build-gyroscopic-probe.py",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.input-5.gz",
+      "rawSha256": "1c59049e4b451a59348f5e70de3da364b3587ea4e9adb06a6b5e76f28e66ae36",
+      "sha256": "9baaf347ee0f27e77762731792d90c42e4620d04d85ea67ff2e23655fdedd891"
+    },
+    {
+      "source": "runs/2026-09-28-gyroscopic-probe-plan.md",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.input-6.gz",
+      "rawSha256": "6380aa794a1ebecc60cb1eeb5f43110dc5e966484d80f774b59d813a30f759bd",
+      "sha256": "1b1d83ae7100f8940f202ab4ba2a274c39e6b9baee881a23e5a24a5dcbbc2eea"
+    },
+    {
+      "source": "runs/2026-09-28-compliant-seam-plan.md",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.input-7.gz",
+      "rawSha256": "457480681892f9fa8c1daae1e8bd6edaca78570f115f0908c078aa7c3eb94664",
+      "sha256": "2a6ae1355e849292ce85967802affe635179b202b97c9e5bda9fd80c684e25f6"
+    },
+    {
+      "source": "scripts/reference/gyroscopic-f64-profile.json",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.input-8.gz",
+      "rawSha256": "9b8200540578933472c6d552269e0f87fa2dcac96a8514a93de33505d7cf1adb",
+      "sha256": "9e2734f6593fd8a5428e276b3984e109f820809ee35ef002b04f862649659acf"
+    },
+    {
+      "source": "scripts/reference/gyroscopic-f64-wrapper.patch",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.input-9.gz",
+      "rawSha256": "69bb4befb7248f1c02f42537e9c6840ca8cb58fc4f119d320e855e4eba5e4337",
+      "sha256": "17965c08a6eae4724f67ce467f9e009edc5e6c31a51cb7faa2403a30f414bb38"
+    },
+    {
+      "source": "scripts/reference/gyroscopic-f64.Cargo.lock",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.input-10.gz",
+      "rawSha256": "0d77ee17924036480e0f9d123a45a16442bd7a6b676cf7972bbf9bb0ebf77710",
+      "sha256": "29b304fea9156a18e15ea4774da5a8f99afed4a38e973f9a6e9deefef810f1ad"
+    },
+    {
+      "source": "runs/2026-09-28-gyroscopic-precision-plan.md",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.input-11.gz",
+      "rawSha256": "0c4ed26aaa8fc18cf5e8d37d39a8c81d7ab93edbf4d0121bc8a1bdf79511d23f",
+      "sha256": "2c7680ce8139c0b6864c2dada150b2e592739b7ca0c10315715450d722dace1b"
+    },
+    {
+      "source": "/tmp/magnatiles-gyroscopic-probe-f64/build-proof.json",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.build-proof.json",
+      "rawSha256": "dbed168bf3cc9f6d5d2fd8991f620f5d451ea3105cc76aeb6f21a20dc6f940c7",
+      "sha256": "dbed168bf3cc9f6d5d2fd8991f620f5d451ea3105cc76aeb6f21a20dc6f940c7"
+    },
+    {
+      "source": "/tmp/magnatiles-gyroscopic-probe-f64/gyroscopic-binding.patch",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.binding.patch",
+      "rawSha256": "d6f9b27575dd173599d3ff9c7cc599596e21582906577919cf57aee1a0891dd8",
+      "sha256": "d6f9b27575dd173599d3ff9c7cc599596e21582906577919cf57aee1a0891dd8"
+    },
+    {
+      "source": "/private/tmp/magnatiles-gyro-f64-run.cjs",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.runner.cjs.gz",
+      "rawSha256": "3d2f84b511b3fc1976773045c4d0da5a7ece8b8dd25dc27e0309e56e0048ae7a",
+      "sha256": "785056b1f0715acf78c37a9006b5fd1ef0f596fa71443bd722fd2a56d479afb7"
+    },
+    {
+      "source": "/tmp/magnatiles-gyroscopic-f64-build.log",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-probe-f64.build.log.txt",
+      "rawSha256": "4d3d5cca489213f1301905d53aea95044a2f9ed64611862d89bb713c389ac573",
+      "sha256": "4d3d5cca489213f1301905d53aea95044a2f9ed64611862d89bb713c389ac573"
+    }
+  ],
+  "finalContext": {
+    "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+    "inputHashes": {
+      "runs/2026-09-28-compliant-seam-plan.md": "457480681892f9fa8c1daae1e8bd6edaca78570f115f0908c078aa7c3eb94664",
+      "runs/2026-09-28-gyroscopic-precision-plan.md": "0c4ed26aaa8fc18cf5e8d37d39a8c81d7ab93edbf4d0121bc8a1bdf79511d23f",
+      "runs/2026-09-28-gyroscopic-probe-plan.md": "6380aa794a1ebecc60cb1eeb5f43110dc5e966484d80f774b59d813a30f759bd",
+      "scripts/reference/build-gyroscopic-probe.py": "1c59049e4b451a59348f5e70de3da364b3587ea4e9adb06a6b5e76f28e66ae36",
+      "scripts/reference/gyroscopic-f64-profile.json": "9b8200540578933472c6d552269e0f87fa2dcac96a8514a93de33505d7cf1adb",
+      "scripts/reference/gyroscopic-f64-wrapper.patch": "69bb4befb7248f1c02f42537e9c6840ca8cb58fc4f119d320e855e4eba5e4337",
+      "scripts/reference/gyroscopic-f64.Cargo.lock": "0d77ee17924036480e0f9d123a45a16442bd7a6b676cf7972bbf9bb0ebf77710",
+      "scripts/reference/gyroscopic-probe-context.ts": "3870dec43df7aa6ae0653b2f4f486d0c8635cd89d4c236601e69d332344e0e03",
+      "scripts/reference/probe-free-spin.ts": "49be7a2895d89d66372b83cdc4cf09da67f8522559f185affd7fd4b949758497",
+      "scripts/reference/probe-gyroscopic-free-spin.ts": "41920f5ebde84e0ab773957a5693e84d66b414cb3794f7d0946171c4626c79c5",
+      "scripts/reference/probe-gyroscopic-semantics.config.ts": "02b9ed25b0d1800a47a5680c92a716a0df1f5b1fc8cef2539fdd8ce0183137bf",
+      "scripts/reference/probe-spring-semantics.ts": "302ecc805f4081faae83f3184b053f617609520a33dadf4aed09b78c4b47b50e"
+    },
+    "buildProof": {
+      "scope": "Experimental gyro getter/setter only, false default preserved; not production or source acceptance.",
+      "precision": "f64",
+      "sourceCommit": "f072e6efa75f4f61a290bd0b58b61c443685ec01",
+      "toolchain": {
+        "node": "v25.6.0",
+        "rustc": "rustc 1.98.1 (48a229cea 2026-09-01)",
+        "wasm-pack": "wasm-pack 0.12.1"
+      },
+      "bindingPatchSha256": "d6f9b27575dd173599d3ff9c7cc599596e21582906577919cf57aee1a0891dd8",
+      "precisionPatchSha256": "69bb4befb7248f1c02f42537e9c6840ca8cb58fc4f119d320e855e4eba5e4337",
+      "parryPatchSha256": "c70a284b3ddbeae4c5e2df9221b3822759fd54f8ed43ba01de63976fd8ac6ded",
+      "rustLockSha256": "0d77ee17924036480e0f9d123a45a16442bd7a6b676cf7972bbf9bb0ebf77710",
+      "npmLockSha256": "3efdb47ff60c6b6c15888c6351103bd2239b05a2be631fcbe57b9eacdf5ef19c",
+      "buildRecipeSha256": "1c59049e4b451a59348f5e70de3da364b3587ea4e9adb06a6b5e76f28e66ae36",
+      "artifacts": {
+        "rapier.cjs": "0a0f1f201a81bd22fa6f2e4aa92b2fb5b1888c8ff7794c11f3cea34c18c21d79",
+        "rapier.mjs": "11e9bc7a9808e9c7a84998e54a84db6f19e0a5964e2494a15353363a839ba617",
+        "rapier_wasm3d_bg.wasm": "18ee671ff54123a48ec078de7e71c64bb316a27d021e79f4bf6618d8d937d0a4"
+      }
+    }
+  },
+  "contextUnchanged": true,
+  "finishedAt": "2026-09-28T21:58:40.938Z"
+}

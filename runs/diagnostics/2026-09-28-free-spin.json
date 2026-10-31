@@ -1,0 +1,356 @@
+{
+  "scope": "Torque-free single-body diagnostic, no springs or tile/source acceptance. Completion means the diagnostic ran, not physics passed.",
+  "context": {
+    "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+    "inputHashes": {
+      "scripts/reference/probe-free-spin.ts": "278e573ba438f8a4462872611621ac9b8905ef5be2381cb498f16276313da637",
+      "scripts/reference/probe-spring-semantics.ts": "5af4ee7f7efeb9036bb0ea1a5c97c9ec807e86251b8cc3d342311bc80e300533"
+    }
+  },
+  "finalContext": {
+    "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+    "inputHashes": {
+      "scripts/reference/probe-free-spin.ts": "278e573ba438f8a4462872611621ac9b8905ef5be2381cb498f16276313da637",
+      "scripts/reference/probe-spring-semantics.ts": "5af4ee7f7efeb9036bb0ea1a5c97c9ec807e86251b8cc3d342311bc80e300533"
+    }
+  },
+  "completed": true,
+  "rows": [
+    {
+      "inertia": {
+        "x": 0.4,
+        "y": 0.5,
+        "z": 0.6
+      },
+      "queriedInertia": {
+        "x": 0.4000000059604645,
+        "y": 0.5,
+        "z": 0.6000000238418579
+      },
+      "dt": 0.001,
+      "steps": 100,
+      "settings": {
+        "dt": 0.0010000000474974513,
+        "contact_erp": 0.01850082539021969,
+        "lengthUnit": 1,
+        "normalizedAllowedLinearError": 0.0010000000474974513,
+        "normalizedPredictionDistance": 0.0020000000949949026,
+        "numSolverIterations": 16,
+        "numInternalPgsIterations": 1,
+        "minIslandSize": 128,
+        "maxCcdSubsteps": 1
+      },
+      "initial": {
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "w": 1
+        },
+        "angular": {
+          "x": 0.20000000298023224,
+          "y": -0.30000001192092896,
+          "z": 0.10000000149011612
+        },
+        "spin": {
+          "x": 0.08000000238418581,
+          "y": -0.15000000596046448,
+          "z": 0.0600000032782555
+        },
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "final": {
+        "rotation": {
+          "x": 0.009999149594716152,
+          "y": -0.014998865487445915,
+          "z": 0.004999574797358076,
+          "w": 0.9998250123363176
+        },
+        "angular": {
+          "x": 0.20000000298023224,
+          "y": -0.30000001192092896,
+          "z": 0.10000000149011612
+        },
+        "spin": {
+          "x": 0.07971107323040552,
+          "y": -0.15039540263275353,
+          "z": 0.05939164928105179
+        },
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "peakDrift": 0.0007809693785771475,
+      "limit": 0.0002090138785440841,
+      "conservesSpin": false
+    },
+    {
+      "inertia": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5
+      },
+      "queriedInertia": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5
+      },
+      "dt": 0.001,
+      "steps": 100,
+      "settings": {
+        "dt": 0.0010000000474974513,
+        "contact_erp": 0.01850082539021969,
+        "lengthUnit": 1,
+        "normalizedAllowedLinearError": 0.0010000000474974513,
+        "normalizedPredictionDistance": 0.0020000000949949026,
+        "numSolverIterations": 16,
+        "numInternalPgsIterations": 1,
+        "minIslandSize": 128,
+        "maxCcdSubsteps": 1
+      },
+      "initial": {
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "w": 1
+        },
+        "angular": {
+          "x": 0.20000000298023224,
+          "y": -0.30000001192092896,
+          "z": 0.10000000149011612
+        },
+        "spin": {
+          "x": 0.10000000149011612,
+          "y": -0.15000000596046448,
+          "z": 0.05000000074505806
+        },
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "final": {
+        "rotation": {
+          "x": 0.009999149594716152,
+          "y": -0.014998865487445915,
+          "z": 0.004999574797358076,
+          "w": 0.9998250123363176
+        },
+        "angular": {
+          "x": 0.20000000298023224,
+          "y": -0.30000001192092896,
+          "z": 0.10000000149011612
+        },
+        "spin": {
+          "x": 0.10000000149011612,
+          "y": -0.15000000596046448,
+          "z": 0.05000000074505806
+        },
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "peakDrift": 3.179800655392251e-17,
+      "limit": 0.0002093541437556663,
+      "conservesSpin": true
+    },
+    {
+      "inertia": {
+        "x": 0.4,
+        "y": 0.5,
+        "z": 0.6
+      },
+      "queriedInertia": {
+        "x": 0.4000000059604645,
+        "y": 0.5,
+        "z": 0.6000000238418579
+      },
+      "dt": 0.0001,
+      "steps": 1000,
+      "settings": {
+        "dt": 0.00009999999747378752,
+        "contact_erp": 0.001881409203633666,
+        "lengthUnit": 1,
+        "normalizedAllowedLinearError": 0.0010000000474974513,
+        "normalizedPredictionDistance": 0.0020000000949949026,
+        "numSolverIterations": 16,
+        "numInternalPgsIterations": 1,
+        "minIslandSize": 128,
+        "maxCcdSubsteps": 1
+      },
+      "initial": {
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "w": 1
+        },
+        "angular": {
+          "x": 0.20000000298023224,
+          "y": -0.30000001192092896,
+          "z": 0.10000000149011612
+        },
+        "spin": {
+          "x": 0.08000000238418581,
+          "y": -0.15000000596046448,
+          "z": 0.0600000032782555
+        },
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "final": {
+        "rotation": {
+          "x": 0.009998577553600101,
+          "y": -0.014996756659562854,
+          "z": 0.004999305540606238,
+          "w": 0.9998250510367852
+        },
+        "angular": {
+          "x": 0.20000000298023224,
+          "y": -0.30000001192092896,
+          "z": 0.10000000149011612
+        },
+        "spin": {
+          "x": 0.07971113638908253,
+          "y": -0.15039538210659248,
+          "z": 0.05939178645859684
+        },
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "peakDrift": 0.0007808287646915462,
+      "limit": 0.0002090138785440841,
+      "conservesSpin": false
+    },
+    {
+      "inertia": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5
+      },
+      "queriedInertia": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5
+      },
+      "dt": 0.0001,
+      "steps": 1000,
+      "settings": {
+        "dt": 0.00009999999747378752,
+        "contact_erp": 0.001881409203633666,
+        "lengthUnit": 1,
+        "normalizedAllowedLinearError": 0.0010000000474974513,
+        "normalizedPredictionDistance": 0.0020000000949949026,
+        "numSolverIterations": 16,
+        "numInternalPgsIterations": 1,
+        "minIslandSize": 128,
+        "maxCcdSubsteps": 1
+      },
+      "initial": {
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "w": 1
+        },
+        "angular": {
+          "x": 0.20000000298023224,
+          "y": -0.30000001192092896,
+          "z": 0.10000000149011612
+        },
+        "spin": {
+          "x": 0.10000000149011612,
+          "y": -0.15000000596046448,
+          "z": 0.05000000074505806
+        },
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "final": {
+        "rotation": {
+          "x": 0.009998577553600101,
+          "y": -0.014996756659562854,
+          "z": 0.004999305540606238,
+          "w": 0.9998250510367852
+        },
+        "angular": {
+          "x": 0.20000000298023224,
+          "y": -0.30000001192092896,
+          "z": 0.10000000149011612
+        },
+        "spin": {
+          "x": 0.10000000149011612,
+          "y": -0.1500000059604645,
+          "z": 0.05000000074505806
+        },
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "peakDrift": 5.763878168445254e-17,
+      "limit": 0.0002093541437556663,
+      "conservesSpin": true
+    }
+  ]
+}

@@ -16,7 +16,7 @@ export interface PhysicsBodyModel {
   tile: TileInstance;
   translation: Vec3;
   targetPosition: Vec3;
-  localHullPoints: Float32Array;
+  localHullPoints: Float64Array;
   mass: number;
   linearVelocity: Vec3;
   angularVelocity: Vec3;

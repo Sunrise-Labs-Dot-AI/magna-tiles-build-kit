@@ -1,0 +1,148 @@
+{
+  "scope": "Capture original production engine seed rotations and geometry before the historical f32 defect reproduction; no experimental dynamics",
+  "before": {
+    "production": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+    "inputs": {
+      "runs/2026-09-28-gyroscopic-negative-control-plan.md": "18ce984762b4dab9cf4fa6c89c3adf4d0e48d60ce3c1397a3f90489a21ccfe66",
+      "scripts/reference/gyroscopic-f64-profile.json": "9b8200540578933472c6d552269e0f87fa2dcac96a8514a93de33505d7cf1adb",
+      "scripts/reference/gyroscopic-probe-context.ts": "a68a476efeb875bdc781692d03a5b076a89c95679c4f33ed1d4f2ea2ef768fde",
+      "scripts/reference/gyroscopic-tile-probe.config.ts": "772f797d80365d066e226f0015a2c67b90c46ee9f72b32de0033c4b813a76840",
+      "scripts/reference/probe-gyroscopic-negative-control.config.ts": "b1522f51dc0598c2f971787048147a4313f4d5953ffee1501be2aba3517c09a0",
+      "scripts/reference/probe-gyroscopic-negative-input.config.ts": "cd591dc85971eb727323f0f48a81124d9f0f00b125c66b4fc077244d26f39f6b",
+      "scripts/reference/probe-gyroscopic-semantics.config.ts": "65a49426fbf79692872f50f52d8f0c189e68ca6713d13d37ac5f36e51650c158",
+      "tests/fixtures/contact-frames.ts": "84e91bf2ff5702082478063516eb07d0ac06adf0271faad5e1266253ee966fbf",
+      "tests/fixtures/unpatched-contact.ts": "76a90c7bea5e3ae6ab7314de2e641b9ae045764edc74c317316b060d6ed6998f",
+      "tests/triangle-contact.test.ts": "e9f775d45fe26d9d227067310b783df25a57562a306c092b0498fdab5e68db49",
+      "vitest.config.ts": "593a4047719834d7a45c913ef7f579316637a878fa4f8a6fd03419342575721a"
+    },
+    "nativeSha256": "bd257411df16050f6ab6f005990693d4b9d71ebe7aa22a572a8dfbe8bed4d74b",
+    "runnerSha256": "d026c2d0d1a9eae3bf8114b1d4fca1046208f2a84b38c64d7ee6fca3e5048732"
+  },
+  "completed": true,
+  "cases": [
+    {
+      "mode": "production",
+      "command": [
+        "npx",
+        "vitest",
+        "run",
+        "--config",
+        "scripts/reference/probe-gyroscopic-negative-input.config.ts",
+        "--reporter=default",
+        "--reporter=json",
+        "--outputFile=/tmp/magnatiles-gyro-negative-seed-production.json"
+      ],
+      "code": 0,
+      "signal": null,
+      "durationSeconds": 0.9663917079999998,
+      "passed": 1,
+      "failed": 0,
+      "pending": 9
+    }
+  ],
+  "archives": [
+    {
+      "source": "scripts/reference/probe-gyroscopic-negative-input.config.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.input-0.gz",
+      "rawSha256": "cd591dc85971eb727323f0f48a81124d9f0f00b125c66b4fc077244d26f39f6b",
+      "sha256": "69b09a2819c5fceaae0454e89c011b4c5aeec9614c182adc4d92266a9f82e0b2"
+    },
+    {
+      "source": "scripts/reference/probe-gyroscopic-negative-control.config.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.input-1.gz",
+      "rawSha256": "b1522f51dc0598c2f971787048147a4313f4d5953ffee1501be2aba3517c09a0",
+      "sha256": "c3b9141c2912e1709e9de40cbeeb0f61d5434194080724bc24720f62c3fe7f28"
+    },
+    {
+      "source": "scripts/reference/gyroscopic-tile-probe.config.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.input-2.gz",
+      "rawSha256": "772f797d80365d066e226f0015a2c67b90c46ee9f72b32de0033c4b813a76840",
+      "sha256": "779a7713c23aecabca27c17cd8d104c1cf1f8290c141c24cc6cc1e3108a66f58"
+    },
+    {
+      "source": "scripts/reference/probe-gyroscopic-semantics.config.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.input-3.gz",
+      "rawSha256": "65a49426fbf79692872f50f52d8f0c189e68ca6713d13d37ac5f36e51650c158",
+      "sha256": "8b5044c9d45ce0306ceed159d30a7368e7c8305044056f6c6e228d3ca560ab1c"
+    },
+    {
+      "source": "scripts/reference/gyroscopic-probe-context.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.input-4.gz",
+      "rawSha256": "a68a476efeb875bdc781692d03a5b076a89c95679c4f33ed1d4f2ea2ef768fde",
+      "sha256": "9a5effab521131bbac1147c9d73fd9a0bf6cab2cb49b5b62567403129a19d215"
+    },
+    {
+      "source": "scripts/reference/gyroscopic-f64-profile.json",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.input-5.gz",
+      "rawSha256": "9b8200540578933472c6d552269e0f87fa2dcac96a8514a93de33505d7cf1adb",
+      "sha256": "9e2734f6593fd8a5428e276b3984e109f820809ee35ef002b04f862649659acf"
+    },
+    {
+      "source": "runs/2026-09-28-gyroscopic-negative-control-plan.md",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.input-6.gz",
+      "rawSha256": "18ce984762b4dab9cf4fa6c89c3adf4d0e48d60ce3c1397a3f90489a21ccfe66",
+      "sha256": "136b0f57531beddb42a6cf43c8b3b437d537553ef600b597a05612e6290cb7ce"
+    },
+    {
+      "source": "tests/fixtures/unpatched-contact.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.input-7.gz",
+      "rawSha256": "76a90c7bea5e3ae6ab7314de2e641b9ae045764edc74c317316b060d6ed6998f",
+      "sha256": "f58aa066f8b70ae46a2e6ee42ce6428f395e24115a9b25fd6584b865c155e823"
+    },
+    {
+      "source": "tests/fixtures/contact-frames.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.input-8.gz",
+      "rawSha256": "84e91bf2ff5702082478063516eb07d0ac06adf0271faad5e1266253ee966fbf",
+      "sha256": "bf214f950258907a956a12788a673e9a3dc6ed2e1975c04645912260f402f415"
+    },
+    {
+      "source": "tests/triangle-contact.test.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.input-9.gz",
+      "rawSha256": "e9f775d45fe26d9d227067310b783df25a57562a306c092b0498fdab5e68db49",
+      "sha256": "dd61e2d0af73c0a58a0c123aaafdbbcee75c95574658285928f44ee7787db8c9"
+    },
+    {
+      "source": "vitest.config.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.input-10.gz",
+      "rawSha256": "593a4047719834d7a45c913ef7f579316637a878fa4f8a6fd03419342575721a",
+      "sha256": "bc320ce4af16a2d209ea151411cc7591f0de3ec0e461177e30a8b74f9c8d4baa"
+    },
+    {
+      "source": "/private/tmp/magnatiles-gyro-negative-seed-run.cjs",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.runner.cjs.gz",
+      "rawSha256": "d026c2d0d1a9eae3bf8114b1d4fca1046208f2a84b38c64d7ee6fca3e5048732",
+      "sha256": "00abe386d1eb8321be4e98d34ee6504d2d3287dca0aa3e1efe78fa96bfa48526"
+    },
+    {
+      "source": "/tmp/magnatiles-gyro-negative-seed-production.log",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.production.log.txt",
+      "rawSha256": "5c59673c677d320e110c5a0cd14dee528739b0090eef6d211b8d6cf07dbfd767",
+      "sha256": "5c59673c677d320e110c5a0cd14dee528739b0090eef6d211b8d6cf07dbfd767"
+    },
+    {
+      "source": "/tmp/magnatiles-gyro-negative-seed-production.json",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-negative-seed.production.vitest.json.gz",
+      "rawSha256": "fb69cf1a90543dcf3366e90b10d1cc52331f8dab66bd198408b9e183ba184079",
+      "sha256": "25c65ba1b3cbb54fe6e314c81ca8e5b6f2ed1ba3eb9a0437ebae42f6d7dce60b"
+    }
+  ],
+  "after": {
+    "production": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+    "inputs": {
+      "runs/2026-09-28-gyroscopic-negative-control-plan.md": "18ce984762b4dab9cf4fa6c89c3adf4d0e48d60ce3c1397a3f90489a21ccfe66",
+      "scripts/reference/gyroscopic-f64-profile.json": "9b8200540578933472c6d552269e0f87fa2dcac96a8514a93de33505d7cf1adb",
+      "scripts/reference/gyroscopic-probe-context.ts": "a68a476efeb875bdc781692d03a5b076a89c95679c4f33ed1d4f2ea2ef768fde",
+      "scripts/reference/gyroscopic-tile-probe.config.ts": "772f797d80365d066e226f0015a2c67b90c46ee9f72b32de0033c4b813a76840",
+      "scripts/reference/probe-gyroscopic-negative-control.config.ts": "b1522f51dc0598c2f971787048147a4313f4d5953ffee1501be2aba3517c09a0",
+      "scripts/reference/probe-gyroscopic-negative-input.config.ts": "cd591dc85971eb727323f0f48a81124d9f0f00b125c66b4fc077244d26f39f6b",
+      "scripts/reference/probe-gyroscopic-semantics.config.ts": "65a49426fbf79692872f50f52d8f0c189e68ca6713d13d37ac5f36e51650c158",
+      "tests/fixtures/contact-frames.ts": "84e91bf2ff5702082478063516eb07d0ac06adf0271faad5e1266253ee966fbf",
+      "tests/fixtures/unpatched-contact.ts": "76a90c7bea5e3ae6ab7314de2e641b9ae045764edc74c317316b060d6ed6998f",
+      "tests/triangle-contact.test.ts": "e9f775d45fe26d9d227067310b783df25a57562a306c092b0498fdab5e68db49",
+      "vitest.config.ts": "593a4047719834d7a45c913ef7f579316637a878fa4f8a6fd03419342575721a"
+    },
+    "nativeSha256": "bd257411df16050f6ab6f005990693d4b9d71ebe7aa22a572a8dfbe8bed4d74b",
+    "runnerSha256": "d026c2d0d1a9eae3bf8114b1d4fca1046208f2a84b38c64d7ee6fca3e5048732"
+  },
+  "contextUnchanged": true
+}

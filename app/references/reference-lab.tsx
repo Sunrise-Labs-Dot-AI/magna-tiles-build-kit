@@ -154,7 +154,7 @@ function Candidate({
         <strong>Reconstruction candidate</strong>
         <span>
           Passing one check does not certify source fidelity or physical
-          buildability. Recorded evidence:{" "}
+          buildability. These saved reports use the previous engine, not the experimental physics enabled for new runs. Recorded evidence:{" "}
           {report.generatedAt?.slice(0, 10) ?? "not dated"}.
         </span>
       </div>

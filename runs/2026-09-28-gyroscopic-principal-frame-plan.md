@@ -1,0 +1,7 @@
+# Correct the gyroscopic principal-inertia frame
+
+A same-physical-body control counter-rotates the body by the inverse of its local inertia frame (0.73 radians about normalized1,2,3). Initial world inertia and velocity match the identity control. Native f64 gyro-on drifts0.000854784kg*in²/s atdt1e-4, exceeding the unchanged0.000209014 limit; the identity representation drifts1.267e-8. Refining from1e-3 does not fix the rotated-frame result.
+
+Source diagnosis: Rapier0.30.1 `angvel_with_gyroscopic_forces` transforms angular velocity only by body rotation while multiplying by principal diagonal inertia. It must use body rotation times `principal_inertia_local_frame` for both transforms. Proposal: change only those two transforms in an isolated copy of the pinned f64 crate. Preserve the capped explicit gyro algorithm, false flag default, all physical parameters and step policy. No registry or production package edits.
+
+Acceptance: both representations must conserve spin under the original bound and agree in final world angular velocity within1e-4+1e-4*norm(reference), at both declared timesteps. The original four controls must remain within their bounds. Rerun all247 unit checks at the previously passing dt2.5e-5, retaining unchanged force and conservative coarse controls. Bind source patch and dependency identity. Native contact, arbitrary tile geometry and source reconstruction remain unqualified; independent review is still pending.

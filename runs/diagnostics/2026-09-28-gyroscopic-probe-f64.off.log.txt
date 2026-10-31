@@ -1,0 +1,33 @@
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+ ❯ scripts/reference/probe-spring-semantics.ts (1 test | 1 failed) 406ms
+   × qualifies native force units, damping, inertia and frame symmetry before any tile seam 405ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  scripts/reference/probe-spring-semantics.ts > qualifies native force units, damping, inertia and frame symmetry before any tile seam
+AssertionError: [{"id":"identity/damping-0/angular-momentum-with-spin","pass":false,"detail":{"drift":0.06460216203654226,"limit":0.0002774160836002442}},{"id":"rotation/damping-0/angular-momentum-with-spin","pass":false,"detail":{"drift":0.06460216203639646,"limit":0.00027741608360024424}},{"id":"translation/damping-0/angular-momentum-with-spin","pass":false,"detail":{"drift":0.06460216203545295,"limit":0.0002774160836002442}},{"id":"rigid-transform/damping-0/angular-momentum-with-spin","pass":false,"detail":{"drift":0.06460216203626216,"limit":0.00027741608360024424}},{"id":"reverse-bodies/damping-0/angular-momentum-with-spin","pass":false,"detail":{"drift":0.0646021620365388,"limit":0.0002774160836002442}},{"id":"reverse-pairs/damping-0/angular-momentum-with-spin","pass":false,"detail":{"drift":0.06460216203632509,"limit":0.0002774160836002442}},{"id":"identity/damping-8.858267716535433/angular-momentum-with-spin","pass":false,"detail":{"drift":0.024699697226883106,"limit":0.0002774160836002442}},{"id":"rotation/damping-8.858267716535433/angular-momentum-with-spin","pass":false,"detail":{"drift":0.02469969722709987,"limit":0.00027741608360024424}},{"id":"translation/damping-8.858267716535433/angular-momentum-with-spin","pass":false,"detail":{"drift":0.024699697226252485,"limit":0.0002774160836002442}},{"id":"rigid-transform/damping-8.858267716535433/angular-momentum-with-spin","pass":false,"detail":{"drift":0.024699697226818793,"limit":0.00027741608360024424}},{"id":"reverse-bodies/damping-8.858267716535433/angular-momentum-with-spin","pass":false,"detail":{"drift":0.02469969722688308,"limit":0.0002774160836002442}},{"id":"reverse-pairs/damping-8.858267716535433/angular-momentum-with-spin","pass":false,"detail":{"drift":0.024699737821714387,"limit":0.0002774160836002442}}]
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ scripts/reference/probe-spring-semantics.ts:254:30
+    252|   } catch (e) { error = e instanceof Error ? e.stack ?? e.message : St…
+    253|   await save(false);
+    254|   assert.equal(error, null); assert(checks.every(c => c.pass), JSON.st…
+       |                              ^
+    255|   await save(true);
+    256|   console.log(JSON.stringify({ forceRows: forces.length, freeRows: fre…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 1 passed (2)
+   Start at  14:58:38
+   Duration  795ms (transform 66ms, setup 0ms, import 146ms, tests 472ms, environment 0ms)
+

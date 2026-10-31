@@ -17,7 +17,8 @@
     "reference:verify": "tsx scripts/reference/rigid-contact.ts && tsx scripts/reference/assembly-fixtures.ts && tsx scripts/reference/verify.ts",
     "reference:report": "tsx scripts/reference/rigid-contact.ts && tsx scripts/reference/assembly-fixtures.ts && tsx scripts/reference/verify.ts --report-only",
     "reference:fixtures": "tsx scripts/reference/fixtures.ts",
-    "reference:check-artifacts": "tsx scripts/reference/check-artifacts.ts"
+    "reference:check-artifacts": "tsx scripts/reference/check-artifacts.ts",
+    "dev:experimental": "next dev --webpack --hostname 127.0.0.1 --port 3011"
   },
   "dependencies": {
     "@magnatiles/rapier-contact": "file:vendor/rapier-contact",

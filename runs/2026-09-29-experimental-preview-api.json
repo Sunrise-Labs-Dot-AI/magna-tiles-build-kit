@@ -1,0 +1,38 @@
+[
+  {
+    "shape": "small-square",
+    "status": 200,
+    "durationSeconds": 1.389043250004761,
+    "frames": 49,
+    "precisionBits": 64,
+    "gyro": true,
+    "peakGroundPenetration": 0.00042357720382014963
+  },
+  {
+    "shape": "equilateral-triangle",
+    "status": 200,
+    "durationSeconds": 0.34361841704230756,
+    "frames": 49,
+    "precisionBits": 64,
+    "gyro": true,
+    "peakGroundPenetration": 0.0005863854260818036
+  },
+  {
+    "shape": "right-triangle",
+    "status": 200,
+    "durationSeconds": 0.3166559590026736,
+    "frames": 49,
+    "precisionBits": 64,
+    "gyro": true,
+    "peakGroundPenetration": 0.0005739762367356072
+  },
+  {
+    "shape": "invalid",
+    "status": 400,
+    "durationSeconds": 0.003124833106994629,
+    "frames": 0,
+    "precisionBits": null,
+    "gyro": null,
+    "peakGroundPenetration": null
+  }
+]

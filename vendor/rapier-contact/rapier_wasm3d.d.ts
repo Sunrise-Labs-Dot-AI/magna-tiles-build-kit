@@ -105,7 +105,7 @@ export class RawColliderSet {
   /**
    * The vertices of this triangle mesh, polyline, convex polyhedron, segment, triangle or convex polyhedron, if it is one.
    */
-  coVertices(handle: number): Float32Array | undefined;
+  coVertices(handle: number): Float64Array | undefined;
   coCastShape(handle: number, colliderVel: RawVector, shape2: RawShape, shape2Pos: RawVector, shape2Rot: RawRotation, shape2Vel: RawVector, target_distance: number, maxToi: number, stop_at_penetration: boolean): RawShapeCastHit | undefined;
   coIsEnabled(handle: number): boolean;
   /**
@@ -234,7 +234,7 @@ export class RawColliderSet {
   /**
    * The height of this heightfield if it is one.
    */
-  coHeightfieldHeights(handle: number): Float32Array | undefined;
+  coHeightfieldHeights(handle: number): Float64Array | undefined;
   coSetCollisionGroups(handle: number, groups: number): void;
   coCastRayAndGetNormal(handle: number, rayOrig: RawVector, rayDir: RawVector, maxToi: number, solid: boolean): RawRayIntersection | undefined;
   coFrictionCombineRule(handle: number): number;
@@ -385,7 +385,7 @@ export class RawDebugRenderPipeline {
   constructor();
   colors(): Float32Array;
   render(bodies: RawRigidBodySet, colliders: RawColliderSet, impulse_joints: RawImpulseJointSet, multibody_joints: RawMultibodyJointSet, narrow_phase: RawNarrowPhase, filter_flags: number, filter_predicate: Function): void;
-  vertices(): Float32Array;
+  vertices(): Float64Array;
 }
 export class RawDeserializedWorld {
   private constructor();
@@ -1060,12 +1060,14 @@ export class RawRigidBodySet {
   rbInvPrincipalInertia(handle: number): RawVector;
   rbSetEnabledRotations(handle: number, allow_x: boolean, allow_y: boolean, allow_z: boolean, wake_up: boolean): void;
   rbSetSoftCcdPrediction(handle: number, prediction: number): void;
+  rbEnableGyroscopicForces(handle: number, enabled: boolean): void;
   rbSetEnabledTranslations(handle: number, allow_x: boolean, allow_y: boolean, allow_z: boolean, wake_up: boolean): void;
   /**
    * The effective world-space angular inertia (that takes the potential rotation locking into account) of
    * this rigid-body.
    */
   rbEffectiveAngularInertia(handle: number): RawSdpMatrix3;
+  rbGyroscopicForcesEnabled(handle: number): boolean;
   /**
    * The world-space inverse angular inertia tensor of the rigid-body,
    * taking into account rotation locking.
@@ -1199,7 +1201,7 @@ export class RawSdpMatrix3 {
   /**
    * Row major list of the upper-triangular part of the symmetric matrix.
    */
-  elements(): Float32Array;
+  elements(): Float64Array;
 }
 export class RawSerializationPipeline {
   free(): void;
@@ -1210,9 +1212,9 @@ export class RawSerializationPipeline {
 export class RawShape {
   private constructor();
   free(): void;
-  static convexHull(points: Float32Array): RawShape | undefined;
-  static convexMesh(vertices: Float32Array, indices: Uint32Array): RawShape | undefined;
-  static heightfield(nrows: number, ncols: number, heights: Float32Array, scale: RawVector, flags: number): RawShape;
+  static convexHull(points: Float64Array): RawShape | undefined;
+  static convexMesh(vertices: Float64Array, indices: Uint32Array): RawShape | undefined;
+  static heightfield(nrows: number, ncols: number, heights: Float64Array, scale: RawVector, flags: number): RawShape;
   static roundCuboid(hx: number, hy: number, hz: number, borderRadius: number): RawShape;
   contactShape(shapePos1: RawVector, shapeRot1: RawRotation, shape2: RawShape, shapePos2: RawVector, shapeRot2: RawRotation, prediction: number): RawShapeContact | undefined;
   projectPoint(shapePos: RawVector, shapeRot: RawRotation, point: RawVector, solid: boolean): RawPointProjection;
@@ -1221,9 +1223,9 @@ export class RawShape {
   static roundCylinder(halfHeight: number, radius: number, borderRadius: number): RawShape;
   static roundTriangle(p1: RawVector, p2: RawVector, p3: RawVector, borderRadius: number): RawShape;
   intersectsShape(shapePos1: RawVector, shapeRot1: RawRotation, shape2: RawShape, shapePos2: RawVector, shapeRot2: RawRotation): boolean;
-  static roundConvexHull(points: Float32Array, borderRadius: number): RawShape | undefined;
-  static roundConvexMesh(vertices: Float32Array, indices: Uint32Array, borderRadius: number): RawShape | undefined;
-  static voxelsFromPoints(voxel_size: RawVector, points: Float32Array): RawShape;
+  static roundConvexHull(points: Float64Array, borderRadius: number): RawShape | undefined;
+  static roundConvexMesh(vertices: Float64Array, indices: Uint32Array, borderRadius: number): RawShape | undefined;
+  static voxelsFromPoints(voxel_size: RawVector, points: Float64Array): RawShape;
   castRayAndGetNormal(shapePos: RawVector, shapeRot: RawRotation, rayOrig: RawVector, rayDir: RawVector, maxToi: number, solid: boolean): RawRayIntersection | undefined;
   static ball(radius: number): RawShape;
   static cone(halfHeight: number, radius: number): RawShape;
@@ -1232,9 +1234,9 @@ export class RawShape {
   static capsule(halfHeight: number, radius: number): RawShape;
   castRay(shapePos: RawVector, shapeRot: RawRotation, rayOrig: RawVector, rayDir: RawVector, maxToi: number, solid: boolean): number;
   static segment(p1: RawVector, p2: RawVector): RawShape;
-  static trimesh(vertices: Float32Array, indices: Uint32Array, flags: number): RawShape | undefined;
+  static trimesh(vertices: Float64Array, indices: Uint32Array, flags: number): RawShape | undefined;
   static cylinder(halfHeight: number, radius: number): RawShape;
-  static polyline(vertices: Float32Array, indices: Uint32Array): RawShape;
+  static polyline(vertices: Float64Array, indices: Uint32Array): RawShape;
   static triangle(p1: RawVector, p2: RawVector, p3: RawVector): RawShape;
   castShape(shapePos1: RawVector, shapeRot1: RawRotation, shapeVel1: RawVector, shape2: RawShape, shapePos2: RawVector, shapeRot2: RawRotation, shapeVel2: RawVector, target_distance: number, maxToi: number, stop_at_penetration: boolean): RawShapeCastHit | undefined;
   static halfspace(normal: RawVector): RawShape;
@@ -1347,8 +1349,8 @@ export interface InitOutput {
   readonly __wbg_rawrayintersection_free: (a: number, b: number) => void;
   readonly __wbg_rawrigidbodyset_free: (a: number, b: number) => void;
   readonly __wbg_rawshape_free: (a: number, b: number) => void;
-  readonly __wbg_rawshapecasthit_free: (a: number, b: number) => void;
   readonly __wbg_rawshapecontact_free: (a: number, b: number) => void;
+  readonly __wbg_rawvector_free: (a: number, b: number) => void;
   readonly rawbroadphase_castRay: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number, n: number, o: number) => number;
   readonly rawbroadphase_castRayAndGetNormal: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number, n: number, o: number) => number;
   readonly rawbroadphase_castShape: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number, n: number, o: number, p: number, q: number, r: number) => number;
@@ -1387,7 +1389,7 @@ export interface InitOutput {
   readonly rawcolliderset_coFriction: (a: number, b: number) => number;
   readonly rawcolliderset_coFrictionCombineRule: (a: number, b: number) => number;
   readonly rawcolliderset_coHalfExtents: (a: number, b: number) => number;
-  readonly rawcolliderset_coHalfHeight: (a: number, b: number) => number;
+  readonly rawcolliderset_coHalfHeight: (a: number, b: number, c: number) => void;
   readonly rawcolliderset_coHalfspaceNormal: (a: number, b: number) => number;
   readonly rawcolliderset_coHeightFieldFlags: (a: number, b: number) => number;
   readonly rawcolliderset_coHeightfieldHeights: (a: number, b: number, c: number) => void;
@@ -1403,12 +1405,12 @@ export interface InitOutput {
   readonly rawcolliderset_coParent: (a: number, b: number, c: number) => void;
   readonly rawcolliderset_coProjectPoint: (a: number, b: number, c: number, d: number) => number;
   readonly rawcolliderset_coPropagateVoxelChange: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number) => void;
-  readonly rawcolliderset_coRadius: (a: number, b: number) => number;
+  readonly rawcolliderset_coRadius: (a: number, b: number, c: number) => void;
   readonly rawcolliderset_coRestitution: (a: number, b: number) => number;
   readonly rawcolliderset_coRestitutionCombineRule: (a: number, b: number) => number;
   readonly rawcolliderset_coRotation: (a: number, b: number) => number;
   readonly rawcolliderset_coRotationWrtParent: (a: number, b: number) => number;
-  readonly rawcolliderset_coRoundRadius: (a: number, b: number) => number;
+  readonly rawcolliderset_coRoundRadius: (a: number, b: number, c: number) => void;
   readonly rawcolliderset_coSetActiveCollisionTypes: (a: number, b: number, c: number) => void;
   readonly rawcolliderset_coSetActiveEvents: (a: number, b: number, c: number) => void;
   readonly rawcolliderset_coSetActiveHooks: (a: number, b: number, c: number) => void;
@@ -1456,7 +1458,6 @@ export interface InitOutput {
   readonly rawcontactforceevent_collider2: (a: number) => number;
   readonly rawcontactforceevent_max_force_direction: (a: number) => number;
   readonly rawcontactforceevent_max_force_magnitude: (a: number) => number;
-  readonly rawcontactforceevent_total_force: (a: number) => number;
   readonly rawcontactforceevent_total_force_magnitude: (a: number) => number;
   readonly rawcontactmanifold_contact_dist: (a: number, b: number) => number;
   readonly rawcontactmanifold_contact_fid1: (a: number, b: number) => number;
@@ -1496,9 +1497,7 @@ export interface InitOutput {
   readonly rawdeserializedworld_takeMultibodyJoints: (a: number) => number;
   readonly rawdeserializedworld_takeNarrowPhase: (a: number) => number;
   readonly rawdynamicraycastvehiclecontroller_add_wheel: (a: number, b: number, c: number, d: number, e: number, f: number) => void;
-  readonly rawdynamicraycastvehiclecontroller_chassis: (a: number) => number;
   readonly rawdynamicraycastvehiclecontroller_current_vehicle_speed: (a: number) => number;
-  readonly rawdynamicraycastvehiclecontroller_index_forward_axis: (a: number) => number;
   readonly rawdynamicraycastvehiclecontroller_index_up_axis: (a: number) => number;
   readonly rawdynamicraycastvehiclecontroller_new: (a: number) => number;
   readonly rawdynamicraycastvehiclecontroller_num_wheels: (a: number) => number;
@@ -1521,30 +1520,30 @@ export interface InitOutput {
   readonly rawdynamicraycastvehiclecontroller_set_wheel_suspension_stiffness: (a: number, b: number, c: number) => void;
   readonly rawdynamicraycastvehiclecontroller_update_vehicle: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number) => void;
   readonly rawdynamicraycastvehiclecontroller_wheel_axle_cs: (a: number, b: number) => number;
-  readonly rawdynamicraycastvehiclecontroller_wheel_brake: (a: number, b: number) => number;
+  readonly rawdynamicraycastvehiclecontroller_wheel_brake: (a: number, b: number, c: number) => void;
   readonly rawdynamicraycastvehiclecontroller_wheel_chassis_connection_point_cs: (a: number, b: number) => number;
   readonly rawdynamicraycastvehiclecontroller_wheel_contact_normal_ws: (a: number, b: number) => number;
   readonly rawdynamicraycastvehiclecontroller_wheel_contact_point_ws: (a: number, b: number) => number;
   readonly rawdynamicraycastvehiclecontroller_wheel_direction_cs: (a: number, b: number) => number;
-  readonly rawdynamicraycastvehiclecontroller_wheel_engine_force: (a: number, b: number) => number;
-  readonly rawdynamicraycastvehiclecontroller_wheel_forward_impulse: (a: number, b: number) => number;
-  readonly rawdynamicraycastvehiclecontroller_wheel_friction_slip: (a: number, b: number) => number;
+  readonly rawdynamicraycastvehiclecontroller_wheel_engine_force: (a: number, b: number, c: number) => void;
+  readonly rawdynamicraycastvehiclecontroller_wheel_forward_impulse: (a: number, b: number, c: number) => void;
+  readonly rawdynamicraycastvehiclecontroller_wheel_friction_slip: (a: number, b: number, c: number) => void;
   readonly rawdynamicraycastvehiclecontroller_wheel_ground_object: (a: number, b: number, c: number) => void;
   readonly rawdynamicraycastvehiclecontroller_wheel_hard_point_ws: (a: number, b: number) => number;
   readonly rawdynamicraycastvehiclecontroller_wheel_is_in_contact: (a: number, b: number) => number;
-  readonly rawdynamicraycastvehiclecontroller_wheel_max_suspension_force: (a: number, b: number) => number;
-  readonly rawdynamicraycastvehiclecontroller_wheel_max_suspension_travel: (a: number, b: number) => number;
-  readonly rawdynamicraycastvehiclecontroller_wheel_radius: (a: number, b: number) => number;
-  readonly rawdynamicraycastvehiclecontroller_wheel_rotation: (a: number, b: number) => number;
-  readonly rawdynamicraycastvehiclecontroller_wheel_side_friction_stiffness: (a: number, b: number) => number;
-  readonly rawdynamicraycastvehiclecontroller_wheel_side_impulse: (a: number, b: number) => number;
-  readonly rawdynamicraycastvehiclecontroller_wheel_steering: (a: number, b: number) => number;
-  readonly rawdynamicraycastvehiclecontroller_wheel_suspension_compression: (a: number, b: number) => number;
-  readonly rawdynamicraycastvehiclecontroller_wheel_suspension_force: (a: number, b: number) => number;
-  readonly rawdynamicraycastvehiclecontroller_wheel_suspension_length: (a: number, b: number) => number;
-  readonly rawdynamicraycastvehiclecontroller_wheel_suspension_relaxation: (a: number, b: number) => number;
-  readonly rawdynamicraycastvehiclecontroller_wheel_suspension_rest_length: (a: number, b: number) => number;
-  readonly rawdynamicraycastvehiclecontroller_wheel_suspension_stiffness: (a: number, b: number) => number;
+  readonly rawdynamicraycastvehiclecontroller_wheel_max_suspension_force: (a: number, b: number, c: number) => void;
+  readonly rawdynamicraycastvehiclecontroller_wheel_max_suspension_travel: (a: number, b: number, c: number) => void;
+  readonly rawdynamicraycastvehiclecontroller_wheel_radius: (a: number, b: number, c: number) => void;
+  readonly rawdynamicraycastvehiclecontroller_wheel_rotation: (a: number, b: number, c: number) => void;
+  readonly rawdynamicraycastvehiclecontroller_wheel_side_friction_stiffness: (a: number, b: number, c: number) => void;
+  readonly rawdynamicraycastvehiclecontroller_wheel_side_impulse: (a: number, b: number, c: number) => void;
+  readonly rawdynamicraycastvehiclecontroller_wheel_steering: (a: number, b: number, c: number) => void;
+  readonly rawdynamicraycastvehiclecontroller_wheel_suspension_compression: (a: number, b: number, c: number) => void;
+  readonly rawdynamicraycastvehiclecontroller_wheel_suspension_force: (a: number, b: number, c: number) => void;
+  readonly rawdynamicraycastvehiclecontroller_wheel_suspension_length: (a: number, b: number, c: number) => void;
+  readonly rawdynamicraycastvehiclecontroller_wheel_suspension_relaxation: (a: number, b: number, c: number) => void;
+  readonly rawdynamicraycastvehiclecontroller_wheel_suspension_rest_length: (a: number, b: number, c: number) => void;
+  readonly rawdynamicraycastvehiclecontroller_wheel_suspension_stiffness: (a: number, b: number, c: number) => void;
   readonly raweventqueue_clear: (a: number) => void;
   readonly raweventqueue_drainCollisionEvents: (a: number, b: number) => void;
   readonly raweventqueue_drainContactForceEvents: (a: number, b: number) => void;
@@ -1583,12 +1582,13 @@ export interface InitOutput {
   readonly rawimpulsejointset_new: () => number;
   readonly rawimpulsejointset_remove: (a: number, b: number, c: number) => void;
   readonly rawintegrationparameters_contact_erp: (a: number) => number;
-  readonly rawintegrationparameters_dt: (a: number) => number;
+  readonly rawintegrationparameters_lengthUnit: (a: number) => number;
   readonly rawintegrationparameters_maxCcdSubsteps: (a: number) => number;
   readonly rawintegrationparameters_minIslandSize: (a: number) => number;
   readonly rawintegrationparameters_new: () => number;
   readonly rawintegrationparameters_normalizedAllowedLinearError: (a: number) => number;
   readonly rawintegrationparameters_normalizedPredictionDistance: (a: number) => number;
+  readonly rawintegrationparameters_numInternalPgsIterations: (a: number) => number;
   readonly rawintegrationparameters_numSolverIterations: (a: number) => number;
   readonly rawintegrationparameters_set_contact_natural_frequency: (a: number, b: number) => void;
   readonly rawintegrationparameters_set_dt: (a: number, b: number) => void;
@@ -1597,14 +1597,15 @@ export interface InitOutput {
   readonly rawintegrationparameters_set_minIslandSize: (a: number, b: number) => void;
   readonly rawintegrationparameters_set_normalizedAllowedLinearError: (a: number, b: number) => void;
   readonly rawintegrationparameters_set_normalizedPredictionDistance: (a: number, b: number) => void;
+  readonly rawintegrationparameters_set_numInternalPgsIterations: (a: number, b: number) => void;
   readonly rawintegrationparameters_set_numSolverIterations: (a: number, b: number) => void;
   readonly rawislandmanager_forEachActiveRigidBodyHandle: (a: number, b: number) => void;
   readonly rawislandmanager_new: () => number;
   readonly rawkinematiccharactercontroller_autostepEnabled: (a: number) => number;
   readonly rawkinematiccharactercontroller_autostepIncludesDynamicBodies: (a: number) => number;
-  readonly rawkinematiccharactercontroller_autostepMaxHeight: (a: number) => number;
-  readonly rawkinematiccharactercontroller_autostepMinWidth: (a: number) => number;
-  readonly rawkinematiccharactercontroller_computeColliderMovement: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number) => void;
+  readonly rawkinematiccharactercontroller_autostepMaxHeight: (a: number, b: number) => void;
+  readonly rawkinematiccharactercontroller_autostepMinWidth: (a: number, b: number) => void;
+  readonly rawkinematiccharactercontroller_computeColliderMovement: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number, n: number) => void;
   readonly rawkinematiccharactercontroller_computedCollision: (a: number, b: number, c: number) => number;
   readonly rawkinematiccharactercontroller_computedGrounded: (a: number) => number;
   readonly rawkinematiccharactercontroller_computedMovement: (a: number) => number;
@@ -1615,9 +1616,7 @@ export interface InitOutput {
   readonly rawkinematiccharactercontroller_maxSlopeClimbAngle: (a: number) => number;
   readonly rawkinematiccharactercontroller_minSlopeSlideAngle: (a: number) => number;
   readonly rawkinematiccharactercontroller_new: (a: number) => number;
-  readonly rawkinematiccharactercontroller_normalNudgeFactor: (a: number) => number;
   readonly rawkinematiccharactercontroller_numComputedCollisions: (a: number) => number;
-  readonly rawkinematiccharactercontroller_offset: (a: number) => number;
   readonly rawkinematiccharactercontroller_setMaxSlopeClimbAngle: (a: number, b: number) => void;
   readonly rawkinematiccharactercontroller_setMinSlopeSlideAngle: (a: number, b: number) => void;
   readonly rawkinematiccharactercontroller_setNormalNudgeFactor: (a: number, b: number) => void;
@@ -1625,8 +1624,9 @@ export interface InitOutput {
   readonly rawkinematiccharactercontroller_setSlideEnabled: (a: number, b: number) => void;
   readonly rawkinematiccharactercontroller_setUp: (a: number, b: number) => void;
   readonly rawkinematiccharactercontroller_slideEnabled: (a: number) => number;
-  readonly rawkinematiccharactercontroller_snapToGroundDistance: (a: number) => number;
+  readonly rawkinematiccharactercontroller_snapToGroundDistance: (a: number, b: number) => void;
   readonly rawkinematiccharactercontroller_snapToGroundEnabled: (a: number) => number;
+  readonly rawkinematiccharactercontroller_up: (a: number) => number;
   readonly rawmultibodyjointset_contains: (a: number, b: number) => number;
   readonly rawmultibodyjointset_createJoint: (a: number, b: number, c: number, d: number, e: number) => number;
   readonly rawmultibodyjointset_forEachJointAttachedToRigidBody: (a: number, b: number, c: number) => void;
@@ -1708,7 +1708,9 @@ export interface InitOutput {
   readonly rawrigidbodyset_rbEffectiveInvMass: (a: number, b: number) => number;
   readonly rawrigidbodyset_rbEffectiveWorldInvInertia: (a: number, b: number) => number;
   readonly rawrigidbodyset_rbEnableCcd: (a: number, b: number, c: number) => void;
+  readonly rawrigidbodyset_rbEnableGyroscopicForces: (a: number, b: number, c: number) => void;
   readonly rawrigidbodyset_rbGravityScale: (a: number, b: number) => number;
+  readonly rawrigidbodyset_rbGyroscopicForcesEnabled: (a: number, b: number) => number;
   readonly rawrigidbodyset_rbInvMass: (a: number, b: number) => number;
   readonly rawrigidbodyset_rbInvPrincipalInertia: (a: number, b: number) => number;
   readonly rawrigidbodyset_rbIsCcdEnabled: (a: number, b: number) => number;
@@ -1765,6 +1767,7 @@ export interface InitOutput {
   readonly rawrotation_identity: () => number;
   readonly rawrotation_new: (a: number, b: number, c: number, d: number) => number;
   readonly rawrotation_w: (a: number) => number;
+  readonly rawrotation_z: (a: number) => number;
   readonly rawsdpmatrix3_elements: (a: number) => number;
   readonly rawserializationpipeline_deserializeAll: (a: number, b: number) => number;
   readonly rawserializationpipeline_serializeAll: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number) => number;
@@ -1799,7 +1802,8 @@ export interface InitOutput {
   readonly rawshape_voxelsFromPoints: (a: number, b: number, c: number) => number;
   readonly rawshapecasthit_normal1: (a: number) => number;
   readonly rawshapecasthit_normal2: (a: number) => number;
-  readonly rawshapecasthit_witness1: (a: number) => number;
+  readonly rawshapecasthit_witness2: (a: number) => number;
+  readonly rawshapecontact_point2: (a: number) => number;
   readonly rawvector_new: (a: number, b: number, c: number) => number;
   readonly rawvector_set_y: (a: number, b: number) => void;
   readonly rawvector_set_z: (a: number, b: number) => void;
@@ -1814,31 +1818,32 @@ export interface InitOutput {
   readonly reserve_memory: (a: number) => void;
   readonly rawccdsolver_new: () => number;
   readonly rawserializationpipeline_new: () => number;
-  readonly rawintegrationparameters_set_numInternalPgsIterations: (a: number, b: number) => void;
   readonly rawvector_set_x: (a: number, b: number) => void;
-  readonly rawraycolliderintersection_featureId: (a: number) => number;
-  readonly rawrayintersection_featureId: (a: number) => number;
   readonly rawcollidershapecasthit_normal1: (a: number) => number;
   readonly rawcollidershapecasthit_normal2: (a: number) => number;
-  readonly rawkinematiccharactercontroller_up: (a: number) => number;
+  readonly rawcontactforceevent_total_force: (a: number) => number;
   readonly rawraycolliderintersection_normal: (a: number) => number;
   readonly rawrayintersection_normal: (a: number) => number;
-  readonly rawshapecasthit_witness2: (a: number) => number;
+  readonly rawshapecasthit_witness1: (a: number) => number;
   readonly rawshapecontact_normal1: (a: number) => number;
   readonly rawshapecontact_normal2: (a: number) => number;
   readonly rawshapecontact_point1: (a: number) => number;
-  readonly rawshapecontact_point2: (a: number) => number;
+  readonly rawraycolliderintersection_featureId: (a: number) => number;
+  readonly rawrayintersection_featureId: (a: number) => number;
   readonly __wbg_rawcontactpair_free: (a: number, b: number) => void;
   readonly __wbg_rawraycolliderintersection_free: (a: number, b: number) => void;
   readonly __wbg_rawrotation_free: (a: number, b: number) => void;
   readonly __wbg_rawsdpmatrix3_free: (a: number, b: number) => void;
   readonly __wbg_rawserializationpipeline_free: (a: number, b: number) => void;
-  readonly __wbg_rawvector_free: (a: number, b: number) => void;
+  readonly __wbg_rawshapecasthit_free: (a: number, b: number) => void;
   readonly rawcolliderset_isHandleValid: (a: number, b: number) => number;
   readonly rawcollidershapecasthit_colliderHandle: (a: number) => number;
   readonly rawcontactforceevent_collider1: (a: number) => number;
-  readonly rawintegrationparameters_lengthUnit: (a: number) => number;
-  readonly rawintegrationparameters_numInternalPgsIterations: (a: number) => number;
+  readonly rawdynamicraycastvehiclecontroller_chassis: (a: number) => number;
+  readonly rawdynamicraycastvehiclecontroller_index_forward_axis: (a: number) => number;
+  readonly rawintegrationparameters_dt: (a: number) => number;
+  readonly rawkinematiccharactercontroller_normalNudgeFactor: (a: number) => number;
+  readonly rawkinematiccharactercontroller_offset: (a: number) => number;
   readonly rawraycolliderhit_colliderHandle: (a: number) => number;
   readonly rawraycolliderhit_timeOfImpact: (a: number) => number;
   readonly rawraycolliderintersection_colliderHandle: (a: number) => number;
@@ -1848,7 +1853,6 @@ export interface InitOutput {
   readonly rawrayintersection_time_of_impact: (a: number) => number;
   readonly rawrotation_x: (a: number) => number;
   readonly rawrotation_y: (a: number) => number;
-  readonly rawrotation_z: (a: number) => number;
   readonly rawshapecasthit_time_of_impact: (a: number) => number;
   readonly rawshapecontact_distance: (a: number) => number;
   readonly rawvector_x: (a: number) => number;

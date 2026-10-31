@@ -17,7 +17,7 @@ export async function unpatchedCornerControl() {
   try {
     const a = square("a",v(-1.5,-1.5,0),v(3,0,0),v(0,3,0),"red",1,"control");
     const bodies = [v(0,0,0),v(3,3,.179)].map(p => world.createRigidBody(Original.RigidBodyDesc.dynamic().lockTranslations().lockRotations().setTranslation(p.x,p.y,p.z)));
-    const colliders = bodies.map(body => world.createCollider(Original.ColliderDesc.convexHull(tilePrismPoints(a))!,body));
+    const colliders = bodies.map(body => world.createCollider(Original.ColliderDesc.convexHull(new Float32Array(tilePrismPoints(a)))!,body));
     world.step(); bodies[1].setTranslation(v(3,3,.18),true); world.step();
     let contacts = 0, outside = 0;
     world.contactPair(colliders[0],colliders[1],manifold => {
@@ -44,7 +44,7 @@ export async function unpatchedContactControl() {
       const spec = physicalSpecForTile(r.tile);
       const desc = r.tile.shape === "small-square"
         ? Original.ColliderDesc.cuboid(spec.width/2,spec.height/2,spec.thickness/2).setRotation(tileQuaternion(r.tile))
-        : Original.ColliderDesc.convexHull(tilePrismPoints(r.tile))!;
+        : Original.ColliderDesc.convexHull(new Float32Array(tilePrismPoints(r.tile)))!;
       const collider = world.createCollider(desc.setMass(spec.mass).setFriction(.82).setRestitution(.02),body);
       return { tile:r.tile,body,collider };
     });

@@ -1,0 +1,14 @@
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+stderr | tests/triangle-contact.test.ts > exact triangle prism collision frames > detects the old touching-prism deep-contact defect without granting it a larger motion budget
+using deprecated parameters for the initialization function; pass a single object instead
+
+ ✓ tests/triangle-contact.test.ts (10 tests | 9 skipped) 115ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 9 skipped (10)
+   Start at  15:22:46
+   Duration  367ms (transform 111ms, setup 0ms, import 163ms, tests 115ms, environment 0ms)
+
+JSON report written to /tmp/magnatiles-gyro-negative-control-production-baseline.json

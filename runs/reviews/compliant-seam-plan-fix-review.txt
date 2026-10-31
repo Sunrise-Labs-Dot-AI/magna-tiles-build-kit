@@ -1,0 +1,18 @@
+Verified the updated plan against the original review. No edits, simulations, or broad tests run.
+
+1. **Angular momentum coupon can pass without testing spin inertia: ADDRESSED**  
+   [Plan line 20](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-28-compliant-seam-plan.md:20) now requires finite positive mass/inertia, explicit principal inertias, queried inertia frames, and total angular momentum as orbital plus `I_world * omega`. It also forbids omitting spin or substituting zero inertia.
+
+2. **Numeric momentum and invariance tolerances are missing: ADDRESSED**  
+   [Plan lines 20-21](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-28-compliant-seam-plan.md:20) now predeclare absolute plus relative bounds for linear momentum, angular momentum, transformed positions/velocities/angular velocities/quaternions, and one-step linear/angular impulse differences. This closes the post-hoc-bound-selection hole.
+
+3. **Break force units are ambiguous after native conversion: ADDRESSED**  
+   [Plan line 13](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-28-compliant-seam-plan.md:13) explicitly says SI-force constants compare to `5.8 N`, while native-force sums compare to `5.8 * ENGINE_UNITS_PER_METER`, never `5.8`.
+
+4. **Native spring declaration is too thin: ADDRESSED**  
+   [Plan lines 17, 19, and 22](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-28-compliant-seam-plan.md:17) require actual native joint inspection plus measured force-law coupons. Descriptor fields alone are not treated as semantic proof, and acceleration-based, non-central, tangentially damped, or order-dependent behavior fails the gate.
+
+5. **Frame invariance under-specified: ADDRESSED**  
+   [Plan line 21](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-28-compliant-seam-plan.md:21) now covers global rotation, translation, both together, reversed body creation/connection order, reversed two-coupling order, consistent anchor transforms, and canonical-coordinate comparisons with numeric bounds.
+
+Remaining concrete inconsistency: none in the five accepted fixes. The plan also correctly keeps the next implementation scoped to unit coupons only, with finite tile fold deferred to a separately reviewed extension at [line 29](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-28-compliant-seam-plan.md:29).

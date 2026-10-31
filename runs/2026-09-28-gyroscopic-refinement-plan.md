@@ -1,0 +1,7 @@
+# Check convergence without changing the physical limits
+
+Observed: full precision removes all frame/order and linear-momentum failures. With gyro-on it passes241/247 original checks atdt1e-4. The six failures are the same undamped angular-momentum drift in six coordinate/order variants:0.000489690 against0.000277416 kg*in²/s. The native flag computes a gyroscopic velocity adjustment once per outer step using `total_step_dt`; constraint forces then change velocity over the internal substeps. Inference: the remaining error has a timestep-dependent integration component. This is not yet a corrected general rotational integrator.
+
+Before running, declare two additional resolutions, dt5e-5 and2.5e-5, for the same0.1-second free-pair problem with gyro-on and f64. Repeat all247 original checks, keeping all force-coupon timesteps, masses, inertia, anchors, force coefficients, velocities, body/order/frame variants and numeric pass limits unchanged. Keep the original dt1e-3 conservative row to assess refinement. Save each resolution separately; no replacement of the failed1e-4 result. Report native-step count and execution time so accuracy is not presented without its computation cost.
+
+These are alternative numerical configurations, not a pass of the original1e-4 configuration. A passing finer configuration may justify a subsequent reviewed finite-tile seam experiment at that resolution. It cannot certify the existing f32 production backend, contact behavior, a source replica or real magnet calibration. Independent review remains pending.

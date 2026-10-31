@@ -1,0 +1,19 @@
+{
+  "scope": "Experimental gyro getter/setter only, false default preserved; not production or source acceptance.",
+  "sourceCommit": "f072e6efa75f4f61a290bd0b58b61c443685ec01",
+  "toolchain": {
+    "node": "v25.6.0",
+    "rustc": "rustc 1.98.1 (48a229cea 2026-09-01)",
+    "wasm-pack": "wasm-pack 0.12.1"
+  },
+  "bindingPatchSha256": "d6f9b27575dd173599d3ff9c7cc599596e21582906577919cf57aee1a0891dd8",
+  "parryPatchSha256": "c70a284b3ddbeae4c5e2df9221b3822759fd54f8ed43ba01de63976fd8ac6ded",
+  "rustLockSha256": "f6266b2e2001d89fddd49df8d49517e10ddd93cf5a55555f11956ad1002581c3",
+  "npmLockSha256": "3efdb47ff60c6b6c15888c6351103bd2239b05a2be631fcbe57b9eacdf5ef19c",
+  "buildRecipeSha256": "6905aed7dbcbecccf8606683b20f243e08cdd70c1966c0a6c08d764e43e37502",
+  "artifacts": {
+    "rapier.cjs": "ed14ab83363c2ea4d7dee0e3177960a919a5470ccb9f88560f0d1b3e6fdf5280",
+    "rapier.mjs": "2afda03aca88fec4ee45d32175e8abd47f40a70132f3612d7dde91eb650250aa",
+    "rapier_wasm3d_bg.wasm": "51ccc2240d20d5745b18f70b68f044f35cc70d3893d8e0aded804a634d5c9f70"
+  }
+}

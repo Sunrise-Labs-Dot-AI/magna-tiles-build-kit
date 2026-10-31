@@ -41,7 +41,7 @@ interface BodyRecord {
   body: RigidBody;
   targetPosition: Vec3;
   targetRotation: Quat;
-  hull: Float32Array;
+  hull: Float64Array;
   releasePerturbed: boolean;
 }
 
@@ -298,6 +298,8 @@ function addTileBody(world: World, model: PhysicsBodyModel): BodyRecord {
       .setAdditionalSolverIterations(8)
       .setCcdEnabled(true)
   );
+  body.enableGyroscopicForces(true);
+  if (!body.gyroscopicForcesEnabled()) throw new Error("Experimental gyro initialization failed");
   body.userData = { tileId: model.tile.id };
 
   const spec = physicalSpecForTile(model.tile);

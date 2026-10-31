@@ -1,0 +1,21 @@
+{
+  "scope": "Representation-invariant free-spin comparison. Unit proof only, not contact, finite-tile, source or physical calibration.",
+  "results": [
+    {
+      "dt": 0.001,
+      "spinDrift": 1.2667629502535268e-7,
+      "spinLimit": 0.00020901387818865997,
+      "angularDiscrepancy": 3.103167691559091e-16,
+      "angularLimit": 0.0001374192604787106
+    },
+    {
+      "dt": 0.0001,
+      "spinDrift": 1.2667799071867042e-8,
+      "spinLimit": 0.00020901387818865997,
+      "angularDiscrepancy": 1.7468381161078255e-15,
+      "angularLimit": 0.00013741926112391154
+    }
+  ],
+  "allForceRowsUnchanged": true,
+  "all247SpringChecksPass": true
+}

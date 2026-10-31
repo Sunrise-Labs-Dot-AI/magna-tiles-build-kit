@@ -1,0 +1,33 @@
+{
+  "scope": "Before native principal-frame fix; six control rows completed, two rotated-inertia rows failed. Current script archive includes the later plan-hash path, so use raw context for exact tested script identity.",
+  "exitCode": 0,
+  "completed": true,
+  "physicsPassed": false,
+  "archives": [
+    {
+      "source": "/tmp/magnatiles-gyro-f64-inertia-frame.json",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-inertia-frame-before.json.gz",
+      "rawSha256": "a01d42b7c7483e05eccb9613a1367a56996dc3998879a9e186059bb2ea7d862d",
+      "sha256": "70849b86aa233f418e367a5635bfd842ce782bbfec6bc9d00c7e403e25c9e818"
+    },
+    {
+      "source": "/tmp/magnatiles-gyro-f64-inertia-frame.log",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-inertia-frame-before.log.txt",
+      "rawSha256": "b8783f7a231432ece01076f2505cb1896e8d452a099280535493dbc681b77639",
+      "sha256": "b8783f7a231432ece01076f2505cb1896e8d452a099280535493dbc681b77639"
+    },
+    {
+      "source": "scripts/reference/probe-free-spin.ts",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-inertia-frame-before.script.ts.gz",
+      "rawSha256": "e661e59d7284ab4b0609f0352f1bcf3f04920cfb9cd04fe71ef64ea935f700a5",
+      "sha256": "2c0b309d4390f58e42f9979706f9c54e3a3c65826b7284efcdde7f62289d54fe"
+    },
+    {
+      "source": "Hash-verified reconstruction of tested script before the later plan-path addition",
+      "path": "runs/diagnostics/2026-09-28-gyroscopic-inertia-frame-before.tested-script.ts.gz",
+      "rawSha256": "3db1c7dec4a2c5ee1ac40b4a531ae701b6d8147ee976552c11fb10d3629e7d39",
+      "sha256": "0b3127553d03744a05591b54d964eb37981d23f9c9cae35b6b26e209825e3829"
+    }
+  ],
+  "exactTestedScriptRecoveredByHash": true
+}

@@ -1,0 +1,109 @@
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+stderr | scripts/reference/probe-gyroscopic-tile-contact.ts > experimental tile backend retains full coordinates, gyro flags and state/object isolation
+using deprecated parameters for the initialization function; pass a single object instead
+
+stdout | scripts/reference/probe-gyroscopic-tile-contact.ts > experimental full-coordinate tile contacts cover all198 original frame rows
+{"frameRows":18,"passed":18}
+
+stdout | scripts/reference/probe-gyroscopic-tile-contact.ts > experimental full-coordinate tile contacts cover all198 original frame rows
+{"frameRows":36,"passed":36}
+
+stdout | scripts/reference/probe-gyroscopic-tile-contact.ts > experimental full-coordinate tile contacts cover all198 original frame rows
+{"frameRows":54,"passed":54}
+
+stdout | scripts/reference/probe-gyroscopic-tile-contact.ts > experimental full-coordinate tile contacts cover all198 original frame rows
+{"frameRows":72,"passed":72}
+
+stdout | scripts/reference/probe-gyroscopic-tile-contact.ts > experimental full-coordinate tile contacts cover all198 original frame rows
+{"frameRows":90,"passed":90}
+
+stdout | scripts/reference/probe-gyroscopic-tile-contact.ts > experimental full-coordinate tile contacts cover all198 original frame rows
+{"frameRows":108,"passed":108}
+
+stdout | scripts/reference/probe-gyroscopic-tile-contact.ts > experimental full-coordinate tile contacts cover all198 original frame rows
+{"frameRows":126,"passed":126}
+
+stdout | scripts/reference/probe-gyroscopic-tile-contact.ts > experimental full-coordinate tile contacts cover all198 original frame rows
+{"frameRows":144,"passed":144}
+
+stdout | scripts/reference/probe-gyroscopic-tile-contact.ts > experimental full-coordinate tile contacts cover all198 original frame rows
+{"frameRows":162,"passed":162}
+
+stdout | scripts/reference/probe-gyroscopic-tile-contact.ts > experimental full-coordinate tile contacts cover all198 original frame rows
+{"frameRows":180,"passed":180}
+
+stdout | scripts/reference/probe-gyroscopic-tile-contact.ts > experimental full-coordinate tile contacts cover all198 original frame rows
+{"frameRows":198,"passed":198}
+
+ ✓ scripts/reference/probe-gyroscopic-tile-contact.ts (2 tests) 163303ms
+   ✓ experimental full-coordinate tile contacts cover all198 original frame rows  163234ms
+stderr | tests/polyhedral-contact.test.ts
+using deprecated parameters for the initialization function; pass a single object instead
+
+stderr | tests/polyhedral-contact.test.ts > finite polyhedral contacts and cache > detects the original auxiliary witness outside a finite corner
+using deprecated parameters for the initialization function; pass a single object instead
+
+ ✓ tests/polyhedral-contact.test.ts (5 tests) 721ms
+     ✓ bounds 1200 reproducible primitive/hull pairs in both insertion orders  385ms
+ ✓ tests/rectangular-contact.test.ts (4 tests) 813ms
+     ✓ has no phantom deep edge contacts in fresh or continued free-hinge motion  722ms
+stderr | tests/triangle-contact.test.ts > exact triangle prism collision frames > detects the old touching-prism deep-contact defect without granting it a larger motion budget
+using deprecated parameters for the initialization function; pass a single object instead
+
+ ❯ tests/triangle-contact.test.ts (10 tests | 1 failed | 6 skipped) 151ms
+     ✓ preserves right-triangle corners, mass, center of mass and full world inertia 91ms
+     ✓ preserves equilateral-triangle corners, mass, center of mass and full world inertia 9ms
+     ✓ preserves isosceles-triangle corners, mass, center of mass and full world inertia 8ms
+     ↓ bounds actual right-triangle contact by independent geometry in every reference frame
+     ↓ bounds actual equilateral-triangle contact by independent geometry in every reference frame
+     ↓ bounds actual isosceles-triangle contact by independent geometry in every reference frame
+     × detects the old touching-prism deep-contact defect without granting it a larger motion budget 42ms
+     ↓ passes the reserved right-triangle orientations without parameter retuning
+     ↓ passes the reserved equilateral-triangle orientations without parameter retuning
+     ↓ passes the reserved isosceles-triangle orientations without parameter retuning
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/triangle-contact.test.ts > exact triangle prism collision frames > detects the old touching-prism deep-contact defect without granting it a larger motion budget
+AssertionError: Expected values to be strictly deep-equal:
++ actual - expected
+
++ fA {
+- {
+    x: 1.5,
+    y: 8,
+    z: 1.5
+  }
+
+
+- Expected
++ Received
+
+- {
++ fA {
+    "x": 1.5,
+    "y": 8,
+    "z": 1.5,
+  }
+
+ ❯ scripts/reference/gyroscopic-frozen-negative-control.ts:29:14
+     27|         : Original.ColliderDesc.convexHull(new Float32Array(input.inpu…
+     28|       const collider = world.createCollider(desc.setMass(spec.mass).se…
+     29|       assert.deepEqual(body.translation(), input.translation);
+       |              ^
+     30|       assert.deepEqual(body.rotation(), input.rotation);
+     31|       assert.deepEqual(collider.translation(), input.colliderTranslati…
+ ❯ unpatchedContactControl scripts/reference/gyroscopic-frozen-negative-control.ts:20:40
+ ❯ tests/triangle-contact.test.ts:62:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  1 failed | 14 passed | 6 skipped (21)
+   Start at  15:50:00
+   Duration  166.08s (transform 188ms, setup 0ms, import 494ms, tests 164.99s, environment 0ms)
+
+JSON report written to /tmp/magnatiles-gyroscopic-tile-contact-fixed-control.vitest.json

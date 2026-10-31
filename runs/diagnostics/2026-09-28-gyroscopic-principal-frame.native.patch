@@ -1,0 +1,22 @@
+--- a/src/dynamics/rigid_body.rs
++++ b/src/dynamics/rigid_body.rs
+@@ -1412,7 +1412,9 @@
+         // NOTE: integrating the gyroscopic forces implicitly are both slower and
+         //       very dissipative. Instead, we only keep the explicit term and
+         //       ensure angular momentum is preserved (similar to Jolt).
+-        let w = self.pos.position.inverse_transform_vector(self.angvel());
++        let principal_rotation = self.pos.position.rotation
++            * self.mprops.local_mprops.principal_inertia_local_frame;
++        let w = principal_rotation.inverse_transform_vector(self.angvel());
+         let i = self.mprops.local_mprops.principal_inertia();
+         let ii = self.mprops.local_mprops.inv_principal_inertia;
+         let curr_momentum = i.component_mul(&w);
+@@ -1423,7 +1425,7 @@
+         if total_momentum_sqnorm != 0.0 {
+             let capped_momentum =
+                 total_momentum * (curr_momentum.norm_squared() / total_momentum_sqnorm).sqrt();
+-            self.pos.position * (ii.component_mul(&capped_momentum))
++            principal_rotation * (ii.component_mul(&capped_momentum))
+         } else {
+             *self.angvel()
+         }

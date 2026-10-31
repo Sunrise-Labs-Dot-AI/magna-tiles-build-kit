@@ -1,0 +1,73 @@
+{
+  "scope": "Isolated native spring semantics. No tile-seam, source, assembly or release acceptance. Independent code/results review pending.",
+  "command": [
+    "npx",
+    "vitest",
+    "run",
+    "--config",
+    "scripts/reference/probe-spring-semantics.config.ts"
+  ],
+  "context": {
+    "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+    "inputHashes": {
+      "runs/2026-09-28-compliant-seam-plan.md": "9a127e7706d9380179dd339729c8336918b8b69c6dcb4966685f5be232e98712",
+      "scripts/reference/probe-spring-semantics.config.ts": "73f9d6275a5fb76feb677a84f190ee9bed1095bc5197917f204cbc8135afd64b",
+      "scripts/reference/probe-spring-semantics.ts": "c4e97059e43f31e06e79cc053f55a8da621c77e150e36050f5f7c725bcf793a7"
+    }
+  },
+  "startedAt": "2026-09-28T21:40:36.643Z",
+  "runnerSha256": "afbb46d3d536e752bea06c9a16e062052c576a36507c2e5386e09daf180068e6",
+  "completed": false,
+  "finishedAt": "2026-09-28T21:40:37.224Z",
+  "durationSeconds": 0.578150042,
+  "exitCode": 1,
+  "signal": null,
+  "finalContext": {
+    "validationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+    "inputHashes": {
+      "runs/2026-09-28-compliant-seam-plan.md": "9a127e7706d9380179dd339729c8336918b8b69c6dcb4966685f5be232e98712",
+      "scripts/reference/probe-spring-semantics.config.ts": "73f9d6275a5fb76feb677a84f190ee9bed1095bc5197917f204cbc8135afd64b",
+      "scripts/reference/probe-spring-semantics.ts": "c4e97059e43f31e06e79cc053f55a8da621c77e150e36050f5f7c725bcf793a7"
+    }
+  },
+  "contextUnchanged": true,
+  "archives": [
+    {
+      "source": "/tmp/magnatiles-spring-semantics-v2.log",
+      "path": "runs/diagnostics/2026-09-28-spring-semantics-v2.log.txt",
+      "rawSha256": "ba8bd6643dbcece8ff3f2214d01f52675fae5aa5f095a16dff450614e498118b",
+      "sha256": "ba8bd6643dbcece8ff3f2214d01f52675fae5aa5f095a16dff450614e498118b"
+    },
+    {
+      "source": "/tmp/magnatiles-spring-semantics-v2.json",
+      "path": "runs/diagnostics/2026-09-28-spring-semantics-v2.json.gz",
+      "rawSha256": "698d5674b727bf26ce5f9b771b4ed243aae2ff381a75b33b486691f332f1af0e",
+      "sha256": "96c84089033b4a69c34f06f413edcbb155cfebeb5dd1c8aa96773db51e7f290d"
+    },
+    {
+      "source": "scripts/reference/probe-spring-semantics.ts",
+      "path": "runs/diagnostics/2026-09-28-spring-semantics-v2.script.ts.gz",
+      "rawSha256": "c4e97059e43f31e06e79cc053f55a8da621c77e150e36050f5f7c725bcf793a7",
+      "sha256": "45c2622b76f5200f715956cc1a5f3851443af17d0f38fd5fbce7a0a01aa444b9"
+    },
+    {
+      "source": "scripts/reference/probe-spring-semantics.config.ts",
+      "path": "runs/diagnostics/2026-09-28-spring-semantics-v2.config.ts.gz",
+      "rawSha256": "73f9d6275a5fb76feb677a84f190ee9bed1095bc5197917f204cbc8135afd64b",
+      "sha256": "d2a6b35a5978d3c3317835357dcd337d8cee4974f425047dd9a34de3abcdb1a3"
+    },
+    {
+      "source": "runs/2026-09-28-compliant-seam-plan.md",
+      "path": "runs/diagnostics/2026-09-28-spring-semantics-v2.plan.md.gz",
+      "rawSha256": "9a127e7706d9380179dd339729c8336918b8b69c6dcb4966685f5be232e98712",
+      "sha256": "6f0df9bc127099ab159c1e00ec215797314a497d9394d5b1fb0dcfee8d7d6f84"
+    },
+    {
+      "source": "/private/tmp/magnatiles-spring-semantics-v2-run.cjs",
+      "path": "runs/diagnostics/2026-09-28-spring-semantics-v2.runner.cjs.gz",
+      "rawSha256": "afbb46d3d536e752bea06c9a16e062052c576a36507c2e5386e09daf180068e6",
+      "sha256": "5b74711312bfb8b4ca93c5e051e71458ef0d4b358c99dd3dd1efcc867d7302f7"
+    }
+  ],
+  "reportCompleted": false
+}

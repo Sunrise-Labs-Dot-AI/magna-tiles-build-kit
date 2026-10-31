@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { designBuild } from "@/lib/planner/design";
+import { experimentalDesign } from "@/lib/experiments/design-worker";
 
 export const runtime = "nodejs";
 export const maxDuration = 300;
@@ -27,11 +27,11 @@ export async function POST(request: Request) {
         { error: "A build prompt is required." },
         { status: 400 },
       );
-    const result = await designBuild(
-      body.prompt,
-      body.inventoryPreset === "builder-xl" ? "builder-xl" : "classic-100",
-      { unlimitedPieces: body.unlimitedPieces === true },
-    );
+    const result = await experimentalDesign({
+      prompt: body.prompt,
+      inventory: body.inventoryPreset === "builder-xl" ? "builder-xl" : "classic-100",
+      unlimitedPieces: body.unlimitedPieces === true,
+    }, request.signal);
     return NextResponse.json(result);
   } catch (error) {
     return NextResponse.json(

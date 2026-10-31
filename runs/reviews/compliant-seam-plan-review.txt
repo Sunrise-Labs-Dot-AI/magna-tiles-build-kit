@@ -1,0 +1,41 @@
+Not CLEAN. The plan is solid on scope preservation and keeps the full reconstruction/fold objective intact, but I found several gate holes.
+
+**CRITICAL: Angular momentum coupon can pass without testing spin inertia**
+File: [runs/2026-09-28-compliant-seam-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-28-compliant-seam-plan.md:20)
+
+Scenario: an off-centre spring applies equal/opposite point impulses but the implementation computes angular momentum only as `r x mv`, or uses bodies with infinite/zero angular inertia. The coupon can report conserved angular momentum while missing a wrong spin impulse. Rapier exposes `worldCom`, `principalInertia`, `principalInertiaLocalFrame`, and `effectiveAngularInertia`, so the test must include spin angular momentum.
+
+Fix: require explicit finite mass properties for both free bodies and compute total angular momentum as orbital plus spin: `sum((com - origin) x m*v_com + I_world * omega)`. Predeclare absolute and relative tolerances for linear momentum, angular momentum, and body/edge reversal invariance.
+
+**CRITICAL: Numeric momentum and invariance tolerances are missing**
+File: [runs/2026-09-28-compliant-seam-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-28-compliant-seam-plan.md:20)
+
+Scenario: “within declared numerical bounds” is promised but no bounds are actually declared for total momentum or order/frame invariance. A later implementation could choose bounds after seeing failures, or use broad tolerances that hide solver asymmetry.
+
+Fix: before execution, declare concrete tolerances for linear momentum, angular momentum, force/wrench equality under body order reversal, edge order reversal, global rotation, and global translation. Use both absolute floors and relative tolerances because near-zero conserved quantities make pure relative checks unstable.
+
+**WARNING: Break force units are ambiguous after native conversion**
+File: [runs/2026-09-28-compliant-seam-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-28-compliant-seam-plan.md:11)
+
+Scenario: the plan converts each point spring to native inch/kg/s constants, then says the break sum exceeds `5.8 N`. If code sums `k*d + c*v` using native constants and compares directly to `5.8`, the break threshold is off by `39.37007874015748`. Existing constants store `MAGNET_HOLD_FORCE = 5.8` in N-like heuristic units, while native force is kg*in/s².
+
+Fix: state the break calculation unit explicitly. Either compute break force with the original `N/in` and `N/(in/s)` constants and compare to `5.8 N`, or compute native force and compare to `5.8 * ENGINE_UNITS_PER_METER`.
+
+**WARNING: Native spring declaration is too thin to support assumptions without stricter coupon assertions**
+File: [vendor/rapier-contact/dynamics/impulse_joint.d.ts](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/vendor/rapier-contact/dynamics/impulse_joint.d.ts:161)
+
+`SpringImpulseJoint` has no declaration-level semantics beyond type, and `JointData.spring(rest_length, stiffness, damping, anchor1, anchor2)` just passes scalars to the raw joint. The plan correctly adds coupons, but those coupons should assert actual joint type plus measured force law, not descriptor fields alone.
+
+Fix: require the coupon to fail if native behavior is acceleration-based, ERP/compliance-like, tangentially damped, non-central, or order-dependent. Keep the “revise model before tile-fold run” gate.
+
+**WARNING: Frame invariance is under-specified at the unit-coupon level**
+File: [runs/2026-09-28-compliant-seam-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-28-compliant-seam-plan.md:20)
+
+Scenario: reversing body/edge order can pass while the adapter still has a hidden world-axis dependency. The later seam gate asks for mirrored and rotated worlds, but the native spring semantics coupon should isolate this earlier.
+
+Fix: add global rigid transform invariance to the coupon: same initial state transformed by arbitrary translation and rotation must produce transformed impulses/wrenches and conserved quantities within the predeclared tolerances.
+
+**NOTE: Scope preservation looks good**
+File: [runs/2026-09-28-compliant-seam-plan.md](/Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas/runs/2026-09-28-compliant-seam-plan.md:30)
+
+The plan preserves failures, keeps current b354 reports unchanged, does not promote this to production calibration, and retains the required three-panel fold plus full reconstruction/generation scope. I would not replace it with a simpler assembly.

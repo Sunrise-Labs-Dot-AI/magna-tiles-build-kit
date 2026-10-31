@@ -1,2 +1,2 @@
-/** Artifact/profile changes invalidate physical state and prepared workspaces. */
-export const PHYSICS_BACKEND_ID = "js0.19.2-rust0.30.1-parry0.25.1-sat-cache3-f32-abi1-5e4c38a5ada93780-profilea491baad9d8d5af2";
+/** Local experimental runtime; saved production states are incompatible. */
+export const PHYSICS_BACKEND_ID = "experimental-f64-gyro-principal1-bd257411df16050f-profile9b82005405789334-local-preview1";

@@ -1,0 +1,34 @@
+--- a/src/dynamics/rigid_body.rs
++++ b/src/dynamics/rigid_body.rs
+@@ -706,6 +706,14 @@
+         })
+     }
+ 
++    pub fn rbGyroscopicForcesEnabled(&self, handle: FlatHandle) -> bool {
++        self.map(handle, |rb| rb.gyroscopic_forces_enabled())
++    }
++
++    pub fn rbEnableGyroscopicForces(&mut self, handle: FlatHandle, enabled: bool) {
++        self.map_mut(handle, |rb| rb.enable_gyroscopic_forces(enabled))
++    }
++
+     pub fn rbAdditionalSolverIterations(&self, handle: FlatHandle) -> usize {
+         self.map(handle, |rb| rb.additional_solver_iterations())
+     }
+--- a/src.ts/dynamics/rigid_body.ts
++++ b/src.ts/dynamics/rigid_body.ts
+@@ -243,6 +243,14 @@
+      * rigid-body and everything that interacts with it directly or indirectly
+      * through contacts or joints.
+      */
++    public gyroscopicForcesEnabled(): boolean {
++        return this.rawSet.rbGyroscopicForcesEnabled(this.handle);
++    }
++
++    public enableGyroscopicForces(enabled: boolean): void {
++        this.rawSet.rbEnableGyroscopicForces(this.handle, enabled);
++    }
++
+     public additionalSolverIterations(): number {
+         return this.rawSet.rbAdditionalSolverIterations(this.handle);
+     }

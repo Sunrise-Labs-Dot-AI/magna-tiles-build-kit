@@ -1,0 +1,15 @@
+{
+  "scope": "Static checks of current uncommitted diagnostic sources only; native results refer to their separately archived input hashes.",
+  "typescript": {
+    "session": 98611,
+    "exitCode": 0
+  },
+  "focusedLint": {
+    "session": 94839,
+    "exitCode": 0
+  },
+  "pythonSyntax": "pass",
+  "productionValidationCodeHash": "b354b6edcbcddb7248137e9888e97badfcb7eb2156f742760783587be5dbcf1a",
+  "independentReview": "pending",
+  "completeReplica": "none"
+}

@@ -1,0 +1,42 @@
+
+ RUN  v4.1.6 /Users/jamesheath/Documents/Claude/Projects/Worktrees/magnatiles-footage-replicas
+
+stderr | tests/triangle-contact.test.ts > exact triangle prism collision frames > detects the old touching-prism deep-contact defect without granting it a larger motion budget
+using deprecated parameters for the initialization function; pass a single object instead
+
+stdout | tests/triangle-contact.test.ts > exact triangle prism collision frames > detects the old touching-prism deep-contact defect without granting it a larger motion budget
+{"control":"original-f32","dt":0.0005208333333333333,"contacts":745,"depthExcess":7.531251517665927e-7}
+
+ ❯ tests/triangle-contact.test.ts (10 tests | 1 failed | 9 skipped) 70ms
+     ↓ preserves right-triangle corners, mass, center of mass and full world inertia
+     ↓ preserves equilateral-triangle corners, mass, center of mass and full world inertia
+     ↓ preserves isosceles-triangle corners, mass, center of mass and full world inertia
+     ↓ bounds actual right-triangle contact by independent geometry in every reference frame
+     ↓ bounds actual equilateral-triangle contact by independent geometry in every reference frame
+     ↓ bounds actual isosceles-triangle contact by independent geometry in every reference frame
+     × detects the old touching-prism deep-contact defect without granting it a larger motion budget 70ms
+     ↓ passes the reserved right-triangle orientations without parameter retuning
+     ↓ passes the reserved equilateral-triangle orientations without parameter retuning
+     ↓ passes the reserved isosceles-triangle orientations without parameter retuning
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/triangle-contact.test.ts > exact triangle prism collision frames > detects the old touching-prism deep-contact defect without granting it a larger motion budget
+AssertionError: expected 7.531251517665927e-7 to be greater than 1
+ ❯ tests/triangle-contact.test.ts:64:29
+     62|     const old=await unpatchedContactControl();
+     63|     expect(old.contacts).toBeGreaterThan(0);
+     64|     expect(old.depthExcess).toBeGreaterThan(1);
+       |                             ^
+     65|     const corrected=await runFrameContact("right-triangle","identity",…
+     66|     expect(corrected.passed,JSON.stringify(corrected)).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 9 skipped (10)
+   Start at  15:22:45
+   Duration  322ms (transform 97ms, setup 0ms, import 159ms, tests 70ms, environment 0ms)
+
+JSON report written to /tmp/magnatiles-gyro-negative-control-historical-step.json

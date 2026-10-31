@@ -13,13 +13,13 @@ export declare class DebugRenderBuffers {
      * floats. For example, in 2D, the array: `[1, 2, 3, 4, 5, 6, 7, 8]`
      * describes the two segments `[[1, 2], [3, 4]]` and `[[5, 6], [7, 8]]`.
      */
-    vertices: Float32Array;
+    vertices: Float64Array;
     /**
      * The color buffer. There is one color per vertex, and each color
      * has four consecutive components (in RGBA format).
      */
     colors: Float32Array;
-    constructor(vertices: Float32Array, colors: Float32Array);
+    constructor(vertices: Float64Array, colors: Float32Array);
 }
 /**
  * A pipeline for rendering the physics scene.
@@ -29,7 +29,7 @@ export declare class DebugRenderBuffers {
  */
 export declare class DebugRenderPipeline {
     raw: RawDebugRenderPipeline;
-    vertices: Float32Array;
+    vertices: Float64Array;
     colors: Float32Array;
     /**
      * Release the WASM memory occupied by this serialization pipeline.

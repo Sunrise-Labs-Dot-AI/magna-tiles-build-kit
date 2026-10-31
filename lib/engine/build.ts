@@ -152,9 +152,9 @@ export function worldEdge(tile: TileInstance, edgeIndex: number): EdgeGeometry {
   };
 }
 
-export function tilePrismPoints(tile: TileInstance): Float32Array {
+export function tilePrismPoints(tile: TileInstance): Float64Array {
   const points = tilePrismVertices(tile, TILE_THICKNESS).map((point) => subtract(point, tile.position));
-  return new Float32Array(points.flatMap((point) => [point.x, point.y, point.z]));
+  return new Float64Array(points.flatMap((point) => [point.x, point.y, point.z]));
 }
 
 export function driveSurfaceTiles(build: EngineBuild): TileInstance[] {

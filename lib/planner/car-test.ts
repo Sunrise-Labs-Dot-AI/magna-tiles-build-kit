@@ -101,7 +101,7 @@ export async function testCars(
       );
       const transform = (x: number, y: number, z: number) =>
         add(add(scale(forward, x), scale(up, y)), scale(side, z));
-      const hull = new Float32Array(
+      const hull = new Float64Array(
         [-1, 1].flatMap((x) =>
           [-1, 1].flatMap((y) =>
             [-1, 1].flatMap((z) => {

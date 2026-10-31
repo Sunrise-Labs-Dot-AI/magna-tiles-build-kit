@@ -1,0 +1,13 @@
+{
+  "quickBuild": {
+    "httpStatus": 200,
+    "status": "needs-repair",
+    "pieces": 6
+  },
+  "longBuildRanInSeparateProcess": true,
+  "tileDropDuringLongBuildMs": 666.2447499999998,
+  "cancellation": {
+    "error": "AbortError"
+  },
+  "remainingWorkers": []
+}

@@ -1,0 +1,14 @@
+{
+  "scope": "Read-only spring API inspection before independent coupon experiments; source declarations do not replace runtime verification.",
+  "findings": [
+    "Pinned Rust SpringJoint::new uses coupled linear axes, a position motor at rest_length and MotorModel::ForceBased.",
+    "The JS Rust wrapper calls SpringJointBuilder::new with caller stiffness/damping and both body-local anchors.",
+    "Native forces use the engine length scale. No physical magnet calibration is implied."
+  ],
+  "inputs": {
+    "/tmp/magnatiles-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rapier3d-0.30.1/src/dynamics/joint/spring_joint.rs": "3e37ff6ef5a2b976c49069587f315cabd5c3e32089ab23e4766001207d25047a",
+    "/tmp/magnatiles-contact-repro-1/source/src/dynamics/joint.rs": "b432608f01f478770e133e062739e5cdeeeec2febf92fb6817da294d296b4b90",
+    "vendor/rapier-contact/dynamics/impulse_joint.d.ts": "0c895e567776fb7568bc883a8ba51c7cb6889719ef21a2d0711bd519ec7691ce",
+    "vendor/rapier-contact/dynamics/rigid_body.d.ts": "dc05581def5190c9418dd8fa51745a949f16aed7f977a7c950a5b7611dd24891"
+  }
+}

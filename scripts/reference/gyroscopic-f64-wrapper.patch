@@ -1,0 +1,2314 @@
+diff --git a/src.ts/geometry/collider.ts b/src.ts/geometry/collider.ts
+index 2581736..5958a78 100644
+--- a/src.ts/geometry/collider.ts
++++ b/src.ts/geometry/collider.ts
+@@ -818,7 +818,7 @@ export class Collider {
+      * If this collider has a triangle mesh, polyline, convex polygon, or convex polyhedron shape,
+      * this returns the vertex buffer of said shape.
+      */
+-    public vertices(): Float32Array {
++    public vertices(): Float64Array {
+         return this.colliderSet.raw.coVertices(this.handle);
+     }
+ 
+@@ -835,7 +835,7 @@ export class Collider {
+      * the heightfield.
+      * In 3D, the returned height matrix is provided in column-major order.
+      */
+-    public heightfieldHeights(): Float32Array {
++    public heightfieldHeights(): Float64Array {
+         return this.colliderSet.raw.coHeightfieldHeights(this.handle);
+     }
+ 
+@@ -1373,7 +1373,7 @@ export class ColliderDesc {
+      *    the vertices are assumed to describe a line strip.
+      */
+     public static polyline(
+-        vertices: Float32Array,
++        vertices: Float64Array,
+         indices?: Uint32Array | null,
+     ): ColliderDesc {
+         const shape = new Polyline(vertices, indices);
+@@ -1386,14 +1386,14 @@ export class ColliderDesc {
+      * @param data - Defines the set of voxels. If this is a `Int32Array` then
+      *               each voxel is defined from its (signed) grid coordinates,
+      *               with 3 (resp 2) contiguous integers per voxel in 3D (resp 2D).
+-     *               If this is a `Float32Array`, each voxel will be such that
++     *               If this is a `Float64Array`, each voxel will be such that
+      *               they contain at least one point from this array (where each
+      *               point is defined from 3 (resp 2) contiguous numbers per point
+      *               in 3D (resp 2D).
+      * @param voxelSize - The size of each voxel.
+      */
+     public static voxels(
+-        voxels: Float32Array | Int32Array,
++        voxels: Float64Array | Int32Array,
+         voxelSize: Vector,
+     ): ColliderDesc {
+         const shape = new Voxels(voxels, voxelSize);
+@@ -1407,7 +1407,7 @@ export class ColliderDesc {
+      * @param indices - The indices of the triangle mesh's triangles.
+      */
+     public static trimesh(
+-        vertices: Float32Array,
++        vertices: Float64Array,
+         indices: Uint32Array,
+         flags?: TriMeshFlags,
+     ): ColliderDesc {
+@@ -1460,7 +1460,7 @@ export class ColliderDesc {
+      * @param scale - The scale factor applied to the heightfield.
+      */
+     public static heightfield(
+-        heights: Float32Array,
++        heights: Float64Array,
+         scale: Vector,
+     ): ColliderDesc {
+         const shape = new Heightfield(heights, scale);
+@@ -1473,7 +1473,7 @@ export class ColliderDesc {
+      *
+      * @param points - The point that will be used to compute the convex-hull.
+      */
+-    public static convexHull(points: Float32Array): ColliderDesc | null {
++    public static convexHull(points: Float64Array): ColliderDesc | null {
+         const shape = new ConvexPolygon(points, false);
+         return new ColliderDesc(shape);
+     }
+@@ -1484,7 +1484,7 @@ export class ColliderDesc {
+      *
+      * @param vertices - The vertices of the convex polyline.
+      */
+-    public static convexPolyline(vertices: Float32Array): ColliderDesc | null {
++    public static convexPolyline(vertices: Float64Array): ColliderDesc | null {
+         const shape = new ConvexPolygon(vertices, true);
+         return new ColliderDesc(shape);
+     }
+@@ -1498,7 +1498,7 @@ export class ColliderDesc {
+      * @param borderRadius - The radius of the round border added to the convex polygon.
+      */
+     public static roundConvexHull(
+-        points: Float32Array,
++        points: Float64Array,
+         borderRadius: number,
+     ): ColliderDesc | null {
+         const shape = new RoundConvexPolygon(points, borderRadius, false);
+@@ -1513,7 +1513,7 @@ export class ColliderDesc {
+      * @param borderRadius - The radius of the round border added to the convex polyline.
+      */
+     public static roundConvexPolyline(
+-        vertices: Float32Array,
++        vertices: Float64Array,
+         borderRadius: number,
+     ): ColliderDesc | null {
+         const shape = new RoundConvexPolygon(vertices, borderRadius, true);
+@@ -1565,7 +1565,7 @@ export class ColliderDesc {
+     public static heightfield(
+         nrows: number,
+         ncols: number,
+-        heights: Float32Array,
++        heights: Float64Array,
+         scale: Vector,
+         flags?: HeightFieldFlags,
+     ): ColliderDesc {
+@@ -1633,7 +1633,7 @@ export class ColliderDesc {
+      *
+      * @param points - The point that will be used to compute the convex-hull.
+      */
+-    public static convexHull(points: Float32Array): ColliderDesc | null {
++    public static convexHull(points: Float64Array): ColliderDesc | null {
+         const shape = new ConvexPolyhedron(points, null);
+         return new ColliderDesc(shape);
+     }
+@@ -1645,7 +1645,7 @@ export class ColliderDesc {
+      * @param vertices - The vertices of the convex polyline.
+      */
+     public static convexMesh(
+-        vertices: Float32Array,
++        vertices: Float64Array,
+         indices?: Uint32Array | null,
+     ): ColliderDesc | null {
+         const shape = new ConvexPolyhedron(vertices, indices);
+@@ -1661,7 +1661,7 @@ export class ColliderDesc {
+      * @param borderRadius - The radius of the round border added to the convex polyhedron.
+      */
+     public static roundConvexHull(
+-        points: Float32Array,
++        points: Float64Array,
+         borderRadius: number,
+     ): ColliderDesc | null {
+         const shape = new RoundConvexPolyhedron(points, null, borderRadius);
+@@ -1676,7 +1676,7 @@ export class ColliderDesc {
+      * @param borderRadius - The radius of the round border added to the convex polyline.
+      */
+     public static roundConvexMesh(
+-        vertices: Float32Array,
++        vertices: Float64Array,
+         indices: Uint32Array | null,
+         borderRadius: number,
+     ): ColliderDesc | null {
+diff --git a/src.ts/geometry/shape.ts b/src.ts/geometry/shape.ts
+index f354698..d7b707d 100644
+--- a/src.ts/geometry/shape.ts
++++ b/src.ts/geometry/shape.ts
+@@ -25,7 +25,7 @@ export abstract class Shape {
+ 
+         let extents: Vector;
+         let borderRadius: number;
+-        let vs: Float32Array;
++        let vs: Float64Array;
+         let indices: Uint32Array;
+         let halfHeight: number;
+         let radius: number;
+@@ -991,7 +991,7 @@ export class Polyline extends Shape {
+     /**
+      * The vertices of the polyline.
+      */
+-    vertices: Float32Array;
++    vertices: Float64Array;
+ 
+     /**
+      * The indices of the segments.
+@@ -1005,7 +1005,7 @@ export class Polyline extends Shape {
+      * @param indices - The indices of the polyline's segments. If this is `null` or not provided, then
+      *    the vertices are assumed to form a line strip.
+      */
+-    constructor(vertices: Float32Array, indices?: Uint32Array) {
++    constructor(vertices: Float64Array, indices?: Uint32Array) {
+         super();
+         this.vertices = vertices;
+         this.indices = indices ?? new Uint32Array(0);
+@@ -1025,7 +1025,7 @@ export class Voxels extends Shape {
+     /**
+      * The points or grid coordinates used to initialize the voxels.
+      */
+-    data: Float32Array | Int32Array;
++    data: Float64Array | Int32Array;
+ 
+     /**
+      * The dimensions of each voxel.
+@@ -1038,13 +1038,13 @@ export class Voxels extends Shape {
+      * @param data - Defines the set of voxels. If this is a `Int32Array` then
+      *               each voxel is defined from its (signed) grid coordinates,
+      *               with 3 (resp 2) contiguous integers per voxel in 3D (resp 2D).
+-     *               If this is a `Float32Array`, each voxel will be such that
++     *               If this is a `Float64Array`, each voxel will be such that
+      *               they contain at least one point from this array (where each
+      *               point is defined from 3 (resp 2) contiguous numbers per point
+      *               in 3D (resp 2D).
+      * @param voxelSize - The size of each voxel.
+      */
+-    constructor(data: Float32Array | Int32Array, voxelSize: Vector) {
++    constructor(data: Float64Array | Int32Array, voxelSize: Vector) {
+         super();
+         this.data = data;
+         this.voxelSize = voxelSize;
+@@ -1074,7 +1074,7 @@ export class TriMesh extends Shape {
+     /**
+      * The vertices of the triangle mesh.
+      */
+-    vertices: Float32Array;
++    vertices: Float64Array;
+ 
+     /**
+      * The indices of the triangles.
+@@ -1093,7 +1093,7 @@ export class TriMesh extends Shape {
+      * @param indices - The indices of the triangle mesh's triangles.
+      */
+     constructor(
+-        vertices: Float32Array,
++        vertices: Float64Array,
+         indices: Uint32Array,
+         flags?: TriMeshFlags,
+     ) {
+@@ -1118,7 +1118,7 @@ export class ConvexPolygon extends Shape {
+     /**
+      * The vertices of the convex polygon.
+      */
+-    vertices: Float32Array;
++    vertices: Float64Array;
+ 
+     /**
+      * Do we want to assume the vertices already form a convex hull?
+@@ -1133,7 +1133,7 @@ export class ConvexPolygon extends Shape {
+      *   be assumed to form a convex polyline and no convex-hull computation will
+      *   be done automatically.
+      */
+-    constructor(vertices: Float32Array, skipConvexHullComputation: boolean) {
++    constructor(vertices: Float64Array, skipConvexHullComputation: boolean) {
+         super();
+         this.vertices = vertices;
+         this.skipConvexHullComputation = !!skipConvexHullComputation;
+@@ -1157,7 +1157,7 @@ export class RoundConvexPolygon extends Shape {
+     /**
+      * The vertices of the convex polygon.
+      */
+-    vertices: Float32Array;
++    vertices: Float64Array;
+ 
+     /**
+      * Do we want to assume the vertices already form a convex hull?
+@@ -1179,7 +1179,7 @@ export class RoundConvexPolygon extends Shape {
+      *   be done automatically.
+      */
+     constructor(
+-        vertices: Float32Array,
++        vertices: Float64Array,
+         borderRadius: number,
+         skipConvexHullComputation: boolean,
+     ) {
+@@ -1210,7 +1210,7 @@ export class Heightfield extends Shape {
+     /**
+      * The heights of the heightfield, along its local `y` axis.
+      */
+-    heights: Float32Array;
++    heights: Float64Array;
+ 
+     /**
+      * The heightfield's length along its local `x` axis.
+@@ -1223,7 +1223,7 @@ export class Heightfield extends Shape {
+      * @param heights - The heights of the heightfield, along its local `y` axis.
+      * @param scale - The scale factor applied to the heightfield.
+      */
+-    constructor(heights: Float32Array, scale: Vector) {
++    constructor(heights: Float64Array, scale: Vector) {
+         super();
+         this.heights = heights;
+         this.scale = scale;
+@@ -1249,7 +1249,7 @@ export class ConvexPolyhedron extends Shape {
+     /**
+      * The vertices of the convex polygon.
+      */
+-    vertices: Float32Array;
++    vertices: Float64Array;
+ 
+     /**
+      * The indices of the convex polygon.
+@@ -1265,7 +1265,7 @@ export class ConvexPolyhedron extends Shape {
+      *   automatically. Otherwise, it will be assumed that the mesh you provide
+      *   is already convex.
+      */
+-    constructor(vertices: Float32Array, indices?: Uint32Array | null) {
++    constructor(vertices: Float64Array, indices?: Uint32Array | null) {
+         super();
+         this.vertices = vertices;
+         this.indices = indices;
+@@ -1289,7 +1289,7 @@ export class RoundConvexPolyhedron extends Shape {
+     /**
+      * The vertices of the convex polygon.
+      */
+-    vertices: Float32Array;
++    vertices: Float64Array;
+ 
+     /**
+      * The indices of the convex polygon.
+@@ -1312,7 +1312,7 @@ export class RoundConvexPolyhedron extends Shape {
+      * @param borderRadius - The radius of the borders of this convex polyhedron.
+      */
+     constructor(
+-        vertices: Float32Array,
++        vertices: Float64Array,
+         indices: Uint32Array | null | undefined,
+         borderRadius: number,
+     ) {
+@@ -1355,7 +1355,7 @@ export class Heightfield extends Shape {
+      * The heights of the heightfield along its local `y` axis,
+      * provided as a matrix stored in column-major order.
+      */
+-    heights: Float32Array;
++    heights: Float64Array;
+ 
+     /**
+      * The dimensions of the heightfield's local `x,z` plane.
+@@ -1379,7 +1379,7 @@ export class Heightfield extends Shape {
+     constructor(
+         nrows: number,
+         ncols: number,
+-        heights: Float32Array,
++        heights: Float64Array,
+         scale: Vector,
+         flags?: HeightFieldFlags,
+     ) {
+diff --git a/src.ts/math.ts b/src.ts/math.ts
+index ebca392..0586446 100644
+--- a/src.ts/math.ts
++++ b/src.ts/math.ts
+@@ -182,7 +182,7 @@ export class SdpMatrix3 {
+     /**
+      * Row major list of the upper-triangular part of the symmetric matrix.
+      */
+-    elements: Float32Array;
++    elements: Float64Array;
+ 
+     /**
+      * Matrix element at row 1, column 1.
+@@ -247,7 +247,7 @@ export class SdpMatrix3 {
+         return this.elements[5];
+     }
+ 
+-    constructor(elements: Float32Array) {
++    constructor(elements: Float64Array) {
+         this.elements = elements;
+     }
+ }
+diff --git a/src.ts/pipeline/debug_render_pipeline.ts b/src.ts/pipeline/debug_render_pipeline.ts
+index bf0d705..8f5a70e 100644
+--- a/src.ts/pipeline/debug_render_pipeline.ts
++++ b/src.ts/pipeline/debug_render_pipeline.ts
+@@ -21,14 +21,14 @@ export class DebugRenderBuffers {
+      * floats. For example, in 2D, the array: `[1, 2, 3, 4, 5, 6, 7, 8]`
+      * describes the two segments `[[1, 2], [3, 4]]` and `[[5, 6], [7, 8]]`.
+      */
+-    public vertices: Float32Array;
++    public vertices: Float64Array;
+     /**
+      * The color buffer. There is one color per vertex, and each color
+      * has four consecutive components (in RGBA format).
+      */
+     public colors: Float32Array;
+ 
+-    constructor(vertices: Float32Array, colors: Float32Array) {
++    constructor(vertices: Float64Array, colors: Float32Array) {
+         this.vertices = vertices;
+         this.colors = colors;
+     }
+@@ -42,7 +42,7 @@ export class DebugRenderBuffers {
+  */
+ export class DebugRenderPipeline {
+     raw: RawDebugRenderPipeline;
+-    public vertices: Float32Array;
++    public vertices: Float64Array;
+     public colors: Float32Array;
+ 
+     /**
+diff --git a/src/control/pid_controller.rs b/src/control/pid_controller.rs
+index 890e339..40751ee 100644
+--- a/src/control/pid_controller.rs
++++ b/src/control/pid_controller.rs
+@@ -19,7 +19,7 @@ pub struct RawPidController {
+ #[wasm_bindgen]
+ impl RawPidController {
+     #[wasm_bindgen(constructor)]
+-    pub fn new(kp: f32, ki: f32, kd: f32, axes_mask: u8) -> Self {
++    pub fn new(kp: f64, ki: f64, kd: f64, axes_mask: u8) -> Self {
+         let controller = PidController::new(
+             kp,
+             ki,
+@@ -29,7 +29,7 @@ impl RawPidController {
+         Self { controller }
+     }
+ 
+-    pub fn set_kp(&mut self, kp: f32, axes: u8) {
++    pub fn set_kp(&mut self, kp: f64, axes: u8) {
+         let axes = AxesMask::from_bits(axes).unwrap_or(AxesMask::all());
+         if axes.contains(AxesMask::LIN_X) {
+             self.controller.pd.lin_kp.x = kp;
+@@ -61,7 +61,7 @@ impl RawPidController {
+         }
+     }
+ 
+-    pub fn set_ki(&mut self, ki: f32, axes: u8) {
++    pub fn set_ki(&mut self, ki: f64, axes: u8) {
+         let axes = AxesMask::from_bits(axes).unwrap_or(AxesMask::all());
+         if axes.contains(AxesMask::LIN_X) {
+             self.controller.lin_ki.x = ki;
+@@ -93,7 +93,7 @@ impl RawPidController {
+         }
+     }
+ 
+-    pub fn set_kd(&mut self, kd: f32, axes: u8) {
++    pub fn set_kd(&mut self, kd: f64, axes: u8) {
+         let axes = AxesMask::from_bits(axes).unwrap_or(AxesMask::all());
+         if axes.contains(AxesMask::LIN_X) {
+             self.controller.pd.lin_kd.x = kd;
+@@ -137,7 +137,7 @@ impl RawPidController {
+ 
+     pub fn apply_linear_correction(
+         &mut self,
+-        dt: f32,
++        dt: f64,
+         bodies: &mut RawRigidBodySet,
+         rb_handle: FlatHandle,
+         target_translation: &RawVector,
+@@ -160,11 +160,11 @@ impl RawPidController {
+     #[cfg(feature = "dim2")]
+     pub fn apply_angular_correction(
+         &mut self,
+-        dt: f32,
++        dt: f64,
+         bodies: &mut RawRigidBodySet,
+         rb_handle: FlatHandle,
+-        target_rotation: f32,
+-        target_angvel: f32,
++        target_rotation: f64,
++        target_angvel: f64,
+     ) {
+         let rb_handle = crate::utils::body_handle(rb_handle);
+         let Some(rb) = bodies.0.get_mut(rb_handle) else {
+@@ -183,7 +183,7 @@ impl RawPidController {
+     #[cfg(feature = "dim3")]
+     pub fn apply_angular_correction(
+         &mut self,
+-        dt: f32,
++        dt: f64,
+         bodies: &mut RawRigidBodySet,
+         rb_handle: FlatHandle,
+         target_rotation: &RawRotation,
+@@ -205,7 +205,7 @@ impl RawPidController {
+ 
+     pub fn linear_correction(
+         &mut self,
+-        dt: f32,
++        dt: f64,
+         bodies: &RawRigidBodySet,
+         rb_handle: FlatHandle,
+         target_translation: &RawVector,
+@@ -224,12 +224,12 @@ impl RawPidController {
+     #[cfg(feature = "dim2")]
+     pub fn angular_correction(
+         &mut self,
+-        dt: f32,
++        dt: f64,
+         bodies: &RawRigidBodySet,
+         rb_handle: FlatHandle,
+-        target_rotation: f32,
+-        target_angvel: f32,
+-    ) -> f32 {
++        target_rotation: f64,
++        target_angvel: f64,
++    ) -> f64 {
+         let rb_handle = crate::utils::body_handle(rb_handle);
+         let Some(rb) = bodies.0.get(rb_handle) else {
+             return 0.0;
+@@ -246,7 +246,7 @@ impl RawPidController {
+     #[cfg(feature = "dim3")]
+     pub fn angular_correction(
+         &mut self,
+-        dt: f32,
++        dt: f64,
+         bodies: &RawRigidBodySet,
+         rb_handle: FlatHandle,
+         target_rotation: &RawRotation,
+diff --git a/src/control/ray_cast_vehicle_controller.rs b/src/control/ray_cast_vehicle_controller.rs
+index 36bd7f6..53331c8 100644
+--- a/src/control/ray_cast_vehicle_controller.rs
++++ b/src/control/ray_cast_vehicle_controller.rs
+@@ -255,14 +255,14 @@ impl RawDynamicRayCastVehicleController {
+         }
+     }
+ 
+-    pub fn wheel_side_friction_stiffness(&self, i: usize) -> Option<f32> {
++    pub fn wheel_side_friction_stiffness(&self, i: usize) -> Option<f64> {
+         self.controller
+             .wheels()
+             .get(i)
+             .map(|w| w.side_friction_stiffness)
+     }
+ 
+-    pub fn set_wheel_side_friction_stiffness(&mut self, i: usize, stiffness: f32) {
++    pub fn set_wheel_side_friction_stiffness(&mut self, i: usize, stiffness: f64) {
+         if let Some(wheel) = self.controller.wheels_mut().get_mut(i) {
+             wheel.side_friction_stiffness = stiffness;
+         }
+diff --git a/src/dynamics/impulse_joint.rs b/src/dynamics/impulse_joint.rs
+index bfbdf12..9a11254 100644
+--- a/src/dynamics/impulse_joint.rs
++++ b/src/dynamics/impulse_joint.rs
+@@ -81,17 +81,17 @@ impl RawImpulseJointSet {
+     }
+ 
+     /// Return the lower limit along the given joint axis.
+-    pub fn jointLimitsMin(&self, handle: FlatHandle, axis: RawJointAxis) -> f32 {
++    pub fn jointLimitsMin(&self, handle: FlatHandle, axis: RawJointAxis) -> f64 {
+         self.map(handle, |j| j.data.limits[axis as usize].min)
+     }
+ 
+     /// If this is a prismatic joint, returns its upper limit.
+-    pub fn jointLimitsMax(&self, handle: FlatHandle, axis: RawJointAxis) -> f32 {
++    pub fn jointLimitsMax(&self, handle: FlatHandle, axis: RawJointAxis) -> f64 {
+         self.map(handle, |j| j.data.limits[axis as usize].max)
+     }
+ 
+     /// Enables and sets the joint limits
+-    pub fn jointSetLimits(&mut self, handle: FlatHandle, axis: RawJointAxis, min: f32, max: f32) {
++    pub fn jointSetLimits(&mut self, handle: FlatHandle, axis: RawJointAxis, min: f64, max: f64) {
+         self.map_mut(handle, |j| {
+             j.data.set_limits(axis.into(), [min, max]);
+         });
+@@ -113,10 +113,10 @@ impl RawImpulseJointSet {
+     pub fn jointConfigureBallMotorVelocity(
+         &mut self,
+         handle: FlatHandle,
+-        vx: f32,
+-        vy: f32,
+-        vz: f32,
+-        factor: f32,
++        vx: f64,
++        vy: f64,
++        vz: f64,
++        factor: f64,
+     ) {
+         let targetVel = Vector3::new(vx, vy, vz);
+ 
+@@ -130,12 +130,12 @@ impl RawImpulseJointSet {
+     pub fn jointConfigureBallMotorPosition(
+         &mut self,
+         handle: FlatHandle,
+-        qw: f32,
+-        qx: f32,
+-        qy: f32,
+-        qz: f32,
+-        stiffness: f32,
+-        damping: f32,
++        qw: f64,
++        qx: f64,
++        qy: f64,
++        qz: f64,
++        stiffness: f64,
++        damping: f64,
+     ) {
+         let quat = Quaternion::new(qw, qx, qy, qz);
+ 
+@@ -153,15 +153,15 @@ impl RawImpulseJointSet {
+     pub fn jointConfigureBallMotor(
+         &mut self,
+         handle: FlatHandle,
+-        qw: f32,
+-        qx: f32,
+-        qy: f32,
+-        qz: f32,
+-        vx: f32,
+-        vy: f32,
+-        vz: f32,
+-        stiffness: f32,
+-        damping: f32,
++        qw: f64,
++        qx: f64,
++        qy: f64,
++        qz: f64,
++        vx: f64,
++        vy: f64,
++        vz: f64,
++        stiffness: f64,
++        damping: f64,
+     ) {
+         let quat = Quaternion::new(qw, qx, qy, qz);
+         let vel = Vector3::new(vx, vy, vz);
+@@ -181,8 +181,8 @@ impl RawImpulseJointSet {
+         &mut self,
+         handle: FlatHandle,
+         axis: RawJointAxis,
+-        targetVel: f32,
+-        factor: f32,
++        targetVel: f64,
++        factor: f64,
+     ) {
+         self.jointConfigureMotor(handle, axis, 0.0, targetVel, 0.0, factor)
+     }
+@@ -191,9 +191,9 @@ impl RawImpulseJointSet {
+         &mut self,
+         handle: FlatHandle,
+         axis: RawJointAxis,
+-        targetPos: f32,
+-        stiffness: f32,
+-        damping: f32,
++        targetPos: f64,
++        stiffness: f64,
++        damping: f64,
+     ) {
+         self.jointConfigureMotor(handle, axis, targetPos, 0.0, stiffness, damping)
+     }
+@@ -202,10 +202,10 @@ impl RawImpulseJointSet {
+         &mut self,
+         handle: FlatHandle,
+         axis: RawJointAxis,
+-        targetPos: f32,
+-        targetVel: f32,
+-        stiffness: f32,
+-        damping: f32,
++        targetPos: f64,
++        targetVel: f64,
++        stiffness: f64,
++        damping: f64,
+     ) {
+         self.map_mut(handle, |j| {
+             j.data
+diff --git a/src/dynamics/integration_parameters.rs b/src/dynamics/integration_parameters.rs
+index b273e05..08f0352 100644
+--- a/src/dynamics/integration_parameters.rs
++++ b/src/dynamics/integration_parameters.rs
+@@ -12,22 +12,22 @@ impl RawIntegrationParameters {
+     }
+ 
+     #[wasm_bindgen(getter)]
+-    pub fn dt(&self) -> f32 {
++    pub fn dt(&self) -> f64 {
+         self.0.dt
+     }
+ 
+     #[wasm_bindgen(getter)]
+-    pub fn contact_erp(&self) -> f32 {
++    pub fn contact_erp(&self) -> f64 {
+         self.0.contact_erp()
+     }
+ 
+     #[wasm_bindgen(getter)]
+-    pub fn normalizedAllowedLinearError(&self) -> f32 {
++    pub fn normalizedAllowedLinearError(&self) -> f64 {
+         self.0.normalized_allowed_linear_error
+     }
+ 
+     #[wasm_bindgen(getter)]
+-    pub fn normalizedPredictionDistance(&self) -> f32 {
++    pub fn normalizedPredictionDistance(&self) -> f64 {
+         self.0.normalized_prediction_distance
+     }
+ 
+@@ -52,27 +52,27 @@ impl RawIntegrationParameters {
+     }
+ 
+     #[wasm_bindgen(getter)]
+-    pub fn lengthUnit(&self) -> f32 {
++    pub fn lengthUnit(&self) -> f64 {
+         self.0.length_unit
+     }
+ 
+     #[wasm_bindgen(setter)]
+-    pub fn set_dt(&mut self, value: f32) {
++    pub fn set_dt(&mut self, value: f64) {
+         self.0.dt = value;
+     }
+ 
+     #[wasm_bindgen(setter)]
+-    pub fn set_contact_natural_frequency(&mut self, value: f32) {
++    pub fn set_contact_natural_frequency(&mut self, value: f64) {
+         self.0.contact_natural_frequency = value
+     }
+ 
+     #[wasm_bindgen(setter)]
+-    pub fn set_normalizedAllowedLinearError(&mut self, value: f32) {
++    pub fn set_normalizedAllowedLinearError(&mut self, value: f64) {
+         self.0.normalized_allowed_linear_error = value
+     }
+ 
+     #[wasm_bindgen(setter)]
+-    pub fn set_normalizedPredictionDistance(&mut self, value: f32) {
++    pub fn set_normalizedPredictionDistance(&mut self, value: f64) {
+         self.0.normalized_prediction_distance = value
+     }
+ 
+@@ -95,7 +95,7 @@ impl RawIntegrationParameters {
+     }
+ 
+     #[wasm_bindgen(setter)]
+-    pub fn set_lengthUnit(&mut self, value: f32) {
++    pub fn set_lengthUnit(&mut self, value: f64) {
+         self.0.length_unit = value
+     }
+ }
+diff --git a/src/dynamics/joint.rs b/src/dynamics/joint.rs
+index 74ab2b3..054c54c 100644
+--- a/src/dynamics/joint.rs
++++ b/src/dynamics/joint.rs
+@@ -168,9 +168,9 @@ impl RawGenericJoint {
+     }
+ 
+     pub fn spring(
+-        rest_length: f32,
+-        stiffness: f32,
+-        damping: f32,
++        rest_length: f64,
++        stiffness: f64,
++        damping: f64,
+         anchor1: &RawVector,
+         anchor2: &RawVector,
+     ) -> Self {
+@@ -182,7 +182,7 @@ impl RawGenericJoint {
+         )
+     }
+ 
+-    pub fn rope(length: f32, anchor1: &RawVector, anchor2: &RawVector) -> Self {
++    pub fn rope(length: f64, anchor1: &RawVector, anchor2: &RawVector) -> Self {
+         Self(
+             RopeJointBuilder::new(length)
+                 .local_anchor1(anchor1.0.into())
+@@ -218,8 +218,8 @@ impl RawGenericJoint {
+         anchor2: &RawVector,
+         axis: &RawVector,
+         limitsEnabled: bool,
+-        limitsMin: f32,
+-        limitsMax: f32,
++        limitsMin: f64,
++        limitsMax: f64,
+     ) -> Option<RawGenericJoint> {
+         let axis = Unit::try_new(axis.0, 0.0)?;
+         let mut joint = PrismaticJointBuilder::new(axis)
+@@ -245,8 +245,8 @@ impl RawGenericJoint {
+         anchor2: &RawVector,
+         axis: &RawVector,
+         limitsEnabled: bool,
+-        limitsMin: f32,
+-        limitsMax: f32,
++        limitsMin: f64,
++        limitsMax: f64,
+     ) -> Option<RawGenericJoint> {
+         let axis = Unit::try_new(axis.0, 0.0)?;
+         let mut joint = PrismaticJointBuilder::new(axis)
+diff --git a/src/dynamics/multibody_joint.rs b/src/dynamics/multibody_joint.rs
+index ff6e816..d7f955a 100644
+--- a/src/dynamics/multibody_joint.rs
++++ b/src/dynamics/multibody_joint.rs
+@@ -67,12 +67,12 @@ impl RawMultibodyJointSet {
+     }
+ 
+     /// Return the lower limit along the given joint axis.
+-    pub fn jointLimitsMin(&self, handle: FlatHandle, axis: RawJointAxis) -> f32 {
++    pub fn jointLimitsMin(&self, handle: FlatHandle, axis: RawJointAxis) -> f64 {
+         self.map(handle, |j| j.data.limits[axis as usize].min)
+     }
+ 
+     /// If this is a prismatic joint, returns its upper limit.
+-    pub fn jointLimitsMax(&self, handle: FlatHandle, axis: RawJointAxis) -> f32 {
++    pub fn jointLimitsMax(&self, handle: FlatHandle, axis: RawJointAxis) -> f64 {
+         self.map(handle, |j| j.data.limits[axis as usize].max)
+     }
+ 
+@@ -92,10 +92,10 @@ impl RawMultibodyJointSet {
+     pub fn jointConfigureBallMotorVelocity(
+         &mut self,
+         handle: FlatHandle,
+-        vx: f32,
+-        vy: f32,
+-        vz: f32,
+-        factor: f32,
++        vx: f64,
++        vy: f64,
++        vz: f64,
++        factor: f64,
+     ) {
+         let targetVel = Vector3::new(vx, vy, vz);
+ 
+@@ -109,12 +109,12 @@ impl RawMultibodyJointSet {
+     pub fn jointConfigureBallMotorPosition(
+         &mut self,
+         handle: FlatHandle,
+-        qw: f32,
+-        qx: f32,
+-        qy: f32,
+-        qz: f32,
+-        stiffness: f32,
+-        damping: f32,
++        qw: f64,
++        qx: f64,
++        qy: f64,
++        qz: f64,
++        stiffness: f64,
++        damping: f64,
+     ) {
+         let quat = Quaternion::new(qw, qx, qy, qz);
+ 
+@@ -132,15 +132,15 @@ impl RawMultibodyJointSet {
+     pub fn jointConfigureBallMotor(
+         &mut self,
+         handle: FlatHandle,
+-        qw: f32,
+-        qx: f32,
+-        qy: f32,
+-        qz: f32,
+-        vx: f32,
+-        vy: f32,
+-        vz: f32,
+-        stiffness: f32,
+-        damping: f32,
++        qw: f64,
++        qx: f64,
++        qy: f64,
++        qz: f64,
++        vx: f64,
++        vy: f64,
++        vz: f64,
++        stiffness: f64,
++        damping: f64,
+     ) {
+         let quat = Quaternion::new(qw, qx, qy, qz);
+         let vel = Vector3::new(vx, vy, vz);
+@@ -160,8 +160,8 @@ impl RawMultibodyJointSet {
+     //     &mut self,
+     //     handle: FlatHandle,
+     //     axis: RawJointAxis,
+-    //     targetVel: f32,
+-    //     factor: f32,
++    //     targetVel: f64,
++    //     factor: f64,
+     // ) {
+     //     self.jointConfigureMotor(handle, axis, 0.0, targetVel, 0.0, factor)
+     // }
+@@ -170,9 +170,9 @@ impl RawMultibodyJointSet {
+     //     &mut self,
+     //     handle: FlatHandle,
+     //     axis: RawJointAxis,
+-    //     targetPos: f32,
+-    //     stiffness: f32,
+-    //     damping: f32,
++    //     targetPos: f64,
++    //     stiffness: f64,
++    //     damping: f64,
+     // ) {
+     //     self.jointConfigureMotor(handle, axis, targetPos, 0.0, stiffness, damping)
+     // }
+@@ -181,10 +181,10 @@ impl RawMultibodyJointSet {
+     //     &mut self,
+     //     handle: FlatHandle,
+     //     axis: RawJointAxis,
+-    //     targetPos: f32,
+-    //     targetVel: f32,
+-    //     stiffness: f32,
+-    //     damping: f32,
++    //     targetPos: f64,
++    //     targetVel: f64,
++    //     stiffness: f64,
++    //     damping: f64,
+     // ) {
+     //     self.map_mut(handle, |j| {
+     //         j.data.motors[axis as usize].target_pos = targetPos;
+diff --git a/src/dynamics/rigid_body.rs b/src/dynamics/rigid_body.rs
+index d7174d7..4b749cc 100644
+--- a/src/dynamics/rigid_body.rs
++++ b/src/dynamics/rigid_body.rs
+@@ -64,7 +64,7 @@ impl RawRigidBodySet {
+     /// - `wakeUp`: forces the rigid-body to wake-up so it is properly affected by forces if it
+     /// wasn't moving before modifying its position.
+     #[cfg(feature = "dim3")]
+-    pub fn rbSetTranslation(&mut self, handle: FlatHandle, x: f32, y: f32, z: f32, wakeUp: bool) {
++    pub fn rbSetTranslation(&mut self, handle: FlatHandle, x: f64, y: f64, z: f64, wakeUp: bool) {
+         self.map_mut(handle, |rb| {
+             rb.set_translation(na::Vector3::new(x, y, z), wakeUp);
+         })
+@@ -78,7 +78,7 @@ impl RawRigidBodySet {
+     /// - `wakeUp`: forces the rigid-body to wake-up so it is properly affected by forces if it
+     /// wasn't moving before modifying its position.
+     #[cfg(feature = "dim2")]
+-    pub fn rbSetTranslation(&mut self, handle: FlatHandle, x: f32, y: f32, wakeUp: bool) {
++    pub fn rbSetTranslation(&mut self, handle: FlatHandle, x: f64, y: f64, wakeUp: bool) {
+         self.map_mut(handle, |rb| {
+             rb.set_translation(na::Vector2::new(x, y), wakeUp);
+         })
+@@ -99,10 +99,10 @@ impl RawRigidBodySet {
+     pub fn rbSetRotation(
+         &mut self,
+         handle: FlatHandle,
+-        x: f32,
+-        y: f32,
+-        z: f32,
+-        w: f32,
++        x: f64,
++        y: f64,
++        z: f64,
++        w: f64,
+         wakeUp: bool,
+     ) {
+         if let Some(q) = na::Unit::try_new(na::Quaternion::new(w, x, y, z), 0.0) {
+@@ -117,7 +117,7 @@ impl RawRigidBodySet {
+     /// - `wakeUp`: forces the rigid-body to wake-up so it is properly affected by forces if it
+     /// wasn't moving before modifying its position.
+     #[cfg(feature = "dim2")]
+-    pub fn rbSetRotation(&mut self, handle: FlatHandle, angle: f32, wakeUp: bool) {
++    pub fn rbSetRotation(&mut self, handle: FlatHandle, angle: f64, wakeUp: bool) {
+         self.map_mut(handle, |rb| {
+             rb.set_rotation(na::UnitComplex::new(angle), wakeUp)
+         })
+@@ -132,7 +132,7 @@ impl RawRigidBodySet {
+ 
+     /// Sets the angular velocity of this rigid-body.
+     #[cfg(feature = "dim2")]
+-    pub fn rbSetAngvel(&mut self, handle: FlatHandle, angvel: f32, wakeUp: bool) {
++    pub fn rbSetAngvel(&mut self, handle: FlatHandle, angvel: f64, wakeUp: bool) {
+         self.map_mut(handle, |rb| {
+             rb.set_angvel(angvel, wakeUp);
+         });
+@@ -159,7 +159,7 @@ impl RawRigidBodySet {
+     /// - `y`: the world-space position of the rigid-body along the `y` axis.
+     /// - `z`: the world-space position of the rigid-body along the `z` axis.
+     #[cfg(feature = "dim3")]
+-    pub fn rbSetNextKinematicTranslation(&mut self, handle: FlatHandle, x: f32, y: f32, z: f32) {
++    pub fn rbSetNextKinematicTranslation(&mut self, handle: FlatHandle, x: f64, y: f64, z: f64) {
+         self.map_mut(handle, |rb| {
+             rb.set_next_kinematic_translation(na::Vector3::new(x, y, z));
+         })
+@@ -177,7 +177,7 @@ impl RawRigidBodySet {
+     /// - `x`: the world-space position of the rigid-body along the `x` axis.
+     /// - `y`: the world-space position of the rigid-body along the `y` axis.
+     #[cfg(feature = "dim2")]
+-    pub fn rbSetNextKinematicTranslation(&mut self, handle: FlatHandle, x: f32, y: f32) {
++    pub fn rbSetNextKinematicTranslation(&mut self, handle: FlatHandle, x: f64, y: f64) {
+         self.map_mut(handle, |rb| {
+             rb.set_next_kinematic_translation(na::Vector2::new(x, y));
+         })
+@@ -200,10 +200,10 @@ impl RawRigidBodySet {
+     pub fn rbSetNextKinematicRotation(
+         &mut self,
+         handle: FlatHandle,
+-        x: f32,
+-        y: f32,
+-        z: f32,
+-        w: f32,
++        x: f64,
++        y: f64,
++        z: f64,
++        w: f64,
+     ) {
+         if let Some(q) = na::Unit::try_new(na::Quaternion::new(w, x, y, z), 0.0) {
+             self.map_mut(handle, |rb| {
+@@ -223,7 +223,7 @@ impl RawRigidBodySet {
+     /// # Parameters
+     /// - `angle`: the rotation angle, in radians.
+     #[cfg(feature = "dim2")]
+-    pub fn rbSetNextKinematicRotation(&mut self, handle: FlatHandle, angle: f32) {
++    pub fn rbSetNextKinematicRotation(&mut self, handle: FlatHandle, angle: f64) {
+         self.map_mut(handle, |rb| {
+             rb.set_next_kinematic_rotation(na::UnitComplex::new(angle));
+         })
+@@ -239,7 +239,7 @@ impl RawRigidBodySet {
+         })
+     }
+ 
+-    pub fn rbSetAdditionalMass(&mut self, handle: FlatHandle, mass: f32, wake_up: bool) {
++    pub fn rbSetAdditionalMass(&mut self, handle: FlatHandle, mass: f64, wake_up: bool) {
+         self.map_mut(handle, |rb| {
+             rb.set_additional_mass(mass, wake_up);
+         })
+@@ -249,7 +249,7 @@ impl RawRigidBodySet {
+     pub fn rbSetAdditionalMassProperties(
+         &mut self,
+         handle: FlatHandle,
+-        mass: f32,
++        mass: f64,
+         centerOfMass: &RawVector,
+         principalAngularInertia: &RawVector,
+         angularInertiaFrame: &RawRotation,
+@@ -270,9 +270,9 @@ impl RawRigidBodySet {
+     pub fn rbSetAdditionalMassProperties(
+         &mut self,
+         handle: FlatHandle,
+-        mass: f32,
++        mass: f64,
+         centerOfMass: &RawVector,
+-        principalAngularInertia: f32,
++        principalAngularInertia: f64,
+         wake_up: bool,
+     ) {
+         self.map_mut(handle, |rb| {
+@@ -288,7 +288,7 @@ impl RawRigidBodySet {
+ 
+     /// The angular velocity of this rigid-body.
+     #[cfg(feature = "dim2")]
+-    pub fn rbAngvel(&self, handle: FlatHandle) -> f32 {
++    pub fn rbAngvel(&self, handle: FlatHandle) -> f64 {
+         self.map(handle, |rb| rb.angvel())
+     }
+ 
+@@ -366,19 +366,19 @@ impl RawRigidBodySet {
+         self.map_mut(handle, |rb| rb.enable_ccd(enabled))
+     }
+ 
+-    pub fn rbSetSoftCcdPrediction(&mut self, handle: FlatHandle, prediction: f32) {
++    pub fn rbSetSoftCcdPrediction(&mut self, handle: FlatHandle, prediction: f64) {
+         self.map_mut(handle, |rb| rb.set_soft_ccd_prediction(prediction))
+     }
+ 
+     /// The mass of this rigid-body.
+-    pub fn rbMass(&self, handle: FlatHandle) -> f32 {
++    pub fn rbMass(&self, handle: FlatHandle) -> f64 {
+         self.map(handle, |rb| rb.mass())
+     }
+ 
+     /// The inverse of the mass of a rigid-body.
+     ///
+     /// If this is zero, the rigid-body is assumed to have infinite mass.
+-    pub fn rbInvMass(&self, handle: FlatHandle) -> f32 {
++    pub fn rbInvMass(&self, handle: FlatHandle) -> f64 {
+         self.map(handle, |rb| rb.mass_properties().local_mprops.inv_mass)
+     }
+ 
+@@ -403,7 +403,7 @@ impl RawRigidBodySet {
+     ///
+     /// Components set to zero are assumed to be infinite along the corresponding principal axis.
+     #[cfg(feature = "dim2")]
+-    pub fn rbInvPrincipalInertia(&self, handle: FlatHandle) -> f32 {
++    pub fn rbInvPrincipalInertia(&self, handle: FlatHandle) -> f64 {
+         self.map(handle, |rb| {
+             rb.mass_properties()
+                 .local_mprops
+@@ -439,7 +439,7 @@ impl RawRigidBodySet {
+ 
+     /// The angular inertia along the principal inertia axes of the rigid-body.
+     #[cfg(feature = "dim2")]
+-    pub fn rbPrincipalInertia(&self, handle: FlatHandle) -> f32 {
++    pub fn rbPrincipalInertia(&self, handle: FlatHandle) -> f64 {
+         self.map(handle, |rb| {
+             rb.mass_properties().local_mprops.principal_inertia().into()
+         })
+@@ -456,7 +456,7 @@ impl RawRigidBodySet {
+     /// The world-space inverse angular inertia tensor of the rigid-body,
+     /// taking into account rotation locking.
+     #[cfg(feature = "dim2")]
+-    pub fn rbEffectiveWorldInvInertia(&self, handle: FlatHandle) -> f32 {
++    pub fn rbEffectiveWorldInvInertia(&self, handle: FlatHandle) -> f64 {
+         self.map(handle, |rb| {
+             rb.mass_properties().effective_world_inv_inertia.into()
+         })
+@@ -474,7 +474,7 @@ impl RawRigidBodySet {
+     /// The effective world-space angular inertia (that takes the potential rotation locking into account) of
+     /// this rigid-body.
+     #[cfg(feature = "dim2")]
+-    pub fn rbEffectiveAngularInertia(&self, handle: FlatHandle) -> f32 {
++    pub fn rbEffectiveAngularInertia(&self, handle: FlatHandle) -> f64 {
+         self.map(handle, |rb| {
+             rb.mass_properties().effective_angular_inertia().into()
+         })
+@@ -504,7 +504,7 @@ impl RawRigidBodySet {
+     pub fn rbIsCcdEnabled(&self, handle: FlatHandle) -> bool {
+         self.map(handle, |rb| rb.is_ccd_enabled())
+     }
+-    pub fn rbSoftCcdPrediction(&self, handle: FlatHandle) -> f32 {
++    pub fn rbSoftCcdPrediction(&self, handle: FlatHandle) -> f64 {
+         self.map(handle, |rb| rb.soft_ccd_prediction())
+     }
+ 
+@@ -548,20 +548,20 @@ impl RawRigidBodySet {
+     }
+ 
+     /// The linear damping coefficient of this rigid-body.
+-    pub fn rbLinearDamping(&self, handle: FlatHandle) -> f32 {
++    pub fn rbLinearDamping(&self, handle: FlatHandle) -> f64 {
+         self.map(handle, |rb| rb.linear_damping())
+     }
+ 
+     /// The angular damping coefficient of this rigid-body.
+-    pub fn rbAngularDamping(&self, handle: FlatHandle) -> f32 {
++    pub fn rbAngularDamping(&self, handle: FlatHandle) -> f64 {
+         self.map(handle, |rb| rb.angular_damping())
+     }
+ 
+-    pub fn rbSetLinearDamping(&mut self, handle: FlatHandle, factor: f32) {
++    pub fn rbSetLinearDamping(&mut self, handle: FlatHandle, factor: f64) {
+         self.map_mut(handle, |rb| rb.set_linear_damping(factor));
+     }
+ 
+-    pub fn rbSetAngularDamping(&mut self, handle: FlatHandle, factor: f32) {
++    pub fn rbSetAngularDamping(&mut self, handle: FlatHandle, factor: f64) {
+         self.map_mut(handle, |rb| rb.set_angular_damping(factor));
+     }
+ 
+@@ -573,11 +573,11 @@ impl RawRigidBodySet {
+         self.map(handle, |rb| rb.is_enabled())
+     }
+ 
+-    pub fn rbGravityScale(&self, handle: FlatHandle) -> f32 {
++    pub fn rbGravityScale(&self, handle: FlatHandle) -> f64 {
+         self.map(handle, |rb| rb.gravity_scale())
+     }
+ 
+-    pub fn rbSetGravityScale(&mut self, handle: FlatHandle, factor: f32, wakeUp: bool) {
++    pub fn rbSetGravityScale(&mut self, handle: FlatHandle, factor: f64, wakeUp: bool) {
+         self.map_mut(handle, |rb| rb.set_gravity_scale(factor, wakeUp));
+     }
+ 
+@@ -623,7 +623,7 @@ impl RawRigidBodySet {
+     /// - `torque`: the torque to apply on the rigid-body.
+     /// - `wakeUp`: should the rigid-body be automatically woken-up?
+     #[cfg(feature = "dim2")]
+-    pub fn rbAddTorque(&mut self, handle: FlatHandle, torque: f32, wakeUp: bool) {
++    pub fn rbAddTorque(&mut self, handle: FlatHandle, torque: f64, wakeUp: bool) {
+         self.map_mut(handle, |rb| {
+             rb.add_torque(torque, wakeUp);
+         })
+@@ -647,7 +647,7 @@ impl RawRigidBodySet {
+     /// - `torque impulse`: the torque impulse to apply on the rigid-body.
+     /// - `wakeUp`: should the rigid-body be automatically woken-up?
+     #[cfg(feature = "dim2")]
+-    pub fn rbApplyTorqueImpulse(&mut self, handle: FlatHandle, torque_impulse: f32, wakeUp: bool) {
++    pub fn rbApplyTorqueImpulse(&mut self, handle: FlatHandle, torque_impulse: f64, wakeUp: bool) {
+         self.map_mut(handle, |rb| {
+             rb.apply_torque_impulse(torque_impulse, wakeUp);
+         })
+@@ -740,7 +740,7 @@ impl RawRigidBodySet {
+     /// Retrieves the constant torque(s) the user added to this rigid-body.
+     /// Returns zero if the rigid-body is not dynamic.
+     #[cfg(feature = "dim2")]
+-    pub fn rbUserTorque(&self, handle: FlatHandle) -> f32 {
++    pub fn rbUserTorque(&self, handle: FlatHandle) -> f64 {
+         self.map(handle, |rb| rb.user_torque())
+     }
+ 
+diff --git a/src/dynamics/rigid_body_set.rs b/src/dynamics/rigid_body_set.rs
+index 83b963e..2c771e0 100644
+--- a/src/dynamics/rigid_body_set.rs
++++ b/src/dynamics/rigid_body_set.rs
+@@ -71,8 +71,8 @@ impl RawRigidBodySet {
+         enabled: bool,
+         translation: &RawVector,
+         rotation: &RawRotation,
+-        gravityScale: f32,
+-        mass: f32,
++        gravityScale: f64,
++        mass: f64,
+         massOnly: bool,
+         centerOfMass: &RawVector,
+         linvel: &RawVector,
+@@ -85,12 +85,12 @@ impl RawRigidBodySet {
+         rotationEnabledX: bool,
+         rotationEnabledY: bool,
+         rotationEnabledZ: bool,
+-        linearDamping: f32,
+-        angularDamping: f32,
++        linearDamping: f64,
++        angularDamping: f64,
+         rb_type: RawRigidBodyType,
+         canSleep: bool,
+         sleeping: bool,
+-        softCcdPrediction: f32,
++        softCcdPrediction: f64,
+         ccdEnabled: bool,
+         dominanceGroup: i8,
+         additional_solver_iterations: usize,
+@@ -139,22 +139,22 @@ impl RawRigidBodySet {
+         enabled: bool,
+         translation: &RawVector,
+         rotation: &RawRotation,
+-        gravityScale: f32,
+-        mass: f32,
++        gravityScale: f64,
++        mass: f64,
+         massOnly: bool,
+         centerOfMass: &RawVector,
+         linvel: &RawVector,
+-        angvel: f32,
+-        principalAngularInertia: f32,
++        angvel: f64,
++        principalAngularInertia: f64,
+         translationEnabledX: bool,
+         translationEnabledY: bool,
+         rotationsEnabled: bool,
+-        linearDamping: f32,
+-        angularDamping: f32,
++        linearDamping: f64,
++        angularDamping: f64,
+         rb_type: RawRigidBodyType,
+         canSleep: bool,
+         sleeping: bool,
+-        softCcdPrediciton: f32,
++        softCcdPrediciton: f64,
+         ccdEnabled: bool,
+         dominanceGroup: i8,
+         additional_solver_iterations: usize,
+diff --git a/src/geometry/broad_phase.rs b/src/geometry/broad_phase.rs
+index 6f81a86..6bfe2d9 100644
+--- a/src/geometry/broad_phase.rs
++++ b/src/geometry/broad_phase.rs
+@@ -30,7 +30,7 @@ impl RawBroadPhase {
+         colliders: &RawColliderSet,
+         rayOrig: &RawVector,
+         rayDir: &RawVector,
+-        maxToi: f32,
++        maxToi: f64,
+         solid: bool,
+         filter_flags: u32,
+         filter_groups: Option<u32>,
+@@ -72,7 +72,7 @@ impl RawBroadPhase {
+         colliders: &RawColliderSet,
+         rayOrig: &RawVector,
+         rayDir: &RawVector,
+-        maxToi: f32,
++        maxToi: f64,
+         solid: bool,
+         filter_flags: u32,
+         filter_groups: Option<u32>,
+@@ -112,7 +112,7 @@ impl RawBroadPhase {
+         colliders: &RawColliderSet,
+         rayOrig: &RawVector,
+         rayDir: &RawVector,
+-        maxToi: f32,
++        maxToi: f64,
+         solid: bool,
+         callback: &js_sys::Function,
+         filter_flags: u32,
+@@ -229,7 +229,7 @@ impl RawBroadPhase {
+             );
+ 
+             query_pipeline
+-                .project_point(&point.0.into(), f32::MAX, solid)
++                .project_point(&point.0.into(), f64::MAX, solid)
+                 .map(|(handle, proj)| RawPointColliderProjection {
+                     handle,
+                     proj,
+@@ -333,8 +333,8 @@ impl RawBroadPhase {
+         shapeRot: &RawRotation,
+         shapeVel: &RawVector,
+         shape: &RawShape,
+-        target_distance: f32,
+-        maxToi: f32,
++        target_distance: f64,
++        maxToi: f64,
+         stop_at_penetration: bool,
+         filter_flags: u32,
+         filter_groups: Option<u32>,
+diff --git a/src/geometry/collider.rs b/src/geometry/collider.rs
+index e801904..b57797d 100644
+--- a/src/geometry/collider.rs
++++ b/src/geometry/collider.rs
+@@ -53,7 +53,7 @@ impl RawColliderSet {
+     /// - `wakeUp`: forces the collider to wake-up so it is properly affected by forces if it
+     /// wasn't moving before modifying its position.
+     #[cfg(feature = "dim3")]
+-    pub fn coSetTranslation(&mut self, handle: FlatHandle, x: f32, y: f32, z: f32) {
++    pub fn coSetTranslation(&mut self, handle: FlatHandle, x: f64, y: f64, z: f64) {
+         self.map_mut(handle, |co| {
+             co.set_translation(na::Vector3::new(x, y, z));
+         })
+@@ -67,21 +67,21 @@ impl RawColliderSet {
+     /// - `wakeUp`: forces the collider to wake-up so it is properly affected by forces if it
+     /// wasn't moving before modifying its position.
+     #[cfg(feature = "dim2")]
+-    pub fn coSetTranslation(&mut self, handle: FlatHandle, x: f32, y: f32) {
++    pub fn coSetTranslation(&mut self, handle: FlatHandle, x: f64, y: f64) {
+         self.map_mut(handle, |co| {
+             co.set_translation(na::Vector2::new(x, y));
+         })
+     }
+ 
+     #[cfg(feature = "dim3")]
+-    pub fn coSetTranslationWrtParent(&mut self, handle: FlatHandle, x: f32, y: f32, z: f32) {
++    pub fn coSetTranslationWrtParent(&mut self, handle: FlatHandle, x: f64, y: f64, z: f64) {
+         self.map_mut(handle, |co| {
+             co.set_translation_wrt_parent(na::Vector3::new(x, y, z));
+         })
+     }
+ 
+     #[cfg(feature = "dim2")]
+-    pub fn coSetTranslationWrtParent(&mut self, handle: FlatHandle, x: f32, y: f32) {
++    pub fn coSetTranslationWrtParent(&mut self, handle: FlatHandle, x: f64, y: f64) {
+         self.map_mut(handle, |co| {
+             co.set_translation_wrt_parent(na::Vector2::new(x, y));
+         })
+@@ -99,7 +99,7 @@ impl RawColliderSet {
+     /// - `wakeUp`: forces the collider to wake-up so it is properly affected by forces if it
+     /// wasn't moving before modifying its position.
+     #[cfg(feature = "dim3")]
+-    pub fn coSetRotation(&mut self, handle: FlatHandle, x: f32, y: f32, z: f32, w: f32) {
++    pub fn coSetRotation(&mut self, handle: FlatHandle, x: f64, y: f64, z: f64, w: f64) {
+         if let Some(q) = na::Unit::try_new(na::Quaternion::new(w, x, y, z), 0.0) {
+             self.map_mut(handle, |co| co.set_rotation(q))
+         }
+@@ -112,19 +112,19 @@ impl RawColliderSet {
+     /// - `wakeUp`: forces the collider to wake-up so it is properly affected by forces if it
+     /// wasn't moving before modifying its position.
+     #[cfg(feature = "dim2")]
+-    pub fn coSetRotation(&mut self, handle: FlatHandle, angle: f32) {
++    pub fn coSetRotation(&mut self, handle: FlatHandle, angle: f64) {
+         self.map_mut(handle, |co| co.set_rotation(na::UnitComplex::new(angle)))
+     }
+ 
+     #[cfg(feature = "dim3")]
+-    pub fn coSetRotationWrtParent(&mut self, handle: FlatHandle, x: f32, y: f32, z: f32, w: f32) {
++    pub fn coSetRotationWrtParent(&mut self, handle: FlatHandle, x: f64, y: f64, z: f64, w: f64) {
+         if let Some(q) = na::Unit::try_new(na::Quaternion::new(w, x, y, z), 0.0) {
+             self.map_mut(handle, |co| co.set_rotation_wrt_parent(q.scaled_axis()))
+         }
+     }
+ 
+     #[cfg(feature = "dim2")]
+-    pub fn coSetRotationWrtParent(&mut self, handle: FlatHandle, angle: f32) {
++    pub fn coSetRotationWrtParent(&mut self, handle: FlatHandle, angle: f64) {
+         self.map_mut(handle, |co| co.set_rotation_wrt_parent(angle))
+     }
+ 
+@@ -207,7 +207,7 @@ impl RawColliderSet {
+     }
+ 
+     /// The radius of this collider if it is a ball, capsule, cylinder, or cone shape.
+-    pub fn coRadius(&self, handle: FlatHandle) -> Option<f32> {
++    pub fn coRadius(&self, handle: FlatHandle) -> Option<f64> {
+         self.map(handle, |co| match co.shape().shape_type() {
+             ShapeType::Ball => co.shape().as_ball().map(|b| b.radius),
+             ShapeType::Capsule => co.shape().as_capsule().map(|b| b.radius),
+@@ -248,7 +248,7 @@ impl RawColliderSet {
+     }
+ 
+     /// The half height of this collider if it is a capsule, cylinder, or cone shape.
+-    pub fn coHalfHeight(&self, handle: FlatHandle) -> Option<f32> {
++    pub fn coHalfHeight(&self, handle: FlatHandle) -> Option<f64> {
+         self.map(handle, |co| match co.shape().shape_type() {
+             ShapeType::Capsule => co.shape().as_capsule().map(|b| b.half_height()),
+             #[cfg(feature = "dim3")]
+@@ -294,7 +294,7 @@ impl RawColliderSet {
+     }
+ 
+     /// The radius of the round edges of this collider.
+-    pub fn coRoundRadius(&self, handle: FlatHandle) -> Option<f32> {
++    pub fn coRoundRadius(&self, handle: FlatHandle) -> Option<f64> {
+         self.map(handle, |co| match co.shape().shape_type() {
+             ShapeType::RoundCuboid => co.shape().as_round_cuboid().map(|b| b.border_radius),
+             ShapeType::RoundTriangle => co.shape().as_round_triangle().map(|b| b.border_radius),
+@@ -484,9 +484,9 @@ impl RawColliderSet {
+     }
+ 
+     /// The vertices of this triangle mesh, polyline, convex polyhedron, segment, triangle or convex polyhedron, if it is one.
+-    pub fn coVertices(&self, handle: FlatHandle) -> Option<Vec<f32>> {
++    pub fn coVertices(&self, handle: FlatHandle) -> Option<Vec<f64>> {
+         let flatten =
+-            |vertices: &[Point<f32>]| vertices.iter().flat_map(|p| p.iter()).copied().collect();
++            |vertices: &[Point<f64>]| vertices.iter().flat_map(|p| p.iter()).copied().collect();
+         self.map(handle, |co| match co.shape().shape_type() {
+             ShapeType::TriMesh => co.shape().as_trimesh().map(|t| flatten(t.vertices())),
+             #[cfg(feature = "dim2")]
+@@ -570,7 +570,7 @@ impl RawColliderSet {
+     }
+ 
+     /// The height of this heightfield if it is one.
+-    pub fn coHeightfieldHeights(&self, handle: FlatHandle) -> Option<Vec<f32>> {
++    pub fn coHeightfieldHeights(&self, handle: FlatHandle) -> Option<Vec<f64>> {
+         self.map(handle, |co| match co.shape().shape_type() {
+             ShapeType::HeightField => co
+                 .shape()
+@@ -619,35 +619,35 @@ impl RawColliderSet {
+         self.map(handle, |co| co.is_enabled())
+     }
+ 
+-    pub fn coSetContactSkin(&mut self, handle: FlatHandle, contact_skin: f32) {
++    pub fn coSetContactSkin(&mut self, handle: FlatHandle, contact_skin: f64) {
+         self.map_mut(handle, |co| co.set_contact_skin(contact_skin))
+     }
+ 
+-    pub fn coContactSkin(&self, handle: FlatHandle) -> f32 {
++    pub fn coContactSkin(&self, handle: FlatHandle) -> f64 {
+         self.map(handle, |co| co.contact_skin())
+     }
+ 
+     /// The friction coefficient of this collider.
+-    pub fn coFriction(&self, handle: FlatHandle) -> f32 {
++    pub fn coFriction(&self, handle: FlatHandle) -> f64 {
+         self.map(handle, |co| co.material().friction)
+     }
+     /// The restitution coefficient of this collider.
+-    pub fn coRestitution(&self, handle: FlatHandle) -> f32 {
++    pub fn coRestitution(&self, handle: FlatHandle) -> f64 {
+         self.map(handle, |co| co.material().restitution)
+     }
+ 
+     /// The density of this collider.
+-    pub fn coDensity(&self, handle: FlatHandle) -> f32 {
++    pub fn coDensity(&self, handle: FlatHandle) -> f64 {
+         self.map(handle, |co| co.density())
+     }
+ 
+     /// The mass of this collider.
+-    pub fn coMass(&self, handle: FlatHandle) -> f32 {
++    pub fn coMass(&self, handle: FlatHandle) -> f64 {
+         self.map(handle, |co| co.mass())
+     }
+ 
+     /// The volume of this collider.
+-    pub fn coVolume(&self, handle: FlatHandle) -> f32 {
++    pub fn coVolume(&self, handle: FlatHandle) -> f64 {
+         self.map(handle, |co| co.volume())
+     }
+ 
+@@ -681,7 +681,7 @@ impl RawColliderSet {
+     }
+ 
+     /// The total force magnitude beyond which a contact force event can be emitted.
+-    pub fn coContactForceEventThreshold(&self, handle: FlatHandle) -> f32 {
++    pub fn coContactForceEventThreshold(&self, handle: FlatHandle) -> f64 {
+         self.map(handle, |co| co.contact_force_event_threshold())
+     }
+ 
+@@ -700,8 +700,8 @@ impl RawColliderSet {
+         shape2Pos: &RawVector,
+         shape2Rot: &RawRotation,
+         shape2Vel: &RawVector,
+-        target_distance: f32,
+-        maxToi: f32,
++        target_distance: f64,
++        maxToi: f64,
+         stop_at_penetration: bool,
+     ) -> Option<RawShapeCastHit> {
+         let pos2 = Isometry::from_parts(shape2Pos.0.into(), shape2Rot.0);
+@@ -727,8 +727,8 @@ impl RawColliderSet {
+         collider1Vel: &RawVector,
+         collider2handle: FlatHandle,
+         collider2Vel: &RawVector,
+-        target_distance: f32,
+-        max_toi: f32,
++        target_distance: f64,
++        max_toi: f64,
+         stop_at_penetration: bool,
+     ) -> Option<RawColliderShapeCastHit> {
+         let handle2 = utils::collider_handle(collider2handle);
+@@ -783,7 +783,7 @@ impl RawColliderSet {
+         shape2: &RawShape,
+         shapePos2: &RawVector,
+         shapeRot2: &RawRotation,
+-        prediction: f32,
++        prediction: f64,
+     ) -> Option<RawShapeContact> {
+         let pos2 = Isometry::from_parts(shapePos2.0.into(), shapeRot2.0);
+ 
+@@ -797,7 +797,7 @@ impl RawColliderSet {
+         &self,
+         handle: FlatHandle,
+         collider2handle: FlatHandle,
+-        prediction: f32,
++        prediction: f64,
+     ) -> Option<RawShapeContact> {
+         let co2 = self
+             .0
+@@ -835,7 +835,7 @@ impl RawColliderSet {
+         handle: FlatHandle,
+         rayOrig: &RawVector,
+         rayDir: &RawVector,
+-        maxToi: f32,
++        maxToi: f64,
+     ) -> bool {
+         self.map(handle, |co| {
+             co.shared_shape().intersectsRay(
+@@ -852,9 +852,9 @@ impl RawColliderSet {
+         handle: FlatHandle,
+         rayOrig: &RawVector,
+         rayDir: &RawVector,
+-        maxToi: f32,
++        maxToi: f64,
+         solid: bool,
+-    ) -> f32 {
++    ) -> f64 {
+         self.map(handle, |co| {
+             co.shared_shape().castRay(
+                 co.position(),
+@@ -871,7 +871,7 @@ impl RawColliderSet {
+         handle: FlatHandle,
+         rayOrig: &RawVector,
+         rayDir: &RawVector,
+-        maxToi: f32,
++        maxToi: f64,
+         solid: bool,
+     ) -> Option<RawRayIntersection> {
+         self.map(handle, |co| {
+@@ -889,11 +889,11 @@ impl RawColliderSet {
+         self.map_mut(handle, |co| co.set_sensor(is_sensor))
+     }
+ 
+-    pub fn coSetRestitution(&mut self, handle: FlatHandle, restitution: f32) {
++    pub fn coSetRestitution(&mut self, handle: FlatHandle, restitution: f64) {
+         self.map_mut(handle, |co| co.set_restitution(restitution))
+     }
+ 
+-    pub fn coSetFriction(&mut self, handle: FlatHandle, friction: f32) {
++    pub fn coSetFriction(&mut self, handle: FlatHandle, friction: f64) {
+         self.map_mut(handle, |co| co.set_friction(friction))
+     }
+ 
+@@ -944,15 +944,15 @@ impl RawColliderSet {
+         self.map_mut(handle, |co| co.set_shape(shape.0.clone()));
+     }
+ 
+-    pub fn coSetContactForceEventThreshold(&mut self, handle: FlatHandle, threshold: f32) {
++    pub fn coSetContactForceEventThreshold(&mut self, handle: FlatHandle, threshold: f64) {
+         self.map_mut(handle, |co| co.set_contact_force_event_threshold(threshold))
+     }
+ 
+-    pub fn coSetDensity(&mut self, handle: FlatHandle, density: f32) {
++    pub fn coSetDensity(&mut self, handle: FlatHandle, density: f64) {
+         self.map_mut(handle, |co| co.set_density(density))
+     }
+ 
+-    pub fn coSetMass(&mut self, handle: FlatHandle, mass: f32) {
++    pub fn coSetMass(&mut self, handle: FlatHandle, mass: f64) {
+         self.map_mut(handle, |co| co.set_mass(mass))
+     }
+ 
+@@ -960,7 +960,7 @@ impl RawColliderSet {
+     pub fn coSetMassProperties(
+         &mut self,
+         handle: FlatHandle,
+-        mass: f32,
++        mass: f64,
+         centerOfMass: &RawVector,
+         principalAngularInertia: &RawVector,
+         angularInertiaFrame: &RawRotation,
+@@ -981,9 +981,9 @@ impl RawColliderSet {
+     pub fn coSetMassProperties(
+         &mut self,
+         handle: FlatHandle,
+-        mass: f32,
++        mass: f64,
+         centerOfMass: &RawVector,
+-        principalAngularInertia: f32,
++        principalAngularInertia: f64,
+     ) {
+         self.map_mut(handle, |co| {
+             let props = MassProperties::new(centerOfMass.0.into(), mass, principalAngularInertia);
+diff --git a/src/geometry/collider_set.rs b/src/geometry/collider_set.rs
+index 6e31d8e..164eb4b 100644
+--- a/src/geometry/collider_set.rs
++++ b/src/geometry/collider_set.rs
+@@ -60,14 +60,14 @@ impl RawColliderSet {
+         translation: &RawVector,
+         rotation: &RawRotation,
+         massPropsMode: u32,
+-        mass: f32,
++        mass: f64,
+         centerOfMass: &RawVector,
+-        #[cfg(feature = "dim2")] principalAngularInertia: f32,
++        #[cfg(feature = "dim2")] principalAngularInertia: f64,
+         #[cfg(feature = "dim3")] principalAngularInertia: &RawVector,
+         #[cfg(feature = "dim3")] angularInertiaFrame: &RawRotation,
+-        density: f32,
+-        friction: f32,
+-        restitution: f32,
++        density: f64,
++        friction: f64,
++        restitution: f64,
+         frictionCombineRule: u32,
+         restitutionCombineRule: u32,
+         isSensor: bool,
+@@ -76,8 +76,8 @@ impl RawColliderSet {
+         activeCollisionTypes: u16,
+         activeHooks: u32,
+         activeEvents: u32,
+-        contactForceEventThreshold: f32,
+-        contactSkin: f32,
++        contactForceEventThreshold: f64,
++        contactSkin: f64,
+         hasParent: bool,
+         parent: FlatHandle,
+         bodies: &mut RawRigidBodySet,
+@@ -157,12 +157,12 @@ impl RawColliderSet {
+         translation: &RawVector,
+         rotation: &RawRotation,
+         massPropsMode: u32,
+-        mass: f32,
++        mass: f64,
+         centerOfMass: &RawVector,
+-        principalAngularInertia: f32,
+-        density: f32,
+-        friction: f32,
+-        restitution: f32,
++        principalAngularInertia: f64,
++        density: f64,
++        friction: f64,
++        restitution: f64,
+         frictionCombineRule: u32,
+         restitutionCombineRule: u32,
+         isSensor: bool,
+@@ -171,8 +171,8 @@ impl RawColliderSet {
+         activeCollisionTypes: u16,
+         activeHooks: u32,
+         activeEvents: u32,
+-        contactForceEventThreshold: f32,
+-        contactSkin: f32,
++        contactForceEventThreshold: f64,
++        contactSkin: f64,
+         hasParent: bool,
+         parent: FlatHandle,
+         bodies: &mut RawRigidBodySet,
+@@ -213,13 +213,13 @@ impl RawColliderSet {
+         translation: &RawVector,
+         rotation: &RawRotation,
+         massPropsMode: u32,
+-        mass: f32,
++        mass: f64,
+         centerOfMass: &RawVector,
+         principalAngularInertia: &RawVector,
+         angularInertiaFrame: &RawRotation,
+-        density: f32,
+-        friction: f32,
+-        restitution: f32,
++        density: f64,
++        friction: f64,
++        restitution: f64,
+         frictionCombineRule: u32,
+         restitutionCombineRule: u32,
+         isSensor: bool,
+@@ -228,8 +228,8 @@ impl RawColliderSet {
+         activeCollisionTypes: u16,
+         activeHooks: u32,
+         activeEvents: u32,
+-        contactForceEventThreshold: f32,
+-        contactSkin: f32,
++        contactForceEventThreshold: f64,
++        contactSkin: f64,
+         hasParent: bool,
+         parent: FlatHandle,
+         bodies: &mut RawRigidBodySet,
+diff --git a/src/geometry/contact.rs b/src/geometry/contact.rs
+index 47043a2..5d90d8c 100644
+--- a/src/geometry/contact.rs
++++ b/src/geometry/contact.rs
+@@ -9,7 +9,7 @@ pub struct RawShapeContact {
+ 
+ #[wasm_bindgen]
+ impl RawShapeContact {
+-    pub fn distance(&self) -> f32 {
++    pub fn distance(&self) -> f64 {
+         self.contact.dist
+     }
+ 
+diff --git a/src/geometry/ray.rs b/src/geometry/ray.rs
+index 5285d5d..376bfb5 100644
+--- a/src/geometry/ray.rs
++++ b/src/geometry/ray.rs
+@@ -14,7 +14,7 @@ impl RawRayIntersection {
+         self.0.normal.into()
+     }
+ 
+-    pub fn time_of_impact(&self) -> f32 {
++    pub fn time_of_impact(&self) -> f64 {
+         self.0.time_of_impact
+     }
+ 
+@@ -43,7 +43,7 @@ impl RawRayColliderIntersection {
+         self.inter.normal.into()
+     }
+ 
+-    pub fn time_of_impact(&self) -> f32 {
++    pub fn time_of_impact(&self) -> f64 {
+         self.inter.time_of_impact
+     }
+ 
+@@ -59,7 +59,7 @@ impl RawRayColliderIntersection {
+ #[wasm_bindgen]
+ pub struct RawRayColliderHit {
+     pub(crate) handle: ColliderHandle,
+-    pub(crate) timeOfImpact: f32,
++    pub(crate) timeOfImpact: f64,
+ }
+ 
+ #[wasm_bindgen]
+@@ -68,7 +68,7 @@ impl RawRayColliderHit {
+         utils::flat_handle(self.handle.0)
+     }
+ 
+-    pub fn timeOfImpact(&self) -> f32 {
++    pub fn timeOfImpact(&self) -> f64 {
+         self.timeOfImpact
+     }
+ }
+diff --git a/src/geometry/shape.rs b/src/geometry/shape.rs
+index 5f01d9f..136dec1 100644
+--- a/src/geometry/shape.rs
++++ b/src/geometry/shape.rs
+@@ -19,8 +19,8 @@ pub trait SharedShapeUtility {
+         shape2: &dyn Shape,
+         shapePos2: &Isometry<Real>,
+         shapeVel2: &Vector<Real>,
+-        target_distance: f32,
+-        maxToi: f32,
++        target_distance: f64,
++        maxToi: f64,
+         stop_at_penetration: bool,
+     ) -> Option<RawShapeCastHit>;
+ 
+@@ -36,7 +36,7 @@ pub trait SharedShapeUtility {
+         shapePos1: &Isometry<Real>,
+         shape2: &dyn Shape,
+         shapePos2: &Isometry<Real>,
+-        prediction: f32,
++        prediction: f64,
+     ) -> Option<RawShapeContact>;
+ 
+     fn containsPoint(&self, shapePos: &Isometry<Real>, point: &Point<Real>) -> bool;
+@@ -53,7 +53,7 @@ pub trait SharedShapeUtility {
+         shapePos: &Isometry<Real>,
+         rayOrig: Point<Real>,
+         rayDir: Vector<Real>,
+-        maxToi: f32,
++        maxToi: f64,
+     ) -> bool;
+ 
+     fn castRay(
+@@ -61,16 +61,16 @@ pub trait SharedShapeUtility {
+         shapePos: &Isometry<Real>,
+         rayOrig: Point<Real>,
+         rayDir: Vector<Real>,
+-        maxToi: f32,
++        maxToi: f64,
+         solid: bool,
+-    ) -> f32;
++    ) -> f64;
+ 
+     fn castRayAndGetNormal(
+         &self,
+         shapePos: &Isometry<Real>,
+         rayOrig: Point<Real>,
+         rayDir: Vector<Real>,
+-        maxToi: f32,
++        maxToi: f64,
+         solid: bool,
+     ) -> Option<RawRayIntersection>;
+ }
+@@ -84,8 +84,8 @@ impl SharedShapeUtility for SharedShape {
+         shape2: &dyn Shape,
+         shapePos2: &Isometry<Real>,
+         shapeVel2: &Vector<Real>,
+-        target_distance: f32,
+-        maxToi: f32,
++        target_distance: f64,
++        maxToi: f64,
+         stop_at_penetration: bool,
+     ) -> Option<RawShapeCastHit> {
+         query::cast_shapes(
+@@ -121,7 +121,7 @@ impl SharedShapeUtility for SharedShape {
+         shapePos1: &Isometry<Real>,
+         shape2: &dyn Shape,
+         shapePos2: &Isometry<Real>,
+-        prediction: f32,
++        prediction: f64,
+     ) -> Option<RawShapeContact> {
+         query::contact(shapePos1, &*self.0, shapePos2, shape2, prediction)
+             .ok()
+@@ -147,7 +147,7 @@ impl SharedShapeUtility for SharedShape {
+         shapePos: &Isometry<Real>,
+         rayOrig: Point<Real>,
+         rayDir: Vector<Real>,
+-        maxToi: f32,
++        maxToi: f64,
+     ) -> bool {
+         self.as_ref()
+             .intersects_ray(shapePos, &Ray::new(rayOrig, rayDir), maxToi)
+@@ -158,9 +158,9 @@ impl SharedShapeUtility for SharedShape {
+         shapePos: &Isometry<Real>,
+         rayOrig: Point<Real>,
+         rayDir: Vector<Real>,
+-        maxToi: f32,
++        maxToi: f64,
+         solid: bool,
+-    ) -> f32 {
++    ) -> f64 {
+         self.as_ref()
+             .cast_ray(shapePos, &Ray::new(rayOrig, rayDir), maxToi, solid)
+             .unwrap_or(-1.0) // Negative value = no hit.
+@@ -171,7 +171,7 @@ impl SharedShapeUtility for SharedShape {
+         shapePos: &Isometry<Real>,
+         rayOrig: Point<Real>,
+         rayDir: Vector<Real>,
+-        maxToi: f32,
++        maxToi: f64,
+         solid: bool,
+     ) -> Option<RawRayIntersection> {
+         self.as_ref()
+@@ -230,26 +230,26 @@ pub struct RawShape(pub(crate) SharedShape);
+ #[wasm_bindgen]
+ impl RawShape {
+     #[cfg(feature = "dim2")]
+-    pub fn cuboid(hx: f32, hy: f32) -> Self {
++    pub fn cuboid(hx: f64, hy: f64) -> Self {
+         Self(SharedShape::cuboid(hx, hy))
+     }
+ 
+     #[cfg(feature = "dim3")]
+-    pub fn cuboid(hx: f32, hy: f32, hz: f32) -> Self {
++    pub fn cuboid(hx: f64, hy: f64, hz: f64) -> Self {
+         Self(SharedShape::cuboid(hx, hy, hz))
+     }
+ 
+     #[cfg(feature = "dim2")]
+-    pub fn roundCuboid(hx: f32, hy: f32, borderRadius: f32) -> Self {
++    pub fn roundCuboid(hx: f64, hy: f64, borderRadius: f64) -> Self {
+         Self(SharedShape::round_cuboid(hx, hy, borderRadius))
+     }
+ 
+     #[cfg(feature = "dim3")]
+-    pub fn roundCuboid(hx: f32, hy: f32, hz: f32, borderRadius: f32) -> Self {
++    pub fn roundCuboid(hx: f64, hy: f64, hz: f64, borderRadius: f64) -> Self {
+         Self(SharedShape::round_cuboid(hx, hy, hz, borderRadius))
+     }
+ 
+-    pub fn ball(radius: f32) -> Self {
++    pub fn ball(radius: f64) -> Self {
+         Self(SharedShape::ball(radius))
+     }
+ 
+@@ -257,19 +257,19 @@ impl RawShape {
+         Self(SharedShape::halfspace(Unit::new_normalize(normal.0)))
+     }
+ 
+-    pub fn capsule(halfHeight: f32, radius: f32) -> Self {
++    pub fn capsule(halfHeight: f64, radius: f64) -> Self {
+         let p2 = Point::from(Vector::y() * halfHeight);
+         let p1 = -p2;
+         Self(SharedShape::capsule(p1, p2, radius))
+     }
+ 
+     #[cfg(feature = "dim3")]
+-    pub fn cylinder(halfHeight: f32, radius: f32) -> Self {
++    pub fn cylinder(halfHeight: f64, radius: f64) -> Self {
+         Self(SharedShape::cylinder(halfHeight, radius))
+     }
+ 
+     #[cfg(feature = "dim3")]
+-    pub fn roundCylinder(halfHeight: f32, radius: f32, borderRadius: f32) -> Self {
++    pub fn roundCylinder(halfHeight: f64, radius: f64, borderRadius: f64) -> Self {
+         Self(SharedShape::round_cylinder(
+             halfHeight,
+             radius,
+@@ -278,12 +278,12 @@ impl RawShape {
+     }
+ 
+     #[cfg(feature = "dim3")]
+-    pub fn cone(halfHeight: f32, radius: f32) -> Self {
++    pub fn cone(halfHeight: f64, radius: f64) -> Self {
+         Self(SharedShape::cone(halfHeight, radius))
+     }
+ 
+     #[cfg(feature = "dim3")]
+-    pub fn roundCone(halfHeight: f32, radius: f32, borderRadius: f32) -> Self {
++    pub fn roundCone(halfHeight: f64, radius: f64, borderRadius: f64) -> Self {
+         Self(SharedShape::round_cone(halfHeight, radius, borderRadius))
+     }
+ 
+@@ -295,12 +295,12 @@ impl RawShape {
+         Self(SharedShape::voxels(voxel_size.0, &grid_coords))
+     }
+ 
+-    pub fn voxelsFromPoints(voxel_size: &RawVector, points: Vec<f32>) -> Self {
++    pub fn voxelsFromPoints(voxel_size: &RawVector, points: Vec<f64>) -> Self {
+         let points: Vec<_> = points.chunks_exact(DIM).map(Point::from_slice).collect();
+         Self(SharedShape::voxels_from_points(voxel_size.0, &points))
+     }
+ 
+-    pub fn polyline(vertices: Vec<f32>, indices: Vec<u32>) -> Self {
++    pub fn polyline(vertices: Vec<f64>, indices: Vec<u32>) -> Self {
+         let vertices = vertices.chunks(DIM).map(|v| Point::from_slice(v)).collect();
+         let indices: Vec<_> = indices.chunks(2).map(|v| [v[0], v[1]]).collect();
+         if indices.is_empty() {
+@@ -310,7 +310,7 @@ impl RawShape {
+         }
+     }
+ 
+-    pub fn trimesh(vertices: Vec<f32>, indices: Vec<u32>, flags: u32) -> Option<RawShape> {
++    pub fn trimesh(vertices: Vec<f64>, indices: Vec<u32>, flags: u32) -> Option<RawShape> {
+         let flags = TriMeshFlags::from_bits(flags as u16).unwrap_or_default();
+         let vertices = vertices.chunks(DIM).map(|v| Point::from_slice(v)).collect();
+         let indices = indices.chunks(3).map(|v| [v[0], v[1], v[2]]).collect();
+@@ -320,7 +320,7 @@ impl RawShape {
+     }
+ 
+     #[cfg(feature = "dim2")]
+-    pub fn heightfield(heights: Vec<f32>, scale: &RawVector) -> Self {
++    pub fn heightfield(heights: Vec<f64>, scale: &RawVector) -> Self {
+         let heights = DVector::from_vec(heights);
+         Self(SharedShape::heightfield(heights, scale.0))
+     }
+@@ -329,7 +329,7 @@ impl RawShape {
+     pub fn heightfield(
+         nrows: u32,
+         ncols: u32,
+-        heights: Vec<f32>,
++        heights: Vec<f64>,
+         scale: &RawVector,
+         flags: u32,
+     ) -> Self {
+@@ -351,7 +351,7 @@ impl RawShape {
+         p1: &RawVector,
+         p2: &RawVector,
+         p3: &RawVector,
+-        borderRadius: f32,
++        borderRadius: f64,
+     ) -> Self {
+         Self(SharedShape::round_triangle(
+             p1.0.into(),
+@@ -361,30 +361,30 @@ impl RawShape {
+         ))
+     }
+ 
+-    pub fn convexHull(points: Vec<f32>) -> Option<RawShape> {
++    pub fn convexHull(points: Vec<f64>) -> Option<RawShape> {
+         let points: Vec<_> = points.chunks(DIM).map(|v| Point::from_slice(v)).collect();
+         SharedShape::convex_hull(&points).map(|s| Self(s))
+     }
+ 
+-    pub fn roundConvexHull(points: Vec<f32>, borderRadius: f32) -> Option<RawShape> {
++    pub fn roundConvexHull(points: Vec<f64>, borderRadius: f64) -> Option<RawShape> {
+         let points: Vec<_> = points.chunks(DIM).map(|v| Point::from_slice(v)).collect();
+         SharedShape::round_convex_hull(&points, borderRadius).map(|s| Self(s))
+     }
+ 
+     #[cfg(feature = "dim2")]
+-    pub fn convexPolyline(vertices: Vec<f32>) -> Option<RawShape> {
++    pub fn convexPolyline(vertices: Vec<f64>) -> Option<RawShape> {
+         let vertices = vertices.chunks(DIM).map(|v| Point::from_slice(v)).collect();
+         SharedShape::convex_polyline(vertices).map(|s| Self(s))
+     }
+ 
+     #[cfg(feature = "dim2")]
+-    pub fn roundConvexPolyline(vertices: Vec<f32>, borderRadius: f32) -> Option<RawShape> {
++    pub fn roundConvexPolyline(vertices: Vec<f64>, borderRadius: f64) -> Option<RawShape> {
+         let vertices = vertices.chunks(DIM).map(|v| Point::from_slice(v)).collect();
+         SharedShape::round_convex_polyline(vertices, borderRadius).map(|s| Self(s))
+     }
+ 
+     #[cfg(feature = "dim3")]
+-    pub fn convexMesh(vertices: Vec<f32>, indices: Vec<u32>) -> Option<RawShape> {
++    pub fn convexMesh(vertices: Vec<f64>, indices: Vec<u32>) -> Option<RawShape> {
+         let vertices = vertices.chunks(DIM).map(|v| Point::from_slice(v)).collect();
+         let indices: Vec<_> = indices.chunks(3).map(|v| [v[0], v[1], v[2]]).collect();
+         SharedShape::convex_mesh(vertices, &indices).map(|s| Self(s))
+@@ -392,9 +392,9 @@ impl RawShape {
+ 
+     #[cfg(feature = "dim3")]
+     pub fn roundConvexMesh(
+-        vertices: Vec<f32>,
++        vertices: Vec<f64>,
+         indices: Vec<u32>,
+-        borderRadius: f32,
++        borderRadius: f64,
+     ) -> Option<RawShape> {
+         let vertices = vertices.chunks(DIM).map(|v| Point::from_slice(v)).collect();
+         let indices: Vec<_> = indices.chunks(3).map(|v| [v[0], v[1], v[2]]).collect();
+@@ -410,8 +410,8 @@ impl RawShape {
+         shapePos2: &RawVector,
+         shapeRot2: &RawRotation,
+         shapeVel2: &RawVector,
+-        target_distance: f32,
+-        maxToi: f32,
++        target_distance: f64,
++        maxToi: f64,
+         stop_at_penetration: bool,
+     ) -> Option<RawShapeCastHit> {
+         let pos1 = Isometry::from_parts(shapePos1.0.into(), shapeRot1.0);
+@@ -450,7 +450,7 @@ impl RawShape {
+         shape2: &RawShape,
+         shapePos2: &RawVector,
+         shapeRot2: &RawRotation,
+-        prediction: f32,
++        prediction: f64,
+     ) -> Option<RawShapeContact> {
+         let pos1 = Isometry::from_parts(shapePos1.0.into(), shapeRot1.0);
+         let pos2 = Isometry::from_parts(shapePos2.0.into(), shapeRot2.0);
+@@ -487,7 +487,7 @@ impl RawShape {
+         shapeRot: &RawRotation,
+         rayOrig: &RawVector,
+         rayDir: &RawVector,
+-        maxToi: f32,
++        maxToi: f64,
+     ) -> bool {
+         let pos = Isometry::from_parts(shapePos.0.into(), shapeRot.0);
+ 
+@@ -501,9 +501,9 @@ impl RawShape {
+         shapeRot: &RawRotation,
+         rayOrig: &RawVector,
+         rayDir: &RawVector,
+-        maxToi: f32,
++        maxToi: f64,
+         solid: bool,
+-    ) -> f32 {
++    ) -> f64 {
+         let pos = Isometry::from_parts(shapePos.0.into(), shapeRot.0);
+ 
+         self.0
+@@ -516,7 +516,7 @@ impl RawShape {
+         shapeRot: &RawRotation,
+         rayOrig: &RawVector,
+         rayDir: &RawVector,
+-        maxToi: f32,
++        maxToi: f64,
+         solid: bool,
+     ) -> Option<RawRayIntersection> {
+         let pos = Isometry::from_parts(shapePos.0.into(), shapeRot.0);
+diff --git a/src/geometry/toi.rs b/src/geometry/toi.rs
+index 1e00675..2e5368d 100644
+--- a/src/geometry/toi.rs
++++ b/src/geometry/toi.rs
+@@ -10,7 +10,7 @@ pub struct RawShapeCastHit {
+ 
+ #[wasm_bindgen]
+ impl RawShapeCastHit {
+-    pub fn time_of_impact(&self) -> f32 {
++    pub fn time_of_impact(&self) -> f64 {
+         self.hit.time_of_impact
+     }
+ 
+@@ -43,7 +43,7 @@ impl RawColliderShapeCastHit {
+         utils::flat_handle(self.handle.0)
+     }
+ 
+-    pub fn time_of_impact(&self) -> f32 {
++    pub fn time_of_impact(&self) -> f64 {
+         self.hit.time_of_impact
+     }
+ 
+diff --git a/src/math.rs b/src/math.rs
+index 5c50c14..ffd467f 100644
+--- a/src/math.rs
++++ b/src/math.rs
+@@ -1,7 +1,7 @@
+ //! Linear algebra primitives.
+ 
+ #[cfg(feature = "dim3")]
+-use js_sys::Float32Array;
++use js_sys::Float64Array;
+ #[cfg(feature = "dim3")]
+ use na::{Quaternion, Unit};
+ #[cfg(feature = "dim3")]
+@@ -15,10 +15,10 @@ use wasm_bindgen::prelude::*;
+ #[repr(transparent)]
+ #[derive(Copy, Clone)]
+ /// A rotation quaternion.
+-pub struct RawRotation(pub(crate) Rotation<f32>);
++pub struct RawRotation(pub(crate) Rotation<f64>);
+ 
+-impl From<Rotation<f32>> for RawRotation {
+-    fn from(v: Rotation<f32>) -> Self {
++impl From<Rotation<f64>> for RawRotation {
++    fn from(v: Rotation<f64>) -> Self {
+         RawRotation(v)
+     }
+ }
+@@ -33,25 +33,25 @@ impl RawRotation {
+     }
+ 
+     /// The rotation with thegiven angle.
+-    pub fn fromAngle(angle: f32) -> Self {
++    pub fn fromAngle(angle: f64) -> Self {
+         Self(Rotation::new(angle))
+     }
+ 
+     /// The imaginary part of this complex number.
+     #[wasm_bindgen(getter)]
+-    pub fn im(&self) -> f32 {
++    pub fn im(&self) -> f64 {
+         self.0.im
+     }
+ 
+     /// The real part of this complex number.
+     #[wasm_bindgen(getter)]
+-    pub fn re(&self) -> f32 {
++    pub fn re(&self) -> f64 {
+         self.0.re
+     }
+ 
+     /// The rotation angle in radians.
+     #[wasm_bindgen(getter)]
+-    pub fn angle(&self) -> f32 {
++    pub fn angle(&self) -> f64 {
+         self.0.angle()
+     }
+ }
+@@ -61,7 +61,7 @@ impl RawRotation {
+ /// A unit quaternion describing the orientation of a Rapier entity.
+ impl RawRotation {
+     #[wasm_bindgen(constructor)]
+-    pub fn new(x: f32, y: f32, z: f32, w: f32) -> Self {
++    pub fn new(x: f64, y: f64, z: f64, w: f64) -> Self {
+         RawRotation(Unit::new_unchecked(Quaternion::new(w, x, y, z)))
+     }
+ 
+@@ -72,25 +72,25 @@ impl RawRotation {
+ 
+     /// The `x` component of this quaternion.
+     #[wasm_bindgen(getter)]
+-    pub fn x(&self) -> f32 {
++    pub fn x(&self) -> f64 {
+         self.0.i
+     }
+ 
+     /// The `y` component of this quaternion.
+     #[wasm_bindgen(getter)]
+-    pub fn y(&self) -> f32 {
++    pub fn y(&self) -> f64 {
+         self.0.j
+     }
+ 
+     /// The `z` component of this quaternion.
+     #[wasm_bindgen(getter)]
+-    pub fn z(&self) -> f32 {
++    pub fn z(&self) -> f64 {
+         self.0.k
+     }
+ 
+     /// The `w` component of this quaternion.
+     #[wasm_bindgen(getter)]
+-    pub fn w(&self) -> f32 {
++    pub fn w(&self) -> f64 {
+         self.0.w
+     }
+ }
+@@ -99,16 +99,16 @@ impl RawRotation {
+ #[repr(transparent)]
+ #[derive(Copy, Clone)]
+ /// A vector.
+-pub struct RawVector(pub(crate) Vector<f32>);
++pub struct RawVector(pub(crate) Vector<f64>);
+ 
+-impl From<Vector<f32>> for RawVector {
+-    fn from(v: Vector<f32>) -> Self {
++impl From<Vector<f64>> for RawVector {
++    fn from(v: Vector<f64>) -> Self {
+         RawVector(v)
+     }
+ }
+ 
+-impl From<Point<f32>> for RawVector {
+-    fn from(pt: Point<f32>) -> Self {
++impl From<Point<f64>> for RawVector {
++    fn from(pt: Point<f64>) -> Self {
+         pt.coords.into()
+     }
+ }
+@@ -127,7 +127,7 @@ impl RawVector {
+     /// - `y`: the `y` component of this 2D vector.
+     #[cfg(feature = "dim2")]
+     #[wasm_bindgen(constructor)]
+-    pub fn new(x: f32, y: f32) -> Self {
++    pub fn new(x: f64, y: f64) -> Self {
+         Self(Vector::new(x, y))
+     }
+ 
+@@ -139,45 +139,45 @@ impl RawVector {
+     /// - `z`: the `z` component of this 3D vector.
+     #[cfg(feature = "dim3")]
+     #[wasm_bindgen(constructor)]
+-    pub fn new(x: f32, y: f32, z: f32) -> Self {
++    pub fn new(x: f64, y: f64, z: f64) -> Self {
+         Self(Vector::new(x, y, z))
+     }
+ 
+     /// The `x` component of this vector.
+     #[wasm_bindgen(getter)]
+-    pub fn x(&self) -> f32 {
++    pub fn x(&self) -> f64 {
+         self.0.x
+     }
+ 
+     /// Sets the `x` component of this vector.
+     #[wasm_bindgen(setter)]
+-    pub fn set_x(&mut self, x: f32) {
++    pub fn set_x(&mut self, x: f64) {
+         self.0.x = x
+     }
+ 
+     /// The `y` component of this vector.
+     #[wasm_bindgen(getter)]
+-    pub fn y(&self) -> f32 {
++    pub fn y(&self) -> f64 {
+         self.0.y
+     }
+ 
+     /// Sets the `y` component of this vector.
+     #[wasm_bindgen(setter)]
+-    pub fn set_y(&mut self, y: f32) {
++    pub fn set_y(&mut self, y: f64) {
+         self.0.y = y
+     }
+ 
+     /// The `z` component of this vector.
+     #[cfg(feature = "dim3")]
+     #[wasm_bindgen(getter)]
+-    pub fn z(&self) -> f32 {
++    pub fn z(&self) -> f64 {
+         self.0.z
+     }
+ 
+     /// Sets the `z` component of this vector.
+     #[cfg(feature = "dim3")]
+     #[wasm_bindgen(setter)]
+-    pub fn set_z(&mut self, z: f32) {
++    pub fn set_z(&mut self, z: f64) {
+         self.0.z = z
+     }
+ 
+@@ -257,9 +257,9 @@ impl From<SdpMatrix3<Real>> for RawSdpMatrix3 {
+ #[cfg(feature = "dim3")]
+ impl RawSdpMatrix3 {
+     /// Row major list of the upper-triangular part of the symmetric matrix.
+-    pub fn elements(&self) -> Float32Array {
++    pub fn elements(&self) -> Float64Array {
+         let m = self.0;
+-        let output = Float32Array::new_with_length(6);
++        let output = Float64Array::new_with_length(6);
+         output.copy_from(&[m.m11, m.m12, m.m13, m.m22, m.m23, m.m33]);
+         output
+     }
+diff --git a/src/pipeline/debug_render_pipeline.rs b/src/pipeline/debug_render_pipeline.rs
+index 1676e59..57a9e02 100644
+--- a/src/pipeline/debug_render_pipeline.rs
++++ b/src/pipeline/debug_render_pipeline.rs
+@@ -1,6 +1,6 @@
+ use crate::dynamics::{RawImpulseJointSet, RawMultibodyJointSet, RawRigidBodySet};
+ use crate::geometry::{RawColliderSet, RawNarrowPhase};
+-use js_sys::Float32Array;
++use js_sys::{Float32Array,Float64Array};
+ use palette::convert::IntoColorUnclamped;
+ use palette::rgb::Rgba;
+ use palette::Hsla;
+@@ -14,7 +14,7 @@ use wasm_bindgen::prelude::*;
+ #[wasm_bindgen]
+ pub struct RawDebugRenderPipeline {
+     pub(crate) raw: DebugRenderPipeline,
+-    vertices: Vec<f32>,
++    vertices: Vec<f64>,
+     colors: Vec<f32>,
+ }
+ 
+@@ -29,8 +29,8 @@ impl RawDebugRenderPipeline {
+         }
+     }
+ 
+-    pub fn vertices(&self) -> Float32Array {
+-        let output = Float32Array::new_with_length(self.vertices.len() as u32);
++    pub fn vertices(&self) -> Float64Array {
++        let output = Float64Array::new_with_length(self.vertices.len() as u32);
+         output.copy_from(&self.vertices);
+         output
+     }
+@@ -86,7 +86,7 @@ struct CopyToBuffersBackend<'a> {
+     filter: QueryFilter<'a>,
+     bodies: &'a RigidBodySet,
+     colliders: &'a ColliderSet,
+-    vertices: &'a mut Vec<f32>,
++    vertices: &'a mut Vec<f64>,
+     colors: &'a mut Vec<f32>,
+ }
+ 
+diff --git a/src/pipeline/event_queue.rs b/src/pipeline/event_queue.rs
+index fb6034d..fc77a1b 100644
+--- a/src/pipeline/event_queue.rs
++++ b/src/pipeline/event_queue.rs
+@@ -41,7 +41,7 @@ impl RawContactForceEvent {
+     /// Note that this is **not** the same as the magnitude of `self.total_force`.
+     /// Here we are summing the magnitude of all the forces, instead of taking
+     /// the magnitude of their sum.
+-    pub fn total_force_magnitude(&self) -> f32 {
++    pub fn total_force_magnitude(&self) -> f64 {
+         self.0.total_force_magnitude
+     }
+ 
+@@ -51,7 +51,7 @@ impl RawContactForceEvent {
+     }
+ 
+     /// The magnitude of the largest force at a contact point of this contact pair.
+-    pub fn max_force_magnitude(&self) -> f32 {
++    pub fn max_force_magnitude(&self) -> f64 {
+         self.0.max_force_magnitude
+     }
+ }
+diff --git a/src/pipeline/serialization_pipeline.rs b/src/pipeline/serialization_pipeline.rs
+index 97076f6..f49f5d9 100644
+--- a/src/pipeline/serialization_pipeline.rs
++++ b/src/pipeline/serialization_pipeline.rs
+@@ -14,7 +14,7 @@ use wasm_bindgen::prelude::*;
+ 
+ #[derive(Serialize)]
+ struct SerializableWorld<'a> {
+-    gravity: &'a Vector<f32>,
++    gravity: &'a Vector<f64>,
+     integration_parameters: &'a IntegrationParameters,
+     islands: &'a IslandManager,
+     broad_phase: &'a DefaultBroadPhase,
+@@ -27,7 +27,7 @@ struct SerializableWorld<'a> {
+ 
+ #[derive(Deserialize)]
+ struct DeserializableWorld {
+-    gravity: Vector<f32>,
++    gravity: Vector<f64>,
+     integration_parameters: IntegrationParameters,
+     islands: IslandManager,
+     broad_phase: DefaultBroadPhase,

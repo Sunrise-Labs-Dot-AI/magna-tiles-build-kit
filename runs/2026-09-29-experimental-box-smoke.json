@@ -1,0 +1,9 @@
+{
+  "httpStatus": 400,
+  "seconds": 245.0473315420095,
+  "status": null,
+  "title": null,
+  "pieces": 0,
+  "checks": [],
+  "error": "Analysis time budget reached during simulation. No incomplete trial is accepted; this is not proof of infeasibility."
+}

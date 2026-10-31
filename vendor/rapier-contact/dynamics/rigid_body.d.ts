@@ -123,6 +123,8 @@ export declare class RigidBody {
      * rigid-body and everything that interacts with it directly or indirectly
      * through contacts or joints.
      */
+    gyroscopicForcesEnabled(): boolean;
+    enableGyroscopicForces(enabled: boolean): void;
     additionalSolverIterations(): number;
     /**
      * Sets the number of additional solver iterations that will be run for this

@@ -1,0 +1,24 @@
+{
+  "defaults": {
+    "dt": 0.016666666666666666,
+    "contact_erp": 0.2390572236106882,
+    "lengthUnit": 1,
+    "normalizedAllowedLinearError": 0.001,
+    "normalizedPredictionDistance": 0.002,
+    "numInternalPgsIterations": 1,
+    "minIslandSize": 128,
+    "maxCcdSubsteps": 1,
+    "numSolverIterations": 4
+  },
+  "configured": {
+    "dt": 0.008333333333333333,
+    "contact_erp": 0.715365222004773,
+    "lengthUnit": 1,
+    "normalizedAllowedLinearError": 0.001,
+    "normalizedPredictionDistance": 0.002,
+    "numInternalPgsIterations": 1,
+    "minIslandSize": 128,
+    "maxCcdSubsteps": 1,
+    "numSolverIterations": 16
+  }
+}

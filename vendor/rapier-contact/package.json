@@ -1,8 +1,8 @@
 {
   "name": "@magnatiles/rapier-contact",
-  "version": "0.19.2-sat-cache.3",
+  "version": "0.19.2-experimental-f64-gyro",
   "private": true,
-  "description": "Pinned f32 Rapier headless verifier with the reviewed finite-polyhedron contact correction.",
+  "description": "Local experimental f64 physics with principal-frame gyroscopic correction; not qualified for production.",
   "license": "Apache-2.0",
   "main": "./rapier.cjs",
   "types": "./rapier.d.ts",
